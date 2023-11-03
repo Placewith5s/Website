@@ -12,7 +12,6 @@ Placewith5s.com is a step-by-step guide website dedicated to providing tips, too
 - [Demo Link](#demo-link)
 - [Credits](#credits)
 - [License](#license)
-- [Support](#support)
 
 ## Installation
 
