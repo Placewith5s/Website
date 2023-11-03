@@ -34,7 +34,7 @@ Navigate through the guides and resources to optimize your Windows system. Each 
 
 ## Credits
 
-- [Author Name](https://github.com/author)
+- [Author Name](https://github.com/placewith5s)
 - [Optimizer Library](https://github.com/optimizer-library)
 
 ## License
