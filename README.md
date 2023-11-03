@@ -44,7 +44,7 @@ We welcome contributions! If you'd like to contribute to the content or resource
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed! (LICENSE.md).
 
 ## Support
 
