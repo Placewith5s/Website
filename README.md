@@ -2,7 +2,7 @@
 
 ## Description
 
-WindowsOptimizer.com is a step-by-step guide website dedicated to providing tips, tools, and resources for optimizing Windows operating systems to improve performance and efficiency.
+Placewith5s.com is a step-by-step guide website dedicated to providing tips, tools, and resources for optimizing Windows operating systems to improve performance and efficiency.
 
 ## Table of Contents
 
