@@ -30,7 +30,8 @@ Navigate through the guides and resources to optimize your Windows system. Each 
 
 ## Demo Link
 
-[Visit placewith5s.com](https://placewith5s.com)
+[Visit PlaceWith5s.com](https://www.placewith5s.com)
+
 
 ## Credits
 
@@ -40,8 +41,3 @@ Navigate through the guides and resources to optimize your Windows system. Each 
 ## License
 
 This project is licensed under the terms of the license specified in the [LICENSE](LICENSE) file.
-
-
-## Support
-
-If you have any questions or need support, you can contact us at [namenumber64@gmail.com](mailto:namenumber64@gmail.com).
