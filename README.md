@@ -39,9 +39,9 @@ Navigate through the guides and resources to optimize your Windows system. Each 
 
 ## License
 
-This project is licensed under the terms of the license specified in the [LICENSE.md](LICENSE.md) file.
+This project is licensed under the terms of the license specified in the [LICENSE](LICENSE) file.
 
 
 ## Support
 
-If you have any questions or need support, you can contact us at [support@windowsoptimizer.com](mailto:support@windowsoptimizer.com).
+If you have any questions or need support, you can contact us at [namenumber64@gmail.com](mailto:namenumber64@gmail.com).
