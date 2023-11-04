@@ -6,6 +6,7 @@ body {
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 @media screen and (prefers-color-scheme: dark) {
@@ -22,19 +23,40 @@ body {
         background-color: #555;
         color: #ccc;
     }
+
+    .dark-theme #Cool-Websites h2 {
+        color: #00FF00; 
+    }
+
+    .menu-icon .line {
+        background-color: #ccc;
+    }
+
+    .drawer {
+        background-color: #444;
+        border: 1px solid #666;
+    }
+
+    .drawer a {
+        color: #f8f8f8;
+    }
+
+    .drawer a:hover {
+        background-color: #555;
+    }
+
+    footer {
+        background-color: #222;
+        border-top-color: #888;
+        color: #ccc;
+    }
 }
-
-.dark-theme #Cool-Websites h2 {
-    color: #00FF00; 
-}
-
-
 
 main {
     flex-grow: 1;
 }
 
-/*Home Page section and About Us section*/
+/* Home Page section and About Us section */
 a[href^="#"] {
     color: #007bff;
     text-decoration: none;
@@ -65,29 +87,29 @@ a[href^="#"]:hover {
 #Cool-Websites span {
     display: block;
     margin-bottom: 10px;
-    color: #007bff; /*Text Color*/
+    color: #007bff; /* Text Color */
 }
 
-/*Styling for another tab directing*/
-    #Cool-Websites a {
-        color: #007bff;
-        text-decoration: none;
-        margin: 10px 0;
-        display: inline-block;
-        padding: 5px 10px;
-        border: 1px solid #555;
-        border-radius: 5px;
-        transition: background-color, color 0.3s;
+/* Styling for another tab directing */
+#Cool-Websites a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 10px 0;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    transition: background-color, color 0.3s;
 }
 
 #Cool-Websites a:hover {
     transform: scale(1.05);
     background-color: #ff6f61;
-    color: #fff; /*Text Color on hover*/
+    color: #fff; /* Text Color on hover */
 }
 
 #Home-Page {
-background-color: #fff;
+    background-color: #fff;
     color: #333;
     padding: 20px;
     border-radius: 5px;
@@ -127,7 +149,6 @@ h2 {
     font-style: italic;
 }
 
-
 .step-content {
     background-color: #f8f8f8;
     padding: 20px;
@@ -146,13 +167,61 @@ h2 {
     margin-bottom: 0;
 }
 
-/*step guide icon*/
+/* Step guide icon */
 .step-icon {
     width: 2.5em;
     height: 2.5em;
     vertical-align: middle;
 }
 
+.menu-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the background color */
+    border: 1px solid #fff; /* White border for contrast */
+    border-radius: 4px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.menu-icon:hover .line {
+    background-color: #ccc; /* Change hover color for lines */
+}
+
+.line {
+    width: 35px;
+    height: 5px;
+    background: #000;
+    margin: 6px 0;
+}
+
+.drawer {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.drawer a {
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    color: #000;
+}
+
+.drawer a:hover {
+    background-color: #f8f8f8;
+}
+
+#hideAboutUs {
+    color: #007bff;
+}
 
 
 footer {
