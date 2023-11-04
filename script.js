@@ -1,9 +1,9 @@
 function toggleAboutUs() {
-    var aboutUsSection = document.getElementById('About-Us');
-    if (aboutUsSection.style.display === 'none' || aboutUsSection.style.display === '') {
-        aboutUsSection.style.display = 'block';
+    var aboutUsSection = document.getElementById("About-Us");
+    if (aboutUsSection.style.display === "none" || aboutUsSection.style.display === "") {
+        aboutUsSection.style.display = "block";
     } else {
-        aboutUsSection.style.display = 'none';
+        aboutUsSection.style.display = "none";
     }
 }
 
@@ -22,3 +22,17 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 } else {
     setLightTheme();
 }
+
+document.getElementById('menuIcon').addEventListener('click', function() {
+    var drawer = document.getElementById('drawer');
+    drawer.style.display = (drawer.style.display === 'block') ? 'none' : 'block';
+});
+
+document.getElementById('aboutUsLink').addEventListener('click', function() {
+    document.getElementById('drawer').style.display = 'none';
+    document.getElementById('About-Us').style.display = 'block';
+});
+
+document.getElementById('hideAboutUs').addEventListener('click', function() {
+    document.getElementById('About-Us').style.display = 'none';
+});
