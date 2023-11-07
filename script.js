@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault();
             const target = this.getAttribute('href').substring(1);
             const section = document.getElementById(target.replace(/-/g, ' '));
             if (section) {
+                event.preventDefault();
                 section.scrollIntoView({ behavior: 'smooth' });
             }
         });
