@@ -31,7 +31,7 @@ main {
     }
 
     .dark-theme #Cool-Websites h2 {
-        color: #00FF00; 
+        color: crimson; 
     }
 
     .menu-icon .line {
@@ -82,7 +82,7 @@ a[href^="#"]:hover {
 
 #Cool-Websites h2 {
     font-size: 1.8em;
-    color: #00FF00;
+    color: crimson;
     margin-bottom: 10px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
