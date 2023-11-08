@@ -36,17 +36,3 @@ document.getElementById('aboutUsLink').addEventListener('click', function() {
 document.getElementById('hideAboutUs').addEventListener('click', function() {
     document.getElementById('About-Us').style.display = 'none';
 });
-
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-        link.addEventListener('click', function(event) {
-            const target = this.getAttribute('href').substring(1);
-            const section = document.getElementById(target.replace(/-/g, ' '));
-            if (section) {
-                event.preventDefault();
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
-});
