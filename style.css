@@ -1,7 +1,7 @@
 body {
-    display: flex;
+    display: flex; /*to get in line*/
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /*vertical height*/
     font-family: 'Segoe UI', sans-serif;
     background-color: #f9f9f9;
     margin: 0;
@@ -10,8 +10,8 @@ body {
 }
 
 main {
-    flex-grow: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /*bug fixer*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*red, green, and blue = none = black, alpha = 0.1*/
     border-radius: 10px;
 }
 
@@ -20,6 +20,7 @@ main {
         background-color: #333;
         color: #f8f8f8;
     }
+    
 
     .dark-theme a {
         color: #ff6f61;
@@ -184,6 +185,7 @@ h2 {
     vertical-align: middle;
 }
 
+/*Styling for the menu icon*/
 .menu-icon {
     position: absolute;
     top: 10px;
@@ -232,6 +234,7 @@ h2 {
 #hideAboutUs {
     color: #007bff;
 }
+
 
 footer {
     border-top: 1px solid black;
