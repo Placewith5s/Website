@@ -1,3 +1,4 @@
+//about us function
 function toggleAboutUs() {
     var aboutUsSection = document.getElementById("About-Us");
     if (aboutUsSection.style.display === "none" || aboutUsSection.style.display === "") {
@@ -7,6 +8,7 @@ function toggleAboutUs() {
     }
 }
 
+//Dark mode, and Light mode
 function setDarkTheme() {
     
     document.body.classList.add('dark-theme');
@@ -23,6 +25,7 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
     setLightTheme();
 }
 
+//Menu icon function
 document.getElementById('menuIcon').addEventListener('click', function() {
     var drawer = document.getElementById('drawer');
     drawer.style.display = (drawer.style.display === 'block') ? 'none' : 'block';
@@ -33,6 +36,7 @@ document.getElementById('aboutUsLink').addEventListener('click', function() {
     document.getElementById('About-Us').style.display = 'block';
 });
 
+//Hide function
 document.getElementById('hideAboutUs').addEventListener('click', function() {
     document.getElementById('About-Us').style.display = 'none';
 });
