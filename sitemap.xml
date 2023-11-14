@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.placewith5s.com/index.html</loc>
+        <lastmod>2023-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/style.css</loc>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/script.js</loc>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/001-computer.png</loc>
+    </url>
+    <!-- Add more URLs for other pages and images as needed -->
+</urlset>
