@@ -24,5 +24,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
-    <!-- Add more URLs for other pages and images as needed -->
+    <url>
+        <loc>https://www.placewith5s.com/optimization.png</loc>
+        <lastmod>2023-11-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+</url>
 </urlset>
