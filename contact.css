@@ -1,0 +1,74 @@
+#contact {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f8f8f8;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive styles for screens less than 600px */
+@media screen and (max-width: 600px) {
+    main {
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* Dark mode styles for screens wider than 600px and prefers dark mode */
+@media screen and (min-width: 601px) {
+    @media (prefers-color-scheme: dark) {
+        body.dark-theme main {
+            background-color: #333;
+            color: #f8f8f8;
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+/* Light mode styles for screens wider than 600px and prefers light mode */
+@media screen and (min-width: 601px) {
+    @media (prefers-color-scheme: light) {
+        body.light-theme main {
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+footer {
+    border-top: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+    background-color: #333;
+}
