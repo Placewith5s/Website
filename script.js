@@ -35,10 +35,10 @@ document.getElementById('aboutUsLink').addEventListener('click', function () {
     document.getElementById('About-Us').style.display = 'block';
 });
 
-document.getElementById('contact-Us-Link').addEventListener('click', function () {
+document.getElementById('contactUsLink').addEventListener('click', function () {
     document.getElementById('drawer').style.display = 'none';
-    document.getElementById('contact-Us-Link').style.display = 'block';
 });
+
 
 // Hide function
 document.getElementById('hideAboutUs').addEventListener('click', function () {
