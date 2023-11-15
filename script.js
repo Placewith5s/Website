@@ -35,12 +35,18 @@ document.getElementById('aboutUsLink').addEventListener('click', function () {
     document.getElementById('About-Us').style.display = 'block';
 });
 
-document.getElementById('contactUsLink').addEventListener('click', function () {
+document.getElementById('privacyPolicyLink').addEventListener('click', function () {
     document.getElementById('drawer').style.display = 'none';
 });
 
-
 // Hide function
-document.getElementById('hideAboutUs').addEventListener('click', function () {
-    document.getElementById('About-Us').style.display = 'none';
+document.addEventListener('DOMContentLoaded', function () {
+    let hideAboutUsButton = document.getElementById('hideAboutUs');
+    let aboutUsSection = document.getElementById('About-Us');
+
+    if (hideAboutUsButton && aboutUsSection) {
+        hideAboutUsButton.addEventListener('click', function () {
+            aboutUsSection.style.display = 'none';
+        });
+    }
 });
