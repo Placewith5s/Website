@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.placewith5s.com/index.html</loc>
-        <lastmod>2023-11-15</lastmod>
+        <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://www.placewith5s.com/style.css</loc>
-        <lastmod>2023-11-15</lastmod>
+        <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://www.placewith5s.com/script.js</loc>
-        <lastmod>2023-11-15</lastmod>
+        <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -32,24 +32,24 @@
     </url>
      <url>
         <loc>https://www.placewith5s.com/ads.txt</loc>
-        <lastmod>2023-11-01</lastmod>
+        <lastmod>2023-11-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
      <url>
         <loc>https://www.placewith5s.com/privacyp.html</loc>
-        <lastmod>2023-11-15</lastmod>
+        <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     <url>
         <loc>https://www.placewith5s.com/privacyp.css</loc>
-        <lastmod>2023-11-15</lastmod>
+        <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
     </url>
     <url>
         <loc>https://www.placewith5s.com/privacyp.js</loc>
-        <lastmod>2023-11-15</lastmod>
+        <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
