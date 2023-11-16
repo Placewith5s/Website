@@ -21,7 +21,3 @@ You can choose to disable cookies through your browser settings. However, please
 ## Changes to This Cookies Policy
 
 We may update our cookies policy from time to time. Any changes will be reflected on this page.
-
-## Contact Us
-
-If you have any questions about our cookies policy, please contact us at [your@email.com].
