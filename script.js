@@ -50,3 +50,34 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// Cookies
+document.addEventListener("DOMContentLoaded", function () {
+    if (!hasConsent()) {
+        displayBanner();
+    }
+});
+
+function hasConsent() {
+    return localStorage.getItem("cookieConsent") === "true";
+}
+
+function setConsent() {
+    localStorage.setItem("cookieConsent", "true");
+}
+
+function displayBanner() {
+    let cookieBanner = document.getElementById("cookie-banner");
+    cookieBanner.style.display = "block";
+}
+
+function acceptCookies() {
+    setConsent();
+    let cookieBanner = document.getElementById("cookie-banner");
+    cookieBanner.style.display = "none";
+}
+
+function denyCookies() {
+    let cookieBanner = document.getElementById("cookie-banner");
+    cookieBanner.style.display = "none";
+}
