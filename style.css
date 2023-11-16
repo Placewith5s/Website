@@ -1,7 +1,7 @@
 body {
-    display: flex; /*to get in line*/
+    display: flex;
     flex-direction: column;
-    min-height: 100vh; /*vertical height*/
+    min-height: 100vh;
     font-family: 'Segoe UI', sans-serif;
     background-color: #f9f9f9;
     margin: 0;
@@ -10,8 +10,8 @@ body {
 }
 
 main {
-    flex-grow: 1; /*bug fixer*/
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*red, green, and blue = none = black, alpha = 0.1*/
+    flex-grow: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
@@ -82,7 +82,7 @@ a[href^="#"]:hover {
     }
 }
 
-/* Responsive styles for screens wider than 600px */
+/* Responsive styles for screens more than 600px */
 @media screen and (min-width: 601px) {
     /* Dark mode styles */
     @media (prefers-color-scheme: dark) {
@@ -263,6 +263,46 @@ h2 {
 
 #hideAboutUs {
     color: #007bff;
+}
+
+#cookie-banner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#cookie-banner.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+#cookie-banner p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+#cookie-banner button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+#cookie-banner button:hover {
+    background-color: #0056b3;
 }
 
 
