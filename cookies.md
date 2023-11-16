@@ -1,6 +1,6 @@
 # Cookies Policy
 
-Last updated: [Date]
+Last updated: [2023]
 
 ## What Are Cookies
 
