@@ -1,4 +1,3 @@
-// Toggle between dark mode and light mode
 function toggleDarkMode() {
     let contactMain = document.getElementById("policy");
     contactMain.classList.toggle("dark-mode");
