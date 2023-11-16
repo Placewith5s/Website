@@ -10,6 +10,8 @@ Placewith5s.com is a step-by-step guide website dedicated to providing tips, too
 - [Usage](#usage)
 - [Features](#features)
 - [Demo Link](#demo-link)
+- [Privacy Policy](#privacy-policy)
+- [Cookies](#cookies)
 - [Credits](#credits)
 - [License](#license)
 
@@ -30,6 +32,13 @@ Navigate through the guides and resources to optimize your Windows system. Each 
 
 [Visit placewith5s.com](https://www.placewith5s.com)
 
+## Privacy Policy
+
+Please read our [Privacy Policy](/privacy-policy.md) to understand how we collect, use, and protect your personal information.
+
+## Cookies
+
+Learn about how we use cookies by visiting our [Cookies](/cookies.md) page.
 
 ## Credits
 
