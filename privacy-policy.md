@@ -1,6 +1,6 @@
 # Privacy Policy
 
-Last updated: [2023]
+Last updated: 2023
 
 ## Information We Collect
 
@@ -27,4 +27,3 @@ We may update our privacy policy from time to time. Any changes will be reflecte
 ## Contact Us
 
 If you have any questions about our privacy policy, please contact us at [namenumber64@email.com].
-
