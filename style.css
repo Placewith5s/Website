@@ -208,13 +208,6 @@ h2 {
     margin-bottom: 0;
 }
 
-/* Step guide icon */
-.step-icon {
-    width: 2.5em;
-    height: 2.5em;
-    vertical-align: middle;
-}
-
 /*Styling for the menu icon*/
 .menu-icon {
     position: absolute;
