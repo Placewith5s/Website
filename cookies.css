@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f8f9fa;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+}
+
+main {
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    background: #343a40;
+    color: #fff;
+}
