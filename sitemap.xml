@@ -19,28 +19,17 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.placewith5s.com/001-computer.png</loc>
-        <lastmod>2023-11-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://www.placewith5s.com/optimization.png</loc>
-        <lastmod>2023-11-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.75</priority>
-    </url>
-     <url>
         <loc>https://www.placewith5s.com/ads.txt</loc>
         <lastmod>2023-11-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
-     <url>
+    <url>
         <loc>https://www.placewith5s.com/privacyp.html</loc>
         <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
+    </url>
     <url>
         <loc>https://www.placewith5s.com/privacyp.css</loc>
         <lastmod>2023-11-16</lastmod>
@@ -49,6 +38,24 @@
     </url>
     <url>
         <loc>https://www.placewith5s.com/privacyp.js</loc>
+        <lastmod>2023-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/cookies.html</loc>
+        <lastmod>2023-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/cookies.css</loc>
+        <lastmod>2023-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/cookies.js</loc>
         <lastmod>2023-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
