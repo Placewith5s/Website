@@ -79,7 +79,19 @@ section {
 }
 
 .contact-link {
-    color: #3498db;
+    color: firebrick;
+}
+
+.contact-link:hover {
+    filter: brightness(0.7);
+}
+
+.cookie-page-link {
+    text-decoration: none;
+}
+
+.cookie-page-link:hover {
+    filter: brightness(2.5);
 }
 
 footer {
