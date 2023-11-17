@@ -19,3 +19,11 @@ main {
     background: #343a40;
     color: #fff;
 }
+
+.all-about-cookies {
+    text-decoration: none;
+}
+
+.all-about-cookies:hover {
+    color: yellowgreen;
+}
