@@ -1,8 +1,7 @@
+/* General Styles */
 body {
     display: flex;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Segoe UI', sans-serif;
@@ -15,21 +14,22 @@ main {
     padding: 20px;
     border-radius: 5px;
     max-width: 800px;
-    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
+/* Light Mode Styles */
 .light-mode {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #333;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark Mode Styles */
 .dark-mode {
-    background-color: #333;
-    color: #f8f8f8;
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+    background-color: #f2f2f2;
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 600px) {
@@ -39,47 +39,62 @@ main {
     }
 }
 
+/* Responsive Styles */
 @media screen and (min-width: 601px) {
     @media (prefers-color-scheme: dark) {
-        body.dark-theme main {
-            background-color: #333;
-            color: #f8f8f8;
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
-        }
-    }
-}
-
-@media screen and (min-width: 601px) {
-    @media (prefers-color-scheme: light) {
-        body.light-theme main {
-            background-color: #fff;
+        body.dark-theme {
+            background-color: #f2f2f2;
             color: #333;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
+
+        body.dark-theme footer {
+            background-color: #e0e0e0;
+            color: #333;
+            filter: brightness(0.8);
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        body.light-theme main {
+            background-color: #ffffff;
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-theme footer {
+            background-color: #0077cc;
+            color: #ffffff;
+            filter: brightness(0.8);
+        }
     }
 }
 
+/* Header Styles */
 header {
     background-color: #2c3e50;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 1em 0;
 }
 
+/* Heading Styles */
 h1 {
-    color: #2c3e50;
+    color: #ffffff;
 }
 
 h2 {
     color: #3498db;
 }
 
+/* Section Styles */
 section {
     margin-bottom: 20px;
 }
 
+/* Link Styles */
 .contact-link {
-    color: firebrick;
+    color: #d9534f;
 }
 
 .contact-link:hover {
@@ -94,10 +109,13 @@ section {
     filter: brightness(2.5);
 }
 
+/* Footer Styles */
 footer {
-    border-top: 1px solid black;
+    border-top: 1px solid #000000;
     padding: 10px;
     text-align: center;
     margin-top: auto;
-    background-color: #333;
+    background-color: #0077cc;
+    color: #ffffff;
+    filter: brightness(0.8);
 }
