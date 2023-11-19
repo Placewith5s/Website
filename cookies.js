@@ -1,13 +1,17 @@
+// Dark mode functions
 function setDarkMode() {
-    document.documentElement.setAttribute('data-theme', 'dark');
+    // Add 'dark-theme' class to the body
+    document.body.classList.add('dark-theme');
 }
 
 function setLightMode() {
-    document.documentElement.removeAttribute('data-theme');
+    // Remove 'dark-theme' class from the body
+    document.body.classList.remove('dark-theme');
 }
 
 function toggleDarkMode() {
-    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+    // Toggle between dark and light mode
+    const isDarkMode = document.body.classList.contains('dark-theme');
     if (isDarkMode) {
         setLightMode();
     } else {
@@ -15,12 +19,19 @@ function toggleDarkMode() {
     }
 }
 
+// Check for dark mode preference and set the theme accordingly
 document.addEventListener("DOMContentLoaded", function () {
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        setDarkMode();
-    }
+    try {
+        if (window.matchMedia) {
+            const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-    setTimeout(function () {
-        toggleDarkMode();
-    }, 5000);
+            if (darkModeMediaQuery.matches) {
+                setDarkMode();
+            }
+        } else {
+            console.error('matchMedia is not supported. Dark mode preference may not work.');
+        }
+    } catch (error) {
+        console.error('An error occurred while checking dark mode preference:', error);
+    }
 });
