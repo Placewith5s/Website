@@ -2,50 +2,58 @@
 <html lang="en">
 
 <head>
+    <!-- Head Section -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get higher FPS</title>
     <link rel="stylesheet" href="style.css">
-    <!--<link rel="icon" type="image/png" href="">-->
     <script src="script.js" defer></script>
 </head>
 
-<!--Menu icon-->
 <body>
-    <div id="cookie-banner">
-    <p>This website uses cookies. Do you accept?</p>
-    <button onclick="acceptCookies()">Accept</button>
-    <button onclick="denyCookies()">Deny</button>
-</div>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" style="display: none;">
+        <p>This website uses cookies. Please choose your cookie preferences:</p>
+        <ul>
+            <li><input type="checkbox" id="essentialCheckbox" checked> <strong>Essential:</strong> Required for basic site functions.</li>
+            <li><input type="checkbox" id="performanceCheckbox"> <strong>Performance:</strong> Helps us analyze site usage.</li>
+            <li><input type="checkbox" id="functionalityCheckbox"> <strong>Functionality:</strong> Remembers your preferences.</li>
+            <li><input type="checkbox" id="thirdPartyCheckbox"> <strong>Third-Party:</strong> From external services for analytics and ads.</li>
+        </ul>     
+      
+        <button onclick="acceptCookies()">Accept</button>
+        <button onclick="denyCookies()">Deny</button>
+    </div>
     
-    <body>
-        <div class="menu-icon" id="menuIcon">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+    <!-- Menu Icon -->
+    <div class="menu-icon" id="menuIcon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
 
-        <div class="drawer" id="drawer">
-            <a href="#About-Us" id="aboutUsLink">About Us</a>
-            <a href="privacyp.html" id="privacyPolicyLink">Privacy Policy</a>
-        </div>
-    
-        <h1>The Best Guide to Fully Optimizing Your Windows PC (No Threats, Completely Free!)</h1>
+    <!-- Drawer Menu -->
+    <div class="drawer" id="drawer">
+        <a href="#About-Us" id="aboutUsLink">About Us</a>
+        <a href="privacyp.html" id="privacyPolicyLink">Privacy Policy</a>
+    </div>
 
-<!--display and style using Inline CSS-->
-        <section id="About-Us" style="display:none;">
-            <h2>About Us</h2>
-            <p>This Website will help you fully optimize your Windows experience, the easy way!</p> 
-            <p id="hideAboutUs" style="cursor: pointer; color: #007bff;">Hide</p>
-        </section>        
+    <!-- Main Content -->
+    <h1>The Best Guide to Fully Optimizing Your Windows PC (No Threats, Completely Free!)</h1>
 
-    </body>
+    <!-- About Us Section -->
+    <section id="About-Us" style="display:none;">
+        <h2>About Us</h2>
+        <p>This Website will help you fully optimize your Windows experience, the easy way!</p> 
+        <p id="hideAboutUs" style="cursor: pointer; color: #007bff;">Hide</p>
+    </section>        
 
+    <!-- Home Page Section -->
     <section id="Home-Page">
         <h2>Home</h2>
-        <p>Welcome to our website, your ultimate resource for optimizing your Windows PC. Unlock its full potential with the cutting-edge tools and our expert guides. For added assurance, you can verify our recommendations by visiting <a href="#Cool-Websites">Website links</a>
+        <p>Welcome to our website, your ultimate resource for optimizing your Windows PC. Unlock its full potential with the cutting-edge tools and our expert guides. For added assurance, you can verify our recommendations by visiting <a href="#Cool-Websites">Website links</a></p>
 
-<!-- Step-by-Step Guide -->
+        <!-- Step-by-Step Guide -->
 <div class="step">
     <h2>Step 1: Run "Chris Tech Tool"!</h2>
     <p>To open the optimization tool, simply paste the following code into your "Windows PowerShell":</p>
@@ -131,17 +139,19 @@
         <p class="step-description">We're going to extract again, but this time it is outside the folder (the .exe file).</p>
     </div>
 </div>
-<!--Ends here-->
+    <!-- End of Step-by-Step Guide -->
+        </div>
 
     </section>
+
+    <!-- Navigation Link -->
     <a href="#Home-Page"><strong>Go To Home Page</strong></a>
 
-    <br>
-
+    <!-- Websites Section -->
     <section id="Websites">
     </section>
 
-<!--Styling using Inline CSS -->
+    <!-- Cool Websites Section -->
     <section id="Cool-Websites">
         <h2 id="Custom">Awesome Websites To Visit:</h2>
         <span><strong>Community Help:</strong> 
@@ -155,13 +165,14 @@
         </span><br>        
     </section>
       
-
+    <!-- Footer -->
     <footer>
         ©2023 Placewith5s. All Rights Reserved.
     </footer>
 </body>
 
 </html>
+
 </body>
 
 </html>
