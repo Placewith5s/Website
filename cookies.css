@@ -1,6 +1,5 @@
 /* General Styles */
 body.light-theme {
-    /* Flex container properties */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,29 +8,27 @@ body.light-theme {
     font-family: Arial, sans-serif;
     flex-direction: column;
     background: #f5f5f5;
-    color: #fff;
+    color: #000; /* Text color for light mode */
 }
 
 body.dark-theme {
-    /* Dark mode background and text color */
     background: #333;
-    color: #fff;
+    color: #fff; /* Text color for dark mode */
 }
 
 /* Header Styles */
 header {
-    /* Adjusting order to visually position the header at the top */
     order: -1;
+    color: #ffa500; /* Text color for headers in both light and dark mode */
 }
 
 /* Main Content Styles */
 main {
-    /* Main content styling */
     width: 80%;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: #fff;
-    color: #fff;
+    color: #000; /* Text color for main content in light mode */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -41,15 +38,13 @@ main {
 }
 
 body.dark-theme main {
-    /* Dark mode main content background, text color, and border color */
     background: #2c2c2c;
-    color: #fff;
+    color: #fff; /* Text color for main content in dark mode */
     border-color: #555;
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 601px) {
-    /* Adjust font size and width for smaller screens */
     body {
         font-size: 14px;
     }
@@ -60,7 +55,6 @@ body.dark-theme main {
 }
 
 @media screen and (min-width: 601px) {
-    /* Adjust font size and width for larger screens */
     body {
         font-size: 16px;
     }
@@ -72,47 +66,38 @@ body.dark-theme main {
 
 /* Section Styles */
 section {
-    /* Margin for sections */
     margin-bottom: 20px;
+    color: #000; /* Text color for sections in light mode */
 }
 
-section p {
-    /* Resetting default margin for paragraphs */
-    margin: 0;
+body.dark-theme section {
+    color: #fff; /* Text color for sections in dark mode */
 }
 
 /* Heading Styles */
 h1, h2 {
-    /* Color for headings */
-    color: #ffa500;
+    color: #ffa500; /* Text color for headings in both light and dark mode */
 }
 
 /* List Styles */
 ul {
-    /* Resetting default padding for unordered lists */
     padding: 0;
     list-style: none;
+    color: #000; /* Text color for lists in light mode */
 }
 
-li::before {
-    /* Custom bullet point for list items */
-    content: "\2022";
-    color: #007bff;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+body.dark-theme ul {
+    color: #fff; /* Text color for lists in dark mode */
 }
 
 /* Link Styles */
 .all-about-cookies {
-    /* Styling for the "All About Cookies" link */
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .all-about-cookies:hover {
-    /* Color change on hover for the link */
     color: #4CAF50;
 }
 
@@ -127,12 +112,11 @@ body.dark-theme .all-about-cookies:hover {
 
 /* Dark Mode Footer Styles */
 body.dark-theme footer {
-    /* Adjusting border color for footer in dark mode */
     border-top-color: #444;
 }
 
 /* Light Mode Main Styles */
 body.light-theme main {
-    /* Adjusting border color for main content in light mode */
     border-color: #f8f9fa;
+    color: #000; /* Text color for main content in light mode */
 }
