@@ -1,29 +1,31 @@
+/* Body styles */
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #fff;
+    color: #333;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
+/* Main content styles */
 main {
     flex-grow: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
+/* Dark mode styles */
 @media screen and (prefers-color-scheme: dark) {
     body.dark-theme {
         background-color: #333;
         color: #f8f8f8;
     }
-    
 
     .dark-theme a {
-        color: #ff6f61;
+        color: #007bff;
     }
 
     .dark-theme #Cool-Websites a:hover {
@@ -32,43 +34,38 @@ main {
     }
 
     .dark-theme #Cool-Websites h2 {
-        color: crimson; 
+        color: #dc143c;
     }
 
-    .menu-icon .line {
+    .dark-theme .menu-icon .line {
         background-color: #ccc;
     }
 
-    .drawer {
-        background-color: #444;
+    .dark-theme .drawer {
+        background: #444;
         border: 1px solid #666;
     }
 
-    .drawer a {
+    .dark-theme .drawer a {
         color: #f8f8f8;
     }
 
-    .drawer a:hover {
+    .dark-theme .drawer a:hover {
         background-color: #555;
     }
 
-    footer {
+    .dark-theme footer {
         background-color: #222;
         border-top-color: #888;
         color: #ccc;
     }
 }
 
+/* General link styles */
 a[href^="#"] {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s;
-}
-
-a[href^="#"]:hover {
-    color: #ff6f61;
-    transition: color 0.3s;
-    transform: scale(1.05);
 }
 
 /* Responsive styles for screens less than 600px */
@@ -84,7 +81,6 @@ a[href^="#"]:hover {
 
 /* Responsive styles for screens more than 600px */
 @media screen and (min-width: 601px) {
-    /* Dark mode styles */
     @media (prefers-color-scheme: dark) {
         body.dark-theme main {
             background-color: #333;
@@ -102,22 +98,23 @@ a[href^="#"]:hover {
     }
 }
 
-
+/* Specific styles for Cool Websites section title */
 #Cool-Websites h2 {
     font-size: 1.8em;
-    color: crimson;
+    color: #dc143c;
     margin-bottom: 10px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
 }
 
+/* Specific styles for span in Cool Websites section */
 #Cool-Websites span {
     display: block;
     margin-bottom: 10px;
     color: #007bff;
 }
 
-/* Styling for another tab directing */
+/* Styling for links in the Cool Websites section */
 #Cool-Websites a {
     color: #007bff;
     text-decoration: none;
@@ -129,13 +126,15 @@ a[href^="#"]:hover {
     transition: background-color, color 0.3s;
 }
 
+/* Hover styles for links in the Cool Websites section */
 #Cool-Websites a:hover {
     transform: scale(1.05);
     background-color: #ff6f61;
-    transition: color 0.3s;
-    color: #fff;
+    transition: background-color, color 0.3s;
+    color: #fff !important;
 }
 
+/* Styles for Home Page section */
 #Home-Page {
     background-color: #fff;
     color: #333;
@@ -145,14 +144,40 @@ a[href^="#"]:hover {
     margin-top: 20px;
 }
 
-#privacy-Policy-Link {
+/* Styles for the home page link */
+#Home-Page a {
+    color: #007bff !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Hover styles for the home page link */
+#Home-Page a:hover {
+    transform: scale(1.05);
+    background-color: #ff6f61 !important;
+    color: #fff !important; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+/* Styles for privacy policy link */
+#privacyPolicyLink {
     background-color: #f8f8f8;
     color: #333;
     padding: 20px;
     border-radius: 5px;
-    display: none;
+    display: block;
+    text-decoration: none;
 }
 
+/* Hover styles for privacy policy link */
+#privacyPolicyLink:hover {
+    transform: scale(1.05);
+    background-color: #ff6f61;
+    transition: background-color, color 0.3s;
+    color: #fff !important;
+}
+
+/* Styles for About Us section */
 #About-Us {
     background-color: #f8f8f8;
     color: #333;
@@ -161,6 +186,14 @@ a[href^="#"]:hover {
     display: none;
 }
 
+/* Hover styles for About Us section */
+#About-Us a:hover {
+    transform: scale(1.05);
+    background-color: #007bff;
+    color: #fff !important;
+}
+
+/* Styles for step section */
 .step {
     background-color: #fff;
     padding: 20px;
@@ -170,12 +203,14 @@ a[href^="#"]:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for h2 in step section */
 h2 {
     color: #ff7b00;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
+/* Styles for code in step section */
 .code {
     background-color: #f0f0f0;
     padding: 10px;
@@ -184,11 +219,13 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* Styles for note in step section */
 .note {
     font-style: italic;
     color: #555;
 }
 
+/* Styles for step content section */
 .step-content {
     background-color: #f8f8f8;
     padding: 20px;
@@ -197,6 +234,7 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Styles for step description in step section */
 .step-description {
     font-size: 1.2em;
     line-height: 1.6;
@@ -204,11 +242,12 @@ h2 {
     margin-bottom: 10px;
 }
 
+/* Last child style for step description in step section */
 .step-description:last-child {
     margin-bottom: 0;
 }
 
-/*Styling for the menu icon*/
+/* Styling for the menu icon */
 .menu-icon {
     position: absolute;
     top: 10px;
@@ -222,10 +261,12 @@ h2 {
     backdrop-filter: blur(10px);
 }
 
+/* Hover styles for menu icon line */
 .menu-icon:hover .line {
     background-color: #ccc;
 }
 
+/* Styles for menu icon line */
 .line {
     width: 35px;
     height: 5px;
@@ -233,6 +274,7 @@ h2 {
     margin: 6px 0;
 }
 
+/* Styles for drawer section */
 .drawer {
     display: none;
     position: absolute;
@@ -243,21 +285,85 @@ h2 {
     padding: 10px;
 }
 
+/* Drawer link styles */
 .drawer a {
     display: block;
     margin: 5px 0;
     text-decoration: none;
     color: #000;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+/* Drawer link hover styles */
 .drawer a:hover {
     background-color: #f8f8f8;
+    color: #000;
+    border-color: #007bff;
 }
 
+/* Styles for navigation */
+nav {
+    background-color: #007bff;
+    padding: 10px;
+    position: relative;
+}
+
+/* Navigation link styles */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+/* Navigation link hover styles */
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Styles for extended About Us content */
+.extended-about {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* Styles for extended About Us content paragraphs */
+.extended-about p {
+    margin-bottom: 15px;
+}
+
+/* Styles for extended About Us section title */
+#About-Us h2 {
+    font-size: 2em;
+    color: #ff7b00;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Styles for hideAboutUs section */
 #hideAboutUs {
     color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
+/* Hover styles for extended About Us hide link */
+#About-Us #hideAboutUs:hover {
+    color: #0056b3 !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Light mode styles for the cookie banner */
 #cookie-banner {
     display: none;
     position: fixed;
@@ -270,21 +376,11 @@ h2 {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #fff;
+    color: #000;
 }
 
-#cookie-banner.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
-
-#cookie-banner p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #555;
-}
-
+/* Styles for cookie banner button */
 #cookie-banner button {
     background-color: #007bff;
     color: #fff;
@@ -294,14 +390,40 @@ h2 {
     margin: 0 5px;
 }
 
+/* Hover styles for cookie banner button */
 #cookie-banner button:hover {
     background-color: #0056b3;
 }
 
+/* Dark mode styles for the cookie banner */
+#cookie-banner.dark-mode {
+    background-color: #333;
+    color: #ccc;
+}
+
+/* Styles for cookie banner paragraph */
+#cookie-banner p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Light mode styles for links in the banner */
+#cookie-banner a {
+    color: #007bff;
+}
+
+/* Hover styles for links in the banner */
+#cookie-banner a:hover {
+    color: #0056b3;
+}
+
+/* Light mode styles for the footer */
 footer {
-    border-top: 1px solid black;
+    border-top: 1px solid #888;
     padding: 10px;
     text-align: center;
     margin-top: auto;
-    background-color: #333;
+    background-color: #f9f9f9;
+    color: #333;
 }
