@@ -1,0 +1,60 @@
+/* Reset some default styles */
+body, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Base styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #fffbf6;
+    color: #333; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Styling for the heading */
+h2 {
+    color: #ff4500;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Styles for the main content container */
+.extended-about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Styling for paragraphs */
+.extended-about p {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Styling for bullet points */
+.extended-about p:not(:first-child)::before {
+    content: '\2022';
+    color: #ff4500;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #333;
+    color: #eee;
+}
+
+/* Dark theme styles for the main content container */
+.extended-about.dark-theme {
+    background-color: #222;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    color: #eee;
+}
