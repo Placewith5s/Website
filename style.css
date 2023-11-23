@@ -159,38 +159,34 @@ a[href^="#"] {
     transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Styles for privacy policy link */
-#privacyPolicyLink {
+/* Styles for links */
+#privacyPolicyLink,
+#aboutUsLink {
     background-color: #f8f8f8;
     color: #333;
     padding: 20px;
     border-radius: 5px;
     display: block;
     text-decoration: none;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Hover styles for privacy policy link */
+/* Hover styles for links */
+#privacyPolicyLink:hover,
+#aboutUsLink:hover {
+    transform: scale(1.1);
+    color: #fff !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Additional hover styles for colorful effect */
 #privacyPolicyLink:hover {
-    transform: scale(1.05);
     background-color: #ff6f61;
-    transition: background-color, color 0.3s;
-    color: #fff !important;
 }
 
-/* Styles for About Us section */
-#About-Us {
-    background-color: #f8f8f8;
-    color: #333;
-    padding: 20px;
-    border-radius: 5px;
-    display: none;
-}
-
-/* Hover styles for About Us section */
-#About-Us a:hover {
-    transform: scale(1.05);
-    background-color: #007bff;
-    color: #fff !important;
+#aboutUsLink:hover {
+    background-color: #3498db;
 }
 
 /* Styles for step section */
@@ -324,22 +320,6 @@ nav a:hover {
     color: #ffcc00;
 }
 
-/* Styles for extended About Us content */
-.extended-about {
-    background-color: #fff;
-    color: #333;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    line-height: 1.6;
-}
-
-/* Styles for extended About Us content paragraphs */
-.extended-about p {
-    margin-bottom: 15px;
-}
-
 /* Styles for extended About Us section title */
 #About-Us h2 {
     font-size: 2em;
@@ -347,20 +327,6 @@ nav a:hover {
     margin-bottom: 20px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
-}
-
-/* Styles for hideAboutUs section */
-#hideAboutUs {
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-/* Hover styles for extended About Us hide link */
-#About-Us #hideAboutUs:hover {
-    color: #0056b3 !important;
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 /* Light mode styles for the cookie banner */
