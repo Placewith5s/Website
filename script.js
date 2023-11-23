@@ -1,9 +1,3 @@
-// Function to toggle the display of the 'About Us' section
-function toggleAboutUs() {
-    let aboutUsSection = document.getElementById("About-Us");
-    aboutUsSection.style.display = (aboutUsSection.style.display === "none" || aboutUsSection.style.display === "") ? "block" : "none";
-}
-
 // Function to set the dark theme
 function setDarkTheme() {
     document.body.classList.add('dark-theme');
@@ -45,18 +39,6 @@ document.getElementById('drawer').addEventListener('click', function (event) {
 
     if (event.target.id === 'privacyPolicyLink') {
         document.getElementById('drawer').style.display = 'none';
-    }
-});
-
-// Event listener for the 'Hide' button in the 'About Us' section
-document.addEventListener('DOMContentLoaded', function () {
-    let hideAboutUsButton = document.getElementById('hideAboutUs');
-    let aboutUsSection = document.getElementById('About-Us');
-
-    if (hideAboutUsButton && aboutUsSection) {
-        hideAboutUsButton.addEventListener('click', function () {
-            aboutUsSection.style.display = 'none';
-        });
     }
 });
 
