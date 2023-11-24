@@ -49,11 +49,11 @@ h2 {
 /* Dark theme styles */
 body.dark-theme {
     background-color: #333 !important;
-    color: #eee !important;
+    color: #ddd !important;
 }
 
 .extended-about.dark-theme {
-    background-color: #222 !important;
+    background-color: #333 !important;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1) !important;
-    color: #eee !important;
+    color: #ddd !important;
 }
