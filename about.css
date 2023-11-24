@@ -57,3 +57,35 @@ body.dark-theme {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1) !important;
     color: #ddd !important;
 }
+
+/* Responsive Styles for screens up to 600px */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .extended-about {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Responsive Styles for screens 601px and above */
+@media screen and (min-width: 601px) {
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .extended-about {
+        max-width: 800px;
+        padding: 20px;
+    }
+}
