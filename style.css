@@ -159,36 +159,6 @@ a[href^="#"] {
     transition: background-color 0.3s, color 0.3s; 
 }
 
-/* Styles for links */
-#privacyPolicyLink,
-#aboutUsLink {
-    background-color: #f8f8f8;
-    color: #333;
-    padding: 20px;
-    border-radius: 5px;
-    display: block;
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* Hover styles for links */
-#privacyPolicyLink:hover,
-#aboutUsLink:hover {
-    transform: scale(1.1);
-    color: #fff !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Additional hover styles for colorful effect */
-#privacyPolicyLink:hover {
-    background-color: #ff6f61;
-}
-
-#aboutUsLink:hover {
-    background-color: #3498db;
-}
-
 /* Styles for step section */
 .step {
     background-color: #fff;
