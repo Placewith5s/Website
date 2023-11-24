@@ -1,34 +1,41 @@
-// Wrap your code inside a DOMContentLoaded event listener
-document.addEventListener('DOMContentLoaded', function () {
-    // Function to check and set the theme based on user preference
-    function setTheme() {
-        const body = document.body;
-        const savedDarkMode = localStorage.getItem('dark-mode');
+// Dark mode functions
 
-        if (savedDarkMode === 'true' || body.classList.contains('dark-theme')) {
-            body.classList.add('dark-theme');
-        }
+function setDarkMode() {
+    // Add 'dark-theme' class to the body
+    document.body.classList.add('dark-theme');
+    // Save dark mode preference to local storage
+    localStorage.setItem('dark-mode', 'true');
+}
+
+function setLightMode() {
+    // Remove 'dark-theme' class from the body
+    document.body.classList.remove('dark-theme');
+    // Remove dark mode preference from local storage
+    localStorage.setItem('dark-mode', 'false');
+}
+
+function toggleDarkMode() {
+    // Toggle between dark and light mode
+    const isDarkMode = document.body.classList.contains('dark-theme');
+    if (isDarkMode) {
+        setLightMode();
+    } else {
+        setDarkMode();
     }
+}
 
-    // Check and set the theme on page load
-    setTheme();
+// Check for dark mode preference and set the theme accordingly
+document.addEventListener("DOMContentLoaded", function () {
+    try {
+        // Check if dark mode preference is stored in local storage
+        const storedDarkMode = localStorage.getItem('dark-mode');
 
-    // Function to toggle between light and dark modes
-    function toggleTheme() {
-        const body = document.body;
-
-        // Toggle dark theme class
-        body.classList.toggle('dark-theme');
-
-        // Save user preference in local storage
-        const isDarkTheme = body.classList.contains('dark-theme');
-        localStorage.setItem('dark-mode', isDarkTheme);
-    }
-
-    // Listen for changes in color scheme preference and adjust the theme accordingly
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (e.matches) {
-            setTheme();
+        if (storedDarkMode === 'true') {
+            setDarkMode();
+        } else {
+            setLightMode();
         }
-    });
+    } catch (error) {
+        console.error('An error occurred while checking dark mode preference:', error);
+    }
 });
