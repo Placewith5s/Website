@@ -74,8 +74,24 @@ body.dark-theme {
     }
 }
 
-/* Responsive Styles for screens 601px and above */
-@media screen and (min-width: 601px) {
+/* Responsive Styles for screens 601px to 768px (Tablet) */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .extended-about {
+        max-width: 100%;
+        padding: 15px;
+    }
+}
+
+/* Responsive Styles for screens 769px to 1200px (Desktop) */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
     body {
         font-size: 16px;
     }
@@ -87,5 +103,22 @@ body.dark-theme {
     .extended-about {
         max-width: 800px;
         padding: 20px;
+    }
+}
+
+/* Responsive Styles for screens larger than 1200px */
+@media screen and (min-width: 1201px) {
+    body {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .extended-about {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
     }
 }
