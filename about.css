@@ -9,7 +9,7 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #fffbf6;
-    color: #333; 
+    color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
