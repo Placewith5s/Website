@@ -1,37 +1,49 @@
-// Function to toggle dark mode
-function toggleDarkMode() {
-    // Get the main content section element by ID
+// privacyp.js
+
+// Privacy functions
+const privacyModule = (function () {
+    // Private variables
     let policyMain = document.getElementById("policy");
+    const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Toggle the 'dark-mode' class on the main content section
-    policyMain.classList.toggle("dark-mode");
-}
-
-// Function to handle changes in color scheme
-function handleColorSchemeChange(event) {
-    // Check if the color scheme matches (dark mode)
-    if (event.matches) {
-        // If there's a match, toggle dark mode
-        toggleDarkMode();
+    // Private function to toggle dark mode
+    function toggleDarkMode() {
+        policyMain.classList.toggle("dark-mode");
     }
-}
 
-// Create a media query to detect changes in color scheme preference
-const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    // Private function to handle changes in color scheme
+    function handleColorSchemeChange(event) {
+        if (event.matches) {
+            toggleDarkMode();
+        }
+    }
 
-// Add an event listener for changes in color scheme
-colorSchemeMediaQuery.addEventListener("change", handleColorSchemeChange);
+    // Private function to initialize privacy settings
+    function initializePrivacy() {
+        // Add an event listener for changes in color scheme
+        colorSchemeMediaQuery.addEventListener("change", handleColorSchemeChange);
+
+        // Check the initial color scheme and toggle dark mode if necessary
+        if (colorSchemeMediaQuery.matches) {
+            toggleDarkMode();
+        }
+
+        // Event listener for before unloading the page
+        window.addEventListener("beforeunload", function () {
+            // Remove the event listener for changes in color scheme
+            colorSchemeMediaQuery.removeEventListener("change", handleColorSchemeChange);
+        });
+    }
+
+    // Public interface
+    return {
+        initializePrivacy: initializePrivacy,
+        toggleDarkMode: toggleDarkMode,
+    };
+})();
 
 // Event listener for when the DOM content is fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-    // Check the initial color scheme and toggle dark mode if necessary
-    if (colorSchemeMediaQuery.matches) {
-        toggleDarkMode();
-    }
-});
-
-// Event listener for before unloading the page
-window.addEventListener("beforeunload", function () {
-    // Remove the event listener for changes in color scheme
-    colorSchemeMediaQuery.removeEventListener("change", handleColorSchemeChange);
+document.addEventListener("DOMContentLoaded", function () {
+    // Initialize privacy settings
+    privacyModule.initializePrivacy();
 });
