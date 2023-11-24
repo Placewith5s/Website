@@ -1,99 +1,123 @@
-// Function to set the dark theme
-function setDarkTheme() {
-    document.body.classList.add('dark-theme');
-}
+// Theme manager module
+const ThemeManager = {
+    setDarkTheme: function() {
+        document.body.classList.add('dark-theme');
+    },
 
-// Function to set the light theme
-function setLightTheme() {
-    document.body.classList.remove('dark-theme');
-}
+    setLightTheme: function() {
+        document.body.classList.remove('dark-theme');
+    },
 
-// Check and set the initial theme based on user preference
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setDarkTheme();
-} else {
-    setLightTheme();
-}
+    initializeTheme: function() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            this.setDarkTheme();
+        } else {
+            this.setLightTheme();
+        }
 
-// Listen for changes in color scheme preference and adjust the theme accordingly
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (e.matches) {
-        setDarkTheme();
-    } else {
-        setLightTheme();
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (e.matches) {
+                this.setDarkTheme();
+            } else {
+                this.setLightTheme();
+            }
+        });
     }
-});
+};
 
-// Event listener for the menu icon to toggle the display of the drawer
-document.getElementById('menuIcon').addEventListener('click', function () {
-    let drawer = document.getElementById('drawer');
-    drawer.style.display = (drawer.style.display === 'block') ? 'none' : 'block';
-});
+// Menu manager module
+const MenuManager = {
+    toggleDrawer: function() {
+        let drawer = document.getElementById('drawer');
+        drawer.style.display = (drawer.style.display === 'block') ? 'none' : 'block';
+    },
 
-// Event listener for the drawer to handle clicks on specific links
-document.getElementById('drawer').addEventListener('click', function (event) {
-    if (event.target.id === 'aboutUsLink') {
-        toggleAboutUs();
-        document.getElementById('drawer').style.display = 'none';
+    handleDrawerClick: function(event) {
+        if (event.target.id === 'aboutUsLink') {
+            toggleAboutUs();  // Assuming there's a function toggleAboutUs
+            document.getElementById('drawer').style.display = 'none';
+        }
+
+        if (event.target.id === 'privacyPolicyLink') {
+            document.getElementById('drawer').style.display = 'none';
+        }
+    },
+
+    initializeMenu: function() {
+        document.getElementById('menuIcon').addEventListener('click', () => {
+            this.toggleDrawer();
+        });
+
+        document.getElementById('drawer').addEventListener('click', (event) => {
+            this.handleDrawerClick(event);
+        });
     }
+};
 
-    if (event.target.id === 'privacyPolicyLink') {
-        document.getElementById('drawer').style.display = 'none';
+// Cookie manager module
+const CookieManager = {
+    hasConsent: function() {
+        return localStorage.getItem("cookieConsent") === "true";
+    },
+
+    setConsent: function() {
+        localStorage.setItem("cookieConsent", "true");
+    },
+
+    displayBanner: function() {
+        let cookieBanner = document.getElementById("cookie-banner");
+        cookieBanner.style.display = "block";
+    },
+
+    acceptCookies: function() {
+        this.setConsent();
+        this.setCookiePreferences();
+        let cookieBanner = document.getElementById("cookie-banner");
+        cookieBanner.style.display = "none";
+    },
+
+    denyCookies: function() {
+        // Implement any additional actions you want to perform when denying cookies.
+        let cookieBanner = document.getElementById("cookie-banner");
+        cookieBanner.style.display = "none";
+    },
+
+    setCookiePreferences: function() {
+        this.setCookiePreference('essentialCheckbox', 'essential');
+        this.setCookiePreference('performanceCheckbox', 'performance');
+        this.setCookiePreference('functionalityCheckbox', 'functionality');
+        this.setCookiePreference('thirdPartyCheckbox', 'thirdParty');
+    },
+
+    setCookiePreference: function(checkboxId, cookieType) {
+        let checkbox = document.getElementById(checkboxId);
+
+        if (checkbox && checkbox.checked) {
+            document.cookie = `${cookieType}=true; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/`;
+        } else {
+            document.cookie = `${cookieType}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+        }
+    },
+
+    initializeCookies: function() {
+        document.addEventListener("DOMContentLoaded", () => {
+            if (!this.hasConsent()) {
+                this.displayBanner();
+            }
+        });
     }
-});
+};
 
-// Event listener to check for user consent and display the banner if consent is not given
-document.addEventListener("DOMContentLoaded", function () {
-    if (!hasConsent()) {
-        displayBanner();
-    }
-});
+// Initialize modules
+ThemeManager.initializeTheme();
+MenuManager.initializeMenu();
+CookieManager.initializeCookies();
 
-// Function to check if the user has given consent
-function hasConsent() {
-    return localStorage.getItem("cookieConsent") === "true";
-}
-
-// Function to set user consent
-function setConsent() {
-    localStorage.setItem("cookieConsent", "true");
-}
-
-// Function to display the cookie banner
-function displayBanner() {
-    let cookieBanner = document.getElementById("cookie-banner");
-    cookieBanner.style.display = "block";
-}
-
-// Function to handle the 'Accept' button click, set consent, and hide the cookie banner
+// Inline onclick functions for 'Accept' and 'Deny' buttons
 function acceptCookies() {
-    setConsent();
-    setCookiePreferences();
-    let cookieBanner = document.getElementById("cookie-banner");
-    cookieBanner.style.display = "none";
+    CookieManager.acceptCookies();
 }
 
-// Function to handle the 'Deny' button click and hide the cookie banner
 function denyCookies() {
-    let cookieBanner = document.getElementById("cookie-banner");
-    cookieBanner.style.display = "none";
-}
-
-// Function to set or remove cookies based on user preferences
-function setCookiePreferences() {
-    setCookiePreference('essentialCheckbox', 'essential');
-    setCookiePreference('performanceCheckbox', 'performance');
-    setCookiePreference('functionalityCheckbox', 'functionality');
-    setCookiePreference('thirdPartyCheckbox', 'thirdParty');
-}
-
-// Function to set or remove a specific cookie based on user preference
-function setCookiePreference(checkboxId, cookieType) {
-    let checkbox = document.getElementById(checkboxId);
-
-    if (checkbox && checkbox.checked) {
-        document.cookie = `${cookieType}=true; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/`;
-    } else {
-        document.cookie = `${cookieType}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
-    }
+    CookieManager.denyCookies();
 }
