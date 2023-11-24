@@ -1,0 +1,92 @@
+/* Reset some default styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+}
+
+/* Base styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Define a variable for the link color */
+:root {
+    --link-color: #FF8C00;
+}
+
+/* Styling for the header section with a flexible orange background and white text */
+header {
+    background-color: #FFA500;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styles for the content section with a maximum width, margin, and padding */
+#content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+}
+
+/* Remove list styles and add margin to list items */
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+/* Styling for links with a flexible orange color and no underlines */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* Styling for link hover state with underlines and a different color */
+a:hover {
+    text-decoration: underline;
+    color: #FF4500;
+}
+
+/* Styling for the footer with a light background and different text colors for visibility */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #eee;
+    color: #333;
+}
+
+/* Responsive design for smaller screens */
+@media only screen and (max-width: 600px) {
+    #content {
+        padding: 10px;
+    }
+}
+
+/* Styles for dark mode */
+.dark-theme {
+    /* Dark background and light text for dark mode */
+    background-color: #1a1a1a;
+    color: #ccc;
+}
+
+/* Styles for dark mode in specific elements, if needed */
+.dark-theme a {
+    color: var(--link-color);
+}
+
+/* Footer styles for dark mode */
+.dark-theme footer {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Styling for the title with a different color */
+h1 {
+    color: #FF4500;
+}
