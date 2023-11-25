@@ -2,7 +2,6 @@
 body, h1, p {
     margin: 0;
     padding: 0;
-    color: #ccc;
 }
 
 /* Base styles for the body */
@@ -61,32 +60,75 @@ footer {
     color: #333;
 }
 
-/* Responsive design for smaller screens */
+/* Responsive design for smaller screens on the new page */
 @media only screen and (max-width: 600px) {
     #content {
+        max-width: 100%;
         padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        color: #fff;
+        background-color: #333;
     }
 }
 
-/* Styles for dark mode */
+/* Responsive design for screens 601px to 768px (Tablet) on the new page */
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    #content {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+        color: #fff;
+        background-color: #333;
+    }
+}
+
+/* Responsive design for screens 769px to 1200px (Desktop) on the new page */
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
+    #content {
+        max-width: 800px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+        color: #fff;
+        background-color: #333;
+    }
+}
+
+/* Dark mode styles for the new page */
 .dark-theme {
-    /* Dark background and light text for dark mode */
     background-color: #1a1a1a;
     color: #ccc;
 }
 
-/* Styles for dark mode in specific elements, if needed */
-.dark-theme a {
+.dark-theme h1 {
+    color: #FFA500;
+    background-color: #333;
+}
+
+/* Styles for dark mode in specific elements on the new page, if needed */
+.dark-theme #content {
+    background-color: #333;
+    color: #ccc;
+}
+
+.dark-theme #content a {
     color: var(--link-color);
 }
 
-/* Footer styles for dark mode */
-.dark-theme footer {
-    background-color: #333;
-    color: #fff;
+.dark-theme #content a:hover {
+    text-decoration: underline;
+    color: #FF4500;
 }
 
-/* Styling for the title with a different color */
-h1 {
-    color: #FF4500;
+.dark-theme #content footer {
+    background-color: #333;
+    color: #fff;
 }
