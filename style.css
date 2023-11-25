@@ -68,8 +68,29 @@ a[href^="#"] {
     transition: color 0.3s;
 }
 
-/* Responsive styles for screens less than 600px */
+/* Responsive styles for screens up to 600px */
 @media screen and (max-width: 600px) {
+    main {
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #Cool-Websites {
+        background-color: #f8f8f8;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        margin-top: 15px;
+    }
+}
+
+/* Responsive styles for screens 601px to 768px (Tablet) */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    main {
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
     #Cool-Websites {
         background-color: #f8f8f8;
         padding: 20px;
@@ -79,22 +100,35 @@ a[href^="#"] {
     }
 }
 
-/* Responsive styles for screens more than 600px */
-@media screen and (min-width: 601px) {
-    @media (prefers-color-scheme: dark) {
-        body.dark-theme main {
-            background-color: #333;
-            color: #f8f8f8;
-            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
-        }
+/* Responsive styles for screens 769px to 1200px (Desktop) */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    main {
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    @media (prefers-color-scheme: light) {
-        body.light-theme main {
-            background-color: #fff;
-            color: #333;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
+    #Cool-Websites {
+        background-color: #f8f8f8;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+    }
+}
+
+/* Responsive styles for screens larger than 1200px */
+@media screen and (min-width: 1201px) {
+    main {
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    #Cool-Websites {
+        background-color: #f8f8f8;
+        padding: 40px;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
     }
 }
 
