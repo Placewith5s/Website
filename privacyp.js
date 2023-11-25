@@ -1,4 +1,24 @@
-// privacyp.js
+// Function to update the URL without page refresh
+function updateUrl() {
+    // Get the base URL of the external website
+    var baseUrl = 'http://placewith5s.com/';
+
+    // New URL with the 'page' parameter
+    var newUrl = baseUrl + 'privacyp.html?page=new-privacy-page';
+
+    // Log to the console to check if the function is being called
+    console.log('Updating URL:', newUrl);
+
+    // Update the URL without a page refresh
+    history.pushState({}, document.title, newUrl);
+}
+
+// Call the function when the page loads
+window.onload = function () {
+    updateUrl();
+    // Log to the console to check if the page load event is firing
+    console.log('Page loaded');
+};
 
 // Privacy functions
 const privacyModule = (function () {
