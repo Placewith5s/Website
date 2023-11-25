@@ -1,34 +1,34 @@
-/* General Styles */
+/* General Styles for Second Page */
 body.light-theme {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    font-family: 'Comic Sans MS', Arial, sans-serif; /* Playful font */
+    font-family: 'Comic Sans MS', Arial, sans-serif;
     flex-direction: column;
     background: #f5f5f5;
-    color: #333; /* Text color for light mode */
+    color: #333;
 }
 
 body.dark-theme {
     background: #333;
-    color: #fff; /* Text color for dark mode */
+    color: #fff;
 }
 
-/* Header Styles */
+/* Header Styles for Second Page */
 header {
     order: -1;
-    color: #ff8c00; /* Vibrant orange text color for headers in both light and dark mode */
+    color: #ff8c00;
 }
 
-/* Main Content Styles */
+/* Main Content Styles for Second Page */
 main {
     width: 80%;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: #fff;
-    color: #000; /* Text color for main content in light mode */
+    color: #000;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -39,12 +39,12 @@ main {
 
 body.dark-theme main {
     background: #2c2c2c;
-    color: #fff; /* Text color for main content in dark mode */
+    color: #fff;
     border-color: #555;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 601px) {
+/* Responsive Styles for Second Page */
+@media screen and (max-width: 600px) {
     body {
         font-size: 14px;
     }
@@ -54,9 +54,19 @@ body.dark-theme main {
     }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 601px) and (max-width: 768px) {
     body {
         font-size: 16px;
+    }
+
+    main {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        font-size: 18px;
     }
 
     main {
@@ -64,33 +74,33 @@ body.dark-theme main {
     }
 }
 
-/* Section Styles */
+/* Section Styles for Second Page */
 section {
     margin-bottom: 20px;
-    color: #000; /* Text color for sections in light mode */
+    color: #000;
 }
 
 body.dark-theme section {
-    color: #fff; /* Text color for sections in dark mode */
+    color: #fff;
 }
 
-/* Heading Styles */
+/* Heading Styles for Second Page */
 h1, h2 {
-    color: #ff8c00; /* Vibrant orange text color for headings in both light and dark mode */
+    color: #ff8c00;
 }
 
-/* List Styles */
+/* List Styles for Second Page */
 ul {
     padding: 0;
     list-style: none;
-    color: #000; /* Text color for lists in light mode */
+    color: #000;
 }
 
 body.dark-theme ul {
-    color: #fff; /* Text color for lists in dark mode */
+    color: #fff;
 }
 
-/* Link Styles */
+/* Link Styles for Second Page */
 .all-about-cookies {
     color: #4CAF50;
     text-decoration: none;
@@ -98,25 +108,25 @@ body.dark-theme ul {
 }
 
 .all-about-cookies:hover {
-    color: #ff8c00; /* Vibrant orange on hover */
+    color: #ff8c00;
 }
 
-/* Dark Mode Link Styles */
+/* Dark Mode Link Styles for Second Page */
 body.dark-theme .all-about-cookies {
     color: #4CAF50;
 }
 
 body.dark-theme .all-about-cookies:hover {
-    color: #ff8c00; /* Vibrant orange on hover in dark mode */
+    color: #ff8c00;
 }
 
-/* Dark Mode Footer Styles */
+/* Dark Mode Footer Styles for Second Page */
 body.dark-theme footer {
     border-top-color: #444;
 }
 
-/* Light Mode Main Styles */
+/* Light Mode Main Styles for Second Page */
 body.light-theme main {
     border-color: #f8f9fa;
-    color: #000; /* Text color for main content in light mode */
+    color: #000;
 }
