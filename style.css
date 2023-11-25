@@ -33,7 +33,7 @@ main {
         border: 1px solid #666;
         padding: 10px;
     }
-    
+
     .dark-theme #Cool-Websites a:hover {
         background-color: #555;
         color: #ccc;
@@ -88,6 +88,11 @@ a[href^="#"] {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         margin-top: 15px;
     }
+
+    .menu-icon,
+    .drawer {
+        display: block;
+    }
 }
 
 /* Responsive styles for screens 601px to 768px (Tablet) */
@@ -103,6 +108,36 @@ a[href^="#"] {
         border-radius: 5px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         margin-top: 20px;
+    }
+
+    .menu-icon,
+    .drawer {
+        display: none;
+    }
+
+     /* Show navigation bar on larger screens */
+    .desktop-nav {
+        display: flex;
+        justify-content: center;
+        background-color: #ff8c00;
+        border-bottom: 2px solid #dd5500;
+        padding: 10px;
+        position: relative;
+    }
+
+    /* Style navigation links */
+    .desktop-nav a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+        font-size: 16px;
+    }
+
+    /* Hover styles for navigation links */
+    .desktop-nav a:hover {
+        background-color: #dd5500;
+        color: #fff;
     }
 }
 
@@ -120,6 +155,36 @@ a[href^="#"] {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         margin-top: 30px;
     }
+
+    .menu-icon,
+    .drawer {
+        display: none;
+    }
+
+    /* Show navigation bar on larger screens */
+    .desktop-nav {
+        display: flex;
+        justify-content: center;
+        background-color: #ff8c00;
+        border-bottom: 2px solid #dd5500;
+        padding: 10px;
+        position: relative;
+    }
+
+    /* Style navigation links */
+    .desktop-nav a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+        font-size: 20px;
+    }
+
+    /* Hover styles for navigation links */
+    .desktop-nav a:hover {
+        background-color: #dd5500;
+        color: #fff;
+    }
 }
 
 /* Responsive styles for screens larger than 1200px */
@@ -135,6 +200,36 @@ a[href^="#"] {
         border-radius: 5px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         margin-top: 40px;
+    }
+
+    .menu-icon,
+    .drawer {
+        display: none;
+    }
+
+    /* Show navigation bar on larger screens */
+    .desktop-nav {
+        display: flex;
+        justify-content: center;
+        background-color: #ff8c00;
+        border-bottom: 2px solid #dd5500;
+        padding: 10px;
+        position: relative;
+    }
+
+    /* Style navigation links */
+    .desktop-nav a {
+        color: #333;
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.3s;
+        font-size: 22px;
+    }
+
+    /* Hover styles for navigation links */
+    .desktop-nav a:hover {
+        background-color: #dd5500;
+        color: #fff;
     }
 }
 
@@ -184,20 +279,21 @@ a[href^="#"] {
     margin-top: 20px;
 }
 
-/* Styles for the home page link */
 #Home-Page a {
     color: #007bff !important;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-/* Hover styles for the home page link */
-#Home-Page a:hover {
+/* Hover styles for the home page link within #Home-Page */
+#Home-Page a:hover,
+#Home-Page a:focus {
     transform: scale(1.05);
-    background-color: #ff6f61 !important;
-    color: #fff !important; 
-    transition: background-color 0.3s, color 0.3s; 
+    background-color: #ff6f61;
+    color: #fff !important;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
+
 
 /* Styles for step section */
 .step {
@@ -315,6 +411,8 @@ nav {
     background-color: #007bff;
     padding: 10px;
     position: relative;
+    background-color: transparent; /* Debugger */
+    border: none; /* Debugger */
 }
 
 /* Navigation link styles */
@@ -323,6 +421,8 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     transition: color 0.3s;
+    background-color: transparent; /* Debugger */
+    border: none; /* Debugger */
 }
 
 /* Navigation link hover styles */
@@ -394,6 +494,27 @@ nav a:hover {
     color: #0056b3;
 }
 
+/* Styles for the links after the footer */
+footer:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Styles for the additional links */
+footer:after a {
+    display: inline-block;
+    margin-left: 10px;
+    color: #757575; /* Light gray text */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Hover styles for the additional links */
+footer:after a:hover {
+    color: #ff6f61;
+}
+
 /* Light mode styles for the footer */
 footer {
     border-top: 1px solid #888;
@@ -402,4 +523,21 @@ footer {
     margin-top: auto;
     background-color: #f9f9f9;
     color: #333;
+}
+
+/* Styles for links within the footer in light mode */
+footer {
+    display: flex;
+    flex-direction: column; /* Set the flex direction to column */
+}
+
+footer a {
+    color: #ff7f50 !important; /* Coral Orange */
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-bottom: 10px; /* Add some spacing between the links */
+}
+
+footer a:hover {
+    color: #ff4500 !important; /* Darker Orange (for hover effect) */
 }
