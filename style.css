@@ -28,6 +28,12 @@ main {
         color: #007bff;
     }
 
+    .dark-theme #Cool-Websites {
+        background-color: #333;
+        border: 1px solid #666;
+        padding: 10px;
+    }
+    
     .dark-theme #Cool-Websites a:hover {
         background-color: #555;
         color: #ccc;
