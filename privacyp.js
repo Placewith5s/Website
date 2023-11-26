@@ -1,29 +1,3 @@
-// Function to update the URL without page refresh
-function updateUrl() {
-    // New URL with the 'page' parameter
-    var newUrl = '/Website/privacyp.html?page=new-privacy-page';
-
-    // Log to the console to check if the function is being called
-    console.log('Updating URL:', newUrl);
-
-    // Update the URL without a page refresh
-    history.pushState({}, document.title, newUrl);
-}
-
-// Call the function when the page loads
-window.onload = function () {
-    updateUrl();
-    // Log to the console to check if the page load event is firing
-    console.log('Page loaded');
-};
-
-// Call the function when the page loads
-window.onload = function () {
-    updateUrl();
-    // Log to the console to check if the page load event is firing
-    console.log('Page loaded');
-};
-
 // Privacy functions
 const privacyModule = (function () {
     // Private variables
