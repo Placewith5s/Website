@@ -47,6 +47,11 @@ main {
         background-color: #ccc;
     }
 
+    .dark-theme #cookie-banner {
+        background-color: #333;
+        color: #ccc;
+    }   
+
     .dark-theme .drawer {
         background: #444;
         border: 1px solid #666;
@@ -416,7 +421,6 @@ nav {
     padding: 10px;
     position: relative;
     background-color: transparent; /* Debugger */
-    border: none; /* Debugger */
 }
 
 /* Navigation link styles */
@@ -425,8 +429,6 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     transition: color 0.3s;
-    background-color: transparent; /* Debugger */
-    border: none; /* Debugger */
 }
 
 /* Navigation link hover styles */
@@ -468,17 +470,12 @@ nav a:hover {
     padding: 10px 20px;
     cursor: pointer;
     margin: 0 5px;
+    border-radius: 5px;
 }
 
 /* Hover styles for cookie banner button */
 #cookie-banner button:hover {
     background-color: #0056b3;
-}
-
-/* Dark mode styles for the cookie banner */
-#cookie-banner.dark-mode {
-    background-color: #333;
-    color: #ccc;
 }
 
 /* Styles for cookie banner paragraph */
@@ -491,11 +488,13 @@ nav a:hover {
 /* Light mode styles for links in the banner */
 #cookie-banner a {
     color: #007bff;
+    text-decoration: none;
 }
 
 /* Hover styles for links in the banner */
 #cookie-banner a:hover {
     color: #0056b3;
+    text-decoration: underline;
 }
 
 /* Styles for the links after the footer */
@@ -509,7 +508,7 @@ footer:after {
 footer:after a {
     display: inline-block;
     margin-left: 10px;
-    color: #757575; /* Light gray text */
+    color: #757575;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -532,16 +531,16 @@ footer {
 /* Styles for links within the footer in light mode */
 footer {
     display: flex;
-    flex-direction: column; /* Set the flex direction to column */
+    flex-direction: column;
 }
 
 footer a {
-    color: #ff7f50 !important; /* Coral Orange */
+    color: #ff7f50 !important;
     text-decoration: none;
     transition: color 0.3s;
-    margin-bottom: 10px; /* Add some spacing between the links */
+    margin-bottom: 10px;
 }
 
 footer a:hover {
-    color: #ff4500 !important; /* Darker Orange (for hover effect) */
+    color: #ff4500 !important;
 }
