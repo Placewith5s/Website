@@ -105,6 +105,25 @@ const CookieManager = {
                 this.displayBanner();
             }
         });
+
+        // Event listeners for "Manage Cookies" and "Read Cookie Policy" links in the footer
+        document.getElementById('manageCookiesLink').addEventListener('click', () => {
+            this.manageCookies();
+        });
+
+        document.getElementById('readCookiePolicyLink').addEventListener('click', () => {
+            this.readCookiePolicy();
+        });
+    },
+
+    manageCookies: function() {
+        this.displayBanner(); // Show the cookie banner again
+        openManageCookiesContent();
+    },
+
+    readCookiePolicy: function() {
+        // Navigate to the cookies.html file
+        window.location.href = "cookies.html";
     }
 };
 
@@ -120,4 +139,13 @@ function acceptCookies() {
 
 function denyCookies() {
     CookieManager.denyCookies();
+}
+
+// Manage Cookies Content functions
+function openManageCookiesContent() {
+    document.getElementById('manageCookiesContent').style.display = 'block';
+}
+
+function closeManageCookiesContent() {
+    document.getElementById('manageCookiesContent').style.display = 'none';
 }
