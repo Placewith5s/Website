@@ -10,7 +10,7 @@ function setLightMode() {
     // Remove 'dark-theme' class from the body
     document.body.classList.remove('dark-theme');
     // Remove dark mode preference from local storage
-    localStorage.setItem('dark-mode', 'false');
+    localStorage.removeItem('dark-mode');
 }
 
 function toggleDarkMode() {
