@@ -360,7 +360,7 @@ a[href^="#"] {
 
 /* Styles for links within the Cool Websites section */
 #Cool-Websites a {
-    color: #007bff; /* Light mode link color */
+    color: #007bff;
     text-decoration: none;
     margin: 10px 0;
     display: inline-block;
@@ -373,14 +373,15 @@ a[href^="#"] {
 /* Hover styles for links within the Cool Websites section in light mode */
 #Cool-Websites a:hover {
     transform: scale(1.05);
-    background-color: #333; /* Light mode hover background color */
+    background-color: #333;
     transition: background-color, color 0.3s;
-    color: #fff !important; /* Light mode hover text color */
+    color: #fff !important;
 }
 
 /* Styles for step section */
 .step {
-    background-color: #fff;
+    background-color: #f8f8f8;
+    color: #555;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
