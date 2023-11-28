@@ -26,22 +26,37 @@ h1 {
     padding-bottom: 10px;
 }
 
-#Step-by-Step-Guide {
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+/* Styles for links within the Step-by-Step Guide section */
 #Step-by-Step-Guide a {
     color: #007bff;
     text-decoration: none;
+    position: relative;
     transition: color 0.3s;
 }
 
+/* Underline styles */
+#Step-by-Step-Guide a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+/* Hover styles for links within the Step-by-Step Guide section */
 #Step-by-Step-Guide a:hover {
     color: #0056b3;
+}
+
+/* Hover styles for the underline */
+#Step-by-Step-Guide a:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* Dark mode styles */
@@ -57,11 +72,35 @@ h1 {
 
     .dark-theme #Step-by-Step-Guide a {
         color: #ff8c00;
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    .dark-theme #Step-by-Step-Guide a::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #ff8c00;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
     }
 
     .dark-theme #Step-by-Step-Guide a:hover {
-        background-color: #dd5500;
-        color: #fff;
+        color: #dd5500;
+    }
+
+    .dark-theme #Step-by-Step-Guide a:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .dark-theme #cookie-banner.show-links #Step-by-Step-Guide a {
+        color: transparent;
     }
 
     .dark-theme #Cool-Websites {
@@ -373,7 +412,7 @@ a[href^="#"] {
 /* Hover styles for links within the Cool Websites section in light mode */
 #Cool-Websites a:hover {
     transform: scale(1.05);
-    background-color: #333;
+    background-color: #0056b3;
     transition: background-color, color 0.3s;
     color: #fff !important;
 }
@@ -598,18 +637,14 @@ footer:after a:hover {
 
 /* Light mode styles for the footer */
 footer {
+    display: flex;
+    flex-direction: column;
     border-top: 1px solid #888;
     padding: 10px;
     text-align: center;
     margin-top: auto;
     background-color: #f9f9f9;
     color: #333;
-}
-
-/* Styles for links within the footer in light mode */
-footer {
-    display: flex;
-    flex-direction: column;
 }
 
 footer a {
