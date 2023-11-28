@@ -99,10 +99,6 @@ h1 {
         transform-origin: bottom left;
     }
 
-    .dark-theme #cookie-banner.show-links #Step-by-Step-Guide a {
-        color: transparent;
-    }
-
     .dark-theme #Cool-Websites {
         background-color: #333;
         border: 1px solid #666;
@@ -122,8 +118,17 @@ h1 {
         color: #dc143c;
     }
 
-    .dark-theme .menu-icon .line {
-        background-color: #ccc;
+    .dark-theme .menu-icon {
+        background-color: rgba(40, 40, 40, 0.7);
+        border-color: #ddd;
+    }
+
+    .dark-theme .menu-icon:hover .line {
+        background-color: #999;
+    }
+
+    .dark-theme .line {
+        background-color: #ddd;
     }
 
     .dark-theme #cookie-banner {
@@ -479,10 +484,10 @@ h2 {
     right: 10px;
     cursor: pointer;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #f8f8f8;
     border: 1px solid #fff;
     border-radius: 4px;
-    padding: 5px;
+    padding: 3px;
     backdrop-filter: blur(10px);
 }
 
@@ -493,10 +498,10 @@ h2 {
 
 /* Styles for menu icon line */
 .line {
-    width: 35px;
-    height: 5px;
+    width: 20px;
+    height: 3px;
     background: #000;
-    margin: 6px 0;
+    margin: 4px 0;
 }
 
 /* Styles for drawer section */
