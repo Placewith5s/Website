@@ -1,24 +1,4 @@
-// Function to update the URL without page refresh
-function updateUrl() {
-    // New URL
-    var aboutUrl = '/About/Us';
-
-    // Log to the console to check if the function is being called
-    console.log('Updating URL:', aboutUrl);
-
-    // Update the URL without a page refresh
-    history.pushState({}, document.title, aboutUrl);
-}
-
-// Call the function when the page loads
-window.onload = function () {
-    updateUrl();
-    // Log to the console to check if the page load event is firing
-    console.log('Page loaded');
-};
-
 // Dark mode functions
-
 function setDarkMode() {
     // Add 'dark-theme' class to the body
     document.body.classList.add('dark-theme');
