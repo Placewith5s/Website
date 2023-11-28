@@ -30,6 +30,7 @@ h2 {
     border-radius: 8px;
     color: #333;
     line-height: 1.8;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Styling for paragraphs */
@@ -48,14 +49,14 @@ h2 {
 
 /* Dark theme styles */
 body.dark-theme {
-    background-color: #333 !important;
-    color: #ddd !important;
+    background-color: #333;
+    color: #ddd;
 }
 
-.extended-about.dark-theme {
-    background-color: #333 !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1) !important;
-    color: #ddd !important;
+body.dark-theme .extended-about {
+    background-color: #333;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    color: #ddd;
 }
 
 /* Responsive Styles for screens up to 600px */
