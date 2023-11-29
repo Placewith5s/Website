@@ -66,6 +66,12 @@ h1 {
         color: #f8f8f8;
     }
 
+    .dark-theme [href^="#"] {
+        color: #dc143c;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
     .dark-theme a {
         color: #dd5500;
     }
@@ -110,8 +116,8 @@ h1 {
     }
 
     .dark-theme #Cool-Websites a:hover {
-        background-color: #dd5500;
-        color: #fff;
+        background-color: #cd7f32;
+        color: #333 !important;
     }
 
     .dark-theme #Cool-Websites h2 {
@@ -169,41 +175,29 @@ h1 {
         color: #aaa;
     }
 
-    .dark-theme #cookie-banner a {
-        color: #ff9800;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-
-    .dark-theme #cookie-banner a:hover {
-        color: #e68a00;
-        text-decoration: underline;
-    }
-
-    .dark-theme .desktop-nav {
+    .dark-theme .exclusive-nav {
         display: flex;
         justify-content: center;
-        background-color: #ff8c00;
-        border-bottom: 2px solid #dd5500;
+        background-color: #dc143c;
+        border-bottom: 2px solid #b22222;
         padding: 10px;
         position: relative;
     }
 
-    .dark-theme .desktop-nav a {
+    .dark-theme .exclusive-nav a {
         color: #333;
         text-decoration: none;
         margin: 0 15px;
         transition: color 0.3s;
     }
 
-    .dark-theme .desktop-nav a:hover {
-        background-color: #dd5500;
+    .dark-theme .exclusive-nav a:hover {
+        background-color: #b22222;
         color: #fff;
     }
 
     .dark-theme .drawer {
-        background: #444;
+        background: #dc143c;
         border: 1px solid #666;
     }
 
@@ -220,11 +214,29 @@ h1 {
         border-top-color: #888;
         color: #ccc;
     }
+
+    .dark-theme footer a {
+        color: #ff7f50 !important;
+        text-decoration: none;
+        transition: color 0.3s;
+        margin-bottom: 10px;
+    }
+    
+    .dark-theme footer a:hover {
+        color: #ff4500 !important;
+    }
+}
+
+/* Dark mode debug */
+@media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
+    .exclusive-nav {
+        display: none !important; /* Debugger */
+    }
 }
 
 /* General link styles */
 a[href^="#"] {
-    color: #007bff;
+    color: #0056b3;
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -249,8 +261,8 @@ a[href^="#"] {
         display: block;
     }
 
-    .desktop-nav {
-    display: none;
+    .exclusive-nav {
+        display: none;
     }
 }
 
@@ -274,26 +286,25 @@ a[href^="#"] {
         display: none;
     }
 
-    /* Show navigation bar on larger screens */
-    .desktop-nav {
+    .exclusive-nav {
         display: flex;
         justify-content: center;
-        background-color: #007bff;
-        border-bottom: 2px solid #007bff;
+        background-color: #3F00FF;
+        border-bottom: 2px solid #3F00FF;
         padding: 10px;
         position: relative;
     }
 
-    .desktop-nav a {
+    .exclusive-nav a {
         color: #333;
         text-decoration: none;
         margin: 0 15px;
         transition: color 0.3s;
-        font-size: 22px;
+        font-size: 16px;
     }
 
-    .desktop-nav a:hover {
-        background-color: #0056b3;
+    .exclusive-nav a:hover {
+        background-color: #000080;
         color: #fff;
     }
 }
@@ -318,26 +329,25 @@ a[href^="#"] {
         display: none;
     }
 
-    /* Show navigation bar on larger screens */
-    .desktop-nav {
+    .exclusive-nav {
         display: flex;
         justify-content: center;
-        background-color: #007bff;
-        border-bottom: 2px solid #007bff;
+        background-color: #3F00FF;
+        border-bottom: 2px solid #3F00FF;
         padding: 10px;
         position: relative;
     }
 
-    .desktop-nav a {
+    .exclusive-nav a {
         color: #333;
         text-decoration: none;
         margin: 0 15px;
         transition: color 0.3s;
-        font-size: 22px;
+        font-size: 18px;
     }
 
-    .desktop-nav a:hover {
-        background-color: #0056b3;
+    .exclusive-nav a:hover {
+        background-color: #000080;
         color: #fff;
     }
 }
@@ -362,26 +372,25 @@ a[href^="#"] {
         display: none;
     }
 
-    /* Show navigation bar on larger screens */
-    .desktop-nav {
+    .exclusive-nav {
         display: flex;
         justify-content: center;
-        background-color: #007bff;
-        border-bottom: 2px solid #007bff;
+        background-color: #3F00FF;
+        border-bottom: 2px solid #3F00FF;
         padding: 10px;
         position: relative;
     }
 
-    .desktop-nav a {
+    .exclusive-nav a {
         color: #333;
         text-decoration: none;
         margin: 0 15px;
         transition: color 0.3s;
         font-size: 22px;
     }
-
-    .desktop-nav a:hover {
-        background-color: #0056b3;
+    
+    .exclusive-nav a:hover {
+        background-color: #000080;
         color: #fff;
     }
 }
@@ -417,7 +426,7 @@ a[href^="#"] {
 /* Hover styles for links within the Cool Websites section in light mode */
 #Cool-Websites a:hover {
     transform: scale(1.05);
-    background-color: #0056b3;
+    background-color: #add8e6;
     transition: background-color, color 0.3s;
     color: #fff !important;
 }
@@ -472,11 +481,6 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Last child style for step description in step section */
-.step-description:last-child {
-    margin-bottom: 0;
-}
-
 /* Styling for the menu icon */
 .menu-icon {
     position: absolute;
@@ -485,7 +489,7 @@ h2 {
     cursor: pointer;
     z-index: 2;
     background-color: #f8f8f8;
-    border: 1px solid #fff;
+    border: 1px solid #bbb;
     border-radius: 4px;
     padding: 3px;
     backdrop-filter: blur(10px);
@@ -500,7 +504,7 @@ h2 {
 .line {
     width: 20px;
     height: 3px;
-    background: #000;
+    background: #333;
     margin: 4px 0;
 }
 
@@ -510,7 +514,7 @@ h2 {
     position: absolute;
     top: 50px;
     right: 10px;
-    background: #fff;
+    background: #0056b3;
     border: 1px solid #ccc;
     padding: 10px;
 }
@@ -583,7 +587,7 @@ nav a:hover {
 
 /* Styles for cookie banner button in light mode */
 #cookie-banner button {
-    background-color: #007bff;
+    background-color: #3F00FF;
     color: #fff;
     border: none;
     padding: 12px 24px;
@@ -596,48 +600,13 @@ nav a:hover {
 
 /* Hover styles for cookie banner button in light mode */
 #cookie-banner button:hover {
-    background-color: #0056b3;
+    background-color: #000080;
 }
 
 /* Styles for cookie banner paragraph in light mode */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 18px;
-}
-
-/* Light mode styles for links in the banner */
-#cookie-banner a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-/* Hover styles for links in the banner in light mode */
-#cookie-banner a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Styles for the links after the footer */
-footer:after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-/* Styles for the additional links */
-footer:after a {
-    display: inline-block;
-    margin-left: 10px;
-    color: #757575;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-/* Hover styles for the additional links */
-footer:after a:hover {
-    color: #ff6f61;
 }
 
 /* Light mode styles for the footer */
@@ -653,12 +622,12 @@ footer {
 }
 
 footer a {
-    color: #ff7f50 !important;
+    color: #3F00FF !important;
     text-decoration: none;
     transition: color 0.3s;
     margin-bottom: 10px;
 }
 
 footer a:hover {
-    color: #ff4500 !important;
+    color: #000080 !important;
 }
