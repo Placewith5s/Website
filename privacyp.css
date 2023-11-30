@@ -1,5 +1,4 @@
-/* General Styles for Third Page (privacyp.css) */
-
+/* Body styles */
 body {
     display: flex;
     line-height: 1.6;
@@ -12,32 +11,37 @@ body {
     color: #333;
 }
 
+/* Main content styles */
 main {
     flex-grow: 1;
     padding: 20px;
     border-radius: 5px;
-    max-width: 800px; /* Set a default max-width */
+    max-width: 800px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
 }
 
+/* Light mode styles */
 .light-mode {
     background-color: #ffffff;
     color: #000;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode styles */
 .dark-mode {
     background-color: #333;
     color: #ddd;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode header styles */
 .dark-mode header h1 {
     color: #3498db;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
 
+/* Responsive design for small screens */
 @media screen and (max-width: 600px) {
     main {
         max-width: 100%;
@@ -46,6 +50,7 @@ main {
     }
 }
 
+/* Responsive design for medium screens */
 @media screen and (min-width: 601px) and (max-width: 768px) {
     main {
         max-width: 100%;
@@ -53,6 +58,7 @@ main {
     }
 }
 
+/* Responsive design for large screens */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     main {
         max-width: 800px;
@@ -60,6 +66,7 @@ main {
     }
 }
 
+/* Responsive design for extra-large screens */
 @media screen and (min-width: 1201px) {
     main {
         max-width: 1200px;
@@ -68,6 +75,7 @@ main {
     }
 }
 
+/* Dark theme media query */
 @media (prefers-color-scheme: dark) {
     body.dark-theme {
         background-color: #333;
@@ -82,6 +90,7 @@ main {
     }
 }
 
+/* Light theme media query */
 @media (prefers-color-scheme: light) {
     body.light-theme main {
         background-color: #ffffff;
@@ -96,6 +105,7 @@ main {
     }
 }
 
+/* Header h1 styles */
 header h1 {
     font-size: 2em;
     font-weight: bold;
@@ -104,40 +114,49 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* General h1 styles */
 h1 {
     color: #ff4500;
 }
 
+/* General h2 styles */
 h2 {
     color: #dc143c;
 }
 
+/* Section styles */
 section {
     margin-bottom: 20px;
 }
 
+/* Link styles for contact and cookie pages */
 .contact-link,
 .cookie-page-link {
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* Contact link styles */
 .contact-link {
     color: #3498db;
 }
 
+/* Cookie page link styles */
 .cookie-page-link {
     color: #e74c3c;
 }
 
+/* Hover styles for contact link */
 .contact-link:hover {
     color: #1a5276;
 }
 
+/* Hover styles for cookie page link */
 .cookie-page-link:hover {
     color: #992d22;
 }
 
+/* Footer styles */
 footer {
     border-top: 1px solid #000000;
     padding: 10px;
