@@ -52,7 +52,7 @@ const darkMode = (function () {
     };
 })();
 
-//Check and set dark mode preference when the DOM is fully loaded
+// Check and set dark mode preference when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
     darkMode.checkAndSetDarkModePreference();
 });
