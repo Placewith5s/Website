@@ -1,47 +1,58 @@
-// Privacy functions
-const privacyModule = (function () {
-    // Private variables
-    let policyMain = document.getElementById("policy");
-    const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+// Dark mode functions
+const darkMode = (function () {
+    // Private functions
 
-    // Private function to toggle dark mode
+    // Function to set dark mode by adding 'dark-theme' class to the body
+    function setDarkMode() {
+        document.body.classList.add('dark-theme');
+    }
+
+    // Function to set light mode by removing 'dark-theme' class from the body
+    function setLightMode() {
+        document.body.classList.remove('dark-theme');
+    }
+
+    // Function to toggle between dark and light mode
     function toggleDarkMode() {
-        policyMain.classList.toggle("dark-mode");
-    }
-
-    // Private function to handle changes in color scheme
-    function handleColorSchemeChange(event) {
-        if (event.matches) {
-            toggleDarkMode();
+        const isDarkMode = document.body.classList.contains('dark-theme');
+        if (isDarkMode) {
+            setLightMode();
+        } else {
+            setDarkMode();
         }
     }
 
-    // Private function to initialize privacy settings
-    function initializePrivacy() {
-        // Add an event listener for changes in color scheme
-        colorSchemeMediaQuery.addEventListener("change", handleColorSchemeChange);
+    // Check for dark mode preference and set the theme accordingly
+    function checkAndSetDarkModePreference() {
+        try {
+            if (window.matchMedia) {
+                // Use matchMedia to check the user's preference for dark mode
+                const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-        // Check the initial color scheme and toggle dark mode if necessary
-        if (colorSchemeMediaQuery.matches) {
-            toggleDarkMode();
+                // If the user prefers dark mode, set the dark theme
+                if (darkModeMediaQuery.matches) {
+                    setDarkMode();
+                }
+            } else {
+                // Log an error if matchMedia is not supported
+                console.error('matchMedia is not supported. Dark mode preference may not work.');
+            }
+        } catch (error) {
+            // Log an error if an exception occurs during dark mode preference check
+            console.error('An error occurred while checking dark mode preference:', error);
         }
-
-        // Event listener for before unloading the page
-        window.addEventListener("beforeunload", function () {
-            // Remove the event listener for changes in color scheme
-            colorSchemeMediaQuery.removeEventListener("change", handleColorSchemeChange);
-        });
     }
 
-    // Public interface
+    // Expose public functions
     return {
-        initializePrivacy: initializePrivacy,
-        toggleDarkMode: toggleDarkMode,
+        setDarkMode,
+        setLightMode,
+        toggleDarkMode,
+        checkAndSetDarkModePreference
     };
 })();
 
-// Event listener for when the DOM content is fully loaded
+// Check and set dark mode preference when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-    // Initialize privacy settings
-    privacyModule.initializePrivacy();
+    darkMode.checkAndSetDarkModePreference();
 });
