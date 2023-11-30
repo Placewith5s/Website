@@ -1,6 +1,5 @@
-/* General Styles for Second Page (cookies.css) */
-
-body.light-theme {
+/* Body styles */
+body {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,18 +11,19 @@ body.light-theme {
     color: #333;
 }
 
+/* Dark theme styles */
 body.dark-theme {
     background: #333;
     color: #fff;
 }
 
-/* Header Styles for Second Page */
+/* Header styles */
 header {
     order: -1;
     color: #ff8c00;
 }
 
-/* Main Content Styles for Second Page */
+/* Main content styles */
 main {
     width: 80%;
     padding: 20px;
@@ -38,13 +38,14 @@ main {
     margin: 20px;
 }
 
+/* Dark theme main styles */
 body.dark-theme main {
     background: #2c2c2c;
     color: #fff;
     border-color: #555;
 }
 
-/* Responsive Styles for Second Page */
+/* Responsive design for small screens */
 @media screen and (max-width: 600px) {
     body {
         font-size: 14px;
@@ -55,6 +56,7 @@ body.dark-theme main {
     }
 }
 
+/* Responsive design for medium screens */
 @media screen and (min-width: 601px) and (max-width: 768px) {
     body {
         font-size: 15px;
@@ -65,6 +67,7 @@ body.dark-theme main {
     }
 }
 
+/* Responsive design for large screens */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     body {
         font-size: 16px;
@@ -75,6 +78,7 @@ body.dark-theme main {
     }
 }
 
+/* Responsive design for extra-large screens */
 @media screen and (min-width: 1201px) {
     body {
         font-size: 18px;
@@ -87,59 +91,63 @@ body.dark-theme main {
     }
 }
 
-/* Section Styles for Second Page */
+/* Section styles */
 section {
     margin-bottom: 20px;
     color: #000;
 }
 
+/* Dark theme section styles */
 body.dark-theme section {
     color: #fff;
 }
 
-/* Heading Styles for Second Page */
+/* Heading styles */
 h1, h2 {
     color: #ff8c00;
 }
 
-/* List Styles for Second Page */
+/* List styles */
 ul {
     padding: 0;
     list-style: none;
     color: #000;
 }
 
+/* Dark theme list styles */
 body.dark-theme ul {
     color: #fff;
 }
 
-/* Link Styles for Second Page */
+/* Link styles for "All About Cookies" */
 .all-about-cookies {
     color: #4CAF50;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
+/* Hover styles for "All About Cookies" link */
 .all-about-cookies:hover {
     color: #ff8c00;
 }
 
-/* Dark Mode Link Styles for Second Page */
+/* Dark theme styles for "All About Cookies" link */
 body.dark-theme .all-about-cookies {
     color: #4CAF50;
 }
 
+/* Dark theme hover styles for "All About Cookies" link */
 body.dark-theme .all-about-cookies:hover {
     color: #ff8c00;
 }
 
-/* Dark Mode Footer Styles for Second Page */
+/* Dark theme styles for footer */
 body.dark-theme footer {
     border-top-color: #444;
 }
 
-/* Light Mode Main Styles for Second Page */
-body.light-theme main {
+/* Additional styles for main */
+body main {
     border-color: #f8f9fa;
     color: #000;
 }
