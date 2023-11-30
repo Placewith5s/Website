@@ -621,6 +621,7 @@ footer {
     color: #333;
 }
 
+/* Light mode styles for links within the footer */
 footer a {
     color: #3F00FF !important;
     text-decoration: none;
@@ -628,6 +629,7 @@ footer a {
     margin-bottom: 10px;
 }
 
+/* Light mode styles for hovering links within the footer */
 footer a:hover {
     color: #000080 !important;
 }
