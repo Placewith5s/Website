@@ -61,7 +61,7 @@ const MenuManager = {
 
     handleDrawerClick: function(event) {
         if (event.target.id === 'aboutUsLink') {
-            toggleAboutUs();  // Assuming there's a function toggleAboutUs
+            toggleAboutUs(); 
             document.getElementById('drawer').style.display = 'none';
         }
 
@@ -104,7 +104,6 @@ const CookieManager = {
     },
 
     denyCookies: function() {
-        // Implement any additional actions you want to perform when denying cookies.
         let cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "none";
     },
@@ -127,20 +126,24 @@ const CookieManager = {
     },
 
     initializeCookies: function() {
-        document.addEventListener("DOMContentLoaded", () => {
-            if (!this.hasConsent()) {
-                this.displayBanner();
-            }
-        });
+        try {
+            document.addEventListener("DOMContentLoaded", () => {
+                if (!this.hasConsent()) {
+                    this.displayBanner();
+                }
+            });
 
-        // Event listeners for "Manage Cookies" and "Read Cookie Policy" links in the footer
-        document.getElementById('manageCookiesLink').addEventListener('click', () => {
-            this.manageCookies();
-        });
+            // Event listeners for "Manage Cookies" and "Read Cookie Policy" links in the footer
+            document.getElementById('manageCookiesLink').addEventListener('click', () => {
+                this.manageCookies();
+            });
 
-        document.getElementById('readCookiePolicyLink').addEventListener('click', () => {
-            this.readCookiePolicy();
-        });
+            document.getElementById('readCookiePolicyLink').addEventListener('click', () => {
+                this.readCookiePolicy();
+            });
+        } catch (error) {
+            console.error('An error occurred during cookie initialization:', error);
+        }
     },
 
     manageCookies: function() {
@@ -151,13 +154,6 @@ const CookieManager = {
     readCookiePolicy: function() {
         // Navigate to the cookies.html file
         window.location.href = "cookies.html";
-    }
-};
-
-// Placeholder for ThemeManager (replace it with your actual implementation)
-const ThemeManager = {
-    initializeTheme: function() {
-        // Your initialization logic here
     }
 };
 
