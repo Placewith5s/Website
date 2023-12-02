@@ -1,32 +1,22 @@
-// Dark mode functions
 const darkMode = (function () {
-    // Private functions
-
-    // Function to set dark mode by adding 'dark-theme' class to the body
+    // Private functions for dark mode
     function setDarkMode() {
         document.body.classList.add('dark-theme');
     }
 
-    // Function to set light mode by removing 'dark-theme' class from the body
     function setLightMode() {
         document.body.classList.remove('dark-theme');
     }
 
-    // Function to toggle between dark and light mode
     function toggleDarkMode() {
         const isDarkMode = document.body.classList.contains('dark-theme');
-        if (isDarkMode) {
-            setLightMode();
-        } else {
-            setDarkMode();
-        }
+        isDarkMode ? setLightMode() : setDarkMode();
     }
 
     // Check for dark mode preference and set the theme accordingly
     function checkAndSetDarkModePreference() {
         try {
             if (window.matchMedia) {
-                // Use matchMedia to check the user's preference for dark mode
                 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
                 // If the user prefers dark mode, set the dark theme
@@ -52,71 +42,84 @@ const darkMode = (function () {
     };
 })();
 
-// Menu manager module
 const MenuManager = {
+    // Toggle the drawer's display
     toggleDrawer: function() {
-        let drawer = document.getElementById('drawer');
+        const drawer = document.getElementById('drawer');
         drawer.style.display = (drawer.style.display === 'block') ? 'none' : 'block';
     },
 
+    // Handle clicks on links within the drawer
     handleDrawerClick: function(event) {
+        const drawer = document.getElementById('drawer');
+
         if (event.target.id === 'aboutUsLink') {
-            toggleAboutUs(); 
-            document.getElementById('drawer').style.display = 'none';
+            toggleAboutUs(); // Assuming toggleAboutUs is defined elsewhere
+            drawer.style.display = 'none';
         }
 
         if (event.target.id === 'privacyPolicyLink') {
-            document.getElementById('drawer').style.display = 'none';
+            drawer.style.display = 'none';
         }
     },
 
+    // Initialize menu-related event listeners
     initializeMenu: function() {
-        document.getElementById('menuIcon').addEventListener('click', () => {
+        const menuIcon = document.getElementById('menuIcon');
+        menuIcon.addEventListener('click', () => {
             this.toggleDrawer();
         });
 
-        document.getElementById('drawer').addEventListener('click', (event) => {
+        const drawer = document.getElementById('drawer');
+        drawer.addEventListener('click', (event) => {
             this.handleDrawerClick(event);
         });
     }
 };
 
-// Cookie manager module
 const CookieManager = {
+    consentKey: "cookieConsent",
+
+    // Check if the user has given consent for cookies
     hasConsent: function() {
-        return localStorage.getItem("cookieConsent") === "true";
+        return localStorage.getItem(this.consentKey) === "true";
     },
 
+    // Set user consent for cookies
     setConsent: function() {
-        localStorage.setItem("cookieConsent", "true");
+        localStorage.setItem(this.consentKey, "true");
     },
 
+    // Display the cookie banner
     displayBanner: function() {
-        let cookieBanner = document.getElementById("cookie-banner");
+        const cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "block";
     },
 
+    // Accept cookies and update preferences
     acceptCookies: function() {
         this.setConsent();
         this.setCookiePreferences();
-        let cookieBanner = document.getElementById("cookie-banner");
+        const cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "none";
     },
 
+    // Deny cookies
     denyCookies: function() {
-        let cookieBanner = document.getElementById("cookie-banner");
+        const cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "none";
     },
 
+    // Set cookie preferences based on checkboxes
     setCookiePreferences: function() {
-        this.setCookiePreference('essentialCheckbox', 'essential');
-        this.setCookiePreference('performanceCheckbox', 'performance');
-        this.setCookiePreference('functionalityCheckbox', 'functionality');
-        this.setCookiePreference('thirdPartyCheckbox', 'thirdParty');
+        const checkboxes = ['essentialCheckbox', 'performanceCheckbox', 'functionalityCheckbox', 'thirdPartyCheckbox'];
+        checkboxes.forEach(checkboxId => this.setCookiePreference(checkboxId));
     },
 
-    setCookiePreference: function(checkboxId, cookieType) {
-        let checkbox = document.getElementById(checkboxId);
+    // Set individual cookie preference
+    setCookiePreference: function(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const cookieType = checkboxId.replace('Checkbox', '');
 
         if (checkbox && checkbox.checked) {
             document.cookie = `${cookieType}=true; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/`;
@@ -125,20 +128,29 @@ const CookieManager = {
         }
     },
 
+    // Check consent on page load and take appropriate actions
+    checkConsentOnLoad: function() {
+        try {
+            this.hasConsent() ? this.setCookiePreferences() : this.displayBanner();
+        } catch (error) {
+            console.error('An error occurred while checking consent on page load:', error);
+        }
+    },
+
+    // Initialize cookie-related functionalities
     initializeCookies: function() {
         try {
             document.addEventListener("DOMContentLoaded", () => {
-                if (!this.hasConsent()) {
-                    this.displayBanner();
-                }
+                this.checkConsentOnLoad();
             });
 
-            // Event listeners for "Manage Cookies" and "Read Cookie Policy" links in the footer
-            document.getElementById('manageCookiesLink').addEventListener('click', () => {
+            const manageCookiesLink = document.getElementById('manageCookiesLink');
+            manageCookiesLink.addEventListener('click', () => {
                 this.manageCookies();
             });
 
-            document.getElementById('readCookiePolicyLink').addEventListener('click', () => {
+            const readCookiePolicyLink = document.getElementById('readCookiePolicyLink');
+            readCookiePolicyLink.addEventListener('click', () => {
                 this.readCookiePolicy();
             });
         } catch (error) {
@@ -146,15 +158,16 @@ const CookieManager = {
         }
     },
 
+    // Show cookie banner and open manage cookies content
     manageCookies: function() {
-        this.displayBanner(); // Show the cookie banner again
+        this.displayBanner();
         openManageCookiesContent();
     },
 
+    // Navigate to the cookies.html file
     readCookiePolicy: function() {
-        // Navigate to the cookies.html file
         window.location.href = "cookies.html";
-    }
+    },
 };
 
 // Initialize modules
