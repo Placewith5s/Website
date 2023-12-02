@@ -28,7 +28,7 @@ Navigate through the guides and resources to optimize your Windows system. Each 
 - Step-by-step Optimization Guides
 - Recommended Optimization Tools
 
-## Demo Link
+## Link
 
 [Visit placewith5s.com](https://www.placewith5s.com)
 
@@ -42,7 +42,7 @@ Learn about how we use cookies by visiting our [Cookies](/cookies.md) page.
 
 ## Credits
 
-- [Me(placewith5s)](https://github.com/placewith5s)
+- [Me](https://github.com/placewith5s)
 
 ## License
 
