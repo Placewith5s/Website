@@ -42,7 +42,7 @@ Learn about how we use cookies by visiting our [Cookies](/cookies.md) page.
 
 ## Credits
 
-- [Me](https://github.com/placewith5s)
+- [Me (placewith5s)](https://github.com/placewith5s)
 
 ## License
 
