@@ -53,6 +53,10 @@ body.dark-theme {
     color: #ddd;
 }
 
+body.dark-theme h2 {
+    color: #ff8c00;
+}
+
 body.dark-theme .extended-about {
     background-color: #333;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
