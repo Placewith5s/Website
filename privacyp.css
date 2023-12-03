@@ -7,8 +7,6 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
-    color: #333;
 }
 
 /* Main content styles */
@@ -22,21 +20,21 @@ main {
 }
 
 /* Light mode styles */
-.light-mode {
+body.light-theme {
     background-color: #ffffff;
     color: #000;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Dark mode styles */
-.dark-mode {
+body.dark-theme {
     background-color: #333;
     color: #ddd;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Dark mode header styles */
-.dark-mode header h1 {
+body.dark-theme header h1 {
     color: #3498db;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
 }
@@ -77,13 +75,13 @@ main {
 
 /* Dark theme media query */
 @media (prefers-color-scheme: dark) {
-    body.dark-theme {
+    body {
         background-color: #333;
         color: #ffffff;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    body.dark-theme footer {
+    footer {
         background-color: #2c3e50;
         color: #ffffff;
         filter: brightness(0.8);
@@ -92,13 +90,13 @@ main {
 
 /* Light theme media query */
 @media (prefers-color-scheme: light) {
-    body.light-theme main {
+    body {
         background-color: #ffffff;
         color: #000;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-    body.light-theme footer {
+    footer {
         background-color: #ff6347;
         color: #ffffff;
         filter: brightness(0.8);
@@ -162,7 +160,4 @@ footer {
     padding: 10px;
     text-align: center;
     margin-top: auto;
-    background-color: #2c3e50;
-    color: #ffffff;
-    filter: brightness(0.8);
 }
