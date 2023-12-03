@@ -30,6 +30,7 @@ header {
     padding: 20px;
     background-color: #eee;
     color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Remove list styles and add margin to list items */
@@ -104,32 +105,32 @@ footer {
 }
 
 /* Dark mode styles for the new page */
-.dark-theme {
+body.dark-theme {
     background-color: #1a1a1a;
     color: #ccc;
 }
 
-.dark-theme h1 {
+body.dark-theme h1 {
     color: #FFA500;
     background-color: #333;
 }
 
 /* Styles for dark mode in specific elements on the new page */
-.dark-theme #content {
+body.dark-theme #content {
     background-color: #333;
     color: #ccc;
 }
 
-.dark-theme #content a {
+body.dark-theme #content a {
     color: var(--link-color);
 }
 
-.dark-theme #content a:hover {
+body.dark-theme #content a:hover {
     text-decoration: underline;
     color: #FF4500;
 }
 
-.dark-theme #content footer {
+body.dark-theme #content footer {
     background-color: #333;
     color: #fff;
 }
