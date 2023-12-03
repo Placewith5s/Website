@@ -61,6 +61,14 @@ const MenuManager = {
         if (event.target.id === 'privacyPolicyLink') {
             drawer.style.display = 'none';
         }
+
+        if (event.target.id === 'cookiesLink') {
+            drawer.style.display = 'none';
+        }
+
+        if (event.target.id === 'faqLink') {
+            drawer.style.display = 'none';
+        }
     },
 
     // Initialize menu-related event listeners
@@ -151,29 +159,30 @@ const CookieManager = {
                 this.checkDenyOnLoad();
             });
 
+            const readCookiePolicyLink = document.getElementById('readCookiePolicyLink');
+            readCookiePolicyLink.addEventListener('click', () => {
+                this.readCookiePolicy();
+            });
+
             const manageCookiesLink = document.getElementById('manageCookiesLink');
             manageCookiesLink.addEventListener('click', () => {
                 this.manageCookies();
             });
 
-            const readCookiePolicyLink = document.getElementById('readCookiePolicyLink');
-            readCookiePolicyLink.addEventListener('click', () => {
-                this.readCookiePolicy();
-            });
         } catch (error) {
             console.error('An error occurred during cookie initialization:', error);
         }
+    },
+
+    // Navigate to the cookies.html file
+    readCookiePolicy: function() {
+        window.location.href = "cookies.html";
     },
 
     // Show cookie banner and open manage cookies content
     manageCookies: function() {
         this.displayBanner();
         openManageCookiesContent();
-    },
-
-    // Navigate to the cookies.html file
-    readCookiePolicy: function() {
-        window.location.href = "cookies.html";
     },
 };
 
