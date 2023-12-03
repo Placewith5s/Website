@@ -108,6 +108,9 @@ const CookieManager = {
     denyCookies: function() {
         const cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "none";
+
+        // Save the deny action in local storage
+        localStorage.setItem("denyCookies", "true");
     },
 
     // Set cookie preferences based on checkboxes
@@ -128,10 +131,14 @@ const CookieManager = {
         }
     },
 
-    // Check consent on page load and take appropriate actions
-    checkConsentOnLoad: function() {
+    // Check deny action on page load and take appropriate actions
+    checkDenyOnLoad: function() {
         try {
-            this.hasConsent() ? this.setCookiePreferences() : this.displayBanner();
+            if (localStorage.getItem("denyCookies") === "true") {
+                this.denyCookies();
+            } else {
+                this.hasConsent() ? this.setCookiePreferences() : this.displayBanner();
+            }
         } catch (error) {
             console.error('An error occurred while checking consent on page load:', error);
         }
@@ -141,7 +148,7 @@ const CookieManager = {
     initializeCookies: function() {
         try {
             document.addEventListener("DOMContentLoaded", () => {
-                this.checkConsentOnLoad();
+                this.checkDenyOnLoad();
             });
 
             const manageCookiesLink = document.getElementById('manageCookiesLink');
@@ -192,3 +199,8 @@ function openManageCookiesContent() {
 function closeManageCookiesContent() {
     document.getElementById('manageCookiesContent').style.display = 'none';
 }
+
+// Check deny action on page load
+document.addEventListener("DOMContentLoaded", () => {
+    CookieManager.checkDenyOnLoad();
+});
