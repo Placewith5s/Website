@@ -147,7 +147,7 @@ body.dark-theme footer {
 }
 
 /* Additional styles for main */
-body main {
-    border-color: #f8f9fa;
-    color: #000;
+body.dark-theme main {
+    border-color: #555;
+    color: #fff;
 }
