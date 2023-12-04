@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
     margin: 0;
     padding: 0;
     background-color: #fce8e6;
@@ -76,9 +76,9 @@ header {
     margin-bottom: 20px;
 }
 
-/* Visible Title styles */
+/* Header styles */
 header h1 {
-    color: #c0392b;
+    color: #e74c3c;
     font-size: 1.8em;
 }
 
@@ -105,7 +105,7 @@ section {
 
 /* Heading styles */
 section h2 {
-    color: #c0392b;
+    color: #e74c3c;
 }
 
 /* Footer styles */
