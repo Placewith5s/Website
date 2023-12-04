@@ -127,7 +127,7 @@ h1 {
     .dark-theme #Cool-Websites span {
         display: block;
         margin-bottom: 10px;
-        color: #ff8c00 !important;
+        color: #ff8c00;
     }
 
     .dark-theme .menu-icon {
@@ -410,13 +410,6 @@ a[href^="#"] {
     padding-bottom: 5px;
 }
 
-/* Specific styles for span in Cool Websites section */
-#Cool-Websites span {
-    display: block;
-    margin-bottom: 10px;
-    color: #0056b3 !important; 
-}
-
 /* Styles for links within the Cool Websites section */
 #Cool-Websites a {
     color: #007bff;
@@ -435,6 +428,13 @@ a[href^="#"] {
     background-color: #add8e6;
     transition: background-color, color 0.3s;
     color: #fff !important;
+}
+
+/* Specific styles for span in Cool Websites section */
+#Cool-Websites span {
+    display: block;
+    margin-bottom: 10px;
+    color: #0056b3;
 }
 
 /* Styles for step section */
