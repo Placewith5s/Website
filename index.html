@@ -27,18 +27,30 @@
 
 <body>
     <!-- Cookie Banner -->
-    <div id="cookie-banner" style="display: none;">
-        <p>This website uses cookies. Please choose your cookie preferences:</p>
-        <ul>
-            <li><input type="checkbox" id="essentialCheckbox" checked> <strong>Essential:</strong> Required for basic site functions.</li>
-            <li><input type="checkbox" id="performanceCheckbox"> <strong>Performance:</strong> Helps us analyze site usage.</li>
-            <li><input type="checkbox" id="functionalityCheckbox"> <strong>Functionality:</strong> Remembers your preferences.</li>
-            <li><input type="checkbox" id="thirdPartyCheckbox"> <strong>Third-Party:</strong> From external services for analytics and ads.</li>
-        </ul>     
-      
-        <button onclick="acceptCookies()">Accept</button>
-        <button onclick="denyCookies()">Deny</button>
-    </div>
+<div id="cookie-banner" style="display: none;">
+    <p>This website uses cookies to enhance your experience. Please review and manage your cookie preferences:</p>
+    <ul>
+        <li>
+            <input type="radio" id="essentialRadio" name="cookiePreference" checked>
+            <label for="essentialRadio"><strong>Essential:</strong> Required for basic site functions.</label>
+        </li>
+        <li>
+            <input type="radio" id="performanceRadio" name="cookiePreference">
+            <label for="performanceRadio"><strong>Performance:</strong> Helps us analyze site usage.</label>
+        </li>
+        <li>
+            <input type="radio" id="functionalityRadio" name="cookiePreference">
+            <label for="functionalityRadio"><strong>Functionality:</strong> Remembers your preferences.</label>
+        </li>
+        <li>
+            <input type="radio" id="thirdPartyRadio" name="cookiePreference">
+            <label for="thirdPartyRadio"><strong>Third-Party:</strong> From external services for analytics and ads.</label>
+        </li>
+    </ul>
+
+    <button onclick="saveCookiePreferences()">Save Preferences</button>
+    <button onclick="closeCookieBanner()">Close</button>
+</div>
     
       <!-- Navigation -->
     <nav class="exclusive-nav">
