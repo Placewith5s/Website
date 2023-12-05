@@ -44,13 +44,13 @@ const darkMode = (function () {
 
 const MenuManager = {
     // Toggle the drawer's display
-    toggleDrawer: function() {
+    toggleDrawer: function () {
         const drawer = document.getElementById('drawer');
         drawer.style.display = (drawer.style.display === 'block') ? 'none' : 'block';
     },
 
     // Handle clicks on links within the drawer
-    handleDrawerClick: function(event) {
+    handleDrawerClick: function (event) {
         const drawer = document.getElementById('drawer');
 
         if (event.target.id === 'aboutUsLink') {
@@ -72,7 +72,7 @@ const MenuManager = {
     },
 
     // Initialize menu-related event listeners
-    initializeMenu: function() {
+    initializeMenu: function () {
         const menuIcon = document.getElementById('menuIcon');
         menuIcon.addEventListener('click', () => {
             this.toggleDrawer();
@@ -89,31 +89,48 @@ const CookieManager = {
     consentKey: "cookieConsent",
 
     // Check if the user has given consent for cookies
-    hasConsent: function() {
+    hasConsent: function () {
         return localStorage.getItem(this.consentKey) === "true";
     },
 
     // Set user consent for cookies
-    setConsent: function() {
+    setConsent: function () {
         localStorage.setItem(this.consentKey, "true");
     },
 
     // Display the cookie banner
-    displayBanner: function() {
+    displayBanner: function () {
         const cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "block";
     },
 
-    // Accept cookies and update preferences
-    acceptCookies: function() {
-        this.setConsent();
-        this.setCookiePreferences();
+    // Save user preferences for cookies based on radio button selection
+    saveCookiePreferences: function () {
+        const selectedPreference = document.querySelector('input[name="cookiePreference"]:checked');
+
+        if (selectedPreference) {
+            // Save the selected preference in localStorage or perform other actions as needed
+            const preferenceValue = selectedPreference.id.replace('Radio', '');
+            localStorage.setItem(this.consentKey, preferenceValue);
+        }
+
+        // Close the cookie banner after saving preferences
+        this.closeCookieBanner();
+    },
+
+    // Close the cookie banner
+    closeCookieBanner: function () {
         const cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "none";
     },
 
+    // Accept cookies and update preferences
+    acceptCookies: function () {
+        this.saveCookiePreferences();
+    },
+
     // Deny cookies
-    denyCookies: function() {
+    denyCookies: function () {
         const cookieBanner = document.getElementById("cookie-banner");
         cookieBanner.style.display = "none";
 
@@ -121,26 +138,22 @@ const CookieManager = {
         localStorage.setItem("denyCookies", "true");
     },
 
-    // Set cookie preferences based on checkboxes
-    setCookiePreferences: function() {
-        const checkboxes = ['essentialCheckbox', 'performanceCheckbox', 'functionalityCheckbox', 'thirdPartyCheckbox'];
-        checkboxes.forEach(checkboxId => this.setCookiePreference(checkboxId));
-    },
+    // Set cookie preferences based on saved preferences
+    setCookiePreferences: function () {
+        const savedPreference = localStorage.getItem(this.consentKey);
 
-    // Set individual cookie preference
-    setCookiePreference: function(checkboxId) {
-        const checkbox = document.getElementById(checkboxId);
-        const cookieType = checkboxId.replace('Checkbox', '');
+        if (savedPreference) {
+            const radioId = savedPreference + 'Radio';
+            const radio = document.getElementById(radioId);
 
-        if (checkbox && checkbox.checked) {
-            document.cookie = `${cookieType}=true; expires=Thu, 01 Jan 2030 00:00:00 UTC; path=/`;
-        } else {
-            document.cookie = `${cookieType}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+            if (radio) {
+                radio.checked = true;
+            }
         }
     },
 
     // Check deny action on page load and take appropriate actions
-    checkDenyOnLoad: function() {
+    checkDenyOnLoad: function () {
         try {
             if (localStorage.getItem("denyCookies") === "true") {
                 this.denyCookies();
@@ -153,7 +166,7 @@ const CookieManager = {
     },
 
     // Initialize cookie-related functionalities
-    initializeCookies: function() {
+    initializeCookies: function () {
         try {
             document.addEventListener("DOMContentLoaded", () => {
                 this.checkDenyOnLoad();
@@ -175,12 +188,12 @@ const CookieManager = {
     },
 
     // Navigate to the cookies.html file
-    readCookiePolicy: function() {
+    readCookiePolicy: function () {
         window.location.href = "cookies.html";
     },
 
     // Show cookie banner and open manage cookies content
-    manageCookies: function() {
+    manageCookies: function () {
         this.displayBanner();
         openManageCookiesContent();
     },
