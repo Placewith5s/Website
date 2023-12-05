@@ -8,7 +8,7 @@
     <title>Get higher FPS</title>
     <meta name="description" content="Placewith5s - Optimizing Windows PC for Windows Users. Find tips and tools to enhance your Windows experience.">
     <meta name="keywords" content="placewith5s, optimizing Windows PC, Windows tips, Windows tools, enhance Windows experience">
-
+    
     <!-- Open Graph meta tags for social media -->
     <meta property="og:title" content="Get higher FPS - Placewith5s">
     <meta property="og:description" content="Optimizing Windows PC for Windows Users. Find tips and tools to enhance your Windows experience.">
@@ -26,32 +26,20 @@
 </head>
 
 <body>
-<!-- Cookie Banner -->
-<div id="cookie-banner" style="display: none;">
-    <p>This website uses cookies to enhance your experience. Please review and manage your cookie preferences:</p>
-    <ul>
-        <li>
-            <input type="checkbox" id="essentialCheckbox" class="cookieCheckbox" checked>
-            <label for="essentialCheckbox"><strong>Essential:</strong> Required for basic site functions.</label>
-        </li>
-        <li>
-            <input type="checkbox" id="performanceCheckbox" class="cookieCheckbox">
-            <label for="performanceCheckbox"><strong>Performance:</strong> Helps us analyze site usage.</label>
-        </li>
-        <li>
-            <input type="checkbox" id="functionalityCheckbox" class="cookieCheckbox">
-            <label for="functionalityCheckbox"><strong>Functionality:</strong> Remembers your preferences.</label>
-        </li>
-        <li>
-            <input type="checkbox" id="thirdPartyCheckbox" class="cookieCheckbox">
-            <label for="thirdPartyCheckbox"><strong>Third-Party:</strong> From external services for analytics and ads.</label>
-        </li>
-    </ul>
-
-    <button onclick="CookieManager.saveCookiePreferences()">Save Preferences</button>
-    <button onclick="CookieManager.closeCookieBanner()">Close</button>
-</div>
-
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" style="display: none;">
+        <p>This website uses cookies. Please choose your cookie preferences:</p>
+        <ul>
+            <li><input type="checkbox" id="essentialCheckbox" checked> <strong>Essential:</strong> Required for basic site functions.</li>
+            <li><input type="checkbox" id="performanceCheckbox"> <strong>Performance:</strong> Helps us analyze site usage.</li>
+            <li><input type="checkbox" id="functionalityCheckbox"> <strong>Functionality:</strong> Remembers your preferences.</li>
+            <li><input type="checkbox" id="thirdPartyCheckbox"> <strong>Third-Party:</strong> From external services for analytics and ads.</li>
+        </ul>     
+      
+        <button onclick="acceptCookies()">Save Preferences</button>
+        <button onclick="denyCookies()">Close</button>
+    </div>
+    
       <!-- Navigation -->
     <nav class="exclusive-nav">
         <a href="about.html">About Us</a>
@@ -234,7 +222,7 @@
     <a href="privacyp.html">Privacy Policy</a>
     <a href="cookies.html" id="readCookiePolicyLink">About Cookies</a>
     <a href="aboutSoftware.html">About Software</a>
-    <a href="#" onclick="CookieManager.manageCookies()">Manage Cookies</a>
+    <a href="#" id="manageCookiesLink">Manage Cookies</a>
 </footer>
 
     <script src="script.js" defer></script>
