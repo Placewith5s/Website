@@ -54,7 +54,8 @@ const MenuManager = {
         const drawer = document.getElementById('drawer');
 
         if (event.target.id === 'aboutUsLink') {
-            toggleAboutUs(); // Assuming toggleAboutUs is defined elsewhere
+            // Assuming toggleAboutUs is defined elsewhere
+            toggleAboutUs(); // Make sure this function is defined
             drawer.style.display = 'none';
         }
 
@@ -195,7 +196,8 @@ const CookieManager = {
     // Show cookie banner and open manage cookies content
     manageCookies: function () {
         this.displayBanner();
-        openManageCookiesContent();
+        // Assuming openManageCookiesContent is defined elsewhere
+        openManageCookiesContent(); // Make sure this function is defined
     },
 };
 
