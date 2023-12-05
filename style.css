@@ -28,7 +28,7 @@ h1 {
 
 /* Styles for links within the Step-by-Step Guide section */
 #Step-by-Step-Guide a {
-    color: #007bff;
+    color: #000080;
     text-decoration: none;
     position: relative;
     transition: color 0.3s;
@@ -42,7 +42,7 @@ h1 {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #007bff;
+    background-color: #000080;
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
@@ -295,8 +295,8 @@ a[href^="#"] {
     .exclusive-nav {
         display: flex;
         justify-content: center;
-        background-color: #3F00FF;
-        border-bottom: 2px solid #3F00FF;
+        background-color: #3f00ff;
+        border-bottom: 2px solid #3f00ff;
         padding: 10px;
         position: relative;
     }
@@ -338,8 +338,8 @@ a[href^="#"] {
     .exclusive-nav {
         display: flex;
         justify-content: center;
-        background-color: #3F00FF;
-        border-bottom: 2px solid #3F00FF;
+        background-color: #3f00ff;
+        border-bottom: 2px solid #3f00ff;
         padding: 10px;
         position: relative;
     }
@@ -381,8 +381,8 @@ a[href^="#"] {
     .exclusive-nav {
         display: flex;
         justify-content: center;
-        background-color: #3F00FF;
-        border-bottom: 2px solid #3F00FF;
+        background-color: #3f00ff;
+        border-bottom: 2px solid #3f00ff;
         padding: 10px;
         position: relative;
     }
@@ -412,7 +412,7 @@ a[href^="#"] {
 
 /* Styles for links within the Cool Websites section */
 #Cool-Websites a {
-    color: #007bff;
+    color: #000080;
     text-decoration: none;
     margin: 10px 0;
     display: inline-block;
@@ -593,7 +593,7 @@ nav a:hover {
 
 /* Styles for cookie banner button in light mode */
 #cookie-banner button {
-    background-color: #3F00FF;
+    background-color: #3f00ff;
     color: #fff;
     border: none;
     padding: 12px 24px;
@@ -629,7 +629,7 @@ footer {
 
 /* Light mode styles for links within the footer */
 footer a {
-    color: #3F00FF !important;
+    color: #3f00ff !important;
     text-decoration: none;
     transition: color 0.3s;
     margin-bottom: 10px;
