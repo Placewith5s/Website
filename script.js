@@ -105,15 +105,19 @@ const CookieManager = {
         cookieBanner.style.display = "block";
     },
 
-    // Save user preferences for cookies based on radio button selection
+    // Save user preferences for cookies based on checkbox selection
     saveCookiePreferences: function () {
-        const selectedPreference = document.querySelector('input[name="cookiePreference"]:checked');
+        const checkboxElements = document.querySelectorAll('.cookieCheckbox');
+        const selectedPreferences = [];
 
-        if (selectedPreference) {
-            // Save the selected preference in localStorage or perform other actions as needed
-            const preferenceValue = selectedPreference.id.replace('Radio', '');
-            localStorage.setItem(this.consentKey, preferenceValue);
-        }
+        checkboxElements.forEach((checkbox) => {
+            if (checkbox.checked) {
+                selectedPreferences.push(checkbox.id.replace('Checkbox', ''));
+            }
+        });
+
+        // Save the selected preferences in localStorage or perform other actions as needed
+        localStorage.setItem(this.consentKey, JSON.stringify(selectedPreferences));
 
         // Close the cookie banner after saving preferences
         this.closeCookieBanner();
@@ -141,15 +145,19 @@ const CookieManager = {
 
     // Set cookie preferences based on saved preferences
     setCookiePreferences: function () {
-        const savedPreference = localStorage.getItem(this.consentKey);
+        const savedPreferencesJSON = localStorage.getItem(this.consentKey);
 
-        if (savedPreference) {
-            const radioId = savedPreference + 'Radio';
-            const radio = document.getElementById(radioId);
+        if (savedPreferencesJSON) {
+            const savedPreferences = JSON.parse(savedPreferencesJSON);
 
-            if (radio) {
-                radio.checked = true;
-            }
+            savedPreferences.forEach((preference) => {
+                const checkboxId = preference + 'Checkbox';
+                const checkbox = document.getElementById(checkboxId);
+
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+            });
         }
     },
 
@@ -173,20 +181,14 @@ const CookieManager = {
                 this.checkDenyOnLoad();
             });
 
-            const readCookiePolicyLink = document.getElementById('readCookiePolicyLink');
-            readCookiePolicyLink.addEventListener('click', () => {
-                this.readCookiePolicy();
-            });
-
-            const manageCookiesLink = document.getElementById('manageCookiesLink');
-            manageCookiesLink.addEventListener('click', () => {
-                this.manageCookies();
-            });
+            // Other event listeners...
 
         } catch (error) {
             console.error('An error occurred during cookie initialization:', error);
         }
     },
+
+};
 
     // Navigate to the cookies.html file
     readCookiePolicy: function () {
