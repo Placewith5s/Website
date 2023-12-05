@@ -26,33 +26,32 @@
 </head>
 
 <body>
-    <!-- Cookie Banner -->
-    <div id="cookie-banner" style="display: none;">
-        <p>This website uses cookies to enhance your experience. Please review and manage your cookie preferences:</p>
-        <ul>
-            <li>
-                <input type="checkbox" id="essentialCheckbox" class="cookieCheckbox" checked>
-                <label for="essentialCheckbox"><strong>Essential:</strong> Required for basic site functions.</label>
-            </li>
-            <li>
-                <input type="checkbox" id="performanceCheckbox" class="cookieCheckbox">
-                <label for="performanceCheckbox"><strong>Performance:</strong> Helps us analyze site usage.</label>
-            </li>
-            <li>
-                <input type="checkbox" id="functionalityCheckbox" class="cookieCheckbox">
-                <label for="functionalityCheckbox"><strong>Functionality:</strong> Remembers your preferences.</label>
-            </li>
-            <li>
-                <input type="checkbox" id="thirdPartyCheckbox" class="cookieCheckbox">
-                <label for="thirdPartyCheckbox"><strong>Third-Party:</strong> From external services for analytics and ads.</label>
-            </li>
-        </ul>
-        
-    <button onclick="saveCookiePreferences()">Save Preferences</button>
-    <button onclick="closeCookieBanner()">Close</button>
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="display: none;">
+    <p>This website uses cookies to enhance your experience. Please review and manage your cookie preferences:</p>
+    <ul>
+        <li>
+            <input type="checkbox" id="essentialCheckbox" class="cookieCheckbox" checked>
+            <label for="essentialCheckbox"><strong>Essential:</strong> Required for basic site functions.</label>
+        </li>
+        <li>
+            <input type="checkbox" id="performanceCheckbox" class="cookieCheckbox">
+            <label for="performanceCheckbox"><strong>Performance:</strong> Helps us analyze site usage.</label>
+        </li>
+        <li>
+            <input type="checkbox" id="functionalityCheckbox" class="cookieCheckbox">
+            <label for="functionalityCheckbox"><strong>Functionality:</strong> Remembers your preferences.</label>
+        </li>
+        <li>
+            <input type="checkbox" id="thirdPartyCheckbox" class="cookieCheckbox">
+            <label for="thirdPartyCheckbox"><strong>Third-Party:</strong> From external services for analytics and ads.</label>
+        </li>
+    </ul>
+
+    <button onclick="CookieManager.saveCookiePreferences()">Save Preferences</button>
+    <button onclick="CookieManager.closeCookieBanner()">Close</button>
 </div>
 
-    
       <!-- Navigation -->
     <nav class="exclusive-nav">
         <a href="about.html">About Us</a>
