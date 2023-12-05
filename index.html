@@ -27,30 +27,31 @@
 
 <body>
     <!-- Cookie Banner -->
-<div id="cookie-banner" style="display: none;">
-    <p>This website uses cookies to enhance your experience. Please review and manage your cookie preferences:</p>
-    <ul>
-        <li>
-            <input type="radio" id="essentialRadio" name="cookiePreference" checked>
-            <label for="essentialRadio"><strong>Essential:</strong> Required for basic site functions.</label>
-        </li>
-        <li>
-            <input type="radio" id="performanceRadio" name="cookiePreference">
-            <label for="performanceRadio"><strong>Performance:</strong> Helps us analyze site usage.</label>
-        </li>
-        <li>
-            <input type="radio" id="functionalityRadio" name="cookiePreference">
-            <label for="functionalityRadio"><strong>Functionality:</strong> Remembers your preferences.</label>
-        </li>
-        <li>
-            <input type="radio" id="thirdPartyRadio" name="cookiePreference">
-            <label for="thirdPartyRadio"><strong>Third-Party:</strong> From external services for analytics and ads.</label>
-        </li>
-    </ul>
-
+    <div id="cookie-banner" style="display: none;">
+        <p>This website uses cookies to enhance your experience. Please review and manage your cookie preferences:</p>
+        <ul>
+            <li>
+                <input type="checkbox" id="essentialCheckbox" class="cookieCheckbox" checked>
+                <label for="essentialCheckbox"><strong>Essential:</strong> Required for basic site functions.</label>
+            </li>
+            <li>
+                <input type="checkbox" id="performanceCheckbox" class="cookieCheckbox">
+                <label for="performanceCheckbox"><strong>Performance:</strong> Helps us analyze site usage.</label>
+            </li>
+            <li>
+                <input type="checkbox" id="functionalityCheckbox" class="cookieCheckbox">
+                <label for="functionalityCheckbox"><strong>Functionality:</strong> Remembers your preferences.</label>
+            </li>
+            <li>
+                <input type="checkbox" id="thirdPartyCheckbox" class="cookieCheckbox">
+                <label for="thirdPartyCheckbox"><strong>Third-Party:</strong> From external services for analytics and ads.</label>
+            </li>
+        </ul>
+        
     <button onclick="saveCookiePreferences()">Save Preferences</button>
     <button onclick="closeCookieBanner()">Close</button>
 </div>
+
     
       <!-- Navigation -->
     <nav class="exclusive-nav">
