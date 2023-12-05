@@ -181,26 +181,25 @@ const CookieManager = {
                 this.checkDenyOnLoad();
             });
 
-            // Other event listeners...
-
         } catch (error) {
             console.error('An error occurred during cookie initialization:', error);
         }
     },
 };
 
-    // Navigate to the cookies.html file
-    readCookiePolicy: function () {
-        window.location.href = "cookies.html";
-    },
-
-    // Show cookie banner and open manage cookies content
-    manageCookies: function () {
-        this.displayBanner();
-        // Assuming openManageCookiesContent is defined elsewhere
-        openManageCookiesContent(); // Make sure this function is defined
-    },
+// Navigate to the cookies.html file
+CookieManager.readCookiePolicy = function () {
+    window.location.href = "cookies.html";
 };
+
+// Show cookie banner and open manage cookies content
+CookieManager.manageCookies = function () {
+    this.displayBanner();
+    openManageCookiesContent();
+};
+
+})();
+
 
 // Initialize modules
 darkMode.checkAndSetDarkModePreference();
