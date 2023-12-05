@@ -189,9 +189,6 @@ const CookieManager = {
     },
 };
 
-// Call the initialization function
-CookieManager.initializeCookies();
-
     // Navigate to the cookies.html file
     readCookiePolicy: function () {
         window.location.href = "cookies.html";
