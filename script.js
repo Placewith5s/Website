@@ -187,8 +187,10 @@ const CookieManager = {
             console.error('An error occurred during cookie initialization:', error);
         }
     },
-
 };
+
+// Call the initialization function
+CookieManager.initializeCookies();
 
     // Navigate to the cookies.html file
     readCookiePolicy: function () {
