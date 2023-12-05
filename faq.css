@@ -24,6 +24,8 @@ body.dark-theme main {
 }
 
 body.dark-theme #search-bar {
+    background-color: #1f1f1f;
+    color: #fff;
     border: 2px solid #000080;
 }
 
@@ -121,6 +123,7 @@ main {
     border: 2px solid #3f00ff;
     border-radius: 5px;
     margin-bottom: 20px;
+    background-color: #fce8e6;
     transition: border-color 0.3s ease;
 }
 
