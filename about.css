@@ -47,22 +47,6 @@ h2 {
     margin-right: 10px;
 }
 
-/* Dark theme styles */
-body.dark-theme {
-    background-color: #333;
-    color: #ddd;
-}
-
-body.dark-theme h2 {
-    color: #ff8c00;
-}
-
-body.dark-theme .extended-about {
-    background-color: #333;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    color: #ddd;
-}
-
 /* Responsive Styles for screens up to 600px */
 @media screen and (max-width: 600px) {
     body {
@@ -90,7 +74,7 @@ body.dark-theme .extended-about {
     }
 
     .extended-about {
-        max-width: 100%;
+        max-width: 250px;
         padding: 15px;
     }
 }
@@ -106,7 +90,7 @@ body.dark-theme .extended-about {
     }
 
     .extended-about {
-        max-width: 800px;
+        max-width: 700px;
         padding: 20px;
     }
 }
@@ -122,7 +106,7 @@ body.dark-theme .extended-about {
     }
 
     .extended-about {
-        max-width: 1200px;
+        max-width: 1050px;
         margin: 0 auto;
         padding: 30px;
     }
@@ -134,4 +118,20 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark-theme h2 {
+    color: #ff8c00;
+}
+
+body.dark-theme .extended-about {
+    background-color: #333;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    color: #ddd;
 }
