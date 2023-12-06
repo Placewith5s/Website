@@ -11,12 +11,6 @@ body {
     color: #333;
 }
 
-/* Dark theme styles */
-body.dark-theme {
-    background: #333;
-    color: #fff;
-}
-
 /* Header styles */
 header {
     order: -1;
@@ -36,13 +30,6 @@ main {
     align-items: center;
     text-align: left;
     margin: 20px;
-}
-
-/* Dark theme main styles */
-body.dark-theme main {
-    background: #2c2c2c;
-    color: #fff;
-    border-color: #555;
 }
 
 /* Responsive design for small screens */
@@ -97,11 +84,6 @@ section {
     color: #000;
 }
 
-/* Dark theme section styles */
-body.dark-theme section {
-    color: #fff;
-}
-
 /* Heading styles */
 h1, h2 {
     color: #ff8c00;
@@ -114,11 +96,6 @@ ul {
     color: #000;
 }
 
-/* Dark theme list styles */
-body.dark-theme ul {
-    color: #fff;
-}
-
 /* Link styles for "All About Cookies" */
 .all-about-cookies {
     color: #4CAF50;
@@ -129,6 +106,29 @@ body.dark-theme ul {
 /* Hover styles for "All About Cookies" link */
 .all-about-cookies:hover {
     color: #ff8c00;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background: #333;
+    color: #fff;
+}
+
+/* Dark theme main styles */
+body.dark-theme main {
+    background: #2c2c2c;
+    color: #fff;
+    border-color: #555;
+}
+
+/* Dark theme list styles */
+body.dark-theme ul {
+    color: #fff;
+}
+
+/* Dark theme section styles */
+body.dark-theme section {
+    color: #fff;
 }
 
 /* Dark theme styles for "All About Cookies" link */
@@ -144,10 +144,4 @@ body.dark-theme .all-about-cookies:hover {
 /* Dark theme styles for footer */
 body.dark-theme footer {
     border-top-color: #444;
-}
-
-/* Additional styles for main */
-body.dark-theme main {
-    border-color: #555;
-    color: #fff;
 }
