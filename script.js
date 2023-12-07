@@ -129,62 +129,66 @@ const MenuManager = {
     }
 };
 
+// CookieManager object manages user consent, preferences, and cookie-related functionalities
 const CookieManager = {
     consentKey: "cookieConsent",
 
     // Check if the user has given consent for cookies
-    hasConsent: function() {
+    hasConsent() {
         return localStorage.getItem(this.consentKey) === "true";
     },
 
     // Set user consent for cookies
-    setConsent: function() {
+    setConsent() {
         localStorage.setItem(this.consentKey, "true");
     },
 
     // Display the cookie banner
-    displayBanner: function() {
+    displayBanner() {
         const cookieBanner = document.getElementById("cookie-banner");
-        cookieBanner.style.display = "block";
+        if (cookieBanner) {
+            cookieBanner.style.display = "block";
+        }
     },
 
     // Accept cookies and update preferences
-    acceptCookies: function() {
+    acceptCookies() {
         this.setConsent();
         this.setCookiePreferences();
         const cookieBanner = document.getElementById("cookie-banner");
-        cookieBanner.style.display = "none";
+        if (cookieBanner) {
+            cookieBanner.style.display = "none";
+        }
     },
 
     // Deny cookies
-    denyCookies: function() {
+    denyCookies() {
         const cookieBanner = document.getElementById("cookie-banner");
-        cookieBanner.style.display = "none";
+        if (cookieBanner) {
+            cookieBanner.style.display = "none";
+        }
 
         // Save the deny action in local storage
         localStorage.setItem("denyCookies", "true");
     },
 
     // Set cookie preferences based on checkboxes
-    setCookiePreferences: function() {
+    setCookiePreferences() {
         const checkboxes = ['essentialCheckbox', 'performanceCheckbox', 'functionalityCheckbox', 'thirdPartyCheckbox'];
         checkboxes.forEach(checkboxId => this.setCookiePreference(checkboxId));
     },
 
     // Set individual cookie preference
-    setCookiePreference: function(checkboxId) {
+    setCookiePreference(checkboxId) {
         const checkbox = document.getElementById(checkboxId);
-        const cookieType = checkboxId.replace('Checkbox', '');
-
-        if (checkbox && checkbox.checked) {
-            document.cookie = `${cookieType}=true; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/`;
-        } else {
-            document.cookie = `${cookieType}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+        if (checkbox) {
+            const cookieType = checkboxId.replace('Checkbox', '');
+            document.cookie = `${cookieType}=${checkbox.checked ? 'true' : ''}; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/`;
         }
     },
 
     // Check deny action on page load and take appropriate actions
-    checkDenyOnLoad: function() {
+    checkDenyOnLoad() {
         try {
             if (localStorage.getItem("denyCookies") === "true") {
                 this.denyCookies();
@@ -197,16 +201,19 @@ const CookieManager = {
     },
 
     // Initialize cookie-related functionalities
-    initializeCookies: function() {
+    initializeCookies() {
         try {
             document.addEventListener("DOMContentLoaded", () => {
                 this.checkDenyOnLoad();
             });
 
+            // Add click event listener to the 'Manage Cookies' link
             const manageCookiesLink = document.getElementById('manageCookiesLink');
-            manageCookiesLink.addEventListener('click', () => {
-                this.manageCookies();
-            });
+            if (manageCookiesLink) {
+                manageCookiesLink.addEventListener('click', () => {
+                    this.manageCookies();
+                });
+            }
 
         } catch (error) {
             console.error('An error occurred during cookie initialization:', error);
@@ -214,16 +221,11 @@ const CookieManager = {
     },
 
     // Show cookie banner and open manage cookies content
-    manageCookies: function() {
+    manageCookies() {
         this.displayBanner();
         openManageCookiesContent();
     },
 };
-
-// Initialize modules
-darkMode.checkAndSetDarkModePreference();
-MenuManager.initializeMenu();
-CookieManager.initializeCookies();
 
 // Inline onclick functions for 'Accept' and 'Deny' buttons
 function acceptCookies() {
@@ -236,14 +238,25 @@ function denyCookies() {
 
 // Manage Cookies Content functions
 function openManageCookiesContent() {
-    document.getElementById('manageCookiesContent').style.display = 'block';
+    const manageCookiesContent = document.getElementById('manageCookiesContent');
+    if (manageCookiesContent) {
+        manageCookiesContent.style.display = 'block';
+    }
 }
 
 function closeManageCookiesContent() {
-    document.getElementById('manageCookiesContent').style.display = 'none';
+    const manageCookiesContent = document.getElementById('manageCookiesContent');
+    if (manageCookiesContent) {
+        manageCookiesContent.style.display = 'none';
+    }
 }
 
 // Check deny action on page load
 document.addEventListener("DOMContentLoaded", () => {
     CookieManager.checkDenyOnLoad();
 });
+
+// Initialize modules (Assuming darkMode and MenuManager are properly defined and implemented.)
+darkMode.checkAndSetDarkModePreference();
+MenuManager.initializeMenu();
+CookieManager.initializeCookies();
