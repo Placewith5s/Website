@@ -25,48 +25,31 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Settings.png" alt="Flaticon Icon">
 
-    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe"></script>
 </head>
 
 <body>
     <form id="myForm">
-        <!-- Your form fields go here -->
-
         <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe"></div>
-
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
 
     <script>
-        var recaptchaWidget;
+        async function submitForm() {
+            try {
+                const token = await grecaptcha.execute('6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe', { action: 'submit' });
+                const formData = new FormData();
+                formData.append('g-recaptcha-response', token);
 
-        function onRecaptchaLoad() {
-            recaptchaWidget = grecaptcha.render('recaptcha', {
-                'sitekey': '6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe',
-                'callback': verifyCallback, // Remove this line if not needed
-                // You can add other parameters here as needed
-            });
-        }
+                const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+                    method: 'POST',
+                    body: formData
+                });
 
-        function submitForm() {
-            var recaptchaResponse = grecaptcha.getResponse(recaptchaWidget);
+                const data = await response.json();
 
-            if (recaptchaResponse.length === 0) {
-                alert("Please complete the reCAPTCHA.");
-                return;
-            }
-
-            var formData = new FormData(document.getElementById('myForm'));
-            formData.append('g-recaptcha-response', recaptchaResponse);
-
-            fetch('https://www.google.com/recaptcha/api/siteverify', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
                 if (data.success) {
-                    var score = data.score;
+                    const score = data.score;
 
                     if (score >= 0.5) {
                         alert("Form processed successfully.");
@@ -76,15 +59,10 @@
                 } else {
                     alert("reCAPTCHA verification failed. Please try again. Error codes: " + data['error-codes'].join(', '));
                 }
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Error:', error);
                 alert("An error occurred during form processing. Please try again later.");
-            });
-        }
-
-        function verifyCallback(response) {
-            // Handle the reCAPTCHA response if needed
+            }
         }
     </script>
 
