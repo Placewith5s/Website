@@ -25,59 +25,67 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Settings.png" alt="Flaticon Icon">
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoad&render=explicit" async defer></script>
 </head>
 
 <body>
     <form id="myForm">
         <!-- Your form fields go here -->
     
-        <div class="g-recaptcha" data-sitekey="6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe"></div>
+        <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe"></div>
     
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
     
     <script>
-    function submitForm() {
-        var recaptchaResponse = grecaptcha.getResponse();
+        var recaptchaWidget;
     
-        if (recaptchaResponse.length === 0) {
-            alert("Please complete the reCAPTCHA.");
-            return;
+        function onRecaptchaLoad() {
+            recaptchaWidget = grecaptcha.render('recaptcha', {
+                'sitekey': '6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe',
+                'callback': verifyCallback,
+                // You can add other parameters here as needed
+            });
         }
     
-        // Include your form data here
-        var formData = new FormData(document.getElementById('myForm'));
-    
-        // Append the reCAPTCHA response
-        formData.append('g-recaptcha-response', recaptchaResponse);
-    
-        fetch('https://www.google.com/recaptcha/api/siteverify', {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                var score = data.score;
-    
-                // You can adjust the threshold as needed. For example, consider a score of 0.7 as a good threshold.
-                if (score >= 0.7) {
-                    // The action is likely performed by a human, proceed with your form processing logic
-                    alert("Form processed successfully.");
-                } else {
-                    // The action may be suspicious, handle accordingly (e.g., show an additional verification step)
-                    alert("Suspicious activity detected. Additional verification required.");
-                }
-            } else {
-                // reCAPTCHA verification failed, handle accordingly (e.g., show an error message to the user)
-                alert("reCAPTCHA verification failed. Please try again.");
+        function submitForm() {
+            var recaptchaResponse = grecaptcha.getResponse(recaptchaWidget);
+        
+            if (recaptchaResponse.length === 0) {
+                alert("Please complete the reCAPTCHA.");
+                return;
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-    }
+    
+            var formData = new FormData(document.getElementById('myForm'));
+            formData.append('g-recaptcha-response', recaptchaResponse);
+    
+            fetch('https://www.google.com/recaptcha/api/siteverify', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    var score = data.score;
+    
+                    if (score >= 0.5) {
+                        alert("Form processed successfully.");
+                    } else {
+                        alert("Suspicious activity detected. Additional verification required.");
+                    }
+                } else {
+                    alert("reCAPTCHA verification failed. Please try again. Error codes: " + data['error-codes'].join(', '));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("An error occurred during form processing. Please try again later.");
+            });
+        }
+    
+        function verifyCallback(response) {
+            // Handle the reCAPTCHA response if needed
+        }
     </script>
 
     <!-- Loading Screen -->
