@@ -11,12 +11,6 @@ body {
     color: #333;
 }
 
-/* Header styles */
-header {
-    order: -1;
-    color: #ff8c00;
-}
-
 /* Main content styles */
 main {
     width: 80%;
@@ -32,6 +26,12 @@ main {
     margin: 20px;
 }
 
+/* General header styles */
+header {
+    order: -1;
+    color: #ff8c00;
+}
+
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
     body {
@@ -39,7 +39,7 @@ main {
     }
 
     main {
-        width: 90%;
+        width: 80%;
     }
 }
 
@@ -50,7 +50,7 @@ main {
     }
 
     main {
-        width: 80%;
+        width: 90%;
     }
 }
 
@@ -61,7 +61,7 @@ main {
     }
 
     main {
-        width: 70%;
+        width: 90%;
     }
 }
 
@@ -72,38 +72,38 @@ main {
     }
 
     main {
-        max-width: 1200px;
+        width: 100%;
         margin: 0 auto;
         padding: 30px;
     }
 }
 
-/* Section styles */
+/* General section styles */
 section {
     margin-bottom: 20px;
     color: #000;
 }
 
-/* Heading styles */
+/* General heading styles */
 h1, h2 {
     color: #ff8c00;
 }
 
-/* List styles */
+/* General list styles */
 ul {
     padding: 0;
     list-style: none;
     color: #000;
 }
 
-/* Link styles for "All About Cookies" */
+/* General link styles for "All About Cookies" */
 .all-about-cookies {
     color: #4CAF50;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Hover styles for "All About Cookies" link */
+/* General hover styles for "All About Cookies" link */
 .all-about-cookies:hover {
     color: #ff8c00;
 }
@@ -114,34 +114,28 @@ body.dark-theme {
     color: #fff;
 }
 
-/* Dark theme main styles */
 body.dark-theme main {
     background: #2c2c2c;
     color: #fff;
     border-color: #555;
 }
 
-/* Dark theme list styles */
 body.dark-theme ul {
     color: #fff;
 }
 
-/* Dark theme section styles */
 body.dark-theme section {
     color: #fff;
 }
 
-/* Dark theme styles for "All About Cookies" link */
 body.dark-theme .all-about-cookies {
     color: #4CAF50;
 }
 
-/* Dark theme hover styles for "All About Cookies" link */
 body.dark-theme .all-about-cookies:hover {
     color: #ff8c00;
 }
 
-/* Dark theme styles for footer */
 body.dark-theme footer {
     border-top-color: #444;
 }
