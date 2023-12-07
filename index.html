@@ -31,34 +31,34 @@
 <body>
     <form id="myForm">
         <!-- Your form fields go here -->
-    
+
         <div id="recaptcha" class="g-recaptcha" data-sitekey="6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe"></div>
-    
+
         <button type="button" onclick="submitForm()">Submit</button>
     </form>
-    
+
     <script>
         var recaptchaWidget;
-    
+
         function onRecaptchaLoad() {
             recaptchaWidget = grecaptcha.render('recaptcha', {
                 'sitekey': '6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe',
-                'callback': verifyCallback,
+                'callback': verifyCallback, // Remove this line if not needed
                 // You can add other parameters here as needed
             });
         }
-    
+
         function submitForm() {
             var recaptchaResponse = grecaptcha.getResponse(recaptchaWidget);
-        
+
             if (recaptchaResponse.length === 0) {
                 alert("Please complete the reCAPTCHA.");
                 return;
             }
-    
+
             var formData = new FormData(document.getElementById('myForm'));
             formData.append('g-recaptcha-response', recaptchaResponse);
-    
+
             fetch('https://www.google.com/recaptcha/api/siteverify', {
                 method: 'POST',
                 body: formData
@@ -67,7 +67,7 @@
             .then(data => {
                 if (data.success) {
                     var score = data.score;
-    
+
                     if (score >= 0.5) {
                         alert("Form processed successfully.");
                     } else {
@@ -82,7 +82,7 @@
                 alert("An error occurred during form processing. Please try again later.");
             });
         }
-    
+
         function verifyCallback(response) {
             // Handle the reCAPTCHA response if needed
         }
