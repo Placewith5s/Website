@@ -1,3 +1,4 @@
+// Dark mode functionality
 const darkMode = (function () {
     // Private functions for dark mode
     function setDarkMode() {
@@ -42,6 +43,32 @@ const darkMode = (function () {
     };
 })();
 
+// Wait for the DOM content to be fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    // Check and set dark mode preference
+    darkMode.checkAndSetDarkModePreference();
+
+    // Show the initial loading screen text
+    showLoadingText("Preparing an unparalleled Windows optimization experience...");
+
+    // Simulate the loading time (replace this with your actual loading logic)
+    setTimeout(function () {
+        // Show the second loading text
+        showLoadingText("Verifying complete content loading...");
+
+        // Delay briefly before hiding the loading screen
+        setTimeout(function () {
+            // Hide the loading screen
+            document.getElementById("loading-screen").style.display = "none";
+        }, 1500); // Adjust the time (in milliseconds) as needed before hiding the loading screen
+    }, 2500); // Adjust the time (in milliseconds) as needed for the first text
+});
+
+// Function to update the loading text
+function showLoadingText(text) {
+    document.getElementById("loading-screen").querySelector("p").innerText = text;
+}
+
 const MenuManager = {
     // Toggle the drawer's display
     toggleDrawer: function() {
@@ -54,7 +81,7 @@ const MenuManager = {
         const drawer = document.getElementById('drawer');
 
         if (event.target.id === 'aboutUsLink') {
-            toggleAboutUs(); // Assuming toggleAboutUs is defined elsewhere
+            toggleAboutUs();
             drawer.style.display = 'none';
         }
 
