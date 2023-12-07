@@ -114,8 +114,8 @@ h2 {
 
 /* General footer styles */
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #fff;
+    color: #333;
     padding: 20px;
     text-align: center;
 }
@@ -133,5 +133,10 @@ body.dark-theme h2 {
 body.dark-theme .extended-about {
     background-color: #333;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    color: #ddd;
+}
+
+body.dark-theme footer {
+    background-color: #333;
     color: #ddd;
 }
