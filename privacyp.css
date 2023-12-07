@@ -25,7 +25,7 @@ main {
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
     main {
-        max-width: 100%;
+        max-width: 95%;
         padding: 10px;
         margin-top: 10px;
     }
@@ -34,7 +34,7 @@ main {
 /* Responsive design for medium screens */
 @media screen and (min-width: 601px) and (max-width: 768px) {
     main {
-        max-width: 135%;
+        max-width: 100%;
         padding: 15px;
     }
 }
@@ -42,16 +42,14 @@ main {
 /* Responsive design for large screens */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     main {
-        max-width: 170%;
-        padding: 20px;
+        max-width: 100%;
     }
 }
 
 /* Responsive design for extra-large screens */
 @media screen and (min-width: 1201px) {
     main {
-        max-width: 205%;
-        margin: 0 auto;
+        max-width: 100%;
         padding: 30px;
     }
 }
@@ -71,10 +69,11 @@ main {
     }
 }
 
-/* Header h1 styles */
+/* General header h1 styles */
 header h1 {
     font-size: 2em;
     font-weight: bold;
+    padding: 10px;
     margin: 0;
     color: #3498db;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -90,39 +89,39 @@ h2 {
     color: #dc143c;
 }
 
-/* Section styles */
+/* General section styles */
 section {
     margin-bottom: 20px;
 }
 
-/* Link styles for contact and cookie pages */
+/* General link styles for contact and cookie pages */
 .contact-link,
 .cookie-page-link {
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Contact link styles */
+/* General contact link styles */
 .contact-link {
     color: #3498db;
 }
 
-/* Cookie page link styles */
+/* General cookie page link styles */
 .cookie-page-link {
     color: #e74c3c;
 }
 
-/* Hover styles for contact link */
+/* General hover styles for contact link */
 .contact-link:hover {
     color: #1a5276;
 }
 
-/* Hover styles for cookie page link */
+/* General hover styles for cookie page link */
 .cookie-page-link:hover {
     color: #992d22;
 }
 
-/* Footer styles */
+/* General footer styles */
 footer {
     border-top: 1px solid #000000;
     padding: 10px;
