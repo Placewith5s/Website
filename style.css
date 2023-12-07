@@ -17,7 +17,7 @@ main {
     border-radius: 10px;
 }
 
-/* Styles for the main content */
+/* General styles for the main content */
 h1 {
     color: #ff7b00;
     font-size: 2em;
@@ -26,7 +26,7 @@ h1 {
     padding-bottom: 10px;
 }
 
-/* Styles for links within the Step-by-Step Guide section */
+/* General styles for links within the Step-by-Step Guide section */
 #Step-by-Step-Guide a {
     color: #000080;
     text-decoration: none;
@@ -34,7 +34,7 @@ h1 {
     transition: color 0.3s;
 }
 
-/* Underline styles */
+/* General underline styles */
 #Step-by-Step-Guide a::before {
     content: "";
     position: absolute;
@@ -48,22 +48,38 @@ h1 {
     transition: transform 0.3s ease-out;
 }
 
-/* Hover styles for links within the Step-by-Step Guide section */
+/* General hover styles for links within the Step-by-Step Guide section */
 #Step-by-Step-Guide a:hover {
     color: #0056b3;
 }
 
-/* Hover styles for the underline */
+/* General hover styles for the underline */
 #Step-by-Step-Guide a:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-/* Dark mode debug */
-@media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
-    .exclusive-nav {
-        display: none !important; /* Debugger */
-    }
+/* Small screen styles (600px) outside media for debugging */
+.exclusive-nav {
+    display: flex;
+    justify-content: center;
+    background-color: #3f00ff;
+    border-bottom: 2px solid #3f00ff;
+    padding: 10px;
+    position: relative;
+}
+
+.exclusive-nav a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+    font-size: 16px;
+}
+
+.exclusive-nav a:hover {
+    background-color: #000080;
+    color: #fff;
 }
 
 /* General link styles */
@@ -71,6 +87,13 @@ a[href^="#"] {
     color: #0056b3;
     text-decoration: none;
     transition: color 0.3s;
+}
+
+/* Dark mode debug */
+@media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
+    .exclusive-nav {
+        display: none !important; /* Debugger */
+    }
 }
 
 /* Responsive styles for screens up to 600px */
@@ -81,10 +104,7 @@ a[href^="#"] {
     }
 
     #Cool-Websites {
-        background-color: #f8f8f8;
         padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         margin-top: 15px;
     }
 
@@ -114,28 +134,6 @@ a[href^="#"] {
     .drawer {
         display: none;
     }
-
-    .exclusive-nav {
-        display: flex;
-        justify-content: center;
-        background-color: #3f00ff;
-        border-bottom: 2px solid #3f00ff;
-        padding: 10px;
-        position: relative;
-    }
-
-    .exclusive-nav a {
-        color: #333;
-        text-decoration: none;
-        margin: 0 15px;
-        transition: color 0.3s;
-        font-size: 16px;
-    }
-
-    .exclusive-nav a:hover {
-        background-color: #000080;
-        color: #fff;
-    }
 }
 
 /* Responsive styles for screens 769px to 1200px (Desktop) */
@@ -156,8 +154,6 @@ a[href^="#"] {
     }
 
     .exclusive-nav {
-        display: flex;
-        justify-content: center;
         padding: 10px;
     }
 
@@ -184,8 +180,7 @@ a[href^="#"] {
     }
 
     .exclusive-nav {
-        display: flex;
-        justify-content: center;
+        padding: 15px;
     }
 
     .exclusive-nav a {
@@ -193,7 +188,14 @@ a[href^="#"] {
     }
 }
 
-/* Specific styles for Cool Websites section title */
+/* Specific general styles for Cool Websites */
+#Cool-Websites {
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific general styles for Cool Websites section title */
 #Cool-Websites h2 {
     font-size: 1.8em;
     color: #dc143c;
@@ -202,7 +204,7 @@ a[href^="#"] {
     padding-bottom: 5px;
 }
 
-/* Styles for links within the Cool Websites section */
+/* General styles for links within the Cool Websites section */
 #Cool-Websites a {
     color: #000080;
     text-decoration: none;
@@ -214,7 +216,7 @@ a[href^="#"] {
     transition: background-color, color 0.3s;
 }
 
-/* Hover styles for links within the Cool Websites section in light mode */
+/* General hover styles for links within the Cool Websites section in light mode */
 #Cool-Websites a:hover {
     transform: scale(1.05);
     background-color: #add8e6;
@@ -222,14 +224,14 @@ a[href^="#"] {
     color: #fff !important;
 }
 
-/* Specific styles for span in Cool Websites section */
+/* Specific general styles for span in Cool Websites section */
 #Cool-Websites span {
     display: block;
     margin-bottom: 10px;
     color: #0056b3;
 }
 
-/* Styles for step section */
+/* General styles for step section */
 .step {
     background-color: #f8f8f8;
     color: #555;
@@ -240,14 +242,14 @@ a[href^="#"] {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for h2 in step section */
+/* General styles for h2 in step section */
 h2 {
     color: #ff7b00;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
 
-/* Styles for code in step section */
+/* General styles for code in step section */
 .code {
     background-color: #f0f0f0;
     padding: 10px;
@@ -256,13 +258,13 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Styles for note in step section */
+/* General styles for note in step section */
 .note {
     font-style: italic;
     color: #555;
 }
 
-/* Styles for step content section */
+/* General styles for step content section */
 .step-content {
     background-color: #f8f8f8;
     padding: 20px;
@@ -271,7 +273,7 @@ h2 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for step description in step section */
+/* General styles for step description in step section */
 .step-description {
     font-size: 1.2em;
     line-height: 1.6;
@@ -279,7 +281,7 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Styling for the menu icon */
+/* General styling for the menu icon */
 .menu-icon {
     position: absolute;
     top: 10px;
@@ -293,12 +295,12 @@ h2 {
     backdrop-filter: blur(10px);
 }
 
-/* Hover styles for menu icon line */
+/* General hover styles for menu icon line */
 .menu-icon:hover .line {
     background-color: #ccc;
 }
 
-/* Styles for menu icon line */
+/* General styles for menu icon line */
 .line {
     width: 20px;
     height: 3px;
@@ -306,7 +308,7 @@ h2 {
     margin: 4px 0;
 }
 
-/* Styles for drawer section */
+/* General styles for drawer section */
 .drawer {
     display: none;
     position: absolute;
@@ -317,7 +319,7 @@ h2 {
     padding: 10px;
 }
 
-/* Drawer link styles */
+/* General drawer link styles */
 .drawer a {
     display: block;
     margin: 5px 0;
@@ -329,14 +331,14 @@ h2 {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Drawer link hover styles */
+/* General drawer link hover styles */
 .drawer a:hover {
     background-color: #f8f8f8;
     color: #000;
     border-color: #007bff;
 }
 
-/* Styles for navigation */
+/* General styles for navigation */
 nav {
     background-color: #007bff;
     padding: 10px;
@@ -344,7 +346,7 @@ nav {
     background-color: transparent; /* Debugger */
 }
 
-/* Navigation link styles */
+/* General navigation link styles */
 nav a {
     color: #fff;
     text-decoration: none;
@@ -352,12 +354,12 @@ nav a {
     transition: color 0.3s;
 }
 
-/* Navigation link hover styles */
+/* General navigation link hover styles */
 nav a:hover {
     color: #ffcc00;
 }
 
-/* Styles for extended About Us section title */
+/* General styles for extended About Us section title */
 #About-Us h2 {
     font-size: 2em;
     color: #ff7b00;
@@ -366,7 +368,7 @@ nav a:hover {
     padding-bottom: 10px;
 }
 
-/* Light mode styles for the cookie banner */
+/* General styles for the cookie banner */
 #cookie-banner {
     display: none;
     position: fixed;
@@ -383,7 +385,7 @@ nav a:hover {
     color: #495057;
 }
 
-/* Styles for cookie banner button in light mode */
+/* General styles for cookie banner button */
 #cookie-banner button {
     background-color: #3f00ff;
     color: #fff;
@@ -396,18 +398,18 @@ nav a:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Hover styles for cookie banner button in light mode */
+/* General hover styles for cookie banner button */
 #cookie-banner button:hover {
     background-color: #000080;
 }
 
-/* Styles for cookie banner paragraph in light mode */
+/* General styles for cookie banner paragraph */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 18px;
 }
 
-/* Light mode styles for the footer */
+/* General styles for the footer */
 footer {
     display: flex;
     flex-direction: column;
@@ -419,7 +421,7 @@ footer {
     color: #333;
 }
 
-/* Light mode styles for links within the footer */
+/* General styles for links within the footer */
 footer a {
     color: #3f00ff !important;
     text-decoration: none;
@@ -427,12 +429,12 @@ footer a {
     margin-bottom: 15px;
 }
 
-/* Light mode styles for hovering links within the footer */
+/* General styles for hovering links within the footer */
 footer a:hover {
     color: #000080 !important;
 }
 
-/* Light mode styles for paragraph within the footer */
+/* General styles for paragraph within the footer */
 footer p {
     margin-top: 10px;
     order: 2;
