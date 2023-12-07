@@ -192,11 +192,6 @@ const CookieManager = {
                 this.checkDenyOnLoad();
             });
 
-            const readCookiePolicyLink = document.getElementById('readCookiePolicyLink');
-            readCookiePolicyLink.addEventListener('click', () => {
-                this.readCookiePolicy();
-            });
-
             const manageCookiesLink = document.getElementById('manageCookiesLink');
             manageCookiesLink.addEventListener('click', () => {
                 this.manageCookies();
