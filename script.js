@@ -45,23 +45,29 @@ const darkMode = (function () {
 
 // Wait for the DOM content to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-    // Check and set dark mode preference
-    darkMode.checkAndSetDarkModePreference();
+    // Check network connectivity
+    if (navigator.onLine) {
+        // Check and set dark mode preference
+        darkMode.checkAndSetDarkModePreference();
 
-    // Show the initial loading screen text
-    showLoadingText("Preparing an unparalleled Windows optimization experience...");
+        // Show the initial loading screen text
+        showLoadingText("Preparing an unparalleled Windows optimization experience...");
 
-    // Simulate the loading time (replace this with your actual loading logic)
-    setTimeout(function () {
-        // Show the second loading text
-        showLoadingText("Verifying complete content loading...");
-
-        // Delay briefly before hiding the loading screen
+        // Simulate the loading time (replace this with your actual loading logic)
         setTimeout(function () {
-            // Hide the loading screen
-            document.getElementById("loading-screen").style.display = "none";
-        }, 1500); // Adjust the time (in milliseconds) as needed before hiding the loading screen
-    }, 2500); // Adjust the time (in milliseconds) as needed for the first text
+            // Show the second loading text
+            showLoadingText("Verifying complete content loading...");
+
+            // Delay briefly before hiding the loading screen
+            setTimeout(function () {
+                // Hide the loading screen
+                document.getElementById("loading-screen").style.display = "none";
+            }, 1500); // Adjust the time (in milliseconds) as needed before hiding the loading screen
+        }, 2500); // Adjust the time (in milliseconds) as needed for the first text
+    } else {
+        // Display an error message for network issues
+        showLoadingText("Error: Unable to connect to the network. Please check your internet connection.");
+    }
 });
 
 // Function to update the loading text
