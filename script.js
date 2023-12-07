@@ -43,20 +43,36 @@ const darkMode = (function () {
     };
 })();
 
+// Function to update the loading text
+function showLoadingText(text) {
+    try {
+        const loadingScreen = document.getElementById("loading-screen");
+        if (loadingScreen) {
+            const loadingTextElement = loadingScreen.querySelector("p");
+            if (loadingTextElement) {
+                loadingTextElement.innerText = text;
+            } else {
+                console.error('Error: Unable to find the loading text element.');
+            }
+        } else {
+            console.error('Error: Unable to find the loading screen element.');
+        }
+    } catch (error) {
+        console.error('An error occurred while updating the loading text:', error);
+    }
+}
+
 // Wait for the DOM content to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
     // Check network connectivity
     if (navigator.onLine) {
         // Check and set dark mode preference
         darkMode.checkAndSetDarkModePreference();
-
-        // Show the initial loading screen text
-        showLoadingText("Preparing an unparalleled Windows optimization experience...");
-
-        // Simulate the loading time (replace this with your actual loading logic)
+        
+        // Simulate the loading time
         setTimeout(function () {
             // Show the second loading text
-            showLoadingText("Verifying complete content loading...");
+            showLoadingText("Getting everything ready for an amazing experience...");
 
             // Delay briefly before hiding the loading screen
             setTimeout(function () {
@@ -69,11 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
         showLoadingText("Error: Unable to connect to the network. Please check your internet connection.");
     }
 });
-
-// Function to update the loading text
-function showLoadingText(text) {
-    document.getElementById("loading-screen").querySelector("p").innerText = text;
-}
 
 const MenuManager = {
     // Toggle the drawer's display
