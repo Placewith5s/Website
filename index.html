@@ -24,9 +24,30 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Settings.png" alt="Flaticon Icon">
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe"></script>
 </head>
 
 <body>
+    <div class="center-container">
+        <form method="post" action="process_form.php">
+
+            <div class="recaptcha-container" id="recaptcha-container"></div>
+
+            <!-- Your submit button goes here -->
+            <button type="submit">Submit Form</button>
+        </form>
+    </div>
+
+    <script>
+        // Use reCAPTCHA v3 to generate a response token and set it in the hidden input field
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe', { action: 'submit_form' })
+                .then(function (token) {
+                    document.getElementById('g-recaptcha-response').value = token;
+                });
+        });
+    </script>
 
     <!-- Loading Screen -->
     <div id="loading-screen">
