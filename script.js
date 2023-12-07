@@ -207,11 +207,6 @@ const CookieManager = {
         }
     },
 
-    // Navigate to the cookies.html file
-    readCookiePolicy: function() {
-        window.location.href = "cookies.html";
-    },
-
     // Show cookie banner and open manage cookies content
     manageCookies: function() {
         this.displayBanner();
