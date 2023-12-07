@@ -13,14 +13,14 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Styling for the heading */
+/* General styling for the heading */
 h2 {
     color: #ff4500;
     text-align: center;
     padding: 20px 0;
 }
 
-/* Styles for the main content container */
+/* General styles for the main content container */
 .extended-about {
     max-width: 800px;
     margin: 0 auto;
@@ -33,13 +33,13 @@ h2 {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Styling for paragraphs */
+/* General styling for paragraphs */
 .extended-about p {
     margin-bottom: 15px;
     position: relative;
 }
 
-/* Styling for bullet points */
+/* General styling for bullet points */
 .extended-about p:not(:first-child)::before {
     content: '\2022';
     color: #ff4500;
@@ -47,7 +47,7 @@ h2 {
     margin-right: 10px;
 }
 
-/* Responsive Styles for screens up to 600px */
+/* Responsive design for small screens */
 @media screen and (max-width: 600px) {
     body {
         font-size: 14px;
@@ -58,12 +58,12 @@ h2 {
     }
 
     .extended-about {
-        max-width: 100%;
+        max-width: 85%;
         padding: 10px;
     }
 }
 
-/* Responsive Styles for screens 601px to 768px (Tablet) */
+/* Responsive design for medium screens */
 @media screen and (min-width: 601px) and (max-width: 768px) {
     body {
         font-size: 15px;
@@ -74,12 +74,12 @@ h2 {
     }
 
     .extended-about {
-        max-width: 250px;
+        max-width: 90%;
         padding: 15px;
     }
 }
 
-/* Responsive Styles for screens 769px to 1200px (Desktop) */
+/* Responsive design for large screens */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     body {
         font-size: 16px;
@@ -90,29 +90,29 @@ h2 {
     }
 
     .extended-about {
-        max-width: 700px;
+        max-width: 95%;
         padding: 20px;
     }
 }
 
-/* Responsive Styles for screens larger than 1200px */
+/* Responsive design for extra-large screens */
 @media screen and (min-width: 1201px) {
     body {
         font-size: 18px;
     }
 
     h2 {
-        font-size: 2.5em;
+        font-size: 2.3em;
     }
 
     .extended-about {
-        max-width: 1050px;
+        max-width: 100%;
         margin: 0 auto;
         padding: 30px;
     }
 }
 
-/* Footer styles */
+/* General footer styles */
 footer {
     background-color: #333;
     color: #fff;
