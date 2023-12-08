@@ -19,7 +19,7 @@ main {
 
 /* General styling for the main content container, which includes the form */
 #main-content {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -559,40 +559,12 @@ footer p {
     }
 
     .dark-theme #main-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         background-color: #444;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .dark-theme #myForm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dark-theme label {
-        margin-bottom: 10px;
-    }
-
-    .dark-theme input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        box-sizing: border-box;
     }
 
     .dark-theme button {
         background-color: #ff4500;
         color: #333;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
     }
 
     .dark-theme #loading-screen {
