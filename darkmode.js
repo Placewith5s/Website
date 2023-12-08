@@ -1,16 +1,34 @@
 // darkMode.js
 const myDarkModeModule = (function () {
+    // Check if document and document.body are available
+    if (!document || !document.body) {
+        console.error('Cannot find document or document.body. Dark mode functionality may not work.');
+        return {};
+    }
+
     function setDarkMode() {
-        document.body.classList.add('dark-theme');
+        try {
+            document.body.classList.add('dark-theme');
+        } catch (error) {
+            console.error('An error occurred while setting dark mode:', error);
+        }
     }
 
     function setLightMode() {
-        document.body.classList.remove('dark-theme');
+        try {
+            document.body.classList.remove('dark-theme');
+        } catch (error) {
+            console.error('An error occurred while setting light mode:', error);
+        }
     }
 
     function toggleDarkMode() {
-        const isDarkMode = document.body.classList.contains('dark-theme');
-        isDarkMode ? setLightMode() : setDarkMode();
+        try {
+            const isDarkMode = document.body.classList.contains('dark-theme');
+            isDarkMode ? setLightMode() : setDarkMode();
+        } catch (error) {
+            console.error('An error occurred while toggling dark mode:', error);
+        }
     }
 
     function checkAndSetDarkModePreference() {
