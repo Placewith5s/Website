@@ -1,64 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Check if the verification status, last verification time, and submission flag are stored
-    const verificationStatus = localStorage.getItem("verificationStatus");
-    const lastVerificationTime = localStorage.getItem("lastVerificationTime");
-    const submittedFlag = sessionStorage.getItem("formSubmitted");
+    const verificationForm = document.getElementById("myForm");
+    const mainContent = document.getElementById("main-content");
+    const homePageSection = document.getElementById("Home-Page");
 
-    // Check if the user has successfully verified and is within the 30-minute re-verification window
-    const isVerified = verificationStatus === "verified" && lastVerificationTime;
-    const isWithinReverificationWindow = isVerified ? isWithin30MinuteReverificationWindow(lastVerificationTime) : false;
-
-    if (isVerified && isWithinReverificationWindow) {
-        // If already verified and within the 30-minute re-verification window, show the site content
-        document.getElementById("content5").style.display = "block";
-        document.getElementById("main-content").style.display = "none"; // Hide the form
-        document.getElementById("cookie-banner").style.display = "none"; // Hide the cookie banner
-        if (!submittedFlag) {
-            alert("Successfully verified! You are still within the 30-minute re-verification window.");
-            sessionStorage.setItem("formSubmitted", "true");
-        }
-    } else {
-        // If not verified or re-verification window has expired, hide the site content and show the form
-        document.getElementById("content5").style.display = "none";
-        document.getElementById("main-content").style.display = "block";
-        document.getElementById("cookie-banner").style.display = "none"; // Hide the cookie banner
-    }
-
-    // Attach submit event listener to the form
-    document.getElementById("myForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the form from submitting normally
-
-        // Execute reCAPTCHA and get the token
-        grecaptcha.execute('6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe', { action: 'submit' })
-            .then(function (token) {
-                // For demonstration purposes, log the token to the console
-                console.log("reCAPTCHA Token:", token);
-
-                // Send the token to your server for verification
-                // For simplicity, we'll consider it verified regardless of the score
-                if (token && token.length > 0) {
-                    // If verification is successful, show the site content and hide the form
-                    document.getElementById("content5").style.display = "block";
-                    document.getElementById("main-content").style.display = "none";
-                    localStorage.setItem("verificationStatus", "verified");
-                    localStorage.setItem("lastVerificationTime", new Date().getTime().toString()); // Store the current time
-                    alert("Successfully verified! You are within the 30-minute re-verification window.");
-                    sessionStorage.setItem("formSubmitted", "true");
-                } else {
-                    // If verification fails, you can handle it accordingly
-                    alert("reCAPTCHA verification failed. Please try again.");
-                }
-            })
-            .catch(function (error) {
-                console.error("Error during reCAPTCHA execution:", error);
-                alert("An error occurred during reCAPTCHA verification. Please try again.");
-            });
+    // Always show the reCAPTCHA V3 badge
+    grecaptcha.ready(function () {
+        grecaptcha.execute('6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe', { action: 'show' });
     });
+
+    // Check verification status from cookies
+    const verificationStatus = getCookie("verificationStatus");
+
+    if (!verificationStatus) {
+        // Show the reCAPTCHA V3 form only to non-verified users
+        mainContent.style.display = "block"; // Display main content
+        verificationForm.style.display = "block"; // Display the form
+        if (homePageSection) {
+            homePageSection.style.display = "none"; // Hide the Home-Page section for unverified users
+        }
+
+        verificationForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Execute reCAPTCHA and get the token
+            grecaptcha.execute('6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe', { action: 'submit' })
+                .then(function (token) {
+                    // For demonstration purposes, log the token to the console
+                    console.log("reCAPTCHA Token:", token);
+
+                    // Simulate verification logic
+                    const isVerified = token && token.length > 0;
+
+                    if (isVerified) {
+                        mainContent.style.display = "none";
+                        verificationForm.style.display = "none";
+                        if (homePageSection) {
+                            homePageSection.style.display = "block"; // Show the Home-Page section for verified users
+                        }
+                        setCookie("verificationStatus", "verified", 30); // Set a cookie for 30 days
+                        alert("Successfully verified!");
+                    } else {
+                        alert("Verification failed. Please try again.");
+                    }
+                })
+                .catch(function (error) {
+                    console.error("Error during reCAPTCHA execution:", error);
+                    alert("An error occurred during reCAPTCHA verification. Please try again.");
+                });
+        });
+    } else {
+        // Hide the entire content for verified users
+        mainContent.style.display = "none";
+        if (homePageSection) {
+            homePageSection.style.display = "block"; // Show the Home-Page section for verified users
+        }
+    }
 });
 
-// Function to check if the current time is within the 30-minute re-verification window
-function isWithin30MinuteReverificationWindow(lastVerificationTime) {
-    const currentTime = new Date().getTime();
-    const timeDifference = currentTime - parseInt(lastVerificationTime);
-    return timeDifference < 30 * 60 * 1000;
+// Function to set a cookie
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+// Function to get a cookie value by name
+function getCookie(name) {
+    const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
+    return match ? match[1] : null;
 }
