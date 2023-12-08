@@ -17,15 +17,6 @@ main {
     border-radius: 10px;
 }
 
-/* reCAPTCHA v3 styles */
-.center-container {
-    text-align: center;
-}
-
-.recaptcha-container {
-    margin-bottom: 20px;
-}
-
 /* General loading screen styles */
 #loading-screen {
     position: fixed;
