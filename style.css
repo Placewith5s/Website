@@ -17,6 +17,53 @@ main {
     border-radius: 10px;
 }
 
+/* Styling for the main content container, which includes the form */
+#main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the form itself, including its elements */
+#myForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for labels within the form */
+label {
+    margin-bottom: 10px;
+}
+
+/* Styling for input fields within the form */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* Styling for buttons within the form */
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Change button color on hover */
+button:hover {
+    background-color: #45a049;
+}
+
 /* General loading screen styles */
 #loading-screen {
     position: fixed;
@@ -479,6 +526,47 @@ footer p {
     body.dark-theme {
         background-color: #333;
         color: #f8f8f8;
+    }
+
+    .dark-theme #main-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .dark-theme #myForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dark-theme label {
+        margin-bottom: 10px;
+    }
+
+    .dark-theme input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    .dark-theme button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .dark-theme button:hover {
+        background-color: #45a049;
     }
 
     .dark-theme #loading-screen {
