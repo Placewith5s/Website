@@ -17,31 +17,31 @@ main {
     border-radius: 10px;
 }
 
-/* Styling for the main content container, which includes the form */
+/* General styling for the main content container, which includes the form */
 #main-content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the form itself, including its elements */
+/* General styling for the form itself, including its elements */
 #myForm {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Styling for labels within the form */
+/* General styling for labels within the form */
 label {
     margin-bottom: 10px;
 }
 
-/* Styling for input fields within the form */
+/* General styling for input fields within the form */
 input {
     width: 100%;
     padding: 10px;
@@ -49,17 +49,17 @@ input {
     box-sizing: border-box;
 }
 
-/* Styling for buttons within the form */
+/* General styling for buttons within the form */
 button {
     background-color: #4caf50;
-    color: white;
+    color: #fff;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Change button color on hover */
+/* General hover styling within the form */
 button:hover {
     background-color: #45a049;
 }
@@ -533,7 +533,7 @@ footer p {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-color: #ffffff;
+        background-color: #444;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -557,8 +557,8 @@ footer p {
     }
 
     .dark-theme button {
-        background-color: #4caf50;
-        color: white;
+        background-color: #ff4500;
+        color: #333;
         padding: 10px;
         border: none;
         border-radius: 5px;
@@ -566,7 +566,7 @@ footer p {
     }
 
     .dark-theme button:hover {
-        background-color: #45a049;
+        background-color: #ff4500;
     }
 
     .dark-theme #loading-screen {
