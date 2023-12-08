@@ -30,10 +30,15 @@
 </head>
 
 <body>
+    <!-- Content -->
+    <div id="main-content">
         <form id="myForm">
-            <div id="recaptcha"></div>
-            <button type="button" onclick="submitForm()">Submit</button>
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <button type="submit">Submit</button>
         </form>
+    </div>
 
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -80,10 +85,11 @@
         </div>
     </nav>
 
+    <div id="content5" style="display: none;">
+
     <!-- Main Content -->
     <h1>Windows Mastery: A Different Path to Peak PC Performance (No-Cost, No Compromises!)</h1>
 
-    <!-- Home Page Section -->
     <section id="Home-Page">
         <p>Welcome to our website, your ultimate resource for optimizing your Windows PC. Unlock its full potential with the cutting-edge tools and our expert guides. For added assurance, you can verify our recommendations by visiting <a href="#Cool-Websites">Website links</a></p>
 
@@ -211,7 +217,6 @@
         </div>              
         
     <!-- End of Step-by-Step Guide -->
-        </div>
     </section>
 
    <!-- Cool Websites Section -->
@@ -224,8 +229,9 @@
         <a href="https://github.com/builtbybel/BloatyNosy" style="color:#2ecc71" title="BloatyNosy by builtbybel (MIT License)" target="_blank" rel="noopener noreferrer">BloatyNosy by builtbybel</a>
         <a href="https://github.com/Rectify11/Installer" style="color:#2ecc71" title="Installer (GNU GPL)" target="_blank" rel="noopener noreferrer">Installer by Rectify 11</a>
     </span><br>       
-</section>
-      
+    </section>
+</div>
+
     <!-- Footer -->
 <footer>
     <p>&copy;2023 Placewith5s. All Rights Reserved.</p>
