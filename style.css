@@ -194,6 +194,7 @@ a[href^="#"] {
     }
 
     #cookie-banner {
+        max-width: 96%;
         font-size: 14px;
         padding: 10px;
     }
