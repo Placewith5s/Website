@@ -15,6 +15,36 @@ body {
     --link-color: #FF8C00;
 }
 
+/* General styling for the form itself, including its elements */
+#myForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* General styling for labels within the form */
+label {
+    margin-bottom: 10px;
+}
+
+/* General styling for input fields within the form */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* General styling for buttons within the form */
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* General styling for the header section with a flexible orange background and white text */
 header {
     background-color: #FFA500;
@@ -116,6 +146,15 @@ footer {
 body.dark-theme {
     background-color: #1a1a1a;
     color: #ccc;
+}
+
+.dark-theme #main-content {
+    background-color: #444;
+}
+
+.dark-theme button {
+    background-color: #ff4500;
+    color: #333;
 }
 
 body.dark-theme h1 {
