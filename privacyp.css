@@ -163,16 +163,6 @@ section {
     color: #992d22;
 }
 
-/* General link color for reCAPTCHA section */
-.recaptcha-link {
-    color: #00bcd4;
-}
-
-/* General hover styles for the reCAPTCHA section link */
-.recaptcha-link:hover {
-    color: #007a8b;
-}
-
 /* General footer styles */
 footer {
     border-top: 1px solid #000000;
