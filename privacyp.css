@@ -22,6 +22,36 @@ main {
     margin-top: 20px;
 }
 
+/* General styling for the form itself, including its elements */
+#myForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* General styling for labels within the form */
+label {
+    margin-bottom: 10px;
+}
+
+/* General styling for input fields within the form */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* General styling for buttons within the form */
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
     main {
@@ -146,7 +176,15 @@ body.dark-theme {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode header styles */
+.dark-theme #main-content {
+    background-color: #444;
+}
+
+.dark-theme button {
+    background-color: #ff4500;
+    color: #333;
+}
+
 body.dark-theme header h1 {
     color: #3498db;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
