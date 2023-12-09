@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Check verification status from cookies
-    const verificationData = getCookie("verificationData");
+    const verificationData = getVerificationDataFromCookie(); // Use a separate function to get verification data
 
     if (!verificationData || !verificationData.status || !verificationData.timestamp) {
         // Show the form only to non-verified users
@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         if (homePageSection) {
                             homePageSection.style.display = "block"; // Show the Home-Page section for verified users
                         }
-                        const verificationData = {
+                        const newVerificationData = {
                             status: "verified",
                             timestamp: new Date().getTime()
                         };
-                        setCookie("verificationData", JSON.stringify(verificationData), 30); // Set a cookie for 30 days
+                        setVerificationDataCookie(newVerificationData); // Set a cookie with verification data
                         alert("Successfully verified!");
                     } else {
                         alert("Verification failed. Please try again.");
@@ -72,6 +72,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
+
+    // Function to set a cookie with verification data
+    function setVerificationDataCookie(verificationData) {
+        setCookie("verificationData", JSON.stringify(verificationData), 30); // Set a cookie for 30 days
+    }
+
+    // Function to get verification data from the cookie
+    function getVerificationDataFromCookie() {
+        const verificationData = getCookie("verificationData");
+        return verificationData ? JSON.parse(verificationData) : null;
+    }
 });
 
 // Function to set a cookie
@@ -84,5 +95,5 @@ function setCookie(name, value, days) {
 // Function to get a cookie value by name
 function getCookie(name) {
     const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
-    return match ? JSON.parse(match[1]) : null;
+    return match ? match[1] : null;
 }
