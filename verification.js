@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Check verification status from cookies
-    const verificationStatus = getCookie("verificationStatus");
+    const verificationData = getCookie("verificationData");
 
-    if (!verificationStatus) {
+    if (!verificationData || !verificationData.status || !verificationData.timestamp) {
         // Show the form only to non-verified users
         mainContent.style.display = "block"; // Display main content
         verificationForm.style.display = "block"; // Display the form
@@ -37,7 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         if (homePageSection) {
                             homePageSection.style.display = "block"; // Show the Home-Page section for verified users
                         }
-                        setCookie("verificationStatus", "verified", 30); // Set a cookie for 30 days
+                        const verificationData = {
+                            status: "verified",
+                            timestamp: new Date().getTime()
+                        };
+                        setCookie("verificationData", JSON.stringify(verificationData), 30); // Set a cookie for 30 days
                         alert("Successfully verified!");
                     } else {
                         alert("Verification failed. Please try again.");
@@ -49,10 +53,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
         });
     } else {
-        // Hide the entire content for verified users
-        mainContent.style.display = "none";
-        if (homePageSection) {
-            homePageSection.style.display = "block"; // Show the Home-Page section for verified users
+        // Check if the verification was within the last 30 minutes
+        const currentTime = new Date().getTime();
+        const thirtyMinutesInMillis = 30 * 60 * 1000;
+
+        if (currentTime - verificationData.timestamp < thirtyMinutesInMillis) {
+            // Hide the entire content for verified users
+            mainContent.style.display = "none";
+            if (homePageSection) {
+                homePageSection.style.display = "block"; // Show the Home-Page section for verified users
+            }
+        } else {
+            // Verification has expired, show the form again
+            mainContent.style.display = "block";
+            verificationForm.style.display = "block";
+            if (homePageSection) {
+                homePageSection.style.display = "none";
+            }
         }
     }
 });
@@ -67,5 +84,5 @@ function setCookie(name, value, days) {
 // Function to get a cookie value by name
 function getCookie(name) {
     const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]*)`));
-    return match ? match[1] : null;
+    return match ? JSON.parse(match[1]) : null;
 }
