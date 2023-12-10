@@ -236,10 +236,30 @@ h2 {
 
 /* General footer styles */
 footer {
+    display: flex;
+    flex-direction: column;
     background-color: #fff;
     color: #333;
     padding: 20px;
     text-align: center;
+}
+
+/* General parapgraph styles within the footerS */
+footer p {
+    margin: 15px;
+}
+
+/* General link styles within the footer */
+footer a {
+    margin: 10px;
+    order: -1;
+    color: #000080;
+    text-decoration: none;
+}
+
+/* General hover styles within the footer */
+footer a:hover {
+    color: #3f00ff;
 }
 
 /* Dark theme styles */
@@ -303,4 +323,12 @@ body.dark-theme .extended-about {
 body.dark-theme footer {
     background-color: #333;
     color: #ddd;
+}
+
+footer a {
+    color: #ff9800;
+}
+
+footer a:hover {
+    color: #ff4500;
 }
