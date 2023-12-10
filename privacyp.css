@@ -22,46 +22,49 @@ main {
     margin-top: 20px;
 }
 
-/* General styling for the main content container, which includes the form */
-#main-content {
+/* Style for the verification form */
+#verificationForm {
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
     padding: 20px;
-    border-radius: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* General styling for the form itself, including its elements */
+/* Style for the form elements */
 #myForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-/* General styling for labels within the form */
-label {
-    margin-bottom: 10px;
-}
-
-/* General styling for input fields within the form */
-input {
-    width: 100%;
-    padding: 10px;
+/* Style for form paragraphs */
+#myForm p {
     margin-bottom: 15px;
-    box-sizing: border-box;
+    font-weight: bold;
 }
 
-/* General styling for buttons within the form */
-button {
+/* Style for the form button in light mode */
+#myForm button {
     background-color: #4caf50;
-    color: #fff;
+    color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Style for the form button on hover in light mode */
+#myForm button:hover {
+    background-color: #45a049;
+}
+
+/* Style for the form button when clicked in light mode */
+#myForm button:active {
+    background-color: #3e8e41;
 }
 
 /* Responsive design for small screens */
@@ -178,13 +181,35 @@ body.dark-theme {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.dark-theme #main-content {
-    background-color: #444;
+.dark-theme #verificationForm {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dark-theme button {
+.dark-theme #verificationForm:hover {
+    background-color: #222;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.dark-theme #myForm p {
+    color: #fff;
+}
+
+.dark-theme #myForm button {
     background-color: #ff4500;
-    color: #333;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.dark-theme #myForm button:hover {
+    background-color: #e63900;
+}
+
+.dark-theme #myForm button:active {
+    background-color: #cc3500;
 }
 
 body.dark-theme header h1 {
