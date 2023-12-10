@@ -169,11 +169,11 @@ header {
     }
 
     #cookie-banner {
-        font-size: 18px;
+        font-size: 16.5px;
     }
 
     #cookie-banner button {
-        padding: 12px 24px;
+        padding: 10px 20px;
         font-size: 18px;
     }
 }
@@ -185,17 +185,17 @@ header {
     }
 
     main {
-        width: 100%;
+        width: 90%;
         margin: 0 auto;
         padding: 30px;
     }
 
     #cookie-banner {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #cookie-banner button {
-        padding: 14px 28px;
+        padding: 12px 22px;
         font-size: 20px;
     }
 }
@@ -228,6 +228,21 @@ ul {
 /* General hover styles for "All About Cookies" link */
 .all-about-cookies:hover {
     color: #ff8c00;
+}
+
+/* General footer styles */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+/* General link footer styles */
+footer a {
+    order: -1;
+    text-decoration: none;
 }
 
 /* Dark theme styles */
@@ -302,4 +317,12 @@ body.dark-theme .all-about-cookies:hover {
 
 body.dark-theme footer {
     border-top-color: #444;
+}
+
+.dark-theme footer a {
+    color: #ff9800;
+}
+
+.dark-theme footer a:hover {
+    color: #ff4500;
 }
