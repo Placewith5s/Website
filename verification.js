@@ -1,9 +1,10 @@
-// verification.js
-
 document.addEventListener("DOMContentLoaded", function () {
     const siteKey = '6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe';
     const verificationForm = document.getElementById("verificationForm");
     const homePageSection = document.getElementById("Home-Page");
+
+    // Retrieve verification data from cookies
+    const verificationData = getVerificationDataFromCookie();
 
     // Always show the reCAPTCHA v3 badge
     grecaptcha.ready(function () {
@@ -11,12 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Check verification status from cookies
-    const verificationData = getVerificationDataFromCookie(); // Use a separate function to get verification data
-
     if (verificationData && verificationData.status === "verified" && verificationData.timestamp) {
         const currentTime = new Date().getTime();
         const thirtyMinutesInMillis = 30 * 60 * 1000;
-
+    
         if (currentTime - verificationData.timestamp >= thirtyMinutesInMillis) {
             // More than 30 minutes have passed since the last verification
             showFormAndHideHomePage();
@@ -24,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Less than 30 minutes have passed, hide the form and show the Home-Page
             hideFormAndShowHomePage();
         }
+    
     } else {
         // User is not verified, hide the Home-Page and show the form
         hideHomePageAndShowForm();
