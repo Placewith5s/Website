@@ -1,4 +1,3 @@
-// darkMode.js
 const myDarkModeModule = (function () {
     // Check if document and document.body are available
     if (!document || !document.body) {
