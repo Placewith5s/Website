@@ -58,6 +58,45 @@ body {
     background-color: #3e8e41;
 }
 
+/* General styles for the cookie banner */
+#cookie-banner {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* General styles for cookie banner paragraph */
+#cookie-banner p {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+/* General styles for cookie banner button */
+#cookie-banner button {
+    background-color: #ff9800;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* General hover styles for cookie banner button */
+#cookie-banner button:hover {
+    background-color: #e68a00;
+}
+
 /* General styling for the heading */
 h2 {
     color: #ff4500;
@@ -106,6 +145,17 @@ h2 {
         max-width: 85%;
         padding: 10px;
     }
+
+    #cookie-banner {
+        max-width: 96%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #cookie-banner button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
 
 /* Responsive design for medium screens */
@@ -121,6 +171,15 @@ h2 {
     .extended-about {
         max-width: 90%;
         padding: 15px;
+    }
+
+    #cookie-banner {
+        font-size: 15px;
+    }
+
+    #cookie-banner button {
+        padding: 10px 18px;
+        font-size: 15px;
     }
 }
 
@@ -138,6 +197,15 @@ h2 {
         max-width: 95%;
         padding: 20px;
     }
+
+    #cookie-banner {
+        font-size: 18px;
+    }
+
+    #cookie-banner button {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
 }
 
 /* Responsive design for extra-large screens */
@@ -154,6 +222,15 @@ h2 {
         max-width: 100%;
         margin: 0 auto;
         padding: 30px;
+    }
+
+    #cookie-banner {
+        font-size: 20px;
+    }
+
+    #cookie-banner button {
+        padding: 14px 28px;
+        font-size: 20px;
     }
 }
 
@@ -192,6 +269,25 @@ body.dark-theme {
 
 .dark-theme #myForm button:active {
     background-color: #cc3500;
+}
+
+.dark-theme #cookie-banner {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    background-color: #333;
+    color: #ccc;
+}
+
+.dark-theme #cookie-banner button {
+    background-color: #ff9800;
+    color: #333;
+}
+
+.dark-theme #cookie-banner button:hover {
+    background-color: #e68a00;
+}
+
+.dark-theme #cookie-banner p {
+    color: #aaa;
 }
 
 body.dark-theme h2 {
