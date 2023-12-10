@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const siteKey = '6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe';
     const verificationForm = document.getElementById("verificationForm");
-    const home = document.getElementById("Home-Page");
+    const contentSection = document.getElementById("Home-Page");
 
     // Retrieve verification data from cookies
     const verificationData = getVerificationDataFromCookie();
@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentPage = getCurrentPage();
 
     // Function to show the content and hide the form
-    function showContentAndHideForm(home) {
-        const contentSection = document.getElementById(home);
+    function showContentAndHideForm() {
         if (contentSection) {
             contentSection.style.display = "block";
         }
@@ -26,8 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to hide the content and show the form
-    function hideContentAndShowForm(home) {
-        const contentSection = document.getElementById(home);
+    function hideContentAndShowForm() {
         if (contentSection) {
             contentSection.style.display = "none";
         }
@@ -37,15 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to show the form and hide the content
-    function showFormAndHideContent(verificationForm) {
+    function showFormAndHideContent() {
+        if (contentSection) {
+            contentSection.style.display = "none";
+        }
+
         if (verificationForm) {
             verificationForm.style.display = "block";
         }
     }
 
     // Function to hide the form and show the content
-    function hideFormAndShowContent(home) {
-        const contentSection = document.getElementById(home);
+    function hideFormAndShowContent() {
         if (contentSection) {
             contentSection.style.display = "block";
         }
