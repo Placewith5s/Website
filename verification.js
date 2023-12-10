@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const siteKey = '6LfO8ikpAAAAADnNCtnMo33rJLhbLJwJzBfD0ERe';
     const verificationForm = document.getElementById("verificationForm");
+    const home = document.getElementById("Home-Page");
 
     // Retrieve verification data from cookies
     const verificationData = getVerificationDataFromCookie();
@@ -12,7 +13,58 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Check verification status from cookies
     const currentPage = getCurrentPage();
-    
+
+    // Function to show the content and hide the form
+    function showContentAndHideForm(home) {
+        const contentSection = document.getElementById(home);
+        if (contentSection) {
+            contentSection.style.display = "block";
+        }
+        if (verificationForm) {
+            verificationForm.style.display = "none";
+        }
+    }
+
+    // Function to hide the content and show the form
+    function hideContentAndShowForm(home) {
+        const contentSection = document.getElementById(home);
+        if (contentSection) {
+            contentSection.style.display = "none";
+        }
+        if (verificationForm) {
+            verificationForm.style.display = "block";
+        }
+    }
+
+    // Function to show the form and hide the content
+    function showFormAndHideContent(verificationForm) {
+        if (verificationForm) {
+            verificationForm.style.display = "block";
+        }
+    }
+
+    // Function to hide the form and show the content
+    function hideFormAndShowContent(home) {
+        const contentSection = document.getElementById(home);
+        if (contentSection) {
+            contentSection.style.display = "block";
+        }
+        if (verificationForm) {
+            verificationForm.style.display = "none";
+        }
+    }
+
+    // Function to set a cookie with verification data
+    function setVerificationDataCookie(verificationData) {
+        setCookie("verificationData", JSON.stringify(verificationData), 30); // Set a cookie for 30 days
+    }
+
+    // Function to get verification data from the cookie
+    function getVerificationDataFromCookie() {
+        const verificationData = getCookie("verificationData");
+        return verificationData ? JSON.parse(verificationData) : null;
+    }
+
     if (verificationData && verificationData.status === "verified" && verificationData.timestamp) {
         const currentTime = new Date().getTime();
         const thirtyMinutesInMillis = 30 * 60 * 1000;
@@ -24,7 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Less than 30 minutes have passed, hide the form and show the content
             hideFormAndShowContent(currentPage);
         }
-
     } else {
         // User is not verified, hide the content and show the form
         hideContentAndShowForm(currentPage);
@@ -71,52 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 hideContentAndShowForm(currentPage);
             });
     });
-
-    // Function to show the content and hide the form
-    function showContentAndHideForm(page) {
-        const contentSection = document.getElementById(page);
-        if (contentSection) {
-            contentSection.style.display = "block";
-        }
-        if (verificationForm) {
-            verificationForm.style.display = "none";
-        }
-    }
-
-    // Function to hide the content and show the form
-    function hideContentAndShowForm(page) {
-        const contentSection = document.getElementById(page);
-        if (contentSection) {
-            contentSection.style.display = "none";
-        }
-        if (verificationForm) {
-            verificationForm.style.display = "block";
-        }
-    }
-
-    // Function to show the form and hide the content
-    function showFormAndHideContent() {
-        const contentSections = document.querySelectorAll('.content-section');
-        if (contentSections) {
-            contentSections.forEach(section => {
-                section.style.display = "none";
-            });
-        }
-        if (verificationForm) {
-            verificationForm.style.display = "block";
-        }
-    }
-
-    // Function to set a cookie with verification data
-    function setVerificationDataCookie(verificationData) {
-        setCookie("verificationData", JSON.stringify(verificationData), 30); // Set a cookie for 30 days
-    }
-
-    // Function to get verification data from the cookie
-    function getVerificationDataFromCookie() {
-        const verificationData = getCookie("verificationData");
-        return verificationData ? JSON.parse(verificationData) : null;
-    }
 
     // Function to set a cookie
     function setCookie(name, value, days) {
