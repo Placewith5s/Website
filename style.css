@@ -27,16 +27,17 @@ img {
     image-rendering: -webkit-optimize-contrast;
     -moz-osx-font-smoothing: grayscale;
     object-fit: contain;
+    transform-style: preserve-3d; /* Enable 3D transformations */
 }
 
 /* Apply 3D effect on hover */
 img:hover {
-    transform: perspective(1000px) scale(0.9);
+    transform: perspective(1000px) scale(0.9) rotateX(10deg) rotateY(10deg);
 }
 
 /* Remove reset on active state */
 img:active {
-    transform: perspective(1000px) scale(0.9);
+    transform: perspective(1000px) scale(0.9) rotateX(10deg) rotateY(10deg);
 }
 
 /* Style for the verification form */
