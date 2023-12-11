@@ -23,21 +23,27 @@ img {
     height: auto;
     display: block;
     margin: 0 auto;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
     image-rendering: -webkit-optimize-contrast;
     -moz-osx-font-smoothing: grayscale;
-    object-fit: contain;
-    transform-style: preserve-3d; /* Enable 3D transformations */
+    object-fit: cover;
+    transform-style: preserve-3d;
 }
 
 /* Apply 3D effect on hover */
 img:hover {
-    transform: perspective(1000px) scale(0.9) rotateX(10deg) rotateY(10deg);
+    transform: perspective(1000px) scale(0.9);
+    filter: brightness(1.2);
 }
 
 /* Remove reset on active state */
 img:active {
-    transform: perspective(1000px) scale(0.9) rotateX(10deg) rotateY(10deg);
+    transform: perspective(1000px) scale(0.9);
+}
+
+/* Smooth transition for active state */
+img:active {
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Style for the verification form */
