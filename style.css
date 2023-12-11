@@ -33,13 +33,12 @@ img {
 /* Apply 3D effect on hover */
 img:hover {
     transform: perspective(1000px) scale(0.9);
-    filter: brightness(1.2);
 }
 
 /* Remove reset on active state */
 img:active {
     transform: perspective(1000px) scale(0.9);
-}
+} 
 
 /* Smooth transition for active state */
 img:active {
@@ -188,6 +187,14 @@ a[href^="#"] {
         height: auto;
     }
 
+    img:hover {
+        transform: perspective(1000px) scale(1.1);
+    }
+    
+    img:active {
+        transform: perspective(1000px) scale(1.1);
+    } 
+    
     .menu-icon,
     .drawer {
         display: block;
