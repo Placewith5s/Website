@@ -24,9 +24,9 @@ img {
     display: block;
     margin: 0 auto;
     transition: transform 0.3s ease-in-out;
-    image-rendering: -webkit-optimize-contrast; /* Improve rendering quality on WebKit browsers */
-    -moz-osx-font-smoothing: grayscale; /* Improve rendering quality on Firefox */
-    object-fit: contain; /* Maintain aspect ratio and fill container */
+    image-rendering: -webkit-optimize-contrast;
+    -moz-osx-font-smoothing: grayscale;
+    object-fit: contain;
 }
 
 /* Apply 3D effect on hover */
@@ -34,9 +34,9 @@ img:hover {
     transform: perspective(1000px) scale(1.1);
 }
 
-/* Reset 3D effect on active (clicked) state */
+/* Remove reset on active state */
 img:active {
-    transform: none;
+    transform: perspective(1000px) scale(1.1);
 }
 
 /* Style for the verification form */
