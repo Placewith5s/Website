@@ -31,12 +31,12 @@ img {
 
 /* Apply 3D effect on hover */
 img:hover {
-    transform: perspective(1000px) scale(1.1);
+    transform: perspective(1000px) scale(0.9);
 }
 
 /* Remove reset on active state */
 img:active {
-    transform: perspective(1000px) scale(1.1);
+    transform: perspective(1000px) scale(0.9);
 }
 
 /* Style for the verification form */
