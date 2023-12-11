@@ -24,20 +24,21 @@ img {
     display: block;
     margin: 0 auto;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    image-rendering: optimizeQuality;
+    image-rendering: -webkit-optimize-contrast;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     object-fit: cover;
+    will-change: transform;
 }
 
 /* High-quality 3D effect on hover */
-img:hover {
+img:hover,
+img:active {
     transform: perspective(1000px) scale(0.95);
 }
 
-/* Removing reset on active state */
+/* Transition for active state */
 img:active {
-    transform: perspective(1000px) scale(0.95);
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
