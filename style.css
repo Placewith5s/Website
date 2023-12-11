@@ -17,19 +17,21 @@ main {
     border-radius: 10px;
 }
 
-
 /* General styles for all screen sizes */
 img {
     max-width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
     transition: transform 0.3s ease-in-out;
+    image-rendering: -webkit-optimize-contrast; /* Improve rendering quality on WebKit browsers */
+    -moz-osx-font-smoothing: grayscale; /* Improve rendering quality on Firefox */
+    object-fit: contain; /* Maintain aspect ratio and fill container */
 }
 
 /* Apply 3D effect on hover */
 img:hover {
-    transform: perspective(1000px) rotateY(10deg) scale(1.1);
+    transform: perspective(1000px) rotateY(5deg) scale(1.1);
 }
 
 /* Reset 3D effect on active (clicked) state */
