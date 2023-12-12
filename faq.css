@@ -4,11 +4,28 @@ body {
     line-height: 1.6;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fce8e6;
-    color: #4d4d4d;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Styles for the not found message */
+#not-found-message {
+    display: none;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #e57373;
+    border: 1px solid #ef9a9a;
+    border-radius: 5px;
+    color: #c62828;
+    text-align: center;
+}
+
+/* Styles for the paragraph inside the not found message */
+#not-found-message p {
+    margin: 0;
 }
 
 /* Main content styles */
@@ -18,27 +35,24 @@ main {
     align-items: center;
     flex-grow: 1;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     max-width: 800px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     background-color: #ffffff;
-    color: #4d4d4d;
+    color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Style for the verification form */
 #verificationForm {
     width: 80%;
-    max-width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    max-width: 400px;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Style for the form elements */
@@ -53,32 +67,30 @@ main {
     font-weight: bold;
 }
 
-/* Style for the form button in light mode */
+/* Style for the form button */
 #myForm button {
-    background-color: #4caf50;
+    background-color: #2196F3;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Style for the form button on hover in light mode */
+/* Hover and active styles for the form button */
 #myForm button:hover {
-    background-color: #45a049;
+    background-color: #1565c0;
 }
 
-/* Style for the form button when clicked in light mode */
 #myForm button:active {
-    background-color: #3e8e41;
+    background-color: #0d47a1;
 }
 
 /* General styles for the cookie banner */
 #cookie-banner {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
     text-align: center;
     padding: 15px;
@@ -96,7 +108,7 @@ main {
 
 /* General styles for cookie banner button */
 #cookie-banner button {
-    background-color: #ff9800;
+    background-color: #FFC107;
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -107,9 +119,9 @@ main {
     transition: background-color 0.3s ease;
 }
 
-/* General hover styles for cookie banner button */
+/* Hover style for cookie banner button */
 #cookie-banner button:hover {
-    background-color: #e68a00;
+    background-color: #FFA000;
 }
 
 /* Responsive design for small screens */
@@ -269,13 +281,23 @@ footer a:hover {
 }
 
 /* Dark mode specific styles */
-body.dark-theme {
-    background: #2c2c2c;
+.dark-theme body {
+    background-color: #2c2c2c;
     color: #fff;
 }
 
-body.dark-theme main {
-    background: #1f1f1f;
+.dark-theme #not-found-message {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #fff;
+}
+
+.dark-theme #not-found-message p {
+    color: #fff;
+}
+
+.dark-theme main {
+    background-color: #1f1f1f;
     color: #fff;
     border-color: #555;
 }
@@ -311,13 +333,13 @@ body.dark-theme main {
     background-color: #cc3500;
 }
 
-body.dark-theme #search-bar {
+.dark-theme #search-bar {
     background-color: #1f1f1f;
     color: #ddd;
     border: 2px solid #ddd;
 }
 
-body.dark-theme #search-bar:focus {
+.dark-theme #search-bar:focus {
     border-color: #2c3e50;
 }
 
@@ -340,16 +362,16 @@ body.dark-theme #search-bar:focus {
     color: #aaa;
 }
 
-body.dark-theme footer {
+.dark-theme footer {
     background-color: #2c3e50;
     color: #ffffff;
     filter: brightness(0.8);
 }
 
-footer a {
+.dark-theme footer a {
     color: #ff9800;
 }
 
-footer a:hover {
+.dark-theme footer a:hover {
     color: #ff4500;
 }
