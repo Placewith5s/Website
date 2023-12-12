@@ -313,8 +313,8 @@ body.dark-theme main {
 
 body.dark-theme #search-bar {
     background-color: #1f1f1f;
-    color: #fff;
-    border: 2px solid #000080;
+    color: #ddd;
+    border: 2px solid #ddd;
 }
 
 body.dark-theme #search-bar:focus {
