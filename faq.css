@@ -280,27 +280,28 @@ footer a:hover {
     color: #3f00ff;
 }
 
-/* Dark mode specific styles */
-.dark-theme body {
+/* Dark theme styles */
+@media screen and (prefers-color-scheme: dark) {
+.dark-theme {
     background-color: #2c2c2c;
     color: #fff;
-}
+    }
 
 .dark-theme #not-found-message {
     background-color: #1a1a1a;
     border-color: #333;
     color: #fff;
-}
+    }
 
 .dark-theme #not-found-message p {
     color: #fff;
-}
+    }
 
 .dark-theme main {
     background-color: #1f1f1f;
     color: #fff;
     border-color: #555;
-}
+    }
 
 .dark-theme #verificationForm {
     background-color: #1a1a1a;
@@ -308,70 +309,71 @@ footer a:hover {
     color: #fff;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
+    }
 
 .dark-theme #verificationForm:hover {
     background-color: #222;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
+    }
 
 .dark-theme #myForm p {
     color: #fff;
-}
+    }
 
 .dark-theme #myForm button {
     background-color: #ff4500;
     color: #fff;
     transition: background-color 0.3s ease;
-}
+    }
 
 .dark-theme #myForm button:hover {
     background-color: #e63900;
-}
+    }
 
 .dark-theme #myForm button:active {
     background-color: #cc3500;
-}
+    }
 
 .dark-theme #search-bar {
     background-color: #1f1f1f;
     color: #ddd;
     border: 2px solid #ddd;
-}
+    }
 
 .dark-theme #search-bar:focus {
     border-color: #2c3e50;
-}
+    }
 
 .dark-theme #cookie-banner {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     background-color: #333;
     color: #ccc;
-}
+    }
 
 .dark-theme #cookie-banner button {
     background-color: #ff9800;
     color: #333;
-}
+    }
 
 .dark-theme #cookie-banner button:hover {
     background-color: #e68a00;
-}
+    }
 
 .dark-theme #cookie-banner p {
     color: #aaa;
-}
+    }
 
 .dark-theme footer {
     background-color: #2c3e50;
     color: #ffffff;
     filter: brightness(0.8);
-}
+    }
 
 .dark-theme footer a {
     color: #ff9800;
-}
+    }
 
 .dark-theme footer a:hover {
     color: #ff4500;
+    }
 }
