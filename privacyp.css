@@ -176,22 +176,6 @@ main {
     }
 }
 
-/* Dark theme media query */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #333;
-        color: #ffffff;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-        background-color: #2c3e50;
-        background: transparent; /* Debugger */
-        color: #ffffff;
-        filter: brightness(0.8);
-    }
-}
-
 /* General header h1 styles */
 header h1 {
     font-size: 2em;
@@ -272,12 +256,13 @@ footer p {
     order: 2;
 }
 
-/* Dark mode styles */
-body.dark-theme {
+/* Dark theme styles */
+@media screen and (prefers-color-scheme: dark) {
+.dark-theme {
     background-color: #333;
     color: #ddd;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
+    }
 
 .dark-theme #verificationForm {
     background-color: #1a1a1a;
@@ -285,59 +270,60 @@ body.dark-theme {
     color: #fff;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
+    }
 
 .dark-theme #verificationForm:hover {
     background-color: #222;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
+    }
 
 .dark-theme #myForm p {
     color: #fff;
-}
+    }
 
 .dark-theme #myForm button {
     background-color: #ff4500;
     color: #fff;
     transition: background-color 0.3s ease;
-}
+    }
 
 .dark-theme #myForm button:hover {
     background-color: #e63900;
-}
+    }
 
 .dark-theme #myForm button:active {
     background-color: #cc3500;
-}
+    }
 
-body.dark-theme header h1 {
+.dark-theme header h1 {
     color: #3498db;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
-}
+    }
 
 .dark-theme #cookie-banner {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     background-color: #333;
     color: #ccc;
-}
+    }
 
 .dark-theme #cookie-banner button {
     background-color: #ff9800;
     color: #333;
-}
+    }
 
 .dark-theme #cookie-banner button:hover {
     background-color: #e68a00;
-}
+    }
 
 .dark-theme #cookie-banner p {
     color: #aaa;
-}
+    }
 
 .dark-theme footer a {
     color: #00cc00;
-}
+    }
 
 .dark-theme footer a:hover {
     color: #007700;
+    }
 }
