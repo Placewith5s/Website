@@ -244,86 +244,88 @@ footer a:hover {
     }
 }
 
-/* Dark mode styles */
-body.dark-theme {
+/* Dark theme styles */
+@media screen and (prefers-color-scheme: dark) {
+.dark-theme {
     background-color: #121212;
     color: #fff;
-}
+    }
 
 .dark-theme #verificationForm:hover {
     background-color: #333;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
+    }
 
 .dark-theme #myForm p {
     color: #fff;
-}
+    }
 
 .dark-theme #myForm button {
     background-color: #e53935;
     color: #fff;
     transition: background-color 0.3s ease;
-}
+    }
 
 .dark-theme #myForm button:hover {
     background-color: #c62828;
-}
+    }
 
 .dark-theme #myForm button:active {
     background-color: #a52714;
-}
+    }
 
 .dark-theme #cookie-banner {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     background-color: #333;
     color: #ccc;
-}
+    }
 
 .dark-theme #cookie-banner button {
     background-color: #f57c00;
     color: #333;
-}
+    }
 
 .dark-theme #cookie-banner button:hover {
     background-color: #e76d00;
-}
+    }
 
 .dark-theme #cookie-banner p {
     color: #aaa;
-}
+    }
 
-body.dark-theme h1 {
+.dark-theme h1 {
     color: #ff9800;
     background-color: #333;
-}
+    }
 
-body.dark-theme #content {
+.dark-theme #content {
     background-color: #333;
     color: #fff;
-}
+    }
 
-body.dark-theme #content a {
+.dark-theme #content a {
     color: #ff9800;
-}
+    }
 
-body.dark-theme #content a:hover {
+.dark-theme #content a:hover {
     text-decoration: underline;
     color: #ff4500;
-}
+    }
 
-body.dark-theme #content footer {
+.dark-theme #content footer {
     background-color: #333;
     color: #fff;
-}
+    }
 
 .dark-theme footer a {
     color: #ff4500;
-}
+    }
 
 .dark-theme footer a:hover {
     color: #ff9800;
-}
+    }
 
 .dark-theme footer a:active {
     color: #e53935;
+    }
 }
