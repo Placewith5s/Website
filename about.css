@@ -263,72 +263,74 @@ footer a:hover {
 }
 
 /* Dark theme styles */
+@media screen and (prefers-color-scheme: dark) {
 .dark-theme {
     background-color: #333;
     color: #ddd;
-}
+    }
 
 .dark-theme #verificationForm:hover {
     background-color: #222;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
+    }
 
 .dark-theme #myForm p {
     color: #fff;
-}
+    }
 
 .dark-theme #myForm button {
     background-color: #ff4500;
     color: #fff;
     transition: background-color 0.3s ease;
-}
+    }
 
 .dark-theme #myForm button:hover {
     background-color: #e63900;
-}
+    }
 
 .dark-theme #myForm button:active {
     background-color: #cc3500;
-}
+    }
 
 .dark-theme #cookie-banner {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     background-color: #333;
     color: #ccc;
-}
+    }
 
 .dark-theme #cookie-banner button {
     background-color: #ff9800;
     color: #333;
-}
+    }
 
 .dark-theme #cookie-banner button:hover {
     background-color: #e68a00;
-}
+    }
 
 .dark-theme #cookie-banner p {
     color: #aaa;
-}
+    }
 
 .dark-theme h2 {
     color: #ff8c00;
-}
+    }
 
 .dark-theme .extended-about {
     background-color: #333;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     color: #ddd;
-}
+    }
 
 .dark-theme footer {
     background-color: #333;
     color: #ddd;
-}
+    }
 
 .dark-theme footer a {
     color: #ff9800;
-}
+    }
 
 .dark-theme footer a:hover {
     color: #ff4500;
+    }
 }
