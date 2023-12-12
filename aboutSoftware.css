@@ -84,7 +84,7 @@ body {
 /* General styles for cookie banner button */
 #cookie-banner button {
     background-color: #f57c00;
-    color: #fff;
+    color: #333;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -281,7 +281,7 @@ body.dark-theme {
 
 .dark-theme #cookie-banner button {
     background-color: #f57c00;
-    color: #fff;
+    color: #ccc;
 }
 
 .dark-theme #cookie-banner button:hover {
