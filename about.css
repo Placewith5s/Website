@@ -63,8 +63,7 @@ body {
 #cookie-banner {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
     text-align: center;
     padding: 15px;
@@ -82,7 +81,7 @@ body {
 
 /* General styles for cookie banner button */
 #cookie-banner button {
-    background-color: #ff9800;
+    background-color: #FFC107;
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -93,9 +92,9 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* General hover styles for cookie banner button */
+/* Hover style for cookie banner button */
 #cookie-banner button:hover {
-    background-color: #e68a00;
+    background-color: #FFA000;
 }
 
 /* General styling for the heading */
@@ -264,7 +263,7 @@ footer a:hover {
 }
 
 /* Dark theme styles */
-body.dark-theme {
+.dark-theme {
     background-color: #333;
     color: #ddd;
 }
@@ -300,7 +299,7 @@ body.dark-theme {
 
 .dark-theme #cookie-banner button {
     background-color: #ff9800;
-    color: #ccc;
+    color: #333;
 }
 
 .dark-theme #cookie-banner button:hover {
@@ -311,25 +310,25 @@ body.dark-theme {
     color: #aaa;
 }
 
-body.dark-theme h2 {
+.dark-theme h2 {
     color: #ff8c00;
 }
 
-body.dark-theme .extended-about {
+.dark-theme .extended-about {
     background-color: #333;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
     color: #ddd;
 }
 
-body.dark-theme footer {
+.dark-theme footer {
     background-color: #333;
     color: #ddd;
 }
 
-footer a {
+.dark-theme footer a {
     color: #ff9800;
 }
 
-footer a:hover {
+.dark-theme footer a:hover {
     color: #ff4500;
 }
