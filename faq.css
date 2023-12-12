@@ -328,7 +328,7 @@ body.dark-theme #search-bar:focus {
 
 .dark-theme #cookie-banner button {
     background-color: #ff9800;
-    color: #333;
+    color: #ccc;
 }
 
 .dark-theme #cookie-banner button:hover {
