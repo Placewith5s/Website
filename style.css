@@ -574,9 +574,9 @@ footer p {
     order: 2;
 }
 
-/* Dark mode styles */
+/* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
-    body.dark-theme {
+    .dark-theme {
         background-color: #333;
         color: #f8f8f8;
     }
