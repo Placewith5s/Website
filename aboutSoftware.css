@@ -65,12 +65,11 @@ body {
 #cookie-banner {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 0;
     width: 100%;
     text-align: center;
     padding: 15px;
-    background-color: #607d8b;
+    background-color: #333;
     color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     z-index: 1000;
@@ -84,7 +83,7 @@ body {
 
 /* General styles for cookie banner button */
 #cookie-banner button {
-    background-color: #f57c00;
+    background-color: #FFC107;
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -95,9 +94,9 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* General hover styles for cookie banner button */
+/* Hover style for cookie banner button */
 #cookie-banner button:hover {
-    background-color: #e76d00;
+    background-color: #FFA000;
 }
 
 /* General styling for the header section with a flexible orange background and white text */
@@ -282,7 +281,7 @@ body.dark-theme {
 
 .dark-theme #cookie-banner button {
     background-color: #f57c00;
-    color: #ccc;
+    color: #333;
 }
 
 .dark-theme #cookie-banner button:hover {
