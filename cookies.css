@@ -246,83 +246,85 @@ footer a {
 }
 
 /* Dark theme styles */
-body.dark-theme {
+@media screen and (prefers-color-scheme: dark) {
+.dark-theme {
     background: #333;
     color: #fff;
-}
+    }
 
-body.dark-theme main {
+.dark-theme main {
     background: #2c2c2c;
     color: #fff;
     border-color: #555;
-}
+    }
 
 .dark-theme #verificationForm:hover {
     background-color: #222;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-}
+    }
 
 .dark-theme #myForm p {
     color: #fff;
-}
+    }
 
 .dark-theme #myForm button {
     background-color: #ff4500;
     color: #fff;
     transition: background-color 0.3s ease;
-}
+    }
 
 .dark-theme #myForm button:hover {
     background-color: #e63900;
-}
+    }
 
 .dark-theme #myForm button:active {
     background-color: #cc3500;
-}
+    }
 
-body.dark-theme ul {
+.dark-theme ul {
     color: #fff;
-}
+    }
 
-body.dark-theme section {
+.dark-theme section {
     color: #fff;
-}
+    }
 
-body.dark-theme .all-about-cookies {
+.dark-theme .all-about-cookies {
     color: #4CAF50;
-}
+    }
 
-body.dark-theme .all-about-cookies:hover {
+.dark-theme .all-about-cookies:hover {
     color: #ff8c00;
-}
+    }
 
 .dark-theme #cookie-banner {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     background-color: #333;
     color: #ccc;
-}
+    }
 
 .dark-theme #cookie-banner button {
     background-color: #ff9800;
     color: #333;
-}
+    }
 
 .dark-theme #cookie-banner button:hover {
     background-color: #e68a00;
-}
+    }
 
 .dark-theme #cookie-banner p {
     color: #aaa;
-}
+    }
 
-body.dark-theme footer {
+.dark-theme footer {
     border-top-color: #444;
-}
+    }
 
 .dark-theme footer a {
     color: #ff9800;
-}
+    }
 
 .dark-theme footer a:hover {
     color: #ff4500;
+    }
 }
