@@ -1,4 +1,4 @@
-/* Body styles */
+/* This is cookies.css */
 body {
     display: flex;
     align-items: center;
@@ -11,7 +11,6 @@ body {
     color: #333;
 }
 
-/* Main content styles */
 main {
     width: 80%;
     padding: 20px;
@@ -26,7 +25,7 @@ main {
     margin: 20px;
 }
 
-/* Style for the verification form */
+/* General styles for the verification form */
 #verificationForm {
     width: 80%;
     max-width: 300px;
@@ -40,19 +39,16 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the form elements */
 #myForm {
     display: flex;
     flex-direction: column;
 }
 
-/* Style for form paragraphs */
 #myForm p {
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Style for the form button in light mode */
 #myForm button {
     background-color: #4caf50;
     color: white;
@@ -62,12 +58,10 @@ main {
     cursor: pointer;
 }
 
-/* Style for the form button on hover in light mode */
 #myForm button:hover {
     background-color: #45a049;
 }
 
-/* Style for the form button when clicked in light mode */
 #myForm button:active {
     background-color: #3e8e41;
 }
@@ -86,13 +80,11 @@ main {
     z-index: 1000;
 }
 
-/* General styles for cookie banner paragraph */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 16px;
 }
 
-/* General styles for cookie banner button */
 #cookie-banner button {
     background-color: #FFC107;
     color: #333;
@@ -105,16 +97,56 @@ main {
     transition: background-color 0.3s ease;
 }
 
-/* Hover style for cookie banner button */
 #cookie-banner button:hover {
     background-color: #FFA000;
 }
 
-/* General header styles */
 header {
     order: -1;
     color: #ff8c00;
 }
+
+section {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+h1, h2 {
+    color: #ff8c00;
+}
+
+/* General  ul list styles */
+ul {
+    padding: 0;
+    list-style: none;
+    color: #000;
+}
+
+/* General link styles for "All About Cookies" */
+.all-about-cookies {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.all-about-cookies:hover {
+    color: #ff8c00;
+}
+
+/* General footer styles */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+footer a {
+    order: -1;
+    text-decoration: none;
+}
+
 
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
@@ -200,50 +232,6 @@ header {
     }
 }
 
-/* General section styles */
-section {
-    margin-bottom: 20px;
-    color: #000;
-}
-
-/* General heading styles */
-h1, h2 {
-    color: #ff8c00;
-}
-
-/* General list styles */
-ul {
-    padding: 0;
-    list-style: none;
-    color: #000;
-}
-
-/* General link styles for "All About Cookies" */
-.all-about-cookies {
-    color: #4CAF50;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* General hover styles for "All About Cookies" link */
-.all-about-cookies:hover {
-    color: #ff8c00;
-}
-
-/* General footer styles */
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 15px;
-}
-
-/* General link footer styles */
-footer a {
-    order: -1;
-    text-decoration: none;
-}
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
