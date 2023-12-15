@@ -1,4 +1,3 @@
-/* Body styles */
 body {
     display: flex;
     flex-direction: column;
@@ -10,14 +9,13 @@ body {
     padding: 0;
 }
 
-/* Main content styles */
 main {
     flex-grow: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
-/* General styles for all screen sizes */
+/* General styles for the images */
 img {
     max-width: 100%;
     height: auto;
@@ -31,18 +29,16 @@ img {
     will-change: transform;
 }
 
-/* High-quality 3D effect on hover */
 img:hover,
 img:active {
     transform: perspective(1000px) scale(0.95);
 }
 
-/* Transition for active state */
 img:active {
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Style for the verification form */
+/* General styles for the verification */
 #verificationForm {
     width: 80%;
     max-width: 300px;
@@ -56,19 +52,16 @@ img:active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the form elements */
 #myForm {
     display: flex;
     flex-direction: column;
 }
 
-/* Style for form paragraphs */
 #myForm p {
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Style for the form button in light mode */
 #myForm button {
     background-color: #4caf50;
     color: white;
@@ -78,17 +71,14 @@ img:active {
     cursor: pointer;
 }
 
-/* Style for the form button on hover in light mode */
 #myForm button:hover {
     background-color: #45a049;
 }
 
-/* Style for the form button when clicked in light mode */
 #myForm button:active {
     background-color: #3e8e41;
 }
 
-/* General styles for the main content */
 h1 {
     color: #ff7b00;
     font-size: 2em;
@@ -97,7 +87,7 @@ h1 {
     padding-bottom: 10px;
 }
 
-/* General styles for links within the Step-by-Step Guide section */
+/* General styles for the Step-by-Step Guide section */
 #Step-by-Step-Guide a {
     color: #000080;
     text-decoration: none;
@@ -105,7 +95,6 @@ h1 {
     transition: color 0.3s;
 }
 
-/* General underline styles */
 #Step-by-Step-Guide a::before {
     content: "";
     position: absolute;
@@ -119,18 +108,16 @@ h1 {
     transition: transform 0.3s ease-out;
 }
 
-/* General hover styles for links within the Step-by-Step Guide section */
 #Step-by-Step-Guide a:hover {
     color: #0056b3;
 }
 
-/* General hover styles for the underline */
 #Step-by-Step-Guide a:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
-/* Small screen styles (600px) outside media */
+/* Most of screens exclusive styles */
 .exclusive-nav {
     display: flex;
     justify-content: center;
@@ -160,14 +147,13 @@ a[href^="#"] {
     transition: color 0.3s;
 }
 
-/* Specific general styles for Cool Websites */
+/* General styles for Cool Websites */
 #Cool-Websites {
     background-color: #f8f8f8;
     border-radius: 5px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Specific general styles for Cool Websites section title */
 #Cool-Websites h2 {
     font-size: 1.8em;
     color: #dc143c;
@@ -176,7 +162,6 @@ a[href^="#"] {
     padding-bottom: 5px;
 }
 
-/* General styles for links within the Cool Websites section */
 #Cool-Websites a {
     color: #000080;
     text-decoration: none;
@@ -188,7 +173,6 @@ a[href^="#"] {
     transition: background-color, color 0.3s;
 }
 
-/* General hover styles for links within the Cool Websites section in light mode */
 #Cool-Websites a:hover {
     transform: scale(1.05);
     background-color: #add8e6;
@@ -196,7 +180,6 @@ a[href^="#"] {
     color: #fff !important;
 }
 
-/* Specific general styles for span in Cool Websites section */
 #Cool-Websites span {
     display: block;
     margin-bottom: 10px;
@@ -267,12 +250,10 @@ h2 {
     backdrop-filter: blur(10px);
 }
 
-/* General hover styles for menu icon line */
 .menu-icon:hover .line {
     background-color: #ccc;
 }
 
-/* General styles for menu icon line */
 .line {
     width: 20px;
     height: 3px;
@@ -291,7 +272,6 @@ h2 {
     padding: 10px;
 }
 
-/* General drawer link styles */
 .drawer a {
     display: block;
     margin: 5px 0;
@@ -303,35 +283,13 @@ h2 {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* General drawer link hover styles */
 .drawer a:hover {
     background-color: #f8f8f8;
     color: #000;
     border-color: #007bff;
 }
 
-/* General styles for navigation */
-nav {
-    background-color: #007bff;
-    padding: 10px;
-    position: relative;
-    background-color: transparent; /* Debugger */
-}
-
-/* General navigation link styles */
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s;
-}
-
-/* General navigation link hover styles */
-nav a:hover {
-    color: #ffcc00;
-}
-
-/* General styles for extended About Us section title */
+/* General styles for About Us section title */
 #About-Us h2 {
     font-size: 2em;
     color: #ff7b00;
@@ -354,15 +312,13 @@ nav a:hover {
     z-index: 1000;
 }
 
-/* General styles for cookie banner paragraph */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 16px;
 }
 
-/* General styles for cookie banner button */
 #cookie-banner button {
-    background-color: #FFC107;
+    background-color: #ffc107;
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -373,68 +329,55 @@ nav a:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Hover style for cookie banner button */
 #cookie-banner button:hover {
     background-color: #FFA000;
 }
 
-/* General styles for the footer */
+/* General styling for the footer */
 footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+footer .nav-footer a {
     display: flex;
     flex-direction: column;
-    border-top: 2px solid #3f00ff;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: auto;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* General styles for links within the footer */
-footer a {
-    color: #3f00ff;
+    align-items: center;
+    margin: 15px 0;
     text-decoration: none;
-    transition: color 0.3s;
-    margin-bottom: 15px;
-    display: inline-block;
+    color: #fff;
 }
 
-/* General styles for hovering links within the footer */
-footer a:hover {
-    color: #000080;
+.attribution {
+    text-decoration: none;
+    color: #ccc;
 }
 
-/* General styles for paragraph within the footer */
-footer p {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    order: 2;
+.manage-cookies-container {
+    margin-top: 25px;
 }
 
-/* Additional styles for copyright text */
-footer p.copyright {
-    font-size: 20px;
-    color: #555;
+.copyright {
+    margin-top: 30px;
+    color: #ccc;
 }
 
-/* Additional styles for attribution link */
-footer a.attribution {
-    font-size: 14px;
-}
-
-/* Additional styles for navigation links */
-footer a.nav-link {
-    font-size: 18px;
+#manageCookiesLink {
+    text-decoration: none;
+    color: #3498db;
     font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
 }
 
-/* Additional styles for manage cookies link */
-footer a#manageCookiesLink {
-    font-size: 14px;
-    font-weight: bold;
+#manageCookiesLink:hover {
+    color: #217dbb;
 }
 
-/* Dark mode debug */
+
+/* Dark mode fix (small) */
 @media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
     .exclusive-nav {
         display: none !important; /* Debugger */
@@ -449,8 +392,7 @@ footer a#manageCookiesLink {
     }
 
     #Cool-Websites {
-        padding: 15px;
-        margin-top: 15px;
+        padding: 10px;
     }
 
     img {
@@ -487,11 +429,25 @@ footer a#manageCookiesLink {
     }
 
     footer {
-        padding: 20px 10px;
+        padding: 20px;
     }
 
-    footer a {
+    .copyright {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .attribution {
         font-size: 14px;
+        margin-top: 15px;
+    }
+
+    .nav-footer a {
+        font-size: 16px;
+    }
+
+    #manageCookiesLink {
+        font-size: 16px;
     }
 }
 
@@ -504,7 +460,6 @@ footer a#manageCookiesLink {
 
     #Cool-Websites {
         padding: 20px;
-        margin-top: 20px;
     }
 
     img {
@@ -527,11 +482,25 @@ footer a#manageCookiesLink {
     }
 
     footer {
-        padding: 30px 15px;
+        padding: 30px;
     }
 
-    footer a {
+    .copyright {
         font-size: 16px;
+        margin-top: 25px;
+    }
+
+    .attribution {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .nav-footer a {
+        font-size: 17px;
+    }
+
+    #manageCookiesLink {
+        font-size: 17px;
     }
 }
 
@@ -543,8 +512,7 @@ footer a#manageCookiesLink {
     }
 
     #Cool-Websites {
-        padding: 30px;
-        margin-top: 30px;
+        padding: 35px;
     }
 
     img {
@@ -575,10 +543,24 @@ footer a#manageCookiesLink {
     }
 
     footer {
-        padding: 40px 20px;
+        padding: 40px;
     }
 
-    footer a {
+    .copyright {
+        font-size: 18px;
+        margin-top: 30px;
+    }
+
+    .attribution {
+        font-size: 16px;
+        margin-top: 25px;
+    }
+
+    .nav-footer a {
+        font-size: 18px;
+    }
+
+    #manageCookiesLink {
         font-size: 18px;
     }
 }
@@ -591,8 +573,7 @@ footer a#manageCookiesLink {
     }
 
     #Cool-Websites {
-        padding: 40px;
-        margin-top: 40px;
+        padding: 50px;
     }
 
     img {
@@ -623,13 +604,29 @@ footer a#manageCookiesLink {
     }
 
     footer {
-        padding: 50px 25px;
+        padding: 50px;
     }
 
-    footer a {
+    .copyright {
+        font-size: 20px;
+        margin-top: 35px;
+    }
+
+    .attribution {
+        font-size: 18px;
+        margin-top: 30px;
+    }
+
+    .nav-footer a {
         font-size: 20px;
     }
+
+    #manageCookiesLink {
+        font-size: 20px;
+        margin-top: 20px;
+    }
 }
+
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
@@ -773,17 +770,26 @@ footer a#manageCookiesLink {
         background-color: #222;
         border-top-color: #888;
         color: #ccc;
+        padding: 20px;
+        border-radius: 8px;
     }
-
-    .dark-theme footer a {
-        color: #ff7f50;
+    
+    .dark-theme .nav-footer a {
+        color: #ff7b00;
         text-decoration: none;
-        transition: color 0.3s;
-        margin-bottom: 15px;
-        display: inline-block;
+        transition: color 0.3s ease;
     }
-
-    .dark-theme footer a:hover {
+    
+    .dark-theme .nav-footer a:hover {
         color: #ff4500;
+    }
+    
+    .dark-theme #manageCookiesLink {
+        color: #e65100;
+        transition: color 0.3s ease;
+    }
+    
+    .dark-theme #manageCookiesLink:hover {
+        color: #ff9800;
     }
 }
