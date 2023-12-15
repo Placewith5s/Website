@@ -1,4 +1,4 @@
-/* Body styles */
+/* This is faq.css */
 body {
     display: flex;
     line-height: 1.6;
@@ -11,24 +11,6 @@ body {
     color: #333;
 }
 
-/* Styles for the not found message */
-#not-found-message {
-    display: none;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #e57373;
-    border: 1px solid #ef9a9a;
-    border-radius: 5px;
-    color: #c62828;
-    text-align: center;
-}
-
-/* Styles for the paragraph inside the not found message */
-#not-found-message p {
-    margin: 0;
-}
-
-/* Main content styles */
 main {
     display: flex;
     flex-direction: column;
@@ -44,7 +26,23 @@ main {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Style for the verification form */
+/* Styles for the not found message */
+#not-found-message {
+    display: none;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #e57373;
+    border: 1px solid #ef9a9a;
+    border-radius: 5px;
+    color: #c62828;
+    text-align: center;
+}
+
+#not-found-message p {
+    margin: 0;
+}
+
+/* General styles for the verification */
 #verificationForm {
     width: 80%;
     max-width: 400px;
@@ -55,19 +53,16 @@ main {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the form elements */
 #myForm {
     display: flex;
     flex-direction: column;
 }
 
-/* Style for form paragraphs */
 #myForm p {
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Style for the form button */
 #myForm button {
     background-color: #2196F3;
     color: white;
@@ -77,7 +72,6 @@ main {
     cursor: pointer;
 }
 
-/* Hover and active styles for the form button */
 #myForm button:hover {
     background-color: #1565c0;
 }
@@ -100,13 +94,11 @@ main {
     z-index: 1000;
 }
 
-/* General styles for cookie banner paragraph */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 16px;
 }
 
-/* General styles for cookie banner button */
 #cookie-banner button {
     background-color: #FFC107;
     color: #333;
@@ -119,10 +111,82 @@ main {
     transition: background-color 0.3s ease;
 }
 
-/* Hover style for cookie banner button */
 #cookie-banner button:hover {
     background-color: #FFA000;
 }
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+}
+
+/* General header title styles */
+header h1 {
+    color: #e74c3c;
+    font-size: 1.8em;
+}
+
+/* Search bar styles */
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 2px solid #3f00ff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #fce8e6;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+#search-bar:focus {
+    border-color: #2980b9;
+}
+
+/* Animation for FAQ sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+section {
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+section h2 {
+    color: #e74c3c;
+}
+
+/* General footer styles */
+footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #000000;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+    background-color: #2c3e50;
+    color: #ffffff;
+    filter: brightness(0.8);
+}
+
+footer a {
+    order: -1;
+    color: #000080;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #3f00ff;
+}
+
 
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
@@ -206,80 +270,7 @@ main {
     }
 }
 
-/* General header styles */
-header {
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-}
 
-/* General header title styles */
-header h1 {
-    color: #e74c3c;
-    font-size: 1.8em;
-}
-
-/* Search bar styles */
-#search-bar {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 16px;
-    border: 2px solid #3f00ff;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: #fce8e6;
-    transition: border-color 0.3s ease;
-    outline: none;
-}
-
-#search-bar:focus {
-    border-color: #2980b9;
-}
-
-/* Animation for FAQ sections */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* General section styles */
-section {
-    margin-bottom: 20px;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-/* General heading styles */
-section h2 {
-    color: #e74c3c;
-}
-
-/* General footer styles */
-footer {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid #000000;
-    padding: 10px;
-    text-align: center;
-    margin-top: auto;
-    background-color: #2c3e50;
-    color: #ffffff;
-    filter: brightness(0.8);
-}
-
-footer a {
-    order: -1;
-    color: #000080;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #3f00ff;
-}
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
