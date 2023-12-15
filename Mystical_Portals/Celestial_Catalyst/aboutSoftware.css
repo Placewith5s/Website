@@ -1,10 +1,9 @@
-/* Reset some default styles */
+/* This is aboutSoftware.css */
 body, h1, p {
     margin: 0;
     padding: 0;
 }
 
-/* Base styles for the body */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -16,7 +15,7 @@ body {
     --link-color: #2d74da;
 }
 
-/* Style for the verification form */
+/* General styles for the verification */
 #verificationForm {
     width: 80%;
     max-width: 300px;
@@ -30,19 +29,16 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the form elements */
 #myForm {
     display: flex;
     flex-direction: column;
 }
 
-/* Style for form paragraphs */
 #myForm p {
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Style for the form button in light mode */
 #myForm button {
     background-color: #4caf50;
     color: white;
@@ -52,12 +48,10 @@ body {
     cursor: pointer;
 }
 
-/* Style for the form button on hover in light mode */
 #myForm button:hover {
     background-color: #45a049;
 }
 
-/* Style for the form button when clicked in light mode */
 #myForm button:active {
     background-color: #3e8e41;
 }
@@ -76,13 +70,11 @@ body {
     z-index: 1000;
 }
 
-/* General styles for cookie banner paragraph */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 16px;
 }
 
-/* General styles for cookie banner button */
 #cookie-banner button {
     background-color: #FFC107;
     color: #333;
@@ -95,12 +87,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Hover style for cookie banner button */
 #cookie-banner button:hover {
     background-color: #FFA000;
 }
 
-/* General styling for the header section */
 header {
     background-color: #ff9800;
     color: #fff;
@@ -121,12 +111,11 @@ header {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* General ul list styles */
+/* General li and ul list styles */
 ul {
     list-style-type: none;
 }
 
-/* General li list styles */
 li {
     margin-bottom: 20px;
 }
@@ -144,12 +133,10 @@ footer {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* General styling for the  paragraph within the footer */
 footer p {
     margin: 10px;
 }
 
-/* General styling for links within footer */
 footer a {
     margin: 10px;
     color: #2d74da;
@@ -161,6 +148,7 @@ footer a:hover {
     transition: color 0.3s ease;
     color: #3f00ff;
 }
+
 
 /* Responsive design for smaller screens on the new page */
 @media only screen and (max-width: 600px) {
@@ -248,6 +236,7 @@ footer a:hover {
         font-size: 20px;
     }
 }
+
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
