@@ -1,10 +1,9 @@
-/* Reset some default styles */
+/* This is about.css */
 body, h2, p {
     margin: 0;
     padding: 0;
 }
 
-/* Base styles for the body */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -13,7 +12,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Style for the verification form */
+/* General styles for the verification */
 #verificationForm {
     width: 80%;
     max-width: 300px;
@@ -27,19 +26,16 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the form elements */
 #myForm {
     display: flex;
     flex-direction: column;
 }
 
-/* Style for form paragraphs */
 #myForm p {
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Style for the form button in light mode */
 #myForm button {
     background-color: #4caf50;
     color: white;
@@ -49,12 +45,10 @@ body {
     cursor: pointer;
 }
 
-/* Style for the form button on hover in light mode */
 #myForm button:hover {
     background-color: #45a049;
 }
 
-/* Style for the form button when clicked in light mode */
 #myForm button:active {
     background-color: #3e8e41;
 }
@@ -73,13 +67,11 @@ body {
     z-index: 1000;
 }
 
-/* General styles for cookie banner paragraph */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 16px;
 }
 
-/* General styles for cookie banner button */
 #cookie-banner button {
     background-color: #FFC107;
     color: #333;
@@ -92,12 +84,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
-/* Hover style for cookie banner button */
 #cookie-banner button:hover {
     background-color: #FFA000;
 }
 
-/* General styling for the heading */
 h2 {
     color: #ff4500;
     text-align: center;
@@ -117,19 +107,43 @@ h2 {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* General styling for paragraphs */
 .extended-about p {
     margin-bottom: 15px;
     position: relative;
 }
 
-/* General styling for bullet points */
 .extended-about p:not(:first-child)::before {
     content: '\2022';
     color: #ff4500;
     font-size: 1.2em;
     margin-right: 10px;
 }
+
+/* General footer styles */
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 15px;
+}
+
+footer a {
+    margin: 10px;
+    order: -1;
+    color: #000080;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #3f00ff;
+}
+
 
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
@@ -234,33 +248,6 @@ h2 {
     }
 }
 
-/* General footer styles */
-footer {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    color: #333;
-    padding: 20px;
-    text-align: center;
-}
-
-/* General parapgraph styles within the footerS */
-footer p {
-    margin: 15px;
-}
-
-/* General link styles within the footer */
-footer a {
-    margin: 10px;
-    order: -1;
-    color: #000080;
-    text-decoration: none;
-}
-
-/* General hover styles within the footer */
-footer a:hover {
-    color: #3f00ff;
-}
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
