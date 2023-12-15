@@ -1,7 +1,7 @@
-/* Body styles */
+/* This is privacyp.css */
 body {
     display: flex;
-    background-color: #ffffff;
+    background-color: #fff;
     color: #000;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     line-height: 1.6;
@@ -12,7 +12,6 @@ body {
     padding: 0;
 }
 
-/* Main content styles */
 main {
     flex-grow: 1;
     padding: 20px;
@@ -22,7 +21,7 @@ main {
     margin-top: 20px;
 }
 
-/* Style for the verification form */
+/* General style for the verification */
 #verificationForm {
     width: 80%;
     max-width: 300px;
@@ -36,34 +35,29 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for the form elements */
 #myForm {
     display: flex;
     flex-direction: column;
 }
 
-/* Style for form paragraphs */
 #myForm p {
     margin-bottom: 15px;
     font-weight: bold;
 }
 
-/* Style for the form button in light mode */
 #myForm button {
     background-color: #4caf50;
-    color: white;
+    color: #fff;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-/* Style for the form button on hover in light mode */
 #myForm button:hover {
     background-color: #45a049;
 }
 
-/* Style for the form button when clicked in light mode */
 #myForm button:active {
     background-color: #3e8e41;
 }
@@ -82,15 +76,13 @@ main {
     z-index: 1000;
 }
 
-/* General styles for cookie banner paragraph */
 #cookie-banner p {
     margin: 15px 0;
     font-size: 16px;
 }
 
-/* General styles for cookie banner button */
 #cookie-banner button {
-    background-color: #FFC107;
+    background-color: #ffc107;
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -101,10 +93,80 @@ main {
     transition: background-color 0.3s ease;
 }
 
-/* Hover style for cookie banner button */
 #cookie-banner button:hover {
-    background-color: #FFA000;
+    background-color: #ffa000;
 }
+
+/* General header h1 styles */
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+    color: #3498db;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #ff4500;
+}
+
+h2 {
+    color: #dc143c;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* General link styles for contact and cookie pages */
+.contact-link,
+.cookie-page-link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link {
+    color: #3498db;
+}
+
+.cookie-page-link {
+    color: #e74c3c;
+}
+
+.contact-link:hover {
+    color: #1a5276;
+}
+
+.cookie-page-link:hover {
+    color: #992d22;
+}
+
+/* General footer styles */
+footer {
+    border-top: 1px solid #000000;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+footer a {
+    order: 1;
+    margin-bottom: 10px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #004080;
+}
+
+footer p {
+    margin-top: 10px;
+    order: 2;
+}
+
 
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
@@ -176,85 +238,6 @@ main {
     }
 }
 
-/* General header h1 styles */
-header h1 {
-    font-size: 2em;
-    font-weight: bold;
-    padding: 10px;
-    margin: 0;
-    color: #3498db;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* General h1 styles */
-h1 {
-    color: #ff4500;
-}
-
-/* General h2 styles */
-h2 {
-    color: #dc143c;
-}
-
-/* General section styles */
-section {
-    margin-bottom: 20px;
-}
-
-/* General link styles for contact and cookie pages */
-.contact-link,
-.cookie-page-link {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* General contact link styles */
-.contact-link {
-    color: #3498db;
-}
-
-/* General cookie page link styles */
-.cookie-page-link {
-    color: #e74c3c;
-}
-
-/* General hover styles for contact link */
-.contact-link:hover {
-    color: #1a5276;
-}
-
-/* General hover styles for cookie page link */
-.cookie-page-link:hover {
-    color: #992d22;
-}
-
-/* General footer styles */
-footer {
-    border-top: 1px solid #000000;
-    padding: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-/* General footer link styles */
-footer a {
-    order: 1;
-    margin-bottom: 10px;
-    color: #0066cc;
-    text-decoration: none;
-}
-
-/* General hover footer styles */
-footer a:hover {
-    color: #004080;
-}
-
-/* General footer parapgraph styles */
-footer p {
-    margin-top: 10px;
-    order: 2;
-}
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
