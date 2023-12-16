@@ -154,7 +154,7 @@ a[href^="#"] {
     transition: color 0.3s;
 }
 
-/* General styles for Cool Websites */
+/* General styles for Websites Link */
 #Cool-Websites {
     background-color: #f8f8f8;
     border-radius: 5px;
@@ -204,7 +204,6 @@ a[href^="#"] {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* General styles for h2 in step section */
 h2 {
     color: #007bff;
     font-size: 1.5em;
@@ -218,12 +217,6 @@ h2 {
     font-family: monospace;
     border-radius: 5px;
     margin-bottom: 10px;
-}
-
-/* General styles for note in step section */
-.note {
-    font-style: italic;
-    color: #555;
 }
 
 /* General styles for step content section */
@@ -333,7 +326,7 @@ h2 {
 
 /* General styling for the footer */
 footer {
-    background-color: #fff;
+    background-color: #3f00ff;
     color: #333;
     text-align: center;
     padding: 30px 20px;
@@ -346,12 +339,12 @@ footer .nav-footer a {
     align-items: center;
     margin: 15px 0;
     text-decoration: none;
-    color: #fff;
+    color: #333;
 }
 
 .attribution {
     text-decoration: none;
-    color: #ccc;
+    color: #444;
 }
 
 .manage-cookies-container {
@@ -360,7 +353,7 @@ footer .nav-footer a {
 
 .copyright {
     margin-top: 30px;
-    color: #ccc;
+    color: #444;
 }
 
 #manageCookiesLink {
@@ -416,6 +409,19 @@ footer .nav-footer a {
     .description {
         font-size: 1.1em;
         margin: 10px;
+        padding: 5px;
+    }
+
+    .step {
+        margin: 15px;
+    }
+
+    .step-content {
+        padding: 10px;
+    }
+
+    .step-description {
+        font-size: 1.0em;
         padding: 5px;
     }
 
@@ -489,6 +495,19 @@ footer .nav-footer a {
         padding: 10px;
     }
 
+    .step {
+        margin: 15px;
+    }
+
+    .step-content {
+        padding: 10px;
+    }
+
+    .step-description {
+        font-size: 1.2em;
+        padding: 5px;
+    }
+
     .menu-icon,
     .drawer {
         display: none;
@@ -551,6 +570,19 @@ footer .nav-footer a {
         font-size: 1.2em;
         margin: 10px;
         padding: 10px;
+    }
+
+    .step {
+        margin: 40px;
+    }
+
+    .step-content {
+        padding: 5px;
+    }
+
+    .step-description {
+        font-size: 1.3em;
+        padding: 5px;
     }
 
     .menu-icon,
@@ -625,6 +657,19 @@ footer .nav-footer a {
         padding: 15px;
     }
 
+    .step {
+        margin: 40px;
+    }
+
+    .step-content {
+        padding: 5px;
+    }
+
+    .step-description {
+        font-size: 1.4em;
+        padding: 5px;
+    }
+
     .menu-icon,
     .drawer {
         display: none;
@@ -684,7 +729,6 @@ footer .nav-footer a {
         border-color: #333;
         color: #fff;
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
     
     .dark-theme #verificationForm:hover {
@@ -699,7 +743,6 @@ footer .nav-footer a {
     .dark-theme #myForm button {
         background-color: #ff4500;
         color: #fff;
-        transition: background-color 0.3s ease;
     }
     
     .dark-theme #myForm button:hover {
@@ -824,22 +867,28 @@ footer .nav-footer a {
 
     .dark-theme footer {
         background-color: #222;
-        border-top-color: #888;
-        color: #ccc;
-        padding: 20px;
-        border-radius: 8px;
     }
     
     .dark-theme .nav-footer a {
         color: #ff7b00;
-        text-decoration: none;
-        transition: color 0.3s ease;
     }
     
     .dark-theme .nav-footer a:hover {
         color: #ff4500;
     }
     
+    .attribution {
+        color: #ddd !important;
+    }
+
+    .attribution:hover {
+        color: #fff !important;
+    }
+
+    .copyright {
+        color: #bbb;
+    }
+
     .dark-theme #manageCookiesLink {
         color: #e65100;
         transition: color 0.3s ease;
