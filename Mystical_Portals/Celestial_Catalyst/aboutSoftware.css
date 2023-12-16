@@ -1,32 +1,38 @@
 /* This is aboutSoftware.css */
+
+/* Reset some default styles for consistency */
 body, h1, p {
     margin: 0;
     padding: 0;
 }
 
+/* Body styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 /* Define a variable for the link color */
 :root {
-    --link-color: #2d74da;
+    --link-color: #007bff;
 }
 
-/* General styles for the verification */
+/* General styles for the verification form */
 #verificationForm {
     width: 80%;
     max-width: 300px;
+    margin: 0 auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 #myForm {
@@ -40,7 +46,7 @@ body {
 }
 
 #myForm button {
-    background-color: #4caf50;
+    background-color: #28a745;
     color: white;
     padding: 10px;
     border: none;
@@ -49,11 +55,11 @@ body {
 }
 
 #myForm button:hover {
-    background-color: #45a049;
+    background-color: #218838;
 }
 
 #myForm button:active {
-    background-color: #3e8e41;
+    background-color: #1e7e34;
 }
 
 /* General styles for the cookie banner */
@@ -76,7 +82,7 @@ body {
 }
 
 #cookie-banner button {
-    background-color: #FFC107;
+    background-color: #ffc107;
     color: #333;
     border: none;
     padding: 10px 20px;
@@ -88,11 +94,12 @@ body {
 }
 
 #cookie-banner button:hover {
-    background-color: #FFA000;
+    background-color: #e0a800;
 }
 
+/* Header styles */
 header {
-    background-color: #ff9800;
+    background-color: #007bff;
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -139,16 +146,15 @@ footer p {
 
 footer a {
     margin: 10px;
-    color: #2d74da;
+    color: #007bff;
     order: -1;
     text-decoration: none;
 }
 
 footer a:hover {
     transition: color 0.3s ease;
-    color: #3f00ff;
+    color: #0056b3;
 }
-
 
 /* Responsive design for smaller screens on the new page */
 @media only screen and (max-width: 600px) {
@@ -156,7 +162,7 @@ footer a:hover {
         max-width: 100%;
         padding: 10px;
     }
-    
+
     h1 {
         font-size: 1.5em;
         color: #333;
@@ -237,89 +243,88 @@ footer a:hover {
     }
 }
 
-
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
-.dark-theme {
-    background-color: #121212;
-    color: #fff;
+    .dark-theme {
+        background-color: #1a1a1a;
+        color: #fff;
     }
 
-.dark-theme #verificationForm:hover {
-    background-color: #333;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    .dark-theme #verificationForm:hover {
+        background-color: #333;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
     }
 
-.dark-theme #myForm p {
-    color: #fff;
+    .dark-theme #myForm p {
+        color: #fff;
     }
 
-.dark-theme #myForm button {
-    background-color: #e53935;
-    color: #fff;
-    transition: background-color 0.3s ease;
+    .dark-theme #myForm button {
+        background-color: #e53935;
+        color: #fff;
+        transition: background-color 0.3s ease;
     }
 
-.dark-theme #myForm button:hover {
-    background-color: #c62828;
+    .dark-theme #myForm button:hover {
+        background-color: #c62828;
     }
 
-.dark-theme #myForm button:active {
-    background-color: #a52714;
+    .dark-theme #myForm button:active {
+        background-color: #a52714;
     }
 
-.dark-theme #cookie-banner {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    background-color: #333;
-    color: #ccc;
+    .dark-theme #cookie-banner {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        background-color: #1a1a1a;
+        color: #ccc;
     }
 
-.dark-theme #cookie-banner button {
-    background-color: #f57c00;
-    color: #333;
+    .dark-theme #cookie-banner button {
+        background-color: #f57c00;
+        color: #333;
     }
 
-.dark-theme #cookie-banner button:hover {
-    background-color: #e76d00;
+    .dark-theme #cookie-banner button:hover {
+        background-color: #e76d00;
     }
 
-.dark-theme #cookie-banner p {
-    color: #aaa;
+    .dark-theme #cookie-banner p {
+        color: #aaa;
     }
 
-.dark-theme h1 {
-    color: #ff9800;
-    background-color: #333;
+    .dark-theme h1 {
+        color: #ff9800;
+        background-color: #1a1a1a;
     }
 
-.dark-theme #content {
-    background-color: #333;
-    color: #fff;
+    .dark-theme #content {
+        background-color: #1a1a1a;
+        color: #fff;
     }
 
-.dark-theme #content a {
-    color: #ff9800;
+    .dark-theme #content a {
+        color: #ff9800;
     }
 
-.dark-theme #content a:hover {
-    text-decoration: underline;
-    color: #ff4500;
+    .dark-theme #content a:hover {
+        text-decoration: underline;
+        color: #ff4500;
     }
 
-.dark-theme #content footer {
-    background-color: #333;
-    color: #fff;
+    .dark-theme #content footer {
+        background-color: #1a1a1a;
+        color: #fff;
     }
 
-.dark-theme footer a {
-    color: #ff4500;
+    .dark-theme footer a {
+        color: #ff4500;
     }
 
-.dark-theme footer a:hover {
-    color: #ff9800;
+    .dark-theme footer a:hover {
+        color: #ff9800;
     }
 
-.dark-theme footer a:active {
-    color: #e53935;
+    .dark-theme footer a:active {
+        color: #e53935;
     }
 }
