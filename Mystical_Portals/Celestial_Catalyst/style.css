@@ -80,11 +80,18 @@ img:active {
 }
 
 h1 {
-    color: #ff7b00;
-    font-size: 2em;
+    color: #4caf50;
+    font-size: 1.8em;
     margin-bottom: 20px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
+}
+
+.description {
+    color: #444;
+    font-size: 1.4em;
+    margin: 10px;
+    padding: 15px;
 }
 
 /* General styles for the Step-by-Step Guide section */
@@ -102,7 +109,7 @@ h1 {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000080;
+    background-color: #3f00ff;
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
@@ -156,7 +163,7 @@ a[href^="#"] {
 
 #Cool-Websites h2 {
     font-size: 1.8em;
-    color: #dc143c;
+    color: #007bff;
     margin-bottom: 10px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
@@ -199,7 +206,7 @@ a[href^="#"] {
 
 /* General styles for h2 in step section */
 h2 {
-    color: #ff7b00;
+    color: #007bff;
     font-size: 1.5em;
     margin-bottom: 10px;
 }
@@ -289,15 +296,6 @@ h2 {
     border-color: #007bff;
 }
 
-/* General styles for About Us section title */
-#About-Us h2 {
-    font-size: 2em;
-    color: #ff7b00;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
-}
-
 /* General styles for the cookie banner */
 #cookie-banner {
     display: none;
@@ -335,6 +333,8 @@ h2 {
 
 /* General styling for the footer */
 footer {
+    background-color: #fff;
+    color: #333;
     text-align: center;
     padding: 30px 20px;
     font-family: 'Arial', sans-serif;
@@ -407,7 +407,18 @@ footer .nav-footer a {
     img:active {
         transform: perspective(1000px) scale(1.1);
     } 
-    
+
+    h1 {
+        font-size: 1.8em;
+        padding: 12px;
+    }
+
+    .description {
+        font-size: 1.1em;
+        margin: 10px;
+        padding: 5px;
+    }
+
     .menu-icon,
     .drawer {
         display: block;
@@ -467,6 +478,17 @@ footer .nav-footer a {
         height: 100%;
     }
 
+    h1 {
+        font-size: 1.8em;
+        padding: 7px;
+    }
+
+    .description {
+        font-size: 1.2em;
+        margin: 5px;
+        padding: 10px;
+    }
+
     .menu-icon,
     .drawer {
         display: none;
@@ -518,6 +540,17 @@ footer .nav-footer a {
     img {
         width: 95%;
         height: 100%;
+    }
+
+    h1 {
+        font-size: 2.0em;
+        padding: 10px;
+    }
+
+    .description {
+        font-size: 1.2em;
+        margin: 10px;
+        padding: 10px;
     }
 
     .menu-icon,
@@ -579,6 +612,17 @@ footer .nav-footer a {
     img {
         width: 100%;
         height: 100%;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        padding: 13px;
+    }
+
+    .description {
+        font-size: 1.2em;
+        margin: 10px;
+        padding: 15px;
     }
 
     .menu-icon,
@@ -666,6 +710,14 @@ footer .nav-footer a {
         background-color: #cc3500;
     }
 
+    .dark-theme .description {
+        color: #f8f8f8;
+    }
+
+    .dark-theme h1 {
+        color: #dc143c;
+    }
+
     .dark-theme [href^="#"] {
         color: #dc143c;
     }
@@ -690,6 +742,10 @@ footer .nav-footer a {
         background-color: #333;
     }
 
+    .dark-theme #Cool-Websites h2 {
+        color: #dc143c;
+    }
+
     .dark-theme #Cool-Websites a {
         color: #ff8c00;
     }
@@ -699,12 +755,12 @@ footer .nav-footer a {
         color: #333 !important;
     }
 
-    .dark-theme #Cool-Websites h2 {
-        color: #dc143c;
-    }
-
     .dark-theme #Cool-Websites span {
         color: #ff8c00;
+    }
+
+    h2 {
+        color: #ff7b00;
     }
 
     .dark-theme .menu-icon {
