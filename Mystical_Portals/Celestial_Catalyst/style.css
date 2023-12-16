@@ -878,11 +878,11 @@ footer .nav-footer a {
     }
     
     .attribution {
-        color: #ddd !important;
+        color: #ccc !important;
     }
 
     .attribution:hover {
-        color: #fff !important;
+        color: #bbb !important;
     }
 
     .copyright {
