@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     min-height: 100vh;
     font-family: 'Segoe UI', sans-serif;
-    background-color: #fff;
+    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
@@ -13,6 +13,7 @@ main {
     flex-grow: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    border: 1px solid #ddd;
 }
 
 /* General styles for the images */
@@ -83,7 +84,7 @@ h1 {
     color: #4caf50;
     font-size: 1.8em;
     margin-bottom: 20px;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
 }
 
@@ -128,8 +129,8 @@ h1 {
 .exclusive-nav {
     display: flex;
     justify-content: center;
-    background-color: #3f00ff;
-    border-bottom: 2px solid #3f00ff;
+    background-color: #007bff;
+    border-bottom: 2px solid #0056b3;
     padding: 10px;
     position: relative;
 }
@@ -327,7 +328,7 @@ h2 {
 /* General styling for the footer */
 footer {
     background-color: #f8f8f8;
-    color: #333;
+    color: #555;
     text-align: center;
     padding: 30px 20px;
     font-family: 'Arial', sans-serif;
