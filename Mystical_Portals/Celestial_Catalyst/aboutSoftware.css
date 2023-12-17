@@ -1,6 +1,4 @@
-/* This is aboutSoftware.css */
-
-/* Reset some default styles for consistency */
+/* Reset default styles for consistency */
 body, h1, p {
     margin: 0;
     padding: 0;
@@ -14,12 +12,12 @@ body {
     color: #333;
 }
 
-/* Define a variable for the link color */
+/* Link color variable */
 :root {
     --link-color: #007bff;
 }
 
-/* General styles for the verification form */
+/* General styles for the verification */
 #verificationForm {
     width: 80%;
     max-width: 300px;
@@ -97,7 +95,6 @@ body {
     background-color: #e0a800;
 }
 
-/* Header styles */
 header {
     background-color: #007bff;
     color: #fff;
@@ -156,7 +153,7 @@ footer a:hover {
     color: #0056b3;
 }
 
-/* Responsive design for smaller screens on the new page */
+/* Responsive design for smaller screens (Phone) */
 @media only screen and (max-width: 600px) {
     #content {
         max-width: 100%;
@@ -181,7 +178,7 @@ footer a:hover {
     }
 }
 
-/* Responsive design for screens 601px to 768px (Tablet) on the new page */
+/* Responsive design for screens 601px to 768px (Tablet) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {
     #content {
         max-width: 100%;
@@ -202,7 +199,7 @@ footer a:hover {
     }
 }
 
-/* Responsive design for screens 769px to 1200px (Desktop) on the new page */
+/* Responsive design for screens 769px to 1200px (Desktop) */
 @media only screen and (min-width: 769px) and (max-width: 1200px) {
     #content {
         max-width: 100%;
@@ -295,6 +292,10 @@ footer a:hover {
     .dark-theme h1 {
         color: #ff9800;
         background-color: #1a1a1a;
+    }
+
+    .dark-theme header {
+        background-color: #e76d00;
     }
 
     .dark-theme #content {
