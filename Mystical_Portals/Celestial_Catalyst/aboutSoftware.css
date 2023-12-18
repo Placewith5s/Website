@@ -10,11 +10,6 @@ body {
     color: #333;
 }
 
-/* Link color variable */
-:root {
-    --link-color: #007bff;
-}
-
 /* General styles for the verification */
 #verificationForm {
     width: 80%;
@@ -58,7 +53,7 @@ body {
     background-color: #1e7e34;
 }
 
-/* General styles for the cookie banner */
+/* General styles for the cookies */
 #cookie-banner {
     display: none;
     position: fixed;
@@ -97,7 +92,7 @@ header {
     background-color: #007bff;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 15px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -120,6 +115,15 @@ ul {
 
 li {
     margin-bottom: 20px;
+}
+
+li a {
+    color: #007bff;
+    transition: color 0.1s ease;
+}
+
+li a:hover {
+    color: #0056b3;
 }
 
 /* General styling for the footer */
