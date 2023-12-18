@@ -285,11 +285,11 @@ footer p {
 
 .dark-theme h1 {
     color: #ff4500;
-}
+    }
 
 .dark-theme h2 {
     color: #dc143c;
-}
+    }
 
 .dark-theme #cookie-banner {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
@@ -312,11 +312,11 @@ footer p {
 
 .dark-theme .cookie-page-link {
     color: #e74c3c;
-}
+    }
 
 .dark-theme .cookie-page-link:hover {
     color: #992d22;
-}
+    }
 
 .dark-theme footer a {
     color: #0066cc;
