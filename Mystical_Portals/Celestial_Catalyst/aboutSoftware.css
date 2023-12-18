@@ -13,16 +13,13 @@ body {
 /* General styles for the verification */
 #verificationForm {
     width: 80%;
-    max-width: 300px;
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto;
+    position: relative;
+    padding: 30px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     background-color: #fff;
 }
 
@@ -39,10 +36,11 @@ body {
 #myForm button {
     background-color: #28a745;
     color: white;
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 #myForm button:hover {
@@ -99,8 +97,8 @@ header {
 /* General styles for the content section */
 #content {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 30px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -119,7 +117,7 @@ li {
 
 li a {
     color: #007bff;
-    transition: color 0.1s ease;
+    transition: color 0.3s ease;
 }
 
 li a:hover {
@@ -159,7 +157,7 @@ footer a:hover {
 @media only screen and (max-width: 600px) {
     #content {
         max-width: 100%;
-        padding: 10px;
+        padding: 15px;
     }
 
     h1 {
@@ -184,7 +182,7 @@ footer a:hover {
 @media only screen and (min-width: 601px) and (max-width: 768px) {
     #content {
         max-width: 100%;
-        padding: 15px;
+        padding: 20px;
     }
 
     h1 {
@@ -196,7 +194,7 @@ footer a:hover {
     }
 
     #cookie-banner button {
-        padding: 10px 18px;
+        padding: 12px 18px;
         font-size: 15px;
     }
 }
@@ -205,6 +203,7 @@ footer a:hover {
 @media only screen and (min-width: 769px) and (max-width: 1200px) {
     #content {
         max-width: 100%;
+        padding: 25px;
     }
 
     h1 {
@@ -216,7 +215,7 @@ footer a:hover {
     }
 
     #cookie-banner button {
-        padding: 12px 24px;
+        padding: 14px 24px;
         font-size: 18px;
     }
 }
@@ -225,7 +224,7 @@ footer a:hover {
 @media only screen and (min-width: 1201px) {
     #content {
         max-width: 100%;
-        padding: 25px;
+        padding: 30px;
     }
 
     h1 {
@@ -237,10 +236,11 @@ footer a:hover {
     }
 
     #cookie-banner button {
-        padding: 14px 28px;
+        padding: 16px 28px;
         font-size: 20px;
     }
 }
+
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
