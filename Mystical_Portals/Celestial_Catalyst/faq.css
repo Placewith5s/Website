@@ -34,7 +34,7 @@ main {
     background-color: #e57373;
     border: 1px solid #ef9a9a;
     border-radius: 5px;
-    color: #c62828;
+    color: #333;
     text-align: center;
 }
 
@@ -123,7 +123,7 @@ header {
 
 /* General header title styles */
 header h1 {
-    color: #e74c3c;
+    color: #f1948a;
     font-size: 1.8em;
 }
 
@@ -133,7 +133,7 @@ header h1 {
     padding: 10px;
     box-sizing: border-box;
     font-size: 16px;
-    border: 2px solid #3f00ff;
+    border: 2px solid #000080;
     border-radius: 5px;
     margin-bottom: 20px;
     background-color: #fce8e6;
@@ -142,7 +142,7 @@ header h1 {
 }
 
 #search-bar:focus {
-    border-color: #2980b9;
+    border-color: #e0e0e0;
 }
 
 /* Animation for FAQ sections */
@@ -161,7 +161,7 @@ section {
 }
 
 section h2 {
-    color: #e74c3c;
+    color: #f1948a;
 }
 
 /* General footer styles */
@@ -185,6 +185,19 @@ footer a {
 
 footer a:hover {
     color: #3f00ff;
+}
+
+#manageCookiesLink {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+}
+
+#manageCookiesLink:hover {
+    color: #217dbb;
 }
 
 
@@ -271,7 +284,6 @@ footer a:hover {
 }
 
 
-
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
 .dark-theme {
@@ -293,6 +305,13 @@ footer a:hover {
     background-color: #1f1f1f;
     color: #fff;
     border-color: #555;
+    }
+
+.dark-theme #not-found-message {
+    background-color: #b84c4c;
+    border: 1px solid #9e7373;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     }
 
 .dark-theme #verificationForm {
@@ -355,9 +374,18 @@ footer a:hover {
     color: #aaa;
     }
 
+.dark-theme header h1 {
+    color: #e74c3c;
+    }
+
+.dark-theme section h2 {
+    color: #e74c3c;
+    }
+
 .dark-theme header {
     background-color: #333;
     }
+
 .dark-theme footer {
     background-color: #2c3e50;
     color: #ffffff;
@@ -370,5 +398,13 @@ footer a:hover {
 
 .dark-theme footer a:hover {
     color: #ff4500;
+    }
+
+.dark-theme #manageCookiesLink {
+        color: #e65100;
+    }
+    
+.dark-theme #manageCookiesLink:hover {
+        color: #ff9800;
     }
 }
