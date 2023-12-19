@@ -171,7 +171,7 @@ a[href^="#"] {
 }
 
 #Cool-Websites a {
-    color: #2ecc71;
+    color: #64d986;
     text-decoration: none;
     margin: 10px 0;
     display: inline-block;
@@ -342,9 +342,17 @@ footer .nav-footer a {
     color: #3f00ff;
 }
 
+footer .nav-footer a:hover {
+    color: #000080;
+}
+
 .attribution {
     text-decoration: none;
-    color: #444;
+    color: #666;
+}
+
+.attribution:hover {
+    color: #222;
 }
 
 .manage-cookies-container {
@@ -353,7 +361,7 @@ footer .nav-footer a {
 
 .copyright {
     margin-top: 30px;
-    color: #444;
+    color: #222;
 }
 
 #manageCookiesLink {
@@ -362,7 +370,7 @@ footer .nav-footer a {
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, filter 0.3s ease;
 }
 
 #manageCookiesLink:hover {
@@ -877,7 +885,7 @@ footer .nav-footer a {
     }
     
     .attribution {
-        color: #ccc !important;
+        color: #ddd !important;
     }
 
     .attribution:hover {
