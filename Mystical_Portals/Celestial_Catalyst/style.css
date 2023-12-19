@@ -171,7 +171,7 @@ a[href^="#"] {
 }
 
 #Cool-Websites a {
-    color: #000080;
+    color: #2ecc71;
     text-decoration: none;
     margin: 10px 0;
     display: inline-block;
@@ -183,9 +183,8 @@ a[href^="#"] {
 
 #Cool-Websites a:hover {
     transform: scale(1.05);
-    background-color: #add8e6;
     transition: background-color, color 0.3s;
-    color: #fff !important;
+    color: #333;
 }
 
 #Cool-Websites span {
@@ -791,12 +790,11 @@ footer .nav-footer a {
     }
 
     .dark-theme #Cool-Websites a {
-        color: #ff8c00;
+        color: #2ecc71;
     }
 
     .dark-theme #Cool-Websites a:hover {
-        background-color: #cd7f32;
-        color: #333 !important;
+        color: #fff;
     }
 
     .dark-theme #Cool-Websites span {
@@ -892,7 +890,6 @@ footer .nav-footer a {
 
     .dark-theme #manageCookiesLink {
         color: #e65100;
-        transition: color 0.3s ease;
     }
     
     .dark-theme #manageCookiesLink:hover {
