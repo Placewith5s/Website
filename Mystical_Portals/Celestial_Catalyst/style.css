@@ -21,13 +21,17 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     image-rendering: -webkit-optimize-contrast;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     object-fit: cover;
     will-change: transform;
+}
+
+/* Styles for images with the "spaced" class */
+img.spaced {
+    margin-bottom: 60px;
 }
 
 img:hover,
