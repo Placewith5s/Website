@@ -1,20 +1,10 @@
-// Function to generate a unique identifier (timestamp)
-function generateUniqueIdentifier() {
-    return new Date().getTime();
+document.addEventListener('DOMContentLoaded', function () {
+  // Check if the requested resource was not found (404 error)
+  if (window.location.href.indexOf('404') > -1) {
+      // Show the error container
+      var errorContainer = document.querySelector('.container');
+      if (errorContainer) {
+          errorContainer.style.display = 'block';
+      }
   }
-  
-  // Check if the URL has already been modified
-  let urlModified = localStorage.getItem('urlModified') === 'true';
-  
-  // If the URL has not been modified, update it with a unique identifier
-  if (!urlModified) {
-    var uniqueIdentifier = generateUniqueIdentifier();
-    history.replaceState(null, null, `404.html?error=${uniqueIdentifier}`);
-    localStorage.setItem('urlModified', 'true');
-  }
-  
-  // Attach an event listener to the 'beforeunload' event
-  window.addEventListener('beforeunload', function () {
-    // Clear the flag in local storage when the user leaves the page
-    localStorage.removeItem('urlModified');
-  });
+});
