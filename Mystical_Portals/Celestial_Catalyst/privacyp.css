@@ -21,82 +21,6 @@ main {
     margin-top: 20px;
 }
 
-/* General styles for the verification */
-#verificationForm {
-    width: 80%;
-    max-width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#myForm {
-    display: flex;
-    flex-direction: column;
-}
-
-#myForm p {
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-#myForm button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#myForm button:hover {
-    background-color: #45a049;
-}
-
-#myForm button:active {
-    background-color: #3e8e41;
-}
-
-/* General styles for the cookie banner */
-#cookie-banner {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-#cookie-banner p {
-    margin: 15px 0;
-    font-size: 16px;
-}
-
-#cookie-banner button {
-    background-color: #ffc107;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 10px 5px;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#cookie-banner button:hover {
-    background-color: #ffa000;
-}
-
 /* General header h1 styles */
 header h1 {
     font-size: 2em;
@@ -175,17 +99,6 @@ footer p {
         padding: 10px;
         margin-top: 10px;
     }
-
-    #cookie-banner {
-        max-width: 96%;
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    #cookie-banner button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
 }
 
 /* Responsive design for medium screens */
@@ -194,30 +107,12 @@ footer p {
         max-width: 100%;
         padding: 15px;
     }
-
-    #cookie-banner {
-        font-size: 15px;
-    }
-
-    #cookie-banner button {
-        padding: 10px 18px;
-        font-size: 15px;
-    }
 }
 
 /* Responsive design for large screens */
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     main {
         max-width: 100%;
-    }
-
-    #cookie-banner {
-        font-size: 18px;
-    }
-
-    #cookie-banner button {
-        padding: 12px 24px;
-        font-size: 18px;
     }
 }
 
@@ -227,102 +122,43 @@ footer p {
         max-width: 100%;
         padding: 30px;
     }
-
-    #cookie-banner {
-        font-size: 20px;
-    }
-
-    #cookie-banner button {
-        padding: 14px 28px;
-        font-size: 20px;
-    }
 }
 
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
-.dark-theme {
-    background-color: #333;
-    color: #ddd;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    .dark-theme {
+        background-color: #333;
+        color: #ddd;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
-.dark-theme #verificationForm {
-    background-color: #1a1a1a;
-    border-color: #333;
-    color: #fff;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    .dark-theme header h1 {
+        color: #ff9800;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
     }
 
-.dark-theme #verificationForm:hover {
-    background-color: #222;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    .dark-theme h1 {
+        color: #ff4500;
     }
 
-.dark-theme #myForm p {
-    color: #fff;
+    .dark-theme h2 {
+        color: #dc143c;
     }
 
-.dark-theme #myForm button {
-    background-color: #ff4500;
-    color: #fff;
-    transition: background-color 0.3s ease;
+    .dark-theme .cookie-page-link {
+        color: #e74c3c;
     }
 
-.dark-theme #myForm button:hover {
-    background-color: #e63900;
+    .dark-theme .cookie-page-link:hover {
+        color: #992d22;
     }
 
-.dark-theme #myForm button:active {
-    background-color: #cc3500;
+    .dark-theme footer a {
+        color: #0066cc;
     }
 
-.dark-theme header h1 {
-    color: #ff9800;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
-    }
-
-.dark-theme h1 {
-    color: #ff4500;
-    }
-
-.dark-theme h2 {
-    color: #dc143c;
-    }
-
-.dark-theme #cookie-banner {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    background-color: #333;
-    color: #ccc;
-    }
-
-.dark-theme #cookie-banner button {
-    background-color: #ff9800;
-    color: #333;
-    }
-
-.dark-theme #cookie-banner button:hover {
-    background-color: #e68a00;
-    }
-
-.dark-theme #cookie-banner p {
-    color: #aaa;
-    }
-
-.dark-theme .cookie-page-link {
-    color: #e74c3c;
-    }
-
-.dark-theme .cookie-page-link:hover {
-    color: #992d22;
-    }
-
-.dark-theme footer a {
-    color: #0066cc;
-    }
-
-.dark-theme footer a:hover {
-    color: #004080;
+    .dark-theme footer a:hover {
+        color: #004080;
     }
 }
