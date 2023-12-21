@@ -4,36 +4,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const MenuManager = {
-    // Toggle the drawer's display
-    toggleDrawer: function() {
+    // Toggle the drawer's visibility
+    toggleDrawer: function () {
         const drawer = document.getElementById('drawer');
-        drawer.style.display = (drawer.style.display === 'block') ? 'none' : 'block';
+        drawer.classList.toggle('opened');
     },
 
     // Handle clicks on links within the drawer
-    handleDrawerClick: function(event) {
+    handleDrawerClick: function (event) {
         const drawer = document.getElementById('drawer');
 
-        if (event.target.id === 'aboutUsLink') {
-            toggleAboutUs();
-            drawer.style.display = 'none';
-        }
+        const closeDrawer = () => {
+            drawer.classList.remove('opened');
+        };
 
-        if (event.target.id === 'privacyPolicyLink') {
-            drawer.style.display = 'none';
-        }
+        switch (event.target.id) {
+            case 'aboutUsLink':
+                toggleAboutUs();
+                closeDrawer();
+                break;
 
-        if (event.target.id === 'cookiesLink') {
-            drawer.style.display = 'none';
-        }
-
-        if (event.target.id === 'faqLink') {
-            drawer.style.display = 'none';
+            case 'privacyPolicyLink':
+            case 'cookiesLink':
+            case 'faqLink':
+                closeDrawer();
+                break;
         }
     },
 
     // Initialize menu-related event listeners
-    initializeMenu: function() {
+    initializeMenu: function () {
         const menuIcon = document.getElementById('menuIcon');
         menuIcon.addEventListener('click', () => {
             this.toggleDrawer();
