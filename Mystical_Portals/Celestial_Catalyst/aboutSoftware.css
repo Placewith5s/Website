@@ -245,7 +245,7 @@ footer a:hover {
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
     .dark-theme {
-        background-color: #1a1a1a;
+        background-color: #3a3a3a;
         color: #fff;
     }
 
@@ -274,7 +274,7 @@ footer a:hover {
 
     .dark-theme #cookie-banner {
         box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        background-color: #1a1a1a;
+        background-color: #333;
         color: #ccc;
     }
 
@@ -293,7 +293,7 @@ footer a:hover {
 
     .dark-theme h1 {
         color: #ff9800;
-        background-color: #1a1a1a;
+        background-color: #333;
     }
 
     .dark-theme header {
@@ -301,7 +301,7 @@ footer a:hover {
     }
 
     .dark-theme #content {
-        background-color: #1a1a1a;
+        background-color: #333;
         color: #fff;
     }
 
@@ -315,7 +315,6 @@ footer a:hover {
     }
 
     .dark-theme #content footer {
-        background-color: #1a1a1a;
         color: #fff;
     }
 
