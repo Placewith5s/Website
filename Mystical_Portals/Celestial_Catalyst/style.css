@@ -43,47 +43,6 @@ img:active {
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* General styles for the verification */
-#verificationForm {
-    width: 80%;
-    max-width: 300px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#myForm {
-    display: flex;
-    flex-direction: column;
-}
-
-#myForm p {
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-#myForm button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#myForm button:hover {
-    background-color: #45a049;
-}
-
-#myForm button:active {
-    background-color: #3e8e41;
-}
-
 h1 {
     color: #4caf50;
     font-size: 1.8em;
@@ -159,7 +118,7 @@ a[href^="#"] {
     transition: color 0.3s;
 }
 
-/* General styles for Websites Link */
+/* General styles for inside websites link */
 #Cool-Websites {
     background-color: #f8f8f8;
     border-radius: 5px;
@@ -267,13 +226,22 @@ h2 {
 
 /* General styles for drawer section */
 .drawer {
-    display: none;
+    visibility: hidden;
     position: absolute;
     top: 50px;
     right: 10px;
     background: #0056b3;
     border: 1px solid #ccc;
     padding: 10px;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s, transform 0.5s ease-in-out;
+    transform: translateY(-20px);
+}
+
+.drawer.opened {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .drawer a {
@@ -293,41 +261,6 @@ h2 {
     border-color: #007bff;
 }
 
-/* General styles for the cookie banner */
-#cookie-banner {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-#cookie-banner p {
-    margin: 15px 0;
-    font-size: 16px;
-}
-
-#cookie-banner button {
-    background-color: #ffc107;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 10px 5px;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#cookie-banner button:hover {
-    background-color: #FFA000;
-}
-
 /* General styling for the footer */
 footer {
     background-color: #f8f8f8;
@@ -335,6 +268,20 @@ footer {
     text-align: center;
     padding: 30px 20px;
     font-family: 'Arial', sans-serif;
+    position: relative;
+    animation: fadeIn 1s ease;
+}
+
+footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #3f00ff, #00ffcc);
+    z-index: -1;
+    opacity: 0.5;
 }
 
 footer .nav-footer a {
@@ -344,18 +291,22 @@ footer .nav-footer a {
     margin: 15px 0;
     text-decoration: none;
     color: #3f00ff;
+    transition: color 0.3s ease;
 }
 
-footer .nav-footer a:hover {
+footer .nav-footer a:hover,
+footer .nav-footer a:focus {
     color: #000080;
 }
 
 .attribution {
     text-decoration: none;
     color: #666;
+    transition: color 0.3s ease;
 }
 
-.attribution:hover {
+.attribution:hover,
+.attribution:focus {
     color: #222;
 }
 
@@ -377,17 +328,33 @@ footer .nav-footer a:hover {
     transition: color 0.3s ease, filter 0.3s ease;
 }
 
-#manageCookiesLink:hover {
+#manageCookiesLink:hover,
+#manageCookiesLink:focus {
     color: #217dbb;
 }
 
+/* Add animation to footer */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-/* Dark mode fix (small) */
+
+/* Dark mode fixes (small) */
 @media screen and (max-width: 600px) and (prefers-color-scheme: dark) {
     .exclusive-nav {
         display: none !important; /* Debugger */
     }
+
+    #Cool-Websites a:hover {
+        background-color: #3e8e41 !important;
+    }
 }
+
 
 /* Responsive styles for screens up to 600px */
 @media screen and (max-width: 600px) {
@@ -398,6 +365,10 @@ footer .nav-footer a:hover {
 
     #Cool-Websites {
         padding: 10px;
+    }
+
+    #Cool-Websites a:hover {
+        background-color: #2ecc71;
     }
 
     img {
@@ -444,17 +415,6 @@ footer .nav-footer a:hover {
 
     .exclusive-nav {
         display: none;
-    }
-
-    #cookie-banner {
-        max-width: 96%;
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    #cookie-banner button {
-        padding: 8px 16px;
-        font-size: 14px;
     }
 
     footer {
@@ -523,15 +483,6 @@ footer .nav-footer a:hover {
     .menu-icon,
     .drawer {
         display: none;
-    }
-
-    #cookie-banner {
-        font-size: 15px;
-    }
-
-    #cookie-banner button {
-        padding: 10px 18px;
-        font-size: 15px;
     }
 
     footer {
@@ -607,15 +558,6 @@ footer .nav-footer a:hover {
     }
 
     .exclusive-nav a {
-        font-size: 18px;
-    }
-
-    #cookie-banner {
-        font-size: 18px;
-    }
-
-    #cookie-banner button {
-        padding: 12px 24px;
         font-size: 18px;
     }
 
@@ -695,15 +637,6 @@ footer .nav-footer a:hover {
         font-size: 22px;
     }
 
-    #cookie-banner {
-        font-size: 20px;
-    }
-
-    #cookie-banner button {
-        padding: 14px 28px;
-        font-size: 20px;
-    }
-
     footer {
         padding: 50px;
     }
@@ -734,35 +667,6 @@ footer .nav-footer a:hover {
     .dark-theme {
         background-color: #333;
         color: #f8f8f8;
-    }
-
-    .dark-theme #verificationForm {
-        background-color: #1a1a1a;
-        border-color: #333;
-        color: #fff;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    }
-    
-    .dark-theme #verificationForm:hover {
-        background-color: #222;
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-    
-    .dark-theme #myForm p {
-        color: #fff;
-    }
-    
-    .dark-theme #myForm button {
-        background-color: #ff4500;
-        color: #fff;
-    }
-    
-    .dark-theme #myForm button:hover {
-        background-color: #e63900;
-    }
-    
-    .dark-theme #myForm button:active {
-        background-color: #cc3500;
     }
 
     .dark-theme .description {
@@ -828,25 +732,6 @@ footer .nav-footer a:hover {
 
     .dark-theme .line {
         background-color: #ddd;
-    }
-
-    .dark-theme #cookie-banner {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-        background-color: #333;
-        color: #ccc;
-    }
-
-    .dark-theme #cookie-banner button {
-        background-color: #ff9800;
-        color: #333;
-    }
-
-    .dark-theme #cookie-banner button:hover {
-        background-color: #e68a00;
-    }
-
-    .dark-theme #cookie-banner p {
-        color: #aaa;
     }
 
     .dark-theme .exclusive-nav {
