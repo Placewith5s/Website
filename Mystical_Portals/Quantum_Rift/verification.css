@@ -92,7 +92,7 @@
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
-.dark-theme #verificationForm {
+    .dark-theme #verificationForm {
         background-color: #1a1a1a;
         border: 1px solid #333;
         color: #fff;
@@ -100,26 +100,26 @@
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-.dark-theme #verificationForm:hover {
+    .dark-theme #verificationForm:hover {
         background-color: #222;
         box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
     }
 
-.dark-theme #myForm p {
+    .dark-theme #myForm p {
         color: #fff;
     }
 
-.dark-theme #myForm button {
+    .dark-theme #myForm button {
         background-color: #ff4500;
         color: #fff;
         transition: background-color 0.3s ease;
     }
 
-.dark-theme #myForm button:hover {
+    .dark-theme #myForm button:hover {
         background-color: #e63900;
     }
 
-.dark-theme #myForm button:active {
+    .dark-theme #myForm button:active {
         background-color: #cc3500;
     }
 }
