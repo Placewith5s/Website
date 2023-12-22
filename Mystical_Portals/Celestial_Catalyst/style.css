@@ -717,7 +717,7 @@ footer .nav-footer a:focus {
         color: #ff8c00;
     }
 
-    h2 {
+    .dark-theme h2 {
         color: #ff7b00;
     }
 
@@ -769,19 +769,21 @@ footer .nav-footer a:focus {
         color: #ff7b00;
     }
     
-    .dark-theme .nav-footer a:hover {
+    .dark-theme .nav-footer a:hover,
+    .dark-theme .nav-footer a:focus {
         color: #ff4500;
     }
     
-    .attribution {
-        color: #ddd !important;
+    .dark-theme .attribution {
+        color: #ddd;
     }
 
-    .attribution:hover {
-        color: #bbb !important;
+    .dark-theme .attribution:hover,
+    .dark-theme .attribution:focus {
+        color: #bbb;
     }
 
-    .copyright {
+    .dark-theme .copyright {
         color: #bbb;
     }
 
@@ -789,6 +791,7 @@ footer .nav-footer a:focus {
         color: #e65100;
     }
     
+    .dark-theme #manageCookiesLink:hover,
     .dark-theme #manageCookiesLink:hover {
         color: #ff9800;
     }
