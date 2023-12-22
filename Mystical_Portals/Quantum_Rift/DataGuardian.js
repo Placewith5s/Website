@@ -67,12 +67,23 @@ const CookieManager = {
 
             const manageCookiesLink = document.getElementById('manageCookiesLink');
             if (manageCookiesLink) {
-                manageCookiesLink.addEventListener('click', () => {
-                    this.displayBanner();  // Display the banner when the link is clicked
-                    this.manageCookies();
-                });
-            }
+                manageCookiesLink.addEventListener('click', handleInteraction);
+                manageCookiesLink.addEventListener('touchstart', handleInteraction);
 
+                function handleInteraction(event) {
+                    event.preventDefault();
+
+                    // Use coordinates if needed
+                    const isTouchEvent = event.type === 'touchstart';
+                    const coordinates = isTouchEvent ? event.touches[0] : { clientX: event.clientX, clientY: event.clientY };
+
+                    console.log('Clicked at coordinates:', coordinates);
+
+                    // Now you can use coordinates for any specific purpose
+                    CookieManager.displayBanner();
+                    CookieManager.manageCookies();
+                }
+            }
         } catch (error) {
             console.error('An error occurred during cookie initialization:', error);
         }
@@ -108,6 +119,5 @@ function closeManageCookiesContent() {
 document.addEventListener("DOMContentLoaded", () => {
     CookieManager.checkDenyOnLoad();
 });
-
 
 CookieManager.initializeCookies();
