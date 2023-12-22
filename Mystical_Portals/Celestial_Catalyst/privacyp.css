@@ -54,15 +54,17 @@ section {
     color: #3498db;
 }
 
+.contact-link:hover,
+.contact-link:focus {
+    color: #1a5276;
+}
+
 .cookie-page-link {
     color: #ffa000;
 }
 
-.contact-link:hover {
-    color: #1a5276;
-}
-
-.cookie-page-link:hover {
+.cookie-page-link:hover,
+.cookie-page-link:focus {
     color: #ffd54f;
 }
 
@@ -82,7 +84,8 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
     color: #007700;
 }
 
@@ -146,11 +149,15 @@ footer p {
         color: #dc143c;
     }
 
+    .dark-theme .contact-link,
     .dark-theme .cookie-page-link {
         color: #e74c3c;
     }
 
-    .dark-theme .cookie-page-link:hover {
+    .dark-theme .contact-link:hover,
+    .dark-theme .contact-link:focus,
+    .dark-theme .cookie-page-link:hover,
+    .dark-theme .cookie-page-link:focus {
         color: #992d22;
     }
 
@@ -158,7 +165,8 @@ footer p {
         color: #0066cc;
     }
 
-    .dark-theme footer a:hover {
+    .dark-theme footer a:hover,
+    .dark-theme footer a:focus {
         color: #004080;
     }
 }
