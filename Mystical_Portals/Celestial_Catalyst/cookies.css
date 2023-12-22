@@ -39,6 +39,17 @@ h1, h2 {
     color: #000080;
 }
 
+.contact-link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: #3498db;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+    color: #1a5276;
+}
+
 /* General  ul list styles */
 ul {
     padding: 0;
@@ -169,6 +180,15 @@ footer a {
 
     .dark-theme h1, h2 {
         color: #ff8c00;
+    }
+
+    .dark-theme .contact-link {
+        color: #e74c3c;
+    }
+
+    .dark-theme .contact-link:hover,
+    .dark-theme .contact-link:focus {
+        color: #992d22;
     }
 
     .dark-theme footer {
