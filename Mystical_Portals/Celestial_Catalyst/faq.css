@@ -110,7 +110,8 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
     color: #3f00ff;
 }
 
@@ -123,7 +124,8 @@ footer a:hover {
     transition: color 0.3s ease;
 }
 
-#manageCookiesLink:hover {
+#manageCookiesLink:hover,
+#manageCookiesLink:focus {
     color: #217dbb;
 }
 
@@ -235,7 +237,8 @@ footer a:hover {
         color: #ff9800;
     }
 
-    .dark-theme footer a:hover {
+    .dark-theme footer a:hover,
+    .dark-theme footer a:focus {
         color: #ff4500;
     }
 
@@ -243,7 +246,8 @@ footer a:hover {
         color: #e65100;
     }
         
-    .dark-theme #manageCookiesLink:hover {
+    .dark-theme #manageCookiesLink:hover,
+    .dark-theme #manageCookiesLink:focus {
         color: #ff9800;
     }
 }
