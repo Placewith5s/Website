@@ -53,7 +53,8 @@ ul {
     transition: color 0.3s ease;
 }
 
-.all-about-cookies:hover {
+.all-about-cookies:hover,
+.all-about-cookies:focus {
     color: #007bff;
 }
 
@@ -80,7 +81,8 @@ footer a {
     transition: color 0.3s ease;
 }
 
-#manageCookiesLink:hover {
+#manageCookiesLink:hover,
+#manageCookiesLink:focus {
     color: #217dbb;
 }
 
@@ -177,7 +179,8 @@ footer a {
         color: #ff9800;
     }
 
-    .dark-theme footer a:hover {
+    .dark-theme footer a:hover,
+    .dark-theme footer a:focus {
         color: #ff4500;
     }
 
@@ -185,7 +188,8 @@ footer a {
         color: #e65100;
     }
         
-    .dark-theme #manageCookiesLink:hover {
+    .dark-theme #manageCookiesLink:hover,
+    .dark-theme #manageCookiesLink:focus {
         color: #ff9800;
     }
 }
