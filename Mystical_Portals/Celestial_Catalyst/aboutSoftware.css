@@ -44,7 +44,8 @@ li a {
     transition: color 0.3s ease;
 }
 
-li a:hover {
+li a:hover,
+li a:focus {
     color: #0056b3;
 }
 
@@ -72,7 +73,8 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
     transition: color 0.3s ease;
     color: #0056b3;
 }
@@ -154,7 +156,8 @@ footer a:hover {
         color: #ff9800;
     }
 
-    .dark-theme #content a:hover {
+    .dark-theme #content a:hover,
+    .dark-theme #content a:focus {
         text-decoration: underline;
         color: #ff4500;
     }
@@ -167,7 +170,8 @@ footer a:hover {
         color: #ff4500;
     }
 
-    .dark-theme footer a:hover {
+    .dark-theme footer a:hover,
+    .dark-theme footer a:focus {
         color: #ff9800;
     }
 
