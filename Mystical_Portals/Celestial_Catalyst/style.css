@@ -4,9 +4,15 @@ body {
     min-height: 100vh;
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
     margin: 0;
     padding: 0;
+}
+
+/* Organizing start */
+body,
+.exclusive-nav a,
+#Cool-Websites a:hover {
+    color: #333;
 }
 
 main {
@@ -99,7 +105,6 @@ h1 {
 }
 
 .exclusive-nav a {
-    color: #333;
     text-decoration: none;
     margin: 0 15px;
     transition: color 0.3s;
@@ -147,7 +152,6 @@ a[href^="#"] {
 #Cool-Websites a:hover {
     transform: scale(1.05);
     transition: background-color, color 0.3s;
-    color: #333;
 }
 
 #Cool-Websites span {
@@ -156,9 +160,16 @@ a[href^="#"] {
     color: #0056b3;
 }
 
+.step,
+.step-content,
+.menu-icon,
+.drawer a:hover,
+footer { 
+    background-color: #f8f8f8;
+}
+
 /* General styles for step section */
 .step {
-    background-color: #f8f8f8;
     color: #555;
     padding: 20px;
     border-radius: 10px;
@@ -184,7 +195,6 @@ h2 {
 
 /* General styles for step content section */
 .step-content {
-    background-color: #f8f8f8;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -201,12 +211,11 @@ h2 {
 
 /* General styling for the menu icon */
 .menu-icon {
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 10px;
     cursor: pointer;
     z-index: 2;
-    background-color: #f8f8f8;
     border: 1px solid #bbb;
     border-radius: 4px;
     padding: 3px;
@@ -244,11 +253,15 @@ h2 {
     transform: translateY(0);
 }
 
+.drawer a,
+.drawer a:hover {
+    color: #000;
+}
+
 .drawer a {
     display: block;
     margin: 5px 0;
     text-decoration: none;
-    color: #000;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -256,14 +269,11 @@ h2 {
 }
 
 .drawer a:hover {
-    background-color: #f8f8f8;
-    color: #000;
     border-color: #007bff;
 }
 
 /* General styling for the footer */
 footer {
-    background-color: #f8f8f8;
     color: #555;
     text-align: center;
     padding: 30px 20px;
@@ -306,7 +316,8 @@ footer .nav-footer a:focus {
 }
 
 .attribution:hover,
-.attribution:focus {
+.attribution:focus,
+.copyright {
     color: #222;
 }
 
@@ -316,7 +327,6 @@ footer .nav-footer a:focus {
 
 .copyright {
     margin-top: 30px;
-    color: #222;
 }
 
 #manageCookiesLink {
@@ -363,9 +373,11 @@ footer .nav-footer a:focus {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    #Cool-Websites {
+    #Cool-Websites,
+    .step-content {
         padding: 10px;
     }
+
 
     #Cool-Websites a:hover {
         background-color: #2ecc71;
@@ -399,10 +411,6 @@ footer .nav-footer a:focus {
         margin: 15px;
     }
 
-    .step-content {
-        padding: 10px;
-    }
-
     .step-description {
         font-size: 1.0em;
         padding: 5px;
@@ -421,22 +429,20 @@ footer .nav-footer a:focus {
         padding: 20px;
     }
 
-    .copyright {
+    .copyright,
+    .nav-footer a,
+    #manageCookiesLink {
         font-size: 16px;
+    }
+
+
+    .copyright {
         margin-top: 20px;
     }
 
     .attribution {
         font-size: 14px;
         margin-top: 15px;
-    }
-
-    .nav-footer a {
-        font-size: 16px;
-    }
-
-    #manageCookiesLink {
-        font-size: 16px;
     }
 }
 
@@ -461,22 +467,26 @@ footer .nav-footer a:focus {
         padding: 7px;
     }
 
-    .description {
-        font-size: 1.2em;
-        margin: 5px;
+    .description,
+    .step-content {
         padding: 10px;
+    }
+
+    .description,
+    .step-description {
+        font-size: 1.2em;
+    }
+
+
+    .description {
+        margin: 5px;
     }
 
     .step {
         margin: 15px;
     }
 
-    .step-content {
-        padding: 10px;
-    }
-
     .step-description {
-        font-size: 1.2em;
         padding: 5px;
     }
 
@@ -499,10 +509,7 @@ footer .nav-footer a:focus {
         margin-top: 20px;
     }
 
-    .nav-footer a {
-        font-size: 17px;
-    }
-
+    .nav-footer a,
     #manageCookiesLink {
         font-size: 17px;
     }
@@ -524,28 +531,34 @@ footer .nav-footer a:focus {
         height: 100%;
     }
 
+    h1,
+    .description,
+    .exclusive-nav {
+        padding: 10px;
+    }
+
+
     h1 {
         font-size: 2.0em;
-        padding: 10px;
     }
 
     .description {
         font-size: 1.2em;
         margin: 10px;
-        padding: 10px;
     }
 
     .step {
         margin: 40px;
     }
 
-    .step-content {
+    .step-content,
+    .step-description {
         padding: 5px;
     }
 
+
     .step-description {
         font-size: 1.3em;
-        padding: 5px;
     }
 
     .menu-icon,
@@ -553,11 +566,8 @@ footer .nav-footer a:focus {
         display: none;
     }
 
-    .exclusive-nav {
-        padding: 10px;
-    }
-
-    .exclusive-nav a {
+    .exclusive-nav a,
+    .copyright {
         font-size: 18px;
     }
 
@@ -566,7 +576,6 @@ footer .nav-footer a:focus {
     }
 
     .copyright {
-        font-size: 18px;
         margin-top: 30px;
     }
 
@@ -575,10 +584,7 @@ footer .nav-footer a:focus {
         margin-top: 25px;
     }
 
-    .nav-footer a {
-        font-size: 18px;
-    }
-
+    .nav-footer a,
     #manageCookiesLink {
         font-size: 18px;
     }
@@ -615,13 +621,14 @@ footer .nav-footer a:focus {
         margin: 40px;
     }
 
-    .step-content {
+    .step-content,
+    .step-description {
         padding: 5px;
     }
 
+
     .step-description {
         font-size: 1.4em;
-        padding: 5px;
     }
 
     .menu-icon,
@@ -641,8 +648,14 @@ footer .nav-footer a:focus {
         padding: 50px;
     }
 
-    .copyright {
+    .copyright,
+    .nav-footer a,
+    #manageCookiesLink {
         font-size: 20px;
+    }
+
+
+    .copyright {
         margin-top: 35px;
     }
 
@@ -651,12 +664,7 @@ footer .nav-footer a:focus {
         margin-top: 30px;
     }
 
-    .nav-footer a {
-        font-size: 20px;
-    }
-
     #manageCookiesLink {
-        font-size: 20px;
         margin-top: 20px;
     }
 }
@@ -666,12 +674,14 @@ footer .nav-footer a:focus {
 @media screen and (prefers-color-scheme: dark) {
     .dark-theme {
         background-color: #333;
+    }
+
+    .dark-theme,
+    .dark-theme .description,
+    .dark-theme .drawer a {
         color: #f8f8f8;
     }
 
-    .dark-theme .description {
-        color: #f8f8f8;
-    }
 
     .dark-theme h1 {
         color: #ff7b00;
@@ -709,9 +719,11 @@ footer .nav-footer a:focus {
         color: #2ecc71;
     }
 
-    .dark-theme #Cool-Websites a:hover {
+    .dark-theme #Cool-Websites a:hover,
+    .dark-theme .exclusive-nav a:hover {
         color: #fff;
     }
+
 
     .dark-theme #Cool-Websites span {
         color: #ff8c00;
@@ -745,16 +757,11 @@ footer .nav-footer a:focus {
 
     .dark-theme .exclusive-nav a:hover {
         background-color: #b22222;
-        color: #fff;
     }
 
     .dark-theme .drawer {
         background: #dc143c;
         border: 1px solid #666;
-    }
-
-    .dark-theme .drawer a {
-        color: #f8f8f8;
     }
 
     .dark-theme .drawer a:hover {
@@ -778,14 +785,13 @@ footer .nav-footer a:focus {
         color: #ddd;
     }
 
+    /* Organizing end */
     .dark-theme .attribution:hover,
-    .dark-theme .attribution:focus {
-        color: #bbb;
-    }
-
+    .dark-theme .attribution:focus,
     .dark-theme .copyright {
         color: #bbb;
     }
+
 
     .dark-theme #manageCookiesLink {
         color: #e65100;
