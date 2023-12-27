@@ -1,9 +1,4 @@
 /* This is style.css */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
-
 body,
 .exclusive-nav,
 footer .nav-footer a {
