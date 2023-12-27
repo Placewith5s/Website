@@ -1,4 +1,9 @@
 /* This is cookies.css */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
 body,
 main,
 footer {
@@ -63,6 +68,7 @@ footer a,
 #manageCookiesLink {
     text-decoration: none;
 }
+
 
 /* General link styles' animation */
 a[href^="#"] {
@@ -152,8 +158,6 @@ footer a {
 
     main {
         width: 90%;
-        margin: 0 auto;
-        padding: 30px;
     }
 }
 
