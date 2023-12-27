@@ -26,11 +26,16 @@ main {
     margin-top: 20px;
 }
 
+header h1,
+footer {
+    padding: 10px;
+}
+
+
 /* General header h1 styles */
 header h1 {
     font-size: 2em;
     font-weight: bold;
-    padding: 10px;
     margin: 0;
     color: #3498db;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -82,7 +87,6 @@ footer a {
 /* General footer styles */
 footer {
     border-top: 1px solid #000000;
-    padding: 10px;
     text-align: center;
 }
 
