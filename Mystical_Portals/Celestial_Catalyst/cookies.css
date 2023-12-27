@@ -1,47 +1,75 @@
 /* This is cookies.css */
-body {
+body,
+main,
+footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
+}
+
+body,
+footer {
     justify-content: center;
+}
+
+
+body {
     min-height: 100vh;
     margin: 0;
     font-family: 'Comic Sans MS', Arial, sans-serif;
-    flex-direction: column;
     background: #f5f5f5;
     color: #333;
 }
+
+main,
+section,
+ul {
+    color: #000;
+}
+
 
 main {
     width: 80%;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: #fff;
-    color: #000;
     border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: left;
     margin: 20px;
 }
 
+header,
+.all-about-cookies:hover,
+.all-about-cookies:focus {
+    color: #007bff;
+}
+
+
 header {
     order: -1;
-    color: #007bff;
 }
 
 section {
     margin-bottom: 20px;
-    color: #000;
 }
 
 h1, h2 {
     color: #000080;
 }
 
-.contact-link {
+.contact-link,
+.all-about-cookies,
+footer a,
+#manageCookiesLink {
     text-decoration: none;
+}
+
+/* General link styles' animation */
+a[href^="#"] {
     transition: color 0.3s ease;
+}
+
+.contact-link {
     color: #3498db;
 }
 
@@ -54,42 +82,27 @@ h1, h2 {
 ul {
     padding: 0;
     list-style: none;
-    color: #000;
 }
 
 /* General link styles for "All About Cookies" */
 .all-about-cookies {
     color: #3e8e41;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.all-about-cookies:hover,
-.all-about-cookies:focus {
-    color: #007bff;
 }
 
 /* General footer styles */
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 15px;
 }
 
 footer a {
     order: -1;
-    text-decoration: none;
 }
 
 #manageCookiesLink {
-    text-decoration: none;
     color: #3498bf;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: color 0.3s ease;
 }
 
 #manageCookiesLink:hover,
@@ -147,40 +160,33 @@ footer a {
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
+    .dark-theme,
+    .dark-theme main,
+    .dark-theme ul,
+    .dark-theme section {
+        color: #fff;
+    }
+    
+    
     .dark-theme {
         background: #333;
-        color: #fff;
     }
 
     .dark-theme main {
         background: #2c2c2c;
-        color: #fff;
         border-color: #555;
-    }
-
-    .dark-theme ul {
-        color: #fff;
-    }
-
-    .dark-theme section {
-        color: #fff;
     }
 
     .dark-theme .all-about-cookies {
         color: #4CAF50;
     }
 
-    .dark-theme .all-about-cookies:hover {
-        color: #ff8c00;
-    }
-
-    .dark-theme header {
-        color: #ff8c00;
-    }
-
+    .dark-theme .all-about-cookies:hover,
+    .dark-theme header,
     .dark-theme h1, h2 {
         color: #ff8c00;
     }
+
 
     .dark-theme .contact-link {
         color: #e74c3c;
