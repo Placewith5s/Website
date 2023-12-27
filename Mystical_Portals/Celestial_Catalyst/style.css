@@ -1,6 +1,19 @@
-body {
+/* This is style.css */
+
+/* Organizing start */
+body,
+.exclusive-nav,
+footer .nav-footer a {
     display: flex;
+}
+
+body,
+footer .nav-footer a {
     flex-direction: column;
+}
+
+
+body {
     min-height: 100vh;
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
@@ -8,7 +21,6 @@ body {
     padding: 0;
 }
 
-/* Organizing start */
 body,
 .exclusive-nav a,
 #Cool-Websites a:hover {
@@ -22,11 +34,17 @@ main {
     border: 1px solid #ddd;
 }
 
+img,
+#Cool-Websites span,
+.drawer a {
+    display: block;
+}
+
+
 /* General styles for the images */
 img {
     max-width: 100%;
     height: auto;
-    display: block;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     image-rendering: -webkit-optimize-contrast;
     -webkit-backface-visibility: hidden;
@@ -49,10 +67,16 @@ img:active {
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+h1,
+.step,
+.step-content {
+    margin-bottom: 20px;
+}
+
+
 h1 {
     color: #4caf50;
     font-size: 1.8em;
-    margin-bottom: 20px;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
 }
@@ -64,17 +88,46 @@ h1 {
     padding: 15px;
 }
 
-/* General styles for the Step-by-Step Guide section */
-#Step-by-Step-Guide a {
-    color: #000080;
+/* Longest grouping */
+#Step-by-Step-Guide a,
+.exclusive-nav a,
+#Cool-Websites a,
+.drawer a,
+footer .nav-footer a,
+.attribution,
+#manageCookiesLink,
+a[href^="#"] {
     text-decoration: none;
-    position: relative;
+}
+
+#Step-by-Step-Guide a,
+footer .nav-footer a:hover,
+footer .nav-footer a:focus {
+    color: #000080;
+}
+
+
+#Step-by-Step-Guide a,
+.exclusive-nav a,
+a[href^="#"] {
     transition: color 0.3s;
 }
 
+
+/* General styles for the Step-by-Step Guide section */
+#Step-by-Step-Guide a {
+    position: relative;
+}
+
+#Step-by-Step-Guide a::before,
+.drawer,
+footer:before {
+    position: absolute;
+}
+
+
 #Step-by-Step-Guide a::before {
     content: "";
-    position: absolute;
     width: 100%;
     height: 2px;
     bottom: 0;
@@ -85,29 +138,36 @@ h1 {
     transition: transform 0.3s ease-out;
 }
 
-#Step-by-Step-Guide a:hover {
+/* General link styles, but grouped */
+#Step-by-Step-Guide a:hover,
+a[href^="#"],
+#Cool-Websites span {
     color: #0056b3;
 }
+
 
 #Step-by-Step-Guide a:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
 
+.exclusive-nav,
+.code,
+.drawer {
+    padding: 10px;
+}
+
+
 /* Most of screens exclusive styles */
 .exclusive-nav {
-    display: flex;
     justify-content: center;
     background-color: #007bff;
     border-bottom: 2px solid #0056b3;
-    padding: 10px;
     position: relative;
 }
 
 .exclusive-nav a {
-    text-decoration: none;
     margin: 0 15px;
-    transition: color 0.3s;
     font-size: 16px;
 }
 
@@ -116,48 +176,54 @@ h1 {
     color: #fff;
 }
 
-/* General link styles */
-a[href^="#"] {
-    color: #0056b3;
-    text-decoration: none;
-    transition: color 0.3s;
+#Cool-Websites,
+#Cool-Websites a {
+    border-radius: 5px;
 }
+
 
 /* General styles for inside websites link */
 #Cool-Websites {
     background-color: #f8f8f8;
-    border-radius: 5px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+#Cool-Websites h2,
+h2 {
+    color: #007bff;
+}
+
+#Cool-Websites h2,
+#Cool-Websites span,
+h2,
+.code,
+.step-description {
+    margin-bottom: 10px;
+}
+
+
 #Cool-Websites h2 {
     font-size: 1.8em;
-    color: #007bff;
-    margin-bottom: 10px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 5px;
 }
 
+#Cool-Websites a,
+#Cool-Websites a:hover {
+    transition: background-color, color 0.3s;
+}
+
+
 #Cool-Websites a {
     color: #64d986;
-    text-decoration: none;
     margin: 10px 0;
     display: inline-block;
     padding: 5px 10px;
     border: 1px solid #555;
-    border-radius: 5px;
-    transition: background-color, color 0.3s;
 }
 
 #Cool-Websites a:hover {
     transform: scale(1.05);
-    transition: background-color, color 0.3s;
-}
-
-#Cool-Websites span {
-    display: block;
-    margin-bottom: 10px;
-    color: #0056b3;
 }
 
 .step,
@@ -168,36 +234,34 @@ footer {
     background-color: #f8f8f8;
 }
 
+.step,
+.step-content {
+    padding: 20px;
+}
+
+
 /* General styles for step section */
 .step {
     color: #555;
-    padding: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #007bff;
     font-size: 1.5em;
-    margin-bottom: 10px;
 }
 
 /* General styles for code in step section */
 .code {
     background-color: #f0f0f0;
-    padding: 10px;
     font-family: monospace;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 /* General styles for step content section */
 .step-content {
-    padding: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -206,7 +270,6 @@ h2 {
     font-size: 1.2em;
     line-height: 1.6;
     color: #555;
-    margin-bottom: 10px;
 }
 
 /* General styling for the menu icon */
@@ -214,7 +277,6 @@ h2 {
     position: fixed;
     top: 10px;
     right: 10px;
-    cursor: pointer;
     z-index: 2;
     border: 1px solid #bbb;
     border-radius: 4px;
@@ -236,12 +298,10 @@ h2 {
 /* General styles for drawer section */
 .drawer {
     visibility: hidden;
-    position: absolute;
     top: 50px;
     right: 10px;
     background: #0056b3;
     border: 1px solid #ccc;
-    padding: 10px;
     z-index: 1000;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s, transform 0.5s ease-in-out;
@@ -260,9 +320,7 @@ h2 {
 }
 
 .drawer a {
-    display: block;
     margin: 5px 0;
-    text-decoration: none;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -285,7 +343,6 @@ footer {
 
 footer:before {
     content: '';
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -295,25 +352,20 @@ footer:before {
     opacity: 0.5;
 }
 
-footer .nav-footer a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 15px 0;
-    text-decoration: none;
-    color: #3f00ff;
+footer .nav-footer a,
+.attribution {
     transition: color 0.3s ease;
 }
 
-footer .nav-footer a:hover,
-footer .nav-footer a:focus {
-    color: #000080;
+
+footer .nav-footer a {
+    align-items: center;
+    margin: 15px 0;
+    color: #3f00ff;
 }
 
 .attribution {
-    text-decoration: none;
     color: #666;
-    transition: color 0.3s ease;
 }
 
 .attribution:hover,
@@ -331,7 +383,6 @@ footer .nav-footer a:focus {
 }
 
 #manageCookiesLink {
-    text-decoration: none;
     color: #3498db;
     font-weight: bold;
     padding: 10px 15px;
