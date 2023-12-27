@@ -5,11 +5,15 @@ main,
     color: #333;
 }
 
+body,
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
 
 body {
-    display: flex;
     line-height: 1.6;
-    flex-direction: column;
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -48,10 +52,16 @@ footer {
     text-align: center;
 }
 
+#not-found-message,
+#search-bar,
+footer {
+    padding: 10px;
+}
+
+
 /* Styles for the not found message */
 #not-found-message {
     display: none;
-    padding: 10px;
     background-color: #e57373;
     border: 1px solid #ef9a9a;
 }
@@ -74,7 +84,6 @@ header h1 {
 /* Search bar styles */
 #search-bar {
     width: 100%;
-    padding: 10px;
     box-sizing: border-box;
     font-size: 16px;
     border: 2px solid #000080;
@@ -109,10 +118,7 @@ section h2 {
 
 /* General footer styles */
 footer {
-    display: flex;
-    flex-direction: column;
     border-top: 1px solid #000000;
-    padding: 10px;
     margin-top: auto;
     background-color: #2c3e50;
     color: #ffffff;
