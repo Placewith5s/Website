@@ -1,6 +1,9 @@
 /* This is style.css */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
 
-/* Organizing start */
 body,
 .exclusive-nav,
 footer .nav-footer a {
@@ -837,7 +840,6 @@ footer .nav-footer a {
         color: #ddd;
     }
 
-    /* Organizing end */
     .dark-theme .attribution:hover,
     .dark-theme .attribution:focus,
     .dark-theme .copyright {
