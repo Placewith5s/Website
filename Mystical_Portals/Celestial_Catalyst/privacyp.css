@@ -1,11 +1,16 @@
 /* This is privacyp.css */
-body {
+body,
+footer {
     display: flex;
+    flex-direction: column;
+}
+
+
+body {
     background-color: #f4f4f4;
     color: #000;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     line-height: 1.6;
-    flex-direction: column;
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -45,8 +50,14 @@ section {
 
 /* General link styles for contact and cookie links */
 .contact-link,
-.cookie-page-link {
+.cookie-page-link,
+footer a {
     text-decoration: none;
+}
+
+
+.contact-link,
+.cookie-page-link {
     transition: color 0.3s ease;
 }
 
@@ -73,15 +84,12 @@ footer {
     border-top: 1px solid #000000;
     padding: 10px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
 }
 
 footer a {
     order: 1;
     margin-bottom: 10px;
     color: #00cc00;
-    text-decoration: none;
 }
 
 footer a:hover,
