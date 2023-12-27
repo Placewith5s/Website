@@ -1,32 +1,51 @@
 /* This is about.css */
-body, h2, p {
+body, h1, h2, p {
     margin: 0;
     padding: 0;
 }
+
+body,
+.extended-about,
+footer {
+    color: #333;
+}
+
+.extended-about,
+footer {
+    background-color: #fff;
+}
+
 
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #fffbf6;
-    color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+h2,
+footer {
+    text-align: center;
+}
+
+
 h2 {
     color: #0056b3;
-    text-align: center;
     padding: 20px 0;
 }
+
+.extended-about,
+footer {
+    padding: 20px;
+}
+
 
 /* General styles for the main content container */
 .extended-about {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    color: #333;
     line-height: 1.8;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -47,10 +66,6 @@ h2 {
 footer {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
-    color: #333;
-    padding: 20px;
-    text-align: center;
 }
 
 footer p {
@@ -130,7 +145,6 @@ footer a:focus {
 
     .extended-about {
         max-width: 100%;
-        margin: 0 auto;
         padding: 30px;
     }
 }
@@ -138,24 +152,20 @@ footer a:focus {
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
-    .dark-theme {
+    .dark-theme,
+    .dark-theme .extended-about,
+    .dark-theme footer {
         background-color: #333;
         color: #ddd;
     }
+
 
     .dark-theme h2 {
         color: #ff8c00;
     }
 
     .dark-theme .extended-about {
-        background-color: #333;
         box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-        color: #ddd;
-    }
-
-    .dark-theme footer {
-        background-color: #333;
-        color: #ddd;
     }
 
     .dark-theme footer a {
