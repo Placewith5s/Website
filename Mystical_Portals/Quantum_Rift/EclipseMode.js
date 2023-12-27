@@ -1,32 +1,28 @@
 const myDarkModeModule = (function () {
-    // Check if document and document.body are available
-    if (!document || !document.body) {
-        console.error('Cannot find document or document.body. Dark mode functionality may not work.');
-        return {};
-    }
+    const DARK_THEME_CLASS = 'dark-theme';
 
     function setDarkMode() {
         try {
-            document.body.classList.add('dark-theme');
+            document.body.classList.add(DARK_THEME_CLASS);
         } catch (error) {
-            console.error('An error occurred while setting dark mode:', error);
+            handleDarkModeError('An error occurred while setting dark mode:', error);
         }
     }
 
     function setLightMode() {
         try {
-            document.body.classList.remove('dark-theme');
+            document.body.classList.remove(DARK_THEME_CLASS);
         } catch (error) {
-            console.error('An error occurred while setting light mode:', error);
+            handleDarkModeError('An error occurred while setting light mode:', error);
         }
     }
 
     function toggleDarkMode() {
         try {
-            const isDarkMode = document.body.classList.contains('dark-theme');
+            const isDarkMode = document.body.classList.contains(DARK_THEME_CLASS);
             isDarkMode ? setLightMode() : setDarkMode();
         } catch (error) {
-            console.error('An error occurred while toggling dark mode:', error);
+            handleDarkModeError('An error occurred while toggling dark mode:', error);
         }
     }
 
@@ -41,8 +37,12 @@ const myDarkModeModule = (function () {
                 console.error('matchMedia is not supported. Dark mode preference may not work.');
             }
         } catch (error) {
-            console.error('An error occurred while checking dark mode preference:', error);
+            handleDarkModeError('An error occurred while checking dark mode preference:', error);
         }
+    }
+
+    function handleDarkModeError(message, error) {
+        console.error(message, error);
     }
 
     return {
