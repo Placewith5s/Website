@@ -1,4 +1,11 @@
 /* This is faq.css */
+body,
+main,
+#not-found-message {
+    color: #333;
+}
+
+
 body {
     display: flex;
     line-height: 1.6;
@@ -8,8 +15,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
-    color: #333;
 }
+
+main,
+#not-found-message {
+    margin: 20px auto;
+}
+
 
 main {
     display: flex;
@@ -20,22 +32,28 @@ main {
     border-radius: 8px;
     max-width: 800px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
     background-color: #ffffff;
-    color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#not-found-message,
+#search-bar,
+#manageCookiesLink {
+    border-radius: 5px;
+}
+
+#not-found-message,
+header,
+footer {
+    text-align: center;
 }
 
 /* Styles for the not found message */
 #not-found-message {
     display: none;
-    margin: 20px auto;
     padding: 10px;
     background-color: #e57373;
     border: 1px solid #ef9a9a;
-    border-radius: 5px;
-    color: #333;
-    text-align: center;
 }
 
 #not-found-message p {
@@ -43,7 +61,6 @@ main {
 }
 
 header {
-    text-align: center;
     margin-bottom: 20px;
     background-color: #f5f5f5;
 }
@@ -61,7 +78,6 @@ header h1 {
     box-sizing: border-box;
     font-size: 16px;
     border: 2px solid #000080;
-    border-radius: 5px;
     margin-bottom: 20px;
     background-color: #fce8e6;
     transition: border-color 0.3s ease;
@@ -97,17 +113,21 @@ footer {
     flex-direction: column;
     border-top: 1px solid #000000;
     padding: 10px;
-    text-align: center;
     margin-top: auto;
     background-color: #2c3e50;
     color: #ffffff;
     filter: brightness(0.8);
 }
 
+footer a,
+#manageCookiesLink {
+    text-decoration: none;
+}
+
+
 footer a {
     order: -1;
     color: #000080;
-    text-decoration: none;
 }
 
 footer a:hover,
@@ -116,11 +136,9 @@ footer a:focus {
 }
 
 #manageCookiesLink {
-    text-decoration: none;
     color: #3498db;
     font-weight: bold;
     padding: 10px 15px;
-    border-radius: 5px;
     transition: color 0.3s ease;
 }
 
@@ -128,7 +146,6 @@ footer a:focus {
 #manageCookiesLink:focus {
     color: #217dbb;
 }
-
 
 /* Responsive design for small screens */
 @media screen and (max-width: 600px) {
@@ -177,31 +194,27 @@ footer a:focus {
 
 /* Dark theme styles */
 @media screen and (prefers-color-scheme: dark) {
+    .dark-theme,
+    .dark-theme main,
+    .dark-theme #not-found-message,
+    .dark-theme #not-found-message p,
+    .dark-theme footer {
+        color: #fff;
+    }
+
+
     .dark-theme {
         background-color: #2c2c2c;
-        color: #fff;
     }
 
     .dark-theme main {
         background-color: #1f1f1f;
-        color: #fff;
         border-color: #555;
-    }
-
-    .dark-theme #not-found-message {
-        background-color: #1a1a1a;
-        border-color: #333;
-        color: #fff;
-    }
-
-    .dark-theme #not-found-message p {
-        color: #fff;
     }
 
     .dark-theme #not-found-message {
         background-color: #b84c4c;
         border: 1px solid #9e7373;
-        color: #fff;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     }
 
@@ -215,13 +228,11 @@ footer a:focus {
         border-color: #2c3e50;
     }
 
-    .dark-theme header h1 {
-        color: #e74c3c;
-    }
-
+    .dark-theme header h1,
     .dark-theme section h2 {
         color: #e74c3c;
     }
+
 
     .dark-theme header {
         background-color: #333;
@@ -229,14 +240,16 @@ footer a:focus {
 
     .dark-theme footer {
         background-color: #2c3e50;
-        color: #ffffff;
         filter: brightness(0.8);
     }
 
-    .dark-theme footer a {
+    .dark-theme footer a,
+    .dark-theme #manageCookiesLink:hover,
+    .dark-theme #manageCookiesLink:focus {
         color: #ff9800;
     }
 
+    
     .dark-theme footer a:hover,
     .dark-theme footer a:focus {
         color: #ff4500;
@@ -244,10 +257,5 @@ footer a:focus {
 
     .dark-theme #manageCookiesLink {
         color: #e65100;
-    }
-        
-    .dark-theme #manageCookiesLink:hover,
-    .dark-theme #manageCookiesLink:focus {
-        color: #ff9800;
     }
 }
