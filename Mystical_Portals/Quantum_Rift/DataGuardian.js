@@ -1,5 +1,6 @@
 const CookieManager = {
     consentKey: "cookieConsent",
+    denyCookiesKey: "denyCookies",
 
     hasConsent() {
         return localStorage.getItem(this.consentKey) === "true";
@@ -9,29 +10,22 @@ const CookieManager = {
         localStorage.setItem(this.consentKey, "true");
     },
 
-    displayBanner() {
+    hideCookieBanner() {
         const cookieBanner = document.getElementById("cookie-banner");
         if (cookieBanner) {
-            cookieBanner.style.display = "block";
+            cookieBanner.style.display = "none";
         }
     },
 
     acceptCookies() {
         this.setConsent();
         this.setCookiePreferences();
-        const cookieBanner = document.getElementById("cookie-banner");
-        if (cookieBanner) {
-            cookieBanner.style.display = "none";
-        }
+        this.hideCookieBanner();
     },
 
     denyCookies() {
-        const cookieBanner = document.getElementById("cookie-banner");
-        if (cookieBanner) {
-            cookieBanner.style.display = "none";
-        }
-
-        localStorage.setItem("denyCookies", "true");
+        this.hideCookieBanner();
+        localStorage.setItem(this.denyCookiesKey, "true");
     },
 
     setCookiePreferences() {
@@ -43,19 +37,21 @@ const CookieManager = {
         const checkbox = document.getElementById(checkboxId);
         if (checkbox) {
             const cookieType = checkboxId.replace('Checkbox', '');
-            document.cookie = `${cookieType}=${checkbox.checked ? 'true' : ''}; expires=Thu, 01 Jan 2100 00:00:00 UTC; path=/`;
+            const cookieValue = checkbox.checked ? 'true' : '';
+            const expirationDate = new Date(2100, 0, 1).toUTCString();
+            document.cookie = `${cookieType}=${cookieValue}; expires=${expirationDate}; path=/; Secure; HttpOnly; SameSite=Lax`;
         }
     },
 
     checkDenyOnLoad() {
         try {
-            if (localStorage.getItem("denyCookies") === "true") {
+            if (localStorage.getItem(this.denyCookiesKey) === "true") {
                 this.denyCookies();
             } else {
                 this.hasConsent() ? this.setCookiePreferences() : null;
             }
         } catch (error) {
-            console.error('An error occurred while checking consent on page load:', error);
+            console.error('Error checking consent on page load:', error);
         }
     },
 
@@ -67,30 +63,30 @@ const CookieManager = {
 
             const manageCookiesLink = document.getElementById('manageCookiesLink');
             if (manageCookiesLink) {
-                manageCookiesLink.addEventListener('click', handleInteraction);
-                manageCookiesLink.addEventListener('touchstart', handleInteraction);
-
-                function handleInteraction(event) {
-                    event.preventDefault();
-
-                    // Use coordinates if needed
-                    const isTouchEvent = event.type === 'touchstart';
-                    const coordinates = isTouchEvent ? event.touches[0] : { clientX: event.clientX, clientY: event.clientY };
-
-                    console.log('Clicked at coordinates:', coordinates);
-
-                    // Now you can use coordinates for any specific purpose
-                    CookieManager.displayBanner();
-                    CookieManager.manageCookies();
-                }
+                manageCookiesLink.addEventListener('click', (event) => this.handleInteraction(event));
+                manageCookiesLink.addEventListener('touchstart', (event) => this.handleInteraction(event));
             }
         } catch (error) {
-            console.error('An error occurred during cookie initialization:', error);
+            console.error('Error during cookie initialization:', error);
         }
     },
 
-    manageCookies() {
-        openManageCookiesContent();
+    handleInteraction(event) {
+        event.preventDefault();
+
+        const isTouchEvent = event.type === 'touchstart';
+        const coordinates = isTouchEvent ? event.touches[0] : { clientX: event.clientX, clientY: event.clientY };
+
+        console.log('Clicked at coordinates:', coordinates);
+
+        this.displayBanner();
+    },
+
+    displayBanner() {
+        const cookieBanner = document.getElementById("cookie-banner");
+        if (cookieBanner) {
+            cookieBanner.style.display = "block";
+        }
     },
 };
 
@@ -100,20 +96,6 @@ function acceptCookies() {
 
 function denyCookies() {
     CookieManager.denyCookies();
-}
-
-function openManageCookiesContent() {
-    const manageCookiesContent = document.getElementById('manageCookiesContent');
-    if (manageCookiesContent) {
-        manageCookiesContent.style.display = 'block';
-    }
-}
-
-function closeManageCookiesContent() {
-    const manageCookiesContent = document.getElementById('manageCookiesContent');
-    if (manageCookiesContent) {
-        manageCookiesContent.style.display = 'none';
-    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
