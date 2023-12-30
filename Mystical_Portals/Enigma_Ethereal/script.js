@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     myDarkModeModule.checkAndSetDarkModePreference();
 });
 
+
 const MenuManager = {
     // Handle clicks on links within the drawer
     handleDrawerClick: function (event) {
@@ -19,8 +20,7 @@ const MenuManager = {
                 closeDrawer();
                 break;
 
-            case 'privacyPolicyLink':
-            case 'cookiesLink':
+            case 'aboutSoftwareLink':
             case 'faqLink':
                 closeDrawer();
                 break;
