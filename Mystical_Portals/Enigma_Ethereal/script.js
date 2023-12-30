@@ -11,7 +11,6 @@ const MenuManager = {
 
         const closeDrawer = () => {
             drawer.classList.remove('opened');
-            this.handleScroll(); // Adjust position when closing
         };
 
         switch (event.target.id) {
@@ -20,8 +19,8 @@ const MenuManager = {
                 closeDrawer();
                 break;
 
-            case 'aboutSoftwareLink':
             case 'faqLink':
+            case 'aboutSoftwareLink':
                 closeDrawer();
                 break;
         }
@@ -34,8 +33,9 @@ const MenuManager = {
         if (drawer.classList.contains('opened')) {
             const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-            // Adjust the top position of the drawer based on scroll position
-            drawer.style.top = `${scrollTop + 50}px`; // Add the height of the menu icon
+            // Use position: fixed and set the top property to 50px
+            drawer.style.position = 'fixed';
+            drawer.style.top = '50px';
         }
     },
 
