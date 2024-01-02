@@ -63,8 +63,8 @@ const CookieManager = {
 
             const manageCookiesLink = document.getElementById('manageCookiesLink');
             if (manageCookiesLink) {
-                manageCookiesLink.addEventListener('click', (event) => this.handleInteraction(event));
-                manageCookiesLink.addEventListener('touchstart', (event) => this.handleInteraction(event));
+                manageCookiesLink.addEventListener('click', (event) => this.handleInteraction(event), { passive: true });
+                manageCookiesLink.addEventListener('touchstart', (event) => this.handleInteraction(event), { passive: true });
             }
         } catch (error) {
             console.error('Error during cookie initialization:', error);
