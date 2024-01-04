@@ -63,6 +63,8 @@ const CookieManager = {
 
             const manageCookiesLink = document.getElementById('manageCookiesLink');
             if (manageCookiesLink) {
+                manageCookiesLink.removeAttribute('href');
+
                 manageCookiesLink.addEventListener('click', (event) => this.handleInteraction(event), { passive: true });
                 manageCookiesLink.addEventListener('touchstart', (event) => this.handleInteraction(event), { passive: true });
             }
@@ -73,6 +75,7 @@ const CookieManager = {
 
     handleInteraction(event) {
         event.preventDefault();
+        event.stopPropagation();
 
         const isTouchEvent = event.type === 'touchstart';
         const coordinates = isTouchEvent ? event.touches[0] : { clientX: event.clientX, clientY: event.clientY };
@@ -99,7 +102,5 @@ function denyCookies() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    CookieManager.checkDenyOnLoad();
+    CookieManager.initializeCookies();
 });
-
-CookieManager.initializeCookies();
