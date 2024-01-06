@@ -66,7 +66,7 @@ const MenuManager = {
 MenuManager.initializeMenu();
 
 
-document.getElementById('Extend-Collapse-Button').addEventListener('click', toggleElements);
+document.getElementById('Expand-Collapse-Button').addEventListener('click', toggleElements);
 
 function toggleElements() {
     const firstElement = document.getElementById('step-hidden-from-5');
@@ -81,7 +81,7 @@ function toggleElements() {
             }
         }
 
-        const button = document.getElementById('Extend-Collapse-Button');
-        button.innerText = isHidden ? 'Extend' : 'Collapse';
+        const button = document.getElementById('Expand-Collapse-Button');
+        button.innerText = isHidden ? 'Expand' : 'Collapse';
     }
 }
