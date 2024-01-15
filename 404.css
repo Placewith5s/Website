@@ -1,3 +1,9 @@
+:root {
+    --link-brightness-default: 1;
+    --link-brightness-hover: 0.8;
+    --link-brightness-active: 0.6;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -39,30 +45,17 @@ a {
     display: inline-block;
     padding: 12px 24px;
     background-color: #ff4d4d;
-    color: #ffffff;
+    color: #fff;
     text-decoration: none;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
+    filter: brightness(var(--link-brightness-default));
+    transition: filter 0.3s ease;
 }
 
 a:hover {
-    background-color: #ff3333;
+    filter: brightness(var(--link-brightness-hover));
 }
 
-@media screen and (max-width: 600px) {
-    .container {
-        padding: 30px;
-    }
-
-    h1 {
-        font-size: 2.5em;
-    }
-
-    p {
-        font-size: 1.4em;
-    }
-
-    a {
-        padding: 10px 20px;
-    }
+a:active {
+    filter: brightness(var(--link-brightness-active));
 }
