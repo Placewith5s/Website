@@ -37,10 +37,24 @@ const CookieManager = {
         const checkbox = document.getElementById(checkboxId);
         if (checkbox) {
             const cookieType = checkboxId.replace('Checkbox', '');
-            const cookieValue = checkbox.checked ? 'true' : '';
-            const expirationDate = new Date(2100, 0, 1).toUTCString();
-            document.cookie = `${cookieType}=${cookieValue}; expires=${expirationDate}; path=/; Secure; HttpOnly; SameSite=Lax`;
+
+            if (cookieType === 'essential') {
+                this.setupEssentialCheckbox(checkbox);
+            }
+
+            const updateCookie = () => {
+                const cookieValue = checkbox.checked ? 'true' : '';
+                const expirationDate = new Date(2100, 0, 1).toUTCString();
+                document.cookie = `${cookieType}=${cookieValue}; expires=${expirationDate}; path=/; Secure; HttpOnly; SameSite=Lax`;
+            };
+
+            checkbox.addEventListener('change', updateCookie);
         }
+    },
+
+    setupEssentialCheckbox(checkbox) {
+        checkbox.checked = true;
+        checkbox.disabled = true;
     },
 
     checkDenyOnLoad() {
@@ -74,7 +88,6 @@ const CookieManager = {
     },
 
     handleInteraction(event) {
-        event.preventDefault();
         event.stopPropagation();
 
         const isTouchEvent = event.type === 'touchstart';
