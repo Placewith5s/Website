@@ -11,50 +11,79 @@ const CookieManager = {
     },
 
     hideCookieBanner() {
-        const cookieBanner = document.getElementById("cookie-banner");
-        if (cookieBanner) {
-            cookieBanner.style.display = "none";
+        try {
+            const cookieBanner = document.getElementById("cookie-banner");
+            if (cookieBanner) {
+                cookieBanner.style.display = "none";
+            }
+        } catch (error) {
+            console.error('Error hiding cookie banner:', error);
         }
     },
 
     acceptCookies() {
-        this.setConsent();
-        this.setCookiePreferences();
-        this.hideCookieBanner();
+        try {
+            this.setConsent();
+            this.setCookiePreferences();
+            this.hideCookieBanner();
+        } catch (error) {
+            console.error('Error accepting cookies:', error);
+        }
     },
 
     denyCookies() {
-        this.hideCookieBanner();
-        localStorage.setItem(this.denyCookiesKey, "true");
+        try {
+            this.hideCookieBanner();
+            localStorage.setItem(this.denyCookiesKey, "true");
+        } catch (error) {
+            console.error('Error denying cookies:', error);
+        }
     },
 
     setCookiePreferences() {
-        const checkboxes = ['essentialCheckbox', 'performanceCheckbox', 'functionalityCheckbox', 'thirdPartyCheckbox'];
-        checkboxes.forEach(checkboxId => this.setCookiePreference(checkboxId));
+        try {
+            const checkboxes = ['essentialCheckbox', 'performanceCheckbox', 'functionalityCheckbox', 'thirdPartyCheckbox'];
+            checkboxes.forEach(checkboxId => this.setCookiePreference(checkboxId));
+        } catch (error) {
+            console.error('Error setting cookie preferences:', error);
+        }
     },
 
     setCookiePreference(checkboxId) {
-        const checkbox = document.getElementById(checkboxId);
-        if (checkbox) {
-            const cookieType = checkboxId.replace('Checkbox', '');
+        try {
+            const checkbox = document.getElementById(checkboxId);
+            if (checkbox) {
+                const cookieType = checkboxId.replace('Checkbox', '');
 
-            if (cookieType === 'essential') {
-                this.setupEssentialCheckbox(checkbox);
+                if (cookieType === 'essential') {
+                    this.setupEssentialCheckbox(checkbox);
+                }
+
+                const updateCookie = () => {
+                    const cookieValue = checkbox.checked ? 'true' : '';
+                    const expirationDate = new Date(2100, 0, 1).toUTCString();
+                    document.cookie = `${cookieType}=${cookieValue}; expires=${expirationDate}; path=/; Secure; HttpOnly; SameSite=Lax`;
+                };
+
+                checkbox.addEventListener('change', updateCookie);
             }
-
-            const updateCookie = () => {
-                const cookieValue = checkbox.checked ? 'true' : '';
-                const expirationDate = new Date(2100, 0, 1).toUTCString();
-                document.cookie = `${cookieType}=${cookieValue}; expires=${expirationDate}; path=/; Secure; HttpOnly; SameSite=Lax`;
-            };
-
-            checkbox.addEventListener('change', updateCookie);
+        } catch (error) {
+            console.error('Error setting cookie preference:', error);
         }
     },
 
     setupEssentialCheckbox(checkbox) {
-        checkbox.checked = true;
-        checkbox.disabled = true;
+        try {
+            checkbox.checked = true;
+            checkbox.addEventListener('change', () => {
+                checkbox.checked = true;
+            });
+            checkbox.addEventListener('click', () => {
+                checkbox.checked = true;
+            });
+        } catch (error) {
+            console.error('Error setting up essential checkbox:', error);
+        }
     },
 
     checkDenyOnLoad() {
@@ -88,20 +117,28 @@ const CookieManager = {
     },
 
     handleInteraction(event) {
-        event.stopPropagation();
+        try {
+            event.stopPropagation();
 
-        const isTouchEvent = event.type === 'touchstart';
-        const coordinates = isTouchEvent ? event.touches[0] : { clientX: event.clientX, clientY: event.clientY };
+            const isTouchEvent = event.type === 'touchstart';
+            const coordinates = isTouchEvent ? event.touches[0] : { clientX: event.clientX, clientY: event.clientY };
 
-        console.log('Clicked at coordinates:', coordinates);
+            console.log('Clicked at coordinates:', coordinates);
 
-        this.displayBanner();
+            this.displayBanner();
+        } catch (error) {
+            console.error('Error handling user interaction:', error);
+        }
     },
 
     displayBanner() {
-        const cookieBanner = document.getElementById("cookie-banner");
-        if (cookieBanner) {
-            cookieBanner.style.display = "block";
+        try {
+            const cookieBanner = document.getElementById("cookie-banner");
+            if (cookieBanner) {
+                cookieBanner.style.display = "block";
+            }
+        } catch (error) {
+            console.error('Error displaying cookie banner:', error);
         }
     },
 };
