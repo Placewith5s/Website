@@ -1,7 +1,7 @@
 {
-    "name": "Your PWA Name",
-    "short_name": "PWA",
-    "description": "A simple Progressive Web App",
+    "name": "Placewith5s",
+    "short_name": "",
+    "description": "Boost FPS: Optimize Your Gaming Performance",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
@@ -9,6 +9,16 @@
     "icons": [
         {
             "src": "/Astral_Artifacts/Settings.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "/Astral_Artifacts/Policy.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "/Astral_Artifacts/Cookies.svg",
             "sizes": "192x192",
             "type": "image/svg+xml"
         }
