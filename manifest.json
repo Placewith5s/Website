@@ -11,6 +11,12 @@
             "src": "/Settings.png",
             "sizes": "48x48 96x96 144x144 180x180 192x192 256x256 512x512",
             "type": "image/png"
+        },
+        {
+            "src": "/Settings.png",
+            "sizes": "48x48 96x96 144x144 180x180 192x192 256x256 512x512",
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ]
 }
