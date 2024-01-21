@@ -1,25 +1,15 @@
 {
     "name": "Placewith5s",
-    "short_name": "",
-    "description": "Boost FPS: Optimize Your Gaming Performance",
-    "start_url": "/",
+    "short_name": "Pw5",
+    "description": "A web app for Placewith5s",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
     "icons": [
         {
             "src": "/Astral_Artifacts/Settings.svg",
-            "sizes": "192x192",
-            "type": "image/svg+xml"
-        },
-        {
-            "src": "/Astral_Artifacts/Policy.svg",
-            "sizes": "192x192",
-            "type": "image/svg+xml"
-        },
-        {
-            "src": "/Astral_Artifacts/Cookies.svg",
-            "sizes": "192x192",
+            "sizes": "48x48 96x96 144x144 180x180 192x192 256x256 512x512",
             "type": "image/svg+xml"
         }
     ]
