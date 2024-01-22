@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Call the function to check and set dark mode preference
-    myDarkModeModule.checkAndSetDarkModePreference();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("search-bar");
     const notFoundMessage = document.getElementById("not-found-message");
 
