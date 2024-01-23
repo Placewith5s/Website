@@ -80,7 +80,7 @@ self.addEventListener('beforeinstallprompt', (event) => {
 self.addEventListener('push', (event) => {
     const options = {
         body: event.data.text(),
-        icon: '/Astral_Artifacts/Settings.svg'
+        icon: '/Settings.png'
     };
 
     event.waitUntil(
