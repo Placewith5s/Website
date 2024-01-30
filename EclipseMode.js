@@ -1,3 +1,4 @@
+"use strict";
 const myDarkModeModule = (function () {
     const DARK_THEME_CLASS = 'dark-theme';
 
