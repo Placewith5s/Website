@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <meta http-equiv="Referrer-Policy" content="no-referrer">
-    <meta http-equiv="Access-Control-Allow-Origin" content="https://placewith5s.com">
     <meta http-equiv="Feature-Policy" content="geolocation 'self'; microphone 'none'; camera 'none'">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Download-Options" content="noopen">
@@ -38,12 +37,12 @@
 
     <link rel="manifest" href="/manifest.json">
 
-    <!-- CSS -->
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="DataGuardian.css">
     <link rel="stylesheet" href="topnbottom.css">
 
-    <!-- Favicon -->
+
     <link rel="icon" type="image/svg+xml" href="Astral_Artifacts/Settings.svg">
 
 </head>
@@ -51,30 +50,42 @@
 
 <body>
 
-    <div id="cookie-banner">
+    <div id="consent-cookie-banner">
+        <p>
+            This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.
+        </p>
+        <p>
+            By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="cookies.html" target="_blank" rel="noopener noreferrer">Cookies Information</a> for more information.
+        </p>
+        <button id="showCookieSettings">Cookie Options</button>
+        <button id="consent">Accept All Cookies</button>
+        <button id="rejectAll">Reject All Cookies</button>
+    </div>
+    
+    <div id="cookie-banner" aria-hidden="true">
         <p>This website uses cookies. Please choose your cookie preferences:</p>
         <ul>
             <li>
-                Essential: Required for basic site functions.
-                <input type="checkbox" id="essentialCheckbox" checked>
+                <label for="essentialCheckbox">Essential: Required for basic site functions.</label><br>
+                <input type="checkbox" id="essentialCheckbox" checked disabled>
             </li>
             <li>
-                Performance: Helps us analyze site usage.
+                <label for="performanceCheckbox">Performance: Helps us analyze site usage.</label><br>
                 <input type="checkbox" id="performanceCheckbox">
             </li>
             <li>
-                Functionality: Remembers your preferences.
+                <label for="functionalityCheckbox">Functionality: Remembers your preferences.</label><br>
                 <input type="checkbox" id="functionalityCheckbox">
             </li>
             <li>
-                Third-Party: From external services for analytics and ads.
+                <label for="thirdPartyCheckbox">Third-Party: From external services for analytics and ads.</label><br>
                 <input type="checkbox" id="thirdPartyCheckbox">
             </li>
-        </ul>     
+        </ul>
     
-        <button onclick="acceptCookies()">Save Preferences</button>
-        <button onclick="denyCookies()">Close</button>
-    </div>
+        <button id="savePreferences">Save Preferences</button>
+        <button id="closeBanner">Close</button>
+    </div>    
 
     
       <!-- Navigation for most of the screen sizes -->
