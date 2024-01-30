@@ -1,3 +1,4 @@
+"use strict";
 document.getElementById('Expand-Collapse-Button').addEventListener('click', toggleElements);
 
 function toggleElements() {
