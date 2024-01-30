@@ -1,3 +1,4 @@
+"use strict";
 const CACHE_NAME = 'your-cache-name-v1';
 const FILES_TO_CACHE = [
     '/',
