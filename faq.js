@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("search-bar");
     const notFoundMessage = document.getElementById("not-found-message");
