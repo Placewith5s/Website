@@ -47,8 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
         consentCookieBanner.style.display = "none";
     }
 
-    function showCookieBanner() {
+    function showCookieBanner(event) {
         cookieBanner.style.display = "block";
+        event.stopPropagation();
     }
 
     function hideCookieBanner() {
