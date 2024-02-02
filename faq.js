@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function searchSections() {
         const searchTerm = searchBar.value.trim().toLowerCase();
-        const faqSections = document.querySelectorAll("main section");
+        const faqSections = document.querySelectorAll("main dl");
 
         let found = false;
 
