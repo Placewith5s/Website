@@ -3,15 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("search-bar");
     const notFoundMessage = document.getElementById("not-found-message");
 
-    searchBar.addEventListener("input", function () {
-        const searchTerm = searchBar.value.toLowerCase();
+    let timeoutId;
 
-        // Get all FAQ sections
+    searchBar.addEventListener("input", function () {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(searchSections, 300); // Delay execution to improve performance
+    });
+
+    function searchSections() {
+        const searchTerm = searchBar.value.trim().toLowerCase();
         const faqSections = document.querySelectorAll("main section");
 
         let found = false;
 
-        // Loop through each FAQ section and toggle visibility based on the search term
         faqSections.forEach(function (section) {
             const sectionText = section.textContent.toLowerCase();
 
@@ -23,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // Display or hide the "not found" message based on whether any section was found
         notFoundMessage.style.display = found ? "none" : "block";
-    });
+    }
 });
