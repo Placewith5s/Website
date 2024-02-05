@@ -6,12 +6,11 @@ Placewith5s.com is a step-by-step guide website dedicated to providing tips, too
 
 ## Table of Contents
 
+- [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
 - [Link](#link)
-- [Privacy Policy](#privacy-policy)
-- [Cookies](#cookies)
 - [Credits](#credits)
 - [License](#license)
 
