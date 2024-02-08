@@ -45,16 +45,16 @@
 
 <body>
 
-    <div id="consent-cookie-banner">
+    <div id="consent-cookie-banner" aria-label="Consent, Cookies">
         <p>
             This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.
         </p>
         <p>
-            By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="cookies.html" target="_blank" rel="noopener noreferrer">Cookies Information</a>.
+            By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="cookies.html" class="cookie-link" target="_blank" rel="noopener noreferrer">Cookies Information</a>.
         </p>
-        <button id="showCookieSettings">Cookie Options</button>
-        <button id="consent">Accept All Cookies</button>
-        <button id="rejectAll">Reject All Cookies</button>
+        <button id="showCookieSettings" tabindex="1">Cookie Options</button>
+        <button id="consent" tabindex="2">Accept All Cookies</button>
+        <button id="rejectAll" tabindex="3">Reject All Cookies</button>
     </div>
     
     <div id="cookie-banner" aria-hidden="true">
@@ -78,8 +78,8 @@
             </li>
         </ul>
     
-        <button id="savePreferences">Save Preferences</button>
-        <button id="closeBanner">Close</button>
+        <button id="savePreferences" tabindex="4">Save Preferences</button>
+        <button id="closeBanner" tabindex="5">Close</button>
     </div>
     
 
