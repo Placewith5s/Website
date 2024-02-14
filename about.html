@@ -36,9 +36,12 @@
 
     <link rel="manifest" href="/manifest.json">
 
-    <link rel="stylesheet" href="/about.css">
-    <link rel="stylesheet" href="/DataGuardian.css">
-    <link rel="stylesheet" href="/topnbottom.css">
+    <link rel="preload" href="about.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="about.css"></noscript>
+    <link rel="preload" href="DataGuardian.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="DataGuardian.css"></noscript>
+    <link rel="preload" href="topnbottom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="topnbottom.css"></noscript>
 
 </head>
 
