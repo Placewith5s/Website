@@ -36,9 +36,12 @@
 
     <link rel="manifest" href="/manifest.json">
 
-    <link rel="stylesheet" href="/privacyp.css">
-    <link rel="stylesheet" href="/DataGuardian.css">
-    <link rel="stylesheet" href="/topnbottom.css">
+    <link rel="preload" href="privacyp.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="privacyp.css"></noscript>
+    <link rel="preload" href="DataGuardian.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="DataGuardian.css"></noscript>
+    <link rel="preload" href="topnbottom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="topnbottom.css"></noscript>
 
     <link rel="icon" type="image/svg+xml" href="/Astral_Artifacts/Policy.svg">
 
