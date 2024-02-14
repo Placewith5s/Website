@@ -37,9 +37,12 @@
     <link rel="manifest" href="/manifest.json">
 
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/DataGuardian.css">
-    <link rel="stylesheet" href="/topnbottom.css">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link rel="preload" href="DataGuardian.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="DataGuardian.css"></noscript>
+    <link rel="preload" href="topnbottom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="topnbottom.css"></noscript>
 
 
     <link rel="icon" type="image/svg+xml" href="/Astral_Artifacts/Settings.svg">
