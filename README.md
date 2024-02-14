@@ -1,5 +1,15 @@
 # Placewith5s.com
 
+## Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Link](#link)
+- [Credits](#credits)
+- [License](#license)
+
 ## Description
 
 Placewith5s.com is a step-by-step guide website dedicated to providing tips, tools, and resources for optimizing Windows operating systems to improve performance and efficiency.
@@ -28,13 +38,3 @@ Navigate through the guides and resources to optimize your Windows system. Each 
 ## License
 
 This project is licensed under the terms of the license specified in the [LICENSE](LICENSE) file.
-
-## Table of Contents
-
-- [Description](#description)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Link](#link)
-- [Credits](#credits)
-- [License](#license)
