@@ -36,13 +36,16 @@
 
     <link rel="manifest" href="/manifest.json">
 
+    <link rel="preload" href="preloader.js" as="script">
+    <script src="preloader.js" defer></script>
+    <link rel="stylesheet" href="preloader.css">
 
     <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <noscript><link id="style-link" rel="stylesheet" href="style.css"></noscript>
     <link rel="preload" href="DataGuardian.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="DataGuardian.css"></noscript>
     <link rel="preload" href="topnbottom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="topnbottom.css"></noscript>
+    <noscript><link id="tn-style-link" rel="stylesheet" href="topnbottom.css"></noscript>
 
 
     <link rel="icon" type="image/svg+xml" href="Settings.svg">
@@ -113,6 +116,11 @@
         <button id="hideDrawerBtn">Hide</button>
     </div>
 </nav>
+
+<!-- Preloader here -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
 
     <header>
         <h1>Windows Mastery: A Diverse Path to Peak PC Performance (No-Cost, No Compromises!)</h1>
@@ -316,6 +324,7 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </footer>
+
 
     <link rel="preload" href="DataGuardian.js" as="script">
     <script src="DataGuardian.js" defer></script>
