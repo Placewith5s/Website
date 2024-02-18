@@ -206,9 +206,9 @@
                 <p class="step-description">
                     Click "Analyze" to scan your Windows settings thoroughly.
                 </p>
-                <link rel="preload" as="image" href="Screenshot210559.avif" alt="BloatyNosy Startpoint" loading="lazy" class="spaced">
+                <img src="Screenshot210559.avif" alt="BloatyNosy Startpoint" loading="lazy" fetchpriority="high" class="spaced">
                 <figure>
-                    <link rel="preload" as="image" href="Screenshot210645.avif" alt="BloatyNosy Analyzing Windows Settings" loading="lazy" class="spaced">
+                    <img src="Screenshot210645.avif" alt="BloatyNosy Analyzing Windows Settings" loading="lazy" fetchpriority="high" class="spaced">
                     <figcaption>
                         <p class="step-description">
                             <strong>Insights:</strong> BloatyNosy checks every Windows feature, on or off, as shown above.
@@ -243,7 +243,7 @@
             
             <div class="step-content">
                 <p class="step-description">Configure both "On Plugged In (AC)" and "On Battery (DC)" sections to "Off" when the battery is at 100%:</p>
-                <link rel="preload" as="image" href="Screenshot195249.avif" alt="Screenshot of ParkControl settings showing how to configure power settings at 100% battery" loading="lazy">
+                <img src="Screenshot195249.avif" alt="Screenshot of ParkControl settings showing how to configure power settings at 100% battery" loading="lazy" fetchpriority="high">
                 <p class="step-description"><b>Tip:</b> Open the tool daily to ensure automatic updates. It will update if any updates are available. We recommend keeping it enabled at all times!</p>
             </div>
         </div>        
@@ -275,7 +275,7 @@
             <div class="step-content">
                 <p class="step-description">Dive into Rectify 11's additional features and options. Some settings might offer specialized optimizations or customization options.</p>
                 <figure>
-                    <link rel="preload" as="image" href="Screenshot201115.avif" alt="Screenshot demonstrating Rectify 11 settings - Enabling 'Run as Administrator on Startup'" loading="lazy">
+                    <img src="Screenshot201115.avif" alt="Screenshot demonstrating Rectify 11 settings - Enabling 'Run as Administrator on Startup'" loading="lazy" fetchpriority="high">
                     <figcaption>
                         <p class="step-description"><strong>Enable "Run as Administrator on Startup" instead of "Run on Startup" to ensure smooth operation of Rectify 11 every time your Windows system reboots.</strong></p>
                     </figcaption>
@@ -314,11 +314,16 @@
     <p class="copyright">&copy; <script>document.write(new Date().getFullYear())</script> Placewith5s. All Rights Reserved.</p>
 </footer>
 
-    <script src="/DataGuardian.js" defer></script>
-    <script src="/EclipseMode.js" defer></script>
-    <script src="/script.js" defer></script>
-    <script src="/main.js" defer></script>
-    <script src="/register-service.js" defer></script>
+    <link rel="preload" href="DataGuardian.js" as="script">
+    <script src="DataGuardian.js" defer></script>
+    <link rel="preload" href="EclipseMode.js" as="script">
+    <script src="EclipseMode.js" defer></script>
+    <link rel="preload" href="script.js" as="script">
+    <script src="script.js" defer></script>
+    <link rel="preload" href="main.js" as="script">
+    <script src="main.js" defer></script>
+    <link rel="preload" href="register-service.js" as="script">
+    <script src="register-service.js" defer></script>
 </body>
 
 </html>
