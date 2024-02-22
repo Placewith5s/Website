@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeBannerButton = document.getElementById("closeBanner");
     const manageCookiesLink = document.getElementById("manageCookiesLink");
 
-    // Check if user preferences are already set
     try {
         const userPreferences = JSON.parse(localStorage.getItem("cookiePreferences")) || {};
         if (Object.keys(userPreferences).length > 0) {
@@ -20,10 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     } catch (error) {
         console.error("Error while loading user preferences:", error);
-        showConsentCookieBanner(); // Show the consent banner in case of an error
+        showConsentCookieBanner();
     }
 
-    // Event listeners
     try {
         showCookieSettingsButton.addEventListener("click", showCookieBanner);
         consentButton.addEventListener("click", function() {
@@ -77,13 +75,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function applyUserPreferences(preferences) {
-        // Apply preferences to checkboxes
         document.getElementById("essentialCheckbox").checked = preferences.essential;
         document.getElementById("performanceCheckbox").checked = preferences.performance;
         document.getElementById("functionalityCheckbox").checked = preferences.functionality;
         document.getElementById("thirdPartyCheckbox").checked = preferences.thirdParty;
 
-        // Set cookies based on preferences
         setCookie("essential", preferences.essential);
         setCookie("performance", preferences.performance);
         setCookie("functionality", preferences.functionality);
@@ -100,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 thirdParty: document.getElementById("thirdPartyCheckbox").checked
             };
             saveAndApplyPreferences(preferences);
-            hideCookieBanner(); // hide the banner after saving preferences
+            hideCookieBanner();
         } else {
             console.log("Cannot save preferences when the cookie banner is hidden.");
         }
