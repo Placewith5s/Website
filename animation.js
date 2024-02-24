@@ -4,7 +4,7 @@ try {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             try {
-                console.log(entry);
+                console.log("Success!");
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
                 } else {
