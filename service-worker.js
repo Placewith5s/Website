@@ -29,6 +29,7 @@ const FILES_TO_CACHE = [
     '/topnbottom.css',
     '/main.js',
     '/EclipseMode.js',
+    '/animation.js',
     '/register-service.js',
 ];
 
