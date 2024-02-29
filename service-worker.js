@@ -1,5 +1,5 @@
 "use strict";
-const CACHE_NAME = 'your-cache-name-v1';
+const CACHE_NAME = 'placewith5s-v2';
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
@@ -21,9 +21,9 @@ const FILES_TO_CACHE = [
     '/404.html',
     '/404.css',
     '/manifest.json',
-    '/Astral_Artifacts/Settings.svg',
-    '/Astral_Artifacts/Policy.svg',
-    '/Astral_Artifacts/Cookies.svg',
+    '/Settings.svg',
+    '/Policy.svg',
+    '/Cookies.svg',
     '/DataGuardian.css',
     '/DataGuardian.js',
     '/topnbottom.css',
