@@ -1,23 +1,31 @@
 'use strict';
 
-try {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            try {
-                console.log("Success!");
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                } else {
-                    entry.target.classList.remove('show');
-                }
-            } catch (error) {
-                console.error('Error occurred while processing intersection observer entry:', error);
-            }
-        });
-    });
+const animatedElements = document.querySelectorAll('.anim');
 
-    const animatedElements = document.querySelectorAll('.anim');
-    animatedElements.forEach((el) => observer.observe(el));
-} catch (error) {
-    console.error('Error occurred:', error);
-}
+const debounce = (func, delay) => {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), delay);
+  };
+};
+
+const showAnimation = debounce((element, isVisible) => {
+  if (isVisible) {
+    element.classList.add('show');
+  } else {
+    element.classList.remove('show');
+  }
+}, 150);
+
+const options = {
+  threshold: 0.4,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    showAnimation(entry.target, entry.isIntersecting);
+  });
+});
+
+animatedElements.forEach((el) => observer.observe(el));

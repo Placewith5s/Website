@@ -1,4 +1,5 @@
 "use strict";
+
 const CACHE_NAME = 'placewith5s-v2';
 const FILES_TO_CACHE = [
     '/',
@@ -30,12 +31,24 @@ const FILES_TO_CACHE = [
     'EclipseMode.js',
     'animation.js',
     'register-service.js',
+    'app.js',
 ];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll(FILES_TO_CACHE);
+            return Promise.all(FILES_TO_CACHE.map((url) => {
+                return fetch(url).then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch resource: ${url}`);
+                    }
+                    return cache.put(url, response);
+                }).catch((error) => {
+                    console.error(`Failed to fetch resource: ${url}`, error);
+                });
+            }));
+        }).catch((error) => {
+            console.error('Cache addAll error:', error);
         })
     );
 });
@@ -48,6 +61,8 @@ self.addEventListener('activate', (event) => {
                     return caches.delete(key);
                 }
             }));
+        }).catch((error) => {
+            console.error('Cache deletion error:', error);
         })
     );
 });
@@ -56,6 +71,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request).then((response) => {
             return response || fetch(event.request);
+        }).catch((error) => {
+            console.error('Fetch error:', error);
         })
     );
 });
@@ -72,6 +89,8 @@ self.addEventListener('beforeinstallprompt', (event) => {
             } else {
                 console.log('User dismissed the install prompt');
             }
+        }).catch((error) => {
+            console.error('Install prompt error:', error);
         });
     }
 });
