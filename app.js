@@ -1,34 +1,26 @@
 'use strict';
 
-const express = require("express");
+const express = require('express');
+const helmet = require('helmet');
+const permissionsPolicy = require("permissions-policy");
+const noCache = require('nocache');
+const cors = require('cors');
+const compression = require('compression');
+const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
 
 const app = express();
 
-const helmet = require("helmet");
-
-app.use(helmet());
-
-const cors = require('cors');
-
-app.use(cors());
-
-const compression = require('compression');
-
-app.use(compression());
-
-const morgan = require('morgan');
-
-app.use(morgan('combined'));
-
-const rateLimit = require('express-rate-limit');
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100
-});
-
-app.use(limiter);
-
-app.use(
+const middleware = [
+  helmet(),
+  noCache(),
+  cors(),
+  compression(),
+  morgan('combined'),
+  rateLimit({
+    windowMs: 5 * 60 * 1000,
+    max: 50
+  }),
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
@@ -41,77 +33,44 @@ app.use(
       blockAllMixedContent: [],
       frameAncestors: ["'none'"],
     },
-  })
-);
-
-app.use(
+  }),
   helmet.hsts({
     maxAge: 31536000,
     includeSubDomains: true,
     preload: true
-  })
-);
-
-app.use(
+  }),
   helmet.referrerPolicy({ 
-    policy: 'same-origin' 
-  })
-);
-
-app.use(
+    policy: 'no-referrer' 
+  }),
   helmet.frameguard({
     action: 'deny'
-  })
-);
-
-app.use(
-  helmet.noSniff()
-);
-
-app.use(
-  helmet.noCache()
-);
-
-app.use(
-  helmet.xContentTypeOptions()
-);
-
-app.use(
-  helmet.crossOriginResourcePolicy()
-);
-
-app.use(
-  helmet.dnsPrefetchControl()
-);
-
-app.use(
+  }),
+  helmet.noSniff(),
+  helmet.xContentTypeOptions(),
+  helmet.crossOriginResourcePolicy(),
+  helmet.dnsPrefetchControl(),
   helmet.hidePoweredBy()
-);
+];
+
+middleware.forEach(m => app.use(m));
 
 app.use(
-  helmet.featurePolicy({
+  permissionsPolicy({
     features: {
-      fullscreen: ["'self'"],
-      vibrate: ["'none'"],
-      payment: ["'none'"],
-      syncXhr: ["'none'"]
-    }
-  })
-);
-
-app.use(
-  helmet.expectCt({
-    enforce: true,
-    maxAge: 30
+      fullscreen: ["self"],
+      vibrate: ["none"],
+      payment: ["self", '"example.com"'],
+      syncXhr: [],
+    },
   })
 );
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send('Error!');
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

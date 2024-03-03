@@ -6,6 +6,18 @@
     "express-rate-limit": "^7.2.0",
     "helmet": "^7.1.0",
     "morgan": "^1.10.0",
-    "node": "^21.6.2"
-  }
+    "nocache": "^4.0.0",
+    "node": "^21.6.2",
+    "permissions-policy": "^0.6.0"
+  },
+  "name": "website",
+  "description": "- [Description](#description)\r - [Installation](#installation)\r - [Usage](#usage)\r - [Features](#features)\r - [Link](#link)\r - [Credits](#credits)\r - [License](#license)",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
