@@ -1,5 +1,7 @@
 'use strict';
 
+const https = require('https');
+const fs = require('fs');
 const express = require('express');
 const helmet = require('helmet');
 const permissionsPolicy = require("permissions-policy");
@@ -10,6 +12,16 @@ const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
+
+const privateKey = fs.readFileSync('path/to/private-key.pem', 'utf8');
+const certificate = fs.readFileSync('path/to/certificate.pem', 'utf8');
+const ca = fs.readFileSync('path/to/ca.pem', 'utf8');
+
+const credentials = {
+  key: privateKey,
+  cert: certificate,
+  ca: ca
+};
 
 const middleware = [
   helmet(),
@@ -70,8 +82,13 @@ app.use((err, req, res, next) => {
   res.status(500).send('Error!');
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 443;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+const server = https.createServer(credentials, (req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello, secure world!\n');
+});
+
+server.listen(port, () => {
+  console.log(`Server running on https://localhost:${port}/`);
 });
