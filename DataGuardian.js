@@ -47,11 +47,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function showCookieBanner(event) {
         cookieBanner.style.display = "block";
+        cookieBanner.setAttribute("aria-hidden", "false");
         event.stopPropagation();
     }
 
     function hideCookieBanner() {
         cookieBanner.style.display = "none";
+        cookieBanner.setAttribute("aria-hidden", "true");
     }
 
     function acceptOrRejectAllCookies(accept) {
