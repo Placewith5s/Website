@@ -34,8 +34,7 @@ const FILES_TO_CACHE = [
     'main.js',
     'EclipseMode.js',
     'animation.js',
-    'register-service.js',
-    'app.js'
+    'register-service.js'
 ];
 
 self.addEventListener('install', (event) => {
