@@ -1,8 +1,12 @@
 "use strict";
 
-const CACHE_NAME = 'placewith5s-v2';
+const CACHE_NAME = 'placewith5s';
 const FILES_TO_CACHE = [
     '/',
+    'Screenshot144033.avif',
+    'Screenshot144229.avif',
+    'Screenshot195249.avif',
+    'Screenshot201115.avif',
     'style.css',
     'script.js',
     'preloader.css',
@@ -31,7 +35,7 @@ const FILES_TO_CACHE = [
     'EclipseMode.js',
     'animation.js',
     'register-service.js',
-    'app.js',
+    'app.js'
 ];
 
 self.addEventListener('install', (event) => {
