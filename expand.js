@@ -21,6 +21,7 @@ function toggleElementVisibility(elementId, isVisible) {
     const element = document.getElementById(elementId);
     if (element) {
         element.style.display = isVisible ? 'block' : 'none';
+        element.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
     }
 }
 

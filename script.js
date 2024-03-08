@@ -10,6 +10,7 @@ const MenuManager = {
 
         const closeDrawer = () => {
             drawer.classList.remove('opened');
+            drawer.setAttribute('aria-hidden', 'true');
         };
 
         switch (event.target.id) {
@@ -47,6 +48,11 @@ const MenuManager = {
 
         menuIcon.addEventListener('click', () => {
             drawer.classList.toggle('opened');
+            if (drawer.classList.contains('opened')) {
+                drawer.removeAttribute('aria-hidden');
+            } else {
+                drawer.setAttribute('aria-hidden', 'true');
+            }
             this.handleScroll();
         });
 

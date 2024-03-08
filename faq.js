@@ -17,13 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (sectionText.includes(searchTerm)) {
                 section.style.display = "block";
+                section.setAttribute('aria-hidden', 'false')
                 found = true;
             } else {
                 section.style.display = "none";
+                section.setAttribute('aria-hidden', 'true')
             }
         });
 
         notFoundMessage.style.display = found ? "none" : "block";
+        notFoundMessage.setAttribute('aria-hidden', found ? 'true' : 'false');
     }
 
     function debounce(func, delay) {
