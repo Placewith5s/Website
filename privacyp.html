@@ -68,6 +68,12 @@
     <link rel="manifest" href="/manifest.json">
 
 
+    <link rel="preload" href="preloader.js" as="script">
+
+    <script src="preloader.js" defer></script>
+
+    <link rel="stylesheet" href="preloader.css">
+
     <link rel="preload" href="privacyp.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <noscript><link rel="stylesheet" href="privacyp.css"></noscript>
@@ -207,6 +213,13 @@
 </nav>
 
 
+<div id="preloader">
+
+    <div class="loader"></div>
+
+</div>
+
+
     <header>
 
         <h1>Privacy Policy</h1>
@@ -219,7 +232,8 @@
 
         <main>
 
-  
+
+
 
             <div class="last-updated-date" aria-label="Last Updated Date">
 

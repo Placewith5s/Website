@@ -71,6 +71,11 @@
     <link rel="manifest" href="/manifest.json">
 
  
+    <link rel="preload" href="preloader.js" as="script">
+
+    <script src="preloader.js" defer></script>
+
+    <link rel="stylesheet" href="preloader.css">
 
     <link rel="preload" href="aboutSoftware.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
@@ -210,7 +215,12 @@
 
 </nav>
 
-   
+
+<div id="preloader">
+
+    <div class="loader"></div>
+
+</div>
 
     <header>
 
