@@ -1,7 +1,9 @@
-"use strict";
+'use strict';
+
+const serviceWorkerFile = 'service-worker.js';
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
+    navigator.serviceWorker.register(serviceWorkerFile)
         .then(registration => {
             console.log('Service Worker registered with scope:', registration.scope);
             registration.onupdatefound = () => {
@@ -19,5 +21,12 @@ if ('serviceWorker' in navigator) {
         })
         .catch(error => {
             console.error('Service Worker registration failed:', error);
+            if (error.name === 'SecurityError') {
+                console.error('SecurityError: Service Worker registration failed due to security restrictions.');
+            } else if (error.name === 'QuotaExceededError') {
+                console.error('QuotaExceededError: Unable to register Service Worker due to storage quota exceeded.');
+            } else {
+                console.error('UnknownError: An unknown error occurred during Service Worker registration.');
+            }
         });
 }
