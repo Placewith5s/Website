@@ -1,7 +1,7 @@
 {
     "name": "Placewith5s",
     "description": "A web app for Placewith5s",
-    "start_url": "/index",
+    "start_url": "/",
     "display": "standalone",
     "icons": [
         {

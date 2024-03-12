@@ -16,10 +16,10 @@ const showAnimation = debounce((element, isVisible) => {
   } else {
     element.classList.remove('show');
   }
-}, 150);
+}, 100);
 
 const options = {
-  threshold: 0.4,
+  threshold: 0.8,
 };
 
 const observer = new IntersectionObserver((entries) => {

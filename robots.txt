@@ -8,7 +8,7 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /cgi-bin/
 Disallow: /temp/
-Crawl-delay: 2
+Crawl-delay: 5
 
 Allow: /
 
