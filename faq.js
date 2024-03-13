@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("search-bar");
     const notFoundMessage = document.getElementById("not-found-message");
 
+    notFoundMessage.style.display = "none";
+
     searchBar.addEventListener("input", debounce(searchSections, 300));
 
     function searchSections() {
