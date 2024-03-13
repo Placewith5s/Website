@@ -1,40 +1,42 @@
 "use strict";
 
-const CACHE_NAME = 'placewith5s';
+const CACHE_NAME = 'placewith5s-v51';
 const FILES_TO_CACHE = [
     '/',
-    'Screenshot144033.avif',
-    'Screenshot144229.avif',
-    'Screenshot195249.avif',
-    'Screenshot201115.avif',
-    'style.css',
-    'script.js',
-    'preloader.css',
-    'preloader.js',
-    '/faq.html',
-    'faq.css',
-    'faq.js',
-    '/about.html',
-    'about.css',
-    '/aboutSoftware.html',
-    'aboutSoftware.css',
-    '/privacyp.html',
-    'privacyp.css',
-    '/cookiep.html',
-    'cookiep.css',
-    '/404.html',
-    '404.css',
     'manifest.json',
+    '/register-service.js',
+    'Settings.png',
     'Settings.svg',
     'Policy.svg',
     'Cookies.svg',
-    'DataGuardian.css',
-    'DataGuardian.js',
-    'topnbottom.css',
-    'main.js',
-    'EclipseMode.js',
-    'animation.js',
-    'register-service.js'
+    'Screenshot144033.avif',
+    'Screenshot144229.avif',
+    'Screenshot195249.avif',
+    'Screenshot195303.avif',
+    'Screenshot201115.avif',
+    '/style.css',
+    '/script.js',
+    '/animation.js',
+    '/main.js',
+    '/EclipseMode.js',
+    '/preloader.css',
+    '/preloader.js',
+    '/DataGuardian.css',
+    '/DataGuardian.js',
+    '/topnbottom.css',
+    '/404',
+    '/404.css',
+    '/privacyp',
+    '/privacyp.css',
+    '/cookiep',
+    '/cookiep.css',
+    '/faq',
+    '/faq.css',
+    '/faq.js',
+    '/aboutSoftware',
+    '/aboutSoftware.css',
+    '/about',
+    '/about.css',
 ];
 
 self.addEventListener('install', (event) => {
@@ -107,4 +109,16 @@ self.addEventListener('push', (event) => {
     event.waitUntil(
         self.registration.showNotification('Placewith5s', options)
     );
+});
+
+function updateCache() {
+    caches.open(CACHE_NAME).then((cache) => {
+        return cache.addAll(FILES_TO_CACHE);
+    });
+}
+
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'updateCache') {
+        updateCache();
+    }
 });

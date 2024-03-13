@@ -12,6 +12,7 @@ if ('serviceWorker' in navigator) {
                     if (installingWorker.state === 'installed') {
                         if (navigator.serviceWorker.controller) {
                             console.log('New version available. Please refresh the page.');
+                            sendMessageToServiceWorker({ type: 'updateCache' });
                         } else {
                             console.log('Service worker installed for the first time.');
                         }
@@ -29,4 +30,10 @@ if ('serviceWorker' in navigator) {
                 console.error('UnknownError: An unknown error occurred during Service Worker registration.');
             }
         });
+}
+
+function sendMessageToServiceWorker(message) {
+    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage(message);
+    }
 }

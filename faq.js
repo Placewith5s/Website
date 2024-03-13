@@ -27,12 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (found) {
             notFoundMessage.style.display = "none";
+            notFoundMessage.setAttribute('aria-hidden', 'true');
             notFoundMessage.setAttribute('aria-live', 'off');
             notFoundMessage.setAttribute('role', 'status');
             notFoundMessage.setAttribute('aria-relevant', 'additions');
             notFoundMessage.setAttribute('aria-atomic', 'true');
         } else {
             notFoundMessage.style.display = "block";
+            notFoundMessage.removeAttribute('aria-hidden');
             notFoundMessage.setAttribute('aria-live', 'polite');
             notFoundMessage.setAttribute('role', 'status');
             notFoundMessage.setAttribute('aria-relevant', 'additions');
