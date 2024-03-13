@@ -39,21 +39,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function showConsentCookieBanner() {
         consentCookieBanner.style.display = "block";
+        consentCookieBanner.removeAttribute('aria-hidden');
     }
 
     function hideConsentCookieBanner() {
         consentCookieBanner.style.display = "none";
+        consentCookieBanner.setAttribute('aria-hidden', 'true');
     }
 
     function showCookieBanner(event) {
         cookieBanner.style.display = "block";
-        cookieBanner.setAttribute("aria-hidden", "false");
+        cookieBanner.removeAttribute('aria-hidden');
         event.stopPropagation();
     }
 
     function hideCookieBanner() {
         cookieBanner.style.display = "none";
-        cookieBanner.setAttribute("aria-hidden", "true");
+        cookieBanner.setAttribute('aria-hidden', 'true');
     }
 
     function acceptOrRejectAllCookies(accept) {

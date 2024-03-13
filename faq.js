@@ -1,5 +1,3 @@
-"use strict";
-
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("search-bar");
     const notFoundMessage = document.getElementById("not-found-message");
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (sectionText.includes(searchTerm)) {
                 section.style.display = "block";
-                section.setAttribute('aria-hidden', 'false')
+                section.removeAttribute('aria-hidden')
                 found = true;
             } else {
                 section.style.display = "none";
@@ -25,8 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        notFoundMessage.style.display = found ? "none" : "block";
-        notFoundMessage.setAttribute('aria-hidden', found ? 'true' : 'false');
+        if (found) {
+            notFoundMessage.style.display = "none";
+            notFoundMessage.setAttribute('aria-live', 'off');
+            notFoundMessage.setAttribute('role', 'status');
+            notFoundMessage.setAttribute('aria-relevant', 'additions');
+            notFoundMessage.setAttribute('aria-atomic', 'true');
+        } else {
+            notFoundMessage.style.display = "block";
+            notFoundMessage.setAttribute('aria-live', 'polite');
+            notFoundMessage.setAttribute('role', 'status');
+            notFoundMessage.setAttribute('aria-relevant', 'additions');
+            notFoundMessage.setAttribute('aria-atomic', 'true');
+        }
     }
 
     function debounce(func, delay) {

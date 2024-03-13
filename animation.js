@@ -13,8 +13,10 @@ const debounce = (func, delay) => {
 const showAnimation = debounce((element, isVisible) => {
   if (isVisible) {
     element.classList.add('show');
+    element.removeAttribute('aria-hidden')
   } else {
     element.classList.remove('show');
+    element.setAttribute('aria-hidden', 'true')
   }
 }, 100);
 
@@ -28,4 +30,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-animatedElements.forEach((el) => observer.observe(el));
+animatedElements.forEach((el) => {
+observer.observe(el);
+el.setAttribute('role', 'presentation');
+});

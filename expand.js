@@ -14,6 +14,7 @@ function toggleElements() {
 
         const buttonText = isHidden ? 'Expand' : 'Collapse';
         updateButtonText('Expand-Collapse-Button', buttonText);
+        updateAriaExpanded('Expand-Collapse-Button', !isHidden);
     }
 }
 
@@ -29,5 +30,12 @@ function updateButtonText(buttonId, text) {
     const button = document.getElementById(buttonId);
     if (button) {
         button.innerText = text;
+    }
+}
+
+function updateAriaExpanded(buttonId, isExpanded) {
+    const button = document.getElementById(buttonId);
+    if (button) {
+        button.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     }
 }
