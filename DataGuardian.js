@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeBannerButton = document.getElementById("closeBanner");
     const manageCookiesLink = document.getElementById("manageCookiesLink");
 
+    cookieBanner.setAttribute('aria-hidden', 'true');
+
     try {
         const userPreferences = JSON.parse(localStorage.getItem("cookiePreferences")) || {};
         if (Object.keys(userPreferences).length > 0) {

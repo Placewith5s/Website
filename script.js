@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     myDarkModeModule.checkAndSetDarkModePreference();
 });
 
+drawer.setAttribute('aria-hidden', 'true');
+
 const MenuManager = {
     handleDrawerClick: function (event) {
         const drawer = document.getElementById('drawer');

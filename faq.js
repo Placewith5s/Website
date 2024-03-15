@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const notFoundMessage = document.getElementById("not-found-message");
 
     notFoundMessage.style.display = "none";
+    notFoundMessage.setAttribute('aria-hidden', 'true');
 
     searchBar.addEventListener("input", debounce(searchSections, 300));
 
