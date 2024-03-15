@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function showCookieBanner(event) {
+        event.preventDefault()
         cookieBanner.style.display = "block";
         cookieBanner.removeAttribute('aria-hidden');
         event.stopPropagation();
