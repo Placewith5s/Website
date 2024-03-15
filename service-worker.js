@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = 'placewith5s-v51';
+const CACHE_NAME = 'placewith5s-v52';
 const FILES_TO_CACHE = [
     '/',
     'manifest.json',
@@ -17,7 +17,7 @@ const FILES_TO_CACHE = [
     '/style.css',
     '/script.js',
     '/animation.js',
-    '/main.js',
+    '/expand.js',
     '/EclipseMode.js',
     '/preloader.css',
     '/preloader.js',
