@@ -1,7 +1,6 @@
 "use strict";
-document.addEventListener("DOMContentLoaded", function () {
-
-    myDarkModeModule.checkAndSetDarkModePreference();
+document.addEventListener("DOMContentLoaded", async function () {
+    await myDarkModeModule.checkAndSetDarkModePreference();
 });
 
 drawer.setAttribute('aria-hidden', 'true');

@@ -8,38 +8,42 @@ document.addEventListener("DOMContentLoaded", function () {
     searchBar.addEventListener("input", debounce(searchSections, 300));
 
     function searchSections() {
-        const searchTerm = searchBar.value.trim().toLowerCase();
-        const faqSections = document.querySelectorAll("main details");
+        try {
+            const searchTerm = searchBar.value.trim().toLowerCase();
+            const faqSections = document.querySelectorAll("main details");
 
-        let found = false;
+            let found = false;
 
-        faqSections.forEach(function (section) {
-            const sectionText = section.textContent.toLowerCase();
+            faqSections.forEach(function (section) {
+                const sectionText = section.textContent.toLowerCase();
 
-            if (sectionText.includes(searchTerm)) {
-                section.style.display = "block";
-                section.removeAttribute('aria-hidden')
-                found = true;
+                if (sectionText.includes(searchTerm)) {
+                    section.style.display = "block";
+                    section.removeAttribute('aria-hidden')
+                    found = true;
+                } else {
+                    section.style.display = "none";
+                    section.setAttribute('aria-hidden', 'true')
+                }
+            });
+
+            if (found) {
+                notFoundMessage.style.display = "none";
+                notFoundMessage.setAttribute('aria-hidden', 'true');
+                notFoundMessage.setAttribute('aria-live', 'off');
+                notFoundMessage.setAttribute('role', 'status');
+                notFoundMessage.setAttribute('aria-relevant', 'additions');
+                notFoundMessage.setAttribute('aria-atomic', 'true');
             } else {
-                section.style.display = "none";
-                section.setAttribute('aria-hidden', 'true')
+                notFoundMessage.style.display = "block";
+                notFoundMessage.removeAttribute('aria-hidden');
+                notFoundMessage.setAttribute('aria-live', 'polite');
+                notFoundMessage.setAttribute('role', 'status');
+                notFoundMessage.setAttribute('aria-relevant', 'additions');
+                notFoundMessage.setAttribute('aria-atomic', 'true');
             }
-        });
-
-        if (found) {
-            notFoundMessage.style.display = "none";
-            notFoundMessage.setAttribute('aria-hidden', 'true');
-            notFoundMessage.setAttribute('aria-live', 'off');
-            notFoundMessage.setAttribute('role', 'status');
-            notFoundMessage.setAttribute('aria-relevant', 'additions');
-            notFoundMessage.setAttribute('aria-atomic', 'true');
-        } else {
-            notFoundMessage.style.display = "block";
-            notFoundMessage.removeAttribute('aria-hidden');
-            notFoundMessage.setAttribute('aria-live', 'polite');
-            notFoundMessage.setAttribute('role', 'status');
-            notFoundMessage.setAttribute('aria-relevant', 'additions');
-            notFoundMessage.setAttribute('aria-atomic', 'true');
+        } catch (error) {
+            console.error('An error occurred while searching sections:', error);
         }
     }
 
