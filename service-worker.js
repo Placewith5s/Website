@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = 'placewith5s-v57';
+const CACHE_NAME = 'placewith5s-v58';
 const FILES_TO_CACHE = [
     '/',
     'manifest.json',
