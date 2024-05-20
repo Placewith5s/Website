@@ -1,20 +1,11 @@
-"use strict";
+'use strict';
+
 const myDarkModeModule = (function () {
     const DARK_THEME_CLASS = 'dark-theme';
-
-    // Button for toggling dark mode
-    const darkModeToggleBtn = document.createElement('button');
-    darkModeToggleBtn.setAttribute('aria-label', 'Toggle Dark Mode'); // ARIA label
-    darkModeToggleBtn.setAttribute('role', 'switch'); // ARIA role
-    darkModeToggleBtn.setAttribute('aria-checked', 'false'); // Initial state
-
-    // Add button to the DOM (adjust placement as needed)
-    document.body.appendChild(darkModeToggleBtn);
 
     function setDarkMode() {
         try {
             document.body.classList.add(DARK_THEME_CLASS);
-            darkModeToggleBtn.setAttribute('aria-checked', 'true'); // Update ARIA state
         } catch (error) {
             handleDarkModeError('An error occurred while setting dark mode:', error);
         }
@@ -23,31 +14,27 @@ const myDarkModeModule = (function () {
     function setLightMode() {
         try {
             document.body.classList.remove(DARK_THEME_CLASS);
-            darkModeToggleBtn.setAttribute('aria-checked', 'false'); // Update ARIA state
         } catch (error) {
             handleDarkModeError('An error occurred while setting light mode:', error);
         }
     }
 
-    function toggleDarkMode() {
-        try {
-            const isDarkMode = document.body.classList.contains(DARK_THEME_CLASS);
-            isDarkMode ? setLightMode() : setDarkMode();
-        } catch (error) {
-            handleDarkModeError('An error occurred while toggling dark mode:', error);
-        }
+    function toggleDarkModeBasedOnPreference(prefersDarkMode) {
+        prefersDarkMode ? setDarkMode() : setLightMode();
     }
 
-    function checkAndSetDarkModePreference() {
+    async function checkAndSetDarkModePreference() {
         try {
+            // Wait for a small delay to ensure other styles have loaded
+            await new Promise(resolve => setTimeout(resolve, 100)); 
+
             if (window.matchMedia) {
                 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                darkModeMediaQuery.addEventListener('change', (event) => { // Event listener
-                    event.matches ? setDarkMode() : setLightMode();
+                toggleDarkModeBasedOnPreference(darkModeMediaQuery.matches);
+
+                darkModeMediaQuery.addEventListener('change', (event) => {
+                    toggleDarkModeBasedOnPreference(event.matches);
                 });
-                if (darkModeMediaQuery.matches) {
-                    setDarkMode();
-                }
             } else {
                 console.error('matchMedia is not supported. Dark mode preference may not work.');
             }
@@ -60,13 +47,11 @@ const myDarkModeModule = (function () {
         console.error(message, error);
     }
 
-    // Attach event listener to the button
-    darkModeToggleBtn.addEventListener('click', toggleDarkMode);
-
     return {
-        setDarkMode,
-        setLightMode,
-        toggleDarkMode,
         checkAndSetDarkModePreference
     };
 })();
+
+document.addEventListener("DOMContentLoaded", async function () {
+    await myDarkModeModule.checkAndSetDarkModePreference(); 
+});

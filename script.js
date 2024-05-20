@@ -1,9 +1,5 @@
 "use strict"; // Enable strict mode for better error handling
 
-document.addEventListener("DOMContentLoaded", async function () {
-    // Wait for page content to load before executing the script
-    await myDarkModeModule.checkAndSetDarkModePreference(); // Apply user's dark mode preference
-
     // Get references to the drawer and menu icon elements
     const drawer = document.getElementById('drawer'); 
     const menuIcon = document.getElementById('menuIcon');
@@ -62,4 +58,3 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Initialize the menu functionality
     MenuManager.initializeMenu();
-});
