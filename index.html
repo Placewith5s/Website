@@ -120,7 +120,7 @@
 
     </nav>
 
-        <!-- Hamburger menu navigation (small screens) -->
+        <!-- Hamburger menu navigation (smaller screens) -->
 
         <div class="menu-icon" id="menuIcon">
 
@@ -162,6 +162,12 @@
 
 
     <main>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search...">
+          </div>
+        
+          <div id="content">
+
         <div class="step">
             <div class="step-content">
                 <h3>Preparation:</h3>
@@ -187,7 +193,7 @@
                 </div>
             </div>
  
-            <div class="step2 anim">
+            <div class="step2">
                 <h2>Step 2: Apply Optimizations</h2>
                 <div class="step-content">
                     <p>Launch the tool, focus on the 'Tweaks' section, and customize these settings:</p>
@@ -196,7 +202,7 @@
                 </div>
             </div>
 
-            <div class="step3 anim">
+            <div class="step3">
                 <h2>Step 3: Use Hellzerg's Optimizer</h2>
                 <div class="step-content">
                     <a href=https://github.com/hellzerg/optimizer target="_blank" rel="noopener noreferrer" title="Link to hellzerg's repository" aria-label="Link to hellzerg's repository">Visit the repository</a>
@@ -238,6 +244,7 @@
                 </div>
             </div>
         </section>
+    </div>
     </main>
 
 
@@ -310,6 +317,10 @@
     <link rel="preload" href="/register-service.js" as="script">
 
     <script src="/register-service.js" defer></script>
+
+    <link rel="preload" href="/index.js" as="script">
+
+    <script src="/index.js" defer></script>
 
 </body>
 
