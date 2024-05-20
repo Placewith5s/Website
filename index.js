@@ -3,7 +3,6 @@
 const searchInput = document.getElementById('search-input');
 const contentArea = document.getElementById('content');
 
-// Error Handling: Check if elements exist
 if (!searchInput || !contentArea) {
   console.error('Error: Search input or content not found.');
 } else {
@@ -18,10 +17,8 @@ if (!searchInput || !contentArea) {
       const elementText = element.textContent.toLowerCase();
       const isMatch = elementText.includes(searchTerm);
 
-      // Hide/show elements visually
       element.style.display = isMatch ? 'block' : 'none';
 
-      // ARIA attributes for accessibility
       element.setAttribute('aria-hidden', !isMatch);
       if (!element.hasAttribute('role')) {
         element.setAttribute('role', 'region'); 
