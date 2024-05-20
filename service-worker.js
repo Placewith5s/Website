@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = 'placewith5s-v58';
+const CACHE_NAME = 'placewith5s-v59';
 const FILES_TO_CACHE = [
     '/',
     'manifest.json',
@@ -13,7 +13,6 @@ const FILES_TO_CACHE = [
     'Screenshot144229.avif',
     'Screenshot195249.avif',
     'Screenshot195303.avif',
-    'Screenshot201115.avif',
     '/style.css',
     '/script.js',
     '/animation.js',

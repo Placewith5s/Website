@@ -2,9 +2,19 @@
 const myDarkModeModule = (function () {
     const DARK_THEME_CLASS = 'dark-theme';
 
+    // Button for toggling dark mode
+    const darkModeToggleBtn = document.createElement('button');
+    darkModeToggleBtn.setAttribute('aria-label', 'Toggle Dark Mode'); // ARIA label
+    darkModeToggleBtn.setAttribute('role', 'switch'); // ARIA role
+    darkModeToggleBtn.setAttribute('aria-checked', 'false'); // Initial state
+
+    // Add button to the DOM (adjust placement as needed)
+    document.body.appendChild(darkModeToggleBtn);
+
     function setDarkMode() {
         try {
             document.body.classList.add(DARK_THEME_CLASS);
+            darkModeToggleBtn.setAttribute('aria-checked', 'true'); // Update ARIA state
         } catch (error) {
             handleDarkModeError('An error occurred while setting dark mode:', error);
         }
@@ -13,6 +23,7 @@ const myDarkModeModule = (function () {
     function setLightMode() {
         try {
             document.body.classList.remove(DARK_THEME_CLASS);
+            darkModeToggleBtn.setAttribute('aria-checked', 'false'); // Update ARIA state
         } catch (error) {
             handleDarkModeError('An error occurred while setting light mode:', error);
         }
@@ -31,6 +42,9 @@ const myDarkModeModule = (function () {
         try {
             if (window.matchMedia) {
                 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                darkModeMediaQuery.addEventListener('change', (event) => { // Event listener
+                    event.matches ? setDarkMode() : setLightMode();
+                });
                 if (darkModeMediaQuery.matches) {
                     setDarkMode();
                 }
@@ -45,6 +59,9 @@ const myDarkModeModule = (function () {
     function handleDarkModeError(message, error) {
         console.error(message, error);
     }
+
+    // Attach event listener to the button
+    darkModeToggleBtn.addEventListener('click', toggleDarkMode);
 
     return {
         setDarkMode,

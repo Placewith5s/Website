@@ -4,8 +4,18 @@ class StylesheetLoader {
     constructor(stylesheets) {
         this.stylesheets = stylesheets;
         this.loadedStyles = {};
+        this.totalStylesheets = stylesheets.length; // Store the total number for progress
+
+        // Get elements and set initial ARIA attributes
         this.preloader = document.getElementById('preloader');
+        this.preloader.setAttribute('role', 'progressbar');
+        this.preloader.setAttribute('aria-valuemin', '0');
+        this.preloader.setAttribute('aria-valuemax', this.totalStylesheets);
+        this.preloader.setAttribute('aria-valuenow', '0'); // Start at 0%
+
         this.body = document.querySelector('body');
+        this.body.setAttribute('aria-busy', 'true'); // Content is loading
+
         this.loadStylesheets();
     }
 
@@ -31,7 +41,7 @@ class StylesheetLoader {
                 element.addEventListener('error', (error) => this.handleError(filename, error));
             } else {
                 console.error(`${filename} link not found`);
-                this.removePreloader();
+                this.removePreloader(); 
             }
         } catch (error) {
             console.error(`Error adding listeners for ${filename}:`, error);
@@ -42,12 +52,18 @@ class StylesheetLoader {
     handleLoad(filename) {
         console.log(`${filename} loaded successfully.`);
         this.loadedStyles[filename] = true;
+
+        // Update preloader progress
+        const loadedCount = Object.keys(this.loadedStyles).length;
+        this.preloader.setAttribute('aria-valuenow', loadedCount);
+
         this.checkCSSLoaded();
     }
 
     handleError(filename, error) {
-        console.error(`Error loading ${filename}.css:`, error);
-        this.removePreloader();
+        console.error(`Error loading ${filename}:`, error);
+        // You might choose to continue loading or stop here
+        this.removePreloader(); // For this example, we remove the preloader on error
     }
 
     checkCSSLoaded() {
@@ -61,6 +77,8 @@ class StylesheetLoader {
     showContent() {
         if (this.body) {
             this.body.style.display = 'block';
+            this.body.setAttribute('aria-busy', 'false'); 
+            this.preloader.removeAttribute('aria-valuenow'); 
         }
     }
 
@@ -72,6 +90,6 @@ class StylesheetLoader {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const stylesheets = ['style.css', 'topnbottom.css'];
+    const stylesheets = ['style.css', 'topnbottom.css']; // Or get these from a config
     new StylesheetLoader(stylesheets);
 });
