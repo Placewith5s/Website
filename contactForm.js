@@ -15,6 +15,12 @@ function isValidEmail(email) {
 }
 
 function showError(element, message) {
+    const existingError = element.parentNode.querySelector('.error-message');
+    if (existingError) {
+        existingError.textContent = message;
+        return;
+    }
+
     const errorElement = document.createElement('div');
     errorElement.className = 'error-message';
     errorElement.textContent = message;
@@ -25,17 +31,15 @@ function showError(element, message) {
 }
 
 function clearErrorMessages() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const errorMessages = document.querySelectorAll('.error-message');
-        if (errorMessages) { 
-            errorMessages.forEach(message => message.remove());
-        }
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(message => message.remove());
 
-        const errorSummary = document.getElementById('error-summary');
-        if (errorSummary) { 
-            errorSummary.textContent = '';
-        }
-    });
+    if (errorSummary) {
+        errorSummary.textContent = '';
+    }
+
+    const formElements = contactForm.querySelectorAll('input, textarea');
+    formElements.forEach(element => element.removeAttribute('aria-invalid'));
 }
 
 function displayErrorSummary(errors) {
@@ -55,33 +59,36 @@ function displayErrorSummary(errors) {
 
 contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    clearErrorMessages();
+    clearErrorMessages(); 
 
     const errors = [];
 
-    try {
-        const nameInput = document.getElementById('name');
-        if (nameInput.value.trim() === '') {
-            throw { element: nameInput, message: 'Please enter your name.' };
-        }
+    const nameInput = document.getElementById('name');
+    if (nameInput.value.trim() === '') {
+        errors.push({ element: nameInput, message: 'Please enter your name.' });
+    }
 
-        const emailInput = document.getElementById('email');
-        if (!isValidEmail(emailInput.value)) {
-            throw { element: emailInput, message: 'Please enter a valid email address.' };
-        }
+    const emailInput = document.getElementById('email');
+    if (!isValidEmail(emailInput.value)) {
+        errors.push({ element: emailInput, message: 'Please enter a valid email address.' });
+    }
 
-        const messageInput = document.getElementById('message');
-        if (messageInput.value.trim() === '') {
-            throw { element: messageInput, message: 'Please enter your message.' };
-        }
+    const messageInput = document.getElementById('message');
+    if (messageInput.value.trim() === '') {
+        errors.push({ element: messageInput, message: 'Please enter your message.' });
+    }
 
-        const consentCheckbox = document.getElementById('consent');
-        if (!consentCheckbox.checked) {
-            throw { element: consentCheckbox, message: 'Please agree to the Privacy Policy.' };
-        }
+    const consentCheckbox = document.getElementById('consent');
+    if (!consentCheckbox.checked) {
+        errors.push({ element: consentCheckbox, message: 'Please agree to the Privacy Policy.' });
+    }
 
-        fetch(contactForm.action, {
-            method: contactForm.method,
+    if (errors.length > 0) {
+        displayErrorSummary(errors);
+        errors.forEach(showError);
+    } else {
+        fetch("https://formspree.io/f/mnqekdoq", {
+            method: "POST",
             body: new FormData(contactForm),
             headers: {
                 'Accept': 'application/json'
@@ -100,9 +107,5 @@ contactForm.addEventListener('submit', (event) => {
             console.error("Error:", error);
             displayErrorSummary([{message: "An error occurred. Please try again later."}]); 
         });
-    } catch (error) {
-        errors.push(error);
-        displayErrorSummary(errors);
-        showError(error.element, error.message);
     }
 });
