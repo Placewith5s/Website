@@ -1,0 +1,82 @@
+'use strict';
+
+const contactForm = document.getElementById('contact-form');
+const errorSummary = document.getElementById('error-summary');
+
+contactForm.setAttribute('aria-labelledby', 'contact-form-title');
+document.getElementById('name').setAttribute('aria-label', 'Name');
+document.getElementById('email').setAttribute('aria-label', 'Email');
+document.getElementById('message').setAttribute('aria-label', 'Message');
+document.getElementById('consent').setAttribute('aria-describedby', 'consent-description');
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function showError(element, message) {
+    const errorElement = document.createElement('div');
+    errorElement.className = 'error-message';
+    errorElement.textContent = message;
+    element.parentNode.insertBefore(errorElement, element.nextSibling);
+
+    errorElement.setAttribute('role', 'alert');
+    element.setAttribute('aria-invalid', 'true');
+}
+
+function clearErrorMessages() {
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(message => message.remove());
+    errorSummary.textContent = '';
+}
+
+function displayErrorSummary(errors) {
+    errorSummary.textContent = 'There were errors in your submission:';
+    const errorList = document.createElement('ul');
+    errors.forEach(error => {
+        const listItem = document.createElement('li');
+        listItem.textContent = error.message;
+        errorList.appendChild(listItem);
+    });
+    errorSummary.appendChild(errorList);
+    
+    errorSummary.setAttribute('role', 'alert');     
+    errorSummary.setAttribute('aria-live', 'assertive');
+    contactForm.setAttribute('aria-describedby', 'error-summary');
+}
+
+contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    clearErrorMessages();
+
+    const errors = [];
+
+    try {
+        const nameInput = document.getElementById('name');
+        if (nameInput.value.trim() === '') {
+            throw { element: nameInput, message: 'Please enter your name.' };
+        }
+
+        const emailInput = document.getElementById('email');
+        if (!isValidEmail(emailInput.value)) {
+            throw { element: emailInput, message: 'Please enter a valid email address.' };
+        }
+
+        const messageInput = document.getElementById('message');
+        if (messageInput.value.trim() === '') {
+            throw { element: messageInput, message: 'Please enter your message.' };
+        }
+
+        const consentCheckbox = document.getElementById('consent');
+        if (!consentCheckbox.checked) {
+            throw { element: consentCheckbox, message: 'Please agree to the Privacy Policy.' };
+        }
+
+        contactForm.submit();
+    } catch (error) {
+        errors.push(error);
+        displayErrorSummary(errors);
+        showError(error.element, error.message);
+    }
+});

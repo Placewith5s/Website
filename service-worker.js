@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = 'placewith5s-v62';
+const CACHE_NAME = 'placewith5s-v63';
 const FILES_TO_CACHE = [
     '/',
     '/index.js',
@@ -36,7 +36,10 @@ const FILES_TO_CACHE = [
     '/aboutSoftware',
     '/aboutSoftware.css',
     '/about',
-    '/about.css'
+    '/about.css',
+    '/contactForm',
+    '/contactForm.css',
+    '/contactForm.js',
 ];
 
 self.addEventListener('install', (event) => {
