@@ -4,17 +4,16 @@ class StylesheetLoader {
     constructor(stylesheets) {
         this.stylesheets = stylesheets;
         this.loadedStyles = {};
-        this.totalStylesheets = stylesheets.length; // Store the total number for progress
+        this.totalStylesheets = stylesheets.length;
 
-        // Get elements and set initial ARIA attributes
         this.preloader = document.getElementById('preloader');
         this.preloader.setAttribute('role', 'progressbar');
         this.preloader.setAttribute('aria-valuemin', '0');
         this.preloader.setAttribute('aria-valuemax', this.totalStylesheets);
-        this.preloader.setAttribute('aria-valuenow', '0'); // Start at 0%
+        this.preloader.setAttribute('aria-valuenow', '0');
 
         this.body = document.querySelector('body');
-        this.body.setAttribute('aria-busy', 'true'); // Content is loading
+        this.body.setAttribute('aria-busy', 'true');
 
         this.loadStylesheets();
     }
@@ -53,7 +52,6 @@ class StylesheetLoader {
         console.log(`${filename} loaded successfully.`);
         this.loadedStyles[filename] = true;
 
-        // Update preloader progress
         const loadedCount = Object.keys(this.loadedStyles).length;
         this.preloader.setAttribute('aria-valuenow', loadedCount);
 
@@ -62,8 +60,7 @@ class StylesheetLoader {
 
     handleError(filename, error) {
         console.error(`Error loading ${filename}:`, error);
-        // You might choose to continue loading or stop here
-        this.removePreloader(); // For this example, we remove the preloader on error
+        this.removePreloader();
     }
 
     checkCSSLoaded() {
@@ -90,6 +87,6 @@ class StylesheetLoader {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const stylesheets = ['style.css', 'topnbottom.css']; // Or get these from a config
+    const stylesheets = ['style.css', 'topnbottom.css'];
     new StylesheetLoader(stylesheets);
 });

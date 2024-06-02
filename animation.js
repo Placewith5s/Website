@@ -2,7 +2,6 @@
 
 const animatedElements = document.querySelectorAll('.anim');
 
-// Debounce function to limit the rate at which a function can fire
 const debounce = (func, delay) => {
 
   let timer;
@@ -13,7 +12,6 @@ const debounce = (func, delay) => {
   };
 };
 
-// Function to show or hide animation based on element visibility
 const showAnimation = debounce((element, isVisible) => {
 
   if (isVisible) {
@@ -26,12 +24,10 @@ const showAnimation = debounce((element, isVisible) => {
 
 }, 100);
 
-// IntersectionObserver options
 const options = {
   threshold: 0.7,
 };
 
-// Function to observe an element and trigger animation
 const observeElement = (el) => {
 
   const observer = new IntersectionObserver((entries) => {
@@ -48,5 +44,4 @@ const observeElement = (el) => {
   el.setAttribute('role', 'presentation');
 };
 
-// Initialize the observer for each animated element
 animatedElements.forEach(observeElement);
