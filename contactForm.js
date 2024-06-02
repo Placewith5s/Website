@@ -25,9 +25,17 @@ function showError(element, message) {
 }
 
 function clearErrorMessages() {
-    const errorMessages = document.querySelectorAll('.error-message');
-    errorMessages.forEach(message => message.remove());
-    errorSummary.textContent = '';
+    document.addEventListener('DOMContentLoaded', () => {
+        const errorMessages = document.querySelectorAll('.error-message');
+        if (errorMessages) { 
+            errorMessages.forEach(message => message.remove());
+        }
+
+        const errorSummary = document.getElementById('error-summary');
+        if (errorSummary) { 
+            errorSummary.textContent = '';
+        }
+    });
 }
 
 function displayErrorSummary(errors) {
@@ -39,15 +47,14 @@ function displayErrorSummary(errors) {
         errorList.appendChild(listItem);
     });
     errorSummary.appendChild(errorList);
-    
-    errorSummary.setAttribute('role', 'alert');     
+
+    errorSummary.setAttribute('role', 'alert');
     errorSummary.setAttribute('aria-live', 'assertive');
     contactForm.setAttribute('aria-describedby', 'error-summary');
 }
 
 contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
-
     clearErrorMessages();
 
     const errors = [];
@@ -73,7 +80,26 @@ contactForm.addEventListener('submit', (event) => {
             throw { element: consentCheckbox, message: 'Please agree to the Privacy Policy.' };
         }
 
-        contactForm.submit();
+        fetch(contactForm.action, {
+            method: contactForm.method,
+            body: new FormData(contactForm),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                alert("Thank you for your message!");
+                contactForm.reset();
+            } else {
+                response.json().then(data => {
+                    console.error("Formspree Error:", data);
+                    displayErrorSummary([{message: "Form submission failed. Please try again."}]); 
+                });
+            }
+        }).catch(error => {
+            console.error("Error:", error);
+            displayErrorSummary([{message: "An error occurred. Please try again later."}]); 
+        });
     } catch (error) {
         errors.push(error);
         displayErrorSummary(errors);
