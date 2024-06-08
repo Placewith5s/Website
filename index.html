@@ -114,11 +114,11 @@
 
       <!-- Navigation for most of the screen sizes -->
 
-      <nav class="exclusive-nav" role="navigation">
+      <nav class="exclusive-nav">
 
-        <a href="/about" title="Learn more about our company" aria-label="Learn more about our company">About Us</a>
-        <a href="/faq" title="Frequently Asked Questions" aria-label="Frequently Asked Questions">FAQs</a>
-        <a href="/aboutSoftware" title="GitHub Tools and ParkControl Info" aria-label="GitHub Tools and ParkControl Info">About Tools</a>
+        <a href="/about" aria-label="About Us">About Us</a>
+        <a href="/faq" aria-label="FAQs">FAQs</a>
+        <a href="/aboutSoftware" aria-label="About Tools">About Tools</a>
 
     </nav>
 
@@ -136,9 +136,9 @@
 
     <div class="drawer" id="drawer" role="navigation">
 
-        <a href="/about" id="aboutUsLink" title="Learn more about our company" aria-label="Learn more about our company">About Us</a>
-        <a href="/faq" id="faqLink" title="Frequently Asked Questions" aria-label="Frequently Asked Questions">FAQs</a>
-        <a href="/aboutSoftware" id="aboutSoftwareLink" title="GitHub Tools and ParkControl Info" aria-label="GitHub Tools and ParkControl Info">About Tools</a>
+        <a href="/about" id="aboutUsLink" aria-label="About Us">About Us</a>
+        <a href="/faq" id="faqLink" aria-label="FAQs">FAQs</a>
+        <a href="/aboutSoftware" id="aboutSoftwareLink" aria-label="About Tools">About Tools</a>
 
         <button id="hideDrawerBtn" aria-label="Hides the drawer">Hide</button>
 
@@ -158,21 +158,22 @@
 
         <h1>Boost FPS Safely: Malware-Free Tools for Smoother Gaming</h1>
 
-        <p class="description">Enhance your Windows PC for smoother gameplay using trusted, malware-free tools. Visit our <a href="/aboutSoftware">About Tools</a> page for details and verification.</p>
+        <p class="description">Enhance your Windows PC for smoother gameplay using trusted, malware-free tools. Visit our <a href="/aboutSoftware" aria-label="About Tools">About Tools</a> page for details and verification.</p>
 
     </header>
 
 
     <main>
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search...">
+            <input type="text" id="search-input" aria-placeholder="Search..." placeholder="Search...">
           </div>
         
           <div id="content">
 
+        <section aria-labelledby="Preparation"> <!-- Region auto added (I hope it works) -->
         <div class="step">
             <div class="step-content">
-                <h3>Preparation:</h3>
+                <h3 id="Preparation">Preparation:</h3>
                 <ul class="spaced">
                     <li><strong>Run as Administrator:</strong> All tools require admin rights for optimal functionality.</li>
                     <li><strong>Create a System Restore Point:</strong> This allows you to revert changes if needed.</li>
@@ -182,6 +183,7 @@
                 </ul>
             </div>
         </div>
+        </section>
 
         <section id="Step-by-Step-Guide">
             <div class="step1 anim">
@@ -234,7 +236,7 @@
             </div>
 
             <div class="expand-all">
-                <button id="Expand-Collapse-Button" role="button" aria-describedby="Expand" aria-expanded="false">Expand</button>
+                <button id="Expand-Collapse-Button" aria-expanded="false">Expand</button>
                 <div class="step5" id="step-hidden-from-5">
                     <h2>Step 5 (Optional): Fine-Tune with ParkControl</h2>
                     <div class="step-content">
@@ -245,6 +247,20 @@
                     </div>
                 </div>
             </div>
+
+            <div class="step6 anim">
+                <h2>Step 6: Optimize for General Use (Optional)</h2>
+                <div class="step-content">
+                    <p>While the prior steps focused on gaming, optimizing your PC for general use can indirectly improve your gaming experience as well.  Microsoft offers a comprehensive guide on this, covering aspects like:</p>
+                    <ul>
+                        <li>Managing startup programs to speed up boot times</li>
+                        <li>Adjusting visual effects for better performance</li>
+                        <li>Cleaning up disk space to free up resources</li>
+                    </ul>
+                    <p>Check out their tips for a more responsive system overall:</p>
+                    <a href="https://support.microsoft.com/en-us/windows/tips-to-improve-pc-performance-in-windows-b3b3ef5b-5953-fb6a-2528-4bbed82fba96" target="_blank" rel="noopener noreferrer" title="Link to Microsoft's PC Performance Tips" aria-label="Link to Microsoft's PC Performance Tips">Tips to improve PC performance in Windows</a>
+                </div>
+            </div>            
         </section>
     </div>
     </main>
@@ -258,13 +274,13 @@
 
     <span>Explore these tools to optimize your PC:</span>
 
-        <a href=https://christitus.com/one-tool-for-everything/ title="Chris Titus' Website" aria-label="Chris Titus' Website" target="_blank" rel="noopener noreferrer">ChrisTech</a>
+        <a href=https://christitus.com/one-tool-for-everything/ aria-label="Chris Titus' Website" target="_blank" rel="noopener noreferrer">One Tool For Everything by Chris Titus</a>
 
-        <a href=https://bitsum.com/parkcontrol/ title="Visit ParkControl's Page" aria-label="Visit ParkControl's Page" target="_blank" rel="noopener noreferrer">ParkControl by Bitsum</a>
+        <a href=https://bitsum.com/parkcontrol/ aria-label="Visit ParkControl's Page" target="_blank" rel="noopener noreferrer">ParkControl by Bitsum</a>
 
-        <a href=https://github.com/hellzerg/optimizer title="Optimizer by hellzerg" aria-label="Optimizer by hellzerg" target="_blank" rel="noopener noreferrer">Optimizer by hellzerg</a>
+        <a href=https://github.com/hellzerg/optimizer aria-label="Optimizer by hellzerg" target="_blank" rel="noopener noreferrer">Optimizer by Hellzerg</a>
 
-        <a href=https://github.com/builtbybel/BloatyNosy title="BloatyNosy by Builtbybel" aria-label="BloatyNosy by Builtbybel" target="_blank" rel="noopener noreferrer">BloatyNosy by builtbybel</a>
+        <a href=https://github.com/builtbybel/BloatyNosy aria-label="BloatyNosy by Builtbybel" target="_blank" rel="noopener noreferrer">BloatyNosy by Builtbybel</a>
 
 </section>
 
@@ -273,14 +289,14 @@
 
     <!-- Flaticon attribution -->
 
-    <a href=https://www.flaticon.com/free-icons/computer class="attribution" target="_blank" rel="noopener noreferrer">Icons by Freepik - Flaticon</a>
+    <a href=https://www.flaticon.com/free-icons/computer class="attribution" target="_blank" rel="noopener noreferrer" aria-label="Icons by Freepik - Flaticon">Icons by Freepik - Flaticon</a>
 
     <nav class="nav-footer">
 
-        <a href="/aboutSoftware" title="GitHub Tools and ParkControl Info" aria-label="GitHub Tools and ParkControl Info">About Software</a>
-        <a href="/about" title="Learn more about our company" aria-label="Learn more about our company">About Us</a>
-        <a href="/cookiep" title="Cookie Policy" aria-label="Cookie Policy">Cookie Policy</a>
-        <a href="/privacyp" title="Privacy Policy" aria-label="Privacy Policy">Privacy Policy</a>
+        <a href="/aboutSoftware" aria-label="About Tools">About Tools</a>
+        <a href="/about" aria-label="About Us">About Us</a>
+        <a href="/cookiep" aria-label="Cookie Policy">Cookie Policy</a>
+        <a href="/privacyp" aria-label="Privacy Policy">Privacy Policy</a>
 
     </nav>
 
