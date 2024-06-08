@@ -1,6 +1,6 @@
 "use strict";
 
-const CACHE_NAME = 'placewith5s-v68';
+const CACHE_NAME = 'placewith5s-v69';
 const FILES_TO_CACHE = [
     '/',
     '/index.js',
