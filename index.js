@@ -40,7 +40,6 @@ if (!searchInput || !contentArea) {
     });
 
     searchInput.setAttribute('aria-label', 'Search for content');
-    searchInput.setAttribute('role', 'searchbox');
 
     contentArea.setAttribute('aria-live', 'polite'); 
 }
