@@ -20,7 +20,6 @@ Placewith5s.com is your one-stop destination for detailed, step-by-step guides a
 - [Getting Started](#getting-started)
 - [Popular Optimization Areas](#popular-optimization-areas)
 - [Who Should Use Placewith5s.com?](#who-should-use-placewith5s-com)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Getting Started 🚀
@@ -40,9 +39,6 @@ Placewith5s.com is your one-stop destination for detailed, step-by-step guides a
 * Gamers looking for maximum performance.
 * Professionals seeking to boost productivity.
 * Anyone curious about customizing their Windows environment.
-
-## Contributing 🤝
-We welcome contributions! If you have optimization tips or ideas, feel free to submit a pull request or open an issue.
 
 ## License 📄
 
