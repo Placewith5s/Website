@@ -25,7 +25,6 @@ const myDarkModeModule = (function () {
 
     async function checkAndSetDarkModePreference() {
         try {
-            // Wait for a small delay to ensure other styles have loaded
             await new Promise(resolve => setTimeout(resolve, 100)); 
 
             if (window.matchMedia) {

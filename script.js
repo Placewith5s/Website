@@ -4,9 +4,7 @@
     const menuIcon = document.getElementById('menuIcon');
 
     drawer.setAttribute('aria-hidden', 'true');
-    drawer.setAttribute('role', 'navigation');
     menuIcon.setAttribute('aria-expanded', 'false');
-    menuIcon.setAttribute('aria-controls', 'drawer');
 
     const MenuManager = {
         handleDrawerClick: function (event) {
