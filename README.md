@@ -24,7 +24,7 @@ Placewith5s.com is your one-stop destination for detailed, step-by-step guides a
 
 ## Getting Started 🚀
 
-1. **Visit the Website:** Head over to [placewith5s.com](https://www.placewith5s.com)
+1. **Visit the Website:** Head over to [https://www.placewith5s.com](https://www.placewith5s.com)
 2. **Browse Guides:** Choose the optimization area you want to focus on.
 3. **Follow Instructions:** Carefully read and follow the steps in the guides.
 
