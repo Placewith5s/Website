@@ -43,5 +43,3 @@ Placewith5s.com is your one-stop destination for detailed, step-by-step guides a
 ## License 📄
 
 This project is licensed under the [LICENSE](LICENSE) file.
-
-Let me know if you'd like any further adjustments! 
