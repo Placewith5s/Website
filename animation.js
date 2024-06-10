@@ -1,47 +1,44 @@
 'use strict';
-
-const animatedElements = document.querySelectorAll('.anim');
-
-const debounce = (func, delay) => {
-
-  let timer;
-
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => func(...args), delay);
-  };
-};
-
-const showAnimation = debounce((element, isVisible) => {
-
-  if (isVisible) {
-    element.classList.add('show');
-    element.removeAttribute('aria-hidden');
-  } else {
-    element.classList.remove('show');
-    element.setAttribute('aria-hidden', 'true');
+class AnimatedElement {
+  constructor(element, options = {}) {
+    this.element = element;
+    this.isVisible = false;
+    this.options = {
+      threshold: options.threshold || 1,
+      debounceDelay: options.debounceDelay || 100,
+    };
+    this.observer = null;
+    this.showAnimation = this.showAnimation.bind(this);
+    this.initialize();
   }
-
-}, 100);
-
-const options = {
-  threshold: 0.7,
-};
-
-const observeElement = (el) => {
-
-  const observer = new IntersectionObserver((entries) => {
-
+  initialize() {
+    this.element.setAttribute('role', 'presentation'); 
+    this.debouncedShowAnimation = this.debounce(this.showAnimation, this.options.debounceDelay);
+    this.createObserver();
+  }
+  createObserver() {
+    this.observer = new IntersectionObserver(this.handleIntersection.bind(this), this.options);
+    this.observer.observe(this.element);
+  }
+  handleIntersection(entries) {
     entries.forEach((entry) => {
-
-      showAnimation(entry.target, entry.isIntersecting);
-
+      this.debouncedShowAnimation(entry.isIntersecting);
     });
-
-  }, options);
- 
-  observer.observe(el);
-  el.setAttribute('role', 'presentation');
-};
-
-animatedElements.forEach(observeElement);
+  }
+  showAnimation(isVisible) {
+    if (isVisible !== this.isVisible) {
+      this.isVisible = isVisible; 
+      this.element.classList.toggle('show', isVisible);
+      this.element.setAttribute('aria-hidden', isVisible ? null : 'true'); 
+    }
+  }
+  debounce(func, delay) {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func(...args), delay);
+    };
+  }
+}
+const animatedElements = document.querySelectorAll('.anim');
+animatedElements.forEach(el => new AnimatedElement(el));

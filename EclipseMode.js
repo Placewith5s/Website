@@ -1,56 +1,48 @@
 'use strict';
-
-const myDarkModeModule = (function () {
-    const DARK_THEME_CLASS = 'dark-theme';
-
-    function setDarkMode() {
+class DarkModeModule {
+    constructor() {
+        this.DARK_THEME_CLASS = 'dark-theme';
+    }
+    setDarkMode() {
         try {
-            document.body.classList.add(DARK_THEME_CLASS);
+            document.body.classList.add(this.DARK_THEME_CLASS);
         } catch (error) {
-            handleDarkModeError('An error occurred while setting dark mode:', error);
+            this.handleDarkModeError('An error occurred while setting dark mode:', error);
         }
     }
-
-    function setLightMode() {
+    setLightMode() {
         try {
-            document.body.classList.remove(DARK_THEME_CLASS);
+            document.body.classList.remove(this.DARK_THEME_CLASS);
         } catch (error) {
-            handleDarkModeError('An error occurred while setting light mode:', error);
+            this.handleDarkModeError('An error occurred while setting light mode:', error);
         }
     }
-
-    function toggleDarkModeBasedOnPreference(prefersDarkMode) {
-        prefersDarkMode ? setDarkMode() : setLightMode();
+    toggleDarkModeBasedOnPreference(prefersDarkMode) {
+        prefersDarkMode ? this.setDarkMode() : this.setLightMode();
     }
-
-    async function checkAndSetDarkModePreference() {
+    async checkAndSetDarkModePreference() {
         try {
-            await new Promise(resolve => setTimeout(resolve, 100)); 
+            await new Promise(resolve => setTimeout(resolve, 100));
 
             if (window.matchMedia) {
                 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-                toggleDarkModeBasedOnPreference(darkModeMediaQuery.matches);
+                this.toggleDarkModeBasedOnPreference(darkModeMediaQuery.matches);
 
                 darkModeMediaQuery.addEventListener('change', (event) => {
-                    toggleDarkModeBasedOnPreference(event.matches);
+                    this.toggleDarkModeBasedOnPreference(event.matches);
                 });
             } else {
                 console.error('matchMedia is not supported. Dark mode preference may not work.');
             }
         } catch (error) {
-            handleDarkModeError('An error occurred while checking dark mode preference:', error);
+            this.handleDarkModeError('An error occurred while checking dark mode preference:', error);
         }
     }
-
-    function handleDarkModeError(message, error) {
+    handleDarkModeError(message, error) {
         console.error(message, error);
     }
-
-    return {
-        checkAndSetDarkModePreference
-    };
-})();
-
+}
+const myDarkModeModule = new DarkModeModule();
 document.addEventListener("DOMContentLoaded", async function () {
     await myDarkModeModule.checkAndSetDarkModePreference(); 
 });

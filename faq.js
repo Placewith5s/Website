@@ -1,19 +1,15 @@
+'use strict';
 document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("search-bar");
     const notFoundMessage = document.getElementById("not-found-message");
-
     notFoundMessage.style.display = "none";
     notFoundMessage.setAttribute('aria-hidden', 'true');
-
     searchBar.addEventListener("input", debounce(searchSections, 300));
-
     function searchSections() {
         try {
             const searchTerm = searchBar.value.trim().toLowerCase();
             const faqSections = document.querySelectorAll("main details");
-
             let found = false;
-
             faqSections.forEach(function (section) {
                 const sectionText = section.textContent.toLowerCase();
 
@@ -26,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     section.setAttribute('aria-hidden', 'true')
                 }
             });
-
             if (found) {
                 notFoundMessage.style.display = "none";
                 notFoundMessage.setAttribute('aria-hidden', 'true');
@@ -46,7 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('An error occurred while searching sections:', error);
         }
     }
-
     function debounce(func, delay) {
         let timeoutId;
         return function () {
