@@ -2,222 +2,131 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-
     <meta property="og:url" content=https://www.placewith5s.com/contactForm>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Contact Form | Placewith5s">
     <meta property="og:description" content="Contact Placewith5s directly through this form for questions, support, or feedback.">
     <meta property="og:image" content="">
-
     <meta name="twitter:card" content="summary_large_image">
-
     <meta property="twitter:domain" content="placewith5s.com">
     <meta property="twitter:url" content=https://www.placewith5s.com/contactForm>
-
     <meta name="twitter:title" content="Contact Form | Placewith5s">
     <meta name="twitter:description" content="Contact Placewith5s directly through this form for questions, support, or feedback.">
     <meta name="twitter:image" content="">
-
     <title>Contact Form | Placewith5s</title>
-
     <script src="https://cdn.userway.org/widget.js" data-account="CYiRL9XP3j"></script>
-
     <link rel="manifest" href="manifest.json">
-
-    <link rel="preload" href="/preloader.js" as="script">
-
     <script src="/preloader.js" defer></script>
-
     <link rel="stylesheet" href="/preloader.css">
-
     <link rel="preload" href="/contactForm.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
     <noscript><link rel="stylesheet" href="/contactForm.css"></noscript>
-
     <link rel="preload" href="/DataGuardian.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
     <noscript><link rel="stylesheet" href="/DataGuardian.css"></noscript>
-
     <link rel="preload" href="/topnbottom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
     <noscript><link rel="stylesheet" href="/topnbottom.css"></noscript>
-
 </head>
-
 <body>
-
     <div id="consent-cookie-banner">
-
         <p>
             This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.
         </p>
-
         <p>
             By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="/cookiep" class="cookie-link" target="_blank" rel="noopener noreferrer">Cookies Information</a>.
         </p>
-
         <button id="showCookieSettings" aria-label="Cookie Options">Cookie Options</button>
         <button id="consent" aria-label="Accept All Cookies">Accept All Cookies</button>
         <button id="rejectAll" aria-label="Reject All Cookies">Reject All Cookies</button>
-
     </div>
-
-
     <div id="cookie-banner">
-
         <p>This website uses cookies. Please choose your cookie preferences:</p>
-
         <ul>
             <li>
                 <label for="essentialCheckbox">Essential: Required for basic site functions.</label>
-
                 <input type="checkbox" id="essentialCheckbox" checked disabled aria-label="Essential checkbox (checked, disabled)">
             </li>
-
             <li>
                 <label for="performanceCheckbox">Performance: Helps us analyze site usage.</label>
-
                 <input type="checkbox" id="performanceCheckbox" aria-label="Performance checkbox">
             </li>
-
             <li>
                 <label for="functionalityCheckbox">Functionality: Remembers your preferences.</label>
-
                 <input type="checkbox" id="functionalityCheckbox" aria-label="Functionality checkbox">
             </li>
-
             <li>
                 <label for="thirdPartyCheckbox">Third-Party: From external services for analytics and ads.</label>
-
                 <input type="checkbox" id="thirdPartyCheckbox" aria-label="Third-Party checkbox">
             </li>
         </ul>
-
         <button id="savePreferences" aria-label="Save Preferences">Save Preferences</button>
         <button id="closeBanner" aria-label="Close">Close</button>
-
     </div>
- 
-
     <nav class="exclusive-nav">
-
         <a href="/about" aria-label="About Us">About Us</a>
         <a href="/faq" aria-label="FAQs">FAQs</a>
         <a href="/aboutSoftware" aria-label="About Tools">About Tools</a>
-
     </nav>
-
         <div class="menu-icon" id="menuIcon" role="button" aria-haspopup="true">
-
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
-
         </div>
-
         <nav>
-
             <div class="drawer" id="drawer" role="navigation">
-        
                 <a href="/about" id="aboutUsLink" aria-label="About Us">About Us</a>
                 <a href="/faq" id="faqLink" aria-label="FAQs">FAQs</a>
                 <a href="/aboutSoftware" id="aboutSoftwareLink" aria-label="About Tools">About Tools</a>
-        
                 <button id="hideDrawerBtn" aria-label="Hides the drawer">Hide</button>
-        
             </div>
-        
         </nav>
-
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
-
         <div class="loader"></div>
-    
     </div>
-
     <main>
         <form id="contact-form" action="https://formspree.io/f/mnqekdoq" method="post">
             <h2>Contact Placewith5s</h2>
-
             <div id="error-summary" role="alert" aria-live="assertive"></div> 
-
             <div class="form-group">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required aria-label="Your Name" autocomplete="name">
             </div>
-
             <div class="form-group">
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" name="email" required aria-label="Your Email" autocomplete="email">
             </div>
-
             <div class="form-group">
                 <label for="message">Your Message:</label>
                 <textarea id="message" name="message" required aria-label="Your Message" autocomplete="off"></textarea>
             </div>
-
             <div class="gdpr-consent">
                 <input type="checkbox" id="consent" name="consent" required aria-label="Consent Checkbox">
                 <label for="consent">
                     I consent to the processing of my personal data as described in the <a href="/privacyp" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
                 </label>
             </div>
-
             <button type="submit">Submit</button>
         </form>
     </main>
-
     <footer>
-
-        <!-- Flaticon attribution -->
-    
         <a href=https://www.flaticon.com/free-icons/computer class="attribution" target="_blank" rel="noopener noreferrer" aria-label="Icons by Freepik - Flaticon">Icons by Freepik - Flaticon</a>
-
         <nav class="nav-footer">
-    
             <a href="/aboutSoftware" aria-label="About Tools">About Tools</a>
             <a href="/about" aria-label="About Us">About Us</a>
             <a href="/cookiep" aria-label="Cookie Policy">Cookie Policy</a>
             <a href="/privacyp" aria-label="Privacy Policy">Privacy Policy</a>
-    
         </nav>
-    
         <a href="#" id="manageCookiesLink" aria-label="Manage Cookies">Manage Cookies</a>
-
         <p class="copyright" aria-describedby="year copyright">© 2023-<span id="year"></span> Placewith5s. All Rights Reserved.</p>
-    
         <script>
-    
           document.getElementById("year").textContent = new Date().getFullYear();
-    
         </script>
-    
     </footer>
-
-<link rel="preload" href="/DataGuardian.js" as="script">
-
 <script src="/DataGuardian.js" defer></script>
-
-<link rel="preload" href="/EclipseMode.js" as="script">
-
 <script src="/EclipseMode.js" defer></script>
-
-<link rel="preload" href="/script.js" as="script">
-
 <script src="/script.js" defer></script>
-
-<link rel="preload" href="/register-service.js" as="script">
-
 <script src="/register-service.js" defer></script>
-
-<link rel="preload" href="/contactForm.js" as="script">
-
 <script src="/contactForm.js" defer></script>
-
 </body>
 </html>
