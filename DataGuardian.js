@@ -23,7 +23,7 @@ class CookieConsent {
     loadUserPreferences() {
         try {
             const userPreferences = JSON.parse(localStorage.getItem("cookiePreferences")) || {};
-            if (Object.keys(userPreferences).length > 0) {
+            if (Object.keys(userPreferences).length > 0 && this.checkCookies(userPreferences)) {
                 this.applyUserPreferences(userPreferences);
                 this.hideConsentCookieBanner();
             } else {
@@ -34,16 +34,30 @@ class CookieConsent {
             this.showConsentCookieBanner();
         }
     }
+    checkCookies(preferences) {
+        return (
+            this.getCookie("essential") === preferences.essential.toString() &&
+            this.getCookie("performance") === preferences.performance.toString() &&
+            this.getCookie("functionality") === preferences.functionality.toString() &&
+            this.getCookie("thirdParty") === preferences.thirdParty.toString()
+        );
+    }
+    getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+    }
     addEventListeners() {
         try {
             if (this.showCookieSettingsButton) {
                 this.showCookieSettingsButton.addEventListener("click", this.showCookieBanner.bind(this));
             }
             if (this.consentButton) {
-                this.consentButton.addEventListener("click", () => this.acceptOrRejectAllCookies(!0));
+                this.consentButton.addEventListener("click", () => this.acceptOrRejectAllCookies(true));
             }
             if (this.rejectAllButton) {
-                this.rejectAllButton.addEventListener("click", () => this.acceptOrRejectAllCookies(!1));
+                this.rejectAllButton.addEventListener("click", () => this.acceptOrRejectAllCookies(false));
             }
             if (this.savePreferencesButton) {
                 this.savePreferencesButton.addEventListener("click", this.saveCookiePreferences.bind(this));
@@ -85,7 +99,7 @@ class CookieConsent {
         }
     }
     acceptOrRejectAllCookies(accept) {
-        const preferences = { essential: !0, performance: accept, functionality: accept, thirdParty: accept };
+        const preferences = { essential: true, performance: accept, functionality: accept, thirdParty: accept };
         this.saveAndApplyPreferences(preferences);
         this.hideConsentCookieBanner();
     }
@@ -93,6 +107,7 @@ class CookieConsent {
         try {
             localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
             this.applyUserPreferences(preferences);
+            this.setCookies(preferences);
         } catch (error) {
             console.error("Error while saving preferences:", error);
         }
@@ -106,10 +121,7 @@ class CookieConsent {
         if (performanceCheckbox) performanceCheckbox.checked = preferences.performance;
         if (functionalityCheckbox) functionalityCheckbox.checked = preferences.functionality;
         if (thirdPartyCheckbox) thirdPartyCheckbox.checked = preferences.thirdParty;
-        this.setCookie("essential", preferences.essential);
-        this.setCookie("performance", preferences.performance);
-        this.setCookie("functionality", preferences.functionality);
-        this.setCookie("thirdParty", preferences.thirdParty);
+        this.setCookies(preferences);
     }
     saveCookiePreferences() {
         const cookieBannerDisplayStyle = window.getComputedStyle(this.cookieBanner).getPropertyValue("display");
@@ -124,6 +136,11 @@ class CookieConsent {
             this.hideCookieBanner();
         } else {
             console.log("Cannot save preferences when the cookie banner is hidden.");
+        }
+    }
+    setCookies(preferences) {
+        for (const [key, value] of Object.entries(preferences)) {
+            this.setCookie(key, value);
         }
     }
     setCookie(cookieName, value) {
