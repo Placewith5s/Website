@@ -17,16 +17,26 @@
     <meta name="twitter:description" content="Get answers to your burning Windows 10/11 optimization questions!  Our FAQ covers creating restore points, using third-party tools safely, and alternative solutions. Learn how to optimize your PC like a pro!">
     <meta name="twitter:image" content="">
     <title>FAQ | Placewith5s</title>
+    <noscript>
+        <link rel="manifest" href="manifest.json">
+        <link rel="stylesheet" href="/faq.css">
+        <link rel="stylesheet" href="/topnbottom.css">
+        <style>
+            #cookie-banner, #consent-cookie-banner {
+                display: none;
+            }
+            #preloader, .loader, .loader::before {
+                display: none !important; /* Important use case :) */
+            }
+        </style>
+    </noscript>
     <script src="https://cdn.userway.org/widget.js" data-account="CYiRL9XP3j"></script>
     <link rel="manifest" href="manifest.json">
     <script src="/preloader.js" defer></script>
     <link rel="stylesheet" href="/preloader.css">
+    <link rel="stylesheet" href="/DataGuardian.css">
     <link rel="preload" href="/faq.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/faq.css"></noscript>
-    <link rel="preload" href="/DataGuardian.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/DataGuardian.css"></noscript>
     <link rel="preload" href="/topnbottom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/topnbottom.css"></noscript>
 </head>
 <body>
     <div id="consent-cookie-banner">
@@ -87,7 +97,7 @@
     <header>
         <h1>Frequently Asked Questions</h1>
         <label for="search-bar"></label>
-        <input type="text" id="search-bar" aria-placeholder="Search..." placeholder="Search...">
+        <input type="text" id="search-bar" role="searchbox" aria-label="Search for content." aria-placeholder="Search..." placeholder="Search...">
     </header>
 <main>
         <div id="not-found-message">

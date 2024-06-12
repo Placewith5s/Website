@@ -15,13 +15,12 @@ function SearchFilter(searchInputId, contentAreaId) {
     this.createNotFoundMessage = () => {
         this.notFoundMessage = document.createElement('p');
         this.notFoundMessage.id = 'not-found-message';
-        this.notFoundMessage.textContent = "No results found.";
+        this.notFoundMessage.textContent = "No search results found.";
         this.notFoundMessage.style.display = 'none';
         this.contentArea.appendChild(this.notFoundMessage);
     };
     this.setupSearchFiltering = () => {
         this.searchInput.addEventListener('input', this.filterContent.bind(this));
-        this.searchInput.setAttribute('aria-label', 'Search for content');
         this.contentArea.setAttribute('aria-live', 'polite');
         this.filterableElements = Array.from(this.contentArea.children).filter(
             element => !['SCRIPT', 'STYLE'].includes(element.tagName)
