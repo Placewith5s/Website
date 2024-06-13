@@ -1,32 +1,24 @@
 'use strict';
-
+(function() {
 const expandCollapseButton = document.getElementById('Expand-Collapse-Button');
 expandCollapseButton.addEventListener('click', toggleElements);
-
 let isInitialClick = true;
-
 function toggleElements() {
     try {
         const HiddenElements = document.querySelectorAll('[id^="step-hidden-from-"]');
-        
         if (!HiddenElements.length) {
             console.error('Initial hidden elements not found.');
             return;
         }
-
         HiddenElements.forEach(element => {
             toggleElementVisibility(element, isInitialClick);
         });
-
         updateTextAndAria();
-
         isInitialClick = false;
-
     } catch (error) {
         console.error('Error occurred:', error.message);
     }
 }
-
 function toggleElementVisibility(element, isInitialClick) {
     try {
         if (isInitialClick) {
@@ -45,7 +37,6 @@ function toggleElementVisibility(element, isInitialClick) {
         console.error('Error occurred while toggling element visibility:', error.message);
     }
 }
-
 function updateTextAndAria() {
     const buttonText = expandCollapseButton.textContent === 'Expand' ? 'Collapse' : 'Expand';
     expandCollapseButton.textContent = buttonText;
@@ -53,3 +44,4 @@ function updateTextAndAria() {
     const ariaExpandedValue = buttonText === 'Collapse' ? 'true' : 'false';
     expandCollapseButton.setAttribute('aria-expanded', ariaExpandedValue);
 }
+})();

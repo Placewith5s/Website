@@ -1,4 +1,5 @@
 'use strict';
+(function() {
 document.addEventListener('DOMContentLoaded', function () {
     function FAQSearch(searchBarId, notFoundMessageId) {
         this.searchBar = document.getElementById(searchBarId);
@@ -50,3 +51,4 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     const faqSearch = new FAQSearch("search-bar", "not-found-message"); 
 });
+})();

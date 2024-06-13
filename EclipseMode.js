@@ -1,4 +1,5 @@
 'use strict';
+(function() {
 class DarkModeModule {
     constructor() {
         this.DARK_THEME_CLASS = 'dark-theme';
@@ -46,3 +47,4 @@ const myDarkModeModule = new DarkModeModule();
 document.addEventListener("DOMContentLoaded", async function () {
     await myDarkModeModule.checkAndSetDarkModePreference(); 
 });
+})();

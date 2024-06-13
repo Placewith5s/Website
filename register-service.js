@@ -1,4 +1,5 @@
 'use strict';
+(function() {
 const serviceWorkerFile = 'service-worker.js';
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistration(serviceWorkerFile)
@@ -52,3 +53,4 @@ function sendMessageToServiceWorker(message) {
     navigator.serviceWorker.controller.postMessage(message);
   }
 }
+})();

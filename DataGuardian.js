@@ -1,4 +1,5 @@
 "use strict";
+(function() {
 class CookieConsent {
     constructor() {
         this.consentCookieBanner = document.getElementById("consent-cookie-banner");
@@ -150,3 +151,4 @@ class CookieConsent {
     }
 }
 document.addEventListener("DOMContentLoaded", () => new CookieConsent());
+})();

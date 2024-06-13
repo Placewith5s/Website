@@ -1,4 +1,5 @@
 'use strict';
+(function() {
 class StylesheetLoader {
     constructor(stylesheets) {
         this.stylesheets = stylesheets;
@@ -77,3 +78,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const stylesheets = ['style.css', 'topnbottom.css'];
     new StylesheetLoader(stylesheets);
 });
+})();

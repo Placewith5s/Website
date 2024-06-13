@@ -1,4 +1,5 @@
 'use strict';
+(function() {
 function SearchFilter(searchInputId, contentAreaId) {
     this.searchInput = document.getElementById(searchInputId);
     this.contentArea = document.getElementById(contentAreaId);
@@ -44,3 +45,4 @@ function SearchFilter(searchInputId, contentAreaId) {
     this.initialize();
 }
 const searchFilter = new SearchFilter('search-input', 'content'); 
+})();

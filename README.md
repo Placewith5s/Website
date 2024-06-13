@@ -16,12 +16,6 @@ Placewith5s.com is your one-stop destination for detailed, step-by-step guides a
 * **Troubleshooting Tips:** Solutions for common issues you might encounter.
 * **Regular Updates:** New guides and resources added frequently to keep you up-to-date.
 
-## Table of Contents
-- [Getting Started](#getting-started)
-- [Popular Optimization Areas](#popular-optimization-areas)
-- [Who Should Use Placewith5s.com?](#who-should-use-placewith5s-com)
-- [License](#license)
-
 ## Getting Started 🚀
 
 1. **Visit the Website:** Head over to [https://www.placewith5s.com](https://www.placewith5s.com)

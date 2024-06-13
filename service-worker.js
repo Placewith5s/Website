@@ -1,4 +1,5 @@
 "use strict";
+(function() {
 class ServiceWorkerCache {
   constructor(cacheName, filesToCache) {
     this.cacheName = cacheName;
@@ -15,24 +16,44 @@ class ServiceWorkerCache {
     self.addEventListener('push', (event) => this.onPush(event));
     self.addEventListener('message', (event) => this.onMessage(event));
   }
+  onMessage(event) {
+    if (event.origin !== self.location.origin) { 
+      console.warn("Message received from untrusted origin:", event.origin);
+      return;
+    }
+    if (event.data && event.data.type === 'updateCache') {
+      if (!Array.isArray(event.data.updatedFiles)) {
+        console.warn("Invalid updateCache message:", event.data);
+        return;
+      }
+      this.updateCache(event.data.updatedFiles);  
+    }
+  }
+  updateCache(updatedFiles) { 
+    caches.open(this.cacheName).then((cache) => {
+      return cache.addAll(updatedFiles || this.filesToCache);
+    });
+  }
   async onInstall(event) {
     event.waitUntil(
       caches.open(this.cacheName).then((cache) =>
         Promise.all(
           this.filesToCache.map(async (url) => {
             try {
-              const response = await fetch(url);
-              if (!response.ok) {
+              const response = await fetch(url, { mode: 'cors' });
+              if (!response.ok || !url.startsWith('https://')) {
                 throw new Error(`Failed to fetch resource: ${url}`);
               }
               return cache.put(url, response);
             } catch (error) {
               console.error(`Failed to fetch resource: ${url}`, error);
+              throw error;
             }
           })
         )
       ).catch((error) => {
         console.error('Cache addAll error:', error);
+        throw error;
       })
     );
   }
@@ -47,13 +68,24 @@ class ServiceWorkerCache {
       })
     );
   }
-  async onFetch(event) {
+  onFetch(event) {
     event.respondWith(
-      caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
-      }).catch((error) => {
-        console.error('Fetch error:', error);
-      })
+      (async () => {
+        const cacheResponse = await caches.match(event.request);
+        if (cacheResponse) {
+          return cacheResponse;
+        }
+        try {
+          const networkResponse = await fetch(event.request);
+          if (networkResponse.ok && event.request.url.startsWith('https://')) {
+            const cache = await caches.open(this.cacheName);
+            cache.put(event.request, networkResponse.clone());
+          }
+          return networkResponse;
+        } catch (error) {
+          console.error('Fetch error:', 'An error occurred while fetching.');
+        }
+      })()
     );
   }
   onBeforeInstallPrompt(event) {
@@ -75,7 +107,12 @@ class ServiceWorkerCache {
   onPush(event) {
     const options = {
       body: event.data.text(),
-      icon: 'Settings.png' 
+      icon: 'Settings.png',
+      actions: [
+        { action: 'open_app', title: 'Open App' },
+        { action: 'dismiss', title: 'Dismiss' }
+      ],
+      data: { notificationType: 'push' }
     };
     event.waitUntil(
       self.registration.showNotification('Placewith5s', options)
@@ -92,20 +129,20 @@ class ServiceWorkerCache {
     });
   }
 }
-const CACHE_NAME = 'placewith5s-v102';
+const CACHE_NAME = 'placewith5s-v103';
 const FILES_TO_CACHE = [
     '/',
     '/index.js',
-    'manifest.json',
+    '/manifest.json',
     '/register-service.js',
-    'Settings.png',
-    'Settings.svg',
-    'Policy.svg',
-    'Cookies.svg',
-    'Screenshot144033.avif',
-    'Screenshot144229.avif',
-    'Screenshot195249.avif',
-    'Screenshot195303.avif',
+    '/icons/Settings.png',
+    '/icons/Settings.svg',
+    '/icons/Policy.svg',
+    '/icons/Cookies.svg',
+    '/images/Screenshot144033.avif',
+    '/images/Screenshot144229.avif',
+    '/images/Screenshot195249.avif',
+    '/images/Screenshot195303.avif',
     '/style.css',
     '/script.js',
     '/animation.js',
@@ -134,3 +171,4 @@ const FILES_TO_CACHE = [
     '/contactForm.js',
 ];
 new ServiceWorkerCache(CACHE_NAME, FILES_TO_CACHE); 
+})();

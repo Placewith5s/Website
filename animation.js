@@ -1,4 +1,5 @@
 'use strict';
+(function() {
 class AnimatedElement {
   constructor(element, options = {}) {
     this.element = element;
@@ -42,3 +43,4 @@ class AnimatedElement {
 }
 const animatedElements = document.querySelectorAll('.anim');
 animatedElements.forEach(el => new AnimatedElement(el));
+})();

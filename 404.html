@@ -21,6 +21,7 @@
     <link rel="preload" href="/404.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <script>
 'use strict';
+(function() {
 class PageRedirect {
     constructor(redirectUrl, delayMilliseconds) {
         this.redirectUrl = redirectUrl;
@@ -34,6 +35,7 @@ class PageRedirect {
 }
 const redirectTo404 = new PageRedirect('/404', 7000);
 redirectTo404.startRedirect(); 
+})();
   </script>
 </head>
 <body>

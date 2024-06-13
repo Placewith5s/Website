@@ -1,4 +1,5 @@
 'use strict';
+(function() {
 function FormValidator() {
   this.isValidName = function (name) {
     return typeof name === 'string' && name.trim().length > 0;
@@ -41,3 +42,4 @@ function displayErrors(errors) {
     errorSummary.appendChild(errorItem);
   }
 }
+})();
