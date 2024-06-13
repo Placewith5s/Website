@@ -39,8 +39,7 @@ class CookieConsent {
         return (
             this.getCookie("essential") === preferences.essential.toString() &&
             this.getCookie("performance") === preferences.performance.toString() &&
-            this.getCookie("functionality") === preferences.functionality.toString() &&
-            this.getCookie("thirdParty") === preferences.thirdParty.toString()
+            this.getCookie("functionality") === preferences.functionality.toString()
         );
     }
     getCookie(name) {
@@ -117,11 +116,9 @@ class CookieConsent {
         const essentialCheckbox = document.getElementById("essentialCheckbox");
         const performanceCheckbox = document.getElementById("performanceCheckbox");
         const functionalityCheckbox = document.getElementById("functionalityCheckbox");
-        const thirdPartyCheckbox = document.getElementById("thirdPartyCheckbox");
         if (essentialCheckbox) essentialCheckbox.checked = preferences.essential;
         if (performanceCheckbox) performanceCheckbox.checked = preferences.performance;
         if (functionalityCheckbox) functionalityCheckbox.checked = preferences.functionality;
-        if (thirdPartyCheckbox) thirdPartyCheckbox.checked = preferences.thirdParty;
         this.setCookies(preferences);
     }
     saveCookiePreferences() {
@@ -131,7 +128,6 @@ class CookieConsent {
                 essential: document.getElementById("essentialCheckbox").checked,
                 performance: document.getElementById("performanceCheckbox").checked,
                 functionality: document.getElementById("functionalityCheckbox").checked,
-                thirdParty: document.getElementById("thirdPartyCheckbox").checked,
             };
             this.saveAndApplyPreferences(preferences);
             this.hideCookieBanner();
