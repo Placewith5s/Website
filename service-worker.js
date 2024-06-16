@@ -129,7 +129,7 @@ class ServiceWorkerCache {
     });
   }
 }
-const CACHE_NAME = 'placewith5s-v106';
+const CACHE_NAME = 'placewith5s-v107';
 const FILES_TO_CACHE = [
     '/',
     '/index.js',
