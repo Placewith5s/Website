@@ -99,7 +99,7 @@ class CookieConsent {
         }
     }
     acceptOrRejectAllCookies(accept) {
-        const preferences = { essential: true, performance: accept, functionality: accept, thirdParty: accept };
+        const preferences = { essential: true, performance: accept, functionality: accept};
         this.saveAndApplyPreferences(preferences);
         this.hideConsentCookieBanner();
     }
