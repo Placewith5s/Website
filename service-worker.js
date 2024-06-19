@@ -107,7 +107,7 @@ class ServiceWorkerCache {
   onPush(event) {
     const options = {
       body: event.data.text(),
-      icon: 'Settings.png',
+      icon: '/Settings.png',
       actions: [
         { action: 'open_app', title: 'Open App' },
         { action: 'dismiss', title: 'Dismiss' }
@@ -129,7 +129,7 @@ class ServiceWorkerCache {
     });
   }
 }
-const CACHE_NAME = 'placewith5s-v107';
+const CACHE_NAME = 'placewith5s-v110';
 const FILES_TO_CACHE = [
     '/',
     '/index.js',
