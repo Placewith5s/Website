@@ -107,7 +107,7 @@ class ServiceWorkerCache {
   onPush(event) {
     const options = {
       body: event.data.text(),
-      icon: '/Settings.png',
+      icon: '/icons/Settings.png',
       actions: [
         { action: 'open_app', title: 'Open App' },
         { action: 'dismiss', title: 'Dismiss' }
