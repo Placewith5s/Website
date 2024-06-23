@@ -1,0 +1,20 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "The place to go, Placewith5s.com, has clear guides and tools to help you get the most out of your computer Windows. Whether an absolute whiz or a total beginner, we show you how to make the best of Windows to the full.",
+  "main": "index.js",
+  "homepage": "https://www.placewith5s.com/",
+  "scripts": {
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
