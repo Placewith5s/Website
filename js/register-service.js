@@ -74,5 +74,5 @@ class ServiceWorkerManager {
     }
   }
 }
-const serviceWorkerManager = new ServiceWorkerManager('service-worker.js');
+const serviceWorkerManager = new ServiceWorkerManager('/js/service-worker.js');
 })();
