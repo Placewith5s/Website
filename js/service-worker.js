@@ -129,7 +129,7 @@ class ServiceWorkerCache {
     });
   }
 }
-const CACHE_NAME = 'placewith5s-v110';
+const CACHE_NAME = 'placewith5s-v111';
 const FILES_TO_CACHE = [
   '/icons/Settings.png',
   '/icons/Settings.svg',
