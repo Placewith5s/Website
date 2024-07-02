@@ -2,7 +2,7 @@
 
 ## About Placewith5s.com 
 
-The place to go, Placewith5s.com, has clear guides and tools to help you get the most out of your computer Windows. Whether an absolute whiz or a total beginner, we show you how to make the best of Windows to the full.
+The place to go, Placewith5s.com, has clear guides and tools to help you get the most out of your computer Windows.
 
 ## Why Optimize Your Windows? 🎯
 * **Blazing Fast:** Eliminate slowdowns and bottlenecks for a more responsive system.
@@ -19,7 +19,7 @@ The place to go, Placewith5s.com, has clear guides and tools to help you get the
 ## Getting Started 🚀
 
 1. **Visit the Website:** Head over to [https://www.placewith5s.com/](https://www.placewith5s.com/)
-2. **Browse Guides:** Choose the optimization area you want to focus on.
+2. **Browse:** Choose the optimization area you want to focus on.
 3. **Follow Instructions:** Carefully read and follow the steps in the guides.
 
 ## Popular Optimization Areas 📈
