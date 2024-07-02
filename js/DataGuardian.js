@@ -1,124 +1,119 @@
 "use strict";
-(function() {
+
+(function () {
     class CookieConsent {
         constructor() {
-            this.consentCookieBanner = document.getElementById("consent-cookie-banner");
             this.cookieBanner = document.getElementById("cookie-banner");
             this.showCookieSettingsButton = document.getElementById("showCookieSettings");
-            this.consentButton = document.getElementById("consent");
+            this.acceptAllButton = document.getElementById("acceptAll");
             this.rejectAllButton = document.getElementById("rejectAll");
             this.savePreferencesButton = document.getElementById("savePreferences");
             this.closeBannerButton = document.getElementById("closeBanner");
-            this.manageCookiesLink = document.getElementById("manageCookiesLink");
-            this.init();
-        }
-        init() {
-            if (!this.cookieBanner) {
-                throw new Error("Cookie banner element not found");
+            this.consentCookieBanner = document.getElementById("consent-cookie-banner");
+
+            if (!this.cookieBanner || !this.showCookieSettingsButton || !this.savePreferencesButton || !this.closeBannerButton || !this.consentCookieBanner) {
+                console.error("Error: Missing required cookie banner elements.");
+                return; 
             }
-            this.cookieBanner.setAttribute("aria-hidden", "true");
-            this.loadUserPreferences();
+
             this.addEventListeners();
+            this.updateBannerVisibility(); 
         }
-        loadUserPreferences() {
-            const userPreferences = JSON.parse(localStorage.getItem("cookiePreferences")) || {};
-            if (Object.keys(userPreferences).length > 0 && this.checkCookies(userPreferences)) {
-                this.applyUserPreferences(userPreferences);
-                this.hideConsentCookieBanner();
-            } else {
-                this.showConsentCookieBanner();
-            }
-        }
-        checkCookies(preferences) {
-            return (
-                this.getCookie("essential") === preferences.essential.toString() &&
-                this.getCookie("performance") === preferences.performance.toString() &&
-                this.getCookie("functionality") === preferences.functionality.toString()
-            );
-        }
-        getCookie(name) {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts.length === 2) return parts.pop().split(';').shift();
-            return null;
-        }
+
         addEventListeners() {
-            this.showCookieSettingsButton?.addEventListener("click", this.showCookieBanner.bind(this));
-            this.consentButton?.addEventListener("click", () => this.acceptOrRejectAllCookies(true));
-            this.rejectAllButton?.addEventListener("click", () => this.acceptOrRejectAllCookies(false));
-            this.savePreferencesButton?.addEventListener("click", this.saveCookiePreferences.bind(this));
-            this.closeBannerButton?.addEventListener("click", this.hideCookieBanner.bind(this));
-            this.manageCookiesLink?.addEventListener("click", this.showCookieBanner.bind(this));
+            this.showCookieSettingsButton.addEventListener("click", () => {
+                if (this.cookieBanner.style.display === "block") {
+                    this.hideCookieBanner();
+                } else {
+                    this.showCookieBanner();
+                }
+            });
+            this.acceptAllButton.addEventListener("click", () => {
+                this.acceptOrRejectAll(true);
+                this.hideConsentCookieBanner();
+            });
+            this.rejectAllButton.addEventListener("click", () => {
+                this.acceptOrRejectAll(false);
+                this.hideConsentCookieBanner();
+            });
+            this.savePreferencesButton.addEventListener("click", () => this.saveCookiePreferences());
+            this.closeBannerButton.addEventListener("click", () => this.hideCookieBanner());
         }
-        showConsentCookieBanner() {
-            if (this.consentCookieBanner) {
-                this.consentCookieBanner.style.display = "block";
-                this.consentCookieBanner.removeAttribute("aria-hidden");
-            }
+
+        showCookieBanner() {
+            this.cookieBanner.style.display = "block";
         }
-        hideConsentCookieBanner() {
-            if (this.consentCookieBanner) {
-                this.consentCookieBanner.style.display = "none";
-                this.consentCookieBanner.setAttribute("aria-hidden", "true");
-            }
-        }
-        showCookieBanner(event) {
-            event.preventDefault();
-            if (this.cookieBanner) {
-                this.cookieBanner.style.display = "block";
-                this.cookieBanner.removeAttribute("aria-hidden");
-            }
-            event.stopPropagation();
-        }
+
         hideCookieBanner() {
-            if (this.cookieBanner) {
-                this.cookieBanner.style.display = "none";
-                this.cookieBanner.setAttribute("aria-hidden", "true");
-            }
+            this.cookieBanner.style.display = "none";
         }
-        acceptOrRejectAllCookies(accept) {
-            const preferences = { essential: true, performance: accept, functionality: accept };
-            this.saveAndApplyPreferences(preferences);
-            this.hideConsentCookieBanner();
+
+        hideConsentCookieBanner() {
+            this.consentCookieBanner.style.display = "none";
         }
-        saveAndApplyPreferences(preferences) {
+
+        acceptOrRejectAll(acceptAll) {
+            const preferences = {
+                essential: true,
+                performance: acceptAll,
+                functionality: acceptAll
+            };
+            this.setCookies(preferences);
+            localStorage.setItem("lastConsentTime", Date.now()); 
+        }
+
+        saveCookiePreferences() {
+            const preferences = {
+                essential: true, 
+                performance: document.getElementById("performanceCheckbox").checked,
+                functionality: document.getElementById("functionalityCheckbox").checked
+            };
             try {
                 localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
-                this.applyUserPreferences(preferences);
                 this.setCookies(preferences);
-            } catch (error) {
-                console.error("Error while saving preferences:", error);
-            }
-        }
-        applyUserPreferences(preferences) {
-            document.getElementById("essentialCheckbox")?.checked = preferences.essential;
-            document.getElementById("performanceCheckbox")?.checked = preferences.performance;
-            document.getElementById("functionalityCheckbox")?.checked = preferences.functionality;
-            this.setCookies(preferences);
-        }
-        saveCookiePreferences() {
-            if (window.getComputedStyle(this.cookieBanner).display === "block") {
-                const preferences = {
-                    essential: document.getElementById("essentialCheckbox").checked,
-                    performance: document.getElementById("performanceCheckbox").checked,
-                    functionality: document.getElementById("functionalityCheckbox").checked,
-                };
-                this.saveAndApplyPreferences(preferences);
                 this.hideCookieBanner();
-            } else {
-                console.log("Cannot save preferences when the cookie banner is hidden.");
+            } catch (error) {
+                console.error("Error saving cookie preferences:", error.message);
             }
         }
+
         setCookies(preferences) {
-            for (const [key, value] of Object.entries(preferences)) {
-                this.setCookie(key, value);
+            const expirationDate = new Date();
+            expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+
+            for (const [type, value] of Object.entries(preferences)) {
+                if (value) { 
+                    document.cookie = `${type}=true; expires=${expirationDate.toUTCString()}; path=/`;
+                } else {
+                    document.cookie = `${type}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`; 
+                }
             }
         }
-        setCookie(cookieName, value) {
-            const date = new Date();
-            date.setFullYear(date.getFullYear() + 1);
-            document.cookie = `${cookieName}=${value}; expires=${date.toUTCString()}; path=/`;
+
+        getCookieExpiration(cookieName) {
+            const cookies = document.cookie.split(';');
+            for (const cookie of cookies) {
+                const [name, value] = cookie.trim().split('=');
+                if (name === cookieName) {
+                    const expirationParts = value.split(';')[1].trim().split('=')[1];
+                    return new Date(expirationParts).getTime();
+                }
+            }
+            return null; 
+        }
+
+        updateBannerVisibility() {
+            const cookieExpiration = this.getCookieExpiration("essential");
+            const oneYearAgo = Date.now() - (365 * 24 * 60 * 60 * 1000);
+
+            if (!cookieExpiration || cookieExpiration < oneYearAgo) {
+                this.consentCookieBanner.style.display = "block";
+                this.cookieBanner.style.display = "none"; 
+            } else {
+                this.consentCookieBanner.style.display = "none";
+            }
         }
     }
+
     document.addEventListener("DOMContentLoaded", () => new CookieConsent());
 })();
