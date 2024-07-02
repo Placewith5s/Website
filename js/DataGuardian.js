@@ -1,5 +1,4 @@
 "use strict";
-
 (function () {
     class CookieConsent {
         constructor() {
@@ -10,16 +9,14 @@
             this.savePreferencesButton = document.getElementById("savePreferences");
             this.closeBannerButton = document.getElementById("closeBanner");
             this.consentCookieBanner = document.getElementById("consent-cookie-banner");
-
-            if (!this.cookieBanner || !this.showCookieSettingsButton || !this.savePreferencesButton || !this.closeBannerButton || !this.consentCookieBanner) {
+            this.manageCookiesLink = document.getElementById("manageCookies");
+            if (!this.cookieBanner || !this.showCookieSettingsButton || !this.savePreferencesButton || !this.closeBannerButton || !this.consentCookieBanner || !this.manageCookiesLink) {
                 console.error("Error: Missing required cookie banner elements.");
                 return; 
             }
-
             this.addEventListeners();
             this.updateBannerVisibility(); 
         }
-
         addEventListeners() {
             this.showCookieSettingsButton.addEventListener("click", () => {
                 if (this.cookieBanner.style.display === "block") {
@@ -38,20 +35,21 @@
             });
             this.savePreferencesButton.addEventListener("click", () => this.saveCookiePreferences());
             this.closeBannerButton.addEventListener("click", () => this.hideCookieBanner());
-        }
 
+            this.manageCookiesLink.addEventListener("click", (event) => {
+                event.preventDefault();
+                this.showCookieBanner();
+            });
+        }
         showCookieBanner() {
             this.cookieBanner.style.display = "block";
         }
-
         hideCookieBanner() {
             this.cookieBanner.style.display = "none";
         }
-
         hideConsentCookieBanner() {
             this.consentCookieBanner.style.display = "none";
         }
-
         acceptOrRejectAll(acceptAll) {
             const preferences = {
                 essential: true,
@@ -61,7 +59,6 @@
             this.setCookies(preferences);
             localStorage.setItem("lastConsentTime", Date.now()); 
         }
-
         saveCookiePreferences() {
             const preferences = {
                 essential: true, 
@@ -76,11 +73,9 @@
                 console.error("Error saving cookie preferences:", error.message);
             }
         }
-
         setCookies(preferences) {
             const expirationDate = new Date();
             expirationDate.setFullYear(expirationDate.getFullYear() + 1);
-
             for (const [type, value] of Object.entries(preferences)) {
                 if (value) { 
                     document.cookie = `${type}=true; expires=${expirationDate.toUTCString()}; path=/`;
@@ -89,23 +84,27 @@
                 }
             }
         }
-
         getCookieExpiration(cookieName) {
             const cookies = document.cookie.split(';');
             for (const cookie of cookies) {
-                const [name, value] = cookie.trim().split('=');
-                if (name === cookieName) {
-                    const expirationParts = value.split(';')[1].trim().split('=')[1];
-                    return new Date(expirationParts).getTime();
+                const trimmedCookie = cookie.trim(); 
+                if (!trimmedCookie) continue; 
+                const [name, value] = trimmedCookie.split('=');
+                if (name === cookieName && value) {
+                    const expirationParts = value.split(';');
+                    for (const part of expirationParts) { 
+                        const [partName, partValue] = part.trim().split('=');
+                        if (partName === "expires") {
+                            return new Date(partValue).getTime();
+                        }
+                    }
                 }
             }
             return null; 
         }
-
         updateBannerVisibility() {
             const cookieExpiration = this.getCookieExpiration("essential");
             const oneYearAgo = Date.now() - (365 * 24 * 60 * 60 * 1000);
-
             if (!cookieExpiration || cookieExpiration < oneYearAgo) {
                 this.consentCookieBanner.style.display = "block";
                 this.cookieBanner.style.display = "none"; 
@@ -114,6 +113,5 @@
             }
         }
     }
-
     document.addEventListener("DOMContentLoaded", () => new CookieConsent());
 })();
