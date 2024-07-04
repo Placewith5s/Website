@@ -10,11 +10,15 @@
             this.closeBannerButton = document.getElementById("closeBanner");
             this.consentCookieBanner = document.getElementById("consent-cookie-banner");
             this.manageCookiesLink = document.getElementById("manageCookies");
+            this.essentialCheckbox = document.getElementById("essentialCheckbox");
+            this.performanceCheckbox = document.getElementById("performanceCheckbox");
+            this.functionalityCheckbox = document.getElementById("functionalityCheckbox");
             if (!this.cookieBanner || !this.showCookieSettingsButton || !this.savePreferencesButton || !this.closeBannerButton || !this.consentCookieBanner || !this.manageCookiesLink) {
-                console.error("Error: Missing required cookie banner elements.");
+                console.error("Error: Missing required cookie elements.");
                 return; 
             }
             this.addEventListeners();
+            this.loadCookiePreferences();
             this.updateBannerVisibility(); 
         }
         addEventListeners() {
@@ -62,8 +66,8 @@
         saveCookiePreferences() {
             const preferences = {
                 essential: true, 
-                performance: document.getElementById("performanceCheckbox").checked,
-                functionality: document.getElementById("functionalityCheckbox").checked
+                performance: performanceCheckbox.checked,
+                functionality: functionalityCheckbox.checked
             };
             try {
                 localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
@@ -101,6 +105,22 @@
                 }
             }
             return null; 
+        }
+        loadCookiePreferences() {
+            try {
+                const preferences = JSON.parse(localStorage.getItem("cookiePreferences"));
+                if (preferences) {
+                    this.setCookies(preferences);
+                    if (this.cookieBanner.style.display === "block") {
+                        performanceCheckbox.checked = preferences.performance;
+                        functionalityCheckbox.checked = preferences.functionality;
+                    }
+                } else {
+                    this.consentCookieBanner.style.display = "block";
+                }
+            } catch (error) {
+                console.error("Error loading cookie preferences:", error.message);
+            }
         }
         updateBannerVisibility() {
             const cookieExpiration = this.getCookieExpiration("essential");
