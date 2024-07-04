@@ -107,7 +107,7 @@
         });
     }
   }
-  const CACHE_NAME = 'placewith5s-v112';
+  const CACHE_NAME = 'placewith5s-v115';
   const FILES_TO_CACHE = [
     '/icons/Settings.png',
     '/icons/Settings.svg',
@@ -150,19 +150,19 @@
   const serviceWorkerCache = new ServiceWorkerCache(CACHE_NAME, FILES_TO_CACHE);
   self.addEventListener('install', (event) => {
     event.waitUntil(serviceWorkerCache.onInstall(event));
-  });
+  }, {passive: true});
   self.addEventListener('activate', (event) => {
     event.waitUntil(serviceWorkerCache.onActivate(event));
-  });
+  }, {passive: true});
   self.addEventListener('fetch', (event) => {
     serviceWorkerCache.onFetch(event);
-  });
+  }, {passive: true});
   self.addEventListener('beforeinstallprompt', (event) => {
     serviceWorkerCache.onBeforeInstallPrompt(event);
-  });
+  }, {passive: true});
   self.addEventListener('push', (event) => {
     serviceWorkerCache.onPush(event);
-  });
+  }, {passive: true});
   self.addEventListener('message', (event) => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
       self.skipWaiting();
@@ -173,5 +173,5 @@
         console.warn("Invalid updateCache message:", event.data);
       }
     }
-  });
+  }, {passive: true});
 })();

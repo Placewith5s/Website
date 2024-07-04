@@ -31,7 +31,7 @@ class DarkModeModule {
 
                 darkModeMediaQuery.addEventListener('change', (event) => {
                     this.toggleDarkModeBasedOnPreference(event.matches);
-                });
+                }, {passive: true});
             } else {
                 console.error('matchMedia is not supported. Dark mode preference may not work.');
             }

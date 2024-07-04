@@ -30,8 +30,8 @@ class StylesheetLoader {
     addListeners(element, filename) {
         try {
             if (element) {
-                element.addEventListener('load', () => this.handleLoad(filename));
-                element.addEventListener('error', (error) => this.handleError(filename, error));
+                element.addEventListener('load', () => this.handleLoad(filename), {passive: true});
+                element.addEventListener('error', (error) => this.handleError(filename, error), {passive: true});
             } else {
                 console.error(`${filename} link not found`);
                 this.removePreloader(); 

@@ -31,9 +31,9 @@ class MenuManager {
                 link.setAttribute('tabindex', isExpanded ? '0' : '-1');
             });
             this.handleScroll(); 
-        });
-        this.drawer.addEventListener('click', this.handleDrawerClick);
-        window.addEventListener('scroll', this.handleScroll);
+        }, {passive: true});
+        this.drawer.addEventListener('click', this.handleDrawerClick, {passive: true});
+        window.addEventListener('scroll', this.handleScroll, {passive: true});
     }
     closeDrawer() {
         this.drawer.classList.remove('opened');

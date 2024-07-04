@@ -1,7 +1,7 @@
 'use strict';
 (function() {
 const expandCollapseButton = document.getElementById('Expand-Collapse-Button');
-expandCollapseButton.addEventListener('click', toggleElements);
+expandCollapseButton.addEventListener('click', toggleElements, {passive: true});
 let isInitialClick = true;
 function toggleElements() {
     try {

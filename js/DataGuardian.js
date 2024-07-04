@@ -28,17 +28,17 @@
                 } else {
                     this.showCookieBanner();
                 }
-            });
+            }, {passive: true});
             this.acceptAllButton.addEventListener("click", () => {
                 this.acceptOrRejectAll(true);
                 this.hideConsentCookieBanner();
-            });
+            }, {passive: true});
             this.rejectAllButton.addEventListener("click", () => {
                 this.acceptOrRejectAll(false);
                 this.hideConsentCookieBanner();
-            });
-            this.savePreferencesButton.addEventListener("click", () => this.saveCookiePreferences());
-            this.closeBannerButton.addEventListener("click", () => this.hideCookieBanner());
+            }, {passive: true});
+            this.savePreferencesButton.addEventListener("click", () => this.saveCookiePreferences(), {passive: true});
+            this.closeBannerButton.addEventListener("click", () => this.hideCookieBanner(), {passive: true});
 
             this.manageCookiesLink.addEventListener("click", (event) => {
                 event.preventDefault();
@@ -62,12 +62,13 @@
             };
             this.setCookies(preferences);
             localStorage.setItem("lastConsentTime", Date.now()); 
+            localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
         }
         saveCookiePreferences() {
             const preferences = {
                 essential: true, 
-                performance: performanceCheckbox.checked,
-                functionality: functionalityCheckbox.checked
+                performance: this.performanceCheckbox.checked,
+                functionality: this.functionalityCheckbox.checked
             };
             try {
                 localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
@@ -111,10 +112,8 @@
                 const preferences = JSON.parse(localStorage.getItem("cookiePreferences"));
                 if (preferences) {
                     this.setCookies(preferences);
-                    if (this.cookieBanner.style.display === "block") {
-                        performanceCheckbox.checked = preferences.performance;
-                        functionalityCheckbox.checked = preferences.functionality;
-                    }
+                    this.performanceCheckbox.checked = preferences.performance;
+                    this.functionalityCheckbox.checked = preferences.functionality;
                 } else {
                     this.consentCookieBanner.style.display = "block";
                 }
@@ -123,13 +122,12 @@
             }
         }
         updateBannerVisibility() {
-            const cookieExpiration = this.getCookieExpiration("essential");
-            const oneYearAgo = Date.now() - (365 * 24 * 60 * 60 * 1000);
-            if (!cookieExpiration || cookieExpiration < oneYearAgo) {
-                this.consentCookieBanner.style.display = "block";
+            const preferences = localStorage.getItem("cookiePreferences");
+            if (preferences) {
+                this.consentCookieBanner.style.display = "none";
                 this.cookieBanner.style.display = "none"; 
             } else {
-                this.consentCookieBanner.style.display = "none";
+                this.consentCookieBanner.style.display = "block";
             }
         }
     }
