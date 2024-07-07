@@ -75,7 +75,7 @@ class StylesheetLoader {
     }
 }
 document.addEventListener('DOMContentLoaded', () => {
-    const stylesheets = ['/css/style.css', '/css/topnbottom.css'];
+    const stylesheets = ['/css/topnbottom.css'];
     new StylesheetLoader(stylesheets);
 });
 })();

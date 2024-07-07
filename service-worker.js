@@ -107,16 +107,12 @@
         });
     }
   }
-  const CACHE_NAME = 'placewith5s-v115';
+  const CACHE_NAME = 'placewith5s-v120';
   const FILES_TO_CACHE = [
     '/icons/Settings.png',
     '/icons/Settings.svg',
     '/icons/Policy.svg',
     '/icons/Cookies.svg',
-    '/images/Screenshot144033.avif',
-    '/images/Screenshot144229.avif',
-    '/images/Screenshot195249.avif',
-    '/images/Screenshot195303.avif',
     '/',
     '/html/privacyp',
     '/html/cookiep',
@@ -125,26 +121,10 @@
     '/html/faq',
     '/html/contactForm',
     '/html/404',
-    '/css/style.css',
     '/css/preloader.css',
-    '/css/topnbottom.css',
-    '/css/privacyp.css',
-    '/css/cookiep.css',
-    '/css/aboutSoftware.css',
-    '/css/about.css',
-    '/css/faq.css',
     '/css/contactForm.css',
     '/css/404.css',
     '/css/DataGuardian.css',
-    '/js/EclipseMode.js',
-    '/js/animation.js',
-    '/js/preloader.js',
-    '/js/expand.js',
-    '/js/index.js',
-    '/js/script.js',
-    '/js/faq.js',
-    '/js/register-service.js',
-    '/js/DataGuardian.js',
     '/manifest.json',
   ];
   const serviceWorkerCache = new ServiceWorkerCache(CACHE_NAME, FILES_TO_CACHE);
