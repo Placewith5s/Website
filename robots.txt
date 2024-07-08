@@ -2,14 +2,11 @@ User-agent: Googlebot
 Disallow: /nogooglebot/
 Disallow: /admin/
 Disallow: /private/
-
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Disallow: /cgi-bin/
 Disallow: /temp/
 Crawl-delay: 5
-
 Allow: /
-
 Sitemap: https://www.placewith5s.com/sitemap.xml
