@@ -5,48 +5,53 @@
             this.cacheName = cacheName;
             this.filesToCache = filesToCache;
         }
-        onInstall = async () => {
-            try {
-                const cache = await caches.open(this.cacheName);
-                await cache.addAll(this.filesToCache);
-            } catch (error) {
-                console.error('Install error:', error);
-                throw error;
-            }
-        };
-        onActivate = () => {
-            const cacheWhitelist = [this.cacheName];
-            caches.keys().then(cacheNames => {
-                return Promise.all(
-                    cacheNames.map(cacheName => {
-                        if (!cacheWhitelist.includes(cacheName)) {
-                            return caches.delete(cacheName);
-                        } else {
-                            const expirationTime = Date.now() - 24 * 60 * 60 * 1000;
-                            return caches.open(cacheName).then(cache => {
-                                return cache.keys().then(requests => {
-                                    return Promise.all(
-                                        requests.map(async request => {
-                                            const response = await cache.match(request);
-                                            if (response) {
-                                                const dateHeader = response.headers.get('date');
-                                                if (dateHeader && new Date(dateHeader) < expirationTime) {
-                                                    return cache.delete(request);
-                                                }
-                                            }
-                                        })
-                                    );
-                                });
-                            });
-                        }
+        onInstall = async (event) => {
+            event.waitUntil(
+                caches.open(this.cacheName)
+                    .then(cache => cache.addAll(this.filesToCache))
+                    .catch(error => {
+                        console.error('Install error:', error);
+                        throw error;
                     })
-                );
-            });
+            );
+        };
+        onActivate = (event) => {
+            const cacheWhitelist = [this.cacheName];
+            event.waitUntil(
+                caches.keys().then(cacheNames => {
+                    return Promise.all(
+                        cacheNames.map(cacheName => {
+                            if (!cacheWhitelist.includes(cacheName)) {
+                                return caches.delete(cacheName).catch(error => {
+                                    console.error('Cache delete error:', error);
+                                });
+                            } else {
+                                const expirationTime = Date.now() - 24 * 60 * 60 * 1000;
+                                return caches.open(cacheName).then(cache => {
+                                    return cache.keys().then(requests => {
+                                        return Promise.all(
+                                            requests.map(async request => {
+                                                const response = await cache.match(request);
+                                                if (response) {
+                                                    const dateHeader = response.headers.get('date');
+                                                    if (dateHeader && new Date(dateHeader) < expirationTime) {
+                                                        return cache.delete(request);
+                                                    }
+                                                }
+                                            })
+                                        );
+                                    });
+                                });
+                            }
+                        })
+                    );
+                })
+            );
         };
         onFetch = (event) => {
             const request = event.request;
             if (request.method !== 'GET') {
-                return fetch(request);
+                return;
             }
             event.respondWith(
                 (async () => {
@@ -107,25 +112,22 @@
                 });
         };
     }
-    const CACHE_NAME = 'placewith5s-v121';
+    const CACHE_NAME = 'placewith5s-v122';
     const FILES_TO_CACHE = [
-      '/icons/Settings.png',
-      '/icons/Settings.svg',
-      '/icons/Policy.svg',
-      '/icons/Cookies.svg',
-      '/',
-      '/html/privacyp',
-      '/html/cookiep',
-      '/html/aboutSoftware',
-      '/html/about',
-      '/html/faq',
-      '/html/contactForm',
-      '/404',
-      '/css/preloader.css',
-      '/css/contactForm.css',
-      '/css/404.css',
-      '/css/DataGuardian.css',
-      '/manifest.json',
+        '/icons/Settings.png',
+        '/icons/Settings.svg',
+        '/icons/Policy.svg',
+        '/icons/Cookies.svg',
+        '/',
+        '/html/privacyp',
+        '/html/cookiep',
+        '/html/aboutSoftware',
+        '/html/about',
+        '/html/faq',
+        '/html/contactForm',
+        '/404',
+        '/css/404.css',
+        '/manifest.json',
     ];
     const serviceWorkerCache = new ServiceWorkerCache(CACHE_NAME, FILES_TO_CACHE);
     const eventHandlers = {
