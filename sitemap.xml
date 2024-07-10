@@ -7,43 +7,49 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.placewith5s.com/index.html</loc>
+        <loc>https://www.placewith5s.com/</loc>
         <lastmod>2024-07-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.placewith5s.com/privacyp.html</loc>
+        <loc>https://www.placewith5s.com/html/privacyp</loc>
         <lastmod>2024-07-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.placewith5s.com/cookies.html</loc>
+        <loc>https://www.placewith5s.com/html/cookiep</loc>
         <lastmod>2024-07-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.placewith5s.com/aboutSoftware.html</loc>
+        <loc>https://www.placewith5s.com/html/aboutSoftware</loc>
         <lastmod>2024-07-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.placewith5s.com/about.html</loc>
+        <loc>https://www.placewith5s.com/html/about</loc>
         <lastmod>2024-07-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
      <url>
-        <loc>https://www.placewith5s.com/faq.html</loc>
+        <loc>https://www.placewith5s.com/html/faq</loc>
+        <lastmod>2024-07-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/404</loc>
         <lastmod>2024-07-07</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
          <url>
-        <loc>https://www.placewith5s.com/contactForm.html</loc>
+        <loc>https://www.placewith5s.com/html/contactForm</loc>
         <lastmod>2024-07-08</lastmod>
         <changefreq>yearly</changefreq>
         <priority>1.0</priority>
