@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Control your cookies & privacy at Placewith5s! Learn what cookies we use & how to manage them. GDPR compliant.">
+    <title>Cookie Policy | Placewith5s</title>
+    <meta property="og:title" content="Cookie Policy | Placewith5s">
+    <meta name="twitter:title" content="Cookie Policy | Placewith5s">
+    <meta name="description" content="Understand how Placewith5s uses cookies to enhance your browsing experience. Learn about the types of cookies we use and how to manage your cookie preferences.">
+    <meta property="og:description" content="Understand how Placewith5s uses cookies to enhance your browsing experience. Learn about the types of cookies we use and how to manage your cookie preferences.">
+    <meta name="twitter:description" content="Understand how Placewith5s uses cookies to enhance your browsing experience. Learn about the types of cookies we use and how to manage your cookie preferences.">
     <meta property="og:url" content="https://www.placewith5s.com/html/cookiep">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cookie Policy | Placewith5s">
-    <meta property="og:description" content="Control your cookies & privacy at Placewith5s! Learn what cookies we use & how to manage them. GDPR compliant.">
-    <meta property="og:image" content="">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="https://www.placewith5s.com/html/cookiep">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@placewith5s">
+    <meta property="twitter:domain" content="placewith5s.com">
     <meta property="twitter:url" content="https://www.placewith5s.com/html/cookiep">
-    <meta name="twitter:title" content="Cookie Policy | Placewith5s">
-    <meta name="twitter:description" content="Control your cookies & privacy at Placewith5s! Learn what cookies we use & how to manage them. GDPR compliant.">
-    <meta name="twitter:image" content="">
-    <title>Cookie Policy | Placewith5s</title>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Cookie Policy | Placewith5s",  
+            "description": "Understand how Placewith5s uses cookies to enhance your browsing experience. Learn about the types of cookies we use and how to manage your cookie preferences.",
+            "url": "https://www.placewith5s.com/html/cookiep",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Placewith5s" 
+            }
+        }
+    </script>
     <noscript>
         <link rel="manifest" href="/manifest.json">
         <link rel="stylesheet" href="/css/cookiep.css">
@@ -40,36 +52,40 @@
     <link rel="icon" type="image/svg+xml" href="/icons/Cookies.svg">
 </head>
 <body>
-    <div id="consent-cookie-banner">
-        <p>
-            This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.
-        </p>
-        <p>
-            By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="html//cookiep" class="cookie-link" target="_blank" rel="noopener noreferrer">Cookies Information</a>.
-        </p>
-        <button id="showCookieSettings">Cookie Options</button>
-        <button id="acceptAll">Accept All Cookies</button>
-        <button id="rejectAll">Reject All Cookies</button>
-    </div>
-    <div id="cookie-banner">
-        <p>This website uses cookies. Please choose your cookie preferences:</p>
-        <ul>
-            <li>
-                <label for="essentialCheckbox">Essential: Required for basic site functions.</label>
-                <input type="checkbox" id="essentialCheckbox" checked disabled aria-label="Essential checkbox (checked, disabled)">
-            </li>
-            <li>
-                <label for="performanceCheckbox">Performance: Helps us analyze site usage.</label>
-                <input type="checkbox" id="performanceCheckbox" aria-label="Performance checkbox">
-            </li>
-            <li>
-                <label for="functionalityCheckbox">Functionality: Remembers your preferences.</label>
-                <input type="checkbox" id="functionalityCheckbox" aria-label="Functionality checkbox">
-            </li>
-        </ul>
-        <button id="savePreferences">Save Preferences</button>
-        <button id="closeBanner">Close</button>
-    </div>
+  <div id="consent-cookie-banner" role="dialog" aria-modal="true" aria-labelledby="consent-cookie-banner-title">
+    <h2 id="consent-cookie-banner-title">Cookie Consent</h2>
+    <p>
+        This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.
+    </p>
+    <p>
+        By clicking "Accept All Cookies," you consent to the use of all cookies on this site. 
+        <a href="html/cookiep" class="cookie-link" target="_blank" rel="noopener noreferrer" aria-label="Learn More About Our Cookie Policy">Learn More About Our Cookie Policy</a>.
+    </p>
+    <button id="showCookieSettings">Cookie Options</button>
+    <button id="acceptAll">Accept All Cookies</button>
+    <button id="rejectAll">Reject All Cookies</button>
+</div>
+
+<div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title">
+    <h2 id="cookie-banner-title">Cookie Preferences</h2>
+    <p>This website uses cookies. Please choose your cookie preferences:</p>
+    <ul>
+        <li>
+            <input type="checkbox" id="essentialCheckbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
+            <label for="essentialCheckbox">Essential: Required for basic site functions.</label>
+        </li>
+        <li>
+            <input type="checkbox" id="performanceCheckbox" aria-label="Performance: Helps us analyze site usage">
+            <label for="performanceCheckbox">Performance: Helps us analyze site usage.</label>
+        </li>
+        <li>
+            <input type="checkbox" id="functionalityCheckbox" aria-label="Functionality: Remembers your preferences">
+            <label for="functionalityCheckbox">Functionality: Remembers your preferences.</label>
+        </li>
+    </ul>
+    <button id="savePreferences">Save Preferences</button>
+    <button id="closeBanner">Close</button>
+</div>
     <nav class="exclusive-nav">
         <a href="/html/about" aria-label="About Us">About Us</a>
         <a href="/html/faq" aria-label="FAQs">FAQs</a>
@@ -91,55 +107,64 @@
 <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
     <div class="loader"></div>
 </div>
-    <header>
-        <h1>Cookie Policy</h1>
-    </header>
-    <main>
-        <div class="last-updated">
-            <p>Last Updated: <time datetime="2024-06-09" aria-label="Last Updated Date">June 9, 2024</time></p>
-        </div>
-        
-        <section id="no-personal-data">
-            <h2>Your Privacy is Important</h2>
-            <p>We respect your privacy and do not collect any personal data through cookies or other tracking technologies. Our goal is to provide a functional and informative website experience without compromising your personal information.</p>
-        </section>
-        
-        <section id="last-updated-connection">
-            <h2>Last Updated</h2>
-            <p>This Cookie Policy may be updated occasionally to align with changes in technology, laws, or our services. The "Last Updated" timestamp at the top of the page will be revised accordingly.</p>
-        </section>
+<header>
+    <h1>Cookie Policy</h1>
+  </header>
+  
+  <main>
+    <div class="last-updated">
+      <p>Last Updated: 
+        <time datetime="2024-06-09" aria-label="Last Updated Date">June 9, 2024</time>
+      </p>
+    </div>
+  
+    <section id="no-personal-data">
+      <h2>Your Privacy Matters</h2> 
+      <p>We respect your privacy and do not collect any personal data through cookies or other tracking technologies. Our goal is to provide a seamless and informative website experience without compromising your personal information.</p>
+    </section>
     
-        <section>
-            <h2>About Cookies</h2>
-            <p>Cookies are small text files stored on your computer or mobile device when you visit a website. They help websites remember preferences, enhance user experience, and gather anonymous statistical data. </p>
-        </section>
+    <section id="last-updated-connection" aria-labelledby="last-updated-connection-heading">
+      <h2 id="last-updated-connection-heading">Policy Updates</h2>
+      <p>This Cookie Policy may be updated occasionally to align with changes in technology, laws, or our services. The "Last Updated" timestamp at the top of the page will be revised accordingly.</p>
+    </section>
     
-        <section>
-            <h2>How We Use Cookies</h2>
-            <p>We use cookies solely for the following purposes:</p>
-            <ul>
-                <li>Ensuring the smooth operation and security of our website</li>
-                <li>Analyzing aggregated website traffic patterns to understand how visitors use our site (no personal data is tracked)</li>
-                <li>Potentially remembering basic preferences like language or display settings (no personally identifiable information is stored)</li>
-            </ul>
-        </section>
+    <section aria-labelledby="about-cookies-heading">
+      <h2 id="about-cookies-heading">About Cookies</h2>
+      <p>Cookies are small text files stored on your computer or mobile device when you visit a website. They help websites remember preferences, enhance user experience, and gather anonymous statistical data.</p>
+    </section>
     
-        <section>
-            <h2>Types of Cookies We Use</h2>
-            <p>We primarily use the following types of cookies:</p>
-            <ul>
-                <li><span class="bold">Strictly Necessary Cookies:</span> These are essential for the website to function and cannot be switched off. They are usually only set in response to actions made by you, such as setting your privacy preferences, logging in, or filling in forms.</li>
-                <li><span class="bold">Performance Cookies:</span> These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. Theyhelp us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous.</li>
-                <li><span class="bold">Functionality Cookies:</span> These cookies enable the website to provide enhanced functionality and personalisation. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly.</li>
-            </ul>
-            <p>We do not use any third-party cookies for advertising or tracking purposes.</p>
-        </section>
+    <section aria-labelledby="how-we-use-cookies-heading">
+      <h2 id="how-we-use-cookies-heading">How We Use Cookies</h2>
+      <p>We use cookies solely for the following purposes:</p>
+      <ul>
+        <li>Ensuring the website operates smoothly and securely</li>
+        <li>Analyzing aggregated website traffic patterns (no personal data is tracked)</li>
+        <li>Potentially remembering basic preferences (no personally identifiable information is stored)</li>
+      </ul>
+    </section>
     
-        <section>
-            <h2>Your Cookie Choices</h2>
-            <p>You can control and manage cookies through your browser settings. Most browsers allow you to block or delete cookies. However, please note that disabling certain cookies may affect the functionality of our website. For more information on how to manage cookies, visit <a href="https://www.allaboutcookies.org/" class="all-about-cookies" target="_blank" rel="noopener noreferrer" title="All About Cookies" aria-label="All About Cookies">All About Cookies</a>.</p>
-        </section>
-    </main>    
+    <section aria-labelledby="types-of-cookies-heading">
+      <h2 id="types-of-cookies-heading">Types of Cookies We Use</h2>
+      <p>We primarily use the following types of cookies:</p>
+      <ul>
+        <li>
+          <strong>Strictly Necessary Cookies:</strong> Essential for website function.
+        </li>
+        <li>
+          <strong>Performance Cookies:</strong> Measure and improve site performance (anonymous).
+        </li>
+        <li>
+          <strong>Functionality Cookies:</strong> Enhance website functionality and personalization.
+        </li>
+      </ul>
+      <p>We do not use any third-party cookies for advertising or tracking.</p>
+    </section>
+    
+    <section aria-labelledby="your-cookie-choices-heading">
+      <h2 id="your-cookie-choices-heading">Your Cookie Choices</h2>
+      <p>You can control and manage cookies through your browser settings. Most browsers allow you to block or delete cookies. Please note that disabling certain cookies may affect the functionality of our website. For more information, visit <a href="https://www.allaboutcookies.org/" class="all-about-cookies" target="_blank" rel="noopener noreferrer" title="All About Cookies" aria-label="All About Cookies">All About Cookies</a>.</p> 
+    </section>
+  </main>      
 <footer>
     <a href=https://www.flaticon.com/free-icons/computer class="attribution" target="_blank" rel="noopener noreferrer" aria-label="Icons by Freepik - Flaticon">Icons by Freepik - Flaticon</a>
     <nav class="nav-footer">
