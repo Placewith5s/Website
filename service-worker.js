@@ -112,7 +112,7 @@
                 });
         };
     }
-    const CACHE_NAME = 'placewith5s-v122';
+    const CACHE_NAME = 'placewith5s-v123';
     const FILES_TO_CACHE = [
         '/icons/Settings.png',
         '/icons/Settings.svg',
