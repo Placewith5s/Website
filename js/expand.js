@@ -1,47 +1,60 @@
 'use strict';
 (function() {
-const expandCollapseButton = document.getElementById('Expand-Collapse-Button');
-expandCollapseButton.addEventListener('click', toggleElements, {passive: true});
-let isInitialClick = true;
-function toggleElements() {
-    try {
-        const HiddenElements = document.querySelectorAll('[id^="step-hidden-from-"]');
-        if (!HiddenElements.length) {
-            console.error('Initial hidden elements not found.');
-            return;
-        }
-        HiddenElements.forEach(element => {
-            toggleElementVisibility(element, isInitialClick);
-        });
-        updateTextAndAria();
-        isInitialClick = false;
-    } catch (error) {
-        console.error('Error occurred:', error.message);
+  class ExpandCollapse {
+    constructor(buttonId = 'Expand-Collapse-Button') {
+      this.expandCollapseButton = document.getElementById(buttonId);
+      this.isInitialClick = true;
+
+      if (this.expandCollapseButton) {
+        this.expandCollapseButton.addEventListener('click', this.toggleElements.bind(this), { passive: true });
+      } else {
+        console.error('Expand/Collapse button not found.');
+      }
     }
-}
-function toggleElementVisibility(element, isInitialClick) {
-    try {
-        if (isInitialClick) {
-            element.style.display = 'block';
-            element.removeAttribute('aria-hidden');
-        } else {
-            if (element.style.display === 'none') {
-                element.style.display = 'block';
-                element.removeAttribute('aria-hidden');
+    toggleElements = () => {
+      try {
+        const hiddenElements = document.querySelectorAll('[id^="step-hidden-from-"]');
+        if (!hiddenElements.length) {
+          console.error('Initial hidden elements not found.');
+          return;
+        }
+        hiddenElements.forEach(element => {
+          this.toggleElementVisibility(element);
+          const stepNumberMatch = element.id.match(/step-hidden-from-(\d+)/);
+          if (stepNumberMatch) {
+            const stepNumber = stepNumberMatch[1];
+            const ariaLabelledByValue = `step${stepNumber}-hidden-heading`;
+            if (element.style.display !== 'none') {
+              element.setAttribute('aria-labelledby', ariaLabelledByValue);
             } else {
-                element.style.display = 'none';
-                element.setAttribute('aria-hidden', 'true');
+              element.removeAttribute('aria-labelledby');
             }
+          }
+        });
+        this.updateTextAndAria();
+        this.isInitialClick = false;
+      } catch (error) {
+        console.error('Error occurred:', error.message);
+      }
+    };
+    toggleElementVisibility = (element) => {
+      try {
+        if (this.isInitialClick) {
+          element.style.display = 'block';
+          element.removeAttribute('aria-hidden');
+        } else {
+          element.style.display = element.style.display === 'none' ? 'block' : 'none';
+          element.ariaHidden = element.style.display === 'none' ? 'true' : null; 
         }
-    } catch (error) {
+      } catch (error) {
         console.error('Error occurred while toggling element visibility:', error.message);
-    }
-}
-function updateTextAndAria() {
-    const buttonText = expandCollapseButton.textContent === 'Expand' ? 'Collapse' : 'Expand';
-    expandCollapseButton.textContent = buttonText;
-    
-    const ariaExpandedValue = buttonText === 'Collapse' ? 'true' : 'false';
-    expandCollapseButton.setAttribute('aria-expanded', ariaExpandedValue);
-}
-})();
+      }
+    };
+    updateTextAndAria = () => {
+      const buttonText = this.expandCollapseButton.textContent === 'Show More' ? 'Hide More' : 'Show More';
+      this.expandCollapseButton.textContent = buttonText;
+      this.expandCollapseButton.setAttribute('aria-expanded', buttonText === 'Hide More' ? 'true' : 'false');
+    };
+  }
+  new ExpandCollapse(); 
+})(); 

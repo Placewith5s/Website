@@ -112,22 +112,16 @@
                 });
         };
     }
-    const CACHE_NAME = 'placewith5s-v125';
+    const CACHE_NAME = 'placewith5s-v1';
     const FILES_TO_CACHE = [
         '/icons/Settings.png',
         '/icons/Settings.svg',
         '/icons/Policy.svg',
         '/icons/Cookies.svg',
-        '/',
-        '/html/privacyp',
-        '/html/cookiep',
-        '/html/aboutSoftware',
-        '/html/about',
-        '/html/faq',
-        '/html/contactForm',
-        '/404',
-        '/css/404.css',
         '/manifest.json',
+        '/robots.txt',
+        '/ads.txt',
+        '/sitemap.xml',
     ];
     const serviceWorkerCache = new ServiceWorkerCache(CACHE_NAME, FILES_TO_CACHE);
     const eventHandlers = {

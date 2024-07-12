@@ -24,11 +24,9 @@ class DarkModeModule {
     async checkAndSetDarkModePreference() {
         try {
             await new Promise(resolve => setTimeout(resolve, 100));
-
             if (window.matchMedia) {
                 const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 this.toggleDarkModeBasedOnPreference(darkModeMediaQuery.matches);
-
                 darkModeMediaQuery.addEventListener('change', (event) => {
                     this.toggleDarkModeBasedOnPreference(event.matches);
                 }, {passive: true});
