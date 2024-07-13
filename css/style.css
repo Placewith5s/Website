@@ -1,21 +1,8 @@
-body,
-#Cool-Websites,
-.code {
-    background-color: #f0f0f0
-}
-
 body {
     display: flex;
     flex-direction: column;
     margin: 0
 }
-
-body,
-#Cool-Websites a:hover,
-.description {
-    color: #444
-}
-
 .search-container {
     display: flex;
     justify-content: center;
@@ -24,7 +11,6 @@ body,
     width: 80%;
     max-width: 500px
 }
-
 #search-input {
     padding: 12px 16px;
     border: 2px solid #e0e0e0;
@@ -33,28 +19,20 @@ body,
     box-sizing: border-box;
     transition: all 0.3s linear
 }
-
 #search-input:focus,
 #search-input:hover {
     border-color: #007bff;
     outline: none
 }
-
-#search-input::placeholder {
-    color: #999
-}
-
 main {
     flex-grow: 1;
     border-radius: .67rem;
     border: 1px solid #ddd
 }
-
 #Cool-Websites span,
 .expand-all.active [id^="step-hidden-from-"] {
     display: block
 }
-
 img {
     height: auto;
     vertical-align: middle;
@@ -65,7 +43,6 @@ img {
     backface-visibility: hidden;
     object-fit: cover
 }
-
 @media (prefers-reduced-motion:no-preference) {
     img {
         transform: scale(.8);
@@ -73,35 +50,12 @@ img {
         animation: fade-in 1s linear forwards
     }
 }
-
 @keyframes fade-in {
     to {
         transform: scale(1);
         opacity: 1
     }
 }
-
-@-moz-keyframes fade-in {
-    to {
-        transform: scale(1);
-        opacity: 1
-    }
-}
-
-@-webkit-keyframes fade-in {
-    to {
-        transform: scale(1);
-        opacity: 1
-    }
-}
-
-@-o-keyframes fade-in {
-    to {
-        transform: scale(1);
-        opacity: 1
-    }
-}
-
 @supports (animation-timeline:view()) and (animation-range-start:entry) {
     @media (prefers-reduced-motion: no-preference) {
         img {
@@ -110,76 +64,52 @@ img {
         }
     }
 }
-
 .anim {
     opacity: 0;
     transform: translateY(100%);
     transition: all 1.25s cubic-bezier(.645, .045, .355, 1)
 }
-
 .show {
     opacity: 1;
     transform: translateY(0)
 }
-
 @media (prefers-reduced-motion:reduce) {
     .anim {
         transition: none
     }
 }
-
 h1 {
-    color: #30562f;
     border-bottom: 2px solid #ddd
 }
-
 .description {
     margin: .33rem;
     padding: 1rem
 }
-
 .spaced li {
     margin-bottom: 2rem
 }
-
 #Expand-Collapse-Button {
-    background-color: #c1d7e6;
-    color: #4a4a4a;
     border: none;
     border-radius: .47rem;
     cursor: pointer
 }
-
 #Expand-Collapse-Button:hover,
 #Expand-Collapse-Button:focus {
-    background-color: #aecce0;
     transform: scale(1.05)
 }
-
 [id^="step-hidden-from-"] {
     display: none
 }
-
 #Expand-Collapse-Button,
 .expand-all [id^="step-hidden-from-5"] {
     margin-bottom: 5rem
 }
-
 #Step-by-Step-Guide [class^="step4"] {
     margin-bottom: 10vh
 }
-
-#Step-by-Step-Guide a,
-#Cool-Websites a,
-.description a,
-a[href^="#"] {
-    text-decoration: none
-}
-
 #Step-by-Step-Guide a {
     position: relative
 }
-
 #Step-by-Step-Guide a::before {
     position: absolute;
     content: "";
@@ -190,39 +120,15 @@ a[href^="#"] {
     transform-origin: bottom right;
     transition: transform 0.3s ease-out, background-color 0.3s ease-out
 }
-
-#Cool-Websites a:hover,
-#Cool-Websites a:focus,
-#Step-by-Step-Guide a:hover,
-#Step-by-Step-Guide a:focus {
-    filter: var(--filter-hover-settings)
-}
-
-#Step-by-Step-Guide a:hover,
-#Step-by-Step-Guide a:focus {
-    color: #27008a
-}
-
 #Step-by-Step-Guide a:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left
 }
-
 #Cool-Websites,
 #Cool-Websites a,
 #Cool-Websites a:visited {
     border-radius: .33rem
 }
-
-#Cool-Websites h2,
-h2 {
-    color: #02517e
-}
-
-.description a {
-    color: #09345f
-}
-
 #Cool-Websites h2,
 #Cool-Websites span,
 h2,
@@ -230,76 +136,49 @@ h2,
 .step-description {
     margin-bottom: .67rem
 }
-
 #Cool-Websites span {
     margin-bottom: 1.83rem;
-    color: #004080
 }
-
 #Cool-Websites h2 {
     padding-bottom: .33rem
 }
-
 #Cool-Websites a,
 #Cool-Websites a:visited {
-    color: #00574b;
     margin: .67rem;
     display: inline-block;
     border: 2px solid #444
 }
-
 #Cool-Websites a:hover,
 #Cool-Websites a:focus {
-    background-color: #083a31;
-    color: #fff;
     transform: scale(1.05);
     outline: none
 }
-
-[class^="step"],
-.step-description {
-    color: #5a5a5a
-}
-
-[class^="step"],
-.step-content {
-    background-color: #f8f8f8
-}
-
 [class^="step"] {
     padding: 1.5rem;
     border-radius: .67rem
 }
-
 #Step-by-Step-Guide [class^="step"]:last-child:not([id^="step-hidden-from-"]) {
     margin-bottom: 0
 }
-
 [class^="step"]:not(.step-content, .step-description) {
     margin-bottom: 13.33rem
 }
-
 .code {
     border-radius: .33rem
 }
-
 .step-content,
 .step-description {
     margin-bottom: 3.33rem
 }
-
 .step-content {
     border-radius: .67rem
 }
-
 .step-description {
     line-height: 1.5
 }
-
 [id^="step-hidden-from-"] {
     margin-bottom: 2.5rem
 }
-
 @media only screen and (min-width:320px) and (max-width:480px) {
     #Step-by-Step-Guide a:hover::before {
         transform: scaleX(0)
@@ -336,7 +215,6 @@ h2,
         padding: .375rem
     }
 }
-
 @media only screen and (min-width:481px) and (max-width:768px) {
     #Cool-Websites {
         padding: 1.33rem
@@ -373,7 +251,6 @@ h2,
         padding: .33rem
     }
 }
-
 @media only screen and (min-width:769px) and (max-width:1024px) {
     #Cool-Websites {
         padding: 2.6rem
@@ -408,7 +285,6 @@ h2,
         padding: .3rem
     }
 }
-
 @media only screen and (min-width:1025px) and (max-width:1200px) {
     #Cool-Websites {
         padding: 1.9rem
@@ -443,7 +319,6 @@ h2,
         padding: .27rem
     }
 }
-
 @media only screen and (min-width:1201px) {
     #Cool-Websites {
         padding: 2.5rem
@@ -476,67 +351,5 @@ h2,
     .step-content,
     .step-description {
         padding: .25rem
-    }
-}
-
-@media only screen and (prefers-color-scheme:dark) {
-    .dark-theme,
-    .dark-theme #Cool-Websites {
-        background-color: #444
-    }
-    .dark-theme,
-    .dark-theme .description {
-        color: #f8f8f8
-    }
-    .dark-theme .description a {
-        color: #ffb01d
-    }
-    .dark-theme #Expand-Collapse-Button {
-        background-color: #234553;
-        color: #ddd
-    }
-    .dark-theme #Expand-Collapse-Button:hover,
-    .dark-theme #Step-by-Step-Guide a:hover,
-    .dark-theme #Step-by-Step-Guide a:hover,
-    .dark-theme #Cool-Websites a:hover,
-    .dark-theme #Cool-Websites a:focus {
-        filter: var(--filter-hover-settings2)
-    }
-    .dark-theme #Cool-Websites h2 {
-        color: #ffb3b3
-    }
-    .dark-theme h1 {
-        color: #ffb36b
-    }
-    .dark-theme #Step-by-Step-Guide a {
-        color: #ffb561
-    }
-    .dark-theme #Step-by-Step-Guide a::before {
-        background-color: #ffb561
-    }
-    .dark-theme #Step-by-Step-Guide a:hover,
-    .dark-theme #Step-by-Step-Guide a:hover {
-        color: #ffa68a
-    }
-    .dark-theme #Step-by-Step-Guide a:hover::before {
-        background-color: #ffb69e
-    }
-    .dark-theme #Cool-Websites a {
-        color: #58da90
-    }
-    .dark-theme #Cool-Websites a,
-    .dark-theme #Cool-Websites a:visited {
-        border: 2px solid #fff
-    }
-    .dark-theme #Cool-Websites a:hover,
-    .dark-theme #Cool-Websites a:focus {
-        background-color: #75e1a4;
-        color: #5a5a5a
-    }
-    .dark-theme #Cool-Websites span {
-        color: #ffb96b
-    }
-    .dark-theme h2 {
-        color: #ffb670
     }
 }

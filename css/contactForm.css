@@ -3,22 +3,15 @@
     margin: 40px auto;
     padding: 30px;
     border-radius: 12px;
-    background-color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 4px 8px rgb(0 0 0 / .1)
 }
-
 .form-group {
     margin-bottom: 25px
 }
-
 label {
     display: block;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #333
 }
-
 input[type="text"],
 input[type="email"],
 textarea {
@@ -27,75 +20,30 @@ textarea {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-sizing: border-box;
-    font-size: 16px;
-    color: #333;
     transition: border-color 0.3s
 }
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: #f90;
+    border-color: var(--color-accent);
     outline: none
 }
-
 .gdpr-consent {
     display: flex;
     align-items: center;
     margin-bottom: 20px
 }
-
 .gdpr-consent input[type="checkbox"] {
     transform: scale(1.2);
-    margin-right: 10px;
-    accent-color: #f90
+    margin-right: 10px
 }
-
 .gdpr-consent a {
-    color: #f90;
     text-decoration: underline
 }
-
 button[type="submit"] {
-    background-color: #f90;
-    color: #fff;
     padding: 15px 25px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 17px;
     transition: background-color 0.3s, box-shadow 0.3s
-}
-
-button[type="submit"]:hover {
-    background-color: #e68a00;
-    box-shadow: 0 4px 6px rgb(0 0 0 / .2)
-}
-
-@media only screen and (prefers-color-scheme:dark) {
-    #contact-form {
-        background-color: #333;
-        color: #f0f0f0
-    }
-    label {
-        color: #f0f0f0
-    }
-    input[type="text"],
-    input[type="email"],
-    textarea {
-        background-color: #444;
-        color: #f0f0f0;
-        border-color: #555
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    textarea:focus {
-        border-color: #fc0
-    }
-    .gdpr-consent a {
-        color: #fc0
-    }
-    button[type="submit"] {
-        background-color: #fc0
-    }
 }
