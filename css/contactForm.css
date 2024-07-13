@@ -41,9 +41,24 @@ textarea:focus {
     text-decoration: underline
 }
 button[type="submit"] {
+    background-color: var(--color-secondary);
     padding: 15px 25px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    filter: var(--filter-hover-settings);
+}
+@media only screen and (prefers-color-scheme: dark) {
+    .dark-theme button[type="submit"]  {
+        color: var(--text-secondary);
+        background-color: var(--color-secondary);
+    }
+    .dark-theme button[type="submit"]:hover,
+    button[type="submit"]:focus {
+        filter: var(--filter-hover-settings);
+    }
 }
