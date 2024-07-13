@@ -1,31 +1,31 @@
-body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0
+:root {
+    --filter-hover-settings: opacity(0.7);
 }
 #consent-cookie-banner,
 #cookie-banner {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #000;
     width: 100%;
     padding: 20px;
     position: fixed;
     z-index: 1000
 }
 #consent-cookie-banner {
-    background-color: #f5f5f5;
-    color: #444;
     bottom: 0;
     left: 0;
     text-align: center
 }
 #cookie-banner {
-    background-color: #f0f0f0;
     border-radius: 8px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: none
 }
-button {
+#acceptAll, #savePreferences {
     background-color: #015601;
     color: #fff;
     border: none;
@@ -35,12 +35,13 @@ button {
     border-radius: 5px;
     transition: background-color 0.3s ease
 }
-button:hover,
-button:focus {
-    background-color: #006400
+#acceptAll, #savePreferences:hover,
+#acceptAll, #savePreferences:focus {
+    filter: var(--filter-hover-settings);
 }
 #rejectAll {
     background-color: #850c0c;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -50,7 +51,7 @@ button:focus {
 }
 #rejectAll:hover,
 #rejectAll:focus {
-    background-color: #710f0f
+    filter: var(--filter-hover-settings);
 }
 label {
     margin-bottom: 5px
@@ -66,25 +67,29 @@ input[type="checkbox"] {
     cursor: pointer
 }
 @media screen and (prefers-color-scheme:dark) {
+    :root {
+        --filter-hover-settings: brightness(1.1);
+    }
     .dark-theme #consent-cookie-banner,
     .dark-theme #cookie-banner {
         background-color: #444;
-        color: #ddd
+        color: #f2f2f2
     }
-    .dark-theme button {
+    .dark-theme #acceptAll, #savePreferences {
         background-color: #0f0;
         color: #666
     }
-    .dark-theme button:hover,
-    .dark-theme button:focus {
-        background-color: #4dff4d
+    .dark-theme #acceptAll, #savePreferences:hover,
+    .dark-theme #acceptAll, #savePreferences:focus {
+        filter: var(--filter-hover-settings);
     }
     .dark-theme #rejectAll {
+        color: #000;
         background-color: #ffd1d1
     }
     .dark-theme #rejectAll:hover,
     .dark-theme #rejectAll:focus {
-        background-color: #ffe0e0
+        filter: var(--filter-hover-settings);
     }
     .dark-theme #closeBanner {
         color: #ccc

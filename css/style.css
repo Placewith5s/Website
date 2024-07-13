@@ -89,6 +89,7 @@ h1 {
     margin-bottom: 2rem
 }
 #Expand-Collapse-Button {
+    background-color: var(--color-secondary);
     border: none;
     border-radius: .47rem;
     cursor: pointer
@@ -351,5 +352,11 @@ h2,
     .step-content,
     .step-description {
         padding: .25rem
+    }
+}
+@media only screen and (prefers-color-scheme: dark) {
+    .dark-theme #Expand-Collapse-Button {
+        color: var(--text-secondary);
+        background-color: var(--color-secondary);
     }
 }
