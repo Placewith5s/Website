@@ -1,5 +1,8 @@
 :root {
-    --filter-hover-settings: opacity(0.7);
+    --filter-hover-settings: opacity(0.7)
+}
+button {
+    cursor: pointer;
 }
 #consent-cookie-banner,
 #cookie-banner {
@@ -30,28 +33,26 @@
     color: #fff;
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
     margin: 5px;
     border-radius: 5px;
     transition: background-color 0.3s ease
 }
 #acceptAll, #savePreferences:hover,
 #acceptAll, #savePreferences:focus {
-    filter: var(--filter-hover-settings);
+    filter: var(--filter-hover-settings)
 }
 #rejectAll {
     background-color: #850c0c;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
     margin: 5px;
     border-radius: 5px;
     transition: background-color 0.3s ease
 }
 #rejectAll:hover,
 #rejectAll:focus {
-    filter: var(--filter-hover-settings);
+    filter: var(--filter-hover-settings)
 }
 label {
     margin-bottom: 5px
@@ -59,16 +60,17 @@ label {
 input[type="checkbox"] {
     margin-right: 10px
 }
-#closeBanner {
-    float: right;
-    background-color: transparent;
+#showCookieSettings, #closeBanner {
     color: #666;
     border: none;
-    cursor: pointer
+}
+#closeBanner {
+    background: transparent;
+    float: right;
 }
 @media screen and (prefers-color-scheme:dark) {
     :root {
-        --filter-hover-settings: brightness(1.1);
+        --filter-hover-settings: brightness(1.1)
     }
     .dark-theme #consent-cookie-banner,
     .dark-theme #cookie-banner {
@@ -81,7 +83,7 @@ input[type="checkbox"] {
     }
     .dark-theme #acceptAll, #savePreferences:hover,
     .dark-theme #acceptAll, #savePreferences:focus {
-        filter: var(--filter-hover-settings);
+        filter: var(--filter-hover-settings)
     }
     .dark-theme #rejectAll {
         color: #000;
@@ -91,9 +93,11 @@ input[type="checkbox"] {
     .dark-theme #rejectAll:focus {
         filter: var(--filter-hover-settings);
     }
+    .dark-theme #showCookieSettings, 
     .dark-theme #closeBanner {
         color: #ccc
     }
+    .dark-theme #showCookieSettings, 
     .dark-theme #closeBanner:hover {
         color: #aaa
     }

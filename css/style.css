@@ -13,21 +13,18 @@ body {
 }
 #search-input {
     padding: 12px 16px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--color-secondary);
     border-radius: 25px;
     width: 100%;
-    box-sizing: border-box;
     transition: all 0.3s linear
 }
 #search-input:focus,
 #search-input:hover {
-    border-color: #007bff;
     outline: none
 }
 main {
     flex-grow: 1;
-    border-radius: .67rem;
-    border: 1px solid #ddd
+    border-radius: .67rem
 }
 #Cool-Websites span,
 .expand-all.active [id^="step-hidden-from-"] {
@@ -79,7 +76,7 @@ img {
     }
 }
 h1 {
-    border-bottom: 2px solid #ddd
+    border-bottom: 2px solid var(--color-secondary)
 }
 .description {
     margin: .33rem;
@@ -89,14 +86,9 @@ h1 {
     margin-bottom: 2rem
 }
 #Expand-Collapse-Button {
-    background-color: var(--color-secondary);
     border: none;
     border-radius: .47rem;
-    cursor: pointer
-}
-#Expand-Collapse-Button:hover,
-#Expand-Collapse-Button:focus {
-    transform: scale(1.05)
+    border: 0.5px solid var(--color-secondary)
 }
 [id^="step-hidden-from-"] {
     display: none
@@ -116,18 +108,13 @@ h1 {
     content: "";
     height: .13rem;
     bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out, background-color 0.3s ease-out
+    left: 0
 }
-#Step-by-Step-Guide a:hover::before {
-    transform: scaleX(1);
-    transform-origin: bottom left
+#tool-links {
+    border: 1px solid var(--color-secondary)
 }
 #Cool-Websites,
-#Cool-Websites a,
-#Cool-Websites a:visited {
+#Cool-Websites a {
     border-radius: .33rem
 }
 #Cool-Websites h2,
@@ -138,16 +125,15 @@ h2,
     margin-bottom: .67rem
 }
 #Cool-Websites span {
-    margin-bottom: 1.83rem;
+    margin-bottom: 1.83rem
 }
 #Cool-Websites h2 {
     padding-bottom: .33rem
 }
-#Cool-Websites a,
-#Cool-Websites a:visited {
+#Cool-Websites a {
     margin: .67rem;
     display: inline-block;
-    border: 2px solid #444
+    border: 2px solid var(--color-secondary)
 }
 #Cool-Websites a:hover,
 #Cool-Websites a:focus {
@@ -162,7 +148,8 @@ h2,
     margin-bottom: 0
 }
 [class^="step"]:not(.step-content, .step-description) {
-    margin-bottom: 13.33rem
+    margin-bottom: 13.33rem;
+    border: 3px solid var(--color-secondary)
 }
 .code {
     border-radius: .33rem
@@ -190,8 +177,7 @@ h2,
     #Cool-Websites span {
         padding: .8rem
     }
-    #Cool-Websites a,
-    #Cool-Websites a:visited {
+    #Cool-Websites a {
         padding: .5rem 1.33rem;
         margin: 1.185rem
     }
@@ -223,8 +209,7 @@ h2,
     #Cool-Websites span {
         padding: 1rem
     }
-    #Cool-Websites a,
-    #Cool-Websites a:visited {
+    #Cool-Websites a {
         padding: .5rem 2rem;
         margin: 1.33rem
     }
@@ -259,8 +244,7 @@ h2,
     #Cool-Websites span {
         padding: 1.5rem
     }
-    #Cool-Websites a,
-    #Cool-Websites a:visited {
+    #Cool-Websites a {
         padding: .5rem 9.5rem;
         margin: 1.45rem
     }
@@ -293,8 +277,7 @@ h2,
     #Cool-Websites span {
         padding: 1.65rem
     }
-    #Cool-Websites a,
-    #Cool-Websites a:visited {
+    #Cool-Websites a {
         padding: .6rem 6rem;
         margin: 1.51rem
     }
@@ -327,8 +310,7 @@ h2,
     #Cool-Websites span {
         padding: 2rem
     }
-    #Cool-Websites a,
-    #Cool-Websites a:visited {
+    #Cool-Websites a {
         padding: .6rem 11rem;
         margin: 1.625rem
     }
@@ -355,8 +337,13 @@ h2,
     }
 }
 @media only screen and (prefers-color-scheme: dark) {
+    .dark-theme #tool-links {
+        border: 1px solid var(--color-secondary)
+    }
+    .dark-theme [class^="step"]:not(.step-content, .step-description) {
+        border: 3px solid var(--color-secondary)
+    }
     .dark-theme #Expand-Collapse-Button {
-        color: var(--text-secondary);
-        background-color: var(--color-secondary);
+        border: 0.5px solid var(--color-secondary)
     }
 }

@@ -2,7 +2,7 @@
     max-width: 600px;
     margin: 40px auto;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 12px
 }
 .form-group {
     margin-bottom: 25px
@@ -10,7 +10,7 @@
 label {
     display: block;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 8px
 }
 input[type="text"],
 input[type="email"],
@@ -19,7 +19,6 @@ textarea {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    box-sizing: border-box;
     transition: border-color 0.3s
 }
 input[type="text"]:focus,
@@ -45,20 +44,19 @@ button[type="submit"] {
     padding: 15px 25px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s
+    transition: background-color 0.3s
 }
 button[type="submit"]:hover,
 button[type="submit"]:focus {
-    filter: var(--filter-hover-settings);
+    filter: var(--filter-hover-settings)
 }
 @media only screen and (prefers-color-scheme: dark) {
     .dark-theme button[type="submit"]  {
         color: var(--text-secondary);
-        background-color: var(--color-secondary);
+        background-color: var(--color-secondary)
     }
     .dark-theme button[type="submit"]:hover,
     button[type="submit"]:focus {
-        filter: var(--filter-hover-settings);
+        filter: var(--filter-hover-settings)
     }
 }

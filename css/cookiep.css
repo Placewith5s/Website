@@ -12,14 +12,7 @@ main {
 section+section {
     margin-bottom: 3rem
 }
-.privacy-link {
-    text-decoration: none
-}
 ul {
     padding: 0;
     list-style: none
-}
-li span,
-p span {
-    font-weight: 700
 }

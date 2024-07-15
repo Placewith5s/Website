@@ -1,9 +1,9 @@
 :root {
     --color-primary: #f5f5f5;
-    --color-secondary: #444;
-    --color-accent: #ffa500;
-    --text-primary: #000;
-    --text-secondary: #fff;
+    --color-secondary: #666666;
+    --accent: #cc8400;
+    --text-primary: #444;
+    --text-secondary: #f5f5f5;
     --filter-hover-settings: opacity(0.7);
     --filter-active-settings: opacity(0.55)
 }
@@ -11,7 +11,9 @@
 *::after,
 *::before {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    box-sizing: border-box
+    box-sizing: border-box;
+    color: var(--text-primary);
+    background-color: var(--color-primary)
 }
 .bold {
     font-weight: 700
@@ -22,10 +24,7 @@
 body,
 main {
     min-height: 100vh;
-    min-height: 100svh;
-    max-width: 100%;
-    color: var(--text-primary);
-    background-color: var(--color-primary)
+    max-width: 100%
 }
 html {
     font-size: 16px
@@ -34,22 +33,17 @@ html {
 .exclusive-nav a {
     display: flex
 }
-a {
+a, button {
+    cursor: pointer;
     text-decoration: none;
-    color: var(--color-secondary);
     transition: filter 0.3s linear, color 0.3s linear, transform 0.3s linear
 }
-a:hover {
+a:hover, a:focus, button:hover, button:focus {
     filter: var(--filter-hover-settings);
-    color: var(--color-accent);
-    transform: translateY(-3px)
+    color: var(--accent)
 }
 a:active {
     filter: var(--filter-active-settings)
-}
-a:visited {
-    transition: transform 0.3s linear;
-    transform: scale(1.15)
 }
 .drawer,
 footer:before {
@@ -64,18 +58,13 @@ footer {
     position: relative
 }
 .exclusive-nav {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
+    color: var(--text-secondary);
     transition: background-color 0.3s linear
 }
 .exclusive-nav a {
     flex: 1;
     justify-content: center
-}
-.exclusive-nav a:hover,
-.exclusive-nav a:focus {
-    background-color: var(--color-accent);
-    color: var(--text-secondary);
-    transform: scale(1.05)
 }
 .menu-icon,
 footer {
@@ -86,17 +75,12 @@ footer {
     top: 1rem;
     right: 1rem;
     z-index: 2;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-secondary);
     border-radius: 4px;
     padding: 0.8rem;
     backdrop-filter: blur(1rem);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease
-}
-.menu-icon:hover,
-.menu-icon:focus {
-    background-color: #ddd;
-    transform: rotate(90deg)
 }
 .menu-icon .line {
     width: 1rem;
@@ -109,7 +93,8 @@ footer {
     top: 2.5rem;
     right: 1rem;
     background: var(--color-secondary);
-    border: 1px solid #34495e;
+    color: var(--text-secondary);
+    border: 1px solid var(--color-secondary);
     z-index: 1000;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s, transform 0.5s linear;
@@ -123,33 +108,29 @@ footer {
 .drawer a {
     display: block;
     padding: 0.6rem;
-    border: 1px solid;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px
 }
 .drawer a:hover,
 .drawer a:focus {
-    background-color: var(--color-accent);
-    color: var(--text-secondary);
     transform: translateX(10px)
 }
 #hideDrawerBtn {
     background-color: var(--color-secondary);
+    color: var(--text-secondary);
     border: none;
     padding: 1rem;
     border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease
+    transition: filter 0.3 linear transform 0.3s linear
 }
 #hideDrawerBtn:hover,
 #hideDrawerBtn:focus {
-    background-color: #354350;
     transform: scale(1.2)
 }
 footer {
-    color: #666;
+    color: var(--text-primary);
     text-align: center;
-    animation: fadeIn 1s ease
+    animation: fadeIn 1s linear
 }
 footer:before {
     content: "";
@@ -157,7 +138,7 @@ footer:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, var(--color-primary), var(--color-accent));
+    background: linear-gradient(45deg, var(--color-primary), var(--accent));
     z-index: -1;
     opacity: 0.8
 }
@@ -166,44 +147,29 @@ footer .nav-footer a {
     place-items: center;
     align-content: center;
     margin: 1.5rem 0;
-    color: var(--color-secondary);
     transition: color 0.3s ease, transform 0.3s ease
-}
-footer .nav-footer a:hover {
-    color: var(--color-accent);
-    transform: scale(1.1)
-}
-footer a:active {
-    color: var(--color-secondary)
 }
 footer .attribution {
-    color: #757575;
-    transition: color 0.3s ease, transform 0.3s ease
+    color: var(--text-primary)
 }
 footer .attribution:hover,
-footer .attribution:focus,
-footer .copyright {
-    color: #4a4545;
+footer .attribution:focus {
     transform: scale(1.05)
-}
-#manageCookies {
-    color: var(--color-accent);
-    font-weight: 700
 }
 @keyframes fadeIn {
     from {
-        opacity: 0;
+        opacity: 0
     }
     to {
-        opacity: 1;
+        opacity: 1
     }
 }
-@media screen and (max-width: 320px) and (max-width: 768px) and (prefers-color-scheme: dark) {
+@media screen and (max-width: 320px) {
     .exclusive-nav {
         display: none !important
     }
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 321px) and (max-width: 768px) {
     .menu-icon,
     .drawer {
         display: block
@@ -220,13 +186,15 @@ footer .copyright {
         margin-top: clamp(1.75rem, 50%, 2.5rem)
     }
 }
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .exclusive-nav {
-        padding: 1rem
-    }
+@media only screen and (min-width: 769px) {
     .menu-icon,
     .drawer {
         display: none
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .exclusive-nav {
+        padding: 1rem
     }
     footer {
         padding: 3rem
@@ -238,10 +206,6 @@ footer .copyright {
     }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-    .menu-icon,
-    .drawer {
-        display: none
-    }
     .exclusive-nav {
         padding: 1rem
     }
@@ -255,10 +219,6 @@ footer .copyright {
     }
 }
 @media only screen and (min-width: 1201px) {
-    .menu-icon,
-    .drawer {
-        display: none
-    }
     .exclusive-nav {
         padding: 1.2rem
     }
@@ -273,82 +233,42 @@ footer .copyright {
 }
 @media only screen and (prefers-color-scheme: dark) {
     :root {
-        --color-primary: #444444;
-        --color-secondary: #f7931a;
-        --color-accent: #f2f2f2;
-        --text-primary: var(--color-accent);
-        --text-secondary: #ffffff;
-        --filter-hover-settings2: brightness(1.1);
-        --filter-active-settings2: brightness(1.2)
+        --color-primary: #444;
+        --color-secondary: #999999;
+        --accent: #ffb347;
+        --text-primary: #f5f5f5;
+        --text-secondary: #444;
+        --filter-hover-settings: brightness(1.1);
+        --filter-active-settings: brightness(1.2)
     }
-    .dark-theme {
+    .dark-theme *, .dark-theme *::before, 
+    .dark-theme *::after {
         color: var(--text-primary);
         background-color: var(--color-primary)
     }
-    .dark-theme a {
-        color: var(--color-accent);
-        text-decoration: underline
-    }
-    .dark-theme a:hover {
-        filter: var(--filter-hover-settings2);
-        color: var(--color-secondary)
+    .dark-theme a:hover, .dark-theme a:focus,
+    .dark-theme button:hover, .dark-theme button:focus {
+        filter: var(--filter-hover-settings);
+        color: var(--accent)
     }
     .dark-theme a:active {
-        filter: var(--filter-active-settings2)
-    }
-    .dark-theme .drawer a {
-        background-color: var(--color-primary);
-        color: var(--text-primary)
-    }
-    .dark-theme .drawer a:hover, .dark-theme .drawer a:focus {
-        background-color: var(--color-secondary);
-        color: var(--text-secondary)
-    }
-    .dark-theme #hideDrawerBtn {
-        background-color: var(--color-secondary);
-        color: var(--text-secondary)
+        filter: var(--filter-active-settings)
     }
     .dark-theme .menu-icon {
         border: 1px solid var(--color-secondary);
         background-color: var(--color-primary)
     }
-    .dark-theme .menu-icon:hover, .dark-theme .menu-icon:focus {
-        background-color: var(--color-secondary)
-    }
     .dark-theme .line {
-        background: var(--color-accent)
+        background: var(--accent)
     }
     .dark-theme .exclusive-nav {
-        background-color: var(--color-primary);
         border-bottom: 2px solid var(--color-secondary)
     }
-    .dark-theme .exclusive-nav a {
-        color: var(--text-primary)
-    }
-    .dark-theme .exclusive-nav a:hover, .dark-theme .exclusive-nav a:focus {
-        background-color: var(--color-secondary);
+    .dark-theme .drawer {
+        background: var(--color-secondary);
         color: var(--text-secondary)
     }
-    .dark-theme .drawer {
-        background: var(--color-secondary)
-    }
-    .dark-theme footer {
-        background-color: var(--color-primary)
-    }
-    .dark-theme footer .nav-footer a {
-        color: var(--color-accent)
-    }
-    .dark-theme footer .nav-footer a:hover {
-        color: var(--color-secondary)
-    }
-    .dark-theme footer .attribution, .dark-theme footer .copyright {
-        color: var(--color-accent)
-    }
-    .dark-theme footer .attribution:hover, .dark-theme footer .attribution:focus,
-    .dark-theme footer .copyright:hover, .dark-theme footer .copyright:focus {
-        color: var(--color-secondary)
-    }
-    .dark-theme footer #manageCookies {
-        color: var(--color-secondary)
+    .dark-theme .copyright {
+        color: var(--text-primary)
     }
 }
