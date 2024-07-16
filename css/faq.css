@@ -16,7 +16,6 @@ header h1 {
 #search-bar {
     border: 2px solid #e0e0e0;
     margin-bottom: 1.33rem;
-    outline: none;
     border-radius: .33rem;
     padding: 1rem;
     width: 100%
@@ -31,9 +30,6 @@ details summary {
     cursor: pointer;
     padding: .67rem;
     border-radius: .33rem
-}
-details summary:focus {
-    outline: none
 }
 #underline-link {
     font-weight: 700;
