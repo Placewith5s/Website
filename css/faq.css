@@ -4,6 +4,7 @@ main {
     margin: 1.33rem auto
 }
 #not-found-message {
+    display: none;
     padding: 1.33rem
 }
 #not-found-message p {
@@ -31,7 +32,7 @@ details summary {
     padding: .67rem;
     border-radius: .33rem
 }
-#underline-link {
+.exclusive-nav a [aria-current='page'] {
     font-weight: 700;
     text-decoration: underline
 }
