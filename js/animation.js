@@ -5,10 +5,12 @@
             this.element = element;
             this.isVisible = false;
             this.options = {
-                threshold: options.threshold || 1,
+                appearThreshold: options.appearThreshold || 0.5,
+                disappearThreshold: options.disappearThreshold || 1,
                 debounceDelay: options.debounceDelay || 100,
             };
-            this.observer = null;
+            this.appearObserver = null;
+            this.disappearObserver = null;
             this.showAnimation = (isVisible) => { 
                 if (isVisible !== this.isVisible) {
                     this.isVisible = isVisible;
@@ -21,15 +23,25 @@
         initialize() {
             this.element.setAttribute('role', 'presentation'); 
             this.debouncedShowAnimation = this.debounce(this.showAnimation, this.options.debounceDelay); 
-            this.createObserver();
+            this.createObservers();
         }
-        createObserver() {
-            this.observer = new IntersectionObserver(entries => {
+        createObservers() {
+            this.appearObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    this.debouncedShowAnimation(entry.isIntersecting);
+                    if (entry.isIntersecting) {
+                        this.debouncedShowAnimation(true);
+                    }
                 });
-            }, this.options);
-            this.observer.observe(this.element);
+            }, { threshold: this.options.appearThreshold });
+            this.disappearObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        this.debouncedShowAnimation(false);
+                    }
+                });
+            }, { threshold: this.options.disappearThreshold });
+            this.appearObserver.observe(this.element);
+            this.disappearObserver.observe(this.element);
         }
         debounce(func, delay) {
             let timeoutId;
