@@ -12,7 +12,7 @@ h1 {
         margin-bottom: 1.875rem
     }
 }
-.exclusive-nav a [aria-current='page'] {
+.exclusive-nav a[aria-current='page'] {
     font-weight: 700;
     text-decoration: underline
 }

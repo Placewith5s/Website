@@ -26,7 +26,7 @@ p:not(footer p, #cookie-banner p) {
 li:not(:last-child) {
     margin-bottom: 1.5rem
 }
-.exclusive-nav a [aria-current='page'] {
+.exclusive-nav a[aria-current='page'] {
     font-weight: 700;
     text-decoration: underline
 }
