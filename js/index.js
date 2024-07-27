@@ -8,13 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
       this.notFoundMessage.style.display = "none";
       this.notFoundMessage.setAttribute('aria-hidden', 'true');
       this.searchBar.addEventListener("input", this.debounce(this.searchSections, 300), { passive: true });
+      if (!this.searchBar || !this.notFoundMessage) {
+        console.error("Error: Missing required search elements.");
+        return; 
+    }
     }
     searchSections = () => {
       try {
         const searchTerm = this.searchBar.value.trim().toLowerCase();
-        const faqSections = document.querySelectorAll("main details");
+        const Sections = document.querySelectorAll(".search-section .step details");
         let matchesFound = false;
-        faqSections.forEach(section => {
+        Sections.forEach(section => {
           const sectionText = section.textContent.toLowerCase();
           const isMatch = sectionText.includes(searchTerm);
           section.style.display = isMatch ? "block" : "none";
