@@ -1,14 +1,14 @@
 'use strict';
 (function() {
   class ExpandCollapse {
-    constructor(buttonId = 'Expand-Collapse-Button') {
+    constructor(buttonId = 'Show-Hide') {
       this.expandCollapseButton = document.getElementById(buttonId);
       this.isInitialClick = true;
 
       if (this.expandCollapseButton) {
         this.expandCollapseButton.addEventListener('click', this.toggleElements.bind(this), { passive: true });
       } else {
-        console.error('Expand/Collapse button not found.');
+        console.error('Show/Hide button not found.');
       }
     }
     toggleElements = () => {

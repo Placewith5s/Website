@@ -1,5 +1,5 @@
 body,
-#content {
+main {
     padding: 0;
     margin: 0
 }
@@ -7,7 +7,7 @@ header {
     text-align: center;
     padding: 1.4rem 0
 }
-#content {
+main {
     border-radius: .5rem;
     padding: 1.4rem
 }
@@ -29,29 +29,4 @@ li:not(:last-child) {
 .exclusive-nav a[aria-current='page'] {
     font-weight: 700;
     text-decoration: underline
-}
-@media only screen and (min-width:320px) and (max-width:480px) {
-    #content {
-        padding: 1.2rem
-    }
-}
-@media only screen and (min-width:481px) and (max-width:768px) {
-    #content {
-        padding: 1.45rem
-    }
-}
-@media only screen and (min-width:769px) and (max-width:1024px) {
-    #content {
-        padding: 1.56rem
-    }
-}
-@media only screen and (min-width:1025px) and (max-width:1200px) {
-    #content {
-        padding: 1.65rem
-    }
-}
-@media only screen and (min-width:1201px) {
-    #content {
-        padding: 1.8rem
-    }
 }

@@ -98,18 +98,18 @@
       <a href="/html/aboutSoftware" aria-label="About Tools">About Tools</a>
     </nav>
     <!-- Hamburger menu navigation (smaller screens) -->
-    <div class="menu-icon" id="menuIcon" role="button" aria-haspopup="true" aria-label="Open Menu">
+    <button class="menu-icon" id="menuIcon" aria-haspopup="true" aria-label="Open Menu">
       <div class="line"></div>
       <div class="line"></div>
       <div class="line"></div>
-    </div>
+    </button>
     <nav>
-      <div class="drawer" id="drawer" role="navigation">
+      <nav class="drawer" id="drawer">
         <a href="/html/about" id="aboutUsLink" aria-label="About Us">About Us</a>
         <a href="/html/faq" id="faqLink" aria-label="FAQs">FAQs</a>
         <a href="/html/aboutSoftware" id="aboutSoftwareLink" aria-label="About Tools">About Tools</a>
         <button id="hideDrawerBtn" aria-label="Hides the drawer">Hide</button>
-      </div>
+      </nav>
     </nav>
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
       <div class="loader"></div>
@@ -124,7 +124,6 @@
         <label for="search-input" hidden>Search</label>
         <input type="text" id="search-input" role="searchbox" aria-label="Search for content." aria-placeholder="Search..." placeholder="Search..." autocomplete="off" aria-autocomplete="none">
       </div>
-      <div id="content" role="main">
         <section aria-labelledby="preparation">
           <div class="step">
             <div class="step-content">
@@ -197,9 +196,8 @@
               <p>Enable or disable features according to your preferences.</p>
             </div>
           </div>
-      </div>
       <div class="expand-all">
-        <button id="Expand-Collapse-Button" aria-expanded="false">Show More</button>
+        <button id="Show-Hide" aria-expanded="false">Show More</button>
         <div class="step5" id="step-hidden-from-5">
           <h2 id="step5-hidden-heading">Remove Bloatware & Optimize Privacy with WinPilot AI</h2>
           <div class="step-content">
@@ -355,7 +353,7 @@
     <script src="/js/animation.js" defer></script>
     <script src="/js/EclipseMode.js" defer></script>
     <script src="/js/script.js" defer></script>
-    <script src="/js/expand.js" defer></script>
+    <script src="/js/ShowHide.js" defer></script>
     <script src="/js/register-service.js" defer></script>
     <script src="/js/index.js" defer></script>
   </body>

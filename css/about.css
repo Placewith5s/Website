@@ -5,7 +5,7 @@ h1 {
     text-align: center;
     padding: 1.1rem 0
 }
-.about {
+main {
     white-space: pre-line;
     letter-spacing: .03125rem;
     & p {
@@ -15,29 +15,4 @@ h1 {
 .exclusive-nav a[aria-current='page'] {
     font-weight: 700;
     text-decoration: underline
-}
-@media only screen and (min-width:320px) and (max-width:480px) {
-    .about {
-        padding: .8rem
-    }
-}
-@media only screen and (min-width:481px) and (max-width:768px) {
-    .about {
-        padding: 1rem
-    }
-}
-@media only screen and (min-width:769px) and (max-width:1024px) {
-    .about {
-        padding: 1.3rem
-    }
-}
-@media only screen and (min-width:1025px) and (max-width:1200px) {
-    .about {
-        padding: 1.5rem
-    }
-}
-@media only screen and (min-width:1201px) {
-    .about {
-        padding: 1.6rem
-    }
 }

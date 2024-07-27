@@ -36,7 +36,7 @@ html {
     border-radius: .7rem;
     width: 100%
 }
-.content {
+main {
     z-index: 1
 }
 h1, p {

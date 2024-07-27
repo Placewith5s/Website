@@ -80,7 +80,7 @@ h1 {
 .spaced li {
     margin-bottom: 2rem
 }
-#Expand-Collapse-Button {
+#Show-Hide {
     border: none;
     border-radius: .47rem;
     border: 0.5px solid var(--color-secondary)
@@ -88,7 +88,7 @@ h1 {
 [id^="step-hidden-from-"] {
     display: none
 }
-#Expand-Collapse-Button,
+#Show-Hide,
 .expand-all [id^="step-hidden-from-5"] {
     margin-bottom: 5rem
 }
@@ -190,7 +190,7 @@ h2,
         margin: .75rem;
         padding: .375rem
     }
-    #Expand-Collapse-Button {
+    #Show-Hide {
         padding: .81rem 1.62rem
     }
     .step {
@@ -225,7 +225,7 @@ h2,
     .description {
         margin: .33rem
     }
-    #Expand-Collapse-Button {
+    #Show-Hide {
         padding: .93rem 1.73rem
     }
     .step {
@@ -257,7 +257,7 @@ h2,
     .description {
         margin: .6rem
     }
-    #Expand-Collapse-Button {
+    #Show-Hide {
         padding: .88rem 1.65rem
     }
     .step {
@@ -290,7 +290,7 @@ h2,
     .description {
         margin: .54rem
     }
-    #Expand-Collapse-Button {
+    #Show-Hide {
         padding: .87rem 1.63rem
     }
     .step {
@@ -323,7 +323,7 @@ h2,
         margin: .5rem;
         padding: .75rem
     }
-    #Expand-Collapse-Button {
+    #Show-Hide {
         padding: .9rem 1.7rem
     }
     .step {
@@ -338,7 +338,7 @@ h2,
     .dark-theme [class^="step"]:not(.step-content, .step-description) {
         border: 3px solid var(--color-secondary)
     }
-    .dark-theme #Expand-Collapse-Button {
+    .dark-theme #Show-Hide {
         border: 0.5px solid var(--color-secondary)
     }
 }
