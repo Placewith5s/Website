@@ -1,50 +1,47 @@
 'use strict';
 (function() {
-  class SearchFilter {
-    constructor(searchInputId, contentAreaId) {
-      this.searchInput = document.getElementById(searchInputId);
-      this.contentArea = document.getElementById(contentAreaId);
-      this.notFoundMessage = null;
-      this.filterableElements = [];
-      this.initialize(); 
+document.addEventListener('DOMContentLoaded', () => {
+  class Search {
+    constructor(searchBarId, notFoundMessageId) {
+      this.searchBar = document.getElementById(searchBarId);
+      this.notFoundMessage = document.getElementById(notFoundMessageId);
+      this.notFoundMessage.style.display = "none";
+      this.notFoundMessage.setAttribute('aria-hidden', 'true');
+      this.searchBar.addEventListener("input", this.debounce(this.searchSections, 300), { passive: true });
     }
-    initialize = () => {
-      if (!this.searchInput || !this.contentArea) {
-        console.error('Error: Search input or content area not found.');
-        return;
+    searchSections = () => {
+      try {
+        const searchTerm = this.searchBar.value.trim().toLowerCase();
+        const faqSections = document.querySelectorAll("main details");
+        let matchesFound = false;
+        faqSections.forEach(section => {
+          const sectionText = section.textContent.toLowerCase();
+          const isMatch = sectionText.includes(searchTerm);
+          section.style.display = isMatch ? "block" : "none";
+          section.setAttribute('aria-hidden', !isMatch);
+          matchesFound ||= isMatch;
+        });
+        this.toggleNotFoundMessage(!matchesFound);
+      } catch (error) {
+        console.error('An error occurred while searching sections:', error);
       }
-      this.createNotFoundMessage();
-      this.setupSearchFiltering();
     };
-    createNotFoundMessage = () => {
-      this.notFoundMessage = document.createElement('p');
-      this.notFoundMessage.id = 'not-found-message';
-      this.notFoundMessage.textContent = 'No search results found.';
-      this.notFoundMessage.style.display = 'none';
-      this.contentArea.appendChild(this.notFoundMessage);
+    debounce = (func, delay) => {
+      let timeoutId;
+      return () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.call(this), delay); 
+      };
     };
-    setupSearchFiltering = () => {
-      this.searchInput.addEventListener('input', this.filterContent, { passive: true }); 
-      this.contentArea.setAttribute('aria-live', 'polite');
-      this.filterableElements = Array.from(this.contentArea.children).filter(
-        element => !['SCRIPT', 'STYLE'].includes(element.tagName)
-      );
-    };
-    filterContent = () => {
-      const searchTerm = this.searchInput.value.toLowerCase().trim();
-      let matchesFound = false;
-      this.filterableElements.forEach(element => {
-        const elementText = element.textContent.toLowerCase();
-        const isMatch = elementText.includes(searchTerm);
-        element.style.display = isMatch ? 'block' : 'none';
-        element.setAttribute('aria-hidden', !isMatch);
-        if (!element.hasAttribute('role')) {
-          element.setAttribute('role', 'region'); 
-        }
-        matchesFound = matchesFound || isMatch;
-      });
-      this.notFoundMessage.style.display = matchesFound ? 'none' : 'block';
+    toggleNotFoundMessage = (shouldShow) => {
+        this.notFoundMessage.style.display = shouldShow ? "block" : "none";
+        this.notFoundMessage.setAttribute('aria-hidden', !shouldShow);
+        this.notFoundMessage.setAttribute('aria-live', shouldShow ? 'polite' : 'off');
+        this.notFoundMessage.setAttribute('role', 'status'); 
+        this.notFoundMessage.setAttribute('aria-relevant', 'additions');
+        this.notFoundMessage.setAttribute('aria-atomic', 'true');
     };
   }
-  const searchFilter = new SearchFilter('search-input', 'content');
+  const search = new Search("search-bar", "not-found-message");
+});
 })();
