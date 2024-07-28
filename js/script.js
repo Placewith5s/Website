@@ -19,17 +19,10 @@ class MenuManager {
         };
     }
     initializeMenu() {
-        this.drawer.querySelectorAll('a').forEach(link => {
-            link.setAttribute('tabindex', '-1');
-        });
         this.menuIcon.addEventListener('click', () => {
             const isExpanded = this.drawer.classList.toggle('opened');
             this.drawer.setAttribute('aria-hidden', !isExpanded);
             this.menuIcon.setAttribute('aria-expanded', isExpanded);
-
-            this.drawer.querySelectorAll('a').forEach(link => {
-                link.setAttribute('tabindex', isExpanded ? '0' : '-1');
-            });
             this.handleScroll(); 
         }, {passive: true});
         this.drawer.addEventListener('click', this.handleDrawerClick, {passive: true});
@@ -39,7 +32,6 @@ class MenuManager {
         this.drawer.classList.remove('opened');
         this.drawer.setAttribute('aria-hidden', 'true');
         this.menuIcon.setAttribute('aria-expanded', 'false');
-        this.drawer.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', '-1'));
     }
 }
 const myMenuManager = new MenuManager('drawer', 'menuIcon');
