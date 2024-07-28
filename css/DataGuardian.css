@@ -54,6 +54,9 @@ button {
 #rejectAll:focus {
     filter: var(--filter-hover-settings)
 }
+a:focus, button:focus {
+    outline: 2.5px solid var(--accent);
+}
 label {
     margin-bottom: 5px
 }

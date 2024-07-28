@@ -38,9 +38,12 @@ a, button {
     text-decoration: none;
     transition: filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1), color 250ms cubic-bezier(0.39, 0.575, 0.565, 1)
 }
-a:hover, a:focus, button:hover, button:focus {
+a:hover, button:hover {
     filter: var(--filter-hover-settings);
     color: var(--accent)
+}
+a:focus, button:focus {
+    outline: 2.5px solid var(--accent);
 }
 a:active {
     filter: var(--filter-active-settings)
