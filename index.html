@@ -99,9 +99,9 @@
     </nav>
     <!-- Hamburger menu navigation (smaller screens) -->
     <button class="menu-icon" id="menuIcon" aria-haspopup="true" aria-label="Open Menu">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
     </button>
     <nav>
       <nav class="drawer" id="drawer">
@@ -112,7 +112,7 @@
       </nav>
     </nav>
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
-      <div class="loader"></div>
+      <span class="loader"></span>
     </div>
     <header>
       <h1>🚀 Boost Windows 10/11 Gaming FPS: Eliminate Lag, Optimize PC Performance</h1>
@@ -228,11 +228,11 @@
               <li>Click the Windows logo and type "startupApps".</li>
               <img src="/images/StartupAppsSearch.avif" alt="Windows Search for Startup Apps tool to manage startup applications" loading="lazy" fetchpriority="high">
               <figcaption class="step-description">
-                <span class="strong">Alternatively, type "task manager".</span>
+                <p class="strong">Alternatively, type "task manager".</p>
                 <img src="/images/TaskManagerSearch.avif" alt="Windows Search for Task Manager tool to manage startup applications" loading="lazy" fetchpriority="high">
               </figcaption>
               <figcaption class="step-description">
-                <span class="strong">Navigate to Startup Apps:</span>
+                <p class="strong">Navigate to Startup Apps:</p>
                 <img src="/images/NavigateStartupAppsTaskManager.avif" alt="Task Manager tool showing navigation to Startup Apps section" loading="lazy" fetchpriority="high">
               </figcaption>
               <li>
@@ -260,19 +260,25 @@
               <li>Navigate to:
                 <pre class="code">Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\be337238-0d82-4146-a960-4f3749d470c7</pre>
               </li>
-              <img src="/images/RegEditShowHiddenPowerSettingsLocation.avif" alt="Registry Editor tool location for hidden power settings" loading="lazy" fetchpriority="high">
-              <li>Set Attributes to 2:</li>
-              <img src="/images/RegEditAttributesTo2ToShow.avif" alt="Registry Editor tool setting attributes to show hidden power settings" loading="lazy" fetchpriority="high">
-              <li>Click Save.</li>
+              <figcaption>
+                <p>Set Attributes to 2:</p>
+                <img src="/images/RegEditShowHiddenPowerSettingsLocation.avif" alt="Registry Editor tool location for hidden power settings" loading="lazy" fetchpriority="high">
+              </figcaption>
+              <figcaption>
+                <img src="/images/RegEditAttributesTo2ToShow.avif" alt="Registry Editor tool setting attributes to show hidden power settings" loading="lazy" fetchpriority="high">
+                <p>Click Save.</p>
+              </figcaption>
             </ol>
             <h3>Optimize with Registry Editor (regedit)</h3>
             <ol class="spaced li">
-              <li>Navigate to:
+              <figcaption>Navigate to:
                 <pre class="code">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl</pre>
-              </li>
-              <img src="/images/RegEditWin32PrioritySeperationLocation.avif" alt="Registry Editor tool location for optimizing Win32PrioritySeperation" loading="lazy" fetchpriority="high">
-              <li>Click Win32PrioritySeperation and choose Decimal or Hexadecimal.</li>
-              <img src="/images/RegEditModificationOfWin32PrioritySeperation.avif" alt="Registry Editor tool modifying Win32PrioritySeperation for performance" loading="lazy" fetchpriority="high">
+                <img src="/images/RegEditWin32PrioritySeperationLocation.avif" alt="Registry Editor tool location for optimizing Win32PrioritySeperation" loading="lazy" fetchpriority="high">
+              </figcaption>
+              <figcaption>
+                Click Win32PrioritySeperation and choose Decimal or Hexadecimal.
+                <img src="/images/RegEditModificationOfWin32PrioritySeperation.avif" alt="Registry Editor tool modifying Win32PrioritySeperation for performance" loading="lazy" fetchpriority="high">
+              </figcaption>
               <li>Enter one of the following values:</li>
               <ul>
                 <li>
