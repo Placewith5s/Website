@@ -28,7 +28,7 @@ main {
     flex-grow: 1;
     border-radius: .67rem
 }
-#Cool-Websites span,
+#Cool-Websites .cool-start,
 .expand-all.active [id^="step-hidden-from-"] {
     display: block
 }
@@ -124,13 +124,13 @@ h1 {
     border-radius: .33rem
 }
 #Cool-Websites h2,
-#Cool-Websites span,
+#Cool-Websites .cool-start,
 h2,
 .code,
 .step-description {
     margin-bottom: .67rem
 }
-#Cool-Websites span {
+#Cool-Websites .cool-start {
     margin-bottom: 1.83rem
 }
 #Cool-Websites h2 {
@@ -173,18 +173,15 @@ h2,
     margin-bottom: 2.5rem
 }
 @media only screen and (min-width:320px) and (max-width:480px) {
-    #Step-by-Step-Guide a:hover::before {
-        transform: scaleX(0)
-    }
     #Cool-Websites {
-        padding: .75rem
+        padding: 1rem
     }
-    #Cool-Websites span {
+    #Cool-Websites .cool-start {
         padding: .8rem
     }
     #Cool-Websites a {
-        padding: .5rem 1.33rem;
-        margin: 1.185rem
+        padding: .55rem 2.5rem;
+        margin: 1.33rem
     }
     img:hover,
     img:active {
@@ -211,12 +208,12 @@ h2,
     #Cool-Websites {
         padding: 1.33rem
     }
-    #Cool-Websites span {
+    #Cool-Websites .cool-start {
         padding: 1rem
     }
     #Cool-Websites a {
-        padding: .5rem 2rem;
-        margin: 1.33rem
+        padding: .45rem 5.5rem;
+        margin: 1.5rem
     }
     #Cool-Websites a:hover,
     #Cool-Websites a:focus {
@@ -246,12 +243,12 @@ h2,
     #Cool-Websites {
         padding: 2.6rem
     }
-    #Cool-Websites span {
+    #Cool-Websites .cool-start {
         padding: 1.5rem
     }
     #Cool-Websites a {
-        padding: .5rem 9.5rem;
-        margin: 1.45rem
+        padding: .5rem 6rem;
+        margin: 1.55rem
     }
     #Cool-Websites a:hover,
     #Cool-Websites a:focus {
@@ -279,12 +276,12 @@ h2,
     #Cool-Websites {
         padding: 1.9rem
     }
-    #Cool-Websites span {
+    #Cool-Websites .cool-start {
         padding: 1.65rem
     }
     #Cool-Websites a {
-        padding: .6rem 6rem;
-        margin: 1.51rem
+        padding: .6rem 8rem;
+        margin: 1.75rem
     }
     #Cool-Websites a:hover,
     #Cool-Websites a:focus {
@@ -312,12 +309,12 @@ h2,
     #Cool-Websites {
         padding: 2.5rem
     }
-    #Cool-Websites span {
+    #Cool-Websites .cool-start {
         padding: 2rem
     }
     #Cool-Websites a {
-        padding: .6rem 11rem;
-        margin: 1.625rem
+        padding: .6rem 16rem;
+        margin: 2rem
     }
     #Cool-Websites a:hover,
     #Cool-Websites a:focus {

@@ -329,7 +329,7 @@
     </main>
     <section id="Cool-Websites" aria-labelledby="Cool-Websites-heading">
       <h2 id="Cool-Websites-heading">Discover More Tools to Supercharge Your PC</h2>
-      <p class="strong"> Ready to take your PC's performance to the next level? Check out these additional tools and utilities: </p>
+      <p class="strong cool-start"> Ready to take your PC's performance to the next level? Check out these additional tools and utilities: </p>
       <p class="bold" id="gpu-management">Optimize Your NVIDIA Graphics:</p>
       <a href="https://www.techpowerup.com/download/techpowerup-nvcleanstall/" target="_blank" rel="noopener noreferrer" aria-label="Download NVCleanstall (opens in a new tab)">Download NVCleanstall (opens in a new tab)</a>
       <p class="bold" id="windows-config">Fine-Tune Your Windows Experience:</p>
@@ -344,20 +344,37 @@
       <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/rammap" target="_blank" rel="noopener noreferrer" aria-label="Download Microsoft's RAM Map (opens in a new tab)">Download Microsoft's RAM Map (opens in a new tab)</a>
     </section>
     <footer>
-      <!-- Flaticon attribution -->
-      <a href=https://www.flaticon.com/free-icons/computer class="attribution" target="_blank" rel="noopener noreferrer" aria-label="Icons by Freepik - Flaticon">Icons by Freepik - Flaticon</a>
-      <nav class="nav-footer">
-        <a href="/html/aboutSoftware" aria-label="About Tools">About Tools</a>
-        <a href="/html/about" aria-label="About Us">About Us</a>
-        <a href="/html/cookiep" aria-label="Cookie Policy">Cookie Policy</a>
-        <a href="/html/privacyp" aria-label="Privacy Policy">Privacy Policy</a>
-      </nav>
-      <a href="#" id="manageCookies" class="bold" aria-label="Manage Cookies">Manage Cookies</a>
-      <p class="copyright">© 2023-<span id="year"></span> Placewith5s. All Rights Reserved. </p>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>About</h3>
+          <nav class="nav-footer-1">
+            <a href="/html/aboutSoftware" aria-label="About Tools">About Tools</a>
+            <a href="/html/about" aria-label="About Us">About Us</a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <h3>Policies</h3>
+          <nav class="nav-footer-2">
+            <a href="/html/cookiep" aria-label="Cookie Policy">Cookie Policy</a>
+            <a href="/html/privacyp" aria-label="Privacy Policy">Privacy Policy</a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <nav class="nav-footer-3">
+            <a href="/html/contactForm.html" aria-label="Contact Us">Contact Us</a>
+          </nav>
+          <h3>Manage Cookies</h3>
+          <nav class="nav-footer-4">
+            <a href="#" id="manageCookies" class="bold" aria-label="Cookie Preferences">Cookie Preferences</a>
+          </nav>
+        </div>
+      </div>
+      <p class="copyright">© 2023-<span id="year"></span> Placewith5s. All Rights Reserved.</p>
       <script>
         document.getElementById("year").textContent = new Date().getFullYear();
       </script>
-    </footer>
+    </footer>    
     <script src="/js/DataGuardian.js" defer></script>
     <script src="/js/animation.js" defer></script>
     <script src="/js/EclipseMode.js" defer></script>

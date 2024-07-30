@@ -287,15 +287,33 @@
       </div>
     </main>
     <footer>
-      <a href=https://www.flaticon.com/free-icons/computer class="attribution" target="_blank" rel="noopener noreferrer" aria-label="Icons by Freepik - Flaticon">Icons by Freepik - Flaticon</a>
-      <nav class="nav-footer">
-        <a href="/html/aboutSoftware" aria-label="About Tools">About Tools</a>
-        <a href="/html/about" aria-label="About Us">About Us</a>
-        <a href="/html/cookiep" aria-label="Cookie Policy">Cookie Policy</a>
-        <a href="/html/privacyp" aria-label="Privacy Policy">Privacy Policy</a>
-      </nav>
-      <a href="#" id="manageCookies" class="bold" aria-label="Manage Cookies">Manage Cookies</a>
-      <p class="copyright">© 2023-<span id="year"></span> Placewith5s. All Rights Reserved. </p>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>About</h3>
+          <nav class="nav-footer-1">
+            <a href="/html/aboutSoftware" aria-label="About Tools">About Tools</a>
+            <a href="/html/about" aria-label="About Us">About Us</a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <h3>Policies</h3>
+          <nav class="nav-footer-2">
+            <a href="/html/cookiep" aria-label="Cookie Policy">Cookie Policy</a>
+            <a href="/html/privacyp" aria-label="Privacy Policy">Privacy Policy</a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <nav class="nav-footer-3">
+            <a href="/html/contactForm.html" aria-label="Contact Us">Contact Us</a>
+          </nav>
+          <h3>Manage Cookies</h3>
+          <nav class="nav-footer-4">
+            <a href="#" id="manageCookies" class="bold" aria-label="Cookie Preferences">Cookie Preferences</a>
+          </nav>
+        </div>
+      </div>
+      <p class="copyright">© 2023-<span id="year"></span> Placewith5s. All Rights Reserved.</p>
       <script>
         document.getElementById("year").textContent = new Date().getFullYear();
       </script>
