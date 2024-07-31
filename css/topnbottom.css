@@ -32,6 +32,9 @@ html {
 .exclusive-nav a {
     display: flex
 }
+a {
+    scroll-behavior: smooth
+}
 a, button {
     cursor: pointer;
     text-decoration: none;

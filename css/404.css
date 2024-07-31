@@ -46,6 +46,7 @@ a {
     padding: .8rem 1.6rem;
     color: var(--color-secondary);
     border-radius: .5rem;
+    scroll-behavior: smooth
 }
 a, button {
     cursor: pointer;
