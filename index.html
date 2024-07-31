@@ -98,17 +98,17 @@
       <a href="/html/aboutSoftware" aria-label="About Tools">About Tools</a>
     </nav>
     <!-- Hamburger menu navigation (smaller screens) -->
-    <button class="menu-icon" id="menuIcon" aria-haspopup="true" aria-label="Open Menu">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </button>
+    <div class="menu-icon" id="menuIcon" role="menu" aria-haspopup="true" aria-label="Open Menu">
+      <span class="line" role="menuitem"></span>
+      <span class="line" role="menuitem"></span>
+      <span class="line" role="menuitem"></span>
+    </div>
     <nav>
       <nav class="drawer" id="drawer">
         <a href="/html/about" id="aboutUsLink" aria-label="About Us">About Us</a>
         <a href="/html/faq" id="faqLink" aria-label="FAQs">FAQs</a>
         <a href="/html/aboutSoftware" id="aboutSoftwareLink" aria-label="About Tools">About Tools</a>
-        <button id="hideDrawerBtn" aria-label="Hides the drawer">Hide</button>
+        <button id="hideDrawerBtn" aria-label="Hide">Hide</button>
       </nav>
     </nav>
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
@@ -127,15 +127,19 @@
       <div id="not-found-message">
         <p>No results found. Try another search?</p>
       </div>
-      <nav id="TOC">
+      <nav class="TOC">
         <h2>Table of Contents</h2>
+        <h3 id="start-subheading">Start</h3>
         <a href="#preparation" aria-label="Preparation">Preparation</a>
+        <h3 id="one-tool-for-everything-subheading">One Tool For Everything</h3>
         <a href="#step1-heading" aria-label="Run ChrisTitusTech's Tool">Run ChrisTitusTech's Tool</a>
         <a href="#step2-heading" aria-label="Optimize Your System with Tweaks (One Tool For Everything)">Optimize Your System with Tweaks (One Tool For Everything)</a>
         <a href="#step3-heading" aria-label="Resolve System Issues with Config: Your One-Stop Solution">Resolve System Issues with Config: Your One-Stop Solution</a>
-        <a href="#step4-hidden-heading" aria-label="Enhance System Performance with Hellzerg's Optimizer">Enhance System Performance with Hellzerg's Optimizer</a>
+        <h3 id="other-subheading">Other</h3>
+        <a href="#step4-heading" aria-label="Enhance System Performance with Hellzerg's Optimizer">Enhance System Performance with Hellzerg's Optimizer</a>
         <a href="#step5-hidden-heading" aria-label="Remove Bloatware & Optimize Privacy with WinPilot AI">Remove Bloatware & Optimize Privacy with WinPilot AI</a>
         <a href="#step6-hidden-heading" aria-label="Fine-Tune Power Management with ParkControl">Fine-Tune Power Management with ParkControl</a>
+        <h3 id="no-downloads-required-subheading">No Downloads Required</h3>
         <a href="#step7-hidden-heading" aria-label="Boost Startup Speed: Manage Startup Applications">Boost Startup Speed: Manage Startup Applications</a>
         <a href="#step8-hidden-heading" aria-label="Advanced Optimization (BACKUP FIRST!)">Advanced Optimization (BACKUP FIRST!)</a>
         <a href="#step9-hidden-heading" aria-label="Troubleshooting Your System">Troubleshooting Your System</a>
@@ -156,7 +160,7 @@
             </div>
           </div>
         </section>
-        <section id="Step-by-Step-Guide" aria-label="Step by step guide">
+        <section class="Step-by-Step-Guide" aria-label="Step by step guide">
           <div class="step1 anim" aria-labelledby="step1-heading">
             <h2 id="step1-heading">Step 1: Run ChrisTitusTech's Tool</h2>
             <div class="step-content">
@@ -340,7 +344,7 @@
       </section>
       </div>
     </main>
-    <section id="Cool-Websites" aria-labelledby="Cool-Websites-heading">
+    <section class="Cool-Websites" aria-labelledby="Cool-Websites-heading">
       <h2 id="Cool-Websites-heading">Discover More Tools to Supercharge Your PC</h2>
       <p class="strong cool-start"> Ready to take your PC's performance to the next level? Check out these additional tools and utilities: </p>
       <p class="bold" id="gpu-management">Optimize Your NVIDIA Graphics:</p>

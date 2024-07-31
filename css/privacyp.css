@@ -27,7 +27,7 @@ header h1::before {
     z-index: -1;
     border-radius: .55rem
 }
-.contact-link::after {
+a .contact-link::after {
     content: "";
     display: block;
     width: 100%;
@@ -36,6 +36,6 @@ header h1::before {
     transform: scaleX(0);
     transform-origin: 100% 50%
 }
-.cookie-page-link {
+a .cookie-page-link {
     text-decoration: none
 }

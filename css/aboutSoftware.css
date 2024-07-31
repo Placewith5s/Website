@@ -3,7 +3,7 @@ main {
     padding: 0;
     margin: 0
 }
-header {
+header h1 {
     text-align: center;
     padding: 1.4rem 0
 }
@@ -19,7 +19,7 @@ p:last-child,
 li:last-child {
     margin-bottom: 2.5rem
 }
-p:not(footer p, #cookie-banner p) {
+p {
     padding: 1rem;
     border-radius: .53rem
 }

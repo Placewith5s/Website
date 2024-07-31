@@ -26,14 +26,12 @@ main {
     max-width: 100%
 }
 html {
-    font-size: 16px
+    font-size: 16px;
+    scroll-behavior: smooth
 }
 .exclusive-nav,
 .exclusive-nav a {
     display: flex
-}
-a {
-    scroll-behavior: smooth
 }
 a, button {
     cursor: pointer;
@@ -108,7 +106,7 @@ a:active {
 .drawer a:focus {
     transform: translateX(10px)
 }
-#hideDrawerBtn {
+.drawer #hideDrawerBtn {
     background-color: var(--color-secondary);
     color: var(--text-secondary);
     border: none;
@@ -116,8 +114,8 @@ a:active {
     border-radius: 15px;
     transition: filter 300ms linear transform 300ms linear
 }
-#hideDrawerBtn:hover,
-#hideDrawerBtn:focus {
+.drawer #hideDrawerBtn:hover,
+.drawer #hideDrawerBtn:focus {
     transform: scale(0.9)
 }
 footer {
@@ -135,11 +133,11 @@ footer a + a {
     max-width: 100%;
     margin: 0 auto
 }
-.footer-column {
+.footer-container .footer-column {
     flex: 1;
     text-align: center
 }
-.footer-column h3 {
+.footer-container .footer-column h3 {
     color: var(--accent);
     margin-bottom: 1rem
 }
@@ -158,7 +156,7 @@ footer[class^="nav-footer-"] a {
 footer[class^="nav-footer-"] a:hover {
     color: var(--accent)
 }
-.copyright {
+footer .copyright {
     margin-top: 2rem;
     color: var(--text-primary);
 }
@@ -236,7 +234,7 @@ footer[class^="nav-footer-"] a:hover {
         color: var(--text-secondary);
         border: 1px solid var(--color-secondary);
     }
-    .dark-theme #hideDrawerBtn {
+    .dark-theme .drawer #hideDrawerBtn {
         background-color: var(--color-secondary);
         color: var(--text-secondary)
     }
@@ -244,7 +242,7 @@ footer[class^="nav-footer-"] a:hover {
         background-color: var(--color-primary);
         color: var(--text-primary)
     }
-    .dark-theme .footer-column h3 {
+    .dark-theme .footer-container .footer-column h3 {
         color: var(--accent)
     }
     .dark-theme footer[class^="nav-footer-"] a {
@@ -253,7 +251,7 @@ footer[class^="nav-footer-"] a:hover {
     .dark-theme footer[class^="nav-footer-"] a:hover {
         color: var(--accent)
     }
-    .dark-theme .copyright {
+    .dark-theme footer .copyright {
         color: var(--text-primary)
     }
 }

@@ -5,8 +5,7 @@ main {
 main {
     border-radius: 1.5rem
 }
-.last-updated,
-#last-updated-connection {
+.last-updated {
     margin-bottom: 4rem
 }
 section+section {

@@ -11,7 +11,7 @@ body {
     width: 80%;
     max-width: 500px
 }
-#search-bar {
+.search-container #search-bar {
     padding: 12px 16px;
     border: 2px solid var(--color-secondary);
     border-radius: 25px;
@@ -28,7 +28,17 @@ main {
     flex-grow: 1;
     border-radius: .67rem
 }
-#Cool-Websites .cool-start,
+.TOC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem
+}
+.TOC h3 {
+    border-bottom: 1px solid var(--color-secondary)
+}
+.Cool-Websites .cool-start,
 .expand-all.active div[id^="step-hidden-from-"] {
     display: block
 }
@@ -77,10 +87,10 @@ img {
         transition: none
     }
 }
-h1 {
+header h1 {
     border-bottom: 2px solid var(--color-secondary)
 }
-.description {
+header h1 .description {
     margin: .33rem;
     padding: 1rem
 }
@@ -96,13 +106,13 @@ h1 {
 .expand-all div[id^="step-hidden-from-5"] {
     margin-bottom: 5rem
 }
-#Step-by-Step-Guide div[class^="step4"] {
+.Step-by-Step-Guide div[class^="step4"] {
     margin-bottom: 10vh
 }
-#Step-by-Step-Guide a {
+.Step-by-Step-Guide a {
     position: relative
 }
-#Step-by-Step-Guide a::before {
+.Step-by-Step-Guide a::before {
     position: absolute;
     content: "";
     height: .13rem;
@@ -116,37 +126,37 @@ a[id^="tool-link-"] {
 a[id^="tool-link-"]:hover {
     transform: scale(1.05);
 }
-#Cool-Websites,
-#Cool-Websites a {
+.Cool-Websites,
+.Cool-Websites a {
     border-radius: .33rem
 }
-#Cool-Websites h2,
-#Cool-Websites .cool-start,
+.Cool-Websites h2,
+.Cool-Websites .cool-start,
 h2,
 .code,
 .step-description {
     margin-bottom: .67rem
 }
-#Cool-Websites .cool-start {
+.Cool-Websites .cool-start {
     margin-bottom: 1.83rem
 }
-#Cool-Websites h2 {
+.Cool-Websites h2 {
     padding-bottom: .33rem
 }
-#Cool-Websites a {
+.Cool-Websites a {
     margin: .67rem;
     display: inline-block;
     border: 2px solid var(--color-secondary)
 }
-#Cool-Websites a:hover,
-#Cool-Websites a:focus {
+.Cool-Websites a:hover,
+.Cool-Websites a:focus {
     transform: scale(1.05);
 }
 div[class^="step"] {
     padding: 1.5rem;
     border-radius: .67rem
 }
-#Step-by-Step-Guide div[class^="step"]:last-child:not([id^="step-hidden-from-"]) {
+.Step-by-Step-Guide div[class^="step"]:last-child:not([id^="step-hidden-from-"]) {
     margin-bottom: 0
 }
 div[class^="step"]:not(.step-content, .step-description) {
@@ -170,20 +180,14 @@ div[id^="step-hidden-from-"] {
     display: none;
     margin-bottom: 2.5rem
 }
-#TOC {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem
-}
 @media only screen and (min-width:320px) and (max-width:480px) {
-    #Cool-Websites {
+    .Cool-Websites {
         padding: 1rem
     }
-    #Cool-Websites .cool-start {
+    .Cool-Websites .cool-start {
         padding: .8rem
     }
-    #Cool-Websites a {
+    .Cool-Websites a {
         padding: .55rem 2.5rem;
         margin: 1.33rem
     }
@@ -191,10 +195,10 @@ div[id^="step-hidden-from-"] {
     img:active {
         transform: perspective(1000px) scale(1.1)
     }
-    h1 {
+    header h1 {
         padding: .89rem
     }
-    .description {
+    header h1 .description {
         margin: .75rem;
         padding: .375rem
     }
@@ -209,24 +213,24 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:481px) and (max-width:768px) {
-    #Cool-Websites {
+    .Cool-Websites {
         padding: 1.33rem
     }
-    #Cool-Websites .cool-start {
+    .Cool-Websites .cool-start {
         padding: 1rem
     }
-    #Cool-Websites a {
+    .Cool-Websites a {
         padding: .45rem 5.5rem;
         margin: 1.5rem
     }
-    #Cool-Websites a:hover,
-    #Cool-Websites a:focus {
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
         transform: scale(1.03)
     }
-    h1 {
+    header h1 {
         padding: .46rem
     }
-    .description,
+    header h1 .description,
     .step-content {
         padding: .67rem
     }
@@ -244,25 +248,25 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:769px) and (max-width:1024px) {
-    #Cool-Websites {
+    .Cool-Websites {
         padding: 2.6rem
     }
-    #Cool-Websites .cool-start {
+    .Cool-Websites .cool-start {
         padding: 1.5rem
     }
-    #Cool-Websites a {
+    .Cool-Websites a {
         padding: .5rem 6rem;
         margin: 1.55rem
     }
-    #Cool-Websites a:hover,
-    #Cool-Websites a:focus {
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
         transform: scale(1.02)
     }
-    h1,
-    .description {
+    header h1,
+    header h1 .description {
         padding: .7rem
     }
-    .description {
+    header h1 .description {
         margin: .6rem
     }
     #Show-Hide {
@@ -277,25 +281,25 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:1025px) and (max-width:1200px) {
-    #Cool-Websites {
+    .Cool-Websites {
         padding: 1.9rem
     }
-    #Cool-Websites .cool-start {
+    .Cool-Websites .cool-start {
         padding: 1.65rem
     }
-    #Cool-Websites a {
+    .Cool-Websites a {
         padding: .6rem 8rem;
         margin: 1.75rem
     }
-    #Cool-Websites a:hover,
-    #Cool-Websites a:focus {
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
         transform: scale(1.01)
     }
-    h1,
-    .description {
+    header h1,
+    header h1 .description {
         padding: .54rem
     }
-    .description {
+    header h1 .description {
         margin: .54rem
     }
     #Show-Hide {
@@ -310,24 +314,24 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:1201px) {
-    #Cool-Websites {
+    .Cool-Websites {
         padding: 2.5rem
     }
-    #Cool-Websites .cool-start {
+    .Cool-Websites .cool-start {
         padding: 2rem
     }
-    #Cool-Websites a {
+    .Cool-Websites a {
         padding: .6rem 16rem;
         margin: 2rem
     }
-    #Cool-Websites a:hover,
-    #Cool-Websites a:focus {
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
         transform: scale(1)
     }
-    h1 {
+    header h1 {
         padding: .65rem
     }
-    .description {
+    header h1 .description {
         margin: .5rem;
         padding: .75rem
     }
@@ -346,7 +350,13 @@ div[id^="step-hidden-from-"] {
     .dark-theme div[class^="step"]:not(.step-content, .step-description) {
         border: 3px solid var(--color-secondary)
     }
+    .dark-theme header h1 {
+        border-bottom: 2px solid var(--color-secondary)
+    }
     .dark-theme #Show-Hide {
         border: 0.5px solid var(--color-secondary)
+    }
+    .dark-theme .TOC h3 {
+        border-bottom: 1px solid var(--color-secondary)
     }
 }

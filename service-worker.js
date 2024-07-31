@@ -119,8 +119,6 @@
         '/icons/Policy.svg',
         '/icons/Cookies.svg',
         '/manifest.json',
-        '/robots.txt',
-        '/ads.txt',
         '/sitemap.xml',
     ];
     const serviceWorkerCache = new ServiceWorkerCache(CACHE_NAME, FILES_TO_CACHE);
