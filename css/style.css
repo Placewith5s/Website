@@ -1,3 +1,18 @@
+.strawpoll-embed {
+    height: 580px;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.strawpoll-embed iframe {
+    position: static;
+    visibility: visible;
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+}  
 body {
     display: flex;
     flex-direction: column;
@@ -132,7 +147,7 @@ a[id^="tool-link-"]:hover {
 }
 .Cool-Websites h2,
 .Cool-Websites .cool-start,
-h2,
+h3,
 .code,
 .step-description {
     margin-bottom: .67rem
