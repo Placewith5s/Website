@@ -1,11 +1,7 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-Disallow: /admin/
-Disallow: /private/
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
-Disallow: /cgi-bin/
+Disallow: /cgi-bin/  # Double-check for essential scripts here
 Disallow: /temp/
 Crawl-delay: 5
 Allow: /

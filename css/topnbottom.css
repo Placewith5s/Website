@@ -6,6 +6,10 @@
     --text-secondary: #f5f5f5;
     --filter-active-settings: opacity(0.55)
 }
+.last-updated {
+    text-align: center;
+    border: 1px solid var(--color-secondary)
+}
 *,
 *::after,
 *::before {
@@ -203,6 +207,9 @@ footer .copyright {
         --text-primary: #f5f5f5;
         --text-secondary: #444;
         --filter-active-settings: brightness(1.2)
+    }
+    .dark-theme .last-updated {
+        border: 1px solid var(--color-secondary)
     }
     .dark-theme *, .dark-theme *::before, 
     .dark-theme *::after {

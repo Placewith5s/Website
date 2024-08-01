@@ -112,14 +112,14 @@
                 });
         };
     }
-    const CACHE_NAME = 'placewith5s-v1';
+    const CACHE_NAME = 'placewith5s-v499';
     const FILES_TO_CACHE = [
         '/icons/Settings.png',
         '/icons/Settings.svg',
         '/icons/Policy.svg',
         '/icons/Cookies.svg',
         '/manifest.json',
-        '/sitemap.xml',
+        '/robots.txt'
     ];
     const serviceWorkerCache = new ServiceWorkerCache(CACHE_NAME, FILES_TO_CACHE);
     const eventHandlers = {
