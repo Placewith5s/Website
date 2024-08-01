@@ -1,0 +1,377 @@
+.strawpoll-embed {
+    height: 580px;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.strawpoll-embed iframe {
+    position: static;
+    visibility: visible;
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+}  
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 500px
+}
+.search-container #search-bar {
+    padding: 12px 16px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 25px;
+    width: 100%;
+}
+#not-found-message {
+    display: none;
+    padding: 1.33rem
+}
+#not-found-message p {
+    margin: 0
+}
+main {
+    flex-grow: 1;
+    border-radius: .67rem
+}
+.TOC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem
+}
+.TOC h3 {
+    border-bottom: 1px solid var(--color-secondary)
+}
+.Cool-Websites .cool-start,
+.expand-all.active div[id^="step-hidden-from-"] {
+    display: block
+}
+img {
+    height: auto;
+    vertical-align: middle;
+    max-width: 100%;
+    font-style: italic;
+    image-rendering: -webkit-optimize-contrast;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    object-fit: cover
+}
+@media (prefers-reduced-motion:no-preference) {
+    img {
+        transform: scale(.8);
+        opacity: .1;
+        animation: fade-in 1s linear forwards
+    }
+}
+@keyframes fade-in {
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+@supports (animation-timeline:view()) and (animation-range-start:entry) {
+    @media (prefers-reduced-motion: no-preference) {
+        img {
+            animation-timeline:view();
+            animation-range-start: entry
+        }
+    }
+}
+.anim {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1200ms cubic-bezier(0.4, 0, 0.27, 0.71), transform 1250ms cubic-bezier(0.4, 0, 0.27, 0.71)
+}
+.show {
+    opacity: 1;
+    transform: translateY(0)
+}
+@media (prefers-reduced-motion:reduce) {
+    .anim {
+        transition: none
+    }
+}
+header h1 {
+    border-bottom: 2px solid var(--color-secondary)
+}
+header h1 .description {
+    margin: .33rem;
+    padding: 1rem
+}
+.spaced li {
+    margin-bottom: 2rem
+}
+#Show-Hide {
+    border: none;
+    border-radius: .47rem;
+    border: 0.5px solid var(--color-secondary)
+}
+#Show-Hide,
+.expand-all div[id^="step-hidden-from-5"] {
+    margin-bottom: 5rem
+}
+.Step-by-Step-Guide div[class^="step4"] {
+    margin-bottom: 10vh
+}
+.Step-by-Step-Guide a {
+    position: relative
+}
+.Step-by-Step-Guide a::before {
+    position: absolute;
+    content: "";
+    height: .13rem;
+    bottom: 0;
+    left: 0
+}
+a[id^="tool-link-"] {
+    display: inline-block;
+    transition: transform 300ms ease-out
+}
+a[id^="tool-link-"]:hover {
+    transform: scale(1.05);
+}
+.Cool-Websites,
+.Cool-Websites a {
+    border-radius: .33rem
+}
+.Cool-Websites h2,
+.Cool-Websites .cool-start,
+h3,
+.code,
+.step-description {
+    margin-bottom: .67rem
+}
+.Cool-Websites .cool-start {
+    margin-bottom: 1.83rem
+}
+.Cool-Websites h2 {
+    padding-bottom: .33rem
+}
+.Cool-Websites a {
+    margin: .67rem;
+    display: inline-block;
+    border: 2px solid var(--color-secondary)
+}
+.Cool-Websites a:hover,
+.Cool-Websites a:focus {
+    transform: scale(1.05);
+}
+div[class^="step"] {
+    padding: 1.5rem;
+    border-radius: .67rem
+}
+.Step-by-Step-Guide div[class^="step"]:last-child:not([id^="step-hidden-from-"]) {
+    margin-bottom: 0
+}
+div[class^="step"]:not(.step-content, .step-description) {
+    margin-bottom: 13.33rem;
+    border: 3px solid var(--color-secondary)
+}
+.code {
+    border-radius: .33rem
+}
+.step-content,
+.step-description {
+    margin-bottom: 3.33rem
+}
+.step-content {
+    border-radius: .67rem
+}
+.step-description {
+    line-height: 1.5
+}
+div[id^="step-hidden-from-"] {
+    display: none;
+    margin-bottom: 2.5rem
+}
+@media only screen and (min-width:320px) and (max-width:480px) {
+    .Cool-Websites {
+        padding: 1rem
+    }
+    .Cool-Websites .cool-start {
+        padding: .8rem
+    }
+    .Cool-Websites a {
+        padding: .55rem 2.5rem;
+        margin: 1.33rem
+    }
+    img:hover,
+    img:active {
+        transform: perspective(1000px) scale(1.1)
+    }
+    header h1 {
+        padding: .89rem
+    }
+    header h1 .description {
+        margin: .75rem;
+        padding: .375rem
+    }
+    #Show-Hide {
+        padding: .81rem 1.62rem
+    }
+    .step {
+        margin: 1.11rem
+    }
+    .step-description {
+        padding: .375rem
+    }
+}
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .Cool-Websites {
+        padding: 1.33rem
+    }
+    .Cool-Websites .cool-start {
+        padding: 1rem
+    }
+    .Cool-Websites a {
+        padding: .45rem 5.5rem;
+        margin: 1.5rem
+    }
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
+        transform: scale(1.03)
+    }
+    header h1 {
+        padding: .46rem
+    }
+    header h1 .description,
+    .step-content {
+        padding: .67rem
+    }
+    .description {
+        margin: .33rem
+    }
+    #Show-Hide {
+        padding: .93rem 1.73rem
+    }
+    .step {
+        margin: 1rem
+    }
+    .step-description {
+        padding: .33rem
+    }
+}
+@media only screen and (min-width:769px) and (max-width:1024px) {
+    .Cool-Websites {
+        padding: 2.6rem
+    }
+    .Cool-Websites .cool-start {
+        padding: 1.5rem
+    }
+    .Cool-Websites a {
+        padding: .5rem 6rem;
+        margin: 1.55rem
+    }
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
+        transform: scale(1.02)
+    }
+    header h1,
+    header h1 .description {
+        padding: .7rem
+    }
+    header h1 .description {
+        margin: .6rem
+    }
+    #Show-Hide {
+        padding: .88rem 1.65rem
+    }
+    .step {
+        margin: 2.35rem
+    }
+    .step-content,
+    .step-description {
+        padding: .3rem
+    }
+}
+@media only screen and (min-width:1025px) and (max-width:1200px) {
+    .Cool-Websites {
+        padding: 1.9rem
+    }
+    .Cool-Websites .cool-start {
+        padding: 1.65rem
+    }
+    .Cool-Websites a {
+        padding: .6rem 8rem;
+        margin: 1.75rem
+    }
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
+        transform: scale(1.01)
+    }
+    header h1,
+    header h1 .description {
+        padding: .54rem
+    }
+    header h1 .description {
+        margin: .54rem
+    }
+    #Show-Hide {
+        padding: .87rem 1.63rem
+    }
+    .step {
+        margin: 2.163rem
+    }
+    .step-content,
+    .step-description {
+        padding: .27rem
+    }
+}
+@media only screen and (min-width:1201px) {
+    .Cool-Websites {
+        padding: 2.5rem
+    }
+    .Cool-Websites .cool-start {
+        padding: 2rem
+    }
+    .Cool-Websites a {
+        padding: .6rem 16rem;
+        margin: 2rem
+    }
+    .Cool-Websites a:hover,
+    .Cool-Websites a:focus {
+        transform: scale(1)
+    }
+    header h1 {
+        padding: .65rem
+    }
+    header h1 .description {
+        margin: .5rem;
+        padding: .75rem
+    }
+    #Show-Hide {
+        padding: .9rem 1.7rem
+    }
+    .step {
+        margin: 2rem
+    }
+    .step-content,
+    .step-description {
+        padding: .25rem
+    }
+}
+@media only screen and (prefers-color-scheme: dark) {
+    .dark-theme div[class^="step"]:not(.step-content, .step-description) {
+        border: 3px solid var(--color-secondary)
+    }
+    .dark-theme header h1 {
+        border-bottom: 2px solid var(--color-secondary)
+    }
+    .dark-theme #Show-Hide {
+        border: 0.5px solid var(--color-secondary)
+    }
+    .dark-theme .TOC h3 {
+        border-bottom: 1px solid var(--color-secondary)
+    }
+}
