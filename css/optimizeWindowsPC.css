@@ -21,6 +21,9 @@ body {
     text-align: center;
     border: 1px solid var(--color-secondary)
 }
+.last-updated, #TOC {
+    margin-bottom: 1.25rem
+}
 .search-container {
     display: flex;
     justify-content: center;
@@ -133,6 +136,9 @@ header h1 .description {
     height: .13rem;
     bottom: 0;
     left: 0
+}
+a[id^="tool-link-"], .step-content:first-child p {
+    margin-bottom: 2.25rem
 }
 a[id^="tool-link-"] {
     display: inline-block;
