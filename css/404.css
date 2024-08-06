@@ -1,8 +1,8 @@
 :root {
     --color-primary: #f5f5f5;
-    --color-secondary: #444;
-    --accent: #cc8400;
-    --text-primary: #444;
+    --color-secondary: #000;
+    --accent: #754900;
+    --text-primary: #000;
     --text-secondary: #f5f5f5;
     --filter-active-settings: opacity(0.55)
 }
@@ -11,16 +11,18 @@
 *::before {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     color: var(--text-primary);
     background-color: var(--color-primary)
 }
 body,
 main {
+    min-height: 100svh;
     min-height: 100vh;
     max-width: 100%
 }
 body {
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center
@@ -36,10 +38,7 @@ html {
     border-radius: .7rem;
     width: 100%
 }
-main {
-    z-index: 1
-}
-h1, p {
+header h1, p {
     margin-bottom: 1.4rem
 }
 a {

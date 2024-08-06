@@ -16,7 +16,10 @@
 body {
     display: flex;
     flex-direction: column;
-    margin: 0
+}
+.last-updated {
+    text-align: center;
+    border: 1px solid var(--color-secondary)
 }
 .search-container {
     display: flex;
@@ -35,9 +38,6 @@ body {
 #not-found-message {
     display: none;
     padding: 1.33rem
-}
-#not-found-message p {
-    margin: 0
 }
 main {
     flex-grow: 1;
@@ -362,6 +362,9 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (prefers-color-scheme: dark) {
+    .dark-theme .last-updated {
+        border: 1px solid var(--color-secondary)
+    }
     .dark-theme div[class^="step"]:not(.step-content, .step-description) {
         border: 3px solid var(--color-secondary)
     }

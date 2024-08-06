@@ -3,15 +3,21 @@ main {
     text-align: center
 }
 main {
-    border-radius: 1.5rem
-}
-.last-updated {
-    margin-bottom: 4rem
+    display: flex;
+    flex-direction: column
 }
 section+section {
     margin-bottom: 3rem
 }
-ul {
-    padding: 0;
-    list-style: none
+section h2, section p {
+    margin-top: 2rem
+}
+.last-updated {
+    text-align: center;
+    border: 1px solid var(--color-secondary)
+}
+@media only screen and (prefers-color-scheme: dark) {
+    .dark-theme .last-updated {
+        border: 1px solid var(--color-secondary)
+    }
 }
