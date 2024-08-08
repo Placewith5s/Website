@@ -36,6 +36,9 @@ html {
 .exclusive-nav a {
     display: flex
 }
+a:not(nav a) {
+    text-decoration: underline
+}
 a, button {
     cursor: pointer;
     text-decoration: none;
