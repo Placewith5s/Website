@@ -165,8 +165,9 @@ h3,
     padding-bottom: .33rem
 }
 .Cool-Websites a {
-    margin: .67rem;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    flex: 1;
     border: 2px solid var(--color-secondary)
 }
 .Cool-Websites a:hover,
@@ -202,14 +203,11 @@ div[id^="step-hidden-from-"] {
     margin-bottom: 2.5rem
 }
 @media only screen and (min-width:320px) and (max-width:480px) {
-    .Cool-Websites {
-        padding: 1rem
-    }
     .Cool-Websites .cool-start {
         padding: .8rem
     }
     .Cool-Websites a {
-        padding: .55rem 2.5rem;
+        padding: .55rem 0rem;
         margin: 1.33rem
     }
     img:hover,
@@ -234,14 +232,11 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:481px) and (max-width:768px) {
-    .Cool-Websites {
-        padding: 1.33rem
-    }
     .Cool-Websites .cool-start {
         padding: 1rem
     }
     .Cool-Websites a {
-        padding: .45rem 5.5rem;
+        padding: .45rem 0;
         margin: 1.5rem
     }
     .Cool-Websites a:hover,
@@ -269,14 +264,11 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:769px) and (max-width:1024px) {
-    .Cool-Websites {
-        padding: 2.6rem
-    }
     .Cool-Websites .cool-start {
         padding: 1.5rem
     }
     .Cool-Websites a {
-        padding: .5rem 6rem;
+        padding: .5rem 0;
         margin: 1.55rem
     }
     .Cool-Websites a:hover,
@@ -302,14 +294,11 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:1025px) and (max-width:1200px) {
-    .Cool-Websites {
-        padding: 1.9rem
-    }
     .Cool-Websites .cool-start {
         padding: 1.65rem
     }
     .Cool-Websites a {
-        padding: .6rem 8rem;
+        padding: .6rem 0;
         margin: 1.75rem
     }
     .Cool-Websites a:hover,
@@ -335,14 +324,11 @@ div[id^="step-hidden-from-"] {
     }
 }
 @media only screen and (min-width:1201px) {
-    .Cool-Websites {
-        padding: 2.5rem
-    }
     .Cool-Websites .cool-start {
         padding: 2rem
     }
     .Cool-Websites a {
-        padding: .6rem 16rem;
+        padding: .5rem 0;
         margin: 2rem
     }
     .Cool-Websites a:hover,
