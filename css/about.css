@@ -1,13 +1,9 @@
-body {
-    line-height: 1.8
-}
 header h1 {
     text-align: center;
     padding: 1.1rem 0
 }
 main {
     white-space: pre-line;
-    letter-spacing: .03125rem;
     & p {
         margin-bottom: 1.875rem
     }

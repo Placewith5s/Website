@@ -63,6 +63,9 @@ main {
     border-bottom: 1px solid var(--color-secondary);
     padding-bottom: 0.75rem
 }
+.TOC a {
+    text-decoration: underline
+}
 .Cool-Websites .cool-start,
 .expand-all.active div[id^="step-hidden-from-"] {
     display: block
@@ -122,17 +125,22 @@ header h1 .description {
 .spaced li {
     margin-bottom: 2rem
 }
+#Preparation, ul[class^="spaced"] {
+    margin-top: 2rem
+}
+.TOC, #Preparation {
+    margin-bottom: 3.25rem
+}
 #Show-Hide {
+    width: 10%;
+    height: 4.5rem;
     border: none;
     border-radius: .47rem;
     border: 0.5px solid var(--color-secondary)
 }
 #Show-Hide,
 .expand-all div[id^="step-hidden-from-5"] {
-    margin-bottom: 5rem
-}
-.Step-by-Step-Guide div[class^="step4"] {
-    margin-bottom: 10vh
+    margin-bottom: 6rem
 }
 .Step-by-Step-Guide a {
     position: relative
@@ -161,8 +169,7 @@ a[id^="tool-link-"]:hover {
 .Cool-Websites h2,
 .Cool-Websites .cool-start,
 h3,
-.code,
-.step-description {
+.code {
     margin-bottom: .67rem
 }
 .Cool-Websites .cool-start {
@@ -175,7 +182,7 @@ h3,
     display: flex;
     justify-content: center;
     flex: 1;
-    text-decoration: none; /* Keep */
+    text-decoration: none;
     border: 2px solid var(--color-secondary)
 }
 .Cool-Websites a:hover,
@@ -183,32 +190,26 @@ h3,
     transform: scale(1.05)
 }
 div[class^="step"] {
-    padding: 1.5rem;
+    padding: 0.7rem;
     border-radius: .67rem
 }
-.Step-by-Step-Guide div[class^="step"]:last-child:not([id^="step-hidden-from-"]) {
-    margin-bottom: 0
-}
-div[class^="step"]:not(.step-content, .step-description) {
-    margin-bottom: 13.33rem;
+div[class^="step"]:not(.step-content, .step-caption) {
     border: 3px solid var(--color-secondary)
 }
 .code {
     border-radius: .33rem
 }
-.step-content,
-.step-description {
-    margin-bottom: 3.33rem
-}
 .step-content {
     border-radius: .67rem
 }
-.step-description {
-    line-height: 1.5
+.step-caption + .step-caption {
+    padding-bottom: 1.75rem
 }
 div[id^="step-hidden-from-"] {
-    display: none;
-    margin-bottom: 2.5rem
+    display: none
+}
+div[id^="step-hidden-from-"]:not(.step-content, .step-caption, h2, h3, figcaption), div[class^="step"]:not(.step-content, .step-caption, h2, h3, figcaption) {
+    margin-bottom: 12.5rem
 }
 @media only screen and (min-width:320px) and (max-width:480px) {
     .Cool-Websites .cool-start {
@@ -218,24 +219,11 @@ div[id^="step-hidden-from-"] {
         padding: .55rem 0rem;
         margin: 1.33rem
     }
-    img:hover,
-    img:active {
-        transform: perspective(1000px) scale(1.1)
-    }
     header h1 {
         padding: .89rem
     }
     header h1 .description {
         margin: .75rem;
-        padding: .375rem
-    }
-    #Show-Hide {
-        padding: .81rem 1.62rem
-    }
-    .step {
-        margin: 1.11rem
-    }
-    .step-description {
         padding: .375rem
     }
 }
@@ -261,15 +249,6 @@ div[id^="step-hidden-from-"] {
     .description {
         margin: .33rem
     }
-    #Show-Hide {
-        padding: .93rem 1.73rem
-    }
-    .step {
-        margin: 1rem
-    }
-    .step-description {
-        padding: .33rem
-    }
 }
 @media only screen and (min-width:769px) and (max-width:1024px) {
     .Cool-Websites .cool-start {
@@ -289,16 +268,6 @@ div[id^="step-hidden-from-"] {
     }
     header h1 .description {
         margin: .6rem
-    }
-    #Show-Hide {
-        padding: .88rem 1.65rem
-    }
-    .step {
-        margin: 2.35rem
-    }
-    .step-content,
-    .step-description {
-        padding: .3rem
     }
 }
 @media only screen and (min-width:1025px) and (max-width:1200px) {
@@ -320,16 +289,6 @@ div[id^="step-hidden-from-"] {
     header h1 .description {
         margin: .54rem
     }
-    #Show-Hide {
-        padding: .87rem 1.63rem
-    }
-    .step {
-        margin: 2.163rem
-    }
-    .step-content,
-    .step-description {
-        padding: .27rem
-    }
 }
 @media only screen and (min-width:1201px) {
     .Cool-Websites .cool-start {
@@ -350,22 +309,12 @@ div[id^="step-hidden-from-"] {
         margin: .5rem;
         padding: .75rem
     }
-    #Show-Hide {
-        padding: .9rem 1.7rem
-    }
-    .step {
-        margin: 2rem
-    }
-    .step-content,
-    .step-description {
-        padding: .25rem
-    }
 }
 @media only screen and (prefers-color-scheme: dark) {
     .dark-theme .last-updated {
         border: 1px solid var(--color-secondary)
     }
-    .dark-theme div[class^="step"]:not(.step-content, .step-description) {
+    .dark-theme div[class^="step"]:not(.step-content, .step-caption) {
         border: 3px solid var(--color-secondary)
     }
     .dark-theme header h1 {
