@@ -88,27 +88,24 @@ header h1, .exclusive-nav {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    z-index: 2;
+    z-index: -2;
     border: 1px solid var(--color-secondary);
     border-radius: 4px;
     padding: 0.8rem;
-    backdrop-filter: blur(1rem);
-    cursor: pointer;
+    backdrop-filter: blur(1rem)
 }
 .menu-icon .line {
-    width: 1rem;
-    height: 0.25rem;
+    width: 0.9rem;
+    height: 0.15rem;
     background: var(--color-secondary);
-    margin: 0.33rem 0
+    margin: 0.35rem 0
 }
 .drawer {
-    position: absolute;
+    position: fixed;
     visibility: hidden;
     top: 2.5rem;
     right: 1rem;
     padding: 1rem;
-    background: var(--color-secondary);
-    color: var(--text-secondary);
     border: 1px solid var(--color-secondary);
     z-index: 1000;
     opacity: 0;
@@ -131,8 +128,6 @@ header h1, .exclusive-nav {
     transform: translateX(10px)
 }
 .drawer #hideDrawerBtn {
-    background-color: var(--color-secondary);
-    color: var(--text-secondary);
     border: none;
     padding: 1rem;
     border-radius: 15px;
@@ -231,7 +226,7 @@ footer .copyright {
         color: var(--accent)
     }
     .dark-theme a:focus, .dark-theme button:focus {
-        outline: 2.5px solid var(--accent);
+        outline: 2.5px solid var(--accent)
     }
     .dark-theme a:active {
         filter: var(--filter-active-settings)
@@ -245,16 +240,10 @@ footer .copyright {
     }
     .dark-theme .exclusive-nav {
         background-color: var(--color-primary);
-        color: var(--text-primary);
+        color: var(--text-primary)
     }
     .dark-theme .drawer {
-        background: var(--color-secondary);
-        color: var(--text-secondary);
-        border: 1px solid var(--color-secondary);
-    }
-    .dark-theme .drawer #hideDrawerBtn {
-        background-color: var(--color-secondary);
-        color: var(--text-secondary)
+        border: 1px solid var(--color-secondary)
     }
     .dark-theme footer {
         background-color: var(--color-primary);

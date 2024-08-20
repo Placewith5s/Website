@@ -1,13 +1,16 @@
-button {
-    cursor: pointer;
+:root {
+    --color-primary: #f5f5f5;
+    --color-secondary: #000;
+    --text-primary: #000;
+    --text-secondary: #f5f5f5
 }
 #consent-cookie-banner,
 #cookie-banner {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #f5f5f5;
+    background-color: var(--color-primary);
     margin: 0;
     padding: 0;
-    color: #000;
+    color: var(--text-primary);
     width: 100%;
     padding: 20px;
     position: fixed;
@@ -25,10 +28,12 @@ button {
     transform: translate(-50%, -50%);
     display: none
 }
+#consent-cookie-banner button, #cookie-banner button {
+    border: none
+}
 #acceptAll, #savePreferences {
     background-color: #015601;
-    color: #f5f5f5;
-    border: none;
+    color: var(--text-secondary);
     padding: 10px 20px;
     margin: 5px;
     border-radius: 5px;
@@ -36,46 +41,41 @@ button {
 }
 #rejectAll {
     background-color: #850c0c;
-    color: #f5f5f5;
-    border: none;
+    color: var(--text-secondary);
     padding: 10px 20px;
     margin: 5px;
     border-radius: 5px;
     transition: background-color 300ms ease
 }
-a:focus, button:focus {
-    outline: 2.5px solid var(--accent);
-}
-label {
+#cookie-banner label {
     margin-bottom: 5px
 }
-input[type="checkbox"] {
+#cookie-banner input[type="checkbox"] {
     margin-right: 10px
 }
 #showCookieSettings, #closeBanner {
-    color: #000;
-    border: none;
+    color: var(--text-primary)
 }
 #closeBanner {
     background: transparent;
-    float: right;
+    float: right
 }
 @media only screen and (prefers-color-scheme:dark) {
+    :root {
+        --color-primary: #444;
+        --color-secondary: #f5f5f5;
+        --text-primary: #f5f5f5;
+        --text-secondary: #444
+    }
     .dark-theme #consent-cookie-banner,
     .dark-theme #cookie-banner {
-        background-color: #444;
-        color: #f5f5f5
+        background-color: var(--color-primary);
+        color: var(--text-primary)
     }
     .dark-theme #acceptAll, #savePreferences {
-        background-color: #0f0;
-        color: #444
+        background-color: #0f0
     }
     .dark-theme #rejectAll {
-        color: #444;
-        background-color: #ffd1d1
-    }
-    .dark-theme #showCookieSettings, 
-    .dark-theme #closeBanner {
-        color: #f5f5f5
+        color: var(--text-primary)
     }
 }
