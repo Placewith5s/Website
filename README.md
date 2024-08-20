@@ -2,7 +2,7 @@
 
 ## About Placewith5s.com 
 
-The place to go, Placewith5s.com, has clear guides and tools to help you get the most out of your computer Windows.
+Have any inquiries on Placewith5s.com? We have clearly arranged guides and tools that will help you squeeze out the best from your computer Windows.
 
 ## Why Optimize Your Windows? 🎯
 * **Blazing Fast:** Eliminate slowdowns and bottlenecks for a more responsive system.
@@ -31,9 +31,5 @@ The place to go, Placewith5s.com, has clear guides and tools to help you get the
 ## Who Should Use Placewith5s.com? 👥
 * Casual users who want a faster, smoother Windows experience.
 * Gamers looking for maximum performance.
-* Professionals seeking to boost productivity. (maybe)
-* Anyone curious about customizing their Windows environment.
-
-## License 📄
-
-This project is licensed under the [LICENSE](LICENSE) file.
+* Professionals looking to enhance productivity. Maybe
+* Anyone interested in customizing their Windows environment.
