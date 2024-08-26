@@ -1,3 +1,15 @@
-(function(){"use strict";class SummaryElement{constructor(){this.element=document.querySelector("summary");this.element.setAttribute("aria-expanded","false");this.element.addEventListener("click",()=>{this.toggleExpanded()},{passive:!0})}
-toggleExpanded(){const isExpanded=this.element.getAttribute("aria-expanded")==="true";this.element.setAttribute("aria-expanded",!isExpanded)}}
-const summary=new SummaryElement()})()
+"use strict";
+class SummaryElement {
+  constructor() {
+    this.element = document.querySelector("summary");
+    this.element.setAttribute("aria-expanded", "false");
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (target.tagName === "SUMMARY") {
+        const isExpanded = target.getAttribute("aria-expanded") === "true";
+        target.setAttribute("aria-expanded", !isExpanded);
+      }
+    }, { passive: true });
+  }
+}
+const summary = new SummaryElement();

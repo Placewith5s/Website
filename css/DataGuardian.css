@@ -1,15 +1,13 @@
 :root {
     --color-primary: #f5f5f5;
     --color-secondary: #000;
+    --accent: #754900;
     --text-primary: #000;
     --text-secondary: #f5f5f5
 }
 #consent-cookie-banner,
 #cookie-banner {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--color-primary);
-    margin: 0;
-    padding: 0;
     color: var(--text-primary);
     width: 100%;
     padding: 20px;
@@ -29,23 +27,24 @@
     display: none
 }
 #consent-cookie-banner button, #cookie-banner button {
-    border: none
+    border: 1.5px solid var(--color-secondary);
+&:hover {
+    color: var(--accent)
+    }
 }
 #acceptAll, #savePreferences {
-    background-color: #015601;
-    color: var(--text-secondary);
     padding: 10px 20px;
     margin: 5px;
-    border-radius: 5px;
     transition: background-color 300ms ease
 }
 #rejectAll {
-    background-color: #850c0c;
     color: var(--text-secondary);
     padding: 10px 20px;
     margin: 5px;
-    border-radius: 5px;
     transition: background-color 300ms ease
+}
+#acceptAll, #savePreferences, #rejectAll {
+    border-radius: 5px
 }
 #cookie-banner label {
     margin-bottom: 5px
@@ -56,6 +55,9 @@
 #showCookieSettings, #closeBanner {
     color: var(--text-primary)
 }
+#showCookieSettings {
+    border: none
+}
 #closeBanner {
     background: transparent;
     float: right
@@ -64,16 +66,9 @@
     :root {
         --color-primary: #444;
         --color-secondary: #f5f5f5;
+        --accent: #FFD599;
         --text-primary: #f5f5f5;
         --text-secondary: #444
-    }
-    .dark-theme #consent-cookie-banner,
-    .dark-theme #cookie-banner {
-        background-color: var(--color-primary);
-        color: var(--text-primary)
-    }
-    .dark-theme #acceptAll, #savePreferences {
-        background-color: #0f0
     }
     .dark-theme #rejectAll {
         color: var(--text-primary)
