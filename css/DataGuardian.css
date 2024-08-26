@@ -38,7 +38,6 @@
     transition: background-color 300ms ease
 }
 #rejectAll {
-    color: var(--text-secondary);
     padding: 10px 20px;
     margin: 5px;
     transition: background-color 300ms ease
@@ -69,8 +68,5 @@
         --accent: #FFD599;
         --text-primary: #f5f5f5;
         --text-secondary: #444
-    }
-    .dark-theme #rejectAll {
-        color: var(--text-primary)
     }
 }
