@@ -76,7 +76,7 @@
             }
         }
     }
-    const stylesheets = ["/css/topnbottom.css"];
+    const stylesheets = ["/css/top-n-bottom.css"];
     const stylesheetLoaderInstance = new StylesheetLoader(stylesheets);
     stylesheetLoaderInstance.element.removeEventListener("load", stylesheetLoaderInstance);
     stylesheetLoaderInstance.element.removeEventListener("error", stylesheetLoaderInstance);
