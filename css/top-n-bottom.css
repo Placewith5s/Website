@@ -49,6 +49,12 @@ h3 {
     line-height: 1.1;
     letter-spacing: 0.05rem
 }
+.spaced {
+    margin-bottom: 2rem
+}
+li {
+    margin-bottom: 2.5rem
+}
 .exclusive-nav,
 .exclusive-nav a {
     display: flex
