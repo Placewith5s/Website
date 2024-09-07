@@ -217,7 +217,7 @@
             <h3 id="step4-heading">Step 4: Enhance Performance with Hellzerg's Optimizer</h3>
             <div class="step-content">
               <a href="https://github.com/hellzerg/optimizer/releases/" id="tool-link-2" target="_blank" rel="noopener noreferrer" aria-label="Download Optimizer from Github (opens in a new tab)">Download Optimizer from Github (opens in a new tab)</a>
-              <ol class="spaced li">
+              <ol>
                 <li>Explore the "General" and "Windows (10/11)" settings for a comprehensive overview.</li>
                 <li>Personalize your experience by adjusting these settings. We've provided recommendations, but feel free to customize based on your needs.</li>
                 <li>Click on each option's text for a detailed description before applying changes.</li>
@@ -260,24 +260,17 @@
         <div class="step7" id="step-hidden-from-7">
           <h3 id="step7-hidden-heading">Step 7: Boost Startup Speed: Manage System Startup Applications</h3>
           <div class="step-content">
-            <ol class="spaced li">
-              <li>Click the Windows logo and type "startupApps".</li>
+              <p>Click the Windows logo and type "startupApps".</p>
+              <figure>
               <img src="/images/StartupAppsSearch.avif" alt="Windows Search for Startup Apps tool to manage startup applications" loading="lazy" fetchpriority="high">
-              <figcaption class="step-caption">
-                <p class="strong">Alternatively, type "task manager".</p>
+                <figcaption class="strong">Alternatively, type "task manager".</figcaption>
                 <img src="/images/TaskManagerSearch.avif" alt="Windows Search for Task Manager tool to manage startup applications" loading="lazy" fetchpriority="high">
-              </figcaption>
-              <figcaption class="step-caption">
-                <p class="strong">Navigate to Startup Apps:</p>
+                <figcaption class="strong">Navigate to Startup Apps:</figcaption>
                 <img src="/images/NavigateStartupAppsTaskManager.avif" alt="Task Manager tool showing navigation to Startup Apps section" loading="lazy" fetchpriority="high">
-              </figcaption>
-              <li>
-                <span class="bold">Startup Apps for Windows Settings: </span> Toggle off any unused apps to streamline your startup process.
-              </li>
-              <li>
-                <span class="bold">Task Manager: </span> Right click > disable or enable unused/unnecessary apps (bloatware) that can slow up your booting times: <img src="/images/StartupAppsTaskManagerResult.avif" alt="Task Manager showing right-click options in Startup Apps section" loading="lazy" fetchpriority="high">
-              </li>
-            </ol>
+                <span class="bold">Startup Apps for Windows Settings: </span> <figcaption>Toggle off any unused apps to streamline your startup process.</figcaption>
+                <span class="bold">Task Manager: </span> <p>Right click > disable or enable unused/unnecessary apps (bloatware) that can slow up your booting times:</p>
+                <img src="/images/StartupAppsTaskManagerResult.avif" alt="Task Manager showing right-click options in Startup Apps section" loading="lazy" fetchpriority="high">
+              </figure>
           </div>
         </div>
         <div class="step8" id="step-hidden-from-8">
@@ -285,37 +278,32 @@
           </h3>
           <div class="step-content">
             <h3>Backup Your Registry</h3>
-            <ol class="spaced li">
-              <li>Click the Windows logo and type "regedit" (Registry Editor).</li>
+              <p>Click the Windows logo and type "regedit" (Registry Editor).</p>
+              <figure>
               <img src="/images/RegEditSearch.avif" alt="Windows Search for Registry Editor tool (regedit) to start registry backup" loading="lazy" fetchpriority="high">
-              <li>Go to File > Export to create a backup and save it.</li>
+              <figcaption>Go to File > Export to create a backup and save it.</figcaption>
               <img src="/images/RegEditExportNavigate.avif" alt="Registry Editor tool navigation for exporting registry backup" loading="lazy" fetchpriority="high">
-            </ol>
+            </figure>
             <h3>Show Hidden Power Plan Settings & Fix ParkControl</h3>
-            <ol class="spaced li">
-              <li>Navigate to:
+              <p>Navigate to:
                 <pre class="code">Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\be337238-0d82-4146-a960-4f3749d470c7</pre>
-              </li>
-              <figcaption>
+              </p>
+              <figure>
                 <p>Set Attributes to 2:</p>
                 <img src="/images/RegEditShowHiddenPowerSettingsLocation.avif" alt="Registry Editor tool location for hidden power settings" loading="lazy" fetchpriority="high">
-              </figcaption>
-              <figcaption>
                 <img src="/images/RegEditAttributesTo2ToShow.avif" alt="Registry Editor tool setting attributes to show hidden power settings" loading="lazy" fetchpriority="high">
-                <p>Click Save.</p>
-              </figcaption>
-            </ol>
+                <figcaption>Click Save.</figcaption>
+            </figure>
             <h3>Optimize with Registry Editor (regedit)</h3>
-            <ol class="spaced li">
-              <figcaption>Navigate to:
+            <ol>
+              <figure> <p>Navigate to:</p>
                 <pre class="code">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl</pre>
                 <img src="/images/RegEditWin32PrioritySeperationLocation.avif" alt="Registry Editor tool location for optimizing Win32PrioritySeperation" loading="lazy" fetchpriority="high">
-              </figcaption>
-              <figcaption>
-                Click Win32PrioritySeperation and choose Decimal or Hexadecimal.
+                <figcaption>Click Win32PrioritySeperation and choose Decimal or Hexadecimal.</figcaption>
                 <img src="/images/RegEditModificationOfWin32PrioritySeperation.avif" alt="Registry Editor tool modifying Win32PrioritySeperation for performance" loading="lazy" fetchpriority="high">
-              </figcaption>
+              </figure>
               <li>Enter one of the following values:</li>
+            </ol>
               <ul>
                 <li>
                   <span class="bold">Gaming:</span> Hex: 14, 15, 16, 18 | Dec: 20, 21, 22, 24
@@ -324,7 +312,6 @@
                   <span class="bold">Other:</span> Hex: 24, 25, 26, 2a, or 2 (default) | Dec: 36, 37, 38, 42, or 2
                 </li>
               </ul>
-            </ol>
             <p>For further Registry Editor optimization, refer to: <a href="https://www.tenforums.com/tutorials/94628-change-split-threshold-svchost-exe-windows-10-a" target="_blank" rel="noopener noreferrer" aria-label="How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)">How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)</a>
             </p>
           </div>
@@ -336,10 +323,10 @@
             <ul>
               <li>Check your manufacturer's website for driver updates.</li>
               <li>Keep your software updated.</li>
-              <figcaption>
-                <span class="bold">Use Chris Titus' One Tool For Everything to manage Windows updates securely:</span>
+              <figure>
+                <p class="bold">Use Chris Titus' One Tool For Everything to manage Windows updates securely:</p>
                 <img src="/images/OneToolForEverythingUpdatesSectionOnRecommendedWindowsUpdates.avif" alt="One Tool For Everything Updates section highlighting Recommended Security Updates" loading="lazy" fetchpriority="high">
-              </figcaption>
+              </figure>
             </ul>
             <h3>Additional Tools for Troubleshooting</h3>
             <ul>

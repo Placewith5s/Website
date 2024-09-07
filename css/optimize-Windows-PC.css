@@ -130,9 +130,6 @@ header h1 .description {
     margin: .33rem;
     padding: 1rem
 }
-.spaced li {
-    margin-bottom: 2rem
-}
 #Preparation, ul[class^="spaced"] {
     margin-top: 2rem
 }
@@ -201,7 +198,7 @@ div[class^="step"] {
     padding: 0.7rem;
     border-radius: .67rem
 }
-div[class^="step"]:not(.step-content, .step-caption) {
+div[class^="step"]:not(.step-content) {
     border: 3px solid var(--color-secondary)
 }
 .code {
@@ -210,13 +207,10 @@ div[class^="step"]:not(.step-content, .step-caption) {
 .step-content {
     border-radius: .67rem
 }
-.step-caption + .step-caption {
-    padding-bottom: 1.75rem
-}
 div[id^="step-hidden-from-"] {
     display: none
 }
-div[id^="step-hidden-from-"]:not(.step-content, .step-caption, h2, h3, figcaption), div[class^="step"]:not(.step-content, .step-caption, h2, h3, figcaption) {
+div[id^="step-hidden-from-"]:not(.step-content, h2, h3, figcaption), div[class^="step"]:not(.step-content, h2, h3, figcaption) {
     margin-bottom: 12.5rem
 }
 .exclusive-nav a[aria-current='page'] {
