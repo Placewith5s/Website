@@ -216,6 +216,9 @@ div[id^="step-hidden-from-"]:not(.step-content, h2, h3, figcaption), div[class^=
 li {
     list-style-type: none
 }
+.spaced {
+    margin-bottom: 2rem
+}
 .exclusive-nav a[aria-current='page'] {
     font-weight: 700;
     text-decoration: underline
