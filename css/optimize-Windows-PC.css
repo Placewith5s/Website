@@ -219,6 +219,10 @@ div[id^="step-hidden-from-"] {
 div[id^="step-hidden-from-"]:not(.step-content, .step-caption, h2, h3, figcaption), div[class^="step"]:not(.step-content, .step-caption, h2, h3, figcaption) {
     margin-bottom: 12.5rem
 }
+.exclusive-nav a[aria-current='page'] {
+    font-weight: 700;
+    text-decoration: underline
+}
 @media only screen and (min-width:320px) and (max-width:480px) {
     .Cool-Websites .cool-start {
         padding: .8rem
