@@ -1,6 +1,10 @@
-(function () {
+( () => {
     "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
     class CookieConsent {
+        static activationInfo() {
+            console.info("CookieConsent activated!");
+        }
         constructor() {
             this.cookieBanner = document.querySelector("#cookie-banner");
             this.showCookieSettingsButton = document.querySelector("#showCookieSettings");
@@ -14,14 +18,14 @@
             this.performanceCheckbox = document.querySelector("#performanceCheckbox");
             this.functionalityCheckbox = document.querySelector("#functionalityCheckbox");
             if (!this.cookieBanner || !this.showCookieSettingsButton || !this.savePreferencesButton || !this.closeBannerButton || !this.consentCookieBanner || !this.manageCookiesLink) {
-                console.error("Error: Missing required cookie elements.");
+                console.error("Missing required CookieConsent elements!");
                 return;
             }
             this.addEventListeners();
             this.loadCookiePreferences();
             this.updateBannerVisibility();
         }
-        addEventListeners() {
+        addEventListeners = () => {
             this.showCookieSettingsButton.addEventListener(
                 "click",
                 () => {
@@ -56,22 +60,22 @@
                 this.showCookieBanner();
             });
         }
-        showCookieBanner() {
+        showCookieBanner = () => {
             this.cookieBanner.style.display = "block";
         }
-        hideCookieBanner() {
+        hideCookieBanner = () => {
             this.cookieBanner.style.display = "none";
         }
-        hideConsentCookieBanner() {
+        hideConsentCookieBanner = () => {
             this.consentCookieBanner.style.display = "none";
         }
-        acceptOrRejectAll(acceptAll) {
+        acceptOrRejectAll = (acceptAll) => {
             const preferences = { essential: !0, performance: acceptAll, functionality: acceptAll };
             this.setCookies(preferences);
             localStorage.setItem("lastConsentTime", Date.now());
             localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
         }
-        saveCookiePreferences() {
+        saveCookiePreferences = () => {
             const preferences = { essential: !0, performance: this.performanceCheckbox.checked, functionality: this.functionalityCheckbox.checked };
             try {
                 localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
@@ -81,9 +85,9 @@
                 console.error("Error saving cookie preferences:", error.message);
             }
         }
-        setCookies(preferences) {
+        setCookies = (preferences) => {
             const expirationDate = new Date();
-            expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+            expirationDate.setMonth(expirationDate.getMonth() + 3);
             for (const [type, value] of Object.entries(preferences)) {
                 if (value) {
                     document.cookie = `${type}=true; expires=${expirationDate.toUTCString()}; path=/`;
@@ -92,7 +96,7 @@
                 }
             }
         }
-        getCookieExpiration(cookieName) {
+        getCookieExpiration = (cookieName) => {
             const cookies = document.cookie.split(";");
             for (const cookie of cookies) {
                 const trimmedCookie = cookie.trim();
@@ -110,7 +114,7 @@
             }
             return null;
         }
-        loadCookiePreferences() {
+        loadCookiePreferences = () => {
             try {
                 const preferences = JSON.parse(localStorage.getItem("cookiePreferences"));
                 if (preferences) {
@@ -124,7 +128,7 @@
                 console.error("Error loading cookie preferences:", error.message);
             }
         }
-        updateBannerVisibility() {
+        updateBannerVisibility = () => {
             const preferences = localStorage.getItem("cookiePreferences");
             if (preferences) {
                 this.consentCookieBanner.style.display = "none";
@@ -134,5 +138,13 @@
             }
         }
     }
-    document.addEventListener("DOMContentLoaded", () => new CookieConsent());
+    const cookieConsentInstance = new CookieConsent();
+    cookieConsentInstance.showCookieSettingsButton.removeEventListener("click", cookieConsentInstance);
+    cookieConsentInstance.acceptAllButton.removeEventListener("click", cookieConsentInstance);
+    cookieConsentInstance.rejectAllButton.removeEventListener("click", cookieConsentInstance);
+    cookieConsentInstance.savePreferencesButton.removeEventListener("click", cookieConsentInstance);
+    cookieConsentInstance.closeBannerButton.removeEventListener("click", cookieConsentInstance);
+    cookieConsentInstance.manageCookiesLink.removeEventListener("click", cookieConsentInstance);
+    CookieConsent.activationInfo();
+});
 })();

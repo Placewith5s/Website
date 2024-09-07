@@ -1,7 +1,10 @@
-(function () {
+( () => {
     "use strict";
     document.addEventListener("DOMContentLoaded", () => {
         class Search {
+            static activationInfo() {
+                console.info("Search activated!");
+            }
             constructor() {
                 this.searchBar = document.querySelector("#search-bar");
                 this.notFoundMessage = document.querySelector("#not-found-message");
@@ -9,9 +12,10 @@
                 this.notFoundMessage.setAttribute("aria-hidden", "true");
                 this.searchBar.addEventListener("input", this.debounce(this.searchSections, 300), { passive: true });
                 if (!this.searchBar || !this.notFoundMessage) {
-                    console.error("Error: Missing required search elements.");
+                    console.error("Missing required Search elements in the DOM!");
                     return;
                 }
+                this.searchSections();
             }
             searchSections = () => {
                 try {
@@ -46,6 +50,8 @@
                 this.notFoundMessage.setAttribute("aria-atomic", "true");
             };
         }
-        const search = new Search("search-bar", "not-found-message");
+        const searchInstance = new Search();
+        searchInstance.searchBar.removeEventListener("input", searchInstance);
+        Search.activationInfo();
     });
 })();

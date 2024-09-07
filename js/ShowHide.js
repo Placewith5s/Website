@@ -1,14 +1,23 @@
-(function () {
+( () => {
     "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
     class ExpandCollapse {
+      static activationInfo() {
+        console.info("ExpandCollapse activated!");
+    }
       constructor() {
-        this.expandCollapseButton = document.getElementById("Show-Hide");
+        this.expandCollapseButton = document.querySelector("#Show-Hide");
         this.isInitialClick = true;
+        if (!this.expandCollapseButton) {
+          console.error("Missing required ExpandCollapse elements in the DOM!");
+          return;
+        }
         if (this.expandCollapseButton) {
           this.expandCollapseButton.addEventListener("click", () => this.toggleElements(), { passive: true });
         } else {
           console.error("Show/Hide button not found.");
         }
+        this.toggleElements();
       }
       toggleElements = () => {
         try {
@@ -56,5 +65,7 @@
       };
     }
     const expandCollapseInstance = new ExpandCollapse();
-    expandCollapseInstance.expandCollapseButton.removeEventListener("click", expandCollapseInstance.toggleElements);
-  })();
+    expandCollapseInstance.expandCollapseButton.removeEventListener("click", expandCollapseInstance);
+    ExpandCollapse.activationInfo();
+});
+})();

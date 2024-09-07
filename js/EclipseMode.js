@@ -1,24 +1,28 @@
-(function () {
+( () => {
     "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
     class DarkModeModule {
+        static activationInfo() {
+            console.info("DarkModeModule activated!");
+        }
         constructor() {
             this.DARK_THEME_CLASS = "dark-theme";
         }
-        setDarkMode() {
+        setDarkMode = () => {
             try {
                 document.body.classList.add(this.DARK_THEME_CLASS);
             } catch (error) {
                 this.handleDarkModeError("An error occurred while setting dark mode:", error);
             }
         }
-        setLightMode() {
+        setLightMode = () => {
             try {
                 document.body.classList.remove(this.DARK_THEME_CLASS);
             } catch (error) {
                 this.handleDarkModeError("An error occurred while setting light mode:", error);
             }
         }
-        toggleDarkModeBasedOnPreference(prefersDarkMode) {
+        toggleDarkModeBasedOnPreference = (prefersDarkMode) => {
             prefersDarkMode ? this.setDarkMode() : this.setLightMode();
         }
         async checkAndSetDarkModePreference() {
@@ -37,13 +41,13 @@
                 this.handleDarkModeError("An error occurred while checking dark mode preference:", error);
             }
         }
-        handleDarkModeError(message, error) {
+        handleDarkModeError = (message, error) => {
             console.error(message, error);
         }
     }
-    const myDarkModeModule = new DarkModeModule();
+    const darkModeModuleInstance = new DarkModeModule();
     document.addEventListener("DOMContentLoaded", async function () {
-        await myDarkModeModule.checkAndSetDarkModePreference();
+        await darkModeModuleInstance.checkAndSetDarkModePreference();
     });
     function debounce(func, wait) {
         let timeout;
@@ -52,4 +56,6 @@
             timeout = setTimeout(() => func.apply(this, args), wait);
         };
     }
+    DarkModeModule.activationInfo();
+});
 })();

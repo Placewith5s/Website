@@ -1,6 +1,10 @@
-(function () {
+( () => {
     "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
     class AnimatedElement {
+        static activationInfo() {
+            console.info("AnimatedElement activated!");
+        }
         constructor(element, options = {}) {
             this.element = element;
             this.isVisible = !1;
@@ -16,12 +20,12 @@
             };
             this.initialize();
         }
-        initialize() {
+        initialize = () => {
             this.element.setAttribute("role", "presentation");
             this.debouncedShowAnimation = this.debounce(this.showAnimation, this.options.debounceDelay);
             this.createObservers();
         }
-        createObservers() {
+        createObservers = () => {
             this.appearObserver = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
@@ -45,7 +49,7 @@
             this.appearObserver.observe(this.element);
             this.disappearObserver.observe(this.element);
         }
-        debounce(func, delay) {
+        debounce = (func, delay) => {
             let timeoutId;
             return (...args) => {
                 clearTimeout(timeoutId);
@@ -55,4 +59,6 @@
     }
     const animatedElements = document.querySelectorAll(".anim");
     animatedElements.forEach((el) => new AnimatedElement(el));
+    AnimatedElement.activationInfo();
+});
 })();
