@@ -78,8 +78,8 @@
     }
     const stylesheets = ["/css/topnbottom.css"];
     const stylesheetLoaderInstance = new StylesheetLoader(stylesheets);
-    stylesheetLoaderInstance.removeEventListener("load", stylesheetLoaderInstance);
-    stylesheetLoaderInstance.removeEventListener("error", stylesheetLoaderInstance);
+    stylesheetLoaderInstance.element.removeEventListener("load", stylesheetLoaderInstance);
+    stylesheetLoaderInstance.element.removeEventListener("error", stylesheetLoaderInstance);
     StylesheetLoader.activationInfo();
     });
 })();
