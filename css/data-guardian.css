@@ -46,10 +46,20 @@
     border-radius: 5px
 }
 #cookie-banner label {
-    margin-bottom: 5px
+    margin-bottom: 5px;
+    display: block;
+    padding-left: 15px;
+    position: relative;
+}
+#cookie-banner label::before {
+    content: "•";
+    color: var(--text-primary);
+    position: absolute;
+    left: 0;
 }
 #cookie-banner input[type="checkbox"] {
-    margin-right: 10px
+    margin-right: 10px;
+    vertical-align: middle;
 }
 #showCookieSettings, #closeBanner {
     color: var(--text-primary)
