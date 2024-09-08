@@ -40,7 +40,7 @@ a .contact-link::after {
     transform: scaleX(0);
     transform-origin: 100% 50%
 }
-section h2, section p {
+section h3, section p {
     margin-top: 2rem
 }
 .last-updated {

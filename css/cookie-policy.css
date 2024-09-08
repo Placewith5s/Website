@@ -17,7 +17,7 @@ main {
 section+section {
     margin-bottom: 3rem
 }
-section h2, section p {
+section h3, section p {
     margin-top: 2rem
 }
 .last-updated {
