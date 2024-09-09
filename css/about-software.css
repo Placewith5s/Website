@@ -28,6 +28,11 @@ p {
 li:not(:last-child) {
     margin-bottom: 1.5rem
 }
+a {
+    display: flex;
+    margin-bottom: 1.5rem;
+    gap: 2.7rem
+}
 .exclusive-nav a[aria-current='page'] {
     font-weight: 700;
     text-decoration: underline

@@ -18,7 +18,6 @@
 }
 }
 const summaryElementInstance = new SummaryElement();
-summaryElementInstance.document.removeEventListener("click", summaryElementInstance);
 SummaryElement.activationInfo();
 });
 })();

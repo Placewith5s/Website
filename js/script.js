@@ -48,8 +48,6 @@
         }
     }
     const menuManagerInstance = new MenuManager();
-    menuManagerInstance.drawer.removeEventListener("click", menuManagerInstance);
-    menuManagerInstance.menuIcon.removeEventListener("click", menuManagerInstance);
     MenuManager.activationInfo();
 });
 })();

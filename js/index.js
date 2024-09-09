@@ -57,7 +57,6 @@
             };
         }
         const searchInstance = new Search();
-        searchInstance.searchBar.removeEventListener("input", searchInstance);
         Search.activationInfo();
     });
 })();

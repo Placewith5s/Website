@@ -47,6 +47,12 @@ section {
 summary, section {
     margin-top: 6rem
 }
+summary {
+    border: 2px solid var(--color-secondary)
+}
+summary, details {
+    margin-bottom: 1.5rem
+}
 @media only screen and (prefers-color-scheme: dark) {
     :root {
         --color-primary: #444;

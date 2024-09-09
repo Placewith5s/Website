@@ -22,8 +22,6 @@
                 return;
             }
             this.addEventListeners();
-            this.loadCookiePreferences();
-            this.updateBannerVisibility();
         }
         addEventListeners = () => {
             this.showCookieSettingsButton.addEventListener(
@@ -139,12 +137,12 @@
         }
     }
     const cookieConsentInstance = new CookieConsent();
-    cookieConsentInstance.showCookieSettingsButton.removeEventListener("click", cookieConsentInstance);
-    cookieConsentInstance.acceptAllButton.removeEventListener("click", cookieConsentInstance);
-    cookieConsentInstance.rejectAllButton.removeEventListener("click", cookieConsentInstance);
-    cookieConsentInstance.savePreferencesButton.removeEventListener("click", cookieConsentInstance);
-    cookieConsentInstance.closeBannerButton.removeEventListener("click", cookieConsentInstance);
-    cookieConsentInstance.manageCookiesLink.removeEventListener("click", cookieConsentInstance);
+    cookieConsentInstance.showCookieSettingsButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
+    cookieConsentInstance.acceptAllButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
+    cookieConsentInstance.rejectAllButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
+    cookieConsentInstance.savePreferencesButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
+    cookieConsentInstance.closeBannerButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
+    cookieConsentInstance.manageCookiesLink.removeEventListener("click", cookieConsentInstance.addEventListeners());
     CookieConsent.activationInfo();
 });
 })();

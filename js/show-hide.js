@@ -7,7 +7,7 @@
     }
       constructor() {
         this.expandCollapseButton = document.querySelector("#Show-Hide");
-        this.isInitialClick = false;
+        this.isInitialClick = true;
         if (!this.expandCollapseButton) {
           console.error("Missing required ExpandCollapse elements in the DOM!");
           return;
@@ -17,8 +17,15 @@
         } else {
           console.error("expandCollapseButton button not found.");
         }
-        this.toggleElements();
+        this.hideElementsByDefault();
       }
+            hideElementsByDefault = () => {
+              const hiddenElements = document.querySelectorAll('[id^="step-hidden-from-"]');
+              hiddenElements.forEach((element) => {
+                element.style.display = "none";
+                element.setAttribute("aria-hidden", "true");
+              });
+            };
       toggleElements = () => {
         try {
           const hiddenElements = document.querySelectorAll('[id^="step-hidden-from-"]');
@@ -65,7 +72,6 @@
       };
     }
     const expandCollapseInstance = new ExpandCollapse();
-    expandCollapseInstance.expandCollapseButton.removeEventListener("click", expandCollapseInstance);
     ExpandCollapse.activationInfo();
 });
 })();
