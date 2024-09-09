@@ -48,7 +48,6 @@ textarea:focus {
 }
 button[type="submit"] {
     padding: 15px 25px;
-    border: none;
     border-radius: 8px;
     transition: background-color 300ms
 }

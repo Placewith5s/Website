@@ -18,9 +18,9 @@
                     this.element.setAttribute("aria-hidden", isVisible ? null : "true");
                 }
             };
-            this.initialize();
+            this.init();
         }
-        initialize = () => {
+        init = () => {
             this.element.setAttribute("role", "presentation");
             this.debouncedShowAnimation = this.debounce(this.showAnimation, this.options.debounceDelay);
             this.createObservers();
@@ -50,13 +50,16 @@
             this.disappearObserver.observe(this.element);
         }
         debounce = (func, delay) => {
-            let timeoutId;
+            let timer;
             return (...args) => {
-                clearTimeout(timeoutId);
-                timeoutId = setTimeout(() => func(...args), delay);
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    func.apply(this, args);
+                }, delay);
             };
         }
     }
+    const animatedElementInstance = new AnimatedElement();
     const animatedElements = document.querySelectorAll(".anim");
     animatedElements.forEach((el) => new AnimatedElement(el));
     AnimatedElement.activationInfo();

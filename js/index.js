@@ -8,19 +8,23 @@
             constructor() {
                 this.searchBar = document.querySelector("#search-bar");
                 this.notFoundMessage = document.querySelector("#not-found-message");
-                this.notFoundMessage.style.display = "none";
-                this.notFoundMessage.setAttribute("aria-hidden", "true");
-                this.searchBar.addEventListener("input", this.debounce(this.searchSections, 300), { passive: true });
                 if (!this.searchBar || !this.notFoundMessage) {
                     console.error("Missing required Search elements in the DOM!");
                     return;
+                }
+                if (this.searchBar || this.notFoundMessage) {
+                    this.notFoundMessage.setAttribute("aria-hidden", "true");
+                    this.searchBar.addEventListener("input", this.debounce(this.searchSections, 300), { passive: true });
+                }
+                else {
+                    console.error("searchBar and/or notFoundMessage not found!");
                 }
                 this.searchSections();
             }
             searchSections = () => {
                 try {
                     const searchTerm = this.searchBar.value.trim().toLowerCase();
-                    const Sections = document.querySelectorAll(".search-section .step details");
+                    const Sections = document.querySelectorAll(".search-section");
                     let matchesFound = !1;
                     Sections.forEach((section) => {
                         const sectionText = section.textContent.toLowerCase();
@@ -35,10 +39,12 @@
                 }
             };
             debounce = (func, delay) => {
-                let timeoutId;
-                return () => {
-                    clearTimeout(timeoutId);
-                    timeoutId = setTimeout(() => func.call(this), delay);
+                let timer;
+                return (...args) => {
+                    clearTimeout(timer);
+                    timer = setTimeout(() => {
+                        func.apply(this, args); 
+                }, delay);
                 };
             };
             toggleNotFoundMessage = (shouldShow) => {

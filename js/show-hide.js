@@ -7,7 +7,7 @@
     }
       constructor() {
         this.expandCollapseButton = document.querySelector("#Show-Hide");
-        this.isInitialClick = true;
+        this.isInitialClick = false;
         if (!this.expandCollapseButton) {
           console.error("Missing required ExpandCollapse elements in the DOM!");
           return;
@@ -15,7 +15,7 @@
         if (this.expandCollapseButton) {
           this.expandCollapseButton.addEventListener("click", () => this.toggleElements(), { passive: true });
         } else {
-          console.error("Show/Hide button not found.");
+          console.error("expandCollapseButton button not found.");
         }
         this.toggleElements();
       }

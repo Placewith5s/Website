@@ -33,7 +33,7 @@
                     debouncedUpdate(darkModeMediaQuery.matches);
                     darkModeMediaQuery.addEventListener("change", (event) => {
                         debouncedUpdate(event.matches);
-                    }, { passive: true });
+                    });
                 } else {
                     console.error("matchMedia is not supported. Dark mode preference may not work.");
                 }
@@ -44,18 +44,20 @@
         handleDarkModeError = (message, error) => {
             console.error(message, error);
         }
+        debounce = (func, delay) => {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    func.apply(this, args);
+            }, delay);
+            }
+        }
     }
     const darkModeModuleInstance = new DarkModeModule();
     document.addEventListener("DOMContentLoaded", async function () {
         await darkModeModuleInstance.checkAndSetDarkModePreference();
     });
-    function debounce(func, wait) {
-        let timeout;
-        return function (...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, args), wait);
-        };
-    }
     DarkModeModule.activationInfo();
 });
 })();

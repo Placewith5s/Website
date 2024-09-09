@@ -12,8 +12,13 @@
                 console.error("Missing required MenuManager elements in the DOM!");
                 return;
             }
+            if (this.drawer || this.menuIcon) {
             this.drawer.setAttribute("aria-hidden", "true");
             this.menuIcon.setAttribute("aria-expanded", "false");
+            }
+            else {
+                console.error("drawer and/or menuIcon not found!");
+            }
             this.handleDrawerClick = (event) => {
                 const isLinkClick = event.target.tagName === "A";
                 if (isLinkClick || event.target.id === "hideDrawerBtn") {

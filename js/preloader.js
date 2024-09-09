@@ -1,6 +1,5 @@
-( () => {
-    "use strict";
-    document.addEventListener("DOMContentLoaded", () => {
+"use strict";
+document.addEventListener("DOMContentLoaded", () => {
     class StylesheetLoader {
         static activationInfo() {
             console.info("StylesheetLoader activated!");
@@ -16,12 +15,14 @@
             this.preloader.setAttribute("aria-valuenow", "0");
             this.body = document.querySelector("body");
             this.body.setAttribute("aria-busy", "true");
+            this.linkElements = {};
             this.loadStylesheets();
         }
         loadStylesheets = () => {
             this.stylesheets.forEach((stylesheet) => {
                 const link = this.createStyleLinkElement(stylesheet);
                 this.addListeners(link, stylesheet);
+                this.linkElements[stylesheet] = link;
                 document.head.appendChild(link);
             });
         }
@@ -34,8 +35,8 @@
         addListeners = (element, filename) => {
             try {
                 if (element) {
-                    element.addEventListener("load", () => this.handleLoad(filename), { passive: true });
-                    element.addEventListener("error", (error) => this.handleError(filename, error), { passive: true });
+                    element.addEventListener("load", () => this.handleLoad(filename));
+                    element.addEventListener("error", (error) => this.handleError(filename, error));
                 } else {
                     console.error(`${filename} link not found`);
                     this.removePreloader();
@@ -47,7 +48,7 @@
         }
         handleLoad = (filename) => {
             console.log(`${filename} loaded successfully.`);
-            this.loadedStyles[filename] = !0;
+            this.loadedStyles[filename] = true;
             const loadedCount = Object.keys(this.loadedStyles).length;
             this.preloader.setAttribute("aria-valuenow", loadedCount);
             this.checkCSSLoaded();
@@ -78,8 +79,12 @@
     }
     const stylesheets = ["/css/top-n-bottom.css"];
     const stylesheetLoaderInstance = new StylesheetLoader(stylesheets);
-    stylesheetLoaderInstance.element.removeEventListener("load", stylesheetLoaderInstance);
-    stylesheetLoaderInstance.element.removeEventListener("error", stylesheetLoaderInstance);
-    StylesheetLoader.activationInfo();
+    stylesheets.forEach((stylesheet) => {
+        const link = stylesheetLoaderInstance.linkElements[stylesheet];
+        if (link) {
+            link.removeEventListener("load", () => stylesheetLoaderInstance.handleLoad(stylesheet));
+            link.removeEventListener("error", () => stylesheetLoaderInstance.handleError(stylesheet));
+        }
     });
-})();
+    StylesheetLoader.activationInfo();
+});
