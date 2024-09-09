@@ -52,8 +52,14 @@ h3 {
 .spaced {
     margin-bottom: 2rem
 }
-li {
-    margin-bottom: 2.4rem
+li:first-child {
+    margin-top: 1.75rem
+}
+li[class^="bold"] {
+    list-style-type: none
+}
+li[class^="strong"] {
+    list-style-type: none
 }
 .exclusive-nav,
 .exclusive-nav a {

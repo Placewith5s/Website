@@ -53,6 +53,9 @@ summary {
 summary, details {
     margin-bottom: 1.5rem
 }
+summary:first-child {
+    margin-top: 1.75rem
+}
 @media only screen and (prefers-color-scheme: dark) {
     :root {
         --color-primary: #444;
