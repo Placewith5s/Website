@@ -109,7 +109,7 @@ header h1, .exclusive-nav {
     padding: 0.8rem;
     backdrop-filter: blur(1rem)
 }
-.menu-icon .line {
+.menu-icon #line {
     width: 0.9rem;
     height: 0.15rem;
     background: var(--color-secondary);
@@ -142,14 +142,14 @@ header h1, .exclusive-nav {
 .drawer a:focus {
     transform: translateX(10px)
 }
-.drawer #hideDrawerBtn {
+.drawer #hide-drawer-btn {
     border: none;
     padding: 1rem;
     border-radius: 15px;
     transition: filter 300ms linear transform 300ms linear
 }
-.drawer #hideDrawerBtn:hover,
-.drawer #hideDrawerBtn:focus {
+.drawer #hide-drawer-btn:hover,
+.drawer #hide-drawer-btn:focus {
     transform: scale(0.9)
 }
 footer {

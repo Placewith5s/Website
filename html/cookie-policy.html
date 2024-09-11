@@ -57,25 +57,25 @@
     <link rel="icon" type="image/svg+xml" href="/icons/Cookies.svg">
   </head>
   <body>
-    <div id="consent-cookie-banner" role="dialog" aria-modal="true" aria-labelledby="consent-cookie-banner-title">
-      <h2 id="consent-cookie-banner-title">Cookie Consent</h2>
+    <div id="consent-cookie-banner" role="dialog" aria-modal="true" aria-labelledby="consent-cookie-banner-heading">
+      <h2 id="consent-cookie-banner-heading">Cookie Consent</h2>
       <p> This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws. </p>
       <p> By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="https://www.placewith5s.com/html/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" aria-label="Learn More About Our Cookie Policy">Learn More About Our Cookie Policy</a>. </p>
-      <button id="showCookieSettings">Cookie Options</button>
-      <button id="acceptAll">Accept All Cookies</button>
-      <button id="rejectAll">Reject All Cookies</button>
+      <button id="show-cookie-settings-btn">Cookie Options</button>
+      <button id="accept-all-btn">Accept All Cookies</button>
+      <button id="reject-all-btn">Reject All Cookies</button>
     </div>
-    <div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title">
-      <h2 id="cookie-banner-title">Cookie Preferences</h2>
+    <div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-heading">
+      <h2 id="cookie-banner-heading">Cookie Preferences</h2>
       <p>This website uses cookies. Please choose your cookie preferences:</p>
-          <input type="checkbox" id="essentialCheckbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
-          <label for="essentialCheckbox">Essential: Required for basic site functions.</label>
-          <input type="checkbox" id="performanceCheckbox" aria-label="Performance: Helps us analyze site usage">
-          <label for="performanceCheckbox">Performance: Helps us analyze site usage.</label>
-          <input type="checkbox" id="functionalityCheckbox" aria-label="Functionality: Remembers your preferences">
-          <label for="functionalityCheckbox">Functionality: Remembers your preferences.</label>
-      <button id="savePreferences">Save Preferences</button>
-      <button id="closeBanner">Close</button>
+          <input type="checkbox" id="essential-checkbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
+          <label for="essential-checkbox">Essential: Required for basic site functions.</label>
+          <input type="checkbox" id="performance-checkbox" aria-label="Performance: Helps us analyze site usage">
+          <label for="performance-checkbox">Performance: Helps us analyze site usage.</label>
+          <input type="checkbox" id="functionality-checkbox" aria-label="Functionality: Remembers your preferences">
+          <label for="functionality-checkbox">Functionality: Remembers your preferences.</label>
+      <button id="save-preferences-btn">Save Preferences</button>
+      <button id="close-banner-btn">Close</button>
     </div>
     
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
@@ -90,18 +90,18 @@
         <a href="/html/optimize-Windows-PC" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
       </nav>
       
-      <button class="menu-icon" id="menuIcon" aria-haspopup="true" aria-label="Open Menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <button class="menu-icon" id="menu-icon" aria-haspopup="true" aria-label="Open Menu">
+        <div id="line"></div>
+        <div id="line"></div>
+        <div id="line"></div>
       </button>
       
       <nav class="drawer" id="drawer" role="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a href="/html/about-us" id="aboutUsLink" role="menuitem" aria-label="About Us" itemprop="name">About Us</a>
-        <a href="/html/faq" id="faqLink" role="menuitem" aria-label="FAQs" itemprop="name">FAQs</a>
-        <a href="/html/about-software" role="menuitem" id="aboutSoftwareLink" aria-label="About Tools" itemprop="name">About Tools</a>
-        <a href="/html/optimize-Windows-PC" id="optimizeWindowsPCLink" role="menuitem" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
-        <button id="hideDrawerBtn" aria-label="Hide">Hide</button>
+        <a href="/html/about-us" id="about-us-link" role="menuitem" aria-label="About Us" itemprop="name">About Us</a>
+        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs" itemprop="name">FAQs</a>
+        <a href="/html/about-software" role="menuitem" id="about-software-link" aria-label="About Tools" itemprop="name">About Tools</a>
+        <a href="/html/optimize-Windows-PC" id="optimize-Windows-PC-link" role="menuitem" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
+        <button id="hide-drawer-btn" aria-label="Hide">Hide</button>
       </nav>
       
       <h1 itemprop="headline">Cookie Policy | Placewith5s</h1>
@@ -109,9 +109,9 @@
     
     <main itemscope itemtype="https://schema.org/CreativeWork">
       <div class="last-updated" itemscope itemtype="https://schema.org/Date">
-        <p id="lastUpdatedText">Last Updated: <span id="lastUpdatedDate" itemprop="dateModified">Sep 09, 2024</span></p>
-        <time datetime="2024-09-09" title="Last Updated: Sep 09, 2024" itemprop="dateModified"></time>
-      </div>   
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date" itemprop="dateModified">Sep 11, 2024</span></p>
+        <time datetime="2024-09-11" title="Last Updated: Sep 11, 2024" itemprop="dateModified"></time>
+      </div>  
       
       <section aria-labelledby="your-privacy-matters-heading" itemscope itemtype="https://schema.org/Policy">
         <h3 id="your-privacy-matters-heading" itemprop="headline">Your Privacy Matters</h3>
@@ -175,7 +175,7 @@
           </nav>
           <h4>Manage Cookies</h4>
           <nav class="nav-footer-4">
-            <a href="#" id="manageCookies" class="bold" aria-label="Cookie Preferences" itemprop="url">Cookie Preferences</a>
+            <a href="#" id="manage-cookies-link" class="bold" aria-label="Cookie Preferences" itemprop="url">Cookie Preferences</a>
           </nav>
         </div>
       </div>
@@ -183,14 +183,11 @@
       <p class="copyright" itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Organization">
         © 2023-<span id="year"></span> <span itemprop="name">Placewith5s</span>. All Rights Reserved.
       </p>
-      
-      <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
     </footer>
     
     <script src="/js/data-guardian.js" defer></script>
     <script src="/js/eclipse-mode.js" defer></script>
     <script src="/js/script.js" defer></script>
+    <script src="/js/footer-fixer.js" defer></script>
   </body>
 </html>

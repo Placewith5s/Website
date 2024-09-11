@@ -7,7 +7,7 @@
         }
         constructor() {
             this.drawer = document.querySelector("#drawer");
-            this.menuIcon = document.querySelector("#menuIcon");
+            this.menuIcon = document.querySelector("#menu-icon");
             if (!this.drawer || !this.menuIcon) {
                 console.error("Missing required MenuManager elements in the DOM!");
                 return;
@@ -21,7 +21,7 @@
             }
             this.handleDrawerClick = (event) => {
                 const isLinkClick = event.target.tagName === "A";
-                if (isLinkClick || event.target.id === "hideDrawerBtn") {
+                if (isLinkClick || event.target.id === "hide-drawer-btn") {
                     this.closeDrawer();
                 }
             };
@@ -34,7 +34,7 @@
                 this.drawer.setAttribute("aria-hidden", !isExpanded);
                 this.menuIcon.setAttribute("aria-expanded", isExpanded);
                 } catch (err) {
-                    throw new err("menuIcon event failed!");
+                    throw new err("menu-icon event failed!");
                 }
                 },
                 { passive: true }

@@ -74,8 +74,8 @@ main {
 .TOC a {
     text-decoration: underline
 }
-.Cool-Websites .cool-start,
-.expand-all.active div[id^="step-hidden-from-"] {
+#cool-websites .cool-start,
+.expand-all.active section[id^="step-hidden-from-"] {
     display: block
 }
 img {
@@ -130,27 +130,27 @@ header h1 .description {
     margin: .33rem;
     padding: 1rem
 }
-#Preparation, ul[class^="spaced"] {
+#preparation-heading, ul[class^="spaced"] {
     margin-top: 2rem
 }
-.TOC, #Preparation {
+.TOC, #preparation-heading {
     margin-bottom: 3.25rem
 }
-#Show-Hide {
+#show-hide-btn {
     width: 10%;
     height: 4.5rem;
     border: none;
     border-radius: .47rem;
     border: 0.5px solid var(--color-secondary)
 }
-#Show-Hide,
+#show-hide-btn,
 .expand-all div[id^="step-hidden-from-5"] {
     margin-bottom: 6rem
 }
-.Step-by-Step-Guide a {
+.step-by-step-guide a {
     position: relative
 }
-.Step-by-Step-Guide a::before {
+.step-by-step-guide a::before {
     position: absolute;
     content: "";
     height: .13rem;
@@ -167,38 +167,38 @@ a[id^="tool-link-"] {
 a[id^="tool-link-"]:hover {
     transform: scale(1.05)
 }
-.Cool-Websites,
-.Cool-Websites a {
+#cool-websites,
+#cool-websites a {
     border-radius: .33rem
 }
-.Cool-Websites h2,
-.Cool-Websites .cool-start,
+#cool-websites h2,
+#cool-websites .cool-start,
 h3,
 .code {
     margin-bottom: .67rem
 }
-.Cool-Websites .cool-start {
+#cool-websites .cool-start {
     margin-bottom: 1.83rem
 }
-.Cool-Websites h2 {
+#cool-websites h2 {
     padding-bottom: .33rem
 }
-.Cool-Websites a {
+#cool-websites a {
     display: flex;
     justify-content: center;
     flex: 1;
     text-decoration: none;
     border: 2px solid var(--color-secondary)
 }
-.Cool-Websites a:hover,
-.Cool-Websites a:focus {
+#cool-websites a:hover,
+#cool-websites a:focus {
     transform: scale(1.05)
 }
-div[class^="step"] {
+section[class^="step"] {
     padding: 0.7rem;
     border-radius: .67rem
 }
-div[class^="step"]:not(.step-content) {
+section[class^="step"]:not(.step-content) {
     border: 3px solid var(--color-secondary)
 }
 .code {
@@ -207,11 +207,11 @@ div[class^="step"]:not(.step-content) {
 .step-content {
     border-radius: .67rem
 }
-div[id^="step-hidden-from-"] {
+section[id^="step-hidden-from-"] {
     display: none
 }
-div[id^="step-hidden-from-"]:not(.step-content, h2, h3, figcaption), div[class^="step"]:not(.step-content, h2, h3, figcaption) {
-    margin-bottom: 12.5rem
+section[id^="step-hidden-from-"]:not(.step-content, h2, h3, figure, figcaption), section[class^="step"]:not(.step-content, h2, h3, figure, figcaption) {
+    margin-bottom: 14.5rem
 }
 li {
     list-style-type: none
@@ -221,10 +221,10 @@ li {
     text-decoration: underline
 }
 @media only screen and (min-width:320px) and (max-width:480px) {
-    .Cool-Websites .cool-start {
+    #cool-websites .cool-start {
         padding: .8rem
     }
-    .Cool-Websites a {
+    #cool-websites a {
         padding: .55rem 0rem;
         margin: 1.33rem
     }
@@ -237,15 +237,15 @@ li {
     }
 }
 @media only screen and (min-width:481px) and (max-width:768px) {
-    .Cool-Websites .cool-start {
+    #cool-websites .cool-start {
         padding: 1rem
     }
-    .Cool-Websites a {
+    #cool-websites a {
         padding: .45rem 0;
         margin: 1.5rem
     }
-    .Cool-Websites a:hover,
-    .Cool-Websites a:focus {
+    #cool-websites a:hover,
+    #cool-websites a:focus {
         transform: scale(1.03)
     }
     header h1 {
@@ -260,15 +260,15 @@ li {
     }
 }
 @media only screen and (min-width:769px) and (max-width:1024px) {
-    .Cool-Websites .cool-start {
+    #cool-websites .cool-start {
         padding: 1.5rem
     }
-    .Cool-Websites a {
+    #cool-websites a {
         padding: .5rem 0;
         margin: 1.55rem
     }
-    .Cool-Websites a:hover,
-    .Cool-Websites a:focus {
+    #cool-websites a:hover,
+    #cool-websites a:focus {
         transform: scale(1.02)
     }
     header h1,
@@ -280,15 +280,15 @@ li {
     }
 }
 @media only screen and (min-width:1025px) and (max-width:1200px) {
-    .Cool-Websites .cool-start {
+    #cool-websites .cool-start {
         padding: 1.65rem
     }
-    .Cool-Websites a {
+    #cool-websites a {
         padding: .6rem 0;
         margin: 1.75rem
     }
-    .Cool-Websites a:hover,
-    .Cool-Websites a:focus {
+    #cool-websites a:hover,
+    #cool-websites a:focus {
         transform: scale(1.01)
     }
     header h1,
@@ -300,15 +300,15 @@ li {
     }
 }
 @media only screen and (min-width:1201px) {
-    .Cool-Websites .cool-start {
+    #cool-websites .cool-start {
         padding: 2rem
     }
-    .Cool-Websites a {
+    #cool-websites a {
         padding: .5rem 0;
         margin: 2rem
     }
-    .Cool-Websites a:hover,
-    .Cool-Websites a:focus {
+    #cool-websites a:hover,
+    #cool-websites a:focus {
         transform: scale(1)
     }
     header h1 {

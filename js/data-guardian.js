@@ -7,16 +7,16 @@
         }
         constructor() {
             this.cookieBanner = document.querySelector("#cookie-banner");
-            this.showCookieSettingsButton = document.querySelector("#showCookieSettings");
-            this.acceptAllButton = document.querySelector("#acceptAll");
-            this.rejectAllButton = document.querySelector("#rejectAll");
-            this.savePreferencesButton = document.querySelector("#savePreferences");
-            this.closeBannerButton = document.querySelector("#closeBanner");
+            this.showCookieSettingsButton = document.querySelector("#show-cookie-settings-btn");
+            this.acceptAllButton = document.querySelector("#accept-all-btn");
+            this.rejectAllButton = document.querySelector("#reject-all-btn");
+            this.savePreferencesButton = document.querySelector("#save-preferences-btn");
+            this.closeBannerButton = document.querySelector("#close-banner-btn");
             this.consentCookieBanner = document.querySelector("#consent-cookie-banner");
-            this.manageCookiesLink = document.querySelector("#manageCookies");
-            this.essentialCheckbox = document.querySelector("#essentialCheckbox");
-            this.performanceCheckbox = document.querySelector("#performanceCheckbox");
-            this.functionalityCheckbox = document.querySelector("#functionalityCheckbox");
+            this.manageCookiesLink = document.querySelector("#manage-cookies-link");
+            this.essentialCheckbox = document.querySelector("#essential-checkbox");
+            this.performanceCheckbox = document.querySelector("#performance-checkbox");
+            this.functionalityCheckbox = document.querySelector("#functionality-checkbox");
             if (!this.cookieBanner || !this.showCookieSettingsButton || !this.savePreferencesButton || !this.closeBannerButton || !this.consentCookieBanner || !this.manageCookiesLink) {
                 console.error("Missing required CookieConsent elements!");
                 return;

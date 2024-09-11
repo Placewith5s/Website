@@ -32,17 +32,17 @@
     color: var(--accent)
     }
 }
-#acceptAll, #savePreferences {
+#accept-all-btn, #save-preferences-btn {
     padding: 10px 20px;
     margin: 5px;
     transition: background-color 300ms ease
 }
-#rejectAll {
+#reject-all-btn {
     padding: 10px 20px;
     margin: 5px;
     transition: background-color 300ms ease
 }
-#acceptAll, #savePreferences, #rejectAll {
+#accept-all-btn, #save-preferences-btn, #reject-all-btn {
     border-radius: 5px
 }
 #cookie-banner label {
@@ -61,13 +61,13 @@
     margin-right: 10px;
     vertical-align: middle;
 }
-#showCookieSettings, #closeBanner {
+#show-cookie-settings-btn, #close-banner-btn {
     color: var(--text-primary)
 }
-#showCookieSettings {
+#show-cookie-settings-btn {
     border: none
 }
-#closeBanner {
+#close-banner-btn {
     background: transparent;
     float: right
 }

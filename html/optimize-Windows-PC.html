@@ -82,25 +82,25 @@
     <link rel="icon" type="image/svg+xml" href="/icons/Settings.svg">
   </head>
   <body>
-    <div id="consent-cookie-banner" role="dialog" aria-modal="true" aria-labelledby="consent-cookie-banner-title">
-      <h2 id="consent-cookie-banner-title">Cookie Consent</h2>
+    <div id="consent-cookie-banner" role="dialog" aria-modal="true" aria-labelledby="consent-cookie-banner-heading">
+      <h2 id="consent-cookie-banner-heading">Cookie Consent</h2>
       <p> This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws. </p>
       <p> By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="https://www.placewith5s.com/html/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" aria-label="Learn More About Our Cookie Policy">Learn More About Our Cookie Policy</a>. </p>
-      <button id="showCookieSettings">Cookie Options</button>
-      <button id="acceptAll">Accept All Cookies</button>
-      <button id="rejectAll">Reject All Cookies</button>
+      <button id="show-cookie-settings-btn">Cookie Options</button>
+      <button id="accept-all-btn">Accept All Cookies</button>
+      <button id="reject-all-btn">Reject All Cookies</button>
     </div>
-    <div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-title">
-      <h2 id="cookie-banner-title">Cookie Preferences</h2>
+    <div id="cookie-banner" role="dialog" aria-modal="true" aria-labelledby="cookie-banner-heading">
+      <h2 id="cookie-banner-heading">Cookie Preferences</h2>
       <p>This website uses cookies. Please choose your cookie preferences:</p>
-          <input type="checkbox" id="essentialCheckbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
-          <label for="essentialCheckbox">Essential: Required for basic site functions.</label>
-          <input type="checkbox" id="performanceCheckbox" aria-label="Performance: Helps us analyze site usage">
-          <label for="performanceCheckbox">Performance: Helps us analyze site usage.</label>
-          <input type="checkbox" id="functionalityCheckbox" aria-label="Functionality: Remembers your preferences">
-          <label for="functionalityCheckbox">Functionality: Remembers your preferences.</label>
-      <button id="savePreferences">Save Preferences</button>
-      <button id="closeBanner">Close</button>
+          <input type="checkbox" id="essential-checkbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
+          <label for="essential-checkbox">Essential: Required for basic site functions.</label>
+          <input type="checkbox" id="performance-checkbox" aria-label="Performance: Helps us analyze site usage">
+          <label for="performance-checkbox">Performance: Helps us analyze site usage.</label>
+          <input type="checkbox" id="functionality-checkbox" aria-label="Functionality: Remembers your preferences">
+          <label for="functionality-checkbox">Functionality: Remembers your preferences.</label>
+      <button id="save-preferences-btn">Save Preferences</button>
+      <button id="close-banner-btn">Close</button>
     </div>
     
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
@@ -114,18 +114,18 @@
         <a href="/html/optimize-Windows-PC" aria-current="page" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
       </nav>
       
-      <button class="menu-icon" id="menuIcon" aria-haspopup="true" aria-label="Open Menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+      <button class="menu-icon" id="menu-icon" aria-haspopup="true" aria-label="Open Menu">
+        <div id="line"></div>
+        <div id="line"></div>
+        <div id="line"></div>
       </button>
       
       <nav class="drawer" id="drawer" role="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a href="/html/about-us" id="aboutUsLink" role="menuitem" aria-label="About Us" itemprop="name">About Us</a>
-        <a href="/html/faq" id="faqLink" role="menuitem" aria-label="FAQs" itemprop="name">FAQs</a>
-        <a href="/html/about-software" role="menuitem" id="aboutSoftwareLink" aria-label="About Tools" itemprop="name">About Tools</a>
-        <a href="/html/optimize-Windows-PC" id="optimizeWindowsPCLink" role="menuitem" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
-        <button id="hideDrawerBtn" aria-label="Hide">Hide</button>
+        <a href="/html/about-us" id="about-us-link" role="menuitem" aria-label="About Us" itemprop="name">About Us</a>
+        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs" itemprop="name">FAQs</a>
+        <a href="/html/about-software" role="menuitem" id="about-software-link" aria-label="About Tools" itemprop="name">About Tools</a>
+        <a href="/html/optimize-Windows-PC" id="optimize-Windows-PC-link" role="menuitem" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
+        <button id="hide-drawer-btn" aria-label="Hide">Hide</button>
       </nav>
       
       <h1 itemprop="headline">Optimize Windows PC Performance with Free Tools</h1>
@@ -141,13 +141,14 @@
         <p>No results found. Try another search?</p>
       </div>
       <div class="last-updated" itemscope itemtype="https://schema.org/Date">
-        <p id="lastUpdatedText">Last Updated: <span id="lastUpdatedDate" itemprop="dateModified">Sep 09, 2024</span></p>
-        <time datetime="2024-09-09" title="Last Updated: Sep 09, 2024" itemprop="dateModified"></time>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date" itemprop="dateModified">Sep 11, 2024</span></p>
+        <time datetime="2024-09-11" title="Last Updated: Sep 11, 2024" itemprop="dateModified"></time>
+        
       </div>
       <nav class="TOC">
         <h2>Table of Contents</h2>
         <h3 id="start-subheading">Start</h3>
-        <a href="#preparation" aria-label="Preparation">Preparation</a>
+        <a href="#preparation-heading" aria-label="Preparation">Preparation</a>
         <h3 id="one-tool-for-everything-subheading">One Tool For Everything</h3>
         <a href="#step1-heading" aria-label="Run ChrisTitusTech's Tool">Run ChrisTitusTech's Tool</a>
         <a href="#step2-heading" aria-label="Optimize Your Windows PC with Tweaks (One Tool For Everything)">Optimize Your System with Tweaks (One Tool For Everything)</a>
@@ -155,10 +156,8 @@
         <h3 id="other-subheading">Other</h3>
         <a href="#step4-heading" aria-label="Enhance Performance with Hellzerg's Optimizer">Enhance Performance with Hellzerg's Optimizer</a>
       </nav>
-        <section aria-labelledby="preparation">
-          <div class="step">
-            <div class="step-content">
-              <h3 id="preparation">Preparation:</h3>
+        <section aria-labelledby="preparation-heading">
+              <h3 id="preparation-heading">Preparation:</h3>
               <ul>
                 <li class="strong spaced">Create a System Restore Point: This allows you to revert changes if needed. <a href="https://support.microsoft.com/en-us/windows/create-a-system-restore-point-77e02e2a-3298-c869-9974-ef5658ea3be9" target="_blank" rel="noopener noreferrer" aria-label="Create a sytem restore point (opens in a new tab)">Create a sytem restore point (opens in a new tab)</a>
                 </li>
@@ -166,11 +165,9 @@
                 <li class="spaced">Learn to Extract ZIPs: Some tools are compressed and need to be extracted. (right click on file/folder > Extract All)</li>
                   <li class="bold spaced">Tip: </li> <li class="spaced">Explore the settings shown in the images below to personalize your experience.</li>
               </ul>
-            </div>
-          </div>
         </section>
-        <section class="Step-by-Step-Guide" aria-label="Step by step guide">
-          <div class="step1 anim" aria-labelledby="step1-heading">
+        <div class="step-by-step-guide">
+          <section class="step1 anim" aria-labelledby="step1-heading">
             <h3 id="step1-heading">Step 1: Run ChrisTitusTech's Tool</h3>
             <div class="step-content">
               <a href="https://christitus.com/one-tool-for-everything/" id="tool-link-1" target="_blank" rel="noopener noreferrer" aria-label="Chris Titus' Website (opens in a new tab)">Chris Titus' Website (opens in a new tab)</a>
@@ -178,8 +175,8 @@
               <p>Open your PowerShell terminal (Windows logo on your keyboard > type powershell > Run as Administrator) and run the following command:</p>
               <pre class="code">irm christitus.com/win | iex</pre>
             </div>
-          </div>
-          <div class="step2" aria-labelledby="step2-heading">
+          </section>
+          <section class="step2" aria-labelledby="step2-heading">
             <h3 id="step2-heading">Step 2: Optimize Your Windows PC with Tweaks (One Tool For Everything)</h3>
             <div class="step-content">
               <p class="bold">Important: Make sure you've completed the <a href="#preparation" aria-label="Preparation section">Preparation section</a> first. </p>
@@ -193,15 +190,15 @@
               <p>Customize further by enabling or disabling specific features. Click "Run Tweaks" to initiate the process. You'll be able to monitor its progress directly in the PowerShell window.</p>
             </div>
           </figure>
-          </div>
-          <div class="step3" aria-labelledby="step3-heading">
+        </section>
+          <section class="step3" aria-labelledby="step3-heading">
             <h3 id="step3-heading">Step 3: Resolve Issues with Config: Your One-Stop Solution</h3>
             <div class="step-content">
               <p>Troubleshoot and fine-tune your settings easily. Click on "Config" (next to "Tweaks") to access the configuration options.</p>
               <img src="/images/OneToolForEverythingConfigForFixes.avif" alt="One Tool For Everything configuration menu for troubleshooting and customizing system settings for performance" loading="lazy" fetchpriority="high">
             </div>
-          </div>
-          <div class="step4" aria-labelledby="step4-heading">
+          </section>
+          <section class="step4" aria-labelledby="step4-heading">
             <h3 id="step4-heading">Step 4: Enhance Performance with Hellzerg's Optimizer</h3>
             <div class="step-content">
               <a href="https://github.com/hellzerg/optimizer/releases/" id="tool-link-2" target="_blank" rel="noopener noreferrer" aria-label="Download Optimizer from Github (opens in a new tab)">Download Optimizer from Github (opens in a new tab)</a>
@@ -218,18 +215,18 @@
               </figure>
               <p>Enable or disable features according to your preferences.</p>
             </div>
-          </div>
+          </section>
       <div class="expand-all">
-        <button id="Show-Hide" aria-expanded="false">Show More</button>
-        <div class="step5" id="step-hidden-from-5">
+        <button id="show-hide-btn" aria-expanded="false">Show More</button>
+        <section class="step5" id="step-hidden-from-5">
           <h3 id="step5-hidden-heading">Step 5: Remove Bloatware & Optimize Privacy with WinPilot AI</h3>
           <div class="step-content">
             <p>WinPilot is an intelligent AI tool designed to help you remove unnecessary applications and optimize privacy settings for a cleaner, more secure system.</p>
             <p>For more information: <a href="https://github.com/builtbybel/Winpilot/releases/" id="tool-link-3" target="_blank" rel="noopener noreferrer" aria-label="Download WinPilot from Github (opens in a new tab)">Download WinPilot from Github (opens in a new tab)</a>
             </p>
           </div>
-        </div>
-        <div class="step6" id="step-hidden-from-6">
+        </section>
+        <section class="step6" id="step-hidden-from-6">
           <h3 id="step6-hidden-heading">Step 6: Fine-Tune CPU Power Management with ParkControl</h3>
           <div class="step-content">
             <a href="https://bitsum.com/parkcontrol/" id="tool-link-4" target="_blank" rel="noopener noreferrer" aria-label="Download ParkControl from Bitsum (opens in a new tab)">Download ParkControl from Bitsum (opens in a new tab)</a>
@@ -238,8 +235,8 @@
             <img src="/images/ParkControlCPU.avif" alt="ParkControl tool showing CPU settings for high-performance power profile on laptop" loading="lazy" fetchpriority="high">
               <span class="bold">Tip:</span> <p>Enable "Show power plan change notifications" and "Show ParkControl settings in Windows Power Options" for easy access and monitoring.</p>
           </div>
-        </div>
-        <div class="step7" id="step-hidden-from-7">
+        </section>
+        <section class="step7" id="step-hidden-from-7">
           <h3 id="step7-hidden-heading">Step 7: Boost Startup Speed: Manage System Startup Applications</h3>
           <div class="step-content">
               <p>Click the Windows logo and type "startupApps".</p>
@@ -254,8 +251,8 @@
                 <img src="/images/StartupAppsTaskManagerResult.avif" alt="Task Manager showing right-click options in Startup Apps section" loading="lazy" fetchpriority="high">
               </figure>
           </div>
-        </div>
-        <div class="step8" id="step-hidden-from-8">
+        </section>
+        <section class="step8" id="step-hidden-from-8">
           <h3 id="step8-hidden-heading">Step 8: Advanced Optimization <span class="bold">(BACKUP FIRST!)</span>
           </h3>
           <div class="step-content">
@@ -293,8 +290,8 @@
             <p>For further Registry Editor optimization, refer to: <a href="https://www.tenforums.com/tutorials/94628-change-split-threshold-svchost-exe-windows-10-a" target="_blank" rel="noopener noreferrer" aria-label="How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)">How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)</a>
             </p>
           </div>
-        </div>
-        <div class="step9" id="step-hidden-from-9">
+        </section>
+        <section class="step9" id="step-hidden-from-9">
           <h3 id="step9-hidden-heading">Step 9: Troubleshooting Your Windows PC</h3>
           <div class="step-content">
             <h3>Keeping Everything Up-to-Date</h3>
@@ -315,7 +312,7 @@
                 <a href="https://www.revouninstaller.com/revo-uninstaller-free-download/" id="tool-link-5" target="_blank" rel="noopener noreferrer" aria-label="Download Revo Uninstaller (opens in a new tab)">Download Revo Uninstaller (opens in a new tab)</a>
                 <a href="https://www.resplendence.com/download/" id="tool-link-6" target="_blank" rel="noopener noreferrer" aria-label="Download WhoCrashed (opens in a new tab)">Download WhoCrashed (opens in a new tab)</a>
           </div>
-        </div>
+        </section>
       </div>
       <div class="strawpoll-embed" id="strawpoll_ajnE1NvOxnW">
         <iframe title="StrawPoll Embed" id="strawpoll_iframe_ajnE1NvOxnW" src="https://strawpoll.com/embed/ajnE1NvOxnW" frameborder="0" allowfullscreen allowtransparency>Loading...</iframe>
@@ -324,8 +321,8 @@
       </section>
       </div>
     </main>
-    <section class="Cool-Websites" aria-labelledby="Cool-Websites-heading">
-      <h2 id="Cool-Websites-heading">Discover More Tools to Supercharge Your PC</h2>
+    <section id="cool-websites" aria-labelledby="cool-websites-heading">
+      <h2 id="cool-websites-heading">Discover More Tools to Supercharge Your PC</h2>
       <p class="strong cool-start"> Ready to take your PC's performance to the next level? Check out these additional tools and utilities: </p>
       <p class="bold" id="gpu-management">Optimize Your NVIDIA Graphics:</p>
       <a href="https://www.techpowerup.com/download/techpowerup-nvcleanstall/" target="_blank" rel="noopener noreferrer" aria-label="Download NVCleanstall (opens in a new tab)">Download NVCleanstall (opens in a new tab)</a>
@@ -365,7 +362,7 @@
           </nav>
           <h4>Manage Cookies</h4>
           <nav class="nav-footer-4">
-            <a href="#" id="manageCookies" class="bold" aria-label="Cookie Preferences" itemprop="url">Cookie Preferences</a>
+            <a href="#" id="manage-cookies-link" class="bold" aria-label="Cookie Preferences" itemprop="url">Cookie Preferences</a>
           </nav>
         </div>
       </div>
@@ -373,10 +370,6 @@
       <p class="copyright" itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Organization">
         © 2023-<span id="year"></span> <span itemprop="name">Placewith5s</span>. All Rights Reserved.
       </p>
-      
-      <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-      </script>
     </footer>
         
     <script src="/js/data-guardian.js" defer></script>
@@ -385,5 +378,6 @@
     <script src="/js/script.js" defer></script>
     <script src="/js/show-hide.js" defer></script>
     <script src="/js/index.js" defer></script>
+    <script src="/js/footer-fixer.js" defer></script>
   </body>
 </html>

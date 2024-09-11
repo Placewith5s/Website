@@ -6,7 +6,7 @@
         console.info("ExpandCollapse activated!");
     }
       constructor() {
-        this.expandCollapseButton = document.querySelector("#Show-Hide");
+        this.expandCollapseButton = document.querySelector("#show-hide-btn");
         this.isInitialClick = true;
         if (!this.expandCollapseButton) {
           console.error("Missing required ExpandCollapse elements in the DOM!");
