@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.variable;
                 this.variable_final;
             }
+            else {
+                console.error("!");
+            }
             this.func();
         }
         func = () => {
