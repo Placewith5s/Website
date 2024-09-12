@@ -12,22 +12,22 @@
             try {
                 document.body.classList.add(this.DARK_THEME_CLASS);
             } catch (error) {
-                this.handleDarkModeError("An error occurred while setting dark mode:", error);
+                this.handleThemeError("An error occurred while setting dark mode:", error);
             }
         }
         setLightMode = () => {
             try {
                 document.body.classList.remove(this.DARK_THEME_CLASS);
             } catch (error) {
-                this.handleDarkModeError("An error occurred while setting light mode:", error);
+                this.handleThemeError("An error occurred while setting light mode:", error);
             }
         }
-        toggleDarkModeBasedOnPreference = (prefersDarkMode) => {
+        toggleThemeBasedOnPreference = (prefersDarkMode) => {
             prefersDarkMode ? this.setDarkMode() : this.setLightMode();
         }
-        async checkAndSetDarkModePreference() {
+        async checkAndSetThemePreference() {
             try {
-                const debouncedUpdate = debounce(this.toggleDarkModeBasedOnPreference, 100);
+                const debouncedUpdate = this.debounce(this.toggleThemeBasedOnPreference, 250);
                 if (window.matchMedia) {
                     const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
                     debouncedUpdate(darkModeMediaQuery.matches);
@@ -35,13 +35,13 @@
                         debouncedUpdate(event.matches);
                     });
                 } else {
-                    console.error("matchMedia is not supported. Dark mode preference may not work.");
+                    console.error("matchMedia is not supported. Theme preference may not work.");
                 }
             } catch (error) {
-                this.handleDarkModeError("An error occurred while checking dark mode preference:", error);
+                this.handleThemeError("An error occurred while checking theme preference:", error);
             }
         }
-        handleDarkModeError = (message, error) => {
+        handleThemeError = (message, error) => {
             console.error(message, error);
         }
         debounce = (func, delay) => {
@@ -55,9 +55,10 @@
         }
     }
     const darkModeModuleInstance = new DarkModeModule();
-    document.addEventListener("DOMContentLoaded", async function () {
-        await darkModeModuleInstance.checkAndSetDarkModePreference();
-    });
+    async function a() {
+        await darkModeModuleInstance.checkAndSetThemePreference();
+    }
+    a();
     DarkModeModule.activationInfo();
 });
 })();

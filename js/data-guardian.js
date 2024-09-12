@@ -58,14 +58,17 @@
                 this.showCookieBanner();
             });
         }
+        toggleBanner = (banner, show) => {
+            banner.style.display = show ? "block" : "none";
+        }
         showCookieBanner = () => {
-            this.cookieBanner.style.display = "block";
+            this.toggleBanner(this.cookieBanner, true);
         }
         hideCookieBanner = () => {
-            this.cookieBanner.style.display = "none";
+            this.toggleBanner(this.cookieBanner, false);
         }
         hideConsentCookieBanner = () => {
-            this.consentCookieBanner.style.display = "none";
+            this.toggleBanner(this.consentCookieBanner, false);
         }
         acceptOrRejectAll = (acceptAll) => {
             const preferences = { essential: !0, performance: acceptAll, functionality: acceptAll };
@@ -137,12 +140,9 @@
         }
     }
     const cookieConsentInstance = new CookieConsent();
-    cookieConsentInstance.showCookieSettingsButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
-    cookieConsentInstance.acceptAllButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
-    cookieConsentInstance.rejectAllButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
-    cookieConsentInstance.savePreferencesButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
-    cookieConsentInstance.closeBannerButton.removeEventListener("click", cookieConsentInstance.addEventListeners());
-    cookieConsentInstance.manageCookiesLink.removeEventListener("click", cookieConsentInstance.addEventListeners());
+    cookieConsentInstance.updateBannerVisibility();
+    cookieConsentInstance.loadCookiePreferences();
+    cookieConsentInstance.getCookieExpiration();
     CookieConsent.activationInfo();
 });
 })();

@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             if (this.year) {
-                this.variable;
-                this.variable_final;
+                this.variable = null;
+                this.variable_final = null;
             }
             else {
-                console.error("!");
+                console.warn("Footer!");
             }
             this.func();
         }
