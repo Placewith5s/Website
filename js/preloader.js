@@ -80,10 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const stylesheets = ["/css/top-n-bottom.css"];
     const stylesheetLoaderInstance = new StylesheetLoader(stylesheets);
     stylesheets.forEach((stylesheet) => {
-        const link = stylesheetLoaderInstance.linkElements[stylesheet];
-        if (link) {
-            link.removeEventListener("load", () => stylesheetLoaderInstance.handleLoad(stylesheet));
-            link.removeEventListener("error", () => stylesheetLoaderInstance.handleError(stylesheet));
+        const linkData = stylesheetLoaderInstance.linkElements[stylesheet];
+        if (linkData) {
+            linkData.removeEventListener("load", () => stylesheetLoaderInstance.handleLoad(stylesheet));
+            linkData.removeEventListener("error", () => stylesheetLoaderInstance.handleError(stylesheet));
         }
     });
     StylesheetLoader.activationInfo();
