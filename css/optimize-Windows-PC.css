@@ -213,9 +213,6 @@ section[id^="step-hidden-from-"] {
 section[id^="step-hidden-from-"]:not(.step-content, h2, h3, figure, figcaption), section[class^="step"]:not(.step-content, h2, h3, figure, figcaption) {
     margin-bottom: 14.5rem
 }
-li {
-    list-style-type: none
-}
 .exclusive-nav a[aria-current='page'] {
     font-weight: 700;
     text-decoration: underline

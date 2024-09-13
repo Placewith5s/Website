@@ -19,12 +19,6 @@
     color: var(--text-primary);
     background-color: var(--color-primary)
 }
-.bold {
-    font-weight: 700
-}
-.strong {
-    font-weight: bolder
-}
 body,
 main {
     min-height: 100svh;
@@ -49,21 +43,20 @@ h3 {
     line-height: 1.1;
     letter-spacing: 0.05rem
 }
-.spaced {
-    margin-bottom: 2rem
+.bold {
+    font-weight: 700
+}
+.strong {
+    font-weight: bolder
 }
 li:first-child {
     margin-top: 1.75rem
 }
-li[class^="bold"] {
-    list-style-type: none
+.spaced {
+    margin-bottom: 2rem
 }
-li[class^="strong"] {
+.no-list-style {
     list-style-type: none
-}
-.exclusive-nav,
-.exclusive-nav a {
-    display: flex
 }
 a:not(nav a) {
     text-decoration: underline
@@ -84,6 +77,10 @@ a:focus, button:focus {
 }
 a:active {
     filter: var(--filter-active-settings)
+}
+.exclusive-nav,
+.exclusive-nav a {
+    display: flex
 }
 header h1, .exclusive-nav {
     margin-bottom: 1.5rem
