@@ -163,12 +163,6 @@ a[id^="tool-link-"]:hover {
 #cool-websites a {
     border-radius: .33rem
 }
-#cool-websites h2,
-#cool-websites .cool-start,
-h3,
-.code {
-    margin-bottom: .67rem
-}
 #cool-websites .cool-start {
     margin-bottom: 1.83rem
 }
@@ -190,10 +184,8 @@ section[class^="step"] {
     padding: 0.7rem;
     border-radius: .67rem
 }
-section[class^="step"]:not(.step-content) {
-    border: 3px solid var(--color-secondary)
-}
 .code {
+    white-space: pre-wrap;
     border-radius: .33rem
 }
 .step-content {
@@ -210,6 +202,9 @@ section[id^="step-hidden-from-"]:not(.step-content, h2, h3, figure, figcaption),
     text-decoration: underline
 }
 @media only screen and (min-width:320px) and (max-width:480px) {
+    .code {
+        word-break: break-all
+    }
     #cool-websites .cool-start {
         padding: .8rem
     }
@@ -226,6 +221,9 @@ section[id^="step-hidden-from-"]:not(.step-content, h2, h3, figure, figcaption),
     }
 }
 @media only screen and (min-width:481px) and (max-width:768px) {
+    .code {
+        word-break: break-all
+    }
     #cool-websites .cool-start {
         padding: 1rem
     }
