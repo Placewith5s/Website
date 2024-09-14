@@ -43,6 +43,13 @@ h3 {
     line-height: 1.1;
     letter-spacing: 0.05rem
 }
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1.38rem;
+    border-radius: .55rem;
+    margin-top: 1.38rem
+}
 .bold {
     font-weight: 700
 }

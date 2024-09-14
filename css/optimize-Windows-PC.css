@@ -20,10 +20,6 @@
     display: block;
     width: 100%;
     flex-grow: 1
-}  
-body {
-    display: flex;
-    flex-direction: column
 }
 .last-updated {
     text-align: center;
@@ -49,10 +45,6 @@ body {
 #not-found-message {
     display: none;
     padding: 1.33rem
-}
-main {
-    flex-grow: 1;
-    border-radius: .67rem
 }
 .TOC {
     display: flex;

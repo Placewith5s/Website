@@ -6,11 +6,6 @@
     --text-secondary: #f5f5f5;
     --filter-active-settings: opacity(0.55)
 }
-main {
-    border-radius: .53rem;
-    padding: 1.33rem;
-    margin: 1.33rem auto
-}
 #not-found-message {
     display: none;
     padding: 1.33rem
