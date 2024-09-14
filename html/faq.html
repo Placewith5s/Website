@@ -169,10 +169,18 @@ Ensure compatibility: Double-check that the tool is compatible with your specifi
     </div>
     <header>
       <nav class="exclusive-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a href="/html/about-us" aria-label="About Us" itemprop="name">About Us</a>
-        <a href="/html/faq" aria-current="page" aria-label="FAQs" itemprop="name">FAQs</a>
-        <a href="/html/about-software" aria-label="About Tools" itemprop="name">About Tools</a>
-        <a href="/html/optimize-Windows-PC" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
+        <a href="/html/about-us" aria-label="About Us" itemprop="url">
+          <span itemprop="name">About Us</span>
+        </a>
+        <a href="/html/faq" aria-current="page" aria-label="FAQs" itemprop="url">
+          <span itemprop="name">FAQs</span>
+        </a>
+        <a href="/html/about-software" aria-label="About Tools" itemprop="url">
+          <span itemprop="name">About Tools</span>
+        </a>
+        <a href="/html/optimize-Windows-PC" aria-label="Optimize Windows PC" itemprop="url">
+          <span itemprop="name">Optimize Windows PC</span>
+        </a>
       </nav>
       
       <button class="menu-icon" id="menu-icon" aria-haspopup="true" aria-label="Open Menu">
@@ -180,16 +188,24 @@ Ensure compatibility: Double-check that the tool is compatible with your specifi
         <div id="line"></div>
         <div id="line"></div>
       </button>
-      
+    
       <nav class="drawer" id="drawer" role="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a href="/html/about-us" id="about-us-link" role="menuitem" aria-label="About Us" itemprop="name">About Us</a>
-        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs" itemprop="name">FAQs</a>
-        <a href="/html/about-software" role="menuitem" id="about-software-link" aria-label="About Tools" itemprop="name">About Tools</a>
-        <a href="/html/optimize-Windows-PC" id="optimize-Windows-PC-link" role="menuitem" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
+        <a href="/html/about-us" id="about-us-link" role="menuitem" aria-label="About Us" itemprop="url">
+          <span itemprop="name">About Us</span>
+        </a>
+        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs" itemprop="url">
+          <span itemprop="name">FAQs</span>
+        </a>
+        <a href="/html/about-software" role="menuitem" id="about-software-link" aria-label="About Tools" itemprop="url">
+          <span itemprop="name">About Tools</span>
+        </a>
+        <a href="/html/optimize-Windows-PC" id="optimize-Windows-PC-link" role="menuitem" aria-label="Optimize Windows PC" itemprop="url">
+          <span itemprop="name">Optimize Windows PC</span>
+        </a>
         <button id="hide-drawer-btn" aria-label="Hide">Hide</button>
       </nav>
       
-      <h1 id="faq" itemprop="headline">Frequently Asked Questions | Placewith5s</h1>
+      <h1 id="faq" itemscope itemtype="http://schema.org/WebPageElement" itemprop="headline">Frequently Asked Questions | Placewith5s</h1>
       <div class="search-container">
         <label for="search-bar" hidden>Search</label>
         <input type="text" id="search-bar" role="searchbox" aria-label="Search for content." aria-placeholder="Search FAQs..." placeholder="Search FAQs..." autocomplete="off" aria-autocomplete="none">
@@ -229,8 +245,8 @@ Ensure compatibility: Double-check that the tool is compatible with your specifi
       <section><span class="bold">General Optimization</span>
         <details>
           <summary aria-expanded="false">Why is my Windows PC running slow?</summary>
-          <p>A sluggish PC can be a major headache. Here are some possible culprits:</p>
-          <h3>Hardware Hurdles:</h3>
+          <p class="spaced-first-ones">A sluggish PC can be a major headache. Here are some possible culprits:</p>
+          <h3 class="spaced-first-ones">Hardware Hurdles:</h3>
           <ul>
             <li class="bold">Dust Bunnies:</li> <li class="no-list-style spaced">Over time, dust buildup can clog fans and vents, causing your PC to overheat and throttle performance. A quick cleaning might do the trick!</li>
             <li class="bold">Aging Hardware:</li> <li class="no-list-style spaced">If your PC is getting on in years, its components might not be able to keep up with newer software demands. Consider upgrading your RAM, storage, or even the processor if it's really old.</li>
@@ -297,6 +313,7 @@ Ensure compatibility: Double-check that the tool is compatible with your specifi
           <nav class="nav-footer-2">
             <a href="/html/cookie-policy" aria-label="Cookie Policy" itemprop="url">Cookie Policy</a>
             <a href="/html/privacy-policy" aria-label="Privacy Policy" itemprop="url">Privacy Policy</a>
+            <a href="/html/terms-of-service" aria-label="Terms of Service" itemprop="url">Terms of Service</a>
           </nav>
         </div>
         

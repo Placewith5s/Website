@@ -83,10 +83,18 @@
     
     <header>
       <nav class="exclusive-nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a href="/html/about-us" aria-current="page" aria-label="About Us" itemprop="name">About Us</a>
-        <a href="/html/faq" aria-label="FAQs" itemprop="name">FAQs</a>
-        <a href="/html/about-software" aria-label="About Tools" itemprop="name">About Tools</a>
-        <a href="/html/optimize-Windows-PC" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
+        <a href="/html/about-us" aria-current="page" aria-label="About Us" itemprop="url">
+          <span itemprop="name">About Us</span>
+        </a>
+        <a href="/html/faq" aria-label="FAQs" itemprop="url">
+          <span itemprop="name">FAQs</span>
+        </a>
+        <a href="/html/about-software" aria-label="About Tools" itemprop="url">
+          <span itemprop="name">About Tools</span>
+        </a>
+        <a href="/html/optimize-Windows-PC" aria-label="Optimize Windows PC" itemprop="url">
+          <span itemprop="name">Optimize Windows PC</span>
+        </a>
       </nav>
       
       <button class="menu-icon" id="menu-icon" aria-haspopup="true" aria-label="Open Menu">
@@ -94,25 +102,30 @@
         <div id="line"></div>
         <div id="line"></div>
       </button>
-      
+    
       <nav class="drawer" id="drawer" role="menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-        <a href="/html/about-us" id="about-us-link" role="menuitem" aria-label="About Us" itemprop="name">About Us</a>
-        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs" itemprop="name">FAQs</a>
-        <a href="/html/about-software" role="menuitem" id="about-software-link" aria-label="About Tools" itemprop="name">About Tools</a>
-        <a href="/html/optimize-Windows-PC" id="optimize-Windows-PC-link" role="menuitem" aria-label="Optimize Windows PC" itemprop="name">Optimize Windows PC</a>
+        <a href="/html/about-us" id="about-us-link" role="menuitem" aria-label="About Us" itemprop="url">
+          <span itemprop="name">About Us</span>
+        </a>
+        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs" itemprop="url">
+          <span itemprop="name">FAQs</span>
+        </a>
+        <a href="/html/about-software" role="menuitem" id="about-software-link" aria-label="About Tools" itemprop="url">
+          <span itemprop="name">About Tools</span>
+        </a>
+        <a href="/html/optimize-Windows-PC" id="optimize-Windows-PC-link" role="menuitem" aria-label="Optimize Windows PC" itemprop="url">
+          <span itemprop="name">Optimize Windows PC</span>
+        </a>
         <button id="hide-drawer-btn" aria-label="Hide">Hide</button>
       </nav>
 
-      <h1 itemprop="headline">About Us | Placewith5s</h1>
+      <h1 itemscope itemtype="http://schema.org/WebPageElement" itemprop="headline">About Us | Placewith5s</h1>
     </header>
     <main>
-      <h2>Welcome to Placewith5s! </h2>
-      <h2>Safely Speed Up Your PC in Minutes</h2>
-      <p>Is your Windows PC feeling slow? Don't worry, we've got you covered! Placewith5s provides easy-to-follow guides and expert advice to help you boost your PC's performance safely and quickly.</p>
     
       <section aria-labelledby="what-we-do">
-        <h3 id="what-we-do">What We Do:</h3>
-        <ul>
+        <h3 class="spaced-first-ones" id="what-we-do">What We Do:</h3>
+        <ul class="spaced-first-ones">
             <li class="bold">Create a Restore Point:</li> <li class="no-list-style spaced">Learn how to protect your system before making changes.</li>
             <li class="bold">Speed Boost:</li> <li class="no-list-style spaced">Discover simple tweaks and optimizations to improve your PC's performance.</li>
             <li class="bold">Easy Guides:</li> <li class="no-list-style spaced">Follow our step-by-step instructions to enhance your PC's speed.</li>
@@ -121,8 +134,8 @@
       </section>
     
       <section aria-labelledby="why-choose-us">
-        <h3 id="why-choose-us">Why Choose Us?</h3>
-        <ul>
+        <h3 class="spaced-first-ones" id="why-choose-us">Why Choose Us?</h3>
+        <ul class="spaced-first-ones">
             <li class="bold">Safety First:</li> <li class="no-list-style spaced">Learn how to make changes confidently without risking your system.</li>
             <li class="bold">Fast & Easy:</li> <li class="no-list-style spaced">Quickly improve your PC's performance with our simple guides.</li>
         </ul>
@@ -152,6 +165,7 @@
         <nav class="nav-footer-2">
           <a href="/html/cookie-policy" aria-label="Cookie Policy" itemprop="url">Cookie Policy</a>
           <a href="/html/privacy-policy" aria-label="Privacy Policy" itemprop="url">Privacy Policy</a>
+          <a href="/html/terms-of-service" aria-label="Terms of Service" itemprop="url">Terms of Service</a>
         </nav>
       </div>
       

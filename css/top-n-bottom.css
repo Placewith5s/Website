@@ -55,6 +55,9 @@ li:first-child {
 .spaced {
     margin-bottom: 2rem
 }
+.spaced-first-ones {
+    margin-top: 2rem
+}
 .no-list-style {
     list-style-type: none
 }

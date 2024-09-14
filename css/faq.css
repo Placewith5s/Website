@@ -15,10 +15,6 @@ main {
     display: none;
     padding: 1.33rem
 }
-header h1 {
-    text-align: center;
-    margin-bottom: 1.33rem
-}
 #search-bar {
     border: 2px solid #e0e0e0;
     margin-bottom: 1.33rem;
