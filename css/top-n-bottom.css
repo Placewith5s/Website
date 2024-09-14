@@ -44,6 +44,9 @@ h3 {
     line-height: 1.1;
     letter-spacing: 0.05rem
 }
+header h1 {
+    border-bottom: 2px solid var(--color-secondary)
+}
 main {
     display: flex;
     flex-direction: column;

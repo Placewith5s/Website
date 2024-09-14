@@ -115,28 +115,13 @@ img {
         transition: none
     }
 }
-header h1 {
-    border-bottom: 2px solid var(--color-secondary)
-}
-header h1 .description {
-    margin: .33rem;
-    padding: 1rem
-}
-#preparation-heading, ul[class^="spaced"] {
-    margin-top: 2rem
-}
-.TOC, #preparation-heading {
-    margin-bottom: 3.25rem
-}
 #show-hide-btn {
     width: 10%;
     height: 4.5rem;
-    border: none;
     border-radius: .47rem;
     border: 0.5px solid var(--color-secondary)
 }
-#show-hide-btn,
-.expand-all div[id^="step-hidden-from-5"] {
+.step-by-step-guide, .preparation-section {
     margin-bottom: 6rem
 }
 .step-by-step-guide a {
@@ -149,9 +134,6 @@ header h1 .description {
     bottom: 0;
     left: 0
 }
-a[id^="tool-link-"], .step-content:first-child p {
-    margin-bottom: 2.25rem
-}
 a[id^="tool-link-"] {
     display: inline-block;
     transition: transform 300ms ease-out
@@ -163,17 +145,10 @@ a[id^="tool-link-"]:hover {
 #cool-websites a {
     border-radius: .33rem
 }
-#cool-websites .cool-start {
-    margin-bottom: 1.83rem
-}
-#cool-websites h2 {
-    padding-bottom: .33rem
-}
 #cool-websites a {
     display: flex;
     justify-content: center;
     flex: 1;
-    text-decoration: none;
     border: 2px solid var(--color-secondary)
 }
 #cool-websites a:hover,
@@ -181,7 +156,6 @@ a[id^="tool-link-"]:hover {
     transform: scale(1.05)
 }
 section[class^="step"] {
-    padding: 0.7rem;
     border-radius: .67rem
 }
 .code {
@@ -194,8 +168,8 @@ section[class^="step"] {
 section[id^="step-hidden-from-"] {
     display: none
 }
-section[id^="step-hidden-from-"]:not(.step-content, h2, h3, figure, figcaption), section[class^="step"]:not(.step-content, h2, h3, figure, figcaption) {
-    margin-bottom: 14.5rem
+section[id^="step-hidden-from-"]:not(:last-child), section[class^="step"]:not(:last-child) {
+    margin-bottom: 13.5rem
 }
 .exclusive-nav a[aria-current='page'] {
     font-weight: 700;
