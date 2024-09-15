@@ -18,6 +18,7 @@
                 };
                 this.appearObserver = null;
                 this.disappearObserver = null;
+                this.animatedElements = document.querySelectorAll(".anim");
                 this.showAnimation = (isVisible) => {
                     if (isVisible !== this.isVisible) {
                         this.isVisible = isVisible;
@@ -66,7 +67,6 @@
                 };
             }
         }
-        const animatedElements = document.querySelectorAll(".anim");
         animatedElements.forEach((el) => new AnimatedElement(el));
         AnimatedElement.activationInfo();
     });
