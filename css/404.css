@@ -4,6 +4,10 @@
     --accent: #754900;
     --text-primary: #000;
     --text-secondary: #f5f5f5;
+    --hover-scale: 1.03;
+    --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    --anim-fade-duration: 1.2s;
+    --anim-slide-from: 20px;
     --filter-active-settings: opacity(0.55)
 }
 *,
@@ -83,14 +87,32 @@ a, button {
 button {
     border: 1px solid var(--color-secondary)
 }
-a:hover, button:hover {
-    color: var(--accent)
+a:hover, a:focus {
+    transform: var(--hover-scale);
+    box-shadow: var(--hover-shadow);
+    color: var(--accent);
+    transition: transform 250ms ease, box-shadow 250ms ease
 }
 a:focus, button:focus {
-    outline: 2.5px solid var(--accent);
+    outline: 2.5px solid var(--accent)
 }
 a:active {
     filter: var(--filter-active-settings)
+}
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(var(--anim-slide-from))
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+.scroll-fade {
+    opacity: 0;
+    animation: slide-in var(--anim-fade-duration) forwards;
+    animation-delay: var(--anim-delay, 0s)
 }
 @media only screen and (prefers-color-scheme: dark) {
     :root {
@@ -99,6 +121,7 @@ a:active {
         --accent: #FFD599;
         --text-primary: #f5f5f5;
         --text-secondary: #444;
+        --hover-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
         --filter-active-settings: brightness(1.2)
     }
 }

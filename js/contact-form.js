@@ -2,14 +2,13 @@
     'use strict';
     document.addEventListener("DOMContentLoaded", () => {
         class CharacterCounter {
-            static activationInfo = () => {
+            static activationInfo() {
                 console.info("CharacterCounter activated!");
             }
             constructor(inputElement) {
                 this.inputElement = inputElement;
-                this.messageInput = document.querySelector("#message");
                 this.charCountElement = document.querySelector(".char-count");
-                if (!this.messageInput || !this.inputElement || !this.charCountElement) {
+                if (!this.inputElement || !this.charCountElement) {
                     console.error("Missing required CharacterCounter elements!");
                     return;
                 }
@@ -23,7 +22,7 @@
             }
             throttle = (callback, delay) => {
                 let shouldWait = false;
-                let waitingArgs;
+                let waitingArgs = null;
                 const timeOutFunc = () => {
                     if (waitingArgs === null) {
                         shouldWait = false;

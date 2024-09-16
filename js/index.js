@@ -9,15 +9,12 @@
                 this.searchBar = document.querySelector("#search-bar");
                 this.notFoundMessage = document.querySelector("#not-found-message");
                 if (!this.searchBar || !this.notFoundMessage) {
-                    console.error("Missing required Search elements in the DOM!");
+                    console.error("Missing required Search elements!");
                     return;
                 }
                 if (this.searchBar || this.notFoundMessage) {
                     this.notFoundMessage.setAttribute("aria-hidden", "true");
                     this.searchBar.addEventListener("input", this.debounce(this.searchSections, 300), { passive: true });
-                }
-                else {
-                    console.error("searchBar and/or notFoundMessage not found!");
                 }
                 this.searchSections();
             }
