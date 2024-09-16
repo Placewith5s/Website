@@ -6,9 +6,6 @@
     --text-secondary: #f5f5f5;
     --filter-active-settings: opacity(0.55)
 }
-section+section {
-    margin-bottom: 3rem
-}
 .last-updated {
     text-align: center;
     border: 1px solid var(--color-secondary)

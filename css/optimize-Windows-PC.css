@@ -134,13 +134,6 @@ img {
     bottom: 0;
     left: 0
 }
-a[id^="tool-link-"] {
-    display: inline-block;
-    transition: transform 300ms ease-out
-}
-a[id^="tool-link-"]:hover {
-    transform: scale(1.05)
-}
 #cool-websites,
 #cool-websites a {
     border-radius: .33rem
@@ -155,21 +148,15 @@ a[id^="tool-link-"]:hover {
 #cool-websites a:focus {
     transform: scale(1.05)
 }
-section[class^="step"] {
-    border-radius: .67rem
-}
 .code {
     white-space: pre-wrap;
-    border-radius: .33rem
-}
-.step-content {
-    border-radius: .67rem
+    border-radius: .5rem
 }
 section[id^="step-hidden-from-"] {
     display: none
 }
-section[id^="step-hidden-from-"]:not(:last-child), section[class^="step"]:not(:last-child) {
-    margin-bottom: 13.5rem
+section:not(:last-child) {
+    margin-bottom: 7.5rem
 }
 .exclusive-nav a[aria-current='page'] {
     font-weight: 700;

@@ -60,14 +60,14 @@ main {
 .strong {
     font-weight: bolder
 }
-li:first-child {
-    margin-top: 1.75rem
+.spaced-first-ones {
+    margin-top: 2rem
 }
 .spaced {
     margin-bottom: 2rem
 }
-.spaced-first-ones {
-    margin-top: 2rem
+.spaced-special-items {
+    margin-right: 2rem
 }
 .no-list-style {
     list-style-type: none
