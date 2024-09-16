@@ -45,7 +45,7 @@
             console.error(message, error);
         }
         debounce = (func, delay) => {
-            let timer;
+            let timer = null;
             return (...args) => {
                 clearTimeout(timer);
                 timer = setTimeout(() => {
