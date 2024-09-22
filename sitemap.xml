@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.placewith5s.com/</loc>
+<<<<<<< HEAD
         <lastmod>2024-09-22</lastmod>
+=======
+        <lastmod>2024-09-16</lastmod>
+>>>>>>> ba4f02e54397b3f96d6aac34d255f05079a4f735
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
