@@ -1,9 +1,9 @@
 ( () => {
     "use strict";
     document.addEventListener("DOMContentLoaded", () => {
-    class themeChecker {
+    class ThemeChecker {
         static activationInfo() {
-            console.info("themeChecker activated!");
+            console.info("ThemeChecker activated!");
         }
         constructor() {
             this.DARK_THEME_CLASS = "dark-theme";
@@ -54,11 +54,11 @@
             }
         }
     }
-    const themeCheckerInstance = new themeChecker();
+    const themeCheckerInstance = new ThemeChecker();
     async function a() {
         await themeCheckerInstance.checkAndSetThemePreference();
     }
     a();
-    themeChecker.activationInfo();
+    ThemeChecker.activationInfo();
 });
 })();

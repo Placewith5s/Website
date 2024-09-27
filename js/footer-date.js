@@ -1,14 +1,14 @@
 ( () => {
     'use strict';
     document.addEventListener("DOMContentLoaded", () => {
-        class footerFixer {
+        class FooterDate {
             static activationInfo() {
-                console.info("footerFixer activated!");
+                console.info("FooterDate activated!");
             }
             constructor () {
                 this.year = document.querySelector("#year");
                 if (!this.year) {
-                    console.error("Missing required footerFixer elements!");
+                    console.error("Missing required FooterDate elements!");
                     return;
                 }
                 if (this.year) {
@@ -23,7 +23,7 @@
                 this.year.textContent = this.variable_final;
             }
         }
-        const footerFixerInstance = new footerFixer();
-        footerFixer.activationInfo();
+        const footerDateInstance = new FooterDate();
+        FooterDate.activationInfo();
 });
 })();
