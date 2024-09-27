@@ -6,7 +6,7 @@
     --text-secondary: #f5f5f5;
     --hover-scale: 1.03;
     --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    --anim-fade-duration: 1.2s;
+    --anim-fade-duration: 1200ms;
     --anim-slide-from: 20px;
     --filter-active-settings: opacity(0.55)
 }
