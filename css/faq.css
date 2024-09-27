@@ -29,12 +29,12 @@ details summary {
     padding: .67rem;
     border-radius: .33rem
 }
-.exclusive-nav a[aria-current='page'] {
-    font-weight: 700;
-    text-decoration: underline
-}
 summary {
     border: 2px solid var(--color-secondary)
+}
+.exclusive-nav a[aria-current='page'], .drawer a[aria-current='page'] {
+    font-weight: 700;
+    text-decoration: underline
 }
 @media only screen and (prefers-color-scheme: dark) {
     :root {
