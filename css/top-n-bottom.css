@@ -142,7 +142,7 @@ header h1, .exclusive-nav {
     padding: 0.8rem;
     backdrop-filter: blur(1rem)
 }
-.menu-icon #line {
+.menu-icon .line {
     width: 0.9rem;
     height: 0.15rem;
     background: var(--color-secondary);
