@@ -6,7 +6,7 @@ At [Place with 5s](https://www.placewith5s.com), the security and privacy of our
 ## Reporting a Vulnerability
 If you believe you have found a security vulnerability on our website, we encourage you to report it responsibly. Please follow the process below:
 
-- **Email:** Send details of the vulnerability to **[placewith5ssecurity@gmail.com]**.
+- **Email:** Send details of the vulnerability to **[placewith5s@gmail.com]**.
 - **Include:**
   - A detailed description of the vulnerability.
   - Steps to reproduce the issue.
