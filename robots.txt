@@ -1,8 +1,4 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
-Disallow: /cgi-bin/  # Double-check for essential scripts here
-Disallow: /temp/
+Disallow: /cgi-bin/
 Crawl-delay: 5
-Allow: /
 Sitemap: https://www.placewith5s.com/sitemap.xml
