@@ -1,4 +1,3 @@
 Contact: mailto:placewith5s@gmail.com
-Expires: 2024-11-02T12:02:00.000Z
 Preferred-Languages: en
 Policy: https://github.com/Placewith5s/Website/blob/main/SECURITY.md
