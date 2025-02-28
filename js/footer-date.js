@@ -1,1 +1,33 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",(()=>{class e{static activationInfo(){console.info("FooterDate activated!")}constructor(){this.year=document.querySelector("#year"),this.year?(this.year&&(this.variable=null,this.variable_final=null),this.func()):console.error("Missing required FooterDate elements!")}func=()=>{this.variable=new Date,this.variable_final=this.variable.getFullYear(),this.year.textContent=this.variable_final}}new e;e.activationInfo()}))})();
+(() => {
+	"use strict";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		class FooterDate {
+			static activationInfo() {
+				console.info("FooterDate activated!");
+			}
+
+			constructor() {
+				this.year = document.querySelector("#year");
+
+				if (this.year) {
+					this.variable = null;
+					this.variable_final = null;
+					this.updateYear();
+				} else {
+					console.error("Missing required FooterDate elements!");
+				}
+			}
+
+			updateYear = () => {
+				this.variable = new Date();
+				this.variable_final = this.variable.getFullYear();
+				this.year.textContent = this.variable_final;
+			};
+		}
+
+		new FooterDate();
+
+		FooterDate.activationInfo();
+	});
+})();

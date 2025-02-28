@@ -1,1 +1,37 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",(()=>{class t{static activationInfo(){console.info("SummaryElement activated!")}constructor(){this.element=document.querySelector("summary"),this.element.setAttribute("aria-expanded","false"),document.addEventListener("click",(t=>{const e=t.target;if("SUMMARY"===e.tagName){const t="true"===e.getAttribute("aria-expanded");e.setAttribute("aria-expanded",!t)}}),{passive:!0})}}new t;t.activationInfo()}))})();
+(() => {
+	"use strict";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		class SummaryElement {
+			static activationInfo() {
+				console.info("SummaryElement activated!");
+			}
+
+			constructor() {
+				this.element = document.querySelector("summary");
+
+				if (this.element) {
+					this.element.setAttribute("aria-expanded", "false");
+
+					document.addEventListener(
+						"click",
+						(event) => {
+							const target = event.target;
+
+							if (target.tagName === "SUMMARY") {
+								const isExpanded = target.getAttribute("aria-expanded") === "true";
+								target.setAttribute("aria-expanded", !isExpanded);
+							}
+						}, {
+							passive: true
+						}
+					);
+				}
+			}
+		}
+
+		new SummaryElement();
+
+		SummaryElement.activationInfo();
+	});
+})();

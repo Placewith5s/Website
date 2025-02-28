@@ -1,1 +1,57 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",(()=>{class e{static activationInfo(){console.info("MenuManager activated!")}constructor(){this.drawer=document.querySelector("#drawer"),this.menuIcon=document.querySelector("#menu-icon"),this.drawer&&this.menuIcon?((this.drawer||this.menuIcon)&&(this.drawer.setAttribute("aria-hidden","true"),this.menuIcon.setAttribute("aria-expanded","false")),this.handleDrawerClick=e=>{("A"===e.target.tagName||"hide-drawer-btn"===e.target.id)&&this.closeDrawer()},this.initializeMenu()):console.error("Missing required MenuManager elements!")}initializeMenu=()=>{this.menuIcon.addEventListener("click",(()=>{try{const e=this.drawer.classList.toggle("opened");this.drawer.setAttribute("aria-hidden",!e),this.menuIcon.setAttribute("aria-expanded",e)}catch(e){throw new e("menu-icon event failed!")}}),{passive:!0}),this.drawer.addEventListener("click",this.handleDrawerClick,{passive:!0})};closeDrawer=()=>{this.drawer.classList.remove("opened"),this.drawer.setAttribute("aria-hidden","true"),this.menuIcon.setAttribute("aria-expanded","false")}}new e;e.activationInfo()}))})();
+(() => {
+	"use strict";
+	document.addEventListener("DOMContentLoaded", () => {
+		class MenuManager {
+			static activationInfo() {
+				console.info("MenuManager activated!");
+			}
+
+			constructor() {
+				this.drawer = document.querySelector("#drawer");
+				this.menuIcon = document.querySelector("#menu-icon");
+
+				if (this.drawer && this.menuIcon) {
+					this.drawer.setAttribute("aria-hidden", "true");
+					this.menuIcon.setAttribute("aria-expanded", "false");
+
+					this.handleDrawerClick = (e) => {
+						if (e.target.tagName === "A" || e.target.id === "hide-drawer-btn") {
+							this.closeDrawer();
+						}
+					};
+
+					this.initializeMenu();
+				} else {
+					console.error("Missing required MenuManager elements!");
+				}
+			}
+
+			initializeMenu() {
+				this.menuIcon.addEventListener("click", () => {
+					try {
+						const isOpened = this.drawer.classList.toggle("opened");
+						this.drawer.setAttribute("aria-hidden", !isOpened);
+						this.menuIcon.setAttribute("aria-expanded", isOpened);
+					} catch (e) {
+						throw new Error("menu-icon event failed!");
+					}
+				}, {
+					passive: true
+				});
+
+				this.drawer.addEventListener("click", this.handleDrawerClick, {
+					passive: true
+				});
+			}
+
+			closeDrawer() {
+				this.drawer.classList.remove("opened");
+				this.drawer.setAttribute("aria-hidden", "true");
+				this.menuIcon.setAttribute("aria-expanded", "false");
+			}
+		}
+
+		new MenuManager();
+		MenuManager.activationInfo();
+	});
+})();
