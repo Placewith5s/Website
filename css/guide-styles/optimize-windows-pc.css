@@ -1,16 +1,4 @@
-:root {
-    --color-primary: #f5f5f5;
-    --color-secondary: #000;
-    --accent: #754900;
-    --text-primary: #000;
-    --text-secondary: #f5f5f5;
-    --hover-scale: 1.03;
-    --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    --anim-fade-duration: 1200ms;
-    --anim-slide-from: 20px;
-    --filter-active-settings: opacity(0.55);
-  }
-  .strawpoll-embed {
+.strawpoll-embed {
     height: 580px;
     max-width: 640px;
     width: 100%;
@@ -125,7 +113,6 @@
     width: 10%;
     height: 4.5rem;
     border-radius: 0.47rem;
-    border: 0.5px solid var(--color-secondary);
   }
   .step-by-step-guide,
   .preparation-section {
@@ -164,11 +151,6 @@
   }
   section:not(:last-child) {
     margin-bottom: 7.5rem;
-  }
-  .exclusive-nav a[aria-current="page"],
-  .drawer a[aria-current="page"] {
-    font-weight: 700;
-    text-decoration: underline;
   }
   @media only screen and (min-width: 320px) and (max-width: 480px) {
     .code {
@@ -275,14 +257,3 @@
       padding: 0.75rem;
     }
   }
-  @media only screen and (prefers-color-scheme: dark) {
-    :root {
-      --color-primary: #444;
-      --color-secondary: #f5f5f5;
-      --accent: #ffd599;
-      --text-primary: #f5f5f5;
-      --text-secondary: #444;
-      --hover-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-      --filter-active-settings: brightness(1.2);
-    }
-  }  

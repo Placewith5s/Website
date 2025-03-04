@@ -1,9 +1,9 @@
 :root {
-    --color-primary: #f5f5f5;
-    --color-secondary: #000;
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #000;
     --accent: #754900;
-    --text-primary: #000;
-    --text-secondary: #f5f5f5;
+    --color-primary: #000;
+    --color-secondary: #f5f5f5;
     --hover-scale: 1.03;
     --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     --anim-fade-duration: 1200ms;
@@ -21,8 +21,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: var(--text-primary);
-    background-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--bg-primary);
   }
   body,
   main {
@@ -50,7 +50,7 @@
     letter-spacing: 0.05rem;
   }
   header h1 {
-    border-bottom: 2px solid var(--color-secondary);
+    border-bottom: 2px solid var(--bg-secondary);
   }
   main {
     display: flex;
@@ -88,14 +88,19 @@
       color 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
   }
   button {
-    border: 1px solid var(--color-secondary);
+    border: 2.5px solid;
+    color: var(--accent);
   }
+  button:hover,
+  button:focus
   a:hover,
   a:focus {
     transform: var(--hover-scale);
     box-shadow: var(--hover-shadow);
-    color: var(--accent);
     transition: transform 250ms ease, box-shadow 250ms ease;
+  }
+  a:hover, a:focus {
+    color: var(--accent);
   }
   a:focus,
   button:focus {
@@ -130,20 +135,20 @@
   .exclusive-nav {
     position: relative;
     padding: 1rem;
-    background-color: var(--color-primary);
-    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    color: var(--color-primary);
   }
   .exclusive-nav a {
     flex: 1;
     justify-content: center;
   }
   .menu-icon {
-    background-color: var(--color-primary);
+    background-color: var(--bg-primary);
     position: fixed;
     top: 1rem;
     right: 1rem;
     z-index: 1000;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--bg-secondary);
     border-radius: 4px;
     padding: 0.8rem;
     backdrop-filter: blur(1rem);
@@ -151,7 +156,7 @@
   .menu-icon .line {
     width: 0.9rem;
     height: 0.15rem;
-    background: var(--color-secondary);
+    background: var(--bg-secondary);
     margin: 0.35rem 0;
   }
   .drawer {
@@ -160,7 +165,7 @@
     top: 2.5rem;
     right: 1rem;
     padding: 1rem;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--bg-secondary);
     z-index: 1000;
     opacity: 0;
     transition: visibility 0ms, opacity 500ms,
@@ -175,7 +180,7 @@
   .drawer a {
     display: block;
     padding: 0.6rem;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--bg-secondary);
     border-radius: 5px;
   }
   .drawer a:hover,
@@ -193,8 +198,8 @@
     transform: scale(0.9);
   }
   footer {
-    background-color: var(--color-primary);
-    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    color: var(--color-primary);
     padding: 3rem 0;
     text-align: center;
   }
@@ -215,7 +220,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5rem;
-    color: var(--text-primary);
+    color: var(--color-primary);
     transition: color 300ms ease-in-out;
   }
   footer nav[class^="nav-footer-"] a:hover {
@@ -223,7 +228,12 @@
   }
   footer .copyright {
     margin-top: 2rem;
-    color: var(--text-primary);
+    color: var(--color-primary);
+  }
+  .exclusive-nav a[aria-current="page"],
+  .drawer a[aria-current="page"] {
+    font-weight: 700;
+    text-decoration: underline;
   }
   @media screen and (max-width: 320px) {
     .exclusive-nav {
@@ -265,11 +275,11 @@
   }
   @media only screen and (prefers-color-scheme: dark) {
     :root {
-      --color-primary: #444;
-      --color-secondary: #f5f5f5;
-      --accent: #ffd599;
-      --text-primary: #f5f5f5;
-      --text-secondary: #444;
+      --bg-primary: #444;
+      --bg-secondary: #f5f5f5;
+      --accent: #D9915D;
+      --color-primary: #f5f5f5;
+      --color-secondary: #444;
       --hover-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
       --filter-active-settings: brightness(1.2);
     }
