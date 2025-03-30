@@ -59,7 +59,7 @@
   .TOC a {
     text-decoration: underline;
   }
-  #cool-websites .cool-start,
+  #more-tools-to-discover .cool-start,
   .expand-all.active section[id^="step-hidden-from-"] {
     display: block;
   }
@@ -128,23 +128,22 @@
     bottom: 0;
     left: 0;
   }
-  #cool-websites,
-  #cool-websites a {
+  #more-tools-to-discover,
+  #more-tools-to-discover a {
     border-radius: 0.33rem;
   }
-  #cool-websites a {
+  #more-tools-to-discover a {
     display: flex;
     justify-content: center;
     flex: 1;
     border: 2px solid var(--color-secondary);
   }
-  #cool-websites a:hover,
-  #cool-websites a:focus {
+  #more-tools-to-discover a:hover,
+  #more-tools-to-discover a:focus {
     transform: scale(1.05);
   }
   .code {
-    white-space: pre-wrap;
-    border-radius: 0.5rem;
+    font-family: monospace;
   }
   section[id^="step-hidden-from-"] {
     display: none;
@@ -156,10 +155,10 @@
     .code {
       word-break: break-all;
     }
-    #cool-websites .cool-start {
+    #more-tools-to-discover .cool-start {
       padding: 0.8rem;
     }
-    #cool-websites a {
+    #more-tools-to-discover a {
       padding: 0.55rem 0rem;
       margin: 1.33rem;
     }
@@ -175,15 +174,15 @@
     .code {
       word-break: break-all;
     }
-    #cool-websites .cool-start {
+    #more-tools-to-discover .cool-start {
       padding: 1rem;
     }
-    #cool-websites a {
+    #more-tools-to-discover a {
       padding: 0.45rem 0;
       margin: 1.5rem;
     }
-    #cool-websites a:hover,
-    #cool-websites a:focus {
+    #more-tools-to-discover a:hover,
+    #more-tools-to-discover a:focus {
       transform: scale(1.03);
     }
     header h1 {
@@ -198,15 +197,15 @@
     }
   }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
-    #cool-websites .cool-start {
+    #more-tools-to-discover .cool-start {
       padding: 1.5rem;
     }
-    #cool-websites a {
+    #more-tools-to-discover a {
       padding: 0.5rem 0;
       margin: 1.55rem;
     }
-    #cool-websites a:hover,
-    #cool-websites a:focus {
+    #more-tools-to-discover a:hover,
+    #more-tools-to-discover a:focus {
       transform: scale(1.02);
     }
     header h1,
@@ -218,15 +217,15 @@
     }
   }
   @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-    #cool-websites .cool-start {
+    #more-tools-to-discover .cool-start {
       padding: 1.65rem;
     }
-    #cool-websites a {
+    #more-tools-to-discover a {
       padding: 0.6rem 0;
       margin: 1.75rem;
     }
-    #cool-websites a:hover,
-    #cool-websites a:focus {
+    #more-tools-to-discover a:hover,
+    #more-tools-to-discover a:focus {
       transform: scale(1.01);
     }
     header h1,
@@ -238,15 +237,15 @@
     }
   }
   @media only screen and (min-width: 1201px) {
-    #cool-websites .cool-start {
+    #more-tools-to-discover .cool-start {
       padding: 2rem;
     }
-    #cool-websites a {
+    #more-tools-to-discover a {
       padding: 0.5rem 0;
       margin: 2rem;
     }
-    #cool-websites a:hover,
-    #cool-websites a:focus {
+    #more-tools-to-discover a:hover,
+    #more-tools-to-discover a:focus {
       transform: scale(1);
     }
     header h1 {
