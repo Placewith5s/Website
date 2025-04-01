@@ -75,9 +75,9 @@
 			}
 
 			updateButtonTextAndAria() {
-				const newText = this.expandCollapseButton.textContent === "Show More" ? "Hide More" : "Show More";
+				const newText = this.expandCollapseButton.textContent === "Show All" ? "Hide All" : "Show All";
 				this.expandCollapseButton.textContent = newText;
-				this.expandCollapseButton.setAttribute("aria-expanded", newText === "Hide More" ? "true" : "false");
+				this.expandCollapseButton.setAttribute("aria-expanded", newText === "Hide All" ? "true" : "false");
 			}
 		}
 
