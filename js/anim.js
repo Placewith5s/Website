@@ -2,7 +2,7 @@
 	"use strict";
 
 	document.addEventListener("DOMContentLoaded", () => {
-		const observer = new IntersectionObserver((entries) => {
+		const intersection_observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
 				debounce(() => {
 					try {
@@ -23,16 +23,16 @@
 		});
 
 		const debounce = (callback, delay) => {
-			let timeoutId = null;
+			let timeout_id = null;
 			return (...args) => {
-				clearTimeout(timeoutId);
-				timeoutId = setTimeout(() => {
+				clearTimeout(timeout_id);
+				timeout_id = setTimeout(() => {
 					callback.apply(this, args);
 				}, delay);
 			};
 		};
 
-		document.querySelectorAll(".hide").forEach((element) => observer.observe(element));
+		document.querySelectorAll(".hide").forEach((element) => intersection_observer.observe(element));
 	});
 
 })();

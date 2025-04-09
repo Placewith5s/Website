@@ -3,41 +3,41 @@
 
 	document.addEventListener("DOMContentLoaded", () => {
 		class Search {
-			static activationInfo() {
+			static activation_info() {
 				console.info("Search activated!");
 			}
 
 			constructor() {
-				this.searchBar = document.querySelector("#search-bar");
-				this.notFoundMessage = document.querySelector("#not-found-message");
+				this.search_bar = document.querySelector("#search-bar");
+				this.not_found_message = document.querySelector("#not-found-message");
 
-				if (this.searchBar && this.notFoundMessage) {
-					this.notFoundMessage.setAttribute("aria-hidden", "true");
+				if (this.search_bar && this.not_found_message) {
+					this.not_found_message.setAttribute("aria-hidden", "true");
 
-					this.searchBar.addEventListener("input", this.debounce(this.searchSections, 300), {
+					this.search_bar.addEventListener("input", this.debounce(this.search_sections, 300), {
 						passive: true
 					});
 
-					this.searchSections();
+					this.search_sections();
 				} else {
 					console.error("Missing required Search elements!");
 				}
 			}
 
-			searchSections = () => {
+			search_sections = () => {
 				try {
-					const searchTerm = this.searchBar.value.trim().toLowerCase();
+					const search_term = this.search_bar.value.trim().toLowerCase();
 					const sections = document.querySelectorAll(".search-section");
 					let found = false;
 
 					sections.forEach(section => {
-						const match = section.textContent.toLowerCase().includes(searchTerm);
+						const match = section.textContent.toLowerCase().includes(search_term);
 						section.style.display = match ? "block" : "none";
 						section.setAttribute("aria-hidden", !match);
 						found ||= match;
 					});
 
-					this.toggleNotFoundMessage(!found);
+					this.toggle_not_found_message(!found);
 				} catch (error) {
 					console.error("An error occurred while searching sections:", error);
 				}
@@ -53,17 +53,17 @@
 				};
 			};
 
-			toggleNotFoundMessage = (visible) => {
-				this.notFoundMessage.style.display = visible ? "block" : "none";
-				this.notFoundMessage.setAttribute("aria-hidden", !visible);
-				this.notFoundMessage.setAttribute("aria-live", visible ? "polite" : "off");
-				this.notFoundMessage.setAttribute("role", "status");
-				this.notFoundMessage.setAttribute("aria-relevant", "additions");
-				this.notFoundMessage.setAttribute("aria-atomic", "true");
+			toggle_not_found_message = (visible) => {
+				this.not_found_message.style.display = visible ? "block" : "none";
+				this.not_found_message.setAttribute("aria-hidden", !visible);
+				this.not_found_message.setAttribute("aria-live", visible ? "polite" : "off");
+				this.not_found_message.setAttribute("role", "status");
+				this.not_found_message.setAttribute("aria-relevant", "additions");
+				this.not_found_message.setAttribute("aria-atomic", "true");
 			};
 		}
 
 		new Search();
-		Search.activationInfo();
+		Search.activation_info();
 	});
 })();

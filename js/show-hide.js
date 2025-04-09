@@ -2,86 +2,86 @@
 	"use strict";
 
 	document.addEventListener("DOMContentLoaded", () => {
-		class ExpandCollapse {
-			static activationInfo() {
-				console.info("ExpandCollapse activated!");
+		class Expand_Collapse {
+			static activation_info() {
+				console.info("Expand Collapse activated!");
 			}
 
 			constructor() {
-				this.expandCollapseButton = document.querySelector("#show-hide-btn");
-				this.isInitialClick = true;
+				this.expand_collapse_button = document.querySelector("#show-hide-btn");
+				this.is_initial_click = true;
 
-				if (this.expandCollapseButton) {
-					this.expandCollapseButton.addEventListener("click", () => this.toggleElements(), {
+				if (this.expand_collapse_button) {
+					this.expand_collapse_button.addEventListener("click", () => this.toggle_elements(), {
 						passive: true
 					});
-					this.hideElementsByDefault();
+					this.hide_elements_by_default();
 				} else {
-					console.error("Missing required ExpandCollapse elements!");
+					console.error("Missing required Expand_Collapse elements!");
 				}
 			}
 
-			hideElementsByDefault() {
+			hide_elements_by_default() {
 				document.querySelectorAll('[id^="step-hidden-from-"]').forEach(element => {
 					element.style.display = "none";
 					element.setAttribute("aria-hidden", "true");
 				});
 			}
 
-			toggleElements() {
+			toggle_elements() {
 				try {
-					const hiddenElements = document.querySelectorAll('[id^="step-hidden-from-"]');
+					const hidden_elements = document.querySelectorAll('[id^="step-hidden-from-"]');
 
-					if (!hiddenElements.length) {
+					if (!hidden_elements.length) {
 						console.error("Initial hidden elements not found.");
 						return;
 					}
 
-					hiddenElements.forEach(element => {
-						this.toggleElementVisibility(element);
+					hidden_elements.forEach(element => {
+						this.toggle_element_visibility(element);
 
 						const match = element.id.match(/step-hidden-from-(\d+)/);
 						if (match) {
-							const headingId = `step${match[1]}-hidden-heading`;
+							const heading_id = `step${match[1]}-hidden-heading`;
 
 							if (element.style.display !== "none") {
-								element.setAttribute("aria-labelledby", headingId);
+								element.setAttribute("aria-labelledby", heading_id);
 							} else {
 								element.removeAttribute("aria-labelledby");
 							}
 						}
 					});
 
-					this.updateButtonTextAndAria();
-					this.isInitialClick = false;
+					this.update_button_text_and_aria();
+					this.is_initial_click = false;
 				} catch (error) {
 					console.error("Error occurred:", error.message);
 				}
 			}
 
-			toggleElementVisibility(element) {
+			toggle_element_visibility(element) {
 				try {
-					if (this.isInitialClick) {
+					if (this.is_initial_click) {
 						element.style.display = "block";
 						element.removeAttribute("aria-hidden");
 					} else {
-						const isHidden = element.style.display === "none";
-						element.style.display = isHidden ? "block" : "none";
-						element.setAttribute("aria-hidden", isHidden ? "false" : "true");
+						const is_hidden = element.style.display === "none";
+						element.style.display = is_hidden ? "block" : "none";
+						element.setAttribute("aria-hidden", is_hidden ? "false" : "true");
 					}
 				} catch (error) {
 					console.error("Error occurred while toggling element visibility:", error.message);
 				}
 			}
 
-			updateButtonTextAndAria() {
-				const newText = this.expandCollapseButton.textContent === "Show All" ? "Hide All" : "Show All";
-				this.expandCollapseButton.textContent = newText;
-				this.expandCollapseButton.setAttribute("aria-expanded", newText === "Hide All" ? "true" : "false");
+			update_button_text_and_aria() {
+				const new_text = this.expand_collapse_button.textContent === "Show All" ? "Hide All" : "Show All";
+				this.expand_collapse_button.textContent = new_text;
+				this.expand_collapse_button.setAttribute("aria-expanded", new_text === "Hide All" ? "true" : "false");
 			}
 		}
 
-		new ExpandCollapse();
-		ExpandCollapse.activationInfo();
+		new Expand_Collapse();
+		Expand_Collapse.activation_info();
 	});
 })();

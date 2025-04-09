@@ -2,76 +2,76 @@
 	"use strict";
 
 	document.addEventListener("DOMContentLoaded", () => {
-		class ThemeChecker {
-			static activationInfo() {
-				console.info("ThemeChecker activated!");
+		class Theme_Checker {
+			static activation_info() {
+				console.info("Theme Checker activated!");
 			}
 
 			constructor() {
-				this.DARK_THEME_CLASS = "dark-theme";
+				this.dark_theme_class = "dark-theme";
 			}
 
-			setDarkMode = () => {
+			set_dark_mode = () => {
 				try {
-					document.body.classList.add(this.DARK_THEME_CLASS);
+					document.body.classList.add(this.dark_theme_class);
 				} catch (error) {
-					this.handleThemeError("An error occurred while setting dark mode:", error);
+					this.handle_theme_error("An error occurred while setting dark mode:", error);
 				}
 			};
 
-			setLightMode = () => {
+			set_light_mode = () => {
 				try {
-					document.body.classList.remove(this.DARK_THEME_CLASS);
+					document.body.classList.remove(this.dark_theme_class);
 				} catch (error) {
-					this.handleThemeError("An error occurred while setting light mode:", error);
+					this.handle_theme_error("An error occurred while setting light mode:", error);
 				}
 			};
 
-			toggleThemeBasedOnPreference = (isDarkMode) => {
-				isDarkMode ? this.setDarkMode() : this.setLightMode();
+			toggle_theme_based_on_preference = (is_dark_mode) => {
+				is_dark_mode ? this.set_dark_mode() : this.set_light_mode();
 			};
 
-			async checkAndSetThemePreference() {
+			async check_and_set_theme_preference() {
 				try {
-					const debouncedToggle = this.debounce(this.toggleThemeBasedOnPreference, 250);
+					const debounced_toggle = this.debounce(this.toggle_theme_based_on_preference, 250);
 
 					if (window.matchMedia) {
-						const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+						const media_query = window.matchMedia("(prefers-color-scheme: dark)");
 
-						debouncedToggle(mediaQuery.matches);
+						debounced_toggle(media_query.matches);
 
-						mediaQuery.addEventListener("change", (event) => {
-							debouncedToggle(event.matches);
+						media_query.addEventListener("change", (event) => {
+							debounced_toggle(event.matches);
 						});
 					} else {
 						console.error("matchMedia is not supported. Theme preference may not work.");
 					}
 				} catch (error) {
-					this.handleThemeError("An error occurred while checking theme preference:", error);
+					this.handle_theme_error("An error occurred while checking theme preference:", error);
 				}
 			}
 
-			handleThemeError = (message, error) => {
+			handle_theme_error = (message, error) => {
 				console.error(message, error);
 			};
 
 			debounce = (callback, delay) => {
-				let timeoutId = null;
+				let timeout_id = null;
 				return (...args) => {
-					clearTimeout(timeoutId);
-					timeoutId = setTimeout(() => {
+					clearTimeout(timeout_id);
+					timeout_id = setTimeout(() => {
 						callback.apply(this, args);
 					}, delay);
 				};
 			};
 		}
 
-		const themeChecker = new ThemeChecker();
+		const theme_checker = new Theme_Checker();
 
 		(async function initialize() {
-			await themeChecker.checkAndSetThemePreference();
+			await theme_checker.check_and_set_theme_preference();
 		})();
 
-		ThemeChecker.activationInfo();
+		Theme_Checker.activation_info();
 	});
 })();

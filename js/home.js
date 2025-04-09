@@ -3,7 +3,7 @@
 
 	document.addEventListener("DOMContentLoaded", () => {
 		class Slider {
-			static activationInfo() {
+			static activation_info() {
 				console.info("Slider activated!");
 			}
 
@@ -11,29 +11,29 @@
 				this.items = document.querySelectorAll(".carousel-item");
 
 				if (this.items.length) {
-					this.currentIndex = 0;
-					this.totalItems = this.items.length;
+					this.current_index = 0;
+					this.total_items = this.items.length;
 
-					this.showNextItem();
-					setInterval(this.showNextItem, 3000);
+					this.show_next_item();
+					setInterval(this.show_next_item, 3000);
 				} else {
 					console.error("Missing required Slider elements!");
 				}
 			}
 
-			showNextItem = () => {
-				this.items[this.currentIndex].classList.remove("active");
+			show_next_item = () => {
+				this.items[this.current_index].classList.remove("active");
 
-				this.currentIndex = (this.currentIndex + 1) % this.totalItems;
+				this.current_index = (this.current_index + 1) % this.total_items;
 
-				this.items[this.currentIndex].classList.add("active");
+				this.items[this.current_index].classList.add("active");
 
-				document.querySelector(".carousel-inner").style.transform = `translateX(-${100 * this.currentIndex}%)`;
+				document.querySelector(".carousel-inner").style.transform = `translateX(-${100 * this.current_index}%)`;
 			};
 		}
 
 		new Slider();
 
-		Slider.activationInfo();
+		Slider.activation_info();
 	});
 })();

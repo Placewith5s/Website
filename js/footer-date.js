@@ -2,9 +2,9 @@
 	"use strict";
 
 	document.addEventListener("DOMContentLoaded", () => {
-		class FooterDate {
-			static activationInfo() {
-				console.info("FooterDate activated!");
+		class Footer_Date {
+			static activation_info() {
+				console.info("Footer Date activated!");
 			}
 
 			constructor() {
@@ -13,21 +13,21 @@
 				if (this.year) {
 					this.variable = null;
 					this.variable_final = null;
-					this.updateYear();
+					this.update_year();
 				} else {
 					console.error("Missing required FooterDate elements!");
 				}
 			}
 
-			updateYear = () => {
+			update_year = () => {
 				this.variable = new Date();
 				this.variable_final = this.variable.getFullYear();
 				this.year.textContent = this.variable_final;
 			};
 		}
 
-		new FooterDate();
+		new Footer_Date();
 
-		FooterDate.activationInfo();
+		Footer_Date.activation_info();
 	});
 })();

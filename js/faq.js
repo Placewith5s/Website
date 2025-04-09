@@ -2,9 +2,9 @@
 	"use strict";
 
 	document.addEventListener("DOMContentLoaded", () => {
-		class SummaryElement {
-			static activationInfo() {
-				console.info("SummaryElement activated!");
+		class Summary_Element {
+			static activation_info() {
+				console.info("Summary Element activated!");
 			}
 
 			constructor() {
@@ -19,19 +19,18 @@
 							const target = event.target;
 
 							if (target.tagName === "SUMMARY") {
-								const isExpanded = target.getAttribute("aria-expanded") === "true";
-								target.setAttribute("aria-expanded", !isExpanded);
+								const is_expanded = target.getAttribute("aria-expanded") === "true";
+								target.setAttribute("aria-expanded", !is_expanded);
 							}
-						}, {
-							passive: true
-						}
+						},
+						{ passive: true }
 					);
 				}
 			}
 		}
 
-		new SummaryElement();
+		new Summary_Element();
 
-		SummaryElement.activationInfo();
+		Summary_Element.activation_info();
 	});
 })();
