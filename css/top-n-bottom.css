@@ -239,6 +239,21 @@
     font-weight: 700;
     text-decoration: underline;
   }
+  .strawpoll-embed {
+    height: 580px;
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .strawpoll-embed iframe {
+    position: static;
+    visibility: visible;
+    display: block;
+    width: 100%;
+    flex-grow: 1;
+  }
   @media only screen and (max-width: 320px) {
     .exclusive-nav {
       display: none;
