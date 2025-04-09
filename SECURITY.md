@@ -1,7 +1,7 @@
 # Security Policy
 
 ## Introduction
-At [Place with 5s](https://www.placewith5s.com), the security and privacy of our users is a top priority. This document outlines the security measures we implement to protect our site and any information exchanged by visitors. Since our platform does not require login or sign-up, we focus on ensuring the anonymity and safety of our users.
+At [Placewith5s](https://www.placewith5s.com), the security and privacy of our users is a top priority. This document outlines the security measures we implement to protect our site and any information exchanged by visitors. Since our platform does not require login or sign-up, we focus on ensuring the anonymity and safety of our users.
 
 ## Reporting a Vulnerability
 If you believe you have found a security vulnerability on our website, we encourage you to report it responsibly. Please follow the process below:
@@ -41,6 +41,4 @@ As we aim to protect user privacy, we encourage visitors to:
 - Report any suspicious activities or security concerns you encounter.
 
 ## Contact Us
-For any questions, concerns, or to report a security vulnerability, please reach out to us at **[your-email@example.com]**.
-
-**Effective Date:** October 2, 2024
+For any questions, concerns, or to report a security vulnerability, please reach out to us at **[placewith5s@gmail.com]**.
