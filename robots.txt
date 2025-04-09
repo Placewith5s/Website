@@ -6,6 +6,7 @@ Disallow: /ads.txt
 Disallow: /README.md
 Disallow: /SECURITY.md
 Disallow: /.nojekyll
+Disallow: _headers
 
 Crawl-delay: 5
 
