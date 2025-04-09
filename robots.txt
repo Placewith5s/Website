@@ -1,8 +1,4 @@
-User-agent: AdsBot-Google
-Allow: /ads.txt
-
 User-agent: *
-Disallow: /ads.txt
 Disallow: /README.md
 Disallow: /SECURITY.md
 Disallow: /.nojekyll
