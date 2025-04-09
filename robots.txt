@@ -1,4 +1,12 @@
+User-agent: AdsBot-Google
+Allow: /ads.txt
+
 User-agent: *
-Disallow: /cgi-bin/
+Disallow: /ads.txt
+Disallow: /README.md
+Disallow: /SECURITY.md
+Disallow: /.nojekyll
+
 Crawl-delay: 5
+
 Sitemap: https://www.placewith5s.com/sitemap.xml
