@@ -142,6 +142,10 @@
     flex: 1;
     justify-content: center;
   }
+  .exclusive-nav a:hover, .exclusive-nav a:focus {
+    box-shadow: var(--hover-shadow);
+    transition: transform 250ms ease, box-shadow 250ms ease;
+  }
   .menu-icon {
     background-color: var(--bg-primary);
     position: fixed;
