@@ -88,8 +88,8 @@
       color 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
   }
   button {
-    border: 2.5px solid;
-    color: var(--accent);
+    color: var(--color-primary);
+    border: 2.5px solid var(--accent);
   }
   button:hover,
   button:focus
