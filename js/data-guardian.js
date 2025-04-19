@@ -104,8 +104,8 @@
 					functionality: accept,
 				};
 				this.set_cookies(preferences);
-				localStorage.setItem("lastConsentTime", Date.now());
-				localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
+				this.set_cookie("lastConsentTime", Date.now(), 90); // 90 days
+				this.set_cookie("cookiePreferences", JSON.stringify(preferences), 90);
 			}
 
 			save_cookie_preferences() {
@@ -115,7 +115,7 @@
 					functionality: this.functionality_checkbox.checked,
 				};
 				try {
-					localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
+					this.set_cookie("cookiePreferences", JSON.stringify(preferences), 90);
 					this.set_cookies(preferences);
 					this.hide_cookie_banner();
 				} catch (error) {
@@ -128,26 +128,22 @@
 				expiry_date.setMonth(expiry_date.getMonth() + 3);
 
 				for (const [key, value] of Object.entries(preferences)) {
-					document.cookie = value
-						? `${key}=true; expires=${expiry_date.toUTCString()}; path=/`
-						: `${key}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+					this.set_cookie(key, value, 90); // 90 days expiration
 				}
 			}
 
-			get_cookie_expiration(cookie_name) {
-				const cookies = document.cookie.split(";");
-				for (const cookie of cookies) {
-					const trimmed = cookie.trim();
-					if (!trimmed) continue;
+			set_cookie(name, value, days) {
+				const expiry_date = new Date();
+				expiry_date.setDate(expiry_date.getDate() + days);
+				document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/`;
+			}
 
-					const [name, value] = trimmed.split("=");
-					if (name === cookie_name && value) {
-						const attributes = value.split(";");
-						for (const attr of attributes) {
-							const [attr_name, attr_value] = attr.trim().split("=");
-							if (attr_name === "expires")
-								return new Date(attr_value).getTime();
-						}
+			get_cookie(name) {
+				const cookieArr = document.cookie.split(";");
+				for (let i = 0; i < cookieArr.length; i++) {
+					let cookie = cookieArr[i].trim();
+					if (cookie.indexOf(name + "=") == 0) {
+						return cookie.substring(name.length + 1);
 					}
 				}
 				return null;
@@ -155,13 +151,12 @@
 
 			load_cookie_preferences() {
 				try {
-					const preferences = JSON.parse(
-						localStorage.getItem("cookiePreferences")
-					);
+					const preferences = this.get_cookie("cookiePreferences");
 					if (preferences) {
-						this.set_cookies(preferences);
-						this.performance_checkbox.checked = preferences.performance;
-						this.functionality_checkbox.checked = preferences.functionality;
+						const parsedPreferences = JSON.parse(preferences);
+						this.set_cookies(parsedPreferences);
+						this.performance_checkbox.checked = parsedPreferences.performance;
+						this.functionality_checkbox.checked = parsedPreferences.functionality;
 					} else {
 						this.consent_cookie_banner.style.display = "block";
 					}
@@ -171,7 +166,7 @@
 			}
 
 			update_banner_visibility() {
-				if (localStorage.getItem("cookiePreferences")) {
+				if (this.get_cookie("cookiePreferences")) {
 					this.consent_cookie_banner.style.display = "none";
 					this.cookie_banner.style.display = "none";
 				} else {
@@ -183,7 +178,6 @@
 		const cookie_consent = new Cookie_Consent();
 		cookie_consent.update_banner_visibility();
 		cookie_consent.load_cookie_preferences();
-		cookie_consent.get_cookie_expiration();
 		Cookie_Consent.activation_info();
 	});
 })();
