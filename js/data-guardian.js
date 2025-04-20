@@ -40,12 +40,13 @@
 				this.show_cookie_settings_button.addEventListener(
 					"click",
 					() => {
-						this.cookie_banner_dialog.open
-							? this.hide_cookie_banner()
-							: this.show_cookie_banner();
+						if (this.consent_cookie_banner_dialog.open) {
+							this.hide_consent_cookie_banner();
+						}
+						this.show_cookie_banner();
 					},
 					{ passive: true }
-				);
+				);				
 
 				this.accept_all_button.addEventListener(
 					"click",
