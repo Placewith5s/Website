@@ -8,12 +8,14 @@
 			}
 
 			constructor() {
+				this.cookie_banner_dialog = document.querySelector("#cookie-banner-dialog");
 				this.cookie_banner = document.querySelector("#cookie-banner");
 				this.show_cookie_settings_button = document.querySelector("#show-cookie-settings-btn");
 				this.accept_all_button = document.querySelector("#accept-all-btn");
 				this.reject_all_button = document.querySelector("#reject-all-btn");
 				this.save_preferences_button = document.querySelector("#save-preferences-btn");
 				this.close_banner_button = document.querySelector("#close-banner-btn");
+				this.consent_cookie_banner_dialog = document.querySelector("#consent-cookie-banner-dialog");
 				this.consent_cookie_banner = document.querySelector("#consent-cookie-banner");
 				this.manage_cookies_link = document.querySelector("#manage-cookies-link");
 				this.essential_checkbox = document.querySelector("#essential-checkbox");
@@ -38,7 +40,7 @@
 				this.show_cookie_settings_button.addEventListener(
 					"click",
 					() => {
-						this.cookie_banner.style.display === "block"
+						this.cookie_banner_dialog.open
 							? this.hide_cookie_banner()
 							: this.show_cookie_banner();
 					},
@@ -81,21 +83,33 @@
 				});
 			}
 
-			toggle_banner(element, show) {
-				element.style.display = show ? "block" : "none";
+			toggle_banner(dialog, show) {
+				if (!(dialog instanceof HTMLDialogElement)) {
+					console.error("toggle_banner: Element is not a dialog.");
+					return;
+				}
+				if (show) {
+					if (!dialog.open) dialog.showModal();
+				} else {
+					if (dialog.open) dialog.close();
+				}
 			}
-
+			
 			show_cookie_banner() {
-				this.toggle_banner(this.cookie_banner, true);
+				this.toggle_banner(this.cookie_banner_dialog, true);
 			}
-
+			
 			hide_cookie_banner() {
-				this.toggle_banner(this.cookie_banner, false);
+				this.toggle_banner(this.cookie_banner_dialog, false);
 			}
-
+			
 			hide_consent_cookie_banner() {
-				this.toggle_banner(this.consent_cookie_banner, false);
+				this.toggle_banner(this.consent_cookie_banner_dialog, false);
 			}
+			
+			show_consent_cookie_banner() {
+				this.toggle_banner(this.consent_cookie_banner_dialog, true);
+			}			
 
 			accept_or_reject_all(accept) {
 				const preferences = {
@@ -158,21 +172,21 @@
 						this.performance_checkbox.checked = parsedPreferences.performance;
 						this.functionality_checkbox.checked = parsedPreferences.functionality;
 					} else {
-						this.consent_cookie_banner.style.display = "block";
+						this.show_consent_cookie_banner();
 					}
 				} catch (error) {
 					console.error("Error loading cookie preferences:", error.message);
 				}
-			}
+			}			
 
 			update_banner_visibility() {
 				if (this.get_cookie("cookiePreferences")) {
-					this.consent_cookie_banner.style.display = "none";
-					this.cookie_banner.style.display = "none";
+					this.hide_consent_cookie_banner();
+					this.hide_cookie_banner();
 				} else {
-					this.consent_cookie_banner.style.display = "block";
+					this.show_consent_cookie_banner();
 				}
-			}
+			}			
 		}
 
 		const cookie_consent = new Cookie_Consent();
