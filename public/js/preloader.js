@@ -92,7 +92,7 @@
 			}
 		}
 
-		const stylesheets = ["/css/top-n-bottom.css"];
+		const stylesheets = ["/public/css/top-n-bottom.css"];
 
 		const stylesheet_loader = new Stylesheet_Loader(stylesheets)
 
