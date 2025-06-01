@@ -75,7 +75,7 @@
   @media (prefers-reduced-motion: no-preference) {
     img {
       transform: scale(0.8);
-      opacity: 0.1;
+      opacity: 0.25;
       animation: fade-in 1s linear forwards;
     }
   }
