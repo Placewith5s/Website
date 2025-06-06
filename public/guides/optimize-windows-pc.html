@@ -19,7 +19,6 @@
     <meta property="twitter:url" content="https://www.placewith5s.com/public/guides/optimize-windows-pc">
     <meta property="twitter:title" content="Optimize Your Windows PC: Free Tools, Settings Tweaks, and Downloads">
     <meta property="twitter:description" content="Follow our comprehensive guide to optimize your Windows PC. Discover the best free tools, essential settings adjustments, and key downloads to enhance your system's performance.">
-    <!-- Extra Accessibility -->
     <noscript>
       <style>
         #cookie-banner,
@@ -40,6 +39,7 @@
 
     <link rel="stylesheet" href="/public/css/preloader.css">
     <link rel="stylesheet" href="/public/css/data-guardian.css">
+    <link rel="stylesheet" href="/public/css/guide-styles/guides.css">
     <link rel="stylesheet" href="/public/css/guide-styles/optimize-windows-pc.css">
     <link rel="stylesheet" href="/public/css/top-n-bottom.css">
     <link rel="icon" type="image/svg+xml" href="/public/icons/Settings.svg">
@@ -95,6 +95,9 @@
         <a href="/public/guides/optimize-windows-pc" aria-current="page" aria-label="Optimize Windows PC">
           <span>Optimize Windows PC</span>
         </a>
+        <a href="/public/guides/troubleshoot-windows-pc" aria-label="Troubleshoot Windows PC">
+          <span>Troubleshoot Windows PC</span>
+        </a>
       </nav>
       <button class="menu-icon" id="menu-icon" aria-haspopup="true" aria-label="Open Menu">
         <div class="line"></div>
@@ -117,6 +120,9 @@
         <a href="/public/guides/optimize-windows-pc" aria-current="page" id="optimize-windows-pc-link" role="menuitem" aria-label="Optimize Windows PC">
           <span>Optimize Windows PC</span>
         </a>
+        <a href="/public/guides/troubleshoot-windows-pc" id="troubleshoot-windows-pc-link" role="menuitem" aria-label="Troubleshoot Windows PC">
+          <span>Troubleshoot Windows PC</span>
+        </a>
         <button id="hide-drawer-btn" aria-label="Hide">Hide</button>
       </nav>
       <h1>Optimize Your Windows PC: Free Tools, Settings Tweaks, and Downloads</h1>
@@ -132,21 +138,23 @@
         <p>No results found. Try another search?</p>
       </div>
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">June 1, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">June 6, 2025</span>
         </p>
-        <time datetime="2025-06-01" title="Last Updated: June 1, 2025"></time>
+        <time datetime="2025-06-06" title="Last Updated: June 6, 2025"></time>
       </div>
+
       <nav class="TOC">
         <h2>Table of Contents</h2>
         <h3 class="spaced-top" id="start-subheading">Start</h3>
         <a href="#preparation-heading" aria-label="Preparation" class="spaced-top">Preparation</a>
         <h3 id="one-tool-for-everything-subheading">One Tool For Everything</h3>
-        <a href="#step1-heading" aria-label="Run ChrisTitusTech's Tool">Run ChrisTitusTech's Tool</a>
-        <a href="#step2-heading" aria-label="Optimize Your System with Tweaks (One Tool For Everything)">Optimize Your System with Tweaks (One Tool For Everything)</a>
-        <a href="#step3-heading" aria-label="Resolve System Issues with Config: Your One-Stop Solution">Resolve Issues with Config: Your One-Stop Solution</a>
+        <a href="#step-1-heading" aria-label="Run ChrisTitusTech's Tool">Run ChrisTitusTech's Tool</a>
+        <a href="#step-2-heading" aria-label="Optimize Your Windows with Tweaks (One Tool For Everything)">Optimize Your Windows with Tweaks (One Tool For Everything)</a>
+        <a href="#step-3-heading" aria-label="Resolve Windows Issues with Config: Your One-Stop Solution">Resolve Windows Issues with Config: Your One-Stop Solution</a>
         <h3 id="other-subheading">Other</h3>
-        <a href="#step4-heading" aria-label="Enhance System Performance with Hellzerg's Optimizer">Enhance Performance with Hellzerg's Optimizer</a>
+        <a href="#step-4-heading" aria-label="Enhance Windows Performance with Hellzerg's Optimizer">Enhance Windows Performance with Hellzerg's Optimizer</a>
       </nav>
+      
       <section class="preparation-section" aria-labelledby="preparation-heading">
         <h3 class="spaced-bottom" id="preparation-heading">Preparation:</h3>
         <span class="strong spaced-bottom">Create a System Restore Point:</span>
@@ -156,16 +164,15 @@
           <li class="spaced-top bold">Back Up Important Data:</li>
           <li class="no-list-style spaced-bottom">Save files to an external drive or cloud storage, such as Google Drive.</li>
           <li class="bold">Run as Administrator:</li>
-          <li class="no-list-style spaced-bottom">All tools require admin rights for optimal functionality, while some of them want : Run As Administrator.</li>
+          <li class="no-list-style spaced-bottom">All tools require admin rights for optimal functionality, while some of them want: "Run As Administrator".</li>
           <li class="bold">Learn to Extract ZIPs:</li>
           <li class="no-list-style spaced-bottom">Some tools are compressed and need to be extracted. (right click on file/folder > Extract All)</li>
         </ul>
-        <span class="bold">Tip:</span>
-        <p>Explore the settings shown in the images below to personalize your experience.</p>
+        <p class="spaced-top spaced-bottom"><strong>Tip:</strong> Explore the settings shown in the images below to personalize your experience.</p>
       </section>
       <div class="step-by-step-guide">
-        <section class="step1 anim" aria-labelledby="step1-heading">
-          <h3 id="step1-heading">Step 1: Run ChrisTitusTech's Tool</h3>
+        <section class="step-one anim" aria-labelledby="step-1-heading">
+          <h3 id="step-1-heading">Step 1: Run ChrisTitusTech's Tool</h3>
           <div class="step-content spaced-top">
             <a href="https://christitus.com/one-tool-for-everything/" target="_blank" rel="noopener noreferrer" aria-label="Chris Titus' Website (opens in a new tab)">Chris Titus' Website (opens in a new tab)</a>
             <p class="spaced-top spaced-bottom">Begin by using Chris Titus Tech's "One Tool For Everything" PowerShell script.</p>
@@ -173,60 +180,60 @@
             <pre class="spaced-top code">irm christitus.com/win | iex</pre>
           </div>
         </section>
-        <section class="step2" aria-labelledby="step2-heading">
-          <h3 id="step2-heading">Step 2: Optimize Your System with Tweaks (One Tool For Everything)</h3>
+        <section class="step-two" aria-labelledby="step-2-heading">
+          <h3 id="step-2-heading">Step 2: Optimize Your Windows with Tweaks (One Tool For Everything)</h3>
           <div class="step-content spaced-top">
-            <p class="bold">Important: Make sure you've completed the <a href="#preparation-heading" aria-label="Preparation section">Preparation section</a> first. </p>
+            <p class="spaced-bottom"><strong>Important:</strong> Make sure you've completed the <a href="#preparation-heading" aria-label="Preparation section">Preparation section</a> first.</p>
             <p>Navigate to "Tweaks". Here's what you'll see:</p>
             <figure>
               <picture>
                 <source srcset="/public/images/avif/one_tool_for_everything_standard_selection.avif" type="image/avif">
                 <source srcset="/public/images/webp/one_tool_for_everything_standard_selection.webp" type="image/webp">
-                <img src="/public/images/one_tool_for_everything_standard_selection.png" alt="One Tool For Everything 'Tweaks' menu displaying recommended standard selection for optimal settings" loading="lazy" fetchpriority="high">
-              </picture>
-              <figcaption class="bold">Pro Tip: Click "Standard Selection." These are safe, recommended settings for peak performance!</figcaption>
+                <img src="/public/images/one_tool_for_everything_standard_selection.png" alt="One Tool For Everything 'Tweaks' menu." loading="lazy" fetchpriority="high">
+             </picture>
+              <figcaption><strong>Pro Tip:</strong> Click on "Standard" at the top. These are safe, recommended settings for peak performance!</figcaption>
               <picture>
                 <source srcset="/public/images/avif/one_tool_for_everything_standard_result.avif" type="image/avif">
                 <source srcset="/public/images/webp/one_tool_for_everything_standard_result.webp" type="image/webp">
-                <img src="/public/images/one_tool_for_everything_standard_result.png" alt="One Tool For Everything 'Tweaks' menu showing essential tweaks enabled after choosing Standard" loading="lazy" fetchpriority="high">
-              </picture>
-              <figcaption>This is how your "Essential Tweaks" should look after selecting "Standard."</figcaption>
-              <p class="spaced-top">Customize further by enabling or disabling specific features. Click "Run Tweaks" to initiate the process. You'll be able to monitor its progress directly in the PowerShell window.</p>
+                <img src="/public/images/one_tool_for_everything_standard_result.png" alt="One Tool For Everything 'Tweaks' menu showing essential tweaks enabled after choosing 'Standard'." loading="lazy" fetchpriority="high">
+             </picture>
+              <figcaption>This is how your "Standard" should look after selecting it under "Essential Tweaks".</figcaption>
+              <p class="spaced-top">Customize further by enabling or disabling specific features. Click on "Run Tweaks" to initiate the process. You'll be able to monitor its progress directly in the PowerShell window.</p>
           </div>
           </figure>
         </section>
-        <section class="step3" aria-labelledby="step3-heading">
-          <h3 id="step3-heading">Step 3: Resolve System Issues with Config: Your One-Stop Solution</h3>
+        <section class="step-three" aria-labelledby="step-3-heading">
+          <h3 id="step-3-heading">Step 3: Resolve Windows Issues with Config: Your One-Stop Solution</h3>
           <div class="step-content spaced-top">
-            <p>Troubleshoot and fine-tune your settings easily. Click on "Config" (next to "Tweaks") to access the configuration options.</p>
+            <p>Troubleshoot and fine-tune your settings easily. Click on "Config" (next to "Tweaks") to access the configuration menu.</p>
             <picture>
               <source srcset="/public/images/avif/one_tool_for_everything_config_for_fixes.avif" type="image/avif">
               <source srcset="/public/images/webp/one_tool_for_everything_config_for_fixes.webp" type="image/webp">
-              <img src="/public/images/one_tool_for_everything_config_for_fixes.png" alt="One Tool For Everything configuration menu for troubleshooting and customizing system settings for performance" loading="lazy" fetchpriority="high">
-            </picture>
+              <img src="/public/images/one_tool_for_everything_config_for_fixes.png" alt="One Tool For Everything configuration menu for troubleshooting and customizing system settings for performance." loading="lazy" fetchpriority="high">
+           </picture>
             <p>If that didn't fix the issue, please check out:</p>
             <a href="#step9-hidden-heading" aria-label="Troubleshooting Your Windows PC">Troubleshooting Your Windows PC</a>
-            <p class="spaced-top bold">You need to click the "Show All" button below to view all options.</p>
+            <p class="spaced-top"><strong>Doesn't show up?</strong> You need to click the "Show All" button below to view all options.</p>
           </div>
         </section>
-        <section class="step4" aria-labelledby="step4-heading">
-          <h3 id="step4-heading">Step 4: Enhance System Performance with Hellzerg's Optimizer</h3>
+        <section class="step-four" aria-labelledby="step-4-heading">
+          <h3 id="step-4-heading">Step 4: Enhance Windows Performance with Hellzerg's Optimizer</h3>
           <div class="step-content spaced-top">
             <a href="https://github.com/hellzerg/optimizer/releases/" target="_blank" rel="noopener noreferrer" aria-label="Download Optimizer from Github (opens in a new tab)">Download Optimizer from Github (opens in a new tab)</a>
-            <p class="spaced-top bold spaced-bottom">Note that for certain settings you enable or disable, a restart may be required to apply the changes, which can typically be found in the top right corner of the interface.</p>
+            <p class="spaced-top spaced-bottom"><strong>Note:</strong> For certain settings you enable or disable, a restart may be required to apply the changes, which can typically be found in the top right corner of the interface.</p>
             <figure>
               <picture>
                 <source srcset="/public/images/avif/optimizer_general.avif" type="image/avif">
                 <source srcset="/public/images/webp/optimizer_general.webp" type="image/webp">
-                <img src="/public/images/optimizer_general.png" alt="Optimizer tool settings in 'General' section to enhance privacy, customization, and performance" loading="lazy" fetchpriority="high">
-              </picture>
+                <img src="/public/images/optimizer_general.png" alt="Optimizer tool options in 'General' section to enhance privacy, customization, and performance." loading="lazy" fetchpriority="high">
+             </picture>
               <span class="strong">General Optimizer Settings:</span>
               <figcaption>These control system-wide optimizations like privacy, customization, and performance.</figcaption>
               <picture>
                 <source srcset="/public/images/avif/optimizer_windows_version.avif" type="image/avif">
                 <source srcset="/public/images/webp/optimizer_windows_version.webp" type="image/webp">
-                <img src="/public/images/optimizer_windows_version.png" alt="Optimizer tool settings in 'Windows(Version)' section for Windows 10/11 optimizations" loading="lazy" fetchpriority="high">
-              </picture>
+                <img src="/public/images/optimizer_windows_version.png" alt="Optimizer tool options in 'Windows(Version)' section for Windows 10/11 optimizations." loading="lazy" fetchpriority="high">
+             </picture>
               <span class="strong">Windows-Specific Optimizer Settings:</span>
               <figcaption>These tailor optimizations to Windows 10/11 features, including privacy and security.</figcaption>
             </figure>
@@ -244,12 +251,12 @@
                 <li class="strong no-list-style">Superfetch</li>
                 <li class="no-list-style">Recommended to have SysMain (Superfetch) enabled for HDD users; otherwise disable it. Limited RAM may slow down your HDD system.</li>
                 <li class="strong no-list-style">SMBv2 Protocol</li>
-                <li class="no-list-style">Recommended if using legacy printers. SMBv3 is safer.</li>
+                <li class="no-list-style">Recommended if using legacy printers. SMBv3 is more secure, though.</li>
               </ul>
               <ul>
                 <li class="spaced-top strong spaced-bottom">"Windows (Version)":</li>
                 <li class="strong no-list-style">Sensor Services</li>
-                <li class="no-list-style">Recommended if your device has a touch function.</li>
+                <li class="no-list-style">Recommended if your device has a touch function, such as a few laptops.</li>
                 <li class="strong no-list-style">Virtualization Based Security</li>
                 <li class="no-list-style">Recommended to turn off Virtualization-Based Security if virtualization is not in use.</li>
             </ul>
@@ -258,115 +265,96 @@
         </section>
         <div class="expand-all spaced-top">
           <button id="show-hide-btn" aria-expanded="false">Show All</button>
-          <section class="step5 spaced-top" id="step-hidden-from-5">
-            <h3 id="step5-hidden-heading">Step 5: Remove Bloatware & Optimize Privacy with WinPilot AI</h3>
+          <section class="step-five spaced-top" id="step-hidden-from-5" aria-labelledby="step-5-hidden-heading">
+            <h3 id="step-5-hidden-heading">Step 5: Remove Bloatware & Optimize Privacy with Bloatynosy</h3>
             <div class="step-content spaced-top">
-              <p>WinPilot is an intelligent AI tool designed to help you remove unnecessary applications and optimize privacy settings for a cleaner, more secure system.</p>
-              <p>For more information: <a href="https://github.com/builtbybel/Winpilot/releases/" target="_blank" rel="noopener noreferrer" aria-label="Download WinPilot from Github (opens in a new tab)">Download WinPilot from Github (opens in a new tab)</a>
+              <p>For more information visit: <a href="https://github.com/builtbybel/Bloatynosy/releases" target="_blank" rel="noopener noreferrer" aria-label="Download Bloatynosy from Github (opens in a new tab)">Download Bloatynosy from Github (opens in a new tab)</a>
               </p>
             </div>
           </section>
-          <section class="step6" id="step-hidden-from-6">
-            <h3 id="step6-hidden-heading">Step 6: Fine-Tune CPU Power Management with ParkControl</h3>
+          <section class="step-six" id="step-hidden-from-6" aria-labelledby="step-6-hidden-heading">
+            <h3 id="step-6-hidden-heading">Step 6: Fine-Tune CPU Power Management with ParkControl</h3>
             <div class="step-content spaced-top">
               <a href="https://bitsum.com/parkcontrol/" target="_blank" rel="noopener noreferrer" aria-label="Download ParkControl from Bitsum (opens in a new tab)">Download ParkControl from Bitsum (opens in a new tab)</a>
-              <p class="bold spaced-top spaced-bottom">Laptops: Disable both "On Plugged In (AC)" and "On Battery (DC)" when at 100% battery. Turn off all park settings for optimal performance.</p>
-              <p class="bold">Desktops: Disable all park settings to maximize performance.</p>
+              <p class="spaced-top spaced-bottom"><strong>Laptops:</strong> Disable both "On Plugged In (AC)" and "On Battery (DC)" when at 100% battery. Turn off all park settings for optimal performance.</p>
+              <p><strong>Desktops:</strong> Disable all park settings to maximize performance.</p>
               <picture>
                 <source srcset="/public/images/avif/park_control_cpu.avif" type="image/avif">
                 <source srcset="/public/images/webp/park_control_cpu.webp" type="image/webp">
-                <img src="/public/images/park_control_cpu.png" alt="ParkControl tool showing CPU settings for high-performance power profile on laptop" loading="lazy" fetchpriority="high">
-              </picture>
-              <span class="bold">Tip:</span>
-              <p>Enable "Show power plan change notifications" and "Show ParkControl settings in Windows Power Options" for easy access and monitoring.</p>
+                <img src="/public/images/park_control_cpu.png" alt="ParkControl tool showing CPU settings for high-performance power profile on laptop." loading="lazy" fetchpriority="high">
+             </picture>
+              <p class="spaced-top spaced-bottom"><strong>Tip:</strong> Enable "Show power plan change notifications" and "Show ParkControl settings in Windows Power Options" for easy access and monitoring.</p>
             </div>
           </section>
-          <section class="step7" id="step-hidden-from-7">
-            <h3 id="step7-hidden-heading">Step 7: Boost Startup Speed: Manage System Startup Applications</h3>
+          <section class="step-seven" id="step-hidden-from-7" aria-labelledby="step-7-hidden-heading">
+            <h3 id="step-7-hidden-heading">Step 7: Boost Startup Speed: Manage System Startup Applications</h3>
             <div class="step-content spaced-top">
               <p>Press the Windows key and type "Startup Apps".</p>
               <figure>
                 <picture>
                   <source srcset="/public/images/avif/startup_apps_search.avif" type="image/avif">
                   <source srcset="/public/images/webp/startup_apps_search.webp" type="image/webp">
-                  <img src="/public/images/startup_apps_search.png" alt="Windows Search for 'Startup Apps' to manage startup applications" loading="lazy" fetchpriority="high">
-                </picture>
-                <figcaption class="strong">Alternatively, type "Task Manager".</figcaption>
+                  <img src="/public/images/startup_apps_search.png" alt="Windows Search for 'Startup Apps' to manage startup applications." loading="lazy" fetchpriority="high">
+               </picture>
+                <figcaption>Alternatively, type "Task Manager".</figcaption>
                 <picture>
                   <source srcset="/public/images/avif/task_manager_search.avif" type="image/avif">
                   <source srcset="/public/images/webp/task_manager_search.webp" type="image/webp">
-                  <img src="/public/images/task_manager_search.png" alt="Windows Search for 'Task Manager' tool to manage startup applications" loading="lazy" fetchpriority="high">
-                </picture>
-                <figcaption class="strong">Navigate to Startup Apps:</figcaption>
+                  <img src="/public/images/task_manager_search.png" alt="Windows Search for 'Task Manager' tool to manage startup applications." loading="lazy" fetchpriority="high">
+               </picture>
+                <figcaption>Navigate to Startup Apps:</figcaption>
                 <picture>
                   <source srcset="/public/images/avif/navigate_startup_apps_task_manager.avif" type="image/avif">
                   <source srcset="/public/images/webp/navigate_startup_apps_task_manager.webp" type="image/webp">
-                  <img src="/public/images/navigate_startup_apps_task_manager.png" alt="Task Manager tool showing navigation to Startup Apps section" loading="lazy" fetchpriority="high">
-                </picture>
-                <span class="bold">Startup Apps for Windows Settings: </span>
+                  <img src="/public/images/navigate_startup_apps_task_manager.png" alt="Task Manager tool showing navigation to Startup Apps section." loading="lazy" fetchpriority="high">
+               </picture>
+                <p class="bold">Startup Apps for Windows Settings:</p>
                 <figcaption>Toggle off any unused apps to streamline your startup process.</figcaption>
-                <span class="bold">Task Manager: </span>
+                <p class="bold">Task Manager:</p>
                 <p>Right click > disable or enable unused/unnecessary apps (bloatware) that can slow up your booting times:</p>
                 <picture>
                   <source srcset="/public/images/avif/startup_apps_task_manager_result.avif" type="image/avif">
                   <source srcset="/public/images/webp/startup_apps_task_manager_result.webp" type="image/webp">
-                  <img src="/public/images/startup_apps_task_manager_result.png" alt="Task Manager showing right-click options in Startup Apps section" loading="lazy" fetchpriority="high">
-                </picture>
+                  <img src="/public/images/startup_apps_task_manager_result.png" alt="Task Manager showing right-click options in Startup Apps section." loading="lazy" fetchpriority="high">
+               </picture>
               </figure>
             </div>
           </section>
-          <section class="step8" id="step-hidden-from-8">
-            <h3 id="step8-hidden-heading">Step 8: Advanced Optimization <span class="bold">(BACKUP FIRST!)</span>
+          <section class="step-eight" id="step-hidden-from-8" aria-labelledby="step-8-hidden-heading">
+            <h3 id="step-8-hidden-heading">Step 8: Advanced Optimization <span class="bold">(BACKUP FIRST!)</span>
             </h3>
             <div class="step-content spaced-top">
-              <h3>Backup Your Registry</h3>
+              <h4>Backup Your Registry</h4>
               <p>Press the Windows key and type "reg edit" (short for Registry Editor).</p>
               <figure>
                 <picture>
                   <source srcset="/public/images/avif/reg_edit_search.avif" type="image/avif">
                   <source srcset="/public/images/webp/reg_edit_search.webp" type="image/webp">
-                  <img src="/public/images/reg_edit_search.png" alt="Windows Search for Registry Editor tool (reg edit) to start registry backup" loading="lazy" fetchpriority="high">
-                </picture>
+                  <img src="/public/images/reg_edit_search.png" alt="Windows Search for Registry Editor tool (reg edit) to start registry backup." loading="lazy" fetchpriority="high">
+               </picture>
                 <figcaption>Go to File > Export to create a backup and save it.</figcaption>
                 <picture>
                   <source srcset="/public/images/avif/reg_edit_export_navigate.avif" type="image/avif">
                   <source srcset="/public/images/webp/reg_edit_export_navigate.webp" type="image/webp">
-                  <img src="/public/images/reg_edit_export_navigate.png" alt="Registry Editor tool navigation for exporting registry backup" loading="lazy" fetchpriority="high">
-                </picture>
+                  <img src="/public/images/reg_edit_export_navigate.png" alt="Registry Editor tool navigation for exporting registry backup." loading="lazy" fetchpriority="high">
+               </picture>
               </figure>
-              <h3>Show Hidden Power Plan Settings & Fix ParkControl</h3>
-              <p>Navigate to:
-              <pre class="code">Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\be337238-0d82-4146-a960-4f3749d470c7</pre>
-              </p>
-              <p>Set the Attributes value to 2 in hexadecimal format:</p>
-              <figure>
-                <picture>
-                  <source srcset="/public/images/avif/reg_edit_show_hidden_power_settings_location.avif" type="image/avif">
-                  <source srcset="/public/images/webp/reg_edit_show_hidden_power_settings_location.webp" type="image/webp">
-                  <img src="/public/images/reg_edit_show_hidden_power_settings_location.png" alt="Registry Editor tool location for hidden power settings" loading="lazy" fetchpriority="high">
-                </picture>
-                <picture>
-                  <source srcset="/public/images/avif/reg_edit_attributes.avif" type="image/avif">
-                  <source srcset="/public/images/webp/reg_edit_attributes.webp" type="image/webp">
-                  <img src="/public/images/reg_edit_attributes.png" alt="Registry Editor showing the modified DWORD (32-bit) 'Attributes' value, used to reveal hidden power settings." loading="lazy" fetchpriority="high">
-                </picture>
-                <figcaption>Click Save.</figcaption>
-              </figure>
-              <h3 class="spaced-bottom">Optimize with Registry Editor (reg edit)</h3>
+              <p class="spaced-top spaced-bottom"><strong>Note:</strong> You need to restart your PC in order for it to take effect.</p>
+              <h4 class="spaced-bottom">Optimize with Registry Editor (reg edit)</h4>
               <p>Navigate to:</p>
               <figure>
                 <pre class="code">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\PriorityControl</pre>
                 <picture>
                   <source srcset="/public/images/avif/reg_edit_win_32_priority_seperation_location.avif" type="image/avif">
                   <source srcset="/public/images/webp/reg_edit_win_32_priority_seperation_location.webp" type="image/webp">
-                  <img src="/public/images/reg_edit_win_32_priority_seperation_location.png" alt="Registry Editor tool location for optimizing Win32PrioritySeperation" loading="lazy" fetchpriority="high">
-                </picture>
+                  <img src="/public/images/reg_edit_win_32_priority_seperation_location.png" alt="Registry Editor tool location for optimizing Win32PrioritySeperation." loading="lazy" fetchpriority="high">
+               </picture>
                 <figcaption>Click on Win32PrioritySeperation and choose Decimal or Hexadecimal.</figcaption>
                 <picture>
                   <source srcset="/public/images/avif/reg_edit_win_32_priority_seperation.avif" type="image/avif">
                   <source srcset="/public/images/webp/reg_edit_win_32_priority_seperation.webp" type="image/webp">
-                  <img src="/public/images/reg_edit_win_32_priority_seperation.png" alt="Registry Editor tool modifying Win32PrioritySeperation for performance" loading="lazy" fetchpriority="high">
-                </picture>
+                  <img src="/public/images/reg_edit_win_32_priority_seperation.png" alt="Registry Editor tool modifying Win32PrioritySeperation value." loading="lazy" fetchpriority="high">
+               </picture>
               </figure>
               <p class="spaced-bottom">Enter one of the following values:</p>
               <ul>
@@ -378,8 +366,29 @@
               <p>For further Registry Editor optimization, refer to: <a href="https://www.tenforums.com/tutorials/94628-change-split-threshold-svchost-exe-windows-10-a.html" target="_blank" rel="noopener noreferrer" aria-label="How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)">How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)</a>. </p>
             </div>
           </section>
-          <section class="step9" id="step-hidden-from-9">
-            <h3 class="spaced-top" id="step9-hidden-heading">Step 9: Troubleshooting Your Windows PC</h3>
+          <section class="step-nine" id="step-hidden-from-9" aria-labelledby="step-9-hidden-heading">
+            <h3 class="spaced-top" id="step-9-hidden-heading">Step 9: Disallow disk indexing</h3>
+            <div class="step-content spaced-top">
+              <p class="spaced-top">Right click on your Windows disk letter and select "Properties".</p>
+              <figure>
+                <p class="bold">You should see "Allow files on this drive to have contents indexed in addition to file properties" at the bottom:</p>
+                <picture>
+                  <source srcset="/public/images/avif/local_disk_property_setting_on.avif" type="image/avif">
+                  <source srcset="/public/images/webp/local_disk_property_setting_on.webp" type="image/webp">
+                  <img src="/public/images/local_disk_property_setting_on.png" alt="Local disk (disk letter) properties." loading="lazy" fetchpriority="high">
+               </picture>
+                <p class="bold">Uncheck the option and click on "Apply":</p>
+                <picture>
+                  <source srcset="/public/images/avif/local_disk_property_setting_off_apply.avif" type="image/avif">
+                  <source srcset="/public/images/webp/local_disk_property_setting_off_apply.webp" type="image/webp">
+                  <img src="/public/images/local_disk_property_setting_off_apply.png" alt="Local disk properties modifying 'Allow files on this drive to have contents indexed in addition to file properties'." loading="lazy" fetchpriority="high">
+               </picture>
+              </figure>
+              <p class="spaced-top spaced-bottom"><strong>Note:</strong> It may take up to an hour depending on your system.</p>
+            </div>
+          </section>
+          <section class="step-ten" id="step-hidden-from-10" aria-labelledby="step-10-hidden-heading">
+            <h3 class="spaced-top" id="step-10-hidden-heading">Step 10: Troubleshooting Your Windows PC</h3>
             <div class="step-content spaced-top">
               <h3 class="spaced-top">Keeping Everything Up-to-Date</h3>
               <ul class="spaced-top">
@@ -387,15 +396,15 @@
                 <li class="spaced-bottom">Keep your software updated.</li>
               </ul>
               <figure>
-                <p class="bold">Use Chris Titus' One Tool For Everything to manage Windows updates securely:</p>
+                <p>Use Chris Titus' One Tool For Everything to manage Windows updates securely:</p>
                 <picture>
                   <source srcset="/public/images/avif/one_tool_for_everything_recommended_updates.avif" type="image/avif">
                   <source srcset="/public/images/webp/one_tool_for_everything_recommended_updates.webp" type="image/webp">
-                  <img src="/public/images/one_tool_for_everything_recommended_updates.png" alt="One Tool For Everything 'Updates' section" loading="lazy" fetchpriority="high">
-              </picture>
+                  <img src="/public/images/one_tool_for_everything_recommended_updates.png" alt="One Tool For Everything 'Updates' section." loading="lazy" fetchpriority="high">
+               </picture>
               </figure>
               <h3 class="spaced-top spaced-bottom">Clean install of Windows</h3>
-              <h3>Additional Tools for Troubleshooting</h3>
+              <h4>Additional Tools for Troubleshooting</h4>
               <ul class="spaced-top">
                 <li class="spaced-bottom">Press Windows Key > type "Event Viewer" > go to the Windows Logs > go to System</li>
                 <li class="spaced-bottom">Windows Memory Diagnostic</li>
@@ -404,6 +413,8 @@
               <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/" class="spaced-right" aria-label="Download WinDbg (opens in a new tab)">Download WinDbg (opens in a new tab)</a>
               <a href="https://www.resplendence.com/download/" target="_blank" rel="noopener noreferrer" aria-label="Download WhoCrashed (opens in a new tab)">Download WhoCrashed (opens in a new tab)</a>
             </div>
+            <p class="spaced-top bold">Still facing issues? Check out:</p>
+            <a href="/public/guides/troubleshoot-windows-pc" aria-label="Troubleshoot Your Windows PC">Troubleshoot Your Windows PC</a>
           </section>
         </div>
         <div class="strawpoll-embed" id="strawpoll_ajnE1NvOxnW">
