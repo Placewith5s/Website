@@ -4,6 +4,9 @@ Disallow: /SECURITY.md
 Disallow: /.nojekyll
 Disallow: _headers
 
+User-agent: SEO Site Checkup
+Disallow: /
+
 Crawl-delay: 5
 
 Sitemap: https://www.placewith5s.com/sitemap.xml
