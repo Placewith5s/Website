@@ -20,6 +20,12 @@
 						}
 					};
 
+				document.addEventListener("keydown", (e) => {
+					if (e.key === "Escape" && this.drawer.classList.contains("opened")) {
+						this.close_drawer()
+					}
+				})
+
 					this.initialize_menu()
 				} else {
 					console.error("Missing required Menu_Manager elements!")
@@ -30,8 +36,9 @@
 				this.menu_icon.addEventListener("click", () => {
 					try {
 						const is_opened = this.drawer.classList.toggle("opened");
-						this.drawer.setAttribute("aria-hidden", !is_opened);
-						this.menu_icon.setAttribute("aria-expanded", is_opened)
+						this.drawer.setAttribute("aria-hidden", (!is_opened).toString());
+						this.menu_icon.setAttribute("aria-expanded", is_opened.toString())
+
 					} catch (e) {
 						throw new Error("menu-icon event failed!")
 					}
