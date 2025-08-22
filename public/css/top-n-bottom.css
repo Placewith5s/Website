@@ -6,9 +6,9 @@
     --color-secondary: #f5f5f5;
     --hover-scale: 1.03;
     --hover-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-    --anim-fade-duration: 1200ms;
+    --anim-fade-duration: 500ms;
     --anim-slide-from: 1rem;
-    --filter-active-settings: opacity(0.55);
+    --filter-active-settings: opacity(0.55)
   }
   *,
   *::after,
@@ -22,81 +22,81 @@
     margin: 0;
     padding: 0;
     color: var(--color-primary);
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary)
   }
   @supports (text-wrap: pretty) {
     *,
     *::after,
     *::before {
-      text-wrap: pretty;
+      text-wrap: pretty
     }
   }
   body,
   main {
     min-height: 100svh;
     min-height: 100vh;
-    max-width: 100%;
+    max-width: 100%
   }
   html {
     overflow-x: clip;
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
+    scrollbar-gutter: stable
   }
   h1 {
     font-size: 40px;
     line-height: 1.3;
-    letter-spacing: clamp(0.075rem, 1.5vw, 0.1rem);
+    letter-spacing: clamp(0.075rem, 1.5vw, 0.1rem)
   }
   h2 {
     font-size: 32px;
     line-height: 1.2;
-    letter-spacing: clamp(0.055rem, 1vw, 0.075rem);
+    letter-spacing: clamp(0.055rem, 1vw, 0.075rem)
   }
   h3 {
     font-size: 24px;
     line-height: 1.1;
-    letter-spacing: clamp(0.04rem, 0.75vw, 0.05rem);
+    letter-spacing: clamp(0.04rem, 0.75vw, 0.05rem)
   }
   @supports (text-wrap: balance) {
     h1, h2, h3 {
-      text-wrap: balance;
+      text-wrap: balance
     }
   }
   header h1 {
-    border-bottom: 2px solid var(--bg-secondary);
+    border-bottom: 2px solid var(--bg-secondary)
   }
   main {
     display: flex;
     flex-direction: column;
     padding: 1.38rem;
     border-radius: 0.55rem;
-    margin-top: 1.38rem;
+    margin-top: 1.38rem
   }
   .spaced-top {
-    margin-top: 2rem;
+    margin-top: 2rem
   }
   .spaced-bottom {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem
   }
   .spaced-right {
-    margin-right: 2rem;
+    margin-right: 2rem
   }
   .no-list-style {
-    list-style-type: none;
+    list-style-type: none
   }
   a:not(nav a) {
-    text-decoration: underline;
+    text-decoration: underline
   }
   a,
   button {
     cursor: pointer;
     text-decoration: none;
-    transition: filter 250ms cubic-bezier(0.39, 0.575, 0.565, 1),
-      color 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: filter 500ms ease-in-out
+      color 500ms ease-in-out
   }
   button {
     color: var(--color-primary);
-    border: 2.5px solid var(--accent);
+    border: 2.5px solid var(--accent)
   }
   button:hover,
   button:focus
@@ -104,22 +104,22 @@
   a:focus {
     transform: var(--hover-scale);
     box-shadow: var(--hover-shadow);
-    transition: transform 250ms ease, box-shadow 250ms ease;
+    transition: transform 500ms ease-in-out, box-shadow 500ms ease-in-out
   }
   a:hover, a:focus {
-    color: var(--accent);
+    color: var(--accent)
   }
   a:focus,
   button:focus {
-    outline: 2.5px solid var(--accent);
+    outline: 2.5px solid var(--accent)
   }
   a:active {
-    filter: var(--filter-active-settings);
+    filter: var(--filter-active-settings)
   }
   .last-updated {
     margin-bottom: 1.25rem;
     text-align: center;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid var(--color-secondary)
   }
   .search-container {
     display: flex;
@@ -127,54 +127,61 @@
     align-items: center;
     margin: 30px auto;
     width: 80%;
-    max-width: 500px;
+    max-width: 500px
   }
   .search-container #search-bar {
     padding: 12px 16px;
     border: 2px solid var(--color-secondary);
     border-radius: 25px;
-    width: 100%;
+    width: 100%
   }
   #not-found-message {
     display: none;
-    padding: 1.33rem;
+    padding: 1.33rem
   }
   @keyframes slide-in {
     from {
       opacity: 0;
-      transform: translateY(var(--anim-slide-from));
+      transform: translateY(var(--anim-slide-from))
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0)
     }
   }
   .scroll-fade {
     opacity: 0;
     animation: slide-in var(--anim-fade-duration) forwards;
-    animation-delay: var(--anim-delay, 0s);
+    animation-delay: var(--anim-delay, 0s)
   }
   .exclusive-nav,
   .exclusive-nav a {
-    display: flex;
+    display: flex
   }
   header h1,
   .exclusive-nav {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem
   }
   .exclusive-nav {
     position: relative;
     padding: 1rem;
     background-color: var(--bg-primary);
-    color: var(--color-primary);
+    color: var(--color-primary)
+  }
+  .dropdown-menu-container a:hover, .dropdown-menu-container a:focus {
+    padding-top: .5rem;
+    margin-bottom: .5rem
+  }
+  details, summary {
+    cursor: pointer
   }
   .exclusive-nav a {
     flex: 1;
-    justify-content: center;
+    justify-content: center
   }
   .exclusive-nav a:hover, .exclusive-nav a:focus {
     box-shadow: var(--hover-shadow);
-    transition: transform 250ms ease, box-shadow 250ms ease;
+    transition: transform 500ms ease-in-out, box-shadow 500ms ease-in-out
   }
   .menu-icon {
     background-color: var(--bg-primary);
@@ -185,13 +192,13 @@
     border: 1px solid var(--bg-secondary);
     border-radius: 4px;
     padding: 0.8rem;
-    backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem)
   }
   .menu-icon .line {
     width: 0.9rem;
     height: 0.15rem;
     background: var(--bg-secondary);
-    margin: 0.35rem 0;
+    margin: 0.35rem 0
   }
   .drawer {
     position: fixed;
@@ -203,75 +210,75 @@
     z-index: 1000;
     opacity: 0;
     transition: visibility 0ms, opacity 500ms,
-      transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: translateY(-2rem);
+      transform 500ms ease-in-out;
+    transform: translateY(-2rem)
   }
   .drawer.opened {
     visibility: visible;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0)
   }
   .drawer a {
     display: block;
     padding: 0.6rem;
     border: 1px solid var(--bg-secondary);
-    border-radius: 5px;
+    border-radius: 5px
   }
   .drawer a:hover,
   .drawer a:focus {
-    transform: translateX(10px);
+    transform: translateX(10px)
   }
   .drawer #hide-drawer-btn {
     border: none;
     padding: 1rem;
     border-radius: 15px;
-    transition: filter 300ms linear transform 300ms linear;
+    transition: filter 500ms ease-in-out transform 500ms ease-in-out
   }
   .drawer #hide-drawer-btn:hover,
   .drawer #hide-drawer-btn:focus {
-    transform: scale(0.9);
+    transform: scale(0.9)
   }
   footer {
     background-color: var(--bg-primary);
     color: var(--color-primary);
     padding: 3rem 0;
-    text-align: center;
+    text-align: center
   }
   footer a + a {
-    margin-top: 2rem;
+    margin-top: 2rem
   }
   .footer-container {
     display: flex;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 auto
   }
   .footer-container .footer-column {
     flex: 1;
-    text-align: center;
+    text-align: center
   }
   .footer-container .footer-column h4 {
     color: var(--accent);
     text-decoration: underline;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem
   }
   footer nav[class^="nav-footer-"] a {
     display: flex;
     flex-direction: column;
     margin-bottom: 0.5rem;
     color: var(--color-primary);
-    transition: color 300ms ease-in-out;
+    transition: color 500ms ease-in-out
   }
   footer nav[class^="nav-footer-"] a:hover {
-    color: var(--accent);
+    color: var(--accent)
   }
   footer .copyright {
     margin-top: 2rem;
-    color: var(--color-primary);
+    color: var(--color-primary)
   }
   .exclusive-nav a[aria-current="page"],
   .drawer a[aria-current="page"] {
     font-weight: 700;
-    text-decoration: underline;
+    text-decoration: underline
   }
   .strawpoll-embed {
     height: 580px;
@@ -279,51 +286,51 @@
     width: 100%;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column
   }
   .strawpoll-embed iframe {
     position: static;
     visibility: visible;
     display: block;
     width: 100%;
-    flex-grow: 1;
+    flex-grow: 1
   }
   @media only screen and (max-width: 320px) {
     .exclusive-nav {
-      display: none;
+      display: none
     }
   }
   @media only screen and (min-width: 321px) and (max-width: 768px) {
     .menu-icon,
     .drawer {
-      display: block;
+      display: block
     }
     .exclusive-nav {
-      display: none;
+      display: none
     }
   }
   @media only screen and (min-width: 769px) {
     .menu-icon,
     .drawer {
-      display: none;
+      display: none
     }
   }
   @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .menu-icon,
     .drawer {
-      display: none;
+      display: none
     }
   }
   @media only screen and (min-width: 1025px) and (max-width: 1200px) {
     .menu-icon,
     .drawer {
-      display: none;
+      display: none
     }
   }
   @media only screen and (min-width: 1201px) {
     .menu-icon,
     .drawer {
-      display: none;
+      display: none
     }
   }
   @media only screen and (prefers-color-scheme: dark) {
@@ -334,6 +341,6 @@
       --color-primary: #f5f5f5;
       --color-secondary: #444;
       --hover-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
-      --filter-active-settings: brightness(1.2);
+      --filter-active-settings: brightness(1.2)
     }
   }  

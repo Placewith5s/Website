@@ -8,11 +8,13 @@
 
 			constructor() {
 				this.drawer = document.querySelector("#drawer");
-				this.menu_icon = document.querySelector("#menu-icon")
+				this.menu_icon = document.querySelector("#menu-icon");
+				this.summary_element = document.querySelector("summary")
 
-				if (this.drawer && this.menu_icon) {
+				if (this.drawer && this.menu_icon && this.summary_element) {
 					this.drawer.setAttribute("aria-hidden", "true");
 					this.menu_icon.setAttribute("aria-expanded", "false");
+					this.summary_element.setAttribute("aria-expanded", "false")
 
 					this.handle_drawer_click = (e) => {
 						if (e.target.tagName === "A" || e.target.id === "hide-drawer-btn") {
@@ -49,6 +51,17 @@
 				this.drawer.addEventListener("click", this.handle_drawer_click, {
 					passive: true
 				})
+
+				document.addEventListener("click", (event) => {
+					const target = event.target
+
+					if (target.tagName === "SUMMARY") {
+						const is_expanded = target.getAttribute("aria-expanded") === "true";
+						target.setAttribute("aria-expanded", !is_expanded)
+					}
+				},
+				{ passive: true}
+				)
 			}
 
 			close_drawer() {

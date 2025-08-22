@@ -2,16 +2,16 @@
     width: 80%;
     margin: auto;
     overflow: hidden;
-    position: relative;
+    position: relative
   }
   .carousel-inner {
     display: flex;
-    transition: transform 500ms ease;
+    transition: transform 500ms ease-in-out
   }
   .carousel-item {
-    min-width: 100%;
+    min-width: 100%
   }
   .carousel-item img {
     width: 100%;
-    display: block;
+    display: block
   }
