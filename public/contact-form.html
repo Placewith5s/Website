@@ -148,16 +148,16 @@
         <div id="error-summary" role="alert" aria-live="assertive"></div>
         <div class="form-group">
           <label for="name" class="spaced-top">Your Name:</label>
-          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your Name" aria-placeholder="Your Name">
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your Name">
         </div>
         <div class="form-group">
           <label for="email">Your Email:</label>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder="Your Email" aria-placeholder="Your Email">
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="Your Email">
         </div>
         <div class="form-group">
           <label for="message">Your Message:</label>
-          <textarea id="message" name="message" required aria-autocomplete="none" autocomplete="off" placeholder="Your Message" aria-placeholder="Your Message" maxlength="500"></textarea>
-          <span class="char-count">0/500</span>
+          <textarea id="message" name="message" required autocomplete="off" placeholder="Your Message" maxlength="500"></textarea>
+          <span class="char-count" aria-live="polite">0/500</span>
         </div>
         <div class="gdpr-consent">
           <input type="checkbox" name="consent" id="consent" required aria-label="Consent Checkbox">

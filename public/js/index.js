@@ -12,13 +12,13 @@
 
 				if (this.search_bar && this.not_found_message) {
 					this.not_found_message.setAttribute("aria-hidden", "true");
-					this.search_sections()
+					this.search_listener()
 				} else {
 					console.error("Missing required Search elements!")
 				}
 			}
 
-			search_sections() {
+			search_listener() {
 				let debounce_search_bar = false;
 				this.search_bar.addEventListener("input", () => {
 					if (debounce_search_bar) {
@@ -27,10 +27,13 @@
 					debounce_search_bar = true
 
 					setTimeout(() => {
-						debounce_search_bar = false
+						debounce_search_bar = false;
+						this.search_sections()
 					}, 100)
 				}, {passive: true });
+			}
 
+			search_sections() {
 				try {
 					const search_term = this.search_bar.value.trim().toLowerCase();
 					const sections = document.querySelectorAll(".search-section");
