@@ -14,7 +14,7 @@
 					this.total_items = this.items.length;
 
 					this.show_next_item();
-					setInterval(() => this.show_next_item(), 3000)
+					setInterval(() => this.show_next_item(), 5000)
 				} else {
 					console.error("Missing required Slider elements!")
 				}
