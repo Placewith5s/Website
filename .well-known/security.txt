@@ -1,3 +1,0 @@
-Contact: mailto:placewith5s@gmail.com
-Preferred-Languages: en
-Policy: https://github.com/Placewith5s/Website/blob/main/SECURITY.md
