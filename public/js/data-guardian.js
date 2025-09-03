@@ -1,9 +1,9 @@
-"use strict";
 (() => {
+	"use strict";
 	document.addEventListener("DOMContentLoaded", () => {
 		class Cookie_Consent {
 			static activation_info() {
-				console.info("Cookie Consent activated!")
+				console.info("Cookie Consent activated!");
 			}
 
 			constructor() {
@@ -19,7 +19,7 @@
 				this.manage_cookies_link = document.querySelector("#manage-cookies-link");
 				this.essential_checkbox = document.querySelector("#essential-checkbox");
 				this.performance_checkbox = document.querySelector("#performance-checkbox");
-				this.functionality_checkbox = document.querySelector("#functionality-checkbox")
+				this.functionality_checkbox = document.querySelector("#functionality-checkbox");
 
 				if (
 					this.cookie_banner &&
@@ -29,9 +29,9 @@
 					this.consent_cookie_banner &&
 					this.manage_cookies_link
 				) {
-					this.add_event_listeners()
+					this.add_event_listeners();
 				} else {
-					console.error("Missing required CookieConsent elements!")
+					console.error("Missing required CookieConsent elements!");
 				}
 			}
 
@@ -42,7 +42,7 @@
 						if (this.consent_cookie_banner_dialog.open) {
 							this.hide_consent_cookie_banner();
 						}
-						this.show_cookie_banner()
+						this.show_cookie_banner();
 					},
 					{ passive: true }
 				)				
@@ -51,7 +51,7 @@
 					"click",
 					() => {
 						this.accept_or_reject_all(true);
-						this.hide_consent_cookie_banner()
+						this.hide_consent_cookie_banner();
 					},
 					{ passive: true }
 				)
@@ -60,7 +60,7 @@
 					"click",
 					() => {
 						this.accept_or_reject_all(false);
-						this.hide_consent_cookie_banner()
+						this.hide_consent_cookie_banner();
 					},
 					{ passive: true }
 				)
@@ -79,36 +79,36 @@
 
 				this.manage_cookies_link.addEventListener("click", (event) => {
 					event.preventDefault();
-					this.show_cookie_banner()
+					this.show_cookie_banner();
 				})
 			}
 
 			toggle_banner(dialog, show) {
 				if (!(dialog instanceof HTMLDialogElement)) {
-					console.error("toggle_banner: Element is not a dialog.");
-					return
+					console.error("Element is not a dialog!");
+					return;
 				}
 				if (show) {
-					if (!dialog.open) dialog.showModal()
+					if (!dialog.open) dialog.showModal();
 				} else {
-					if (dialog.open) dialog.close()
+					if (dialog.open) dialog.close();
 				}
 			}
 			
 			show_cookie_banner() {
-				this.toggle_banner(this.cookie_banner_dialog, true)
+				this.toggle_banner(this.cookie_banner_dialog, true);
 			}
 			
 			hide_cookie_banner() {
-				this.toggle_banner(this.cookie_banner_dialog, false)
+				this.toggle_banner(this.cookie_banner_dialog, false);
 			}
 			
 			hide_consent_cookie_banner() {
-				this.toggle_banner(this.consent_cookie_banner_dialog, false)
+				this.toggle_banner(this.consent_cookie_banner_dialog, false);
 			}
 			
 			show_consent_cookie_banner() {
-				this.toggle_banner(this.consent_cookie_banner_dialog, true)
+				this.toggle_banner(this.consent_cookie_banner_dialog, true);
 			}			
 
 			accept_or_reject_all(accept) {
@@ -119,7 +119,7 @@
 				};
 				this.set_cookies(preferences);
 				this.set_cookie("lastConsentTime", Date.now(), 90);
-				this.set_cookie("cookiePreferences", JSON.stringify(preferences), 90)
+				this.set_cookie("cookiePreferences", JSON.stringify(preferences), 90);
 			}
 
 			save_cookie_preferences() {
@@ -131,15 +131,15 @@
 				try {
 					this.set_cookie("cookiePreferences", JSON.stringify(preferences), 90);
 					this.set_cookies(preferences);
-					this.hide_cookie_banner()
+					this.hide_cookie_banner();
 				} catch (err) {
-					console.error("Error saving cookie preferences:", err)
+					console.error("Error saving cookie preferences:", err);
 				}
 			}
 
 			set_cookies(preferences) {
 				const expiry_date = new Date();
-				expiry_date.setMonth(expiry_date.getMonth() + 3)
+				expiry_date.setMonth(expiry_date.getMonth() + 3);
 
 				for (const [key, value] of Object.entries(preferences)) {
 					this.set_cookie(key, value, 90); // 90 days expiration
@@ -149,42 +149,42 @@
 			set_cookie(name, value, days) {
 				const expiry_date = new Date();
 				expiry_date.setDate(expiry_date.getDate() + days);
-				document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/`
+				document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/`;
 			}
 
 			get_cookie(name) {
 				const cookieArr = document.cookie.split(";");
 				for (let i = 0; i < cookieArr.length; i++) {
-					let cookie = cookieArr[i].trim()
+					let cookie = cookieArr[i].trim();
 					if (cookie.indexOf(name + "=") == 0) {
-						return cookie.substring(name.length + 1)
+						return cookie.substring(name.length + 1);
 					}
 				}
-				return null
+				return null;
 			}
 
 			load_cookie_preferences() {
 				try {
-					const preferences = this.get_cookie("cookiePreferences")
+					const preferences = this.get_cookie("cookiePreferences");
 					if (preferences) {
 						const parsedPreferences = JSON.parse(preferences);
 						this.set_cookies(parsedPreferences);
 						this.performance_checkbox.checked = parsedPreferences.performance;
-						this.functionality_checkbox.checked = parsedPreferences.functionality
+						this.functionality_checkbox.checked = parsedPreferences.functionality;
 					} else {
-						this.show_consent_cookie_banner()
+						this.show_consent_cookie_banner();
 					}
 				} catch (err) {
-					console.error("Error loading cookie preferences:", err)
+					console.error("Error loading cookie preferences:", err);
 				}
 			}			
 
 			update_banner_visibility() {
 				if (this.get_cookie("cookiePreferences")) {
 					this.hide_consent_cookie_banner();
-					this.hide_cookie_banner()
+					this.hide_cookie_banner();
 				} else {
-					this.show_consent_cookie_banner()
+					this.show_consent_cookie_banner();
 				}
 			}			
 		}
@@ -192,6 +192,6 @@
 		const cookie_consent = new Cookie_Consent();
 		cookie_consent.update_banner_visibility();
 		cookie_consent.load_cookie_preferences();
-		Cookie_Consent.activation_info()
+		Cookie_Consent.activation_info();
 	});
-})()
+})();
