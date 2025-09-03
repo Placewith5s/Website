@@ -149,7 +149,7 @@
 			set_cookie(name, value, days) {
 				const expiry_date = new Date();
 				expiry_date.setDate(expiry_date.getDate() + days);
-				document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/`;
+				document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/ Secure; SameSite=Lax`;
 			}
 
 			get_cookie(name) {
