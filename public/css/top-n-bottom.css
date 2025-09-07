@@ -63,6 +63,7 @@
     }
   }
   header h1 {
+    text-align: center;
     border-bottom: 2px solid var(--bg-secondary)
   }
   main {
@@ -160,7 +161,7 @@
   }
   header h1,
   .exclusive-nav {
-    margin-bottom: 1.5rem
+    margin-bottom: 3rem
   }
   .exclusive-nav {
     position: relative;
@@ -190,21 +191,21 @@
     right: 1rem;
     z-index: 1000;
     border: 1px solid var(--bg-secondary);
-    border-radius: 4px;
-    padding: 0.8rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
     backdrop-filter: blur(1rem)
   }
   .menu-icon .line {
-    width: 0.9rem;
-    height: 0.15rem;
+    width: 1rem;
+    height: 0.1rem;
     background: var(--bg-secondary);
     margin: 0.35rem 0
   }
   .drawer {
     position: fixed;
     visibility: hidden;
-    top: 2.5rem;
-    right: 1rem;
+    top: 4.5rem;
+    right: 3.6rem;
     padding: 1rem;
     border: 1px solid var(--bg-secondary);
     z-index: 1000;
@@ -220,7 +221,7 @@
   }
   .drawer a {
     display: block;
-    padding: 0.6rem;
+    padding: 0.55rem;
     border: 1px solid var(--bg-secondary);
     border-radius: 5px
   }
@@ -231,7 +232,7 @@
   .drawer #hide-drawer-btn {
     border: none;
     padding: 1rem;
-    border-radius: 15px;
+    border-radius: 1.5rem;
     transition: filter 500ms ease-in-out transform 500ms ease-in-out
   }
   .drawer #hide-drawer-btn:hover,
@@ -245,7 +246,7 @@
     text-align: center
   }
   footer a + a {
-    margin-top: 2rem
+    margin-top: 1.5rem
   }
   .footer-container {
     display: flex;
@@ -258,13 +259,12 @@
   }
   .footer-container .footer-column h4 {
     color: var(--accent);
-    text-decoration: underline;
     margin-bottom: 1rem
   }
   footer nav[class^="nav-footer-"] a {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     color: var(--color-primary);
     transition: color 500ms ease-in-out
   }
@@ -272,12 +272,12 @@
     color: var(--accent)
   }
   footer .copyright {
-    margin-top: 2rem;
+    margin-top: 3rem;
     color: var(--color-primary)
   }
   .exclusive-nav a[aria-current="page"],
   .drawer a[aria-current="page"] {
-    font-weight: 700;
+    font-weight: bolder;
     text-decoration: underline
   }
   .strawpoll-embed {
