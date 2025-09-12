@@ -14,7 +14,7 @@
 					this.var_final = null;
 					this.upd_year();
 				} else {
-					console.error("Missing required FooterDate elements!");
+					console.error("Missing required Footer_Date elements!");
 				}
 			}
 

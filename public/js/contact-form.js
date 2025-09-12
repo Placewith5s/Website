@@ -22,7 +22,7 @@
 
 					this.input_element.addEventListener("input", this.throttled_update_char_count);
 				} else {
-					console.error("Missing required CharacterCounter elements!");
+					console.error("Missing required Character Counter elements!");
 				}
 			}
 

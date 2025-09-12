@@ -30,7 +30,7 @@
 
 					this.initialize_menu()
 				} else {
-					console.error("Missing required Menu_Manager elements!");
+					console.error("Missing required Menu Manager elements!");
 				}
 			}
 

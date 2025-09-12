@@ -15,7 +15,7 @@
 					});
 					this.hide_elements_by_default();
 				} else {
-					console.error("Missing required Expand_Collapse elements!");
+					console.error("Missing required Expand Collapse elements!");
 				}
 			}
 

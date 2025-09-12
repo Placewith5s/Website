@@ -31,7 +31,7 @@
 				) {
 					this.add_event_listeners();
 				} else {
-					console.error("Missing required CookieConsent elements!");
+					console.error("Missing required Cookie Consent elements!");
 				}
 			}
 
