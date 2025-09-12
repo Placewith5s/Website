@@ -2,9 +2,9 @@
 (() => {
 	"use strict";
 	document.addEventListener("DOMContentLoaded", () => {
-		class Slider {
+		class Carousel {
 			static activation_info() {
-				console.info("Slider activated!");
+				console.info("Carousel activated!");
 			}
 
 			constructor() {
@@ -17,7 +17,7 @@
 					this.show_next_item();
 					setInterval(() => this.show_next_item(), 5000);
 				} else {
-					console.error("Missing required Slider elements!");
+					console.error("Missing required Carousel elements!");
 				}
 			}
 
@@ -83,8 +83,8 @@
 			}
 		}
 
-		new Slider();
+		new Carousel();
 
-		Slider.activation_info();
+		Carousel.activation_info();
 	});
 })();
