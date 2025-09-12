@@ -1,63 +1,63 @@
+/* TODO: Ids to classes due to this mess */
 #consent-cookie-banner,
 #cookie-banner,
 #cookie-banner label::before,
 #show-cookie-settings-btn,
 #close-banner-btn {
-    color: var(--color-primary)
+  color: var(--color-primary)
 }
-  #consent-cookie-banner,
-  #cookie-banner {
-    background-color: var(--bg-primary);
-    width: 100%;
-    padding: 20px;
-    position: fixed;
-    z-index: 1000
+#consent-cookie-banner,
+#cookie-banner {
+  background-color: var(--bg-primary);
+  padding: 20px;
+  position: fixed;
+  z-index: 1000
+}
+#consent-cookie-banner, #cookie-banner label::before {
+  left: 0
+}
+#consent-cookie-banner {
+  bottom: 0;
+  text-align: center
+}
+#cookie-banner {
+  border-radius: 8px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+#consent-cookie-banner button,
+#cookie-banner button {
+  &:hover {
+    color: var(--accent)
   }
-  #consent-cookie-banner, #cookie-banner label::before {
-    left: 0
-  }
-  #consent-cookie-banner {
-    bottom: 0;
-    text-align: center
-  }
-  #cookie-banner {
-    border-radius: 8px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-  }
-  #consent-cookie-banner button,
-  #cookie-banner button {
-    &:hover {
-      color: var(--accent)
-    }
-  }
-  #accept-all-btn,
-  #save-preferences-btn,
-  #reject-all-btn {
-    padding: 10px 20px;
-    margin: 5px;
-    transition: background-color 500ms ease-in-out;
-    border-radius: 5px
-  }
-  #cookie-banner label {
-    margin-bottom: 5px;
-    display: block;
-    padding-left: 15px;
-    position: relative
-  }
-  #cookie-banner label::before {
-    content: "•";
-    position: absolute
-  }
-  #cookie-banner input[type="checkbox"] {
-    margin-right: 10px;
-    vertical-align: middle
-  }
-  #show-cookie-settings-btn {
-    border: none
-  }
-  #close-banner-btn {
-    background: transparent;
-    float: right
-  }
+}
+#accept-all-btn,
+#save-preferences-btn,
+#reject-all-btn {
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px 20px;
+  transition: background-color 500ms ease-in-out
+}
+#cookie-banner label {
+  display: block;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative
+}
+#cookie-banner label::before {
+  content: "•";
+  position: absolute
+}
+#cookie-banner input[type="checkbox"] {
+  margin-right: 10px;
+  vertical-align: middle
+}
+#show-cookie-settings-btn {
+  border: none
+}
+#close-banner-btn {
+  background: transparent;
+  float: right
+}

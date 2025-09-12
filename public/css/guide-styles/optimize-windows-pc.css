@@ -1,34 +1,34 @@
 .expand-all.active section[id^="step-hidden-from-"] {
-    display: block
+  display: block
   }
   img {
-    height: auto;
-    vertical-align: middle;
-    max-width: 100%;
-    font-style: italic;
-    image-rendering: -webkit-optimize-contrast;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    object-fit: cover
+    font-style: italic;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: middle
   }
   @media (prefers-reduced-motion: no-preference) {
     img {
-      transform: scale(0.8);
+      animation: fade-in 500ms ease-in-out forwards;
       opacity: 0.25;
-      animation: fade-in 500ms ease-in-out forwards
+      transform: scale(0.8)
     }
   }
   @keyframes fade-in {
     to {
-      transform: scale(1);
-      opacity: 1
+      opacity: 1;
+      transform: scale(1)
     }
   }
   @supports (animation-timeline: view()) and (animation-range-start: entry) {
     @media (prefers-reduced-motion: no-preference) {
       img {
-        animation-timeline: view();
-        animation-range-start: entry
+        animation-range-start: entry;
+        animation-timeline: view()
       }
     }
   }
@@ -48,9 +48,9 @@
     }
   }
   #show-hide-btn {
-    width: 17.5vh;
+    border-radius: 0.5rem;
     height: 4rem;
-    border-radius: 0.5rem
+    width: 17.5vh
   }
   .step-by-step-guide,
   .preparation-section {
@@ -58,9 +58,9 @@
   }
   .code {
     font-family: monospace;
-    word-wrap: break-word;
     overflow-wrap: break-word;
-    white-space: pre-wrap
+    white-space: pre-wrap;
+    word-wrap: break-word
   }
   section[id^="step-hidden-from-"] {
     display: none

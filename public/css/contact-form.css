@@ -1,41 +1,40 @@
 #contact-form {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    border-radius: 12px
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 30px
   }
-  .form-group {
-    margin-bottom: 2rem
-  }
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px
-  }
-  input[type="text"],
-  input[type="email"],
-  textarea, button[type="submit"] {
-    border-radius: 8px
-  }
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px
-  }
-  .gdpr-consent {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px
-  }
-  .gdpr-consent input[type="checkbox"] {
-    transform: scale(1.2);
-    margin-right: 10px
-  }
-  .gdpr-consent a {
-    text-decoration: underline
-  }
-  button[type="submit"] {
-    padding: 15px 25px
-  }
+.form-group {
+  margin-bottom: 2rem
+}
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px
+}
+input[type="text"],
+input[type="email"],
+textarea, button[type="submit"] {
+  border-radius: 8px
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px;
+  padding: 15px
+}
+.gdpr-consent {
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px
+}
+.gdpr-consent input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2)
+}
+.gdpr-consent a {
+  text-decoration: underline
+}
+button[type="submit"] {
+  padding: 15px 25px
+}

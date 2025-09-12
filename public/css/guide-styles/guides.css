@@ -1,31 +1,32 @@
-.TOC > *:not(:last-child) {
-    margin-bottom: 2.25rem
-  }
-  @supports (gap: 2.25rem) {
-    .TOC {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 2.25rem
-    }
-}
-.TOC > *:not(:last-child) {
-  margin-bottom: 0
-}
+@supports (gap: 2.25rem) {
   .TOC {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 2.25rem;
     text-align: center
   }
-  .TOC h3 {
-    padding: 0.15rem;
-    border-bottom: 1px solid var(--bg-secondary)
-  }
-  .TOC a:last-child {
-    padding-bottom: 5.75rem
-  }
-  .TOC a::before {
-    content: "• "
-  }
+}
+/* zero out margin on gap support */
+.TOC > :not(:last-child) {
+  margin-bottom: 0
+}
+.TOC > :not(:last-child) {
+  margin-bottom: 2.25rem
+}
+.TOC {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center
+}
+.TOC h3 {
+  border-bottom: 1px solid var(--bg-secondary);
+  padding: 0.15rem
+}
+.TOC a:last-child {
+  padding-bottom: 5.75rem
+}
+.TOC a::before {
+  content: "• "
+}
