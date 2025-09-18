@@ -2,13 +2,10 @@
 	"use strict";
 	document.addEventListener("DOMContentLoaded", () => {
 		class Carousel {
-			static activation_info() {
-				console.info("Carousel activated!");
-			}
-
 			constructor() {
 				this.items = document.querySelectorAll(".carousel-item");
 
+				// check for carousel items' length property's existance to handle calling upd_carousel_title_desc() and show_next_item
 				if (this.items.length) {
 					this.current_index = 0;
 
@@ -20,6 +17,7 @@
 				}
 			}
 
+			// function to show and handle the next carousel item
 			show_next_item() {
 				this.total_items = this.items.length;
 
@@ -32,7 +30,9 @@
 				document.querySelector(".carousel-inner").style.transform = `translateX(-${100 * this.current_index}%)`;
 			}
 
+			// async function for handling and updating both the title and description
 			async upd_carousel_title_desc() {
+				// attempt to handle and update both the tile and description
 				try {
 				const optimize_windows_pc_url = "/public/guides/optimize-windows-pc.html";
 				const troubleshoot_windows_pc_url = "/public/guides/troubleshoot-windows-pc.html";
@@ -52,6 +52,7 @@
 				const optimize_windows_pc_description = doc_optimize_windows_pc_url.querySelector('meta[name="description"]').getAttribute('content');
 				const troubleshoot_windows_pc_description = doc_troubleshoot_windows_pc_url.querySelector('meta[name="description"]').getAttribute('content');
 
+				// check for both the titles and descriptions' existance
 				if (!optimize_windows_pc_title || !troubleshoot_windows_pc_title || !optimize_windows_pc_description || !troubleshoot_windows_pc_description) {
 					console.warn("No title or description found!");
 				}
@@ -82,8 +83,7 @@
 			}
 		}
 
+		// call the carousel constructor
 		new Carousel();
-
-		Carousel.activation_info();
 	});
 })();

@@ -61,7 +61,6 @@
     <script src="/public/js/preloader.js"></script>
     
     <link rel="stylesheet" href="/public/css/preloader.css">
-    <link rel="stylesheet" href="/public/css/data-guardian.css">
     <link rel="stylesheet" href="/public/css/contact-form.css">
     <link rel="stylesheet" href="/public/css/top-n-bottom.css">
   </head>
@@ -147,16 +146,16 @@
         <div id="error-summary" role="alert" aria-live="assertive"></div>
         <div class="form-group">
           <label for="name" class="spaced-top">Your Name:</label>
-          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your Name">
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Name">
         </div>
         <div class="form-group">
           <label for="email">Your Email:</label>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder="Your Email">
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="Email">
         </div>
         <div class="form-group">
           <label for="message">Your Message:</label>
-          <textarea id="message" name="message" required autocomplete="off" placeholder="Your Message" maxlength="500"></textarea>
-          <span class="char-count" aria-live="polite">0/500</span>
+          <textarea id="message" name="message" required autocomplete="off" placeholder="Message" maxlength="300"></textarea>
+          <span class="char-count" aria-live="polite">0/300</span>
         </div>
         <div class="gdpr-consent">
           <input type="checkbox" name="consent" id="consent" required aria-label="Consent Checkbox">

@@ -1,73 +1,71 @@
 .expand-all.active section[id^="step-hidden-from-"] {
   display: block
-  }
+}
+img {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  font-style: italic;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  max-width: 100%;
+  object-fit: cover;
+  vertical-align: middle
+}
+@media (prefers-reduced-motion: no-preference) {
   img {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    font-style: italic;
-    height: auto;
-    image-rendering: -webkit-optimize-contrast;
-    max-width: 100%;
-    object-fit: cover;
-    vertical-align: middle
+    animation: fade-in 500ms ease-in-out forwards;
+    opacity: 0.25;
+    transform: scale(0.8)
   }
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+@supports (animation-timeline: view()) and (animation-range-start: entry) {
   @media (prefers-reduced-motion: no-preference) {
     img {
-      animation: fade-in 500ms ease-in-out forwards;
-      opacity: 0.25;
-      transform: scale(0.8)
+      animation-range-start: entry;
+      animation-timeline: view()
     }
   }
-  @keyframes fade-in {
-    to {
-      opacity: 1;
-      transform: scale(1)
-    }
-  }
-  @supports (animation-timeline: view()) and (animation-range-start: entry) {
-    @media (prefers-reduced-motion: no-preference) {
-      img {
-        animation-range-start: entry;
-        animation-timeline: view()
-      }
-    }
-  }
+}
+@media (prefers-reduced-motion: reduce) {
   .hide {
-    opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 500ms ease-in-out
-      transform 500ms ease-in-out
+    transition: none
   }
-  .show {
-    opacity: 1;
-    transform: translateY(0)
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hide {
-      transition: none
-    }
-  }
-  #show-hide-btn {
-    border-radius: 0.5rem;
-    height: 4rem;
-    width: 17.5vh
-  }
-  .step-by-step-guide,
-  .preparation-section {
-    padding-bottom: 5rem
-  }
-  .code {
-    font-family: monospace;
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
-    word-wrap: break-word
-  }
-  section[id^="step-hidden-from-"] {
-    display: none
-  }
-  section:not(:last-child) {
-    margin-bottom: 25rem
-  }
+}
+.hide {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 500ms ease-in-out transform 500ms ease-in-out
+}
+.show {
+  opacity: 1;
+  transform: translateY(0)
+}
+.expand-all #show-hide-btn {
+  border-radius: 0.5rem;
+  height: 4rem;
+  width: 17.5vh
+}
+.step-by-step-guide,
+.preparation-section {
+  padding-bottom: 5rem
+}
+.code {
+  font-family: monospace;
+  overflow-wrap: break-word;
+  white-space: pre-wrap
+}
+section[id^="step-hidden-from-"] {
+  display: none
+}
+section:not(:last-child) {
+  margin-bottom: 25rem
+}
   /* @media only screen and (min-width: 320px) and (max-width: 480px) {
 
   }

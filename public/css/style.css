@@ -1,17 +1,16 @@
 .carousel {
-  margin: auto;
-  overflow: hidden;
-  position: relative;
-  width: 80%
+  margin-bottom: 5rem;
+  overflow: hidden
+}
+@media (prefers-reduced-motion: reduce) {
+  .carousel-inner {
+    transition: none
   }
+}
 .carousel-inner {
   display: flex;
   transition: transform 500ms ease-in-out
 }
 .carousel-item {
   min-width: 100%
-}
-.carousel-item img {
-  display: block;
-  width: 100%
 }

@@ -1,19 +1,9 @@
-#not-found-message {
-  display: none;
-  padding: 1.33rem
-  }
-#search-bar {
-  border: 2px solid #e0e0e0;
-  border-radius: 0.33rem;
-  margin-bottom: 1.33rem;
-  padding: 1rem
-}
 details {
   margin-bottom: 3rem
 }
 details[open] >:not(summary) {
   margin-left: 2.5rem
-}  
+}
 details summary {
   border-radius: 0.33rem;
   padding: 0.67rem

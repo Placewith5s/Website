@@ -41,6 +41,8 @@
       }
 </script>
 
+    <link rel="prev" href="https://www.placewith5s.com/public/guides/optimize-windows-pc">
+
     <noscript>
       <style>
         #cookie-banner,
@@ -60,7 +62,6 @@
     <script src="/public/js/preloader.js"></script>
 
     <link rel="stylesheet" href="/public/css/preloader.css">
-    <link rel="stylesheet" href="/public/css/data-guardian.css">
     <link rel="stylesheet" href="/public/css/guide-styles/guides.css">
     <link rel="stylesheet" href="/public/css/top-n-bottom.css">
   </head>
@@ -139,12 +140,19 @@
         <button id="hide-drawer-btn" aria-label="Hide">Hide</button>
       </nav>
       <h1>Troubleshoot Your Windows PC | Placewith5s</h1>
+      <div class="search-container">
+        <label for="search-bar" hidden>Search</label>
+        <input type="text" id="search-bar" role="searchbox" aria-label="Search for content." placeholder="Search..." autocomplete="off" aria-autocomplete="none">
+      </div>
     </header>
-    <main>
+    <main class="search-section">
+      <div id="not-found-message">
+        <p>No results found. Try another search?</p>
+      </div>
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Sep 7, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Sep 18, 2025</span>
         </p>
-        <time datetime="2025-09-07" title="Last Updated: Sep 7, 2025"></time>
+        <time datetime="2025-09-18" title="Last Updated: Sep 18, 2025"></time>
       </div>
 
       <nav class="TOC">
@@ -274,6 +282,7 @@
     <script src="/public/js/data-guardian.js" defer></script>
     <script src="/public/js/eclipse-mode.js" defer></script>
     <script src="/public/js/script.js" defer></script>
+    <script src="/public/js/search.js" defer></script>
     <script src="/public/js/footer-date.js" defer></script>
     <script src="/public/js/home.js" defer></script>
   </body>

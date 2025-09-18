@@ -25,7 +25,7 @@
   padding: 0.15rem
 }
 .TOC a:last-child {
-  padding-bottom: 5.75rem
+  margin-bottom: 5.75rem
 }
 .TOC a::before {
   content: "• "

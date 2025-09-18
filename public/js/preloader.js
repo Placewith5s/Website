@@ -1,12 +1,7 @@
 (() => {
 	"use strict";
 	document.addEventListener("DOMContentLoaded", () => {
-
 		class Stylesheet_Loader {
-			static activation_info() {
-				console.info("Stylesheet Loader activated!");
-			}
-
 			constructor(stylesheets) {
 				this.stylesheets = stylesheets;
 				this.loaded_styles = {};
@@ -25,6 +20,7 @@
 				this.load_stylesheets();
 			}
 
+			// function for loading the stylesheets
 			load_stylesheets() {
 				this.stylesheets.forEach((stylesheet) => {
 					const link_element = this.create_style_link_element(stylesheet);
@@ -34,6 +30,7 @@
 				});
 			}
 
+			// function to create a stylesheet link element
 			create_style_link_element(stylesheet) {
 				const link_element = document.createElement("link");
 				link_element.rel = "stylesheet";
@@ -41,43 +38,51 @@
 				return link_element;
 			}
 
+			// function for adding event listeners
 			add_listeners(link_element, stylesheet) {
+				// attempt to add event listeners
 				try {
+					// check for the stylesheet link elements to handle loads and errors
 					if (link_element) {
 						link_element.addEventListener("load", () => this.handle_load(stylesheet));
 						link_element.addEventListener("error", (err) => this.handle_error(stylesheet, err));
 					} else {
-						console.error(`${stylesheet} link not found!`);
 						this.remove_preloader();
+						throw new Error(`${stylesheet} link not found!`);
 					}
 				} catch (err) {
-					console.error(`Error adding listeners for ${stylesheet}:`, err);
 					this.remove_preloader();
+					throw new Error(`Error adding listeners for ${stylesheet}:`, err);
 				}
 			}
 
+			// function to handle and load the stylesheets
 			handle_load(stylesheet) {
-				console.log(`${stylesheet} loaded successfully`);
 				this.loaded_styles[stylesheet] = true;
 				const loaded_count = Object.keys(this.loaded_styles).length;
 				this.preloader.setAttribute("aria-valuenow", loaded_count);
 				this.check_css_loaded();
 			}
 
-			handle_error(stylesheet, error) {
-				console.error(`Error loading ${stylesheet}:`, error);
+			// function to assist in handling stylesheet loader errors
+			handle_error(stylesheet, err) {
 				this.remove_preloader();
+				throw new Error(`Error loading ${stylesheet}:`, err);
 			}
 
+			// function to check whether the CSS files loaded
 			check_css_loaded() {
 				const all_styles_loaded = this.stylesheets.every((stylesheet) => this.loaded_styles[stylesheet]);
+				// check whether the CSS files loaded to remove the preloader and show the body content
 				if (all_styles_loaded) {
 					this.remove_preloader();
 					this.show_content();
 				}
 			}
 
+			// function to show the body content
 			show_content() {
+				// check for body tag to handle its display, aria-busy, and aria-valuenow
 				if (this.body) {
 					this.body.style.display = "block";
 					this.body.setAttribute("aria-busy", "false");
@@ -85,15 +90,20 @@
 				}
 			}
 
+			// function to assist in removing the preloader
 			remove_preloader() {
+				// check and handle whether the preloader exists
 				if (this.preloader) {
 					this.preloader.remove();
+				} else {
+					throw new Error("Could not remove the preloader!");
 				}
 			}
 		}
 
 		const stylesheets = ["/public/css/top-n-bottom.css"];
 
+		// call the stylesheet loader constructor
 		const stylesheet_loader = new Stylesheet_Loader(stylesheets);
 
 		stylesheets.forEach((stylesheet) => {
@@ -103,7 +113,5 @@
 				link_element.removeEventListener("error", () => stylesheet_loader.handle_error(stylesheet))
 			}
 		});
-		
-		Stylesheet_Loader.activation_info();
 	});
 })();
