@@ -2,36 +2,38 @@
 	"use strict";
 	document.addEventListener("DOMContentLoaded", () => {
 		class Carousel {
+			#items;
+			#current_index;
 			constructor() {
-				this.items = document.querySelectorAll(".carousel-item");
+				this.#items = document.querySelectorAll(".carousel-item");
 
 				// check for carousel items' length property's existance to handle calling upd_carousel_title_desc() and show_next_item
-				if (this.items.length) {
-					this.current_index = 0;
+				if (this.#items.length) {
+					this.#current_index = 0;
 
-					this.upd_carousel_title_desc();
-					this.show_next_item();
-					setInterval(() => this.show_next_item(), 5000);
+					this.#upd_carousel_title_desc();
+					this.#show_next_item();
+					setInterval(() => this.#show_next_item(), 5000);
 				} else {
 					console.error("Missing required Carousel elements!");
 				}
 			}
 
 			// function to show and handle the next carousel item
-			show_next_item() {
-				this.total_items = this.items.length;
+			#show_next_item() {
+				this.total_items = this.#items.length;
 
-				this.items[this.current_index].classList.remove("active");
+				this.#items[this.#current_index].classList.remove("active");
 
-				this.current_index = (this.current_index + 1) % this.total_items;
+				this.#current_index = (this.#current_index + 1) % this.total_items;
 
-				this.items[this.current_index].classList.add("active");
+				this.#items[this.#current_index].classList.add("active");
 
-				document.querySelector(".carousel-inner").style.transform = `translateX(-${100 * this.current_index}%)`;
+				document.querySelector(".carousel-inner").style.transform = `translateX(-${100 * this.#current_index}%)`;
 			}
 
 			// async function for handling and updating both the title and description
-			async upd_carousel_title_desc() {
+			async #upd_carousel_title_desc() {
 				// attempt to handle and update both the tile and description
 				try {
 				const optimize_windows_pc_url = "/public/guides/optimize-windows-pc.html";
@@ -57,7 +59,7 @@
 					console.warn("No title or description found!");
 				}
 
-				this.items.forEach(item => {
+				this.#items.forEach(item => {
 					Array.from(item.children).forEach(child => {
 					switch (child.id) {	
 						case "optimize-windows-pc-carousel-title":

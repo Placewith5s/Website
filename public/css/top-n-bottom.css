@@ -135,7 +135,7 @@ a:active {
   text-align: center;
   width: 100%
 }
-#not-found-message {
+#not-found-msg {
   display: none;
   padding: 1.33rem
 }
