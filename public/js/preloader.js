@@ -37,6 +37,11 @@
 
 			// function to create a stylesheet link element
 			#create_style_link_element(stylesheet) {
+				if (!stylesheet) {
+					console.error("No stylesheet given!");
+					return;
+				}
+
 				const link_element = document.createElement("link");
 				link_element.rel = "stylesheet";
 				link_element.href = stylesheet;
@@ -45,6 +50,15 @@
 
 			// function for adding event listeners
 			#add_listeners(link_element, stylesheet) {
+				if (!link_element) {
+					console.error("No link element given!");
+					return;
+				}
+				if (!stylesheet) {
+					console.error("No stylesheet given!");
+					return;
+				}
+
 				// attempt to add event listeners
 				try {
 					// check for the stylesheet link elements to handle loads and errors
@@ -63,6 +77,11 @@
 
 			// function to handle and load the stylesheets
 			handle_load(stylesheet) {
+				if (!stylesheet) {
+					console.error("No stylesheet given!");
+					return;
+				}
+
 				this.#loaded_styles[stylesheet] = true;
 				const loaded_count = Object.keys(this.#loaded_styles).length;
 				this.#preloader.setAttribute("aria-valuenow", loaded_count);
@@ -71,6 +90,15 @@
 
 			// function to assist in handling stylesheet loader errors
 			handle_error(stylesheet, err) {
+				if (!stylesheet) {
+					console.error("No stylesheet given!");
+					return;
+				}
+				if (!err) {
+					console.error("No error provided!");
+					return;
+				}
+
 				this.#remove_preloader();
 				throw new Error(`Error loading ${stylesheet}:`, err);
 			}

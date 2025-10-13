@@ -61,6 +61,11 @@
 
 			// function to toggle the hidden steps' visibility
 			#toggle_element_visibility(element) {
+				if (!element) {
+					console.error("No element given!");
+					return;
+				}
+
 				// attempt to toggle the hidden steps' visibility
 				try {
 						const is_hidden = element.style.display === "none";

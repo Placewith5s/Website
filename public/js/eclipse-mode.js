@@ -60,6 +60,15 @@
 
 			// function to assist in handling theme checker errors
 			#handle_theme_error(msg, err) {
+				if (!msg) {
+					console.error("No message given!");
+					return;
+				}
+				if (!err) {
+					console.error("No error provided!");
+					return;
+				}
+
 				throw new Error(msg, err);
 			}
 		}

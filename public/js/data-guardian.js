@@ -115,6 +115,7 @@
 				if (!(dialog instanceof HTMLDialogElement)) {
 					throw new Error("Element is not a dialog!");
 				}
+
 				// check and handle the dialogs
 				if (show) {
 					if (!dialog.open) dialog.showModal();
@@ -177,6 +178,11 @@
 
 			// function to handle adding cookies
 			#set_cookies(preferences) {
+				if (!preferences) {
+					console.error("No preferences given!");
+					return;
+				}
+
 				// add an expire date
 				const expiry_date = new Date();
 				expiry_date.setMonth(expiry_date.getMonth() + 3);
@@ -189,6 +195,15 @@
 
 			// function to assist in adding a cookie
 			#set_cookie(name, value, days) {
+				if (!name) {
+					console.error("No name given!")
+					return;
+				}
+				if (!days) {
+					console.error("No days given!")
+					return;
+				}
+
 				// add an expiry date
 				const expiry_date = new Date();
 				expiry_date.setDate(expiry_date.getDate() + days);
@@ -199,6 +214,11 @@
 
 			// function to assist in getting a cookie
 			#get_cookie(name) {
+				if (!name) {
+					console.error("No name given!")
+					return;
+				}
+
 				const cookie_arr = document.cookie.split(";");
 				for (let i = 0; i < cookie_arr.length; i++) {
 					let cookie = cookie_arr[i].trim();
