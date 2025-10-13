@@ -11,7 +11,7 @@
 				// check character counter items' existance to handle max length, adding an input, throttle of update_char_count(), and adding a throttled event listener for the input
 				if (this.#input_element && this.#char_count_element) {
 					this.max_char_count = this.#input_element.getAttribute("maxlength");
-					this.#char_count_element.textContent = `0/${this.max_char_count}`;
+					this.#handle_invalid(0);
 
 					this.#input_element.parentNode.appendChild(this.#char_count_element);
 
@@ -53,11 +53,21 @@
 				}
 			}
 
+			// function to handle invalid character count
+			#handle_invalid(current_length) {
+				if (current_length == null || isNaN(current_length)) {
+					console.error("Invalid current length!");
+					this.#char_count_element.textContent = `Error/${this.max_char_count}`;
+					return;
+				}
+
+				this.#char_count_element.textContent = `${current_length}/${this.max_char_count}`;
+			}
+
 			// function to update the character count
 			#update_char_count() {
 				const current_length = this.#input_element.value.length;
-				this.max_char_count = this.#input_element.getAttribute("maxlength");
-				this.#char_count_element.textContent = `${current_length}/${this.max_char_count}`;
+				this.#handle_invalid(current_length);
 			}
 		}
 
