@@ -16,6 +16,7 @@
 					}
 			});
 		});
+		// get the hide class elements
 		const hides = document.querySelectorAll(".hide");
 		
 		if (hides) {

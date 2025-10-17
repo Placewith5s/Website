@@ -14,8 +14,12 @@ img {
 @media (prefers-reduced-motion: no-preference) {
   img {
     animation: fade-in 500ms ease-in-out forwards;
-    opacity: 0.25;
     transform: scale(0.8)
+  }
+}
+@media (prefers-reduced-transparency: no-preference) {
+  img {
+    opacity: 0.25
   }
 }
 @keyframes fade-in {

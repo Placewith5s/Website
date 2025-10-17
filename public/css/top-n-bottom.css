@@ -28,16 +28,24 @@
     text-wrap: pretty
   }
 }
+@supports (min-height: 100svh) {
+  body, main {
+    min-height: 100svh
+  }
+}
 body,
 main {
   max-width: 100%;
-  min-height: 100svh;
   min-height: 100vh
+}
+@supports (scrollbar-gutter: stable) {
+  html {
+    scrollbar-gutter: stable
+  }
 }
 html {
   overflow-x: clip;
   scroll-behavior: smooth;
-  scrollbar-gutter: stable
 }
 header h1 {
   font-size: 40px;
@@ -112,10 +120,12 @@ a:focus,
 button:focus {
   outline: 0.15rem solid var(--accent)
 }
-a:active {
-  filter: var(--filter-active-settings)
+@media (prefers-reduced-transparency: no-preference) {
+  a:active {
+    filter: var(--filter-active-settings)
+  }
 }
-/* last updated' */
+/* last updated */
 .last-updated {
   border: 0.06rem solid var(--color-secondary);
   margin-bottom: 1.25rem;
@@ -418,7 +428,7 @@ footer .copyright {
   }
 }
 @media only screen and (prefers-color-scheme: dark) {
-  :root {
+  :root { /* Utilized for every single page */
     --accent: #D9915D;
     --bg-primary: #444;
     --bg-secondary: #f5f5f5;
