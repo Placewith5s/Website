@@ -1,8 +1,10 @@
 User-agent: *
+Disallow: /CNAME
 Disallow: /README.md
 Disallow: /SECURITY.md
 Disallow: /.nojekyll
-Disallow: _headers
+Disallow: /.gitignore
+Disallow: /.github
 
 User-agent: SEO Site Checkup
 Disallow: /

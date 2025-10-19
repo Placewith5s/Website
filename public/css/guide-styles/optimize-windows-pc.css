@@ -3,23 +3,35 @@
 }
 img {
   -webkit-backface-visibility: hidden;
+  animation: fade-in 500ms ease-in-out forwards;
   backface-visibility: hidden;
   font-style: italic;
   height: auto;
   image-rendering: -webkit-optimize-contrast;
   max-width: 100%;
   object-fit: cover;
+  transform: scale(0.8);
   vertical-align: middle
 }
-@media (prefers-reduced-motion: no-preference) {
+@media (prefers-reduced-motion: reduce) {
   img {
-    animation: fade-in 500ms ease-in-out forwards;
-    transform: scale(0.8)
+    animation: none
+  }
+  .hide {
+    transition: none
   }
 }
-@media (prefers-reduced-transparency: no-preference) {
+@supports (animation-timeline: view()) and (animation-range-start: entry) {
   img {
-    opacity: 0.25
+    animation-range-start: entry;
+    animation-timeline: view()
+  }
+}
+@supports (prefers-reduced-transparency: no-preference) {
+  @media (prefers-reduced-transparency: no-preference) {
+    img {
+      opacity: 0.25
+    }
   }
 }
 @keyframes fade-in {
@@ -28,23 +40,10 @@ img {
     transform: scale(1)
   }
 }
-@supports (animation-timeline: view()) and (animation-range-start: entry) {
-  @media (prefers-reduced-motion: no-preference) {
-    img {
-      animation-range-start: entry;
-      animation-timeline: view()
-    }
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hide {
-    transition: none
-  }
-}
 .hide {
   opacity: 0;
   transform: translateY(100%);
-  transition: opacity 500ms ease-in-out transform 500ms ease-in-out
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out
 }
 .show {
   opacity: 1;
@@ -53,7 +52,7 @@ img {
 .expand-all #show-hide-btn {
   border-radius: 0.5rem;
   height: 4rem;
-  width: 17.5vh
+  width: clamp(5rem, 15vh, 10rem)
 }
 .step-by-step-guide,
 .preparation-section {

@@ -1,11 +1,9 @@
-@supports (gap: 2.25rem) {
-  .TOC {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 2.25rem;
-    text-align: center
-  }
+.TOC {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  text-align: center
 }
 /* zero out margin on gap support */
 .TOC > :not(:last-child) {
