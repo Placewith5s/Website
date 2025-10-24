@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-	const stylesheets = ["/public/css/top-n-bottom.css"];
+	const stylesheets = ["/css/top-n-bottom.css"];
 
 	// call the stylesheet loader constructor
 	const stylesheet_loader = new Stylesheet_Loader(stylesheets);
