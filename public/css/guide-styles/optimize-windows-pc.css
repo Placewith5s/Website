@@ -1,6 +1,14 @@
 .expand-all.active section[id^="step-hidden-from-"] {
   display: block
 }
+@media (prefers-reduced-motion: reduce) {
+  img {
+    animation: none
+  }
+  .hide {
+    transition: none
+  }
+}
 img {
   -webkit-backface-visibility: hidden;
   animation: fade-in 500ms ease-in-out forwards;
@@ -12,14 +20,6 @@ img {
   object-fit: cover;
   transform: scale(0.8);
   vertical-align: middle
-}
-@media (prefers-reduced-motion: reduce) {
-  img {
-    animation: none
-  }
-  .hide {
-    transition: none
-  }
 }
 @supports (animation-timeline: view()) and (animation-range-start: entry) {
   img {
@@ -69,18 +69,3 @@ section[id^="step-hidden-from-"] {
 section:not(:last-child) {
   margin-bottom: 25rem
 }
-  /* @media only screen and (min-width: 320px) and (max-width: 480px) {
-
-  }
-  @media only screen and (min-width: 481px) and (max-width: 768px) {
-
-  }
-  @media only screen and (min-width: 769px) and (max-width: 1024px) {
-
-  }
-  @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-
-  }
-  @media only screen and (min-width: 1201px) {
-
-  } */
