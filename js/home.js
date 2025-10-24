@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		async #upd_carousel_title_desc() {
 			// attempt to handle and update both the tile and description
 			try {
-			const optimize_windows_pc_url = "/public/guides/optimize-windows-pc.html";
-			const troubleshoot_windows_pc_url = "/public/guides/troubleshoot-windows-pc.html";
+			const optimize_windows_pc_url = "/html/guides/optimize-windows-pc.html";
+			const troubleshoot_windows_pc_url = "/html/guides/troubleshoot-windows-pc.html";
 
 			const response_optimize_windows_pc_url = await fetch(optimize_windows_pc_url);
 			const response_troubleshoot_windows_pc_url = await fetch(troubleshoot_windows_pc_url);
