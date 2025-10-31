@@ -15,8 +15,7 @@
   color: var(--color-primary);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0;
-  padding: 0
+  margin: 0
 }
 @supports (text-wrap: pretty) {
   *,
@@ -86,8 +85,8 @@ main {
   list-style-type: none
 }
 @media (prefers-reduced-motion: reduce) {
-  a, button, .drawer, .drawer #hide-drawer-btn, .exclusive-nav, .dropdown-menu-container a, 
-  #accept-all-btn, #save-preferences-btn, #reject-all-btn, footer nav[class^="nav-footer-"] a {
+  a, button, .drawer, .drawer #hide-drawer-btn, .desktop-links, .dropdown-menu-container a, 
+  #accept-all-btn, #save-preferences-btn, #reject-all-btn, footer nav[class^="footer-links-"] a {
     transition: none
   }
 }
@@ -154,22 +153,22 @@ button:focus {
   opacity: 0;
 }
 /* bigger screen navigation menu */
-.exclusive-nav,
-.exclusive-nav a {
+.desktop-links,
+.desktop-links a {
   display: flex
 }
 header h1,
-.exclusive-nav {
+.desktop-links {
   margin-bottom: 3rem
 }
-.exclusive-nav {
+.desktop-links {
   padding: 1rem;
   position: relative
 }
-.search-container, .exclusive-nav a {
+.search-container, .desktop-links a {
   justify-content: center
 }
-.exclusive-nav a {
+.desktop-links a {
   flex: 1
 }
 .dropdown-menu-container a {
@@ -251,26 +250,26 @@ footer {
   color: var(--accent);
   margin-bottom: 1rem
 }
-.exclusive-nav a, footer nav[class^="nav-footer-"] a {
+.desktop-links span, footer nav[class^="footer-links-"] a {
   transition: color 500ms ease-in-out
 }
-footer nav[class^="nav-footer-"] a {
+footer nav[class^="footer-links-"] a {
   display: flex;
   flex-direction: column;
   margin: 1.5rem
 }
-.exclusive-nav a:hover, .exclusive-nav a:focus,
-footer nav[class^="nav-footer-"] a:hover, footer nav[class^="nav-footer-"] a:focus {
+.desktop-links span:hover, .desktop-links span:focus,
+footer nav[class^="footer-links-"] a:hover, footer nav[class^="footer-links-"] a:focus {
   color: var(--accent)
 }
 footer .copyright {
   margin-top: 3rem
 }
-a:not(nav a), .exclusive-nav a[aria-current="page"],
+a:not(nav a), .desktop-links a[aria-current="page"],
 .drawer a[aria-current="page"] {
   text-decoration: underline
 }
-.exclusive-nav a[aria-current="page"],
+.desktop-links a[aria-current="page"],
 .drawer a[aria-current="page"] {
   font-weight: bolder
 }
@@ -339,6 +338,7 @@ header h1, .last-updated, .search-container #search-bar, footer, #consent-cookie
 .search-container #search-bar, #consent-cookie-banner, .strawpoll-embed, .strawpoll-embed iframe {
   width: 100%
 }
+
 /* Strawpoll, keep as is */
 .strawpoll-embed {
   display: flex;
@@ -353,8 +353,9 @@ header h1, .last-updated, .search-container #search-bar, footer, #consent-cookie
   position: static;
   visibility: visible
 }
+
 @media only screen and (max-width: 320px) {
-  .exclusive-nav {
+  .desktop-links {
     display: none
   }
 }
@@ -363,7 +364,7 @@ header h1, .last-updated, .search-container #search-bar, footer, #consent-cookie
   .drawer {
     display: block
   }
-  .exclusive-nav {
+  .desktop-links {
     display: none
   }
 }

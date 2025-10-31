@@ -94,8 +94,8 @@
       <span class="loader"></span>
     </div>
     <header>
-      <nav class="exclusive-nav" aria-label="Main Navigation">
-        <a href="/" aria-current="page" aria-label="Home">
+      <nav class="desktop-links" aria-label="Main Navigation">
+        <a href="/" aria-label="Home">
           <span>Home</span>
         </a>
         <a href="/about/about-us" aria-label="About Us">
@@ -110,7 +110,7 @@
         <details class="dropdown-menu-container">
           <summary aria-expanded="false" id="dropdown-menu">Guides</summary>
             <a href="/guides/optimize-windows-pc" aria-label="Optimize Windows PC">Optimize Windows PC</a>
-            <a href="/guides/troubleshoot-windows-pc" aria-label="Troubleshoot Windows PC">Troubleshoot Windows PC</a>
+            <a href="/guides/troubleshoot-windows-pc" aria-current="page" aria-label="Troubleshoot Windows PC">Troubleshoot Windows PC</a>
         </details>
       </nav>
       <button class="menu-icon" id="menu-icon" aria-haspopup="true" aria-label="Open Menu">
@@ -119,7 +119,7 @@
         <div class="line"></div>
       </button>
       <nav class="drawer" id="drawer" role="menu">
-        <a href="/" aria-current="page" id="home-link" role="menuitem" aria-label="Home">
+        <a href="/" id="home-link" role="menuitem" aria-label="Home">
           <span>Home</span>
         </a>
         <a href="/about/about-software" role="menuitem" id="about-software-link" aria-label="About Tools">
@@ -149,14 +149,16 @@
       <div id="not-found-msg">
         <p>No results found. Try another search?</p>
       </div>
+
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Oct 24, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Oct 31, 2025</span>
         </p>
-        <time datetime="2025-10-24" title="Last Updated: Oct 24, 2025"></time>
+        <time datetime="2025-10-31" title="Last Updated: Oct 31, 2025"></time>
       </div>
 
+      <h2 class="spaced-top TOC spaced-bottom">Table of Contents</h2>
+
       <nav class="TOC">
-        <h2>Table of Contents</h2>
         <a href="#fix-screen-of-death" aria-label="Fix Blue/Black Screen of Death (BSOD)">Fix Blue/Black Screen of Death (BSOD)</a>
         <a href="#restore-missing-power-plan-settings-heading" aria-label="Restore Missing Power Plan Settings">Restore Missing Power Plan Settings</a>
       </nav>
@@ -176,35 +178,48 @@
         
         <h3 class="spaced-bottom">Hardware Troubleshooting Checklist</h3>
           <p><strong>Reseat System Memory (RAM)</strong></p>
+
           <ul>
             <li>Power down the system and unplug it.</li>
             <li class="spaced-bottom">Remove the RAM modules and reinstall them securely in their slots.</li>
           </ul>
+
           <p><strong>Verify Connections</strong></p>
+
           <ul>
             <li>Ensure all power and data cables are properly connected.</li>
             <li class="spaced-bottom">Check the motherboard, storage drives, and other peripheral connections.</li>
           </ul>
+
           <p><strong>Reseat Graphics Card</strong></p>
+
           <ul>
             <li>Remove the GPU and reinstall it in its PCIe slot.</li>
             <li class="spaced-bottom">Make sure the PCIe power connectors are fully seated.</li>
           </ul>
+
           <p><strong>Clear CMOS</strong></p>
+
           <ul>
             <li>Reset BIOS settings by clearing the CMOS battery.</li>
             <li class="spaced-bottom">Refer to the motherboard manual for exact steps.</li>
           </ul>
+
           <p><strong>Check Protective Stickers/Covers</strong></p>
+
           <ul>
             <li class="spaced-bottom">Remove any stickers or protective covers on components, including the GPU PCIe connector.</li>
           </ul>
+
           <p><strong>Inspect Thermal Paste</strong></p>
+
           <ul>
             <li>Check the CPU and GPU for degraded or improperly applied thermal paste.</li>
             <li class="spaced-bottom">Reapply high-quality thermal paste if necessary to prevent overheating.</li>
           </ul>
+
           <p><strong>Monitor System Temperatures</strong></p>
+
           <ul>
             <li>Use software tools to check CPU and GPU temperatures under load.</li>
             <li class="spaced-bottom">Ensure fans and cooling solutions are functioning correctly.</li>
@@ -235,14 +250,14 @@
       <div class="footer-container">
         <div class="footer-column">
           <h4>About</h4>
-          <nav class="nav-footer-about" aria-label="Footer's About Navigation">
+          <nav class="footer-links-about" aria-label="Footer's About Navigation">
             <a href="/about/about-software" aria-label="About Tools">About Tools</a>
             <a href="/about/about-us" aria-label="About Us">About Us</a>
           </nav>
         </div>
         <div class="footer-column">
           <h4>Policies</h4>
-          <nav class="nav-footer-policies" aria-label="Footer's Policies Navigation">
+          <nav class="footer-links-policies" aria-label="Footer's Policies Navigation">
             <a href="/policies/cookie-policy" aria-label="Cookie Policy">Cookie Policy</a>
             <a href="/policies/privacy-policy" aria-label="Privacy Policy">Privacy Policy</a>
             <a href="/policies/terms-of-service" aria-label="Terms of Service">Terms of Service</a>
@@ -250,11 +265,11 @@
         </div>
         <div class="footer-column">
           <h4>Contact</h4>
-          <nav class="nav-footer-contact" aria-label="Footer's Contact Navigation">
+          <nav class="footer-links-contact" aria-label="Footer's Contact Navigation">
             <a href="/contact-form" aria-label="Contact Us">Contact Us</a>
           </nav>
           <h4>Manage Cookies</h4>
-          <nav class="nav-footer-manage-cookies" aria-label="Footer's Manage Cookies Navigation">
+          <nav class="footer-links-manage-cookies" aria-label="Footer's Manage Cookies Navigation">
             <a href="#" id="manage-cookies-link" aria-label="Cookie Preferences">Cookie Preferences</a>
           </nav>
         </div>

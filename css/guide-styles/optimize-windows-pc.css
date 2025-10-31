@@ -18,6 +18,7 @@ img {
   image-rendering: -webkit-optimize-contrast;
   max-width: 100%;
   object-fit: cover;
+  opacity: 0.25;
   transform: scale(0.8);
   vertical-align: middle
 }
@@ -59,6 +60,7 @@ img {
   padding-bottom: 5rem
 }
 .code {
+  border: 0.1rem solid var(--accent);
   font-family: monospace;
   overflow-wrap: break-word;
   white-space: pre-wrap
