@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			// get the cookie preferences link
 			this.#manage_cookies_link = document.querySelector("#manage-cookies-link");
 
-			// check cookie consent items' existance to handle event listeners, banners, and cookies
 			if (
 				this.#cookie_banner_dialog &&
 				this.#cookie_banner &&
@@ -59,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				this.#add_event_listeners();
 				this.#update_banner_visibility();
 				this.#load_cookie_preferences();
+			// handle invalid cookie consent elements
 			} else {
 				console.error("Missing required Cookie Consent elements!");
 			}
@@ -244,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			// attempt to handle loading the cookie preferences
 			try {
 				const preferences = this.#get_cookie("cookiePreferences");
+				
 				// check and handle whether cookie preferences exist
 				if (preferences) {
 					const parsed_preferences = JSON.parse(preferences);

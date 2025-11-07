@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			// get the not found message
 			this.#not_found_msg = document.querySelector("#not-found-msg");
 
-			// check search items' existance to handle calling the search_listener()
 			if (this.#search_bar && this.#not_found_msg) {
 				this.#not_found_msg.setAttribute("aria-hidden", "true");
 				this.#search_listener();
+			// handle invalid search elements
 			} else {
 				console.error("Missing required Search elements!");
 			}
@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				this.#not_found_msg.setAttribute("aria-hidden", "true");
 				this.#not_found_msg.setAttribute("aria-live", "off");
 			}
+			
 			// handle role, aria-relevant, and aria-atomic values
 			this.#not_found_msg.setAttribute("role", "status");
 			this.#not_found_msg.setAttribute("aria-relevant", "additions");

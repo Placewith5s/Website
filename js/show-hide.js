@@ -1,19 +1,22 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
 	class Expand_Collapse {
+		#main;
 		#show_hide_btn;
 		constructor() {
+			// get the main element
+			this.#main = document.querySelector('main');
 			// get the show hide button
-			this.#show_hide_btn = document.querySelector("#show-hide-btn");
+			this.#show_hide_btn = this.#main.querySelector("#show-hide-btn");
 
-			// check the expand collapse button's existance to handle adding its passive event listener and calling hide_elements_by_default()
 			if (this.#show_hide_btn) {
 				this.#show_hide_btn.addEventListener("click", () => this.#toggle_elements(), {
 					passive: true
 				});
 				this.#hide_elements_by_default();
+			// handle invalid show hide button
 			} else {
-				console.error("Missing required Expand Collapse elements!");
+				console.error("Missing show hide button!");
 			}
 		}
 

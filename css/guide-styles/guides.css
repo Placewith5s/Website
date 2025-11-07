@@ -1,4 +1,4 @@
-.TOC {
+main nav.TOC {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -6,25 +6,25 @@
   text-align: center
 }
 /* zero out margin on gap support */
-.TOC > :not(:last-child) {
+main nav.TOC > :not(:last-child) {
   margin-bottom: 0
 }
-.TOC > :not(:last-child) {
+main nav.TOC > :not(:last-child) {
   margin-bottom: 2.25rem
 }
-.TOC {
+main nav.TOC {
   align-items: center;
   display: flex;
   flex-direction: column;
   text-align: center
 }
-.TOC h3 {
+main nav.TOC h3 {
   border-bottom: 1px solid var(--bg-secondary);
   padding: 0.15rem
 }
-.TOC a:last-child {
+main nav.TOC a:last-child {
   margin-bottom: 5.75rem
 }
-.TOC a::before {
+main nav.TOC a::before {
   content: "• "
 }

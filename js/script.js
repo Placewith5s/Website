@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			// get the summary element
 			this.#summary_element = document.querySelector("summary");
 
-			// check menu manager items' existance to handle aria-hidden, aria-expanded, drawer clicks, adding keydown event listener, and calling initialize_menu()
 			if (this.#drawer && this.#menu_icon && this.#summary_element) {
 				this.#drawer.setAttribute("aria-hidden", "true");
 				this.#menu_icon.setAttribute("aria-expanded", "false");
@@ -33,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			})
 
 				this.#initialize_menu()
+			// handle invalid menu manager elements
 			} else {
 				console.error("Missing required Menu Manager elements!");
 			}

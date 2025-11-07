@@ -1,40 +1,41 @@
-#contact-form {
+main form#contact-form {
   border-radius: 1.5rem;
   margin: 2rem;
   padding: 2rem
 }
-.form-group {
+main div.form-group {
   margin-bottom: 2rem
 }
-label {
+main div label {
   display: block;
   margin-bottom: 1rem
 }
-.form-group textarea[id="message"] {
+main div.form-group textarea#message {
   width: 100%
 }
-input[type="text"],
-input[type="email"],
-textarea, button[type="submit"] {
+main div input[type="text"],
+main div input[type="email"],
+main div textarea, 
+main button[type="submit"] {
   border-radius: 1rem
 }
-input[type="text"],
-input[type="email"],
-textarea {
+main div input[type="text"],
+main div input[type="email"],
+main div textarea {
   padding: 1rem
 }
-.gdpr-consent {
+main div.gdpr-consent {
   align-items: center;
   display: flex;
   margin-bottom: 1.5rem
 }
-.gdpr-consent input[type="checkbox"] {
+main div.gdpr-consent input[type="checkbox"] {
   margin-right: 1rem;
   transform: scale(1.2)
 }
-.gdpr-consent a {
+main div.gdpr-consent a {
   text-decoration: underline
 }
-button[type="submit"] {
+main button[type="submit"] {
   padding: 1rem 2rem
 }

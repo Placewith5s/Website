@@ -1,4 +1,4 @@
-#preloader {
+div#preloader {
   align-items: center;
   display: flex;
   height: 100%;
@@ -10,15 +10,15 @@
   z-index: 9999
 }
 @media (prefers-reduced-motion: reduce) {
-  .loader, .loader::before {
+  span.loader, span.loader::before {
   animation: none
 }
 }
-.loader, .loader::before {
+span.loader, span.loader::before {
   animation: spin 1000ms ease-in-out infinite;
   border-radius: 50%
 }
-.loader {
+span.loader {
   border: 0.625rem solid var(--color-secondary);
   border-top: 0.625rem solid var(--bg-secondary);
   cursor: progress
@@ -43,7 +43,7 @@
     transform: rotate(360deg)
   }
 }
-.loader::before {
+span.loader::before {
   border: 0.25rem solid var(--color-secondary);
   border-top: 0.25rem solid var(--bg-secondary);
   content: "";

@@ -2,16 +2,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 	class Character_Counter {
 		#input_element;
+		#main;
 		#char_count_element;
 		constructor(input_element) {
 			this.#input_element = input_element;
 
+			// get the main element
+			this.#main = document.querySelector('main');
 			// get the character count element
-			this.#char_count_element = document.querySelector(".char-count");
+			this.#char_count_element = this.#main.querySelector('.char-count');
 
-			// check character counter items' existance to handle max length, adding an input, throttle of update_char_count(), and adding a throttled event listener for the input
 			if (this.#input_element && this.#char_count_element) {
-				this.max_char_count = this.#input_element.getAttribute("maxlength");
+				this.max_char_count = this.#input_element.getAttribute('maxlength');
 				this.#handle_invalid(0);
 
 				this.#input_element.parentNode.appendChild(this.#char_count_element);
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				// add a throttled input event listener
 				this.#input_element.addEventListener("input", this.throttled_update_char_count);
+			// handle invalid character counter elements
 			} else {
 				console.error("Missing required Character Counter elements!");
 			}
@@ -73,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// get the message input
-	const message_input = document.querySelector("#message");
+	const message_input = document.querySelector('#message');
 	
 	if (message_input) {
 		// call the character counter constructor

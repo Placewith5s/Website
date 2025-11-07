@@ -1,10 +1,10 @@
-details {
+main details {
   margin-bottom: 3rem
 }
-details[open] >:not(summary) {
+main details[open] >:not(summary) {
   margin-left: 2.5rem
 }
-details summary {
+main details summary {
   border-radius: 0.33rem;
   padding: 0.67rem
 }

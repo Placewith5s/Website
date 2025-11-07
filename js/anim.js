@@ -5,7 +5,6 @@
 			entries.forEach((entry) => {
 					// attempts to check and handle intersection
 					try {
-						// check for intersection to handle class list
 						if (entry.isIntersecting) {
 							entry.target.classList.add("show");
 						} else {

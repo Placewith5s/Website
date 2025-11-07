@@ -1,4 +1,4 @@
-.expand-all.active section[id^="step-hidden-from-"] {
+main div.expand-all.active section[id^="step-hidden-from-"] {
   display: block
 }
 @media (prefers-reduced-motion: reduce) {
@@ -41,33 +41,33 @@ img {
     transform: scale(1)
   }
 }
-.hide {
+main .hide {
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 500ms ease-in-out, transform 500ms ease-in-out
 }
-.show {
+main .show {
   opacity: 1;
   transform: translateY(0)
 }
-.expand-all #show-hide-btn {
+main div.expand-all button#show-hide-btn {
   border-radius: 0.5rem;
   height: 4rem;
   width: clamp(5rem, 15vh, 10rem)
 }
-.step-by-step-guide,
-.preparation-section {
+main div.step-by-step-guide,
+main section.preparation-section {
   padding-bottom: 5rem
 }
-.code {
+main .code {
   border: 0.1rem solid var(--accent);
   font-family: monospace;
   overflow-wrap: break-word;
   white-space: pre-wrap
 }
-section[id^="step-hidden-from-"] {
+main section[id^="step-hidden-from-"] {
   display: none
 }
-section:not(:last-child) {
+main section:not(:last-child) {
   margin-bottom: 25rem
 }

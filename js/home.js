@@ -1,19 +1,22 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
 	class Carousel {
+		#main;
 		#items;
 		#current_index;
 		constructor() {
+			// get the main element
+			this.#main = document.querySelector('main');
 			// get the carousel items
-			this.#items = document.querySelectorAll(".carousel-item");
+			this.#items = this.#main.querySelectorAll(".carousel-item");
 
-			// check for carousel items' length property's existance to handle calling upd_carousel_title_desc() and show_next_item
 			if (this.#items.length) {
 				this.#current_index = 0;
 
 				this.#upd_carousel_title_desc();
 				this.#show_next_item();
 				setInterval(() => this.#show_next_item(), 5000);
+			// handle invalid carousel elements
 			} else {
 				console.error("Missing required Carousel elements!");
 			}
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			this.#items[this.#current_index].classList.add("active");
 
-			document.querySelector(".carousel-inner").style.transform = `translateX(-${100 * this.#current_index}%)`;
+			this.#main.querySelector(".carousel-inner").style.transform = `translateX(-${100 * this.#current_index}%)`;
 		}
 
 		// async function for handling and updating both the title and description
@@ -54,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			const optimize_windows_pc_description = doc_optimize_windows_pc_url.querySelector('meta[name="description"]').getAttribute('content');
 			const troubleshoot_windows_pc_description = doc_troubleshoot_windows_pc_url.querySelector('meta[name="description"]').getAttribute('content');
 
-			// check for both the titles and descriptions' existance
+			// handle invalid URLs
 			if (!optimize_windows_pc_title || !troubleshoot_windows_pc_title || !optimize_windows_pc_description || !troubleshoot_windows_pc_description) {
 				console.warn("No title or description found!");
 			}
