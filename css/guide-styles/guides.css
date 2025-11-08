@@ -1,3 +1,6 @@
+main h2#toc-heading {
+  text-align: center
+}
 main nav.TOC {
   align-items: center;
   display: flex;

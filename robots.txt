@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /CNAME
 Disallow: /README.md
-Disallow: /SECURITY.md
 Disallow: /.nojekyll
 Disallow: /.gitignore
 Disallow: /.github

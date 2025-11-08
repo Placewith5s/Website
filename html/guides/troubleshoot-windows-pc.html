@@ -44,8 +44,8 @@
 
     <noscript>
       <style>
-        #cookie-banner,
-        #consent-cookie-banner {
+        div#cookie-banner,
+        div#consent-cookie-banner {
           display: none;
         }
 
@@ -140,7 +140,7 @@
       </nav>
       <h1>Troubleshoot Your Windows PC | Placewith5s</h1>
       <div class="search-container">
-        <label for="search-bar">Search</label>
+        <label for="search-bar"></label>
         <input type="search" id="search-bar" placeholder="Search Troubleshoot..." aria-placeholder="Search Troubleshoot..." autocomplete="off">
       </div>
     </header>
@@ -150,86 +150,90 @@
       </div>
 
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 7, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 8, 2025</span>
         </p>
-        <time datetime="2025-11-07" title="Last Updated: Nov 7, 2025"></time>
+        <time datetime="2025-11-08" title="Last Updated: Nov 8, 2025"></time>
       </div>
 
-      <h2 class="spaced-top-bottom TOC">Table of Contents</h2>
+      <section aria-labelledby="toc-heading" class="spaced-top">
+        <h2 class="spaced-top-bottom" id="toc-heading">Table of Contents</h2>
 
-      <nav class="TOC">
-        <a href="#fix-screen-of-death" aria-label="Fix Blue/Black Screen of Death (BSOD)">Fix Blue/Black Screen of Death (BSOD)</a>
-        <a href="#restore-missing-power-plan-settings-heading" aria-label="Restore Missing Power Plan Settings">Restore Missing Power Plan Settings</a>
-      </nav>
+        <nav class="TOC">
+          <a href="#fix-screen-of-death" aria-label="Fix Blue/Black Screen of Death (BSOD)">Fix Blue/Black Screen of Death (BSOD)</a>
+          <a href="#restore-missing-power-plan-settings-heading" aria-label="Restore Missing Power Plan Settings">Restore Missing Power Plan Settings</a>
+        </nav>
+      </section>
 
-      <section aria-labelledby="fix-screen-of-death">
-        <h2 class="spaced-top-bottom" id="fix-screen-of-death">Fix Blue/Black Screen of Death (BSOD)</h2>
-        <p class="spaced-top"><strong>In-Place Upgrade Issues</p></strong>
-        <p>Go to Settings > System > Recovery and select the "Go Back" option if the upgrade occurred within the last 10 days.</p>
-        <p class="spaced-top"><strong>Clean Install of Windows</p></strong>
-        <p>Performing a clean install of Windows 10/11 can help determine whether the issue is hardware-related.</p>
-        <p class="spaced-top"><strong>On Windows 11:</p></strong>
-        <a href="https://forums.tomshardware.com/threads/windows-11-clean-install-tutorial.3831442?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Windows 11 clean install tutorial (opens in a new tab)">Windows 11 clean install tutorial (opens in a new tab)</a>
-        <p class="spaced-top"><strong>On Windows 10:</p></strong>
-        <a href="https://www.windowscentral.com/how-do-clean-installation-windows-10?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="How to do a clean installation of Windows 10 (opens in a new tab)">How to do a clean installation of Windows 10 (opens in a new tab)</a>
-        <p class="spaced-top spaced-bottom"><strong>If the Problem Persists After a Clean Install</p></strong>
-        <p class="spaced-bottom">If a clean installation does not resolve the issue, it may be hardware-related. Follow the steps below to troubleshoot your system.</p>
+      <div class="step-by-step-guide">
+        <section aria-labelledby="fix-screen-of-death-heading">
+          <h2 class="spaced-top-bottom" id="fix-screen-of-death-heading">Fix Blue/Black Screen of Death (BSOD)</h2>
+          <p class="spaced-top"><strong>In-Place Upgrade Issues</strong></p>
+          <p>Go to Settings > System > Recovery and select the "Go Back" option.</p>
+          <p class="spaced-top"><strong>Clean Install of Windows</strong></p>
+          <p>Performing a clean install of Windows 10/11 can help determine whether the issue is hardware-related.</p>
+          <p class="spaced-top"><strong>On Windows 11:</strong></p>
+          <a href="https://forums.tomshardware.com/threads/windows-11-clean-install-tutorial.3831442?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Windows 11 clean install tutorial (opens in a new tab)">Windows 11 clean install tutorial (opens in a new tab)</a>
+          <p class="spaced-top"><strong>On Windows 10:</strong></p>
+          <a href="https://www.windowscentral.com/how-do-clean-installation-windows-10?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="How to do a clean installation of Windows 10 (opens in a new tab)">How to do a clean installation of Windows 10 (opens in a new tab)</a>
+          <p class="spaced-top spaced-bottom"><strong>If the Problem Persists After a Clean Install</strong></p>
+          <p class="spaced-bottom">If a clean installation does not resolve the issue, it may be hardware-related. Follow the steps below to troubleshoot your system.</p>
+          
+          <h3 class="spaced-bottom">Hardware Troubleshooting Checklist</h3>
+            <p><strong>Reseat System Memory (RAM)</strong></p>
+
+            <ul>
+              <li>Power down the system and unplug it.</li>
+              <li class="spaced-bottom">Remove the RAM modules and reinstall them securely in their slots.</li>
+            </ul>
+
+            <p><strong>Verify Connections</strong></p>
+
+            <ul>
+              <li>Ensure all power and data cables are properly connected.</li>
+              <li class="spaced-bottom">Check the motherboard, storage drives, and other peripheral connections.</li>
+            </ul>
+
+            <p><strong>Reseat Graphics Card</strong></p>
+
+            <ul>
+              <li>Remove the GPU and reinstall it in its PCIe slot.</li>
+              <li class="spaced-bottom">Make sure the PCIe power connectors are fully seated.</li>
+            </ul>
+
+            <p><strong>Clear CMOS</strong></p>
+
+            <ul>
+              <li>Reset BIOS settings by clearing the CMOS battery.</li>
+              <li class="spaced-bottom">Refer to the motherboard manual for exact steps.</li>
+            </ul>
+
+            <p><strong>Check Protective Stickers/Covers</strong></p>
+
+            <ul>
+              <li class="spaced-bottom">Remove any stickers or protective covers on components, including the GPU PCIe connector.</li>
+            </ul>
+
+            <p><strong>Inspect Thermal Paste</strong></p>
+
+            <ul>
+              <li>Check the CPU and GPU for degraded or improperly applied thermal paste.</li>
+              <li class="spaced-bottom">Reapply high-quality thermal paste if necessary to prevent overheating.</li>
+            </ul>
+
+            <p><strong>Monitor System Temperatures</strong></p>
+
+            <ul>
+              <li>Use software tools to check CPU and GPU temperatures under load.</li>
+              <li class="spaced-bottom">Ensure fans and cooling solutions are functioning correctly.</li>
+            </ul>
+        </section>
         
-        <h3 class="spaced-bottom">Hardware Troubleshooting Checklist</h3>
-          <p><strong>Reseat System Memory (RAM)</strong></p>
-
-          <ul>
-            <li>Power down the system and unplug it.</li>
-            <li class="spaced-bottom">Remove the RAM modules and reinstall them securely in their slots.</li>
-          </ul>
-
-          <p><strong>Verify Connections</strong></p>
-
-          <ul>
-            <li>Ensure all power and data cables are properly connected.</li>
-            <li class="spaced-bottom">Check the motherboard, storage drives, and other peripheral connections.</li>
-          </ul>
-
-          <p><strong>Reseat Graphics Card</strong></p>
-
-          <ul>
-            <li>Remove the GPU and reinstall it in its PCIe slot.</li>
-            <li class="spaced-bottom">Make sure the PCIe power connectors are fully seated.</li>
-          </ul>
-
-          <p><strong>Clear CMOS</strong></p>
-
-          <ul>
-            <li>Reset BIOS settings by clearing the CMOS battery.</li>
-            <li class="spaced-bottom">Refer to the motherboard manual for exact steps.</li>
-          </ul>
-
-          <p><strong>Check Protective Stickers/Covers</strong></p>
-
-          <ul>
-            <li class="spaced-bottom">Remove any stickers or protective covers on components, including the GPU PCIe connector.</li>
-          </ul>
-
-          <p><strong>Inspect Thermal Paste</strong></p>
-
-          <ul>
-            <li>Check the CPU and GPU for degraded or improperly applied thermal paste.</li>
-            <li class="spaced-bottom">Reapply high-quality thermal paste if necessary to prevent overheating.</li>
-          </ul>
-
-          <p><strong>Monitor System Temperatures</strong></p>
-
-          <ul>
-            <li>Use software tools to check CPU and GPU temperatures under load.</li>
-            <li class="spaced-bottom">Ensure fans and cooling solutions are functioning correctly.</li>
-          </ul>
-      </section>
-      
-      <section aria-labelledby="restore-missing-power-plan-settings-heading">
-        <h2 class="spaced-top-bottom" id="restore-missing-power-plan-settings-heading">Restore Missing Power Plan Settings</h2>
-        <a href="https://answers.microsoft.com/en-us/windows/forum/all/usb-settings-in-power-plan-options-on-windows-10/38753b89-65d0-49c1-8f91-2bb50f9b19a0?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="USB settings in Power Plan Options on Windows 10 is missing, how to restore it? (opens in a new tab)">USB settings in Power Plan Options on Windows 10 is missing, how to restore it? (opens in a new tab)</a>
-        <p class="spaced-top-bottom"><strong>Note:</strong> Whether you chose method 1 or method 2, a PC restart is required for the changes to take effect.</p>
-      </section>
+        <section aria-labelledby="restore-missing-power-plan-settings-heading" class="spaced-top">
+          <h2 class="spaced-bottom" id="restore-missing-power-plan-settings-heading">Restore Missing Power Plan Settings</h2>
+          <a href="https://answers.microsoft.com/en-us/windows/forum/all/usb-settings-in-power-plan-options-on-windows-10/38753b89-65d0-49c1-8f91-2bb50f9b19a0?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="USB settings in Power Plan Options on Windows 10 is missing, how to restore it? (opens in a new tab)">USB settings in Power Plan Options on Windows 10 is missing, how to restore it? (opens in a new tab)</a>
+          <p class="spaced-top-bottom"><strong>Note:</strong> Whether you chose method 1 or method 2, a PC restart is required for the changes to take effect.</p>
+        </section>
+      </div>
 
       <div class="strawpoll-embed" id="strawpoll_wby5QJ1WJyA">
         <iframe title="StrawPoll Embed" id="strawpoll_iframe_wby5QJ1WJyA" src="https://strawpoll.com/embed/wby5QJ1WJyA" frameborder="0" allowfullscreen allowtransparency>Loading...</iframe>
@@ -245,6 +249,7 @@
       </div>
       <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fplacewith5s.com/guides/troubleshoot-windows-pc&utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Share">Share</a>
     </main>
+
     <footer>
       <div class="footer-container">
         <div class="footer-column">
@@ -278,7 +283,6 @@
       </p>
     </footer>
     <script src="/js/data-guardian.js" defer></script>
-    <script src="/js/eclipse-mode.js" defer></script>
     <script src="/js/script.js" defer></script>
     <script src="/js/search.js" defer></script>
     <script src="/js/footer-date.js" defer></script>

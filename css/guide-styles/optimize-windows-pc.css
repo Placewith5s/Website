@@ -55,7 +55,6 @@ main div.expand-all button#show-hide-btn {
   height: 4rem;
   width: clamp(5rem, 15vh, 10rem)
 }
-main div.step-by-step-guide,
 main section.preparation-section {
   padding-bottom: 5rem
 }

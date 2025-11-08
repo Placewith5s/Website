@@ -122,12 +122,10 @@ button:focus {
     filter: var(--filter-active-settings)
   }
 }
-/* last updated */
 .last-updated {
   border: 0.06rem solid var(--color-secondary);
   margin-bottom: 1.25rem
 }
-/* search bars */
 .search-container {
   align-items: center;
   display: flex;
@@ -152,7 +150,6 @@ button:focus {
     transform: translateY(0)
   }
 }
-/* bigger screen navigation menu */
 .desktop-links,
 .desktop-links a {
   display: flex
@@ -274,7 +271,6 @@ a:not(nav a), .desktop-links a[aria-current="page"],
 .drawer a[aria-current="page"] {
   font-weight: bolder
 }
-/* cookies */
 #consent-cookie-banner-dialog,
 #cookie-banner-dialog {
   background: transparent;
