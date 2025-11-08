@@ -3,39 +3,35 @@ main form#contact-form {
   margin: 2rem;
   padding: 2rem
 }
-main div.form-group {
+main form#contact-form div.form-group {
   margin-bottom: 2rem
 }
-main div label {
+main form#contact-form div.form-group label {
   display: block;
   margin-bottom: 1rem
 }
-main div.form-group textarea#message {
+main form#contact-form div.form-group textarea#message {
   width: 100%
 }
-main div input[type="text"],
-main div input[type="email"],
-main div textarea, 
-main button[type="submit"] {
-  border-radius: 1rem
-}
-main div input[type="text"],
-main div input[type="email"],
-main div textarea {
+main form#contact-form div.form-group input[type="text"],
+main form#contact-form div.form-group input[type="email"],
+main form#contact-form div.form-group textarea#message, 
+main form#contact-form button[type="submit"] {
+  border-radius: 1rem;
   padding: 1rem
 }
-main div.gdpr-consent {
+main form#contact-form div.gdpr-consent {
   align-items: center;
   display: flex;
   margin-bottom: 1.5rem
 }
-main div.gdpr-consent input[type="checkbox"] {
+main form#contact-form div.gdpr-consent input[type="checkbox"] {
   margin-right: 1rem;
   transform: scale(1.2)
 }
-main div.gdpr-consent a {
+main form#contact-form div.gdpr-consent a {
   text-decoration: underline
 }
-main button[type="submit"] {
+main form#contact-form button[type="submit"] {
   padding: 1rem 2rem
 }

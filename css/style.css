@@ -3,14 +3,14 @@ main div.carousel {
   overflow: hidden
 }
 @media (prefers-reduced-motion: reduce) {
-  main div.carousel-inner {
+  main div.carousel div.carousel-inner {
     transition: none
   }
 }
-main div.carousel-inner {
+main div.carousel div.carousel-inner {
   display: flex;
   transition: transform 500ms ease-in-out
 }
-main div.carousel-item {
+main div.carousel div.carousel-inner div.carousel-item {
   min-width: 100%
 }

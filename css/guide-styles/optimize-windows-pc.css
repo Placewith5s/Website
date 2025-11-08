@@ -1,6 +1,3 @@
-main div.expand-all.active section[id^="step-hidden-from-"] {
-  display: block
-}
 @media (prefers-reduced-motion: reduce) {
   img {
     animation: none
@@ -50,11 +47,6 @@ main .show {
   opacity: 1;
   transform: translateY(0)
 }
-main div.expand-all button#show-hide-btn {
-  border-radius: 0.5rem;
-  height: 4rem;
-  width: clamp(5rem, 15vh, 10rem)
-}
 main section.preparation-section {
   padding-bottom: 5rem
 }
@@ -64,7 +56,15 @@ main .code {
   overflow-wrap: break-word;
   white-space: pre-wrap
 }
-main section[id^="step-hidden-from-"] {
+main div.expand-all button#show-hide-btn {
+  border-radius: 0.5rem;
+  height: 4rem;
+  width: clamp(5rem, 15vh, 10rem)
+}
+main div.expand-all.active section[id^="step-hidden-from-"] {
+  display: block
+}
+main div.expand-all section[id^="step-hidden-from-"] {
   display: none
 }
 main section:not(:last-child) {

@@ -1,33 +1,22 @@
-main h2#toc-heading {
+main section h2#toc-heading {
   text-align: center
 }
-main nav.TOC {
+main section nav.TOC {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 2.25rem;
   text-align: center
 }
-/* zero out margin on gap support */
-main nav.TOC > :not(:last-child) {
-  margin-bottom: 0
-}
-main nav.TOC > :not(:last-child) {
-  margin-bottom: 2.25rem
-}
-main nav.TOC {
+main section nav.TOC {
   align-items: center;
   display: flex;
   flex-direction: column;
   text-align: center
 }
-main nav.TOC h3 {
-  border-bottom: 1px solid var(--bg-secondary);
-  padding: 0.15rem
-}
-main nav.TOC a:last-child {
+main section nav.TOC a:last-child {
   margin-bottom: 5.75rem
 }
-main nav.TOC a::before {
+main section nav.TOC a::before {
   content: "• "
 }

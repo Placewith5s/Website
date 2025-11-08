@@ -90,8 +90,8 @@ main {
   list-style-type: none
 }
 @media (prefers-reduced-motion: reduce) {
-  a, button, .drawer, .drawer #hide-drawer-btn, .desktop-links, .dropdown-menu-container a, 
-  #accept-all-btn, #save-preferences-btn, #reject-all-btn, footer nav[class^="footer-links-"] a {
+  a, button, nav.drawer, nav.drawer button#hide-drawer-btn, nav.desktop-links, nav.desktop-links details.dropdown-menu-container a, 
+  button#accept-all-btn, button#save-preferences-btn, button#reject-all-btn, footer nav[class^="footer-links-"] a {
     transition: none
   }
 }
@@ -122,21 +122,21 @@ button:focus {
     filter: var(--filter-active-settings)
   }
 }
-.last-updated {
+main div.last-updated {
   border: 0.06rem solid var(--color-secondary);
   margin-bottom: 1.25rem
 }
-.search-container {
+div.search-container {
   align-items: center;
   display: flex;
   margin: 2rem
 }
-.search-container #search-bar {
+div.search-container input#search-bar {
   border: 0.12rem solid var(--color-secondary);
   border-radius: 1.5rem;
   padding: 0.75rem 1rem
 }
-#not-found-msg {
+main div#not-found-msg {
   display: none;
   padding: 1.33rem
 }
@@ -150,38 +150,38 @@ button:focus {
     transform: translateY(0)
   }
 }
-.desktop-links,
-.desktop-links a {
+nav.desktop-links,
+nav.desktop-links a {
   display: flex
 }
 header h1,
-.desktop-links {
+nav.desktop-links {
   margin-bottom: 3rem
 }
-.desktop-links {
+nav.desktop-links {
   padding: 1rem;
   position: relative
 }
-.search-container, .desktop-links a {
+div.search-container, nav.desktop-links a {
   justify-content: center
 }
-.desktop-links a {
+nav.desktop-links a {
   flex: 1
 }
-.dropdown-menu-container a {
+nav.desktop-links details.dropdown-menu-container a {
   transition: margin-bottom 500ms ease-in-out, padding-top 500ms ease-in-out
 }
-.dropdown-menu-container a:hover, .dropdown-menu-container a:focus {
+nav.desktop-links details.dropdown-menu-container a:hover, nav.desktop-links details.dropdown-menu-container a:focus {
   margin-bottom: .5rem;
   padding-top: .5rem
 }
 a, button, summary {
   cursor: pointer
 }
-.menu-icon, .drawer {
+button.menu-icon, nav.drawer {
   z-index: 1000
 }
-.menu-icon {
+button.menu-icon {
   backdrop-filter: blur(1rem);
   border: 0.06rem solid var(--bg-secondary);
   border-radius: 0.5rem;
@@ -189,17 +189,17 @@ a, button, summary {
   right: 1rem;
   top: 1rem
 }
-.menu-icon .line {
+button.menu-icon div.line {
   background: var(--bg-secondary);
   height: 0.1rem;
   margin: 0.35rem 0;
   width: 1rem
 }
-#consent-cookie-banner,
-#cookie-banner, .menu-icon, .drawer {
+div#consent-cookie-banner,
+div#cookie-banner, button.menu-icon, nav.drawer {
   position: fixed
 }
-.drawer {
+nav.drawer {
   border: 0.06rem solid var(--bg-secondary);
   opacity: 0;
   padding: 1rem;
@@ -209,46 +209,46 @@ a, button, summary {
   transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
   visibility: hidden
 }
-.drawer.opened {
+nav.drawer.opened {
   opacity: 1;
   transform: translateY(0);
   visibility: visible
 }
-.drawer a {
+nav.drawer a {
   border: 0.06rem solid var(--bg-secondary);
   border-radius: 0.3rem;
   display: block;
   padding: 0.55rem;
   transition: transform 500ms ease-in-out
 }
-.drawer a:hover,
-.drawer a:focus {
+nav.drawer a:hover,
+nav.drawer a:focus {
   transform: translateX(10px)
 }
-.drawer #hide-drawer-btn {
+nav.drawer button#hide-drawer-btn {
   border: none;
   border-radius: 1.5rem;
   padding: 1rem;
   transition: filter 500ms ease-in-out, transform 500ms ease-in-out
 }
-.drawer #hide-drawer-btn:hover,
-.drawer #hide-drawer-btn:focus {
+nav.drawer button#hide-drawer-btn:hover,
+nav.drawer button#hide-drawer-btn:focus {
   transform: scale(0.9)
 }
 footer {
   padding: 2rem 0
 }
-.footer-container {
+footer .footer-container {
   display: flex
 }
-.footer-column {
+footer .footer-column {
   flex: 1
 }
-.footer-column h4 {
+footer .footer-column h4 {
   color: var(--accent);
   margin-bottom: 1rem
 }
-.desktop-links span, footer nav[class^="footer-links-"] a {
+nav.desktop-links span, footer nav[class^="footer-links-"] a {
   transition: color 500ms ease-in-out
 }
 footer nav[class^="footer-links-"] a {
@@ -256,88 +256,88 @@ footer nav[class^="footer-links-"] a {
   flex-direction: column;
   margin: 1.5rem
 }
-.desktop-links span:hover, .desktop-links span:focus,
+nav.desktop-links span:hover, nav.desktop-links span:focus,
 footer nav[class^="footer-links-"] a:hover, footer nav[class^="footer-links-"] a:focus {
   color: var(--accent)
 }
 footer .copyright {
   margin-top: 3rem
 }
-a:not(nav a), .desktop-links a[aria-current="page"],
-.drawer a[aria-current="page"] {
+a:not(nav a), nav.desktop-links a[aria-current="page"],
+nav.drawer a[aria-current="page"] {
   text-decoration: underline
 }
-.desktop-links a[aria-current="page"],
-.drawer a[aria-current="page"] {
+nav.desktop-links a[aria-current="page"],
+nav.drawer a[aria-current="page"] {
   font-weight: bolder
 }
-#consent-cookie-banner-dialog,
-#cookie-banner-dialog {
+div#consent-cookie-banner-dialog,
+div#cookie-banner-dialog {
   background: transparent;
   border: none
 }
-#consent-cookie-banner,
-#cookie-banner {
+div#consent-cookie-banner,
+div#cookie-banner {
   padding: 1.5rem;
   z-index: 1000
 }
-#consent-cookie-banner h3,
-#cookie-banner h3, #consent-cookie-banner p:first-child,
-#cookie-banner p {
+div#consent-cookie-banner h3,
+div#cookie-banner h3, div#consent-cookie-banner p:first-child,
+div#cookie-banner p {
   margin-bottom: 1.25rem
 }
-#consent-cookie-banner, #cookie-banner label::before {
+div#consent-cookie-banner, div#cookie-banner label::before {
   left: 0
 }
-header h1, .last-updated, .search-container #search-bar, footer, #consent-cookie-banner {
+header h1, main div.last-updated, div.search-container input#search-bar, footer, div#consent-cookie-banner {
   text-align: center
 }
-#consent-cookie-banner {
+div#consent-cookie-banner {
   bottom: 0
 }
-#cookie-banner {
+div#cookie-banner {
   border-radius: 1rem;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%)
 }
-#consent-cookie-banner button,
-#cookie-banner button {
+div#consent-cookie-banner button,
+div#cookie-banner button {
   &:hover {
     color: var(--accent)
   }
 }
-#accept-all-btn,
-#save-preferences-btn,
-#reject-all-btn {
+button#accept-all-btn,
+button#save-preferences-btn,
+button#reject-all-btn {
   border-radius: 0.3rem;
   margin: 0.3rem;
   padding: 0.7rem 1.35rem;
   transition: background-color 500ms ease-in-out
 }
-#cookie-banner label {
+div#cookie-banner label {
   display: block;
   margin-bottom: 0.3rem;
   padding-left: 1rem;
   position: relative
 }
-#cookie-banner label::before {
+div#cookie-banner label::before {
   content: "•";
   position: absolute
 }
-#cookie-banner input[type="checkbox"] {
+div#cookie-banner input[type="checkbox"] {
   margin-right: 0.75rem;
   vertical-align: middle
 }
-#show-cookie-settings-btn {
+button#show-cookie-settings-btn {
   border: none
 }
-#close-banner-btn {
+button#close-banner-btn {
   border: none;
   display: flex;
   justify-content: flex-end
 }
-.search-container #search-bar, #consent-cookie-banner, .strawpoll-embed, .strawpoll-embed iframe {
+div.search-container input#search-bar, div#consent-cookie-banner, .strawpoll-embed, .strawpoll-embed iframe {
   width: 100%
 }
 
@@ -357,40 +357,40 @@ header h1, .last-updated, .search-container #search-bar, footer, #consent-cookie
 }
 
 @media only screen and (max-width: 320px) {
-  .desktop-links {
+  nav.desktop-links {
     display: none
   }
 }
 @media only screen and (min-width: 321px) and (max-width: 768px) {
-  .menu-icon,
-  .drawer {
+  button.menu-icon,
+  nav.drawer {
     display: block
   }
-  .desktop-links {
+  nav.desktop-links {
     display: none
   }
 }
 @media only screen and (min-width: 769px) {
-  .menu-icon,
-  .drawer {
+  button.menu-icon,
+  nav.drawer {
     display: none
   }
 }
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .menu-icon,
-  .drawer {
+  button.menu-icon,
+  nav.drawer {
     display: none
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  .menu-icon,
-  .drawer {
+  button.menu-icon,
+  nav.drawer {
     display: none
   }
 }
 @media only screen and (min-width: 1201px) {
-  .menu-icon,
-  .drawer {
+  button.menu-icon,
+  nav.drawer {
     display: none
   }
 }
