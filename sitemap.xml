@@ -6,6 +6,7 @@
     </url>
     <url>
         <loc>https://www.placewith5s.com/html/guides/optimize-windows-pc</loc>
+<<<<<<< HEAD
         <lastmod>2025-11-09</lastmod>
     </url>
     <url>
@@ -15,6 +16,17 @@
     <url>
         <loc>https://www.placewith5s.com/html/policies/privacy-policy</loc>
         <lastmod>2025-11-09</lastmod>
+=======
+        <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/html/guides/troubleshoot-windows-pc</loc>
+        <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+        <loc>https://www.placewith5s.com/html/policies/privacy-policy</loc>
+        <lastmod>2025-11-08</lastmod>
+>>>>>>> d52bb148fdcf2c3a0d417fc034ab9ed915c9c2f7
     </url>
     <url>
         <loc>https://www.placewith5s.com/html/policies/cookie-policy</loc>
