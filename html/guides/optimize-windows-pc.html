@@ -158,9 +158,9 @@
       </div>
 
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 8, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 9, 2025</span>
         </p>
-        <time datetime="2025-11-08" title="Last Updated: Nov 8, 2025"></time>
+        <time datetime="2025-11-09" title="Last Updated: Nov 9, 2025"></time>
       </div>
 
       <section aria-labelledby="toc-heading" class="spaced-top">
@@ -185,12 +185,11 @@
         <ul>
           <li class="spaced-top"><strong>Back Up Important Data:</strong></li>
           <li class="no-list-style spaced-bottom">Save important files to an external drive or cloud storage, such as Google Drive.</li>
-          <li><strong>Run as Administrator:</strong></li>
-          <li class="no-list-style spaced-bottom">All tools require admin rights for optimal functionality, while some of them want: right click and 'Run As Administrator'.</li>
+          <li><strong>Run As Administrator:</strong></li>
+          <li class="no-list-style spaced-bottom">All tools require admin rights for optimal functionality, while some of them want: right click and "Run as administrator".</li>
           <li><strong>Learn to Extract ZIPs:</strong></li>
-          <li class="no-list-style spaced-bottom">Some tools are compressed and need to be extracted. Right click on the folder and select 'Extract All':</li>
+          <li class="no-list-style spaced-bottom">Some tools are compressed and need to be extracted. Right click on the folder and select 'Extract All': <a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Zip and unzip files (opens in a new tab)">Zip and unzip files (opens in a new tab)</a>.</li>
         </ul>
-        <a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Zip and unzip files (opens in a new tab)">Zip and unzip files (opens in a new tab)</a>
 
         <p class="spaced-top"><strong>Remember:</strong> Most of the changes below will require a PC reboot.</p>
       </section>
@@ -243,7 +242,7 @@
           </figure>
 
           <p class="spaced-top-bottom">If that didn't fix the issue, please check out:</p>
-          <a href="#step11-hidden-heading" aria-label="Step 11: Troubleshooting">Step 11: Troubleshooting</a>
+          <a href="#step-11-hidden-heading" aria-label="Step 11: Troubleshooting">Step 11: Troubleshooting</a>
           <p class="spaced-top"><strong>Doesn't show up?</strong> You need to click the 'Show All' button below <a href="#step-5-heading" aria-label="Step 5: Disallow Disk Indexing">Step 5: Disallow Disk Indexing</a> to view all options.</p>
         </section>
 
@@ -277,26 +276,26 @@
             <li>Personalize your experience by adjusting these settings. We've provided recommendations, but feel free to customize based on your needs.</li>
           </ol>
 
-          <p class="spaced-bottom">'General':</p>
+          <p class="spaced-bottom">1. 'General':</p>
 
           <ul>
-            <li class="no-list-style"><strong>Print Service</strong></li>
-            <li class="no-list-style">Recommended to ensure printing functionality remains intact; do not disable.</li>
-            <li class="no-list-style"><strong>Fax Service</strong></li>
-            <li class="no-list-style">Recommended if you need to send and receive faxes.</li>
-            <li class="no-list-style"><strong>Superfetch</strong></li>
-            <li class="no-list-style">Recommended to have SysMain (Superfetch) enabled for HDD users; otherwise disable it. Limited RAM may slow down your HDD system.</li>
-            <li class="no-list-style"><strong>SMBv2 Protocol</strong></li>
-            <li class="no-list-style">Recommended if using legacy printers. SMBv3 is more secure, though.</li>
+            <li><strong>Superfetch</strong></li>
+            <li class="no-list-style spaced-bottom">Recommended for HDD users; otherwise disable it. Limited RAM may slow down your HDD system.</li>
+            <li><strong>SMBv1 & SMBv2 Protocol</strong></li>
+            <li class="no-list-style spaced-bottom">Recommended if sharing files on legacy hardware or using legacy printers.</li>
+            <li><strong>Telemetry & Telemetry Tasks</strong></li>
+            <li class="no-list-style">Not recommended due to privacy concerns.</li>
           </ul>
 
-          <p class="spaced-top-bottom">'Windows (Version)':</p>
+          <p class="spaced-top-bottom">2. 'Windows (Version)':</p>
             
           <ul>
-            <li class="no-list-style"><strong>Sensor Services</strong></li>
-            <li class="no-list-style">Recommended if your device has a touch function, such as a few laptops.</li>
-            <li class="no-list-style"><strong>Virtualization Based Security</strong></li>
-            <li class="no-list-style">Recommended to turn off Virtualization-Based Security if you don't use both core isolation and virtualization, and do not care about <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/device-guard-and-credential-guard?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="memory integrity (opens in a new tab)">memory integrity (opens in a new tab)</a>.</li>
+            <li><strong>Sensor Services</strong></li>
+            <li class="no-list-style spaced-bottom">Recommended for laptops only. However, if the notebook has location services disabled, no touchscreen, and both auto-rotation and adaptive brightness turned off, you can safely disable the sensor services.</li>
+            <li><strong>Virtualization Based Security</strong></li>
+            <li class="no-list-style spaced-bottom">Recommended to turn off Virtualization-Based Security if you don't use virtualization and don't care about <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/device-guard-and-credential-guard?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="memory integrity (opens in a new tab)">memory integrity (opens in a new tab)</a>.</li>
+            <li><strong>Telemetry Services</strong></li>
+            <li class="no-list-style">Again, not recommended due to privacy concerns.</li>
           </ul>
         </section>
 
@@ -342,7 +341,7 @@
               </picture>
             </figure>
 
-            <p class="spaced-top"><strong>Key point:</strong> Enable 'Show power plan change notifications' and 'Show park settings in Windows Power Options' for easy access and monitoring.</p>
+            <p class="spaced-top"><strong>Key point:</strong> Enable 'Notify on Power Profile Change' below 'Settings'.</p>
           </section>
 
           <section aria-labelledby="step-7-hidden-heading" class="step-seven" id="step-hidden-from-7">
@@ -383,9 +382,9 @@
             </figure>
 
               <h4 class="spaced-top">Startup Apps for Windows Settings:</h4>
-              <p>Toggle off any unused apps to streamline your startup process.</p>
+              <p>Toggle off any unused apps to improve your startup process.</p>
               <h4 class="spaced-top">Task Manager:</h4>
-              <p>Right click > disable or enable bloatware or apps you don't need that can slow up your booting times.</p>
+              <p>Right click and disable or enable bloatware or apps you don't need that can slow up your booting times.</p>
           </section>
 
           <section aria-labelledby="step-8-hidden-heading" class="step-eight" id="step-hidden-from-8">
@@ -505,14 +504,14 @@
             <h4 class="spaced-top">Additional Tools for Troubleshooting</h4>
 
             <ul class="spaced-top">
-              <li class="spaced-bottom">Press Windows Key > type "Event Viewer" > go to the Windows Logs > go to System</li>
-              <li class="spaced-bottom">Type "Windows Memory Diagnostic"</li>
+              <li class="spaced-bottom">Press Windows Key > type "Event Viewer" > go to 'Windows Logs' > go to 'System', scroll until you find errors, and double click on them for more information.</li>
+              <li class="spaced-bottom">Type "Windows Memory Diagnostic" and click "Restart now and check for problems (recommended)".</li>
               <li class="spaced-bottom">Windows Debugger (from the Microsoft Store using commands) and Who Crashed (from Resplendence):</li>
             </ul>
 
             <nav class="troubleshoot-tool-links">
-              <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger?utm_source=placewith5s" class="spaced-right" aria-label="Download Windows Debugger (opens in a new tab)">Download Windows Debugger (opens in a new tab)</a>
-              <a href="https://www.resplendence.com/download?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download Who Crashed (opens in a new tab)">Download Who Crashed (opens in a new tab)</a>
+              <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" class="spaced-right" aria-label="Download Windows Debugger (opens in a new tab)">Download Windows Debugger (opens in a new tab)</a>
+              <a href="https://www.resplendence.com/downloads?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download Who Crashed (opens in a new tab)">Download Who Crashed (opens in a new tab)</a>
             </nav>
 
             <p class="spaced-top">Still facing issues? Check out: <a href="/html/guides/troubleshoot-windows-pc" aria-label="Troubleshoot Your Windows PC">Troubleshoot Your Windows PC</a>.</p>
