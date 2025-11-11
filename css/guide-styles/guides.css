@@ -1,22 +1,62 @@
+@media (prefers-reduced-motion: reduce) {
+  img {
+    animation: none;
+    transform: scale(1)
+  }
+  .hide {
+    transition: none
+  }
+}
+img {
+  -webkit-backface-visibility: hidden;
+  animation: fade-in 500ms ease-in-out forwards;
+  backface-visibility: hidden;
+  font-style: italic;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  max-width: 100%;
+  object-fit: cover;
+  transform: scale(0.8);
+  vertical-align: middle
+}
+@supports (animation-timeline: view()) and (animation-range-start: entry) {
+  img {
+    animation-range-start: entry;
+    animation-timeline: view()
+  }
+}
+@supports (prefers-reduced-transparency: no-preference) {
+  @media (prefers-reduced-transparency: no-preference) {
+    img {
+      opacity: 0.1
+    }
+  }
+}
+@keyframes fade-in {
+  0% {
+      opacity: 0.1
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1)
+  }
+}
+main .hide {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out
+}
+main .show {
+  opacity: 1
+}
+main section:not(:last-child) {
+  margin-bottom: 25rem
+}
 main section h2#toc-heading {
   text-align: center
 }
-main section nav.TOC {
+main section nav.TOC, main section nav.TOC ul {
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 2.25rem;
-  text-align: center
-}
-main section nav.TOC {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  text-align: center
-}
-main section nav.TOC a:last-child {
-  margin-bottom: 5.75rem
-}
-main section nav.TOC a::before {
-  content: "• "
+  gap: 3rem
 }

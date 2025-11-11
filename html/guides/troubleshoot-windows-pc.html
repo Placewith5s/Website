@@ -46,14 +46,13 @@
       <style>
         div#cookie-banner,
         div#consent-cookie-banner {
-          display: none;
+          display: none
         }
 
         div#preloader,
         span.loader,
         span.loader::before {
-          display: none !important;
-          /* Important use case :) */
+          display: none !important
         }
       </style>
     </noscript>
@@ -70,25 +69,30 @@
         <h3 id="consent-cookie-banner-heading">Cookie Consent</h3>
         <p>This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.</p>
         <p>By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="https://www.placewith5s.com/html/policies/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" aria-label="Learn More About Our Cookie Policy">Learn More About Our Cookie Policy</a>.</p>
+
         <button id="show-cookie-settings-btn" aria-label="Cookie Options">Cookie Options</button>
         <button id="accept-all-btn" type="button" aria-label="Accept All Cookies">Accept All Cookies</button>
         <button id="reject-all-btn" type="button" aria-label="Reject All Cookies">Reject All Cookies</button>
       </div>
     </dialog>
+
     <dialog id="cookie-banner-dialog">
       <div id="cookie-banner" aria-labelledby="cookie-banner-heading">
         <h3 id="cookie-banner-heading">Cookie Preferences</h3>
         <p>This website uses cookies. Please choose your cookie preferences:</p>
+
+        <label for="essential-checkbox">Essential: Required for basic site functions.</label>
         <input type="checkbox" id="essential-checkbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
-        <label for="essential-checkbox"><strong>Essential:</strong> Required for basic site functions.</label>
+        <label for="performance-checkbox">Performance: Helps us analyze site usage.</label>
         <input type="checkbox" id="performance-checkbox" aria-label="Performance: Helps us analyze site usage">
-        <label for="performance-checkbox"><strong>Performance:</strong> Helps us analyze site usage.</label>
+        <label for="functionality-checkbox">Functionality: Remembers your preferences.</label>
         <input type="checkbox" id="functionality-checkbox" aria-label="Functionality: Remembers your preferences">
-        <label for="functionality-checkbox"><strong>Functionality:</strong> Remembers your preferences.</label>
+
         <button id="save-preferences-btn" type="button" aria-label="Save Preferences">Save Preferences</button>
         <button id="close-banner-btn" type="button" aria-label="Close">Close</button>
       </div>
     </dialog>
+
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
       <span class="loader"></span>
     </div>
@@ -151,9 +155,9 @@
       </div>
 
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 9, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 11, 2025</span>
         </p>
-        <time datetime="2025-11-09" title="Last Updated: Nov 9, 2025"></time>
+        <time datetime="2025-11-011" title="Last Updated: Nov 11, 2025"></time>
       </div>
 
       <section aria-labelledby="toc-heading" class="spaced-top">

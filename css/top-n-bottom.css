@@ -4,8 +4,7 @@
   --bg-secondary: #000;
   --color-primary: #000;
   --color-secondary: #f5f5f5;
-  --filter-active-settings: opacity(0.55);
-  --hover-shadow: 0 0.7rem 1.35rem rgba(0, 0, 0, 0.25)
+  --hover-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2)
 }
 *,
 *::after,
@@ -90,25 +89,28 @@ main {
   list-style-type: none
 }
 @media (prefers-reduced-motion: reduce) {
-  a, button, nav.drawer, nav.drawer button#hide-drawer-btn, nav.desktop-links, nav.desktop-links details.dropdown-menu-container a, 
-  button#accept-all-btn, button#save-preferences-btn, button#reject-all-btn, footer nav[class^="footer-links-"] a {
+  * {
     transition: none
   }
 }
 a,
 button {
   text-decoration: none;
-  transition: transform 500ms ease-in-out, box-shadow 500ms ease-in-out
+  transition: transform 100ms ease-in-out, box-shadow 500ms ease-in-out
+}
+main a {
+  text-decoration: underline
 }
 button {
-  border: 0.15rem solid var(--accent)
+  border: 0.15rem solid var(--accent);
+  text-decoration: none
 }
 button:hover,
 button:focus,
 a:hover,
 a:focus {
   box-shadow: var(--hover-shadow);
-  transform: scale(1.03)
+  transform: scale(1.05)
 }
 a:hover, a:focus {
   color: var(--accent)
@@ -117,10 +119,13 @@ a:focus,
 button:focus {
   outline: 0.25rem solid var(--accent)
 }
-@media (prefers-reduced-transparency: no-preference) {
+/* @media (prefers-reduced-transparency: no-preference) {
   a:active {
-    filter: var(--filter-active-settings)
+    
   }
+} */
+a:visited {
+  color: var(--accent)
 }
 main div.last-updated {
   border: 0.06rem solid var(--color-secondary);
@@ -178,6 +183,9 @@ nav.desktop-links details.dropdown-menu-container a:hover, nav.desktop-links det
 a, button, summary {
   cursor: pointer
 }
+main section:not(:last-child) {
+  margin-bottom: 12.5rem
+}
 button.menu-icon, nav.drawer {
   z-index: 1000
 }
@@ -191,12 +199,11 @@ button.menu-icon {
 }
 button.menu-icon div.line {
   background: var(--bg-secondary);
-  height: 0.1rem;
+  height: 0.5vh;
   margin: 0.35rem 0;
-  width: 1rem
+  width: 3vw
 }
-div#consent-cookie-banner,
-div#cookie-banner, button.menu-icon, nav.drawer {
+dialog#consent-cookie-banner-dialog div#consent-cookie-banner, button.menu-icon, nav.drawer {
   position: fixed
 }
 nav.drawer {
@@ -223,7 +230,7 @@ nav.drawer a {
 }
 nav.drawer a:hover,
 nav.drawer a:focus {
-  transform: translateX(10px)
+  transform: translateX(0.7rem)
 }
 nav.drawer button#hide-drawer-btn {
   border: none;
@@ -254,7 +261,7 @@ nav.desktop-links span, footer nav[class^="footer-links-"] a {
 footer nav[class^="footer-links-"] a {
   display: flex;
   flex-direction: column;
-  margin: 1.5rem
+  margin-bottom: 1.5rem
 }
 nav.desktop-links span:hover, nav.desktop-links span:focus,
 footer nav[class^="footer-links-"] a:hover, footer nav[class^="footer-links-"] a:focus {
@@ -263,84 +270,73 @@ footer nav[class^="footer-links-"] a:hover, footer nav[class^="footer-links-"] a
 footer .copyright {
   margin-top: 3rem
 }
-a:not(nav a), nav.desktop-links a[aria-current="page"],
-nav.drawer a[aria-current="page"] {
-  text-decoration: underline
-}
 nav.desktop-links a[aria-current="page"],
 nav.drawer a[aria-current="page"] {
-  font-weight: bolder
+  font-weight: bolder;
+  text-decoration: underline
 }
-div#consent-cookie-banner-dialog,
-div#cookie-banner-dialog {
+dialog#consent-cookie-banner-dialog,
+dialog#cookie-banner-dialog {
   background: transparent;
   border: none
 }
-div#consent-cookie-banner,
-div#cookie-banner {
+dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
+dialog#cookie-banner-dialog div#cookie-banner {
   padding: 1.5rem;
   z-index: 1000
 }
-div#consent-cookie-banner h3,
-div#cookie-banner h3, div#consent-cookie-banner p:first-child,
-div#cookie-banner p {
+dialog#consent-cookie-banner-dialog div#consent-cookie-banner h3,
+dialog#cookie-banner-dialog div#cookie-banner h3, dialog#consent-cookie-banner-dialog div#consent-cookie-banner p:first-child,
+dialog#cookie-banner-dialog div#cookie-banner p {
   margin-bottom: 1.25rem
 }
-div#consent-cookie-banner, div#cookie-banner label::before {
+dialog#consent-cookie-banner-dialog div#consent-cookie-banner, dialog#cookie-banner-dialog div#cookie-banner label::before {
   left: 0
 }
-header h1, main div.last-updated, div.search-container input#search-bar, footer, div#consent-cookie-banner {
+header h1, main div.last-updated, div.search-container input#search-bar, footer, dialog#consent-cookie-banner-dialog div#consent-cookie-banner {
   text-align: center
 }
-div#consent-cookie-banner {
+dialog#consent-cookie-banner-dialog div#consent-cookie-banner {
   bottom: 0
 }
-div#cookie-banner {
+dialog#cookie-banner-dialog div#cookie-banner {
+  align-items: center;
   border-radius: 1rem;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%)
+  display: flex;
+  flex-direction: column;
+  justify-content: center
 }
-div#consent-cookie-banner button,
-div#cookie-banner button {
+dialog#consent-cookie-banner-dialog div#consent-cookie-banner button,
+dialog#cookie-banner-dialog div#cookie-banner button {
   &:hover {
     color: var(--accent)
   }
 }
-button#accept-all-btn,
-button#save-preferences-btn,
-button#reject-all-btn {
+/* dialog#cookie-banner-dialog div#cookie-banner button {
+  flex-direction: row
+} */
+dialog#cookie-banner-dialog div#cookie-banner button#save-preferences-btn,
+dialog#consent-cookie-banner-dialog div#consent-cookie-banner button {
   border-radius: 0.3rem;
   margin: 0.3rem;
   padding: 0.7rem 1.35rem;
   transition: background-color 500ms ease-in-out
 }
-div#cookie-banner label {
-  display: block;
+dialog#cookie-banner-dialog div#cookie-banner button#show-cookie-settings-btn, dialog#cookie-banner-dialog div#cookie-banner button#close-banner-btn {
+  border: none
+}
+dialog#cookie-banner-dialog div#cookie-banner label {
   margin-bottom: 0.3rem;
   padding-left: 1rem;
   position: relative
 }
-div#cookie-banner label::before {
+dialog#cookie-banner-dialog div#cookie-banner label::before {
   content: "•";
   position: absolute
 }
-div#cookie-banner input[type="checkbox"] {
-  margin-right: 0.75rem;
-  vertical-align: middle
-}
-button#show-cookie-settings-btn {
-  border: none
-}
-button#close-banner-btn {
-  border: none;
-  display: flex;
-  justify-content: flex-end
-}
-div.search-container input#search-bar, div#consent-cookie-banner, .strawpoll-embed, .strawpoll-embed iframe {
+div.search-container input#search-bar, dialog#consent-cookie-banner-dialog div#consent-cookie-banner, .strawpoll-embed, .strawpoll-embed iframe {
   width: 100%
 }
-
 /* Strawpoll, keep styles as is */
 .strawpoll-embed {
   display: flex;
@@ -355,7 +351,6 @@ div.search-container input#search-bar, div#consent-cookie-banner, .strawpoll-emb
   position: static;
   visibility: visible
 }
-
 @media only screen and (max-width: 320px) {
   nav.desktop-links {
     display: none
@@ -401,7 +396,6 @@ div.search-container input#search-bar, div#consent-cookie-banner, .strawpoll-emb
     --bg-secondary: #f5f5f5;
     --color-primary: #f5f5f5;
     --color-secondary: #444;
-    --filter-active-settings: brightness(1.2);
-    --hover-shadow: 0 0.7rem 1.35rem rgba(255, 255, 255, 0.2)
+    --hover-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.2)
   }
 }

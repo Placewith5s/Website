@@ -9,7 +9,7 @@ main div.carousel {
 }
 main div.carousel div.carousel-inner {
   display: flex;
-  transition: transform 500ms ease-in-out
+  transition: transform 1000ms ease-in-out /* dynamic animation */
 }
 main div.carousel div.carousel-inner div.carousel-item {
   min-width: 100%

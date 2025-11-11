@@ -46,14 +46,13 @@
       <style>
         div#cookie-banner,
         div#consent-cookie-banner {
-          display: none;
+          display: none
         }
 
         div#preloader,
         span.loader,
         span.loader::before {
-          display: none !important;
-          /* Important use case :) */
+          display: none !important
         }
       </style>
     </noscript>
@@ -77,25 +76,30 @@
         <h3 id="consent-cookie-banner-heading">Cookie Consent</h3>
         <p>This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.</p>
         <p>By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="https://www.placewith5s.com/html/policies/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" aria-label="Learn More About Our Cookie Policy">Learn More About Our Cookie Policy</a>.</p>
+
         <button id="show-cookie-settings-btn" aria-label="Cookie Options">Cookie Options</button>
         <button id="accept-all-btn" type="button" aria-label="Accept All Cookies">Accept All Cookies</button>
         <button id="reject-all-btn" type="button" aria-label="Reject All Cookies">Reject All Cookies</button>
       </div>
     </dialog>
+
     <dialog id="cookie-banner-dialog">
       <div id="cookie-banner" aria-labelledby="cookie-banner-heading">
         <h3 id="cookie-banner-heading">Cookie Preferences</h3>
         <p>This website uses cookies. Please choose your cookie preferences:</p>
+
+        <label for="essential-checkbox">Essential: Required for basic site functions.</label>
         <input type="checkbox" id="essential-checkbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
-        <label for="essential-checkbox"><strong>Essential:</strong> Required for basic site functions.</label>
+        <label for="performance-checkbox">Performance: Helps us analyze site usage.</label>
         <input type="checkbox" id="performance-checkbox" aria-label="Performance: Helps us analyze site usage">
-        <label for="performance-checkbox"><strong>Performance:</strong> Helps us analyze site usage.</label>
+        <label for="functionality-checkbox">Functionality: Remembers your preferences.</label>
         <input type="checkbox" id="functionality-checkbox" aria-label="Functionality: Remembers your preferences">
-        <label for="functionality-checkbox"><strong>Functionality:</strong> Remembers your preferences.</label>
+
         <button id="save-preferences-btn" type="button" aria-label="Save Preferences">Save Preferences</button>
         <button id="close-banner-btn" type="button" aria-label="Close">Close</button>
       </div>
     </dialog>
+
     <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
       <span class="loader"></span>
     </div>
@@ -158,26 +162,31 @@
       </div>
 
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 9, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Nov 11, 2025</span>
         </p>
-        <time datetime="2025-11-09" title="Last Updated: Nov 9, 2025"></time>
+        <time datetime="2025-11-11" title="Last Updated: Nov 11, 2025"></time>
       </div>
 
       <section aria-labelledby="toc-heading" class="spaced-top">
         <h2 class="spaced-top-bottom" id="toc-heading">Table of Contents</h2>
 
         <nav class="TOC">
-          <a href="#preparation-heading" aria-label="Preparation" class="spaced-top">Preparation</a>
-          <a href="#step-1-heading" aria-label="Step 1: Run ChrisTitusTech's Tool">Step 1: Run Chris Titus Tech's Tool</a>
-          <a href="#step-2-heading" aria-label="Step 2: Optimize with Tweaks (One Tool For Everything)">Step 2: Optimize with Tweaks (One Tool For Everything)</a>
-          <a href="#step-3-heading" aria-label="Step 3: Resolve Issues with Config: Your One-Stop Solution">Step 3: Resolve Issues with Config: Your One-Stop Solution</a>
-          <a href="#step-4-heading" aria-label="Step 4: Enhance Performance with Hellzerg's Optimizer">Step 4: Enhance Performance with Hellzerg's Optimizer</a>
-          <a href="#step-5-heading" aria-label="Step 5: Disallow Disk Indexing">Step 5: Disallow Disk Indexing</a>
+          <ul class="prep-links">
+            <li class="spaced-bottom"><a href="#preparation-heading" aria-label="Preparation">Preparation</a></li>
+          </ul>
+
+          <ul class="step-links">
+            <li><a href="#step-1-heading" aria-label="Step 1: Run ChrisTitusTech's Tool">Step 1: Run Chris Titus Tech's Tool</a></li>
+            <li><a href="#step-2-heading" aria-label="Step 2: Optimize with Tweaks (One Tool For Everything)">Step 2: Optimize with Tweaks (One Tool For Everything)</a></li>
+            <li><a href="#step-3-heading" aria-label="Step 3: Resolve Issues with Config: Your One-Stop Solution">Step 3: Resolve Issues with Config: Your One-Stop Solution</a></li>
+            <li><a href="#step-4-heading" aria-label="Step 4: Enhance Performance with Hellzerg's Optimizer">Step 4: Enhance Performance with Hellzerg's Optimizer</a></li>
+            <li><a href="#step-5-heading" aria-label="Step 5: Disallow Disk Indexing">Step 5: Disallow Disk Indexing</a></li>
+          </ul>
         </nav>
       </section>
       
       <section aria-labelledby="preparation-heading" class="preparation-section">
-        <h3 class="spaced-bottom" id="preparation-heading">Preparation:</h3>
+        <h2 class="spaced-bottom" id="preparation-heading">Preparation:</h2>
         <h4 class="spaced-bottom">Create a System Restore Point:</h4>
         <p>This allows you to revert changes if needed. <a href="https://support.microsoft.com/en-us/windows/system-protection-e9126e6e-fa64-4f5f-874d-9db90e57645a?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="System Protection (opens in a new tab)">System Protection (opens in a new tab)</a>
         </p>
@@ -196,7 +205,7 @@
 
       <div class="step-by-step-guide">
         <section aria-labelledby="step-1-heading" class="step-one anim">
-          <h3 class="spaced-bottom" id="step-1-heading">Step 1: Run Chris Titus Tech's Tool</h3>
+          <h2 class="spaced-bottom" id="step-1-heading">Step 1: Run Chris Titus Tech's Tool</h2>
 
           <a href="https://christitus.com/one-tool-for-everything?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Chris Titus' website (opens in a new tab)">Chris Titus' website (opens in a new tab)</a>
           <p class="spaced-top-bottom">Begin by using Chris Titus Tech's "One Tool For Everything" PowerShell script.</p>
@@ -206,7 +215,7 @@
         </section>
 
         <section aria-labelledby="step-2-heading" class="step-two">
-          <h3 class="spaced-bottom" id="step-2-heading">Step 2: Optimize with Tweaks (One Tool For Everything)</h3>
+          <h2 class="spaced-bottom" id="step-2-heading">Step 2: Optimize with Tweaks (One Tool For Everything)</h2>
 
           <p class="spaced-bottom">Make sure you've completed the <a href="#preparation-heading" aria-label="preparation section">preparation section</a> first.</p>
           <p class="spaced-top-bottom">Navigate to 'Tweaks' (at the top left). Here's what you'll see:</p>
@@ -231,7 +240,7 @@
         </section>
 
         <section aria-labelledby="step-3-heading" class="step-three">
-          <h3 class="spaced-bottom" id="step-3-heading">Step 3: Resolve Issues with Config: Your One-Stop Solution</h3>
+          <h2 class="spaced-bottom" id="step-3-heading">Step 3: Resolve Issues with Config: Your One-Stop Solution</h2>
           <p class="spaced-top-bottom">Troubleshoot and fine-tune your settings easily. Click on 'Config' (next to 'Tweaks') to access the configuration menu.</p>
 
           <figure>
@@ -247,7 +256,7 @@
         </section>
 
         <section aria-labelledby="step-4-heading" class="step-four">
-          <h3 class="spaced-bottom" id="step-4-heading">Step 4: Enhance Performance with Hellzerg's Optimizer</h3>
+          <h2 class="spaced-bottom" id="step-4-heading">Step 4: Enhance Performance with Hellzerg's Optimizer</h2>
 
           <p class="spaced-bottom"><strong>Warning:</strong> This tool hasn't been updated in over half a year. Use at your own risk:</p>
           <a href="https://github.com/hellzerg/optimizer/releases?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download Optimizer from Github (opens in a new tab)">Download Optimizer from Github (opens in a new tab)</a>
@@ -300,7 +309,7 @@
         </section>
 
           <section aria-labelledby="step-5-heading" class="step-five">
-            <h3 class="spaced-bottom" id="step-5-heading">Step 5: Disallow Disk Indexing</h3>
+            <h2 class="spaced-bottom" id="step-5-heading">Step 5: Disallow Disk Indexing</h2>
 
             <p class="spaced-top-bottom">Right click on your Windows disk letter and select "Properties". You should see "Allow files on this drive to have contents indexed in addition to file properties" at the bottom:</p>
 
@@ -326,7 +335,7 @@
         <div class="expand-all spaced-top">
           <button aria-expanded="false" id="show-hide-btn" type="button">Show All</button>
           <section aria-labelledby="step-6-hidden-heading" class="step-six" id="step-hidden-from-6">
-            <h3 class="spaced-top-bottom" id="step-6-hidden-heading">Step 6: Fine-Tune CPU Power Management with ParkControl</h3>
+            <h2 class="spaced-top-bottom" id="step-6-hidden-heading">Step 6: Fine-Tune CPU Power Management with ParkControl</h2>
 
             <a href="https://bitsum.com/parkcontrol?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download ParkControl from Bitsum (opens in a new tab)">Download ParkControl from Bitsum (opens in a new tab)</a>
             <h4 class="spaced-top"><strong>For Laptops:</strong></h4> 
@@ -345,7 +354,7 @@
           </section>
 
           <section aria-labelledby="step-7-hidden-heading" class="step-seven" id="step-hidden-from-7">
-            <h3 class="spaced-bottom" id="step-7-hidden-heading">Step 7: Boost Startup Speed: Manage System Startup Applications</h3>
+            <h2 class="spaced-bottom" id="step-7-hidden-heading">Step 7: Boost Startup Speed: Manage System Startup Applications</h2>
 
             <p class="spaced-top-bottom">Press the Windows key and type "Startup Apps".</p>
 
@@ -388,7 +397,7 @@
           </section>
 
           <section aria-labelledby="step-8-hidden-heading" class="step-eight" id="step-hidden-from-8">
-            <h3 class="spaced-bottom" id="step-8-hidden-heading">Step 8: Boost Your Network Performance Using TCP Optimizer</h3>
+            <h2 class="spaced-bottom" id="step-8-hidden-heading">Step 8: Boost Your Network Performance Using TCP Optimizer</h2>
 
             <a href="https://www.speedguide.net/downloads.php?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download TCP Optimizer (opens in a new tab)">Download TCP Optimizer (opens in a new tab)</a>
             <p class="spaced-top-bottom">Open the .exe application as an administrator, change the "Choose settings" to "Custom" (at the right below), and hover over each setting for more information, because most of them include recommendations.</p>
@@ -415,7 +424,7 @@
           </section>
 
           <section aria-labelledby="step-9-hidden-heading" class="step-nine" id="step-hidden-from-9">
-            <h3 class="spaced-bottom" id="step-9-hidden-heading">Step 9: Optimize More of Your NVIDIA Graphics Card</h3>
+            <h2 class="spaced-bottom" id="step-9-hidden-heading">Step 9: Optimize More of Your NVIDIA Graphics Card</h2>
 
             <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download NVIDIA Profile Inspector (opens in a new tab)">Download NVIDIA Profile Inspector (opens in a new tab)</a>
             <p class="spaced-top-bottom">Once you open the .exe application, and you're under the 'Texture Filtering' category, make sure 'Prevent Anisotropic Filtering' is turned off:</p>
@@ -438,7 +447,7 @@
           </section>
 
           <section aria-labelledby="step-10-hidden-heading" class="step-ten" id="step-hidden-from-10">
-            <h3 class="spaced-bottom" id="step-10-hidden-heading">Step 10: Advanced Optimization (BACKUP FIRST)</h3>
+            <h2 class="spaced-bottom" id="step-10-hidden-heading">Step 10: Advanced Optimization (BACKUP FIRST)</h2>
 
               <h4>Backup Your Registry</h4>
               <p class="spaced-top-bottom">Press the Windows key and type "reg edit" (short for Registry Editor).</p>
@@ -485,7 +494,7 @@
           </section>
 
           <section aria-labelledby="step-11-hidden-heading" class="step-eleven" id="step-hidden-from-11">
-            <h3 class="spaced-bottom" id="step-11-hidden-heading">Step 11: Troubleshooting</h3>
+            <h2 class="spaced-bottom" id="step-11-hidden-heading">Step 11: Troubleshooting</h2>
             <h3 class="spaced-top">Keeping Everything Up-to-Date</h3>
             
             <ul class="spaced-top">

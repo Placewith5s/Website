@@ -1,5 +1,4 @@
 main form#contact-form {
-  border-radius: 1.5rem;
   margin: 2rem;
   padding: 2rem
 }
@@ -17,17 +16,15 @@ main form#contact-form div.form-group input[type="text"],
 main form#contact-form div.form-group input[type="email"],
 main form#contact-form div.form-group textarea#message, 
 main form#contact-form button[type="submit"] {
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   padding: 1rem
 }
-main form#contact-form div.gdpr-consent {
-  align-items: center;
-  display: flex;
-  margin-bottom: 1.5rem
+main form#contact-form div.form-group input[type="text"],
+main form#contact-form div.form-group input[type="email"] {
+  width: 50%
 }
-main form#contact-form div.gdpr-consent input[type="checkbox"] {
-  margin-right: 1rem;
-  transform: scale(1.2)
+main form#contact-form div.gdpr-consent {
+  margin-bottom: 1.5rem
 }
 main form#contact-form div.gdpr-consent a {
   text-decoration: underline
