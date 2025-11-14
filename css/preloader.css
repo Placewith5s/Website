@@ -10,11 +10,13 @@ div#preloader {
   z-index: 9999
 }
 @media (prefers-reduced-motion: reduce) {
-  div#preloader span.loader, div#preloader span.loader::before {
+  div#preloader span.loader, 
+  div#preloader span.loader::before {
   animation: none
 }
 }
-div#preloader span.loader, div#preloader span.loader::before {
+div#preloader span.loader, 
+div#preloader span.loader::before {
   animation: spin 1000ms ease-in-out infinite;
   border-radius: 50%
 }
