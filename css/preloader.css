@@ -17,7 +17,7 @@ div#preloader {
 }
 div#preloader span.loader, 
 div#preloader span.loader::before {
-  animation: spin 1000ms ease-in-out infinite;
+  animation: spin 1000ms linear infinite;
   border-radius: 50%
 }
 div#preloader span.loader {
