@@ -1,16 +1,10 @@
-main form#contact-form {
-  margin: 2rem;
-  padding: 2rem
-}
-main form#contact-form div.form-group {
-  margin-bottom: 2rem
-}
-main form#contact-form div.form-group label {
-  display: block;
-  margin-bottom: 1rem
+main form#contact-form div.form-group input {
+  margin-left: 1rem
 }
 main form#contact-form div.form-group textarea#message {
-  width: 100%
+  display: block;
+  margin-top: 1rem;
+  width: 75%
 }
 main form#contact-form div.form-group input[type="text"],
 main form#contact-form div.form-group input[type="email"],
@@ -21,15 +15,14 @@ main form#contact-form button[type="submit"] {
 }
 main form#contact-form div.form-group input[type="text"],
 main form#contact-form div.form-group input[type="email"] {
-  width: 50%
+  width: 40%
 }
 main form#contact-form div.gdpr-consent {
-  display: block;
-  margin-bottom: 1.5rem
+  display: block !important /* overwrite display from none to block */
 }
-main form#contact-form div.gdpr-consent a {
-  text-decoration: underline
-}
-main form#contact-form button[type="submit"] {
-  padding: 1rem 2rem
+main form#contact-form button[type="submit"] { /* NOT unused */
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: clamp(2rem, 4vw, 7.5rem);
+  padding-right: clamp(2rem, 4vw, 7.5rem)
 }

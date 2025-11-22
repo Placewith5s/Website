@@ -146,7 +146,10 @@ button {
 }
 button {
   border: 0.15rem solid var(--accent);
-  text-decoration: none
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  padding-left: clamp(2rem, 4vw, 7.5rem);
+  padding-right: clamp(2rem, 4vw, 7.5rem)
 }
 button:hover,
 button:focus,
@@ -154,6 +157,10 @@ a:hover,
 a:focus {
   box-shadow: var(--hover-shadow);
   transform: scale(1.05)
+}
+a:hover,
+a:focus {
+  text-decoration: underline
 }
 a:focus,
 button:focus {
@@ -299,7 +306,6 @@ footer nav[class^="footer-links-"] a:focus {
 footer .copyright {
   margin-top: 3rem
 }
-main a, 
 nav.desktop-links a[aria-current="page"],
 nav.drawer a[aria-current="page"] {
   text-decoration: underline

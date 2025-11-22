@@ -5,9 +5,7 @@ main .code {
   white-space: pre-wrap
 }
 main div.expand-all button#show-hide-btn {
-  border-radius: 0.5rem;
-  height: 5vh;
-  width: 12.5%
+  border-radius: 0.5rem
 }
 main section:not(:last-child) {
   margin-bottom: 25rem
