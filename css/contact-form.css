@@ -24,6 +24,7 @@ main form#contact-form div.form-group input[type="email"] {
   width: 50%
 }
 main form#contact-form div.gdpr-consent {
+  display: block;
   margin-bottom: 1.5rem
 }
 main form#contact-form div.gdpr-consent a {

@@ -5,9 +5,6 @@ Disallow: /.nojekyll
 Disallow: /.gitignore
 Disallow: /.github
 
-User-agent: SEO Site Checkup
-Disallow: /
-
 Crawl-delay: 5
 
 Sitemap: https://www.placewith5s.com/sitemap.xml
