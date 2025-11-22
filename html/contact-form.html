@@ -148,28 +148,26 @@
         <h2 class="spaced-top" id="contact-heading">Send Us a Message</h2>
         <p class="spaced-top-bottom">We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
         
-        <div id="error-summary" role="alert" aria-live="assertive"></div>
-        
         <div class="form-group spaced-bottom">
           <label for="name" class="spaced-top">Your Name:</label>
-          <input type="text" id="name" name="name" required aria-required="true" autocomplete="name" placeholder="Name">
+          <input type="text" id="name" name="name" required autocomplete="name" placeholder="Name">
         </div>
 
         <div class="form-group spaced-bottom">
           <label for="email">Your Email:</label>
-          <input type="email" id="email" name="email" required aria-required="true" autocomplete="email" placeholder="Email">
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="Email">
         </div>
 
         <div class="form-group spaced-bottom">
           <label for="message">Your Message:</label>
-          <textarea id="message" name="message" required aria-required="true" autocomplete="off" placeholder="Message" maxlength="300"></textarea>
+          <textarea id="message" name="message" required autocomplete="off" placeholder="Message" minlength="100" maxlength="300"></textarea>
           <span class="char-count" aria-live="polite">0/300</span>
         </div>
 
         <div class="gdpr-consent spaced-bottom">
           <label for="consent">I consent to the processing of my personal data as described in the:</label>
           <a href="/html/policies/privacy-policy" target="_blank" rel="noopener noreferrer" aria-label="Privacy Policy (opens in a new tab)">Privacy Policy (opens in a new tab)</a>
-          <input type="checkbox" name="consent" id="consent" required aria-required="true" aria-label="Consent Checkbox">
+          <input type="checkbox" name="consent" id="consent" required>
         </div>
 
         <button type="submit" aria-label="Submit" class="spaced-top-bottom">Submit</button>

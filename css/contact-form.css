@@ -17,9 +17,6 @@ main form#contact-form div.form-group input[type="text"],
 main form#contact-form div.form-group input[type="email"] {
   width: 40%
 }
-main form#contact-form div.gdpr-consent {
-  display: block !important /* overwrite display from none to block */
-}
 main form#contact-form button[type="submit"] { /* NOT unused */
   padding-bottom: 1rem;
   padding-top: 1rem;
