@@ -4,17 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
         #main;
         #show_hide_btn;
         constructor() {
-            // get the main element
             this.#main = document.querySelector('main');
-            // get the show hide button
-            this.#show_hide_btn = this.#main.querySelector("#show-hide-btn");
+            this.#show_hide_btn = this.#main?.querySelector("#show-hide-btn");
             if (this.#show_hide_btn) {
                 this.#show_hide_btn.addEventListener("click", () => this.#toggle_elements(), {
                     passive: true
                 });
                 this.#hide_elements_by_default();
-                // handle invalid show hide button
             }
+            // handle invalid show hide button
             else {
                 console.error("Missing show hide button!");
             }
@@ -29,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // function to check and handle toggling of hidden steps
         #toggle_elements() {
-            // attempt to check and handle toggling of hidden steps
             try {
                 const hidden_elements = document.querySelectorAll('[id^="step-hidden-from-"]');
                 // check whether no hidden steps exist
@@ -54,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.#update_button_text_and_aria();
             }
             catch (err) {
-                throw new Error("Error during toggle of hidden steps:", err);
+                throw new Error(`Error during toggle of hidden steps: ${err}`);
             }
         }
         // function to toggle the hidden steps' visibility
@@ -63,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("No element given!");
                 return;
             }
-            // attempt to toggle the hidden steps' visibility
             try {
                 const is_hidden = element.style.display === "none";
                 // check and handle both the display and aria-hidden values
@@ -77,19 +73,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
             catch (err) {
-                throw new Error("Error occurred while toggling element visibility:", err);
+                throw new Error(`Error occurred while toggling element visibility: ${err}`);
             }
         }
         // function to check and handle the expand button's text and aria-expanded
         #update_button_text_and_aria() {
-            // check and handle the expand button's text and handle aria-expanded value
-            if (this.#show_hide_btn.textContent === "Show All") {
-                this.#show_hide_btn.textContent = "Hide All";
-                this.#show_hide_btn.setAttribute("aria-expanded", "true");
-            }
-            else {
-                this.#show_hide_btn.textContent = "Show All";
-                this.#show_hide_btn.setAttribute("aria-expanded", "false");
+            if (this.#show_hide_btn) {
+                // check and handle the expand button's text and aria-expanded value
+                if (this.#show_hide_btn.textContent === "Show All") {
+                    this.#show_hide_btn.textContent = "Hide All";
+                    this.#show_hide_btn.setAttribute("aria-expanded", "true");
+                }
+                else {
+                    this.#show_hide_btn.textContent = "Show All";
+                    this.#show_hide_btn.setAttribute("aria-expanded", "false");
+                }
             }
         }
     }

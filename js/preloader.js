@@ -11,15 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#stylesheets = stylesheets;
             this.#loaded_styles = {};
             this.#total_stylesheets = stylesheets.length;
-            // get the preloader
             this.#preloader = document.querySelector("#preloader");
-            // get the body element
             this.#body = document.querySelector("body");
-            this.#preloader.setAttribute("role", "progressbar");
-            this.#preloader.setAttribute("aria-valuemin", "0");
-            this.#preloader.setAttribute("aria-valuemax", this.#total_stylesheets);
-            this.#preloader.setAttribute("aria-valuenow", "0");
-            this.#body.setAttribute("aria-busy", "true");
+            this.#preloader?.setAttribute("role", "progressbar");
+            this.#preloader?.setAttribute("aria-valuemin", "0");
+            this.#preloader?.setAttribute("aria-valuemax", this.#total_stylesheets);
+            this.#preloader?.setAttribute("aria-valuenow", "0");
+            this.#body?.setAttribute("aria-busy", "true");
             this.link_elements = {};
             this.#load_stylesheets();
         }
@@ -53,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("No stylesheet given!");
                 return;
             }
-            // attempt to add event listeners
             try {
                 // check for the stylesheet link elements to handle loads and errors
                 if (link_element) {
@@ -67,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             catch (err) {
                 this.#remove_preloader();
-                throw new Error(`Error adding listeners for ${stylesheet}:`, err);
+                throw new Error(`Error adding listeners for ${stylesheet}: ${err}`);
             }
         }
         // function to handle and load the stylesheets
@@ -78,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             this.#loaded_styles[stylesheet] = true;
             const loaded_count = Object.keys(this.#loaded_styles).length;
-            this.#preloader.setAttribute("aria-valuenow", loaded_count.toString());
+            this.#preloader?.setAttribute("aria-valuenow", loaded_count.toString());
             this.#check_css_loaded();
         }
         // function to assist in handling stylesheet loader errors
@@ -92,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             this.#remove_preloader();
-            throw new Error(`Error ${stylesheet}:`, err);
+            throw new Error(`Error ${stylesheet}: ${err}`);
         }
         // function to check whether the CSS files loaded
         #check_css_loaded() {
@@ -108,8 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // check for body tag to handle its display, aria-busy, and aria-valuenow
             if (this.#body) {
                 this.#body.style.display = "block";
-                this.#body.setAttribute("aria-busy", "false");
-                this.#preloader.removeAttribute("aria-valuenow");
+                this.#body?.setAttribute("aria-busy", "false");
+                this.#preloader?.removeAttribute("aria-valuenow");
             }
         }
         // function to assist in removing the preloader

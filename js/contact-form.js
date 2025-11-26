@@ -8,14 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
         #throttled_update_char_count;
         constructor(text_area_element) {
             this.#text_area_element = text_area_element;
-            // get the main element
             this.#main = document.querySelector('main');
-            // get the character count element
-            this.#char_count_element = this.#main.querySelector('.char-count');
+            this.#char_count_element = this.#main?.querySelector('.char-count');
             if (this.#text_area_element && this.#char_count_element) {
                 this.#max_char_count = this.#text_area_element.getAttribute('maxlength');
                 this.#handle_invalid(0);
-                this.#text_area_element.parentNode.appendChild(this.#char_count_element);
+                this.#text_area_element?.parentNode?.appendChild(this.#char_count_element);
                 // throttle the character count update function
                 this.#throttled_update_char_count = this.#throttle(() => {
                     this.#update_char_count();
@@ -55,20 +53,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         // function to handle invalid character count
         #handle_invalid(current_length) {
-            if (current_length == null || isNaN(current_length)) {
-                console.error("Invalid current length!");
-                this.#char_count_element.textContent = `Error/${this.#max_char_count}`;
-                return;
+            if (this.#char_count_element) {
+                // handle invalid current length
+                if (current_length == null || isNaN(current_length) || current_length < 0) {
+                    console.error("Invalid current length!");
+                    this.#char_count_element.textContent = `Error/${this.#max_char_count}`;
+                    return;
+                }
+                this.#char_count_element.textContent = `${current_length}/${this.#max_char_count}`;
             }
-            this.#char_count_element.textContent = `${current_length}/${this.#max_char_count}`;
         }
         // function to update the character count
         #update_char_count() {
-            const current_length = this.#text_area_element.value.length;
+            const current_length = this.#text_area_element?.value?.length;
             this.#handle_invalid(current_length);
         }
     }
-    // get the message input
     const message_input = document.querySelector('#message');
     if (message_input) {
         // call the character counter constructor

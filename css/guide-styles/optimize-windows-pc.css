@@ -7,9 +7,6 @@ main .code {
 main div.expand-all button#show-hide-btn {
   border-radius: 0.5rem
 }
-main section:not(:last-child) {
-  margin-bottom: 25rem
-}
 main div.expand-all.active section[id^="step-hidden-from-"] {
   display: block
 }

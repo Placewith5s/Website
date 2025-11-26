@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "allowJs": true,
         "outDir": "js",
-        "target": "es2024"
+        "target": "es2024",
+        "strict": true
     }
 }

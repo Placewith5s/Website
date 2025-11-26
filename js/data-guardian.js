@@ -15,24 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
         #performance_checkbox;
         #functionality_checkbox;
         constructor() {
-            // get the consent cookie banner
             this.#consent_cookie_banner_dialog = document.querySelector("#consent-cookie-banner-dialog");
             this.#consent_cookie_banner = document.querySelector("#consent-cookie-banner");
-            // get the consent cookie banner's children
             this.#show_cookie_settings_btn = document.querySelector("#show-cookie-settings-btn");
             this.#accept_all_btn = document.querySelector("#accept-all-btn");
             this.#reject_all_btn = document.querySelector("#reject-all-btn");
-            // get the cookie banner
             this.#cookie_banner_dialog = document.querySelector("#cookie-banner-dialog");
             this.#cookie_banner = document.querySelector("#cookie-banner");
-            // get the cookie banner's children
             this.#save_preferences_btn = document.querySelector("#save-preferences-btn");
             this.#close_banner_btn = document.querySelector("#close-banner-btn");
-            // get the cookie checkboxes
             this.#essential_checkbox = document.querySelector("#essential-checkbox");
             this.#performance_checkbox = document.querySelector("#performance-checkbox");
             this.#functionality_checkbox = document.querySelector("#functionality-checkbox");
-            // get the cookie preferences link
             this.#manage_cookies_link = document.querySelector("#manage-cookies-link");
             if (this.#cookie_banner_dialog &&
                 this.#cookie_banner &&
@@ -59,28 +53,28 @@ document.addEventListener("DOMContentLoaded", () => {
         // function to add event listeners for cookie consent items
         #add_event_listeners() {
             // add a passive event listener for the show cookie settings button
-            this.#show_cookie_settings_btn.addEventListener("click", () => {
-                if (this.#consent_cookie_banner_dialog.open) {
+            this.#show_cookie_settings_btn?.addEventListener("click", () => {
+                if (this.#consent_cookie_banner_dialog?.open) {
                     this.#hide_consent_cookie_banner();
                 }
                 this.#show_cookie_banner();
             }, { passive: true });
             // add a passive event listener for the accept all button
-            this.#accept_all_btn.addEventListener("click", () => {
+            this.#accept_all_btn?.addEventListener("click", () => {
                 this.#accept_or_reject_all(true);
                 this.#hide_consent_cookie_banner();
             }, { passive: true });
             // add a passive event listener for the reject all button
-            this.#reject_all_btn.addEventListener("click", () => {
+            this.#reject_all_btn?.addEventListener("click", () => {
                 this.#accept_or_reject_all(false);
                 this.#hide_consent_cookie_banner();
             }, { passive: true });
             // add a passive event listener for the save preferences button
-            this.#save_preferences_btn.addEventListener("click", () => this.#save_cookie_preferences(), { passive: true });
+            this.#save_preferences_btn?.addEventListener("click", () => this.#save_cookie_preferences(), { passive: true });
             // add a passive event listener for the cookie banner button
-            this.#close_banner_btn.addEventListener("click", () => this.#hide_cookie_banner(), { passive: true });
+            this.#close_banner_btn?.addEventListener("click", () => this.#hide_cookie_banner(), { passive: true });
             // add an event listener for the manage cookies link
-            this.#manage_cookies_link.addEventListener("click", (event) => {
+            this.#manage_cookies_link?.addEventListener("click", (event) => {
                 event.preventDefault(); // prevent refresh behavior
                 this.#show_cookie_banner();
             });
@@ -134,17 +128,16 @@ document.addEventListener("DOMContentLoaded", () => {
             // handle preferences
             const preferences = {
                 essential: true,
-                performance: this.#performance_checkbox.checked,
-                functionality: this.#functionality_checkbox.checked,
+                performance: this.#performance_checkbox?.checked,
+                functionality: this.#functionality_checkbox?.checked,
             };
-            // attempt to handle adding new cookies
             try {
                 this.#set_cookie("cookiePreferences", JSON.stringify(preferences), 90);
                 this.#set_cookies(preferences);
                 this.#hide_cookie_banner();
             }
             catch (err) {
-                throw new Error("Error saving cookie preferences:", err);
+                throw new Error(`Error saving cookie preferences: ${err}`);
             }
         }
         // function to handle adding cookies
@@ -201,15 +194,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (preferences) {
                     const parsed_preferences = JSON.parse(preferences);
                     this.#set_cookies(parsed_preferences);
-                    this.#performance_checkbox.checked = parsed_preferences.performance;
-                    this.#functionality_checkbox.checked = parsed_preferences.functionality;
+                    if (this.#performance_checkbox && this.#functionality_checkbox) {
+                        this.#performance_checkbox.checked = parsed_preferences.performance;
+                        this.#functionality_checkbox.checked = parsed_preferences.functionality;
+                    }
                 }
                 else {
                     this.#show_consent_cookie_banner();
                 }
             }
             catch (err) {
-                throw new Error("Error loading cookie preferences:", err);
+                throw new Error(`Error loading cookie preferences: ${err}`);
             }
         }
         // function to handle and update banner visibility
