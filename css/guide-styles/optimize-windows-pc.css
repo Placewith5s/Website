@@ -5,7 +5,8 @@ main .code {
   white-space: pre-wrap
 }
 main div.expand-all button#show-hide-btn {
-  border-radius: 0.5rem
+  border-radius: 0.5rem;
+  margin-bottom: 5rem
 }
 main div.expand-all.active section[id^="step-hidden-from-"] {
   display: block
