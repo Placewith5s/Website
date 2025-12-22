@@ -72,10 +72,7 @@ Temporary Items
 *.asp
 *.cer
 *.csr
-*.css
 *.htm
-*.html
-*.js
 *.jsp
 *.php
 *.rss
@@ -114,4 +111,3 @@ $RECYCLE.BIN/
 # Custom
 node_modules
 package-lock.json
-ts

@@ -1,19 +1,19 @@
-"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     class Cookie_Consent {
-        #cookie_banner_dialog;
-        #cookie_banner;
-        #show_cookie_settings_btn;
-        #accept_all_btn;
-        #reject_all_btn;
-        #save_preferences_btn;
-        #close_banner_btn;
-        #consent_cookie_banner_dialog;
-        #consent_cookie_banner;
-        #manage_cookies_link;
-        #essential_checkbox;
-        #performance_checkbox;
-        #functionality_checkbox;
+        #cookie_banner_dialog: HTMLDialogElement | null;
+        #cookie_banner: HTMLDivElement | null;
+        #show_cookie_settings_btn: HTMLButtonElement | null;
+        #accept_all_btn: HTMLButtonElement | null;
+        #reject_all_btn: HTMLButtonElement | null;
+        #save_preferences_btn: HTMLButtonElement | null;
+        #close_banner_btn: HTMLButtonElement | null;
+        #consent_cookie_banner_dialog: HTMLDialogElement | null;
+        #consent_cookie_banner: HTMLDivElement | null;
+        #manage_cookies_link: HTMLLinkElement | null;
+        #essential_checkbox: HTMLInputElement | null;
+        #performance_checkbox: HTMLInputElement | null;
+        #functionality_checkbox: HTMLInputElement | null;
+
         constructor() {
             this.#consent_cookie_banner_dialog = document.querySelector("#consent-cookie-banner-dialog");
             this.#consent_cookie_banner = document.querySelector("#consent-cookie-banner");
@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#performance_checkbox = document.querySelector("#performance-checkbox");
             this.#functionality_checkbox = document.querySelector("#functionality-checkbox");
             this.#manage_cookies_link = document.querySelector("#manage-cookies-link");
+
             if (this.#cookie_banner_dialog &&
                 this.#cookie_banner &&
                 this.#show_cookie_settings_btn &&
@@ -49,32 +50,42 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error("Missing required Cookie Consent elements!");
             }
         }
-        #add_event_listeners() {
+
+
+        #add_event_listeners(): void {
             this.#show_cookie_settings_btn?.addEventListener("click", () => {
                 if (this.#consent_cookie_banner_dialog?.open) {
                     this.#hide_consent_cookie_banner();
                 }
+
                 this.#show_cookie_banner();
             }, { passive: true });
+
             this.#accept_all_btn?.addEventListener("click", () => {
                 this.#accept_or_reject_all(true);
                 this.#hide_consent_cookie_banner();
             }, { passive: true });
+
             this.#reject_all_btn?.addEventListener("click", () => {
                 this.#accept_or_reject_all(false);
                 this.#hide_consent_cookie_banner();
             }, { passive: true });
+
             this.#save_preferences_btn?.addEventListener("click", () => this.#save_cookie_preferences(), { passive: true });
+
             this.#close_banner_btn?.addEventListener("click", () => this.#hide_cookie_banner(), { passive: true });
             this.#manage_cookies_link?.addEventListener("click", (event) => {
                 event.preventDefault();
                 this.#show_cookie_banner();
             });
         }
-        #toggle_banner(dialog, show) {
+
+
+        #toggle_banner(dialog: HTMLDialogElement | null, show: boolean): void {
             if (!dialog) {
                 throw new Error("Invalid dialog element given!");
             }
+
             if (show) {
                 if (!dialog.open)
                     dialog.showModal();
@@ -84,35 +95,55 @@ document.addEventListener("DOMContentLoaded", () => {
                     dialog.close();
             }
         }
-        #show_consent_cookie_banner() {
+
+
+        #show_consent_cookie_banner(): void {
             this.#toggle_banner(this.#consent_cookie_banner_dialog, true);
         }
-        #show_cookie_banner() {
+
+        #show_cookie_banner(): void {
             this.#toggle_banner(this.#cookie_banner_dialog, true);
         }
-        #hide_consent_cookie_banner() {
+
+        #hide_consent_cookie_banner(): void {
             this.#toggle_banner(this.#consent_cookie_banner_dialog, false);
         }
-        #hide_cookie_banner() {
+
+        #hide_cookie_banner(): void {
             this.#toggle_banner(this.#cookie_banner_dialog, false);
         }
+
+
         // function to handle accept or reject button click
-        #accept_or_reject_all(accept) {
-            const preferences = {
+        #accept_or_reject_all(accept: boolean): void {
+            interface Preferences {
+                [key: string]: boolean
+            }
+
+            const preferences: Preferences = {
                 essential: true,
                 performance: accept,
                 functionality: accept,
             };
+
             this.#set_cookies(preferences);
             this.#set_cookie("last_consent_time", Date.now(), 90);
             this.#set_cookie("cookie_preferences", JSON.stringify(preferences), 90);
         }
-        #save_cookie_preferences() {
-            const preferences = {
+
+
+        #save_cookie_preferences(): void {
+            interface Preferences {
+                essential: boolean,
+                [key: string]: boolean | undefined
+            }
+
+            const preferences: Preferences = {
                 essential: true,
                 performance: this.#performance_checkbox?.checked,
                 functionality: this.#functionality_checkbox?.checked,
             };
+
             try {
                 this.#set_cookie("cookie_preferences", JSON.stringify(preferences), 90);
                 this.#set_cookies(preferences);
@@ -122,32 +153,44 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(`Error saving cookie preferences: ${err}`);
             }
         }
-        #set_cookies(preferences) {
+
+
+        #set_cookies(preferences: {}): void {
             if (!preferences) {
                 throw new Error("Invalid preferences given!");
             }
-            const expiry_date = new Date();
+
+            const expiry_date: Date = new Date();
             expiry_date.setMonth(expiry_date.getMonth() + 3);
+
             for (const [key, value] of Object.entries(preferences)) {
                 this.#set_cookie(key, value, 90); // 90 days expiration
             }
         }
-        #set_cookie(name, value, days) {
+
+
+        #set_cookie(name: string, value: any, days: number): void {
             if (!name) {
                 throw new Error("Invalid name given!");
             }
             if (!days) {
                 throw new Error("Invalid days given!");
             }
-            const expiry_date = new Date();
+
+            const expiry_date: Date = new Date();
             expiry_date.setDate(expiry_date.getDate() + days);
+
             document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/; Secure; SameSite=Lax`;
         }
-        #get_cookie(name) {
+
+
+        #get_cookie(name: string): string | undefined {
             if (!name) {
                 throw new Error("Invalid name given!");
             }
-            const cookie_arr = document.cookie.split(";");
+
+            const cookie_arr: string[] = document.cookie.split(";");
+
             for (let i = 0; i < cookie_arr.length; i++) {
                 let cookie = cookie_arr[i].trim();
                 if (cookie.indexOf(name + "=") == 0) {
@@ -155,12 +198,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         }
-        #load_cookie_preferences() {
+
+
+        #load_cookie_preferences(): void {
             try {
-                const preferences = this.#get_cookie("cookie_preferences");
+                const preferences: string | undefined = this.#get_cookie("cookie_preferences");
+
                 if (preferences) {
                     const parsed_preferences = JSON.parse(preferences);
                     this.#set_cookies(parsed_preferences);
+
                     if (this.#performance_checkbox && this.#functionality_checkbox) {
                         this.#performance_checkbox.checked = parsed_preferences.performance;
                         this.#functionality_checkbox.checked = parsed_preferences.functionality;
@@ -174,7 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(`Error loading cookie preferences: ${err}`);
             }
         }
-        #update_banner_visibility() {
+
+
+        #update_banner_visibility(): void {
             if (this.#get_cookie("cookie_preferences")) {
                 this.#hide_consent_cookie_banner();
                 this.#hide_cookie_banner();
@@ -184,5 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+
     new Cookie_Consent();
 });

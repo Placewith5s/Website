@@ -48,18 +48,9 @@
         div#consent-cookie-banner {
           display: none
         }
-
-        div#preloader,
-        span.loader,
-        span.loader::before {
-          display: none !important
-        }
       </style>
     </noscript>
-    
-    <script src="/js/preloader.js"></script>
 
-    <link rel="stylesheet" href="/css/preloader.css">
     <link rel="stylesheet" href="/css/guide-styles/guides.css">
     <link rel="stylesheet" href="/css/guide-styles/optimize-windows-pc.css">
     <link rel="stylesheet" href="/css/top-n-bottom.css">
@@ -71,38 +62,35 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/Settings.png">
   </head>
   <body>
-    <dialog id="consent-cookie-banner-dialog">
-      <div id="consent-cookie-banner" aria-labelledby="consent-cookie-banner-heading">
+    <dialog id="consent-cookie-banner-dialog" aria-labelledby="consent-cookie-banner-heading">
+      <div id="consent-cookie-banner">
         <h3 id="consent-cookie-banner-heading">Cookie Consent</h3>
         <p>This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.</p>
-        <p>By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="https://www.placewith5s.com/html/policies/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" aria-label="Learn More About Our Cookie Policy">Learn More About Our Cookie Policy</a>.</p>
+        <p>By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="/html/policies/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Learn More About Our Cookie Policy</a>.</p>
 
-        <button id="show-cookie-settings-btn" aria-label="Cookie Options">Cookie Options</button>
-        <button id="accept-all-btn" type="button" aria-label="Accept All Cookies">Accept All Cookies</button>
-        <button id="reject-all-btn" type="button" aria-label="Reject All Cookies">Reject All Cookies</button>
+        <button id="show-cookie-settings-btn">Cookie Options</button>
+        <button id="accept-all-btn" type="button">Accept All Cookies</button>
+        <button id="reject-all-btn" type="button">Reject All Cookies</button>
       </div>
     </dialog>
 
-    <dialog id="cookie-banner-dialog">
-      <div id="cookie-banner" aria-labelledby="cookie-banner-heading">
+    <dialog id="cookie-banner-dialog" aria-labelledby="cookie-banner-heading">
+      <div id="cookie-banner">
         <h3 id="cookie-banner-heading">Cookie Preferences</h3>
         <p>This website uses cookies. Please choose your cookie preferences:</p>
 
         <label for="essential-checkbox">Essential: Required for basic site functions.</label>
-        <input type="checkbox" id="essential-checkbox" checked disabled aria-label="Essential: Required for basic site functions (checked, disabled)">
+        <input type="checkbox" id="essential-checkbox" checked disabled>
         <label for="performance-checkbox">Performance: Helps us analyze site usage.</label>
-        <input type="checkbox" id="performance-checkbox" aria-label="Performance: Helps us analyze site usage">
+        <input type="checkbox" id="performance-checkbox">
         <label for="functionality-checkbox">Functionality: Remembers your preferences.</label>
-        <input type="checkbox" id="functionality-checkbox" aria-label="Functionality: Remembers your preferences">
+        <input type="checkbox" id="functionality-checkbox">
 
-        <button id="save-preferences-btn" type="button" aria-label="Save Preferences">Save Preferences</button>
-        <button id="close-banner-btn" type="button" aria-label="Close">Close</button>
+        <button id="save-preferences-btn" type="button">Save Preferences</button>
+        <button id="close-banner-btn" type="button">Close</button>
       </div>
     </dialog>
 
-    <div id="preloader" role="preloader" aria-label="loading content..." aria-live="assertive">
-      <span class="loader"></span>
-    </div>
     <header>
       <nav class="desktop-links" aria-label="Main Navigation">
         <a href="/" aria-label="Home">
@@ -118,12 +106,12 @@
           <span>FAQs</span>
         </a>
         <details class="dropdown-menu-container">
-          <summary aria-expanded="false" id="dropdown-menu">Guides</summary>
-            <a href="/html/guides/optimize-windows-pc" aria-current="page" aria-label="Optimize Windows PC">Optimize Windows PC</a>
-            <a href="/html/guides/troubleshoot-windows-pc" aria-label="Troubleshoot Windows PC">Troubleshoot Windows PC</a>
+          <summary id="dropdown-menu">Guides</summary>
+            <a href="/html/guides/optimize-windows-pc" aria-current="page">Optimize Windows PC</a>
+            <a href="/html/guides/troubleshoot-windows-pc">Troubleshoot Windows PC</a>
         </details>
       </nav>
-      <button class="menu-icon" id="menu-icon" aria-haspopup="true" aria-label="Open Menu">
+      <button class="menu-icon" id="menu-icon" aria-haspopup="menu" aria-label="Open Menu">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
@@ -147,7 +135,7 @@
         <a href="/html/guides/troubleshoot-windows-pc" id="troubleshoot-windows-pc-link" role="menuitem" aria-label="Troubleshoot Windows PC">
           <span>Troubleshoot Windows PC</span>
         </a>
-        <button id="hide-drawer-btn" aria-label="Hide">Hide</button>
+        <button id="hide-drawer-btn">Hide</button>
       </nav>
       <h1>Optimize Your Windows PC with Free Tools & Tweaks</h1>
       <div class="search-container">
@@ -162,9 +150,9 @@
       </div>
 
       <div class="last-updated">
-        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Dec 2, 2025</span>
+        <p id="last-updated-text">Last Updated: <span id="last-updated-date">Dec 22, 2025</span>
         </p>
-        <time datetime="2025-12-02" title="Last Updated: Dec 2, 2025"></time>
+        <time datetime="2025-12-22" title="Last Updated: Dec 22, 2025"></time>
       </div>
 
       <section aria-labelledby="toc-heading" class="spaced-top">
@@ -188,7 +176,7 @@
       <section aria-labelledby="preparation-heading" class="preparation-section">
         <h2 class="spaced-bottom" id="preparation-heading">Preparation:</h2>
         <p class="spaced-bottom"><strong>Create a System Restore Point:</strong></p>
-        <p>This allows you to revert changes if needed. <a href="https://support.microsoft.com/en-us/windows/system-protection-e9126e6e-fa64-4f5f-874d-9db90e57645a?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="System Protection (opens in a new tab)">System Protection (opens in a new tab)</a>
+        <p>This allows you to revert changes if needed. <a href="https://support.microsoft.com/en-us/windows/system-protection-e9126e6e-fa64-4f5f-874d-9db90e57645a?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">System Protection.</a>
         </p>
 
         <ul>
@@ -197,7 +185,7 @@
           <li><strong>Run As Administrator:</strong></li>
           <li class="no-list-style spaced-bottom">All tools require admin rights for optimal functionality, while some of them want a right click and "Run as administrator".</li>
           <li><strong>Learn to Extract ZIPs:</strong></li>
-          <li class="no-list-style spaced-bottom">Some tools are compressed and need to be extracted. Right-click on the folder and select 'Extract All': <a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Zip and unzip files (opens in a new tab)">Zip and unzip files (opens in a new tab)</a>.</li>
+          <li class="no-list-style spaced-bottom">Some tools are compressed and need to be extracted. Right-click on the folder and select 'Extract All': <a href="https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Zip and unzip files</a>.</li>
         </ul>
 
         <p class="spaced-top"><strong>Remember:</strong> Most of the changes below will require a PC reboot.</p>
@@ -207,7 +195,7 @@
         <section aria-labelledby="step-1-heading" class="step-one anim">
           <h2 class="spaced-bottom" id="step-1-heading">Step 1: Run Chris Titus Tech's Tool</h2>
 
-          <a href="https://christitus.com/one-tool-for-everything?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Chris Titus' website (opens in a new tab)">Chris Titus' website (opens in a new tab)</a>
+          <a href="https://christitus.com/one-tool-for-everything?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Chris Titus' website</a>
           <p class="spaced-top-bottom">Begin by using Chris Titus Tech's "One Tool for Everything" PowerShell script.</p>
           <p class="spaced-bottom">Press the Windows key on your keyboard (at the bottom left), type "PowerShell," and click "Run as administrator." Alternatively, click the Windows button (at the bottom left of your screen) instead of pressing the Windows key.</p>
           <p>Open your PowerShell terminal and run the following command:</p>
@@ -259,7 +247,7 @@
           <h2 class="spaced-bottom" id="step-4-heading">Step 4: Enhance Performance with Hellzerg's Optimizer</h2>
 
           <p class="spaced-bottom"><strong>Warning:</strong> This tool hasn't been updated in over half a year. Use at your own risk:</p>
-          <a href="https://github.com/hellzerg/optimizer/releases?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download page for Optimizer (opens in a new tab)">Download page for Optimizer (opens in a new tab)</a>
+          <a href="https://github.com/hellzerg/optimizer/releases?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Download page for Optimizer</a>
           <p class="spaced-top-bottom"><strong>Keep in mind:</strong> For certain settings you enable or disable, a restart may be required to apply the changes, which is found in the top right corner of the interface.</p>
 
           <p class="spaced-top"><strong>General Optimizer Settings:</strong></p>
@@ -305,7 +293,7 @@
             <li><strong>Sensor Services</strong></li>
             <li class="no-list-style spaced-bottom">Recommended for laptops only. However, if the notebook has location services disabled, no touchscreen, and both auto-rotation and adaptive brightness turned off, you can safely disable the sensor services.</li>
             <li><strong>Virtualization-Based Security</strong></li>
-            <li class="no-list-style spaced-bottom">Recommended to turn off Virtualization-Based Security if you don't use virtualization and don't care about <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/device-guard-and-credential-guard?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="memory integrity (opens in a new tab)">memory integrity (opens in a new tab)</a>.</li>
+            <li class="no-list-style spaced-bottom">Recommended to turn off Virtualization-Based Security if you don't use virtualization and don't care about <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/device-guard-and-credential-guard?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">memory integrity</a>.</li>
             <li><strong>Telemetry Services</strong></li>
             <li class="no-list-style">Again, not recommended due to privacy concerns.</li>
           </ul>
@@ -339,7 +327,7 @@
           <section aria-labelledby="step-6-hidden-heading" class="step-six" id="step-hidden-from-6">
             <h2 class="spaced-top-bottom" id="step-6-hidden-heading">Step 6: Fine-Tune CPU Power Management with ParkControl</h2>
 
-            <a href="https://bitsum.com/parkcontrol?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download page for ParkControl (opens in a new tab)">Download page for ParkControl (opens in a new tab)</a>
+            <a href="https://bitsum.com/parkcontrol?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Download page for ParkControl</a>
             <p class="spaced-top"><strong>For Laptops:</strong></p> 
             <p>Disable both "Plugged In (AC)" and "On Battery (DC)." Turn off all park settings for optimal performance.</p>
             <p class="spaced-top"><strong>For Desktops:</strong></p>
@@ -383,7 +371,7 @@
           <section aria-labelledby="step-8-hidden-heading" class="step-eight" id="step-hidden-from-8">
             <h2 class="spaced-bottom" id="step-8-hidden-heading">Step 8: Boost Your Network Performance Using TCP Optimizer</h2>
 
-            <a href="https://www.speedguide.net/downloads.php?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download page for TCP Optimizer (opens in a new tab)">Download page for TCP Optimizer (opens in a new tab)</a>
+            <a href="https://www.speedguide.net/downloads.php?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Download page for TCP Optimizer</a>
             <p class="spaced-top-bottom">Open the .exe application as an administrator, change the "Choose settings" to "Custom" (at the right below), and hover over each setting for more information, because most of them include recommendations.</p>
 
             <figure>
@@ -409,7 +397,7 @@
           <section aria-labelledby="step-9-hidden-heading" class="step-nine" id="step-hidden-from-9">
             <h2 class="spaced-bottom" id="step-9-hidden-heading">Step 9: Optimize More of Your NVIDIA Graphics Card</h2>
 
-            <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download page for NVIDIA Profile Inspector (opens in a new tab)">Download page for NVIDIA Profile Inspector (opens in a new tab)</a>
+            <a href="https://github.com/Orbmu2k/nvidiaProfileInspector/releases?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Download page for NVIDIA Profile Inspector</a>
             <p class="spaced-top">Once you open the .exe application and you're under the 'Texture Filtering' category, make sure 'Prevent Anisotropic Filtering' is turned off:</p>
 
             <figure>
@@ -469,7 +457,7 @@
               <li class="no-list-style spaced-bottom">Hex: 24, 25, 26, 2a, or 2 (default) | Dec: 36, 37, 38, 42, or 2</li>
             </ul>
 
-            <p>For further Registry Editor optimization, refer to: <a href="https://www.tenforums.com/tutorials/94628-change-split-threshold-svchost-exe-windows-10-a.html?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)">How to Change Split Threshold for svchost.exe in Windows 10 (opens in a new tab)</a>. </p>
+            <p>For further Registry Editor optimization, refer to: <a href="https://www.tenforums.com/tutorials/94628-change-split-threshold-svchost-exe-windows-10-a.html?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">How to Change Split Threshold for svchost.exe in Windows 10</a>. </p>
           </section>
 
           <section aria-labelledby="step-11-hidden-heading" class="step-eleven" id="step-hidden-from-11">
@@ -498,8 +486,8 @@
             </ul>
 
             <nav class="troubleshoot-tool-links">
-              <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" class="spaced-right" aria-label="Download page for Windows Debugger (opens in a new tab)">Download page for Windows Debugger (opens in a new tab)</a>
-              <a href="https://www.resplendence.com/downloads?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" aria-label="Download page for WhoCrashed (opens in a new tab)">Download page for WhoCrashed (opens in a new tab)</a>
+              <a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" class="spaced-right" title="opens in a new tab">Download page for Windows Debugger</a>
+              <a href="https://www.resplendence.com/downloads?utm_source=placewith5s" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Download page for WhoCrashed</a>
             </nav>
 
             <p class="spaced-top">Still facing issues? Check out: <a href="/html/guides/troubleshoot-windows-pc" aria-label="Troubleshoot Your Windows PC">Troubleshoot Your Windows PC</a>.</p>
@@ -524,36 +512,41 @@
   
     <footer>
       <div class="footer-container">
-        <div class="footer-column">
-          <h4>About</h4>
-          <nav class="footer-links-about" aria-label="Footer's About Navigation">
-            <a href="/html/about/about-software" aria-label="About Tools">About Tools</a>
-            <a href="/html/about/about-us" aria-label="About Us">About Us</a>
+        <div aria-labelledby="footer-about-heading" class="footer-column">
+          <h4 id="footer-about-heading">About</h4>
+          <nav class="footer-links-about">
+            <a href="/html/about/about-software">About Tools</a>
+            <a href="/html/about/about-us">About Us</a>
           </nav>
         </div>
-        <div class="footer-column">
-          <h4>Policies</h4>
-          <nav class="footer-links-policies" aria-label="Footer's Policies Navigation">
-            <a href="/html/policies/cookie-policy" aria-label="Cookie Policy">Cookie Policy</a>
-            <a href="/html/policies/privacy-policy" aria-label="Privacy Policy">Privacy Policy</a>
-            <a href="/html/policies/terms-of-service" aria-label="Terms of Service">Terms of Service</a>
+        <div aria-labelledby="footer-policies-heading" class="footer-column">
+          <h4 id="footer-policies-heading">Policies</h4>
+          <nav class="footer-links-policies">
+            <a href="/html/policies/cookie-policy">Cookie Policy</a>
+            <a href="/html/policies/privacy-policy">Privacy Policy</a>
+            <a href="/html/policies/terms-of-service">Terms of Service</a>
           </nav>
         </div>
-        <div class="footer-column">
-          <h4>Contact</h4>
-          <nav class="footer-links-contact" aria-label="Footer's Contact Navigation">
-            <a href="/html/contact-form" aria-label="Contact Us">Contact Us</a>
+        <div aria-labelledby="footer-contact-heading" class="footer-column">
+          <h4 id="footer-contact-heading">Contact</h4>
+          <nav class="footer-links-contact">
+            <a href="/html/contact-form">Contact Us</a>
           </nav>
-          <h4>Manage Cookies</h4>
-          <nav class="footer-links-manage-cookies" aria-label="Footer's Manage Cookies Navigation">
-            <a href="#" id="manage-cookies-link" aria-label="Cookie Preferences">Cookie Preferences</a>
+        </div>
+        <div aria-labelledby="manage-cookies-heading" class="footer-column">
+          <h4 id="manage-cookies-heading">Manage Cookies</h4>
+          <nav class="footer-links-manage-cookies">
+            <a href="#" id="manage-cookies-link">Cookie Preferences</a>
           </nav>
         </div>
       </div>
       <p class="copyright"> © 2023-<span id="year"></span>
         Placewith5s. All Rights Reserved.
+        <span>Except where otherwise noted, this website contains proprietary code and content.</span>
+        <span>Open-source components are licensed separately.</span>
       </p>
     </footer>
+
     <script src="/js/data-guardian.js" defer></script>
     <script src="/js/script.js" defer></script>
     <script src="/js/show-hide.js" defer></script>

@@ -1,23 +1,29 @@
-"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     class Footer_Date {
-        #footer;
-        #year;
+        #footer: HTMLElement | null;
+        #year: HTMLSpanElement | null;
         constructor() {
             this.#footer = document.querySelector('footer');
+
             if (!this.#footer) {
                 throw new Error("No footer element!");
             }
+
             this.#year = this.#footer.querySelector("#year");
+
             this.#upd_year();
         }
-        #upd_year() {
-            const current_date = new Date();
-            const current_year = current_date.getFullYear();
+
+
+        #upd_year(): void {
+            const current_date: Date = new Date();
+            const current_year: number = current_date.getFullYear();
+            
             if (this.#year) {
                 this.#year.textContent = current_year.toString();
             }
         }
     }
+
     new Footer_Date();
 });

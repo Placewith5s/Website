@@ -306,6 +306,10 @@ footer nav[class^="footer-links-"] a:focus {
 footer .copyright {
   margin-top: 3rem
 }
+footer span + span {
+  display: flex;
+  flex-direction: column
+}
 nav.desktop-links a[aria-current="page"],
 nav.drawer a[aria-current="page"] {
   text-decoration: underline
