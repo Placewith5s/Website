@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         #items: NodeListOf<HTMLDivElement>;
         #inner: HTMLElement | null;
         #current_index: number | undefined;
+        
         constructor() {
             this.#main = document.querySelector('main');
 
@@ -40,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-
     const result = async(opt_title: string, tro_title: string, opt_desc: string, tro_desc: string): Promise<void> => {
         document.querySelectorAll("main .carousel-item").forEach(item => {
             Array.from(item.children).forEach(child => {
@@ -65,6 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const check_meta_tags = (optimize_title: string | null | undefined, troubleshoot_title: string | null | undefined, optimize_desc: string | null | undefined, troubleshoot_desc: string | null | undefined) => {
+        if (!optimize_title || !troubleshoot_title || !optimize_desc || !troubleshoot_desc) {
+            throw new Error("No meta title or meta description!");
+        }
+    };
 
     const upd_carousel_title_desc = async(): Promise<void> => {
         try {
@@ -86,9 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const optimize_desc: string | null | undefined = optimize_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
             const troubleshoot_desc: string | null | undefined = troubleshoot_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
             
-            if (!optimize_title || !troubleshoot_title || !optimize_desc || !troubleshoot_desc) {
-                throw new Error("No meta title or meta description!");
-            }
+            check_meta_tags(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
 
             await result(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
         }

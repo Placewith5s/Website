@@ -55,6 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     };
+    const check_meta_tags = (optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc) => {
+        if (!optimize_title || !troubleshoot_title || !optimize_desc || !troubleshoot_desc) {
+            throw new Error("No meta title or meta description!");
+        }
+    };
     const upd_carousel_title_desc = async () => {
         try {
             const optimize_url = "/html/guides/optimize-windows-pc.html";
@@ -70,9 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const troubleshoot_title = troubleshoot_doc?.querySelector('meta[name="title"]')?.getAttribute('content');
             const optimize_desc = optimize_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
             const troubleshoot_desc = troubleshoot_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
-            if (!optimize_title || !troubleshoot_title || !optimize_desc || !troubleshoot_desc) {
-                throw new Error("No meta title or meta description!");
-            }
+            check_meta_tags(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
             await result(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
         }
         catch (err) {

@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        // function to handle hiding the hidden steps by default
         #hide_elements_by_default(): void {
             const hidden_elements: NodeListOf<HTMLElement> = document.querySelectorAll('[id^="step-hidden-from-"]');
             
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 element.setAttribute("aria-hidden", "true");
             });
         }
-
 
         // function to check and handle toggling of hidden steps
         #toggle_elements(): void {
@@ -66,8 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         
-        
-        // function to toggle the hidden steps' visibility
         #toggle_element_visibility(element: HTMLElement): void {
             if (!element) {
                 throw new Error("No element given!");
@@ -89,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(`Error occurred while toggling element visibility: ${err}`);
             }
         }
-
 
         #update_button_text_and_aria(): void {
             if (this.#show_hide_btn) {

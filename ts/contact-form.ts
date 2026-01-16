@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
             };
         }
 
-
         #handle_invalid_char_count(current_length: number): void {
             if (this.#char_count_element) {
                 if (current_length === null || isNaN(current_length) || current_length < 0) {
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.#char_count_element.textContent = `${current_length}/${this.#max_char_count}`;
             }
         }
-
 
         #upd_char_count(): void {
             const current_length: number = this.#text_area_element?.value?.length;

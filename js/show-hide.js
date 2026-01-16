@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error("Missing show hide button!");
             }
         }
-        // function to handle hiding the hidden steps by default
         #hide_elements_by_default() {
             const hidden_elements = document.querySelectorAll('[id^="step-hidden-from-"]');
             hidden_elements.forEach(element => {
@@ -53,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(`Error during toggle of hidden steps: ${err}`);
             }
         }
-        // function to toggle the hidden steps' visibility
         #toggle_element_visibility(element) {
             if (!element) {
                 throw new Error("No element given!");

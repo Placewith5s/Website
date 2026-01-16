@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     class Footer_Date {
         #footer: HTMLElement | null;
         #year: HTMLSpanElement | null;
+        
         constructor() {
             this.#footer = document.querySelector('footer');
 

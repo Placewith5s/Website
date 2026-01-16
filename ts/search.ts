@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-
         #search_sections(): void {
             try {
                 const search_term: string | undefined = this.#search_bar?.value.trim().toLowerCase();
@@ -62,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(`An error occurred while searching sections: ${err}`);
             }
         }
-
 
         #toggle_not_found_msg(visible: boolean): void {
             if (this.#not_found_msg) {

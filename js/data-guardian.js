@@ -71,10 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.#show_cookie_banner();
             });
         }
-        #toggle_banner(dialog, show) {
+        #check_dialog(dialog) {
             if (!dialog) {
                 throw new Error("Invalid dialog element given!");
             }
+        }
+        #toggle_banner(dialog, show) {
+            this.#check_dialog(dialog);
             if (show) {
                 if (!dialog.open)
                     dialog.showModal();
@@ -96,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
         #hide_cookie_banner() {
             this.#toggle_banner(this.#cookie_banner_dialog, false);
         }
-        // function to handle accept or reject button click
         #accept_or_reject_all(accept) {
             const preferences = {
                 essential: true,
@@ -129,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const expiry_date = new Date();
             expiry_date.setMonth(expiry_date.getMonth() + 3);
             for (const [key, value] of Object.entries(preferences)) {
-                this.#set_cookie(key, value, 90); // 90 days expiration
+                this.#set_cookie(key, value, 90);
             }
         }
         #set_cookie(name, value, days) {

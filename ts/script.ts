@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-
         #close_drawer(): void {
             this.#drawer?.classList.remove("opened");
             this.#drawer?.setAttribute("aria-hidden", "true");

@@ -80,11 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-
-        #toggle_banner(dialog: HTMLDialogElement | null, show: boolean): void {
+        #check_dialog(dialog: HTMLDialogElement | null) {
             if (!dialog) {
                 throw new Error("Invalid dialog element given!");
             }
+        }
+
+        #toggle_banner(dialog: HTMLDialogElement | null, show: boolean): void {
+            this.#check_dialog(dialog);
 
             if (show) {
                 if (!dialog.open)
@@ -95,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     dialog.close();
             }
         }
-
 
         #show_consent_cookie_banner(): void {
             this.#toggle_banner(this.#consent_cookie_banner_dialog, true);
@@ -113,8 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#toggle_banner(this.#cookie_banner_dialog, false);
         }
 
-
-        // function to handle accept or reject button click
         #accept_or_reject_all(accept: boolean): void {
             interface Preferences {
                 [key: string]: boolean
@@ -130,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#set_cookie("last_consent_time", Date.now(), 90);
             this.#set_cookie("cookie_preferences", JSON.stringify(preferences), 90);
         }
-
 
         #save_cookie_preferences(): void {
             interface Preferences {
@@ -154,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-
         #set_cookies(preferences: {}): void {
             if (!preferences) {
                 throw new Error("Invalid preferences given!");
@@ -164,10 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
             expiry_date.setMonth(expiry_date.getMonth() + 3);
 
             for (const [key, value] of Object.entries(preferences)) {
-                this.#set_cookie(key, value, 90); // 90 days expiration
+                this.#set_cookie(key, value, 90);
             }
         }
-
 
         #set_cookie(name: string, value: any, days: number): void {
             if (!name) {
@@ -183,7 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/; Secure; SameSite=Lax`;
         }
 
-
         #get_cookie(name: string): string | undefined {
             if (!name) {
                 throw new Error("Invalid name given!");
@@ -198,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         }
-
 
         #load_cookie_preferences(): void {
             try {
@@ -221,7 +216,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(`Error loading cookie preferences: ${err}`);
             }
         }
-
 
         #update_banner_visibility(): void {
             if (this.#get_cookie("cookie_preferences")) {
