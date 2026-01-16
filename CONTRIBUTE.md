@@ -12,7 +12,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 - Maintain the formatting as much as you can
 
 ### Get missing dependencies
-- After cloning the website, run the following command for getting both the ´package-lock.json´ and ´node_modules´:
+- After cloning the website, run the following command to get "node_modules":
 ```
 npm install
 ```
