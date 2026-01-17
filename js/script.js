@@ -11,23 +11,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.#drawer.setAttribute("aria-hidden", "true");
                 this.#menu_icon.setAttribute("aria-expanded", "false");
                 this.#handle_drawer_click = (e) => {
-                    if (e.target instanceof HTMLLinkElement && (e.target.tagName === "A" || e.target.id === "hide-drawer-btn")) {
+                    if ((e.target instanceof HTMLAnchorElement && e.target.tagName === "A")) {
+                        this.#drawer?.classList.toggle("opened");
+                    }
+                    if ((e.target instanceof HTMLButtonElement && e.target.id === "hide-drawer-btn")) {
                         this.#close_drawer();
                     }
                 };
                 document.addEventListener("keydown", (e) => {
-                    if (e.key === "Escape" && this.#drawer?.classList.contains("opened")) {
-                        this.#close_drawer();
+                    /* escape key - for mobile users on keyboard */
+                    if ((e.key === "Escape" && this.#drawer?.classList.contains("opened"))) {
+                        this.#drawer?.classList.toggle("opened");
                     }
                 });
-                this.#init_menu();
+                this.#init();
             }
             else {
                 throw new Error("Missing required Menu Manager elements!");
             }
         }
-        // function to handle both the menu and drawer
-        #init_menu() {
+        #init() {
             this.#menu_icon?.addEventListener("click", () => {
                 try {
                     const is_opened = this.#drawer?.classList.toggle("opened");

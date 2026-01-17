@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const intersection_observer: IntersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry: IntersectionObserverEntry) => {
+        entries.forEach((entry: IntersectionObserverEntry): void => {
             try {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("show");
@@ -17,9 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hides: NodeListOf<HTMLElement> = document.querySelectorAll(".hide");
 
-    if (hides.length === 0) {
-        throw new Error("No hide element!");
+    const check_hides = (): void => {
+        if (hides.length === 0) {
+            throw new Error("No hide element!");
+        }
     }
+
+    check_hides();
 
     hides.forEach((element: HTMLElement) => intersection_observer.observe(element));
 });

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         constructor() {
             this.#search_bar = document.querySelector("#search-bar");
             this.#not_found_msg = document.querySelector("#not-found-msg");
-            if (this.#search_bar && this.#not_found_msg) {
+            if ((this.#search_bar && this.#not_found_msg)) {
                 this.#not_found_msg.setAttribute("aria-hidden", "true");
                 this.#search_listener();
             }
@@ -26,6 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 500);
             });
         }
+        #handle_match(match, section) {
+            if (match) {
+                section.style.display = "block";
+                section.setAttribute("aria-hidden", "false");
+            }
+            else {
+                section.style.display = "none";
+                section.setAttribute("aria-hidden", "true");
+            }
+        }
         #search_sections() {
             try {
                 const search_term = this.#search_bar?.value.trim().toLowerCase();
@@ -34,14 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 sections.forEach(section => {
                     if (search_term) {
                         const match = section.textContent.toLowerCase().includes(search_term);
-                        if (match) {
-                            section.style.display = "block";
-                            section.setAttribute("aria-hidden", "false");
-                        }
-                        else {
-                            section.style.display = "none";
-                            section.setAttribute("aria-hidden", "true");
-                        }
+                        this.#handle_match(match, section);
                         found ||= match;
                     }
                 });
@@ -51,18 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(`An error occurred while searching sections: ${err}`);
             }
         }
+        #handle_visible(visible, not_found_msg) {
+            if (visible) {
+                not_found_msg.style.display = "block";
+                not_found_msg.setAttribute("aria-hidden", "false");
+                not_found_msg.setAttribute("aria-live", "polite");
+            }
+            else {
+                not_found_msg.style.display = "none";
+                not_found_msg.setAttribute("aria-hidden", "true");
+                not_found_msg.setAttribute("aria-live", "off");
+            }
+        }
         #toggle_not_found_msg(visible) {
             if (this.#not_found_msg) {
-                if (visible) {
-                    this.#not_found_msg.style.display = "block";
-                    this.#not_found_msg.setAttribute("aria-hidden", "false");
-                    this.#not_found_msg.setAttribute("aria-live", "polite");
-                }
-                else {
-                    this.#not_found_msg.style.display = "none";
-                    this.#not_found_msg.setAttribute("aria-hidden", "true");
-                    this.#not_found_msg.setAttribute("aria-live", "off");
-                }
+                this.#handle_visible(visible, this.#not_found_msg);
                 this.#not_found_msg.setAttribute("role", "status");
                 this.#not_found_msg.setAttribute("aria-relevant", "additions");
                 this.#not_found_msg.setAttribute("aria-atomic", "true");

@@ -27,66 +27,80 @@ document.addEventListener("DOMContentLoaded", () => {
         #hide_elements_by_default(): void {
             const hidden_elements: NodeListOf<HTMLElement> = document.querySelectorAll('[id^="step-hidden-from-"]');
             
-            hidden_elements.forEach(element => {
-                element.style.display = "none";
-                element.setAttribute("aria-hidden", "true");
+            hidden_elements.forEach(elem => {
+                elem.style.display = "none";
+                elem.setAttribute("aria-hidden", "true");
             });
         }
 
-        // function to check and handle toggling of hidden steps
+        #check_hidden_elements(hidden_elements: NodeListOf<HTMLElement>): void {
+            if (!hidden_elements.length) {
+                throw new Error("No initial hidden elements!");
+            }
+        }
+
+        #handle_match(match: RegExpMatchArray | null, elem: HTMLElement): void {
+            if (match) {
+                const heading_id: string = `step${match[1]}-hidden-heading`;
+
+                if (elem.style.display !== "none") {
+                    elem.setAttribute("aria-labelledby", heading_id);
+                }
+                else {
+                    elem.removeAttribute("aria-labelledby");
+                }
+            }
+        }
+
         #toggle_elements(): void {
             try {
                 const hidden_elements: NodeListOf<HTMLElement> = document.querySelectorAll('[id^="step-hidden-from-"]');
 
-                if (!hidden_elements.length) {
-                    throw new Error("Initial hidden elements not found!");
-                }
+                this.#check_hidden_elements(hidden_elements);
 
-                hidden_elements.forEach(element => {
-                    this.#toggle_element_visibility(element);
-                    const match: RegExpMatchArray | null = element.id.match(/step-hidden-from-(\d+)/);
-
-                    if (match) {
-                        const heading_id: string = `step${match[1]}-hidden-heading`;
-                        if (element.style.display !== "none") {
-                            element.setAttribute("aria-labelledby", heading_id);
-                        }
-                        else {
-                            element.removeAttribute("aria-labelledby");
-                        }
-                    }
+                hidden_elements.forEach(elem => {
+                    this.#toggle_elem_visibility(elem);
+                    const match: RegExpMatchArray | null = elem.id.match(/step-hidden-from-(\d+)/);
+                    this.#handle_match(match, elem);
                 });
 
-                this.#update_button_text_and_aria();
+                this.#update_btn_text_and_aria();
             }
             catch (err) {
                 throw new Error(`Error during toggle of hidden steps: ${err}`);
             }
         }
-        
-        #toggle_element_visibility(element: HTMLElement): void {
-            if (!element) {
-                throw new Error("No element given!");
+
+        #check_elem(elem: HTMLElement): void {
+            if (!elem) {
+                throw new Error("No html element given!");
             }
+        }
+
+        #handle_hidden(is_hidden: boolean, elem: HTMLElement): void {
+            if (is_hidden) {
+                elem.style.display = "block";
+                elem.setAttribute("aria-hidden", "false");
+            }
+            else {
+                elem.style.display = "none";
+                elem.setAttribute("aria-hidden", "true");
+            }
+        }
+        
+        #toggle_elem_visibility(elem: HTMLElement): void {
+            this.#check_elem(elem);
 
             try {
-                const is_hidden: boolean = element.style.display === "none";
-
-                if (is_hidden) {
-                    element.style.display = "block";
-                    element.setAttribute("aria-hidden", "false");
-                }
-                else {
-                    element.style.display = "none";
-                    element.setAttribute("aria-hidden", "true");
-                }
+                const is_hidden: boolean = elem.style.display === "none";
+                this.#handle_hidden(is_hidden, elem);
             }
             catch (err) {
                 throw new Error(`Error occurred while toggling element visibility: ${err}`);
             }
         }
 
-        #update_button_text_and_aria(): void {
+        #update_btn_text_and_aria(): void {
             if (this.#show_hide_btn) {
                 if (this.#show_hide_btn.textContent === "Show All") {
                     this.#show_hide_btn.textContent = "Hide All";

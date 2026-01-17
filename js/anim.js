@@ -16,8 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
     const hides = document.querySelectorAll(".hide");
-    if (hides.length === 0) {
-        throw new Error("No hide element!");
-    }
+    const check_hides = () => {
+        if (hides.length === 0) {
+            throw new Error("No hide element!");
+        }
+    };
+    check_hides();
     hides.forEach((element) => intersection_observer.observe(element));
 });

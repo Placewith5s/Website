@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         #handle_invalid_char_count(current_length) {
             if (this.#char_count_element) {
-                if (current_length === null || isNaN(current_length) || current_length < 0) {
+                if ((current_length === null || isNaN(current_length) || current_length < 0)) {
                     this.#char_count_element.textContent = `Error/${this.#max_char_count}`;
                     throw new Error("Invalid current length!");
                 }

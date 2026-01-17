@@ -13,16 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#items = this.#main.querySelectorAll(".carousel-item");
             this.#inner = this.#main.querySelector(".carousel-inner");
             if (this.#items.length === 0) {
-                throw new Error("No item!");
+                throw new Error("No carousel items!");
             }
             this.#current_index = 0;
             this.#show_next_item();
             setInterval(() => this.#show_next_item(), 5000);
         }
-        #show_next_item() {
+        #check_inner() {
             if (!this.#inner) {
-                throw new Error("No inner element!");
+                throw new Error("No carousel inner element!");
             }
+        }
+        #show_next_item() {
+            this.#check_inner();
             const total_items = this.#items?.length;
             if (typeof this.#current_index === "number") {
                 this.#items[this.#current_index]?.classList.remove("active");
@@ -32,26 +35,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     }
+    const upd_correct_text = (child, opt_title, tro_title, opt_desc, tro_desc) => {
+        switch (child.id) {
+            case "optimize-windows-pc-carousel-title":
+                child.textContent = opt_title || "Loading...";
+                break;
+            case "troubleshoot-windows-pc-carousel-title":
+                child.textContent = tro_title || "Loading...";
+                break;
+            case "optimize-windows-pc-carousel-desc":
+                child.textContent = opt_desc || "Loading...";
+                break;
+            case "troubleshoot-windows-pc-carousel-desc":
+                child.textContent = tro_desc || "Loading...";
+                break;
+            default:
+                console.warn("No id match for carousel!");
+                break;
+        }
+    };
     const result = async (opt_title, tro_title, opt_desc, tro_desc) => {
         document.querySelectorAll("main .carousel-item").forEach(item => {
             Array.from(item.children).forEach(child => {
-                switch (child.id) {
-                    case "optimize-windows-pc-carousel-title":
-                        child.textContent = opt_title || "Loading...";
-                        break;
-                    case "troubleshoot-windows-pc-carousel-title":
-                        child.textContent = tro_title || "Loading...";
-                        break;
-                    case "optimize-windows-pc-carousel-desc":
-                        child.textContent = opt_desc || "Loading...";
-                        break;
-                    case "troubleshoot-windows-pc-carousel-desc":
-                        child.textContent = tro_desc || "Loading...";
-                        break;
-                    default:
-                        console.warn("No id match for carousel!");
-                        break;
-                }
+                if (!child.id)
+                    return;
+                upd_correct_text(child, opt_title, tro_title, opt_desc, tro_desc);
             });
         });
     };

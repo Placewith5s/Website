@@ -144,6 +144,9 @@ button {
   text-decoration: none;
   transition: transform 100ms cubic-bezier(0.215, 0.610, 0.355, 1), box-shadow 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
+a:not(footer a, .desktop-links a, .drawer a) {
+  box-shadow: 0 0 0.2rem
+}
 button {
   border: 0.15rem solid var(--accent);
   padding-bottom: 1rem;
@@ -162,6 +165,10 @@ a:hover,
 a:focus {
   text-decoration: underline
 }
+a:hover:not(footer a, .desktop-links a, .drawer a),
+a:focus:not(footer a, .desktop-links a, .drawer a) {
+  box-shadow: none
+}
 a:focus,
 button:focus {
   outline: 0.25rem solid var(--accent)
@@ -179,9 +186,10 @@ div.search-container {
   margin: 2rem
 }
 div.search-container input#search-bar {
-  border: 0.12rem solid var(--fg);
+  border: 0.06rem solid var(--fg);
   border-radius: 1.5rem;
-  padding: 0.75rem 1rem
+  padding: 0.75rem 1rem;
+  width: 50%
 }
 main div#not-found-msg {
   display: none;
@@ -246,15 +254,16 @@ nav.drawer {
 }
 nav.drawer {
   border: 0.06rem solid var(--fg);
+  display: none;
   opacity: 0;
   padding: 1rem;
   right: 3.6rem;
   top: 4.5rem;
   transform: translateY(-2rem);
-  transition: opacity 500ms cubic-bezier(0.215, 0.610, 0.355, 1), transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
-  visibility: hidden
+  transition: opacity 500ms cubic-bezier(0.215, 0.610, 0.355, 1), transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
 nav.drawer.opened {
+  display: block;
   opacity: 1;
   transform: translateY(0)
 }
@@ -383,7 +392,6 @@ dialog#cookie-banner-dialog div#cookie-banner label::before {
 dialog#cookie-banner-dialog div#cookie-banner button#save-preferences-btn {
   margin-top: 1.25rem
 }
-div.search-container input#search-bar,
 dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
 dialog#cookie-banner-dialog div#cookie-banner,
 .strawpoll-embed, .strawpoll-embed iframe {
@@ -413,12 +421,10 @@ dialog#cookie-banner-dialog div#cookie-banner,
 nav.drawer a, .strawpoll-embed iframe {
   display: block
 }
-nav.drawer.opened, .strawpoll-embed iframe {
-  visibility: visible
-}
 .strawpoll-embed iframe {
   flex-grow: 1;
-  position: static
+  position: static;
+  visibility: visible
 }
 @media only screen and (max-width: 320px) {
   nav.desktop-links {

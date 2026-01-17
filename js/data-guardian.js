@@ -28,21 +28,21 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#performance_checkbox = document.querySelector("#performance-checkbox");
             this.#functionality_checkbox = document.querySelector("#functionality-checkbox");
             this.#manage_cookies_link = document.querySelector("#manage-cookies-link");
-            if (this.#cookie_banner_dialog &&
-                this.#cookie_banner &&
-                this.#show_cookie_settings_btn &&
-                this.#accept_all_btn &&
-                this.#reject_all_btn &&
-                this.#save_preferences_btn &&
-                this.#close_banner_btn &&
-                this.#consent_cookie_banner_dialog &&
-                this.#consent_cookie_banner &&
-                this.#manage_cookies_link &&
-                this.#essential_checkbox &&
-                this.#performance_checkbox &&
+            if ((this.#cookie_banner_dialog &&
+                this.#cookie_banner) &&
+                (this.#show_cookie_settings_btn &&
+                    this.#accept_all_btn) &&
+                (this.#reject_all_btn &&
+                    this.#save_preferences_btn) &&
+                (this.#close_banner_btn &&
+                    this.#consent_cookie_banner_dialog) &&
+                (this.#consent_cookie_banner &&
+                    this.#manage_cookies_link) &&
+                (this.#essential_checkbox &&
+                    this.#performance_checkbox) &&
                 this.#functionality_checkbox) {
                 this.#add_event_listeners();
-                this.#update_banner_visibility();
+                this.#upd_banner_visibility();
                 this.#load_cookie_preferences();
             }
             else {
@@ -52,17 +52,17 @@ document.addEventListener("DOMContentLoaded", () => {
         #add_event_listeners() {
             this.#show_cookie_settings_btn?.addEventListener("click", () => {
                 if (this.#consent_cookie_banner_dialog?.open) {
-                    this.#hide_consent_cookie_banner();
+                    this.#hide_consent_cb();
                 }
                 this.#show_cookie_banner();
             }, { passive: true });
             this.#accept_all_btn?.addEventListener("click", () => {
                 this.#accept_or_reject_all(true);
-                this.#hide_consent_cookie_banner();
+                this.#hide_consent_cb();
             }, { passive: true });
             this.#reject_all_btn?.addEventListener("click", () => {
                 this.#accept_or_reject_all(false);
-                this.#hide_consent_cookie_banner();
+                this.#hide_consent_cb();
             }, { passive: true });
             this.#save_preferences_btn?.addEventListener("click", () => this.#save_cookie_preferences(), { passive: true });
             this.#close_banner_btn?.addEventListener("click", () => this.#hide_cookie_banner(), { passive: true });
@@ -87,13 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     dialog.close();
             }
         }
-        #show_consent_cookie_banner() {
+        #show_consent_cb() {
             this.#toggle_banner(this.#consent_cookie_banner_dialog, true);
         }
         #show_cookie_banner() {
             this.#toggle_banner(this.#cookie_banner_dialog, true);
         }
-        #hide_consent_cookie_banner() {
+        #hide_consent_cb() {
             this.#toggle_banner(this.#consent_cookie_banner_dialog, false);
         }
         #hide_cookie_banner() {
@@ -163,26 +163,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (preferences) {
                     const parsed_preferences = JSON.parse(preferences);
                     this.#set_cookies(parsed_preferences);
-                    if (this.#performance_checkbox && this.#functionality_checkbox) {
+                    if ((this.#performance_checkbox && this.#functionality_checkbox)) {
                         this.#performance_checkbox.checked = parsed_preferences.performance;
                         this.#functionality_checkbox.checked = parsed_preferences.functionality;
                     }
                 }
                 else {
-                    this.#show_consent_cookie_banner();
+                    this.#show_consent_cb();
                 }
             }
             catch (err) {
                 throw new Error(`Error loading cookie preferences: ${err}`);
             }
         }
-        #update_banner_visibility() {
+        #upd_banner_visibility() {
             if (this.#get_cookie("cookie_preferences")) {
-                this.#hide_consent_cookie_banner();
+                this.#hide_consent_cb();
                 this.#hide_cookie_banner();
             }
             else {
-                this.#show_consent_cookie_banner();
+                this.#show_consent_cb();
             }
         }
     }
