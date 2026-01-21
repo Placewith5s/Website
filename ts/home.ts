@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async() => {
     class Carousel {
         #main: HTMLElement | null;
         #items: NodeListOf<HTMLDivElement>;
@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.#items[this.#current_index]?.classList.remove("active");
                 this.#current_index = (this.#current_index + 1) % total_items;
                 this.#items[this.#current_index]?.classList.add("active");
+
+                if (!this.#inner) {
+                    throw new Error("No carousel inner element inside show!");
+                }
+
                 this.#inner.style.transform = `translateX(-${100 * this.#current_index}%)`;
             }
         }
@@ -64,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const result = async(opt_title: string, tro_title: string, opt_desc: string, tro_desc: string): Promise<void> => {
+    const carousel_result = (opt_title: string, tro_title: string, opt_desc: string, tro_desc: string): void => {
         document.querySelectorAll("main .carousel-item").forEach(item => {
             Array.from(item.children).forEach(child => {
                 if (!child.id) return;
@@ -73,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const check_meta_tags = (optimize_title: string | null | undefined, troubleshoot_title: string | null | undefined, optimize_desc: string | null | undefined, troubleshoot_desc: string | null | undefined) => {
+    const check_meta_tags = (optimize_title: string | null | undefined, troubleshoot_title: string | null | undefined, optimize_desc: string | null | undefined, troubleshoot_desc: string | null | undefined): void => {
         if (!optimize_title || !troubleshoot_title || !optimize_desc || !troubleshoot_desc) {
             throw new Error("No meta title or meta description!");
         }
@@ -84,11 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const optimize_url: string = "/html/guides/optimize-windows-pc.html";
             const troubleshoot_url: string = "/html/guides/troubleshoot-windows-pc.html";
 
-            const optimize_res: Response = await fetch(optimize_url);
-            const troubleshoot_res: Response = await fetch(troubleshoot_url);
+            const [optimize_res, troubleshoot_res] = await Promise.all([
+                fetch(optimize_url),
+                fetch(troubleshoot_url),
+            ]);
 
-            const optimize_res_text: string = await optimize_res.text();
-            const troubleshoot_res_text: string = await troubleshoot_res.text();
+            const [optimize_res_text, troubleshoot_res_text] = await Promise.all([
+                optimize_res.text(),
+                troubleshoot_res.text(),
+            ]);
 
             const parser: DOMParser = new DOMParser();
             const optimize_doc: Document = parser.parseFromString(optimize_res_text, "text/html");
@@ -99,15 +108,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const optimize_desc: string | null | undefined = optimize_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
             const troubleshoot_desc: string | null | undefined = troubleshoot_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
             
-            check_meta_tags(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
-            await result(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
+            check_meta_tags(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc)
+            carousel_result(optimize_title as string, troubleshoot_title as string, optimize_desc as string, troubleshoot_desc as string);
         }
         catch (err) {
             throw new Error(`During carousel update: ${err}`);
         }
     }
 
-    upd_carousel_title_desc();
+    await upd_carousel_title_desc();
 
     new Carousel();
 });

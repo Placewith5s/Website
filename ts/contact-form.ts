@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-
-        #throttle(callback, delay: number) {
+        // ! Fixed, not improved
+        #throttle(callback: any, delay: number) {
             let is_throttled: boolean = false;
 
-            let stored_args = null;
+            let stored_args: any = null;
 
             const execute_later = () => {
                 if (stored_args === null) {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             };
 
-            return (...args) => {
+            return (...args: any[]) => {
                 if (is_throttled) {
                     stored_args = args;
                 }

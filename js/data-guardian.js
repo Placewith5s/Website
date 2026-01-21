@@ -79,11 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
         #toggle_banner(dialog, show) {
             this.#check_dialog(dialog);
             if (show) {
-                if (!dialog.open)
-                    dialog.showModal();
+                if (!dialog?.open)
+                    dialog?.showModal();
             }
             else {
-                if (dialog.open)
+                if (dialog?.open)
                     dialog.close();
             }
         }

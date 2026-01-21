@@ -1,5 +1,5 @@
 "use strict";
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     class Carousel {
         #main;
         #items;
@@ -31,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 this.#items[this.#current_index]?.classList.remove("active");
                 this.#current_index = (this.#current_index + 1) % total_items;
                 this.#items[this.#current_index]?.classList.add("active");
+                if (!this.#inner) {
+                    throw new Error("No carousel inner element inside show!");
+                }
                 this.#inner.style.transform = `translateX(-${100 * this.#current_index}%)`;
             }
         }
@@ -54,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 break;
         }
     };
-    const result = async (opt_title, tro_title, opt_desc, tro_desc) => {
+    const carousel_result = (opt_title, tro_title, opt_desc, tro_desc) => {
         document.querySelectorAll("main .carousel-item").forEach(item => {
             Array.from(item.children).forEach(child => {
                 if (!child.id)
@@ -72,10 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const optimize_url = "/html/guides/optimize-windows-pc.html";
             const troubleshoot_url = "/html/guides/troubleshoot-windows-pc.html";
-            const optimize_res = await fetch(optimize_url);
-            const troubleshoot_res = await fetch(troubleshoot_url);
-            const optimize_res_text = await optimize_res.text();
-            const troubleshoot_res_text = await troubleshoot_res.text();
+            const [optimize_res, troubleshoot_res] = await Promise.all([
+                fetch(optimize_url),
+                fetch(troubleshoot_url),
+            ]);
+            const [optimize_res_text, troubleshoot_res_text] = await Promise.all([
+                optimize_res.text(),
+                troubleshoot_res.text(),
+            ]);
             const parser = new DOMParser();
             const optimize_doc = parser.parseFromString(optimize_res_text, "text/html");
             const troubleshoot_doc = parser.parseFromString(troubleshoot_res_text, "text/html");
@@ -84,12 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const optimize_desc = optimize_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
             const troubleshoot_desc = troubleshoot_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
             check_meta_tags(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
-            await result(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
+            carousel_result(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc);
         }
         catch (err) {
             throw new Error(`During carousel update: ${err}`);
         }
     };
-    upd_carousel_title_desc();
+    await upd_carousel_title_desc();
     new Carousel();
 });

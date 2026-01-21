@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error("Missing required Character Counter elements!");
             }
         }
+        // ! Fixed, not improved
         #throttle(callback, delay) {
             let is_throttled = false;
             let stored_args = null;

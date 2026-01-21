@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        #check_dialog(dialog: HTMLDialogElement | null) {
+        #check_dialog(dialog: HTMLDialogElement | null): void {
             if (!dialog) {
                 throw new Error("Invalid dialog element given!");
             }
@@ -90,11 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#check_dialog(dialog);
 
             if (show) {
-                if (!dialog.open)
-                    dialog.showModal();
+                if (!dialog?.open)
+                    dialog?.showModal();
             }
             else {
-                if (dialog.open)
+                if (dialog?.open)
                     dialog.close();
             }
         }
