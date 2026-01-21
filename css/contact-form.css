@@ -1,23 +1,23 @@
-main form#contact-form div.form-group input {
+main form div.form-group input {
   margin-left: 1rem
 }
-main form#contact-form div.form-group textarea#message {
+main form div.form-group textarea#message {
   display: block;
   margin-top: 1rem;
   width: 75%
 }
-main form#contact-form div.form-group input[type="text"],
-main form#contact-form div.form-group input[type="email"],
-main form#contact-form div.form-group textarea#message, 
-main form#contact-form button[type="submit"] {
+main form div.form-group input[type="text"],
+main form div.form-group input[type="email"],
+main form div.form-group textarea#message, 
+main form button[type="submit"] {
   border-radius: 0.7rem;
   padding: 1rem
 }
-main form#contact-form div.form-group input[type="text"],
-main form#contact-form div.form-group input[type="email"] {
+main form div.form-group input[type="text"],
+main form div.form-group input[type="email"] {
   width: 40%
 }
-main form#contact-form button[type="submit"] { /* NOT unused */
+main form button[type="submit"] { /* NOT unused */
   padding-bottom: 1rem;
   padding-top: 1rem;
   padding-left: clamp(2rem, 4vw, 7.5rem);
