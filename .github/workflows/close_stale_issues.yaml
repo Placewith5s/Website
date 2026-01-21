@@ -1,18 +1,30 @@
-name: Close Stale Issues
-uses: actions/stale@v10.1.1
-with:
-  days-before-issue-stale: 30
-  days-before-pr-stale: 30
-  days-before-issue-close: 7
-  days-before-pr-close: 7
+permissions:
+  issues: write
 
-  stale-issue-message: >
-    This issue has been marked as stale due to inactivity.
-    If this is still relevant, please comment to keep it open.
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  close_stale_issues:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Close Stale Issues
+      uses: actions/stale@v10.1.1
+      with:
+        days-before-issue-stale: 30
+        days-before-pr-stale: 30
+        days-before-issue-close: 7
+        days-before-pr-close: 7
 
-  close-issue-message: >
-    Closing this issue due to prolonged inactivity.
-    Feel free to reopen or create a new issue if needed.
+        stale-issue-message: >
+          This issue has been marked as stale due to inactivity.
+          If this is still relevant, please comment to keep it open.
 
-  exempt-issue-labels: bug
-  only-issues: true
+        close-issue-message: >
+          Closing this issue due to prolonged inactivity.
+          Feel free to reopen or create a new issue if needed.
+
+        stale-issue-label: stale
+        exempt-issue-labels: bug
+        exempt-all-assignees: true
+        only-issues: true

@@ -1,11 +1,25 @@
-name: Dependency Review
-uses: actions/dependency-review-action@v4.8.2
-with:
-  # Don't block PRs below this severity. Possible values are `low`, `moderate`, `high`, `critical`.
-  fail-on-severity: moderate
-  # Dependency scopes to block PRs on. Comma-separated list. Possible values are 'unknown', 'runtime', and 'development' (e.g. "runtime, development")
-  fail-on-scopes: unknown
-  # A boolean to determine if vulnerability checks should be performed
-  vulnerability-check: true
-  # A comma-separated list of package URLs to deny (e.g. "pkg:npm/express, pkg:pypi/pycrypto"). If version specified, only deny matching packages and version; else, deny all regardless of version.
-  deny-packages: pkg:pypi/pycrypto
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  dependency_review:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Dependency Review
+      uses: actions/dependency-review-action@v4.8.2
+      with:
+        # Don't block PRs below this severity. Possible values are `low`, `moderate`, `high`, `critical`.
+        fail-on-severity: moderate
+        # Dependency scopes to block PRs on. Comma-separated list. Possible values are 'unknown', 'runtime', and 'development' (e.g. "runtime, development")
+        fail-on-scopes: unknown
+        # A boolean to determine if vulnerability checks should be performed
+        vulnerability-check: true
+        # A comma-separated list of package URLs to deny (e.g. "pkg:npm/express, pkg:pypi/pycrypto"). If version specified, only deny matching packages and version; else, deny all regardless of version.
+        deny-packages: pkg:pypi/pycrypto
