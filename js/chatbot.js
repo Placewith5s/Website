@@ -1,13 +1,13 @@
 "use strict";
+const main = document.querySelector('main');
+if (!main) {
+    throw new Error("No main element!");
+}
+const send_btn = main.querySelector('#send-btn');
 document.addEventListener('DOMContentLoaded', async () => {
     const send = async () => {
-        const main = document.querySelector('main');
-        if (!main) {
-            throw new Error("No main element!");
-        }
         const msg = main.querySelector('#msg');
         // const image_inp: HTMLInputElement | null = main.querySelector('#image');
-        const send_btn = main.querySelector('#send-btn');
         const wait_msg = main.querySelector('#wait-msg');
         const response_result = main.querySelector('#response-result');
         const check_invalid_elements = async () => {
@@ -52,4 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             send_btn.disabled = 'false';
         }
     };
+    send_btn?.addEventListener('click', async () => {
+        await send();
+    });
 });

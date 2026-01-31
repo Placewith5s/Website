@@ -1,14 +1,15 @@
+const main: HTMLElement | null = document.querySelector('main');
+
+if (!main) {
+    throw new Error("No main element!");
+}
+
+const send_btn: HTMLButtonElement | null = main.querySelector('#send-btn');
+
 document.addEventListener('DOMContentLoaded', async() => {
     const send = async (): Promise<void> => {
-        const main: HTMLElement | null = document.querySelector('main');
-
-        if (!main) {
-            throw new Error("No main element!");
-        }
-
         const msg: HTMLInputElement | null = main.querySelector('#msg');
         // const image_inp: HTMLInputElement | null = main.querySelector('#image');
-        const send_btn: HTMLButtonElement | null = main.querySelector('#send-btn');
         const wait_msg: HTMLParagraphElement | null = main.querySelector('#wait-msg');
         const response_result: HTMLDivElement | null = main.querySelector('#response-result');
 
@@ -62,4 +63,8 @@ document.addEventListener('DOMContentLoaded', async() => {
             send_btn.disabled = 'false';
         }
     };
+
+    send_btn?.addEventListener('click', async() => {
+        await send();
+    });
 });
