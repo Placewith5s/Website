@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         wait_msg.textContent = "Responding... (this might take a few minutes)";
         send_btn.disabled = 'true';
         try {
-            const response = await fetch('https://chatbot.placewith5s.com/', {
+            const response = await fetch('https://chatbot.placewith5s.com/chat', {
                 method: 'POST',
                 body: fd
             });
