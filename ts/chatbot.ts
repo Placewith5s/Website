@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         send_btn.disabled = 'true';
 
         try {
-            const response: Response = await fetch('/chat', {
+            const response: Response = await fetch('https://chatbot.placewith5s.com/', {
                 method: 'POST',
                 body: fd
             });
