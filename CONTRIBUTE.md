@@ -11,7 +11,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 ### Formatting
 - Files shouldn't have manual obfuscation
-- One liners - 60 characters limit. (applies to everyting). Exceptions: URLs. [Character counter](https://wordcounter.net/character-count)
+- One liners - 60 characters limit. (applies to everything). Exceptions: HTML and URLs. [Character counter](https://wordcounter.net/character-count)
 - Unnecessary framework usage that isn't already included won't be accepted
 
 Code comments
@@ -29,9 +29,6 @@ CSS
 
 JavaScript
 - Do not manually edit generated JavaScript files; modify the source (TypeScript) instead
-
-TypeScript
-- A function next to a function - Exactly 1 newline. Exception: First function of script - Exactly 2 newlines
 
 ### Get missing dependencies
 - After cloning, install them by running the following:
