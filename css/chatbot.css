@@ -1,0 +1,13 @@
+main, main button[type="button"] {
+    align-items: center;
+    display: flex;
+    justify-content: center
+}
+main input[type="text"] {
+    padding: 1rem;
+    width: 100%
+}
+main button[type="button"] {
+    border-radius: 1rem;
+    width: 10%
+}

@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
             this.#items = this.#main.querySelectorAll(".carousel-item");
             this.#inner = this.#main.querySelector(".carousel-inner");
-            if (this.#items.length === 0) {
+            if (!this.#items.length) {
                 throw new Error("No carousel items!");
             }
             this.#current_index = 0;

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
-        #hide_elements_by_default(): void {
+        #hide_elements_by_default(): void | never {
             const hidden_elements: NodeListOf<HTMLElement> = document.querySelectorAll('[id^="step-hidden-from-"]');
             
             hidden_elements.forEach(elem => {
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        #toggle_elements(): void {
+        #toggle_elements(): void | never {
             try {
                 const hidden_elements: NodeListOf<HTMLElement> = document.querySelectorAll('[id^="step-hidden-from-"]');
 
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        #check_elem(elem: HTMLElement): void {
+        #check_elem(elem: HTMLElement): void | never {
             if (!elem) {
                 throw new Error("No html element given!");
             }
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         
-        #toggle_elem_visibility(elem: HTMLElement): void {
+        #toggle_elem_visibility(elem: HTMLElement): void | never {
             this.#check_elem(elem);
 
             try {

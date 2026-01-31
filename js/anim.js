@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     const hides = document.querySelectorAll(".hide");
     const check_hides = () => {
-        if (hides.length === 0) {
+        if (!hides.length) {
             throw new Error("No hide element!");
         }
     };

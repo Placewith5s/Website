@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        #search_sections(): void {
+        #search_sections(): void | never {
             try {
                 const search_term: string | undefined = this.#search_bar?.value.trim().toLowerCase();
 

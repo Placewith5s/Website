@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.placewith5s.com/chatbot">
+    <!-- Primary Meta Tags -->
+    <title>Chatbot | Placewith5s</title>
+    <meta name="title" content="Chatbot | Placewith5s">
+    <meta name="description" content="">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.placewith5s.com/chatbot">
+    <meta property="og:title" content="Chatbot | Placewith5s">
+    <meta property="og:description" content="">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.placewith5s.com/chatbot">
+    <meta property="twitter:title" content="Chatbot | Placewith5s">
+    <meta property="twitter:description" content="">
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://www.placewith5s.com/chatbot",
+        "name": "Chatbot | Placewith5s",
+        "description": "",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Placewith5s",
+          "url": "https://www.placewith5s.com/chatbot",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.placewith5s.com/icons/Settings.svg"
+          }
+        }
+      }
+    </script>
+
+    <noscript>
+      <style>
+        div#cookie-banner,
+        div#consent-cookie-banner {
+          display: none
+        }
+      </style>
+    </noscript>
+    
+    <link rel="stylesheet" href="/css/top-n-bottom.css">
+    <link rel="stylesheet" href="/css/chatbot.css">
+  </head>
+  <body>
+    <dialog id="consent-cookie-banner-dialog" aria-labelledby="consent-cookie-banner-heading">
+      <div id="consent-cookie-banner">
+        <h3 id="consent-cookie-banner-heading">Cookie Consent</h3>
+        <p>This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.</p>
+        <p>By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="/html/policies/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Learn More About Our Cookie Policy</a>.</p>
+
+        <button id="show-cookie-settings-btn">Cookie Options</button>
+        <button id="accept-all-btn" type="button">Accept All Cookies</button>
+        <button id="reject-all-btn" type="button">Reject All Cookies</button>
+      </div>
+    </dialog>
+
+    <dialog id="cookie-banner-dialog" aria-labelledby="cookie-banner-heading">
+      <div id="cookie-banner">
+        <h3 id="cookie-banner-heading">Cookie Preferences</h3>
+        <p>This website uses cookies. Please choose your cookie preferences:</p>
+
+        <label for="essential-checkbox">Essential: Required for basic site functions.</label>
+        <input type="checkbox" id="essential-checkbox" checked disabled>
+        <label for="performance-checkbox">Performance: Helps us analyze site usage.</label>
+        <input type="checkbox" id="performance-checkbox">
+        <label for="functionality-checkbox">Functionality: Remembers your preferences.</label>
+        <input type="checkbox" id="functionality-checkbox">
+
+        <button id="save-preferences-btn" type="button">Save Preferences</button>
+        <button id="close-banner-btn" type="button">Close</button>
+      </div>
+    </dialog>
+
+    <header>
+      <nav class="desktop-links" aria-label="Main Navigation">
+        <a href="/" aria-label="Home">
+          <span>Home</span>
+        </a>
+        <a href="/html/about/about-software" aria-label="About Tools">
+          <span>About Tools</span>
+        </a>
+        <a href="/html/about/about-us" aria-label="About Us">
+          <span>About Us</span>
+        </a>
+        <a href="/html/faq" aria-label="FAQs">
+          <span>FAQs</span>
+        </a>
+        <details class="dropdown-menu-container">
+          <summary id="dropdown-menu">Guides</summary>
+            <a href="/html/guides/optimize-windows-pc">Optimize Windows PC</a>
+            <a href="/html/guides/troubleshoot-windows-pc">Troubleshoot Windows PC</a>
+        </details>
+      </nav>
+      <button class="menu-icon" id="menu-icon" aria-haspopup="menu" aria-label="Open Menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </button>
+      <nav class="drawer" id="drawer" role="menu">
+        <a href="/" id="home-link" role="menuitem" aria-label="Home">
+          <span>Home</span>
+        </a>
+        <a href="/html/about/about-software" role="menuitem" id="about-software-link" aria-label="About Tools">
+          <span>About Tools</span>
+        </a>
+        <a href="/html/about/about-us" id="about-us-link" role="menuitem" aria-label="About Us">
+          <span>About Us</span>
+        </a>
+        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs">
+          <span>FAQs</span>
+        </a>
+        <a href="/html/guides/optimize-windows-pc" id="optimize-windows-pc-link" role="menuitem" aria-label="Optimize Windows PC">
+          <span>Optimize Windows PC</span>
+        </a>
+        <a href="/html/guides/troubleshoot-windows-pc" id="troubleshoot-windows-pc-link" role="menuitem" aria-label="Troubleshoot Windows PC">
+          <span>Troubleshoot Windows PC</span>
+        </a>
+        <button id="hide-drawer-btn">Hide</button>
+      </nav>
+      <h1>Chatbot | Placewith5s</h1>
+    </header>
+    
+    <main>
+        <input id="msg" type="text" placeholder="Message..." required>
+        <!-- <input id="image" type="file" accept="image/*"> -->
+        <button class="spaced-top-bottom" id="send-btn" type="button" onclick="send()">Send</button>
+
+        <p id="wait-msg"></p>
+        <div id="response-result"></div>
+
+      <a class="twitter-share-button" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?url=https://www.placewith5s.com/chatbot&utm_source=placewith5s">Share on Twitter</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fplacewith5s.com/chatbot&utm_source=placewith5s" target="_blank" rel="noopener noreferrer">Share on Reddit</a>
+    </main>
+    
+    <footer>
+      <div class="footer-container">
+        <div aria-labelledby="footer-about-heading" class="footer-column">
+          <h4 id="footer-about-heading">About</h4>
+          <nav class="footer-links-about">
+            <a href="/html/about/about-software">About Tools</a>
+            <a href="/html/about/about-us">About Us</a>
+          </nav>
+        </div>
+        <div aria-labelledby="footer-policies-heading" class="footer-column">
+          <h4 id="footer-policies-heading">Policies</h4>
+          <nav class="footer-links-policies">
+            <a href="/html/policies/cookie-policy">Cookie Policy</a>
+            <a href="/html/policies/privacy-policy">Privacy Policy</a>
+            <a href="/html/policies/terms-of-service">Terms of Service</a>
+          </nav>
+        </div>
+        <div aria-labelledby="footer-contact-heading" class="footer-column">
+          <h4 id="footer-contact-heading">Contact</h4>
+          <nav class="footer-links-contact">
+            <a href="/html/contact-form">Contact Us</a>
+          </nav>
+        </div>
+        <div aria-labelledby="manage-cookies-heading" class="footer-column">
+          <h4 id="manage-cookies-heading">Manage Cookies</h4>
+          <nav class="footer-links-manage-cookies">
+            <a href="#" id="manage-cookies-link">Cookie Preferences</a>
+          </nav>
+        </div>
+      </div>
+      <p class="copyright"> © 2026-<span id="year"></span>
+        Front-end source code is licensed under the MIT license.
+        <span>Website content, branding, and design are proprietary.</span>
+        <span>Third-party components are licensed under their respective licenses.</span>
+      </p>
+    </footer>
+    
+    <script src="/js/data-guardian.js" defer></script>
+    <script src="/js/script.js" defer></script>
+    <script src="/js/footer-date.js" defer></script>
+    <script src="/js/chatbot.js" defer></script>
+  </body>
+</html>

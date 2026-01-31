@@ -92,10 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (show) {
                 if (!dialog?.open)
                     dialog?.showModal();
+                    this.#cookie_banner?.classList.add("is_flex");
+                    this.#cookie_banner.style = 'display: flex';
             }
             else {
                 if (dialog?.open)
                     dialog.close();
+                    this.#cookie_banner?.classList.remove("is_flex");
+                    this.#cookie_banner.style = 'display: none';
             }
         }
 
@@ -131,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
             this.#set_cookie("cookie_preferences", JSON.stringify(preferences), 90);
         }
 
-        #save_cookie_preferences(): void {
+        #save_cookie_preferences(): void | never {
             interface Preferences {
                 essential: boolean,
                 [key: string]: boolean | undefined
@@ -153,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        #set_cookies(preferences: {}): void {
+        #set_cookies(preferences: {}): void | never {
             if (!preferences) {
                 throw new Error("Invalid preferences given!");
             }
@@ -166,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        #set_cookie(name: string, value: any, days: number): void {
+        #set_cookie(name: string, value: any, days: number): void | never {
             if (!name) {
                 throw new Error("Invalid name given!");
             }
@@ -180,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.cookie = `${name}=${value}; expires=${expiry_date.toUTCString()}; path=/; Secure; SameSite=Lax`;
         }
 
-        #get_cookie(name: string): string | undefined {
+        #get_cookie(name: string): string | undefined | never {
             if (!name) {
                 throw new Error("Invalid name given!");
             }
@@ -189,13 +193,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             for (let i = 0; i < cookie_arr.length; i++) {
                 let cookie = cookie_arr[i].trim();
-                if (cookie.indexOf(name + "=") == 0) {
+                if (!cookie.indexOf(name + "=")) {
                     return cookie.substring(name.length + 1);
                 }
             }
         }
 
-        #load_cookie_preferences(): void {
+        #load_cookie_preferences(): void | never {
             try {
                 const preferences: string | undefined = this.#get_cookie("cookie_preferences");
 

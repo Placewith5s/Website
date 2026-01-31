@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const hides: NodeListOf<HTMLElement> = document.querySelectorAll(".hide");
 
-    const check_hides = (): void => {
-        if (hides.length === 0) {
+    const check_hides = (): void | never => {
+        if (!hides.length) {
             throw new Error("No hide element!");
         }
     }

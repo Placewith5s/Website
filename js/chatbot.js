@@ -1,0 +1,55 @@
+"use strict";
+document.addEventListener('DOMContentLoaded', async () => {
+    const send = async () => {
+        const main = document.querySelector('main');
+        if (!main) {
+            throw new Error("No main element!");
+        }
+        const msg = main.querySelector('#msg');
+        // const image_inp: HTMLInputElement | null = main.querySelector('#image');
+        const send_btn = main.querySelector('#send-btn');
+        const wait_msg = main.querySelector('#wait-msg');
+        const response_result = main.querySelector('#response-result');
+        const check_invalid_elements = async () => {
+            if (!msg || !send_btn || !wait_msg || !response_result) {
+                throw new Error("Required elements missing!");
+            }
+        };
+        await check_invalid_elements();
+        const trimmed_msg_val = msg.value.trim();
+        const alert_msg = "Error! Try again later!";
+        const fd = new FormData();
+        fd.append('msg', trimmed_msg_val);
+        // if (image_inp.files.length > 0) {
+        //     fd.append('image', image_inp.files[0]);
+        // }
+        wait_msg.textContent = "Responding... (this might take a few minutes)";
+        send_btn.disabled = 'true';
+        try {
+            const response = await fetch('/chat', {
+                method: 'POST',
+                body: fd
+            });
+            if (!response.ok) {
+                alert(alert_msg);
+                throw new Error("Invalid response received!");
+            }
+            const body_text = await response.text();
+            if (!body_text) {
+                alert(alert_msg);
+                throw new Error("No body text!");
+            }
+            const result = document.createElement('p');
+            result.textContent = body_text;
+            response_result.appendChild(result);
+        }
+        catch (err) {
+            alert(alert_msg);
+            throw new Error(`Chatbot can't respond! ${err}`);
+        }
+        finally {
+            wait_msg.textContent = "";
+            send_btn.disabled = 'false';
+        }
+    };
+});

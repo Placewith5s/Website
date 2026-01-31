@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         
-        #init(): void {
+        #init(): void | never {
             this.#menu_icon?.addEventListener("click", () => {
                 try {
                     const is_opened: boolean | undefined = this.#drawer?.classList.toggle("opened");

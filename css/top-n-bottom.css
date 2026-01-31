@@ -86,11 +86,9 @@ img {
     animation-timeline: view()
   }
 }
-@supports (prefers-reduced-transparency: no-preference) {
-  @media (prefers-reduced-transparency: no-preference) {
-    img {
-      opacity: 0.1
-    }
+@media (prefers-reduced-transparency: no-preference) {
+  img {
+    opacity: 0.1
   }
 }
 @keyframes fade-in {
@@ -175,7 +173,7 @@ button:focus {
 }
 /* @media (prefers-reduced-transparency: no-preference) {
   a:active {
-    
+
   }
 } */
 main div.last-updated {
@@ -185,7 +183,7 @@ main div.last-updated {
 div.search-container {
   margin: 2rem
 }
-div.search-container input#search-bar {
+input#search-bar {
   border: 0.06rem solid var(--fg);
   border-radius: 1.5rem;
   padding: 0.75rem 1rem;
@@ -218,7 +216,7 @@ nav.desktop-links a {
 }
 nav.desktop-links details.dropdown-menu-container a {
   transition: margin-bottom 500ms cubic-bezier(0.215, 0.610, 0.355, 1), padding-top 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
-  &a:hover, 
+  &a:hover,
   &a:focus {
     margin-bottom: .5rem;
     padding-top: .5rem
@@ -247,8 +245,8 @@ button.menu-icon div.line {
   margin: 0.35rem 0;
   width: 3vw
 }
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner, 
-button.menu-icon, 
+div#consent-cookie-banner,
+button.menu-icon,
 nav.drawer {
   position: fixed
 }
@@ -277,13 +275,13 @@ nav.drawer a:hover,
 nav.drawer a:focus {
   transform: translateX(0.7rem)
 }
-nav.drawer button#hide-drawer-btn {
+button#hide-drawer-btn {
   border-radius: 1.5rem;
   padding: 1rem;
   transition: filter 500ms cubic-bezier(0.215, 0.610, 0.355, 1), transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
-nav.drawer button#hide-drawer-btn:hover,
-nav.drawer button#hide-drawer-btn:focus {
+button#hide-drawer-btn:hover,
+button#hide-drawer-btn:focus {
   transform: scale(0.9)
 }
 footer {
@@ -295,7 +293,7 @@ footer .footer-column {
 footer .footer-column h4 {
   margin-bottom: 1rem
 }
-nav.desktop-links span, 
+nav.desktop-links span,
 footer nav[class^="footer-links-"] a {
   transition: color 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
@@ -306,7 +304,7 @@ a:hover,
 a:focus,
 a:visited,
 footer .footer-column h4,
-nav.desktop-links span:hover, 
+nav.desktop-links span:hover,
 nav.desktop-links span:focus,
 footer nav[class^="footer-links-"] a:hover,
 footer nav[class^="footer-links-"] a:focus {
@@ -315,56 +313,57 @@ footer nav[class^="footer-links-"] a:focus {
 footer .copyright {
   margin-top: 3rem
 }
+footer span + span, dialog#cookie-banner-dialog {
+  display: flex
+}
 footer span + span {
-  display: flex;
   flex-direction: column
 }
 nav.desktop-links a[aria-current="page"],
 nav.drawer a[aria-current="page"] {
+  font-weight: bolder;
   text-decoration: underline
-}
-nav.desktop-links a[aria-current="page"],
-nav.drawer a[aria-current="page"] {
-  font-weight: bolder
 }
 dialog#consent-cookie-banner-dialog,
 dialog#cookie-banner-dialog {
   background: transparent
 }
+dialog#cookie-banner-dialog {
+  place-self: center
+}
 div.search-container,
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
-dialog#cookie-banner-dialog div#cookie-banner {
+div#consent-cookie-banner {
   align-items: center
 }
 div.search-container, nav.desktop-links a,
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
-dialog#cookie-banner-dialog div#cookie-banner {
+div#consent-cookie-banner {
   justify-content: center
 }
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
-dialog#cookie-banner-dialog div#cookie-banner {
+div#consent-cookie-banner,
+div#cookie-banner {
   border-radius: 1rem;
-  bottom: 0;
-  left: 0;
-  padding: 1.5rem;
-  z-index: 1000
+  padding: 1.5rem
 }
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner h3,
-dialog#cookie-banner-dialog div#cookie-banner h3,
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner p:first-child,
-dialog#cookie-banner-dialog div#cookie-banner p {
+div#consent-cookie-banner h3,
+div#cookie-banner h3,
+div#consent-cookie-banner p:first-child,
+div#cookie-banner p {
   margin-bottom: 1.25rem
 }
 header h1, main div.last-updated,
-div.search-container input#search-bar,
+input#search-bar,
 footer,
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner {
+div#consent-cookie-banner {
   text-align: center
 }
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner button,
-dialog#cookie-banner-dialog div#cookie-banner button {
+div#cookie-banner.is_flex {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center
+}
+div#consent-cookie-banner button,
+div#cookie-banner button {
   border-radius: 0.3rem;
-  /* flex-direction: row; */
   margin: 0.3rem;
   padding: 0.7rem 1.35rem;
   transition: background-color 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
@@ -373,33 +372,31 @@ dialog#cookie-banner-dialog div#cookie-banner button {
     color: var(--accent)
   }
 }
-nav.drawer button#hide-drawer-btn,
+button#hide-drawer-btn,
 dialog#consent-cookie-banner-dialog,
 dialog#cookie-banner-dialog,
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner button#show-cookie-settings-btn,
-dialog#cookie-banner-dialog div#cookie-banner button#close-banner-btn {
+button#show-cookie-settings-btn,
+button#close-banner-btn {
   border: none
 }
-dialog#cookie-banner-dialog div#cookie-banner label {
+div#cookie-banner label {
   margin-bottom: 0.3rem;
   padding-left: 1rem;
   position: relative
 }
-dialog#cookie-banner-dialog div#cookie-banner label::before {
+div#cookie-banner label::before {
   content: "•";
   position: absolute
 }
-dialog#cookie-banner-dialog div#cookie-banner button#save-preferences-btn {
+button#save-preferences-btn { /* save preferences - cookies */
   margin-top: 1.25rem
 }
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
-dialog#cookie-banner-dialog div#cookie-banner,
+div#consent-cookie-banner,
 .strawpoll-embed, .strawpoll-embed iframe {
   width: 100%
 }
 main, footer nav[class^="footer-links-"] a,
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
-dialog#cookie-banner-dialog div#cookie-banner,
+div#consent-cookie-banner,
 .strawpoll-embed {
   flex-direction: column
 }
@@ -407,8 +404,7 @@ main, div.search-container,
 nav.desktop-links, nav.desktop-links a,
 footer .footer-container,
 footer nav[class^="footer-links-"] a,
-dialog#consent-cookie-banner-dialog div#consent-cookie-banner,
-dialog#cookie-banner-dialog div#cookie-banner,
+div#consent-cookie-banner,
 .strawpoll-embed {
   display: flex
 }
@@ -431,39 +427,24 @@ nav.drawer a, .strawpoll-embed iframe {
     display: none
   }
 }
-@media only screen and (min-width: 321px) and (max-width: 768px) {
-  button.menu-icon,
-  nav.drawer {
-    display: block
-  }
-  nav.desktop-links {
-    display: none
-  }
-}
+/* @media only screen and (min-width: 321px) and (max-width: 768px) {
+
+} */
 @media only screen and (min-width: 769px) {
   button.menu-icon,
   nav.drawer {
     display: none
   }
 }
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  button.menu-icon,
-  nav.drawer {
-    display: none
-  }
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) {
+
 }
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
-  button.menu-icon,
-  nav.drawer {
-    display: none
-  }
+
 }
 @media only screen and (min-width: 1201px) {
-  button.menu-icon,
-  nav.drawer {
-    display: none
-  }
-}
+
+} */
 @media only screen and (prefers-color-scheme: dark) {
   :root { /* Utilized for every single page */
     --accent: #D9915D;

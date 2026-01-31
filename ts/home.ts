@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async() => {
             this.#items = this.#main.querySelectorAll(".carousel-item");
             this.#inner = this.#main.querySelector(".carousel-inner");
 
-            if (this.#items.length === 0) {
+            if (!this.#items.length) {
                 throw new Error("No carousel items!");
             }
 
@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", async() => {
             setInterval(() => this.#show_next_item(), 5000);
         }
 
-        #check_inner(): void {
+        #check_inner(): void | never {
             if (!this.#inner) {
                 throw new Error("No carousel inner element!");
             }
         }
 
-        #show_next_item(): void {
+        #show_next_item(): void | never {
             this.#check_inner();
 
             const total_items: number = this.#items?.length;
@@ -78,13 +78,13 @@ document.addEventListener("DOMContentLoaded", async() => {
         });
     }
 
-    const check_meta_tags = (optimize_title: string | null | undefined, troubleshoot_title: string | null | undefined, optimize_desc: string | null | undefined, troubleshoot_desc: string | null | undefined): void => {
+    const check_meta_tags = (optimize_title: string | null | undefined, troubleshoot_title: string | null | undefined, optimize_desc: string | null | undefined, troubleshoot_desc: string | null | undefined): void | never => {
         if (!optimize_title || !troubleshoot_title || !optimize_desc || !troubleshoot_desc) {
             throw new Error("No meta title or meta description!");
         }
     };
 
-    const upd_carousel_title_desc = async(): Promise<void> => {
+    const upd_carousel_title_desc = async(): Promise<void | never> => {
         try {
             const optimize_url: string = "/html/guides/optimize-windows-pc.html";
             const troubleshoot_url: string = "/html/guides/troubleshoot-windows-pc.html";

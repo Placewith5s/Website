@@ -81,10 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (show) {
                 if (!dialog?.open)
                     dialog?.showModal();
+                this.#cookie_banner?.classList.add("is_flex");
+                this.#cookie_banner.style = 'display: flex';
             }
             else {
                 if (dialog?.open)
                     dialog.close();
+                this.#cookie_banner?.classList.remove("is_flex");
+                this.#cookie_banner.style = 'display: none';
             }
         }
         #show_consent_cb() {
@@ -152,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const cookie_arr = document.cookie.split(";");
             for (let i = 0; i < cookie_arr.length; i++) {
                 let cookie = cookie_arr[i].trim();
-                if (cookie.indexOf(name + "=") == 0) {
+                if (!cookie.indexOf(name + "=")) {
                     return cookie.substring(name.length + 1);
                 }
             }
