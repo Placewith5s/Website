@@ -3,11 +3,28 @@ main, main button[type="button"] {
     display: flex;
     justify-content: center
 }
+main .chat-response {
+    border: 0.1rem solid var(--accent);
+    border-radius: 0.5rem;
+    margin-bottom: 4rem;
+    order: 1
+}
 main input[type="text"] {
+    order: 2;
     padding: 1rem;
     width: 100%
 }
+main input[type="file"] {
+    align-self: flex-start
+}
 main button[type="button"] {
     border-radius: 1rem;
-    width: 10%
+    order: 3;
+    width: 15%
+}
+.twitter-share-button {
+    order: 4
+}
+.reddit-share-link {
+    order: 5
 }
