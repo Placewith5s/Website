@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const send_btn = main.querySelector('#send-btn');
     const send = async () => {
         const msg = main.querySelector('#msg');
-        // const image_inp: HTMLInputElement | null = main.querySelector('#image');
+        const image_inp = main.querySelector('#image');
         const wait_msg = main.querySelector('#wait-msg');
         const response_result = main.querySelector('#response-result');
         const check_invalid_elements = async () => {
@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const alert_msg = "Error! Try again later!";
         const fd = new FormData();
         fd.append('msg', trimmed_msg_val);
-        // if (image_inp.files.length > 0) {
-        //     fd.append('image', image_inp.files[0]);
-        // }
+        if (image_inp.files.length > 0) {
+            fd.append('image', image_inp.files[0]);
+        }
         wait_msg.textContent = "Responding... (this might take a few minutes)";
         send_btn.disabled = true;
         try {
