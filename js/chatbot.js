@@ -1,10 +1,10 @@
 "use strict";
-const main = document.querySelector('main');
-if (!main) {
-    throw new Error("No main element!");
-}
-const send_btn = main.querySelector('#send-btn');
 document.addEventListener('DOMContentLoaded', async () => {
+    const main = document.querySelector('main');
+    if (!main) {
+        throw new Error("No main element!");
+    }
+    const send_btn = main.querySelector('#send-btn');
     const send = async () => {
         const msg = main.querySelector('#msg');
         // const image_inp: HTMLInputElement | null = main.querySelector('#image');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         //     fd.append('image', image_inp.files[0]);
         // }
         wait_msg.textContent = "Responding... (this might take a few minutes)";
-        send_btn.disabled = 'true';
+        send_btn.disabled = true;
         try {
             const response = await fetch('https://chatbot.placewith5s.com/chat', {
                 method: 'POST',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
         finally {
             wait_msg.textContent = "";
-            send_btn.disabled = 'false';
+            send_btn.disabled = false;
         }
     };
     send_btn?.addEventListener('click', async () => {
