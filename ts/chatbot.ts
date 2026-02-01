@@ -52,8 +52,12 @@ document.addEventListener('DOMContentLoaded', async() => {
                 throw new Error("No body text!");
             }
 
-            const result: HTMLParagraphElement = document.createElement('p');
-            result.textContent = body_text;
+            const raw_html = marked.parse(body_text, { breaks: true });
+            const safe_html = DOMPurify.sanitize(raw_html);
+
+            const result: HTMLDivElement = document.createElement('div');
+            result.classList.add('chat-response');
+            result.innerHTML = safe_html;
             response_result.appendChild(result);
         } catch (err) {
             alert(alert_msg)
