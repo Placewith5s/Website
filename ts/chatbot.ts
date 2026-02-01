@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async() => {
 
     const send = async (): Promise<void> => {
         const msg: HTMLInputElement | null = main.querySelector('#msg');
-        // const image_inp: HTMLInputElement | null = main.querySelector('#image');
+        const image_inp: HTMLInputElement | null = main.querySelector('#image');
         const wait_msg: HTMLParagraphElement | null = main.querySelector('#wait-msg');
         const response_result: HTMLDivElement | null = main.querySelector('#response-result');
 
@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', async() => {
         const fd: FormData = new FormData();
         fd.append('msg', trimmed_msg_val);
 
-        // if (image_inp.files.length > 0) {
-        //     fd.append('image', image_inp.files[0]);
-        // }
+        if (image_inp.files.length > 0) {
+            fd.append('image', image_inp.files[0]);
+        }
 
         wait_msg.textContent = "Responding... (this might take a few minutes)";
         send_btn.disabled = true;
