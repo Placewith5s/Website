@@ -1,8 +1,8 @@
 {
-    "compilerOptions": {
-        "outDir": "js",
-        "target": "es2024",
-        "strict": true,
-        "pretty": true
-    }
+	"compilerOptions": {
+		"outDir": "js",
+		"target": "es2024",
+		"strict": true,
+		"pretty": true
+	}
 }

@@ -1,16 +1,16 @@
 main .code {
-  border: 0.1rem solid var(--accent);
-  font-family: monospace;
-  overflow-wrap: break-word;
-  white-space: pre-wrap
+    border: 0.1rem solid var(--accent);
+    font-family: monospace;
+    overflow-wrap: break-word;
+    white-space: pre-wrap
 }
 main button#show-hide-btn {
-  border-radius: 0.5rem;
-  margin-bottom: 5rem
+    border-radius: 0.5rem;
+    margin-bottom: 5rem
 }
 main div.expand-all.active section[id^="step-hidden-from-"] {
-  display: block
+    display: block
 }
 main div.expand-all section[id^="step-hidden-from-"] {
-  display: none
+    display: none
 }

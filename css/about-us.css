@@ -1,3 +1,4 @@
-main a.cta-link:hover, main a.cta-link:focus {
+main a.cta-link:hover,
+main a.cta-link:focus {
     transform: scale(1)
 }

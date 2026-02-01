@@ -1,305 +1,294 @@
 :root { /* Utilized for every single page */
-  --accent: #754900;
-  --bg: #fff;
-  --fg: #000;
-  --hover-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2)
+    --accent: #754900;
+    --bg: #fff;
+    --fg: #000;
+    --hover-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2)
 }
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0
 }
 @supports (text-wrap: pretty) {
-  *,
-  *::after,
-  *::before {
-    text-wrap: pretty
-  }
+    *,
+    *::after,
+    *::before {
+        text-wrap: pretty
+    }
 }
 body, body * {
-  background-color: var(--bg);
-  color: var(--fg)
+    background-color: var(--bg);
+    color: var(--fg)
 }
 body,
 main {
-  max-width: 100%;
-  min-height: 100vh
+    max-width: 100%;
+    min-height: 100vh
 }
 @supports (min-height: 100svh) {
-  body, main {
-    min-height: 100svh
-  }
+  body, main {min-height: 100svh}
 }
 html {
-  font-size: 16px;
-  overflow-x: clip;
-  scroll-behavior: smooth
+    font-size: 16px;
+    overflow-x: clip;
+    scroll-behavior: smooth
 }
 @supports (scrollbar-gutter: stable) {
-  html {
-    scrollbar-gutter: stable
-  }
+  html {scrollbar-gutter: stable}
 }
 header h1 {
-  border-bottom: 0.12rem solid var(--fg);
-  font-size: 40px;
-  letter-spacing: clamp(0.075rem, 1.5vw, 0.1rem);
-  line-height: 1.3
+    border-bottom: 0.12rem solid var(--fg);
+    font-size: 40px;
+    letter-spacing: clamp(0.075rem, 1.5vw, 0.1rem);
+    line-height: 1.3
 }
 h2 {
-  font-size: 32px;
-  letter-spacing: clamp(0.055rem, 1vw, 0.075rem);
-  line-height: 1.2
+    font-size: 32px;
+    letter-spacing: clamp(0.055rem, 1vw, 0.075rem);
+    line-height: 1.2
 }
 h3 {
-  font-size: 24px;
-  letter-spacing: clamp(0.04rem, 0.75vw, 0.05rem);
-  line-height: 1.1
+    font-size: 24px;
+    letter-spacing: clamp(0.04rem, 0.75vw, 0.05rem);
+    line-height: 1.1
 }
 @supports (text-wrap: balance) {
-  h1, h2, h3 {
-    text-wrap: balance
-  }
+    h1,
+    h2,
+    h3 {
+        text-wrap: balance
+    }
 }
 @media (prefers-reduced-motion: reduce) {
-  img {
-    transform: scale(1)
-  }
+  img {transform: scale(1)}
 }
 img {
-  -webkit-backface-visibility: hidden;
-  animation: fade-in 500ms cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
-  backface-visibility: hidden;
-  font-style: italic;
-  height: auto;
-  image-rendering: -webkit-optimize-contrast;
-  max-width: 100%;
-  object-fit: cover;
-  transform: scale(0.8);
-  vertical-align: middle
+    -webkit-backface-visibility: hidden;
+    animation: fade-in 500ms cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+    backface-visibility: hidden;
+    font-style: italic;
+    height: auto;
+    image-rendering: -webkit-optimize-contrast;
+    max-width: 100%;
+    object-fit: cover;
+    transform: scale(0.8);
+    vertical-align: middle
 }
 @supports (animation-timeline: view()) and (animation-range-start: entry) {
-  img {
-    animation-range-start: entry;
-    animation-timeline: view()
-  }
+    img {
+        animation-range-start: entry;
+        animation-timeline: view()
+    }
 }
 @media (prefers-reduced-transparency: no-preference) {
-  img {
-    opacity: 0.1
-  }
+  img {opacity: 0.1}
 }
 @keyframes fade-in {
-  0% {
-      opacity: 0.1
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1)
-  }
-}
-main .hide {
-  opacity: 0;
-  transition: opacity 500ms cubic-bezier(0.215, 0.610, 0.355, 1), transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
-}
-main .show {
-  opacity: 1
+    0% {opacity: 0.1}
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
 }
 main {
-  margin-top: 1.38rem;
-  padding: 1.38rem
+    margin-top: 1.38rem;
+    padding: 1.38rem
 }
-.spaced-top-bottom {
-  margin: 3.5rem 0
+main .hide {
+    opacity: 0;
+    transition: opacity 500ms cubic-bezier(0.215, 0.610, 0.355, 1),
+    transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
-.spaced-top {
-  margin-top: 3.5rem
-}
-.spaced-bottom {
-  margin-bottom: 3.5rem
-}
-.spaced-right {
-  margin-right: 3rem
-}
-.no-list-style {
-  list-style-type: none
-}
+main .show {opacity: 1}
+.spaced-top-bottom {margin: 3.5rem 0}
+.spaced-top {margin-top: 3.5rem}
+.spaced-bottom {margin-bottom: 3.5rem}
+.spaced-right {margin-right: 3rem}
+.no-list-style {list-style-type: none}
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::after,
-  *::before {
-    animation: none;
-    transition: none
-  }
-  html {
-    scroll-behavior: auto
-  }
+    *,
+    *::after,
+    *::before {
+        animation: none;
+        transition: none
+    }
+  html {scroll-behavior: auto}
 }
 a,
 button {
-  text-decoration: none;
-  transition: transform 100ms cubic-bezier(0.215, 0.610, 0.355, 1), box-shadow 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
+    text-decoration: none;
+    transition: transform 100ms cubic-bezier(0.215, 0.610, 0.355, 1),
+    box-shadow 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
 a:not(footer a, .desktop-links a, .drawer a) {
-  box-shadow: 0 0 0.2rem
+    box-shadow: 0 0 0.2rem
 }
 button {
-  border: 0.15rem solid var(--accent);
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  padding-left: clamp(2rem, 4vw, 7.5rem);
-  padding-right: clamp(2rem, 4vw, 7.5rem)
+    border: 0.15rem solid var(--accent);
+    padding-bottom: 1rem;
+    padding-left: clamp(2rem, 4vw, 7.5rem);
+    padding-right: clamp(2rem, 4vw, 7.5rem);
+    padding-top: 1rem
 }
 button:hover,
 button:focus,
 a:hover,
 a:focus {
-  box-shadow: var(--hover-shadow);
-  transform: scale(1.05)
+    box-shadow: var(--hover-shadow);
+    transform: scale(1.05)
 }
 a:hover,
 a:focus {
-  text-decoration: underline
+    text-decoration: underline
 }
 a:hover:not(footer a, .desktop-links a, .drawer a),
 a:focus:not(footer a, .desktop-links a, .drawer a) {
-  box-shadow: none
+    box-shadow: none
 }
 a:focus,
 button:focus {
-  outline: 0.25rem solid var(--accent)
+    outline: 0.25rem solid var(--accent)
 }
 /* @media (prefers-reduced-transparency: no-preference) {
-  a:active {
+    a:active {
 
-  }
+    }
 } */
 main div.last-updated {
-  border: 0.06rem solid var(--fg);
-  margin-bottom: 1.25rem
+    border: 0.06rem solid var(--fg);
+    margin-bottom: 1.25rem
 }
 div.search-container {
-  margin: 2rem
+    align-items: center;
+    margin: 2rem
 }
 input#search-bar {
-  border: 0.06rem solid var(--fg);
-  border-radius: 1.5rem;
-  padding: 0.75rem 1rem;
-  width: 50%
+    border: 0.06rem solid var(--fg);
+    border-radius: 1.5rem;
+    padding: 0.75rem 1rem;
+    width: 50%
 }
 main div#not-found-msg {
-  display: none;
-  padding: 1.33rem
+    display: none;
+    padding: 1.33rem
 }
 @keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateY(1rem)
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0)
-  }
+    from {
+        opacity: 0;
+        transform: translateY(1rem)
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
 }
 header h1,
 nav.desktop-links {
-  margin-bottom: 3rem
+    margin-bottom: 3rem
 }
 nav.desktop-links {
-  padding: 1rem;
-  position: relative
+    padding: 1rem;
+    position: relative
 }
-nav.desktop-links a {
-  flex: 1
+div.search-container, nav.desktop-links a {
+    justify-content: center
 }
 nav.desktop-links details.dropdown-menu-container a {
-  transition: margin-bottom 500ms cubic-bezier(0.215, 0.610, 0.355, 1), padding-top 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
-  &a:hover,
-  &a:focus {
-    margin-bottom: .5rem;
-    padding-top: .5rem
-  }
+    transition: margin-bottom 500ms cubic-bezier(0.215, 0.610, 0.355, 1), padding-top 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
+    &a:hover,
+    &a:focus {
+        margin-bottom: .5rem;
+        padding-top: .5rem
+    }
 }
-a, button, summary {
-  cursor: pointer
+a,
+button,
+summary {
+    cursor: pointer
 }
-main section:not(:last-child) {
-  margin-bottom: 10rem
-}
-button.menu-icon, nav.drawer {
-  z-index: 1000
-}
+main section:not(:last-child) {margin-bottom: 10rem}
+button.menu-icon, nav.drawer {z-index: 1000}
 button.menu-icon {
-  backdrop-filter: blur(1rem);
-  border: 0.06rem solid var(--fg);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  right: 1rem;
-  top: 1rem
+    backdrop-filter: blur(1rem);
+    border: 0.06rem solid var(--fg);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    right: 1rem;
+    top: 1rem
 }
 button.menu-icon div.line {
-  background: var(--fg);
-  height: 0.5vh;
-  margin: 0.35rem 0;
-  width: 3vw
+    background: var(--fg);
+    height: 0.5vh;
+    margin: 0.35rem 0;
+    width: 3vw
 }
-div#consent-cookie-banner,
 button.menu-icon,
 nav.drawer {
-  position: fixed
+    position: fixed
 }
 nav.drawer {
-  border: 0.06rem solid var(--fg);
-  display: none;
-  opacity: 0;
-  padding: 1rem;
-  right: 3.6rem;
-  top: 4.5rem;
-  transform: translateY(-2rem);
-  transition: opacity 500ms cubic-bezier(0.215, 0.610, 0.355, 1), transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
+    border: 0.06rem solid var(--fg);
+    display: none;
+    opacity: 0;
+    padding: 1rem;
+    right: 3.6rem;
+    top: 4.5rem;
+    transform: translateY(-2rem);
+    transition: opacity 500ms cubic-bezier(0.215, 0.610, 0.355, 1),
+    transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
 nav.drawer.opened {
-  display: block;
-  opacity: 1;
-  transform: translateY(0)
+    display: block;
+    opacity: 1;
+    transform: translateY(0)
+}
+nav.desktop-links a[aria-current="page"],
+nav.drawer a[aria-current="page"] {
+    font-weight: bolder;
+    text-decoration: underline
 }
 nav.drawer a {
-  border: 0.06rem solid var(--fg);
-  border-radius: 0.3rem;
-  padding: 0.55rem;
-  transition: transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
+    border: 0.06rem solid var(--fg);
+    border-radius: 0.3rem;
+    padding: 0.55rem;
+    transition: transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
 nav.drawer a:hover,
 nav.drawer a:focus {
-  transform: translateX(0.7rem)
+    transform: translateX(0.7rem)
 }
 button#hide-drawer-btn {
-  border-radius: 1.5rem;
-  padding: 1rem;
-  transition: filter 500ms cubic-bezier(0.215, 0.610, 0.355, 1), transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    transition: filter 500ms cubic-bezier(0.215, 0.610, 0.355, 1),
+    transform 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
 button#hide-drawer-btn:hover,
 button#hide-drawer-btn:focus {
-  transform: scale(0.9)
+    transform: scale(0.9)
 }
+header h1,
+main div.last-updated,
+input#search-bar,
 footer {
-  padding: 2rem 0
+    text-align: center
 }
+footer {padding: 2rem 0}
+nav .desktop-links a,
 footer .footer-column {
-  flex: 1
+    flex: 1
 }
 footer .footer-column h4 {
-  margin-bottom: 1rem
+    margin-bottom: 1rem
 }
 nav.desktop-links span,
 footer nav[class^="footer-links-"] a {
-  transition: color 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
+    transition: color 500ms cubic-bezier(0.215, 0.610, 0.355, 1)
 }
-footer nav[class^="footer-links-"] a {
-  margin-bottom: 1.5rem
-}
+footer nav[class^="footer-links-"] a {margin-bottom: 1.5rem}
 a:hover,
 a:focus,
 a:visited,
@@ -308,133 +297,58 @@ nav.desktop-links span:hover,
 nav.desktop-links span:focus,
 footer nav[class^="footer-links-"] a:hover,
 footer nav[class^="footer-links-"] a:focus {
-  color: var(--accent)
-}
-footer .copyright {
-  margin-top: 3rem
-}
-footer span + span, dialog#cookie-banner-dialog {
-  display: flex
-}
-footer span + span {
-  flex-direction: column
-}
-nav.desktop-links a[aria-current="page"],
-nav.drawer a[aria-current="page"] {
-  font-weight: bolder;
-  text-decoration: underline
-}
-dialog#consent-cookie-banner-dialog,
-dialog#cookie-banner-dialog {
-  background: transparent
-}
-dialog#cookie-banner-dialog {
-  place-self: center
-}
-div.search-container,
-div#consent-cookie-banner {
-  align-items: center
-}
-div.search-container, nav.desktop-links a,
-div#consent-cookie-banner {
-  justify-content: center
-}
-div#consent-cookie-banner,
-div#cookie-banner {
-  border-radius: 1rem;
-  padding: 1.5rem
-}
-div#consent-cookie-banner h3,
-div#cookie-banner h3,
-div#consent-cookie-banner p:first-child,
-div#cookie-banner p {
-  margin-bottom: 1.25rem
-}
-header h1, main div.last-updated,
-input#search-bar,
-footer,
-div#consent-cookie-banner {
-  text-align: center
-}
-div#cookie-banner.is_flex {
-  align-items: center;
-  flex-direction: column;
-  justify-content: center
-}
-div#consent-cookie-banner button,
-div#cookie-banner button {
-  border-radius: 0.3rem;
-  margin: 0.3rem;
-  padding: 0.7rem 1.35rem;
-  transition: background-color 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
-  &:hover,
-  &:focus {
     color: var(--accent)
-  }
 }
-button#hide-drawer-btn,
-dialog#consent-cookie-banner-dialog,
-dialog#cookie-banner-dialog,
-button#show-cookie-settings-btn,
-button#close-banner-btn {
-  border: none
+footer .copyright {margin-top: 3rem}
+footer span + span {flex-direction: column}
+.strawpoll-embed,
+.strawpoll-embed iframe {
+    width: 100%
 }
-div#cookie-banner label {
-  margin-bottom: 0.3rem;
-  padding-left: 1rem;
-  position: relative
-}
-div#cookie-banner label::before {
-  content: "•";
-  position: absolute
-}
-button#save-preferences-btn { /* save preferences - cookies */
-  margin-top: 1.25rem
-}
-div#consent-cookie-banner,
-.strawpoll-embed, .strawpoll-embed iframe {
-  width: 100%
-}
-main, footer nav[class^="footer-links-"] a,
-div#consent-cookie-banner,
-.strawpoll-embed {
-  flex-direction: column
-}
-main, div.search-container,
-nav.desktop-links, nav.desktop-links a,
-footer .footer-container,
+main,
 footer nav[class^="footer-links-"] a,
-div#consent-cookie-banner,
 .strawpoll-embed {
-  display: flex
+    flex-direction: column
+}
+main,
+div.search-container,
+nav.desktop-links,
+nav.desktop-links a,
+footer,
+footer span + span,
+.footer-container,
+footer nav[class^="footer-links-"] a,
+.strawpoll-embed {
+    display: flex
 }
 /* Strawpoll, keep styles as is */
 .strawpoll-embed {
-  height: 580px;
-  margin: 0 auto;
-  max-width: 640px
+    height: 580px;
+    margin: 0 auto;
+    max-width: 640px
 }
-nav.drawer a, .strawpoll-embed iframe {
-  display: block
+nav.drawer a,
+.strawpoll-embed iframe {
+    display: block
 }
 .strawpoll-embed iframe {
-  flex-grow: 1;
-  position: static;
-  visibility: visible
+    flex-grow: 1;
+    position: static;
+    visibility: visible
 }
 @media only screen and (max-width: 320px) {
-  nav.desktop-links {
-    display: none
-  }
+    nav.desktop-links {
+        display: none
+    }
 }
 /* @media only screen and (min-width: 321px) and (max-width: 768px) {
 
 } */
 @media only screen and (min-width: 769px) {
-  button.menu-icon,
-  nav.drawer {
-    display: none
-  }
+    button.menu-icon,
+    nav.drawer {
+        display: none
+    }
 }
 /* @media only screen and (min-width: 769px) and (max-width: 1024px) {
 
@@ -446,10 +360,10 @@ nav.drawer a, .strawpoll-embed iframe {
 
 } */
 @media only screen and (prefers-color-scheme: dark) {
-  :root { /* Utilized for every single page */
-    --accent: #D9915D;
-    --bg: #444;
-    --fg: #f5f5f5;
-    --hover-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.2)
-  }
+    :root { /* Utilized for every single page */
+        --accent: #D9915D;
+        --bg: #444;
+        --fg: #f5f5f5;
+        --hover-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.2)
+    }
 }

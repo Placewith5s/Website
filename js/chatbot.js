@@ -57,5 +57,5 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
     send_btn?.addEventListener('click', async () => {
         await send();
-    });
+    }, { passive: true });
 });

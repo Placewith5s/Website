@@ -1,25 +1,25 @@
 main div.form-group input {
-  margin-left: 1rem
+    margin-left: 1rem
 }
 main textarea#message {
-  display: block;
-  margin-top: 1rem;
-  width: 75%
+    display: block;
+    margin-top: 1rem;
+    width: 75%
 }
 main div.form-group input[type="text"],
 main div.form-group input[type="email"],
 main textarea#message, 
 main button[type="submit"] {
-  border-radius: 0.7rem;
-  padding: 1rem
+    border-radius: 0.7rem;
+    padding: 1rem
 }
 main div.form-group input[type="text"],
 main div.form-group input[type="email"] {
-  width: 40%
+    width: 40%
 }
 main button[type="submit"] { /* NOT unused */
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  padding-left: clamp(2rem, 4vw, 7.5rem);
-  padding-right: clamp(2rem, 4vw, 7.5rem)
+    padding-bottom: 1rem;
+    padding-left: clamp(2rem, 4vw, 7.5rem);
+    padding-right: clamp(2rem, 4vw, 7.5rem);
+    padding-top: 1rem
 }

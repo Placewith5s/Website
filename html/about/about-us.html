@@ -36,49 +36,11 @@
         }
       }
     </script>
-
-  <noscript>
-    <style>
-      div#cookie-banner,
-      div#consent-cookie-banner {
-        display: none
-      }
-    </style>
-  </noscript>
   
   <link rel="stylesheet" href="/css/about-us.css">
   <link rel="stylesheet" href="/css/top-n-bottom.css">
   </head>
   <body>
-    <dialog id="consent-cookie-banner-dialog" aria-labelledby="consent-cookie-banner-heading">
-      <div id="consent-cookie-banner">
-        <h3 id="consent-cookie-banner-heading">Cookie Consent</h3>
-        <p>This website uses cookies to enhance your browsing experience and provide personalized content. Your privacy is important to us, and we are committed to complying with the General Data Protection Regulation (GDPR) and other relevant data protection laws.</p>
-        <p>By clicking "Accept All Cookies," you consent to the use of all cookies on this site. <a href="/html/policies/cookie-policy" class="cookie-link" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Learn More About Our Cookie Policy</a>.</p>
-
-        <button id="show-cookie-settings-btn">Cookie Options</button>
-        <button id="accept-all-btn" type="button">Accept All Cookies</button>
-        <button id="reject-all-btn" type="button">Reject All Cookies</button>
-      </div>
-    </dialog>
-
-    <dialog id="cookie-banner-dialog" aria-labelledby="cookie-banner-heading">
-      <div id="cookie-banner">
-        <h3 id="cookie-banner-heading">Cookie Preferences</h3>
-        <p>This website uses cookies. Please choose your cookie preferences:</p>
-
-        <label for="essential-checkbox">Essential: Required for basic site functions.</label>
-        <input type="checkbox" id="essential-checkbox" checked disabled>
-        <label for="performance-checkbox">Performance: Helps us analyze site usage.</label>
-        <input type="checkbox" id="performance-checkbox">
-        <label for="functionality-checkbox">Functionality: Remembers your preferences.</label>
-        <input type="checkbox" id="functionality-checkbox">
-
-        <button id="save-preferences-btn" type="button">Save Preferences</button>
-        <button id="close-banner-btn" type="button">Close</button>
-      </div>
-    </dialog>
-    
     <header>
       <nav class="desktop-links" aria-label="Main Navigation">
         <a href="/" aria-label="Home">
@@ -194,10 +156,10 @@
             <a href="/html/contact-form">Contact Us</a>
           </nav>
         </div>
-        <div aria-labelledby="manage-cookies-heading" class="footer-column">
-          <h4 id="manage-cookies-heading">Manage Cookies</h4>
-          <nav class="footer-links-manage-cookies">
-            <a href="#" id="manage-cookies-link">Cookie Preferences</a>
+        <div aria-labelledby="chatbot-heading" class="footer-column">
+          <h4 id="chatbot-heading">Chatbot</h4>
+          <nav class="footer-links-chatbot">
+            <a href="/html/chatbot">Chatbot</a>
           </nav>
         </div>
       </div>
@@ -208,7 +170,6 @@
       </p>
     </footer>
 
-    <script src="/js/data-guardian.js" defer></script>
     <script src="/js/script.js" defer></script>
     <script src="/js/footer-date.js" defer></script>
   </body>

@@ -1,16 +1,15 @@
 main section {
-  border: solid var(--accent);
-  border-radius: 0.5rem
+    border: solid var(--accent);
+    border-radius: 0.5rem
 }
 main section:not(:last-child) {
-  margin-bottom: 20rem !important
+    margin-bottom: 20rem !important
 }
-main section h2#toc-heading {
-  text-align: center
-}
-main section nav.TOC, main section nav.TOC ul {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem
+main section h2#toc-heading {text-align: center}
+main section nav.TOC,
+main section nav.TOC ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem
 }

@@ -10,25 +10,35 @@ Please note we have a code of conduct, please follow it in all your interactions
 4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
 
 ### Formatting
-- Files shouldn't have manual obfuscation
+General
+- Files shouldn't have manual obfuscation (gnioerbgoiwbrogiwrbogir)
 - One liners - 60 characters limit. (applies to everything). Exceptions: HTML and URLs. [Character counter](https://wordcounter.net/character-count)
 - Unnecessary framework usage that isn't already included won't be accepted
-
-Code comments
-- Explanatory code comments aren't allowed
-- Everything else doesn't apply to code comments
+- 4 spaces per indent level. Exceptions: see [Prettier ignore](.prettierignore)
 
 HTML
 - Both Inline & style blocks won't be accepted. Exception: Dynamically added or third-party apps
 - Any usage of b and br won't be accepted. Use CSS instead
 
 CSS
-- Properties: Alphabetical order
-- If a selector is only inside main, selector should start with main (main .selector)
-- Selector should NEVER be body. Exception: body as the only selector (body)
+- Properties: Alphabetical order Exception: "-" properties should come before a
+- No empty newlines (doesn't apply to comments)
+- No comma for every ending property of selectors
+- Selector placement: Parent above child (nav rules above a rules)
+- Grouped selectors should depend on the ending selector from the group (a, button appears above button)
+- If the ending selector from the group isn't found, do: parent above child rule
+- When grouping selectors, every new selector should be exactly 1 newline
+- Selector ONLY inside main should start with main (main .selector)
+- Selector should NEVER be body. Exception: body as the ONLY selector (body)
+- One liners on selectors with multiple properties - not accepted: (a {color: color; display: display})
+- One liners on grouped selectors with multiple properties - not accepted: (a, form {color: color; display: display})
 
 JavaScript
 - Do not manually edit generated JavaScript files; modify the source (TypeScript) instead
+
+Code comments
+- Explanatory code comments aren't allowed
+- General doesn't apply to code comments
 
 ### Get missing dependencies
 - After cloning, install them by running the following:
