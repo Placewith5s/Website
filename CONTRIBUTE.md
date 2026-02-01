@@ -17,11 +17,11 @@ General
 - 4 spaces per indent level. Exceptions: see [Prettier ignore](.prettierignore)
 
 HTML
-- Both Inline & style blocks won't be accepted. Exception: Dynamically added or third-party apps
+- Both Inline & style blocks won't be accepted. Exception: Dynamic content or third-party apps
 - Any usage of b and br won't be accepted. Use CSS instead
 
 CSS
-- Properties: Alphabetical order Exception: "-" properties should come before a
+- Properties: Alphabetical order. Exception: "-" properties should come before a
 - No empty newlines (doesn't apply to comments)
 - No semi colon for every ending property of selectors
 - Selector placement: Parent above child (nav rules above a rules)

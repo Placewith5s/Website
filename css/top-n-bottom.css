@@ -28,7 +28,7 @@ main {
     min-height: 100vh
 }
 @supports (min-height: 100svh) {
-  body, main {min-height: 100svh}
+    body, main {min-height: 100svh}
 }
 html {
     font-size: 16px;
@@ -36,7 +36,7 @@ html {
     scroll-behavior: smooth
 }
 @supports (scrollbar-gutter: stable) {
-  html {scrollbar-gutter: stable}
+    html {scrollbar-gutter: stable}
 }
 header h1 {
     border-bottom: 0.12rem solid var(--fg);
@@ -62,7 +62,7 @@ h3 {
     }
 }
 @media (prefers-reduced-motion: reduce) {
-  img {transform: scale(1)}
+    img {transform: scale(1)}
 }
 img {
     -webkit-backface-visibility: hidden;
@@ -83,7 +83,7 @@ img {
     }
 }
 @media (prefers-reduced-transparency: no-preference) {
-  img {opacity: 0.1}
+    img {opacity: 0.1}
 }
 @keyframes fade-in {
     0% {opacity: 0.1}
@@ -114,7 +114,7 @@ main .show {opacity: 1}
         animation: none;
         transition: none
     }
-  html {scroll-behavior: auto}
+    html {scroll-behavior: auto}
 }
 a,
 button {
@@ -193,6 +193,9 @@ nav.desktop-links {
     margin-bottom: 3rem
 }
 nav.desktop-links {
+    align-items: center;
+    gap: 20rem;
+    justify-content: center;
     padding: 1rem;
     position: relative
 }
@@ -275,7 +278,11 @@ input#search-bar,
 footer {
     text-align: center
 }
-footer {padding: 2rem 0}
+footer {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0
+}
 nav .desktop-links a,
 footer .footer-column {
     flex: 1
@@ -298,7 +305,10 @@ footer nav[class^="footer-links-"] a:hover,
 footer nav[class^="footer-links-"] a:focus {
     color: var(--accent)
 }
-footer .copyright {margin-top: 3rem}
+footer .copyright {
+    align-items: flex-end;
+    justify-content: center
+}
 footer span + span {flex-direction: column}
 .strawpoll-embed,
 .strawpoll-embed iframe {
@@ -316,6 +326,7 @@ nav.desktop-links a,
 footer,
 footer span + span,
 .footer-container,
+footer .copyright,
 footer nav[class^="footer-links-"] a,
 .strawpoll-embed {
     display: flex

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const current_date = new Date();
             const current_year = current_date.getFullYear();
             if (this.#year) {
-                this.#year.textContent = current_year.toString();
+                this.#year.textContent = current_year.toString() + "\u2009";
             }
         }
     }
