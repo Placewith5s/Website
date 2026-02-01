@@ -23,7 +23,7 @@ HTML
 CSS
 - Properties: Alphabetical order Exception: "-" properties should come before a
 - No empty newlines (doesn't apply to comments)
-- No comma for every ending property of selectors
+- No semi colon for every ending property of selectors
 - Selector placement: Parent above child (nav rules above a rules)
 - Grouped selectors should depend on the ending selector from the group (a, button appears above button)
 - If the ending selector from the group isn't found, do: parent above child rule
