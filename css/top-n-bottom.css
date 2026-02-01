@@ -125,6 +125,10 @@ button {
 a:not(footer a, .desktop-links a, .drawer a) {
     box-shadow: 0 0 0.2rem
 }
+button,
+summary {
+    cursor: pointer
+}
 button {
     border: 0.15rem solid var(--accent);
     padding-bottom: 1rem;
@@ -202,11 +206,6 @@ nav.desktop-links details.dropdown-menu-container a {
         margin-bottom: .5rem;
         padding-top: .5rem
     }
-}
-a,
-button,
-summary {
-    cursor: pointer
 }
 main section:not(:last-child) {margin-bottom: 10rem}
 button.menu-icon, nav.drawer {z-index: 1000}
