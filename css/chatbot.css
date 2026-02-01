@@ -15,16 +15,17 @@ main input[type="text"] {
     width: 100%
 }
 main input[type="file"] {
-    align-self: flex-start
+    align-self: flex-start;
+    order: 3
 }
 main button[type="button"] {
     border-radius: 1rem;
-    order: 3;
+    order: 4;
     width: 15%
 }
 .twitter-share-button {
-    order: 4
+    order: 5
 }
 .reddit-share-link {
-    order: 5
+    order: 6
 }
