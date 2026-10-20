@@ -3,7 +3,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "stylelint": "^17.1.0",
-    "stylelint-order": "^7.0.1"
+    "stylelint": "^17.16.0",
+    "stylelint-order": "^8.1.2"
   }
 }
